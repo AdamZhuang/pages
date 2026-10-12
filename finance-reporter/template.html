@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>宏观日报 · 2026-01-01</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f6f6f8;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --card: #fff;
+    --line: #e4e4e9;
+    --accent: #0a84ff;
+    --up: #d93838;
+    --down: #1f9d55;
+    --warn: #b7791f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f11;
+      --fg: #f2f2f7;
+      --muted: #98989f;
+      --card: #1a1a1d;
+      --line: #2b2b30;
+      --accent: #4da3ff;
+      --up: #ff6b6b;
+      --down: #4ade80;
+      --warn: #e3b341;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 40px 20px 72px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 760px; margin: 0 auto; }
+  .head { margin-bottom: 28px; }
+  .head .eyebrow {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  h1 { margin: 0 0 6px; font-size: 30px; letter-spacing: -0.02em; }
+  .meta { margin: 0; color: var(--muted); font-size: 13.5px; }
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+  }
+  h2 {
+    margin: 0 0 14px;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  h2::before {
+    content: "";
+    width: 3px;
+    height: 16px;
+    border-radius: 2px;
+    background: var(--accent);
+  }
+  h3 { margin: 18px 0 6px; font-size: 15px; }
+  h3:first-of-type { margin-top: 0; }
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0 0 12px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  strong { font-weight: 650; }
+  code {
+    background: color-mix(in srgb, var(--accent) 13%, transparent);
+    padding: 1.5px 5px;
+    border-radius: 4px;
+    font: 13px ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { font-size: 12.5px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  tr:last-child td { border-bottom: 0; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .up { color: var(--up); font-weight: 600; }
+  .down { color: var(--down); font-weight: 600; }
+  .flat { color: var(--muted); }
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin: 0 0 12px;
+  }
+  .callout.warn { border-color: var(--warn); background: color-mix(in srgb, var(--warn) 10%, transparent); }
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 1.5px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .tag.judgement { border-color: var(--accent); color: var(--accent); }
+  .tag.fact { border-color: var(--down); color: var(--down); }
+  footer {
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+  footer p { margin: 0 0 6px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .empty { color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<main>
+  <div class="head">
+    <p class="eyebrow">Macro Daily</p>
+    <h1>宏观日报</h1>
+    <p class="meta">2026-01-01 · 由「观潮」生成</p>
+  </div>
+
+  <section>
+    <h2>今日判断</h2>
+    <div class="callout">
+      <p>用两三句话给出今天的核心判断，先说结论。</p>
+    </div>
+    <p><span class="tag judgement">判断</span> 这里是推论部分，说明依据和逻辑链条。</p>
+    <p><span class="tag fact">事实</span> 这里是可核实的数据或事件，注明来源。</p>
+  </section>
+
+  <section>
+    <h2>关键指标</h2>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>指标</th><th>最新</th><th>变动</th><th>备注</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>美国 10 年期国债收益率</td><td class="num">0.00%</td><td class="num up">+0.0bp</td><td>示例行，替换成真实数据</td></tr>
+          <tr><td>美元指数 DXY</td><td class="num">0.00</td><td class="num down">-0.00%</td><td>示例行</td></tr>
+          <tr><td>WTI 原油</td><td class="num">$0.00</td><td class="num flat">0.00%</td><td>示例行</td></tr>
+          <tr><td>COMEX 黄金</td><td class="num">$0</td><td class="num up">+0.00%</td><td>示例行</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>分项要点</h2>
+    <h3>增长与就业</h3>
+    <ul>
+      <li>要点一</li>
+      <li>要点二</li>
+    </ul>
+    <h3>通胀与政策</h3>
+    <ul>
+      <li>要点一</li>
+    </ul>
+    <h3>市场与资产含义</h3>
+    <ul>
+      <li>要点一</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>不确定之处</h2>
+    <p class="empty">列出数据缺口、口径差异、可能推翻上述判断的条件。</p>
+  </section>
+
+  <footer>
+    <p>本文由宏观分析师「观潮」生成，区分事实与判断，不构成投资建议。</p>
+    <p>来源：逐条注明。更新方式：本地生成后 <code>git push</code>，GitHub Pages 自动部署。</p>
+  </footer>
+</main>
+</body>
+</html>
