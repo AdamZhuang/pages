@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>快速页面生成器 · Demo</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f5f5f7;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --card: #fff;
+    --line: #e3e3e8;
+    --accent: #0a84ff;
+    --accent-fg: #fff;
+    --ok: #30a46c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f11;
+      --fg: #f2f2f7;
+      --muted: #98989f;
+      --card: #1a1a1d;
+      --line: #2b2b30;
+      --accent: #4da3ff;
+      --accent-fg: #06121f;
+      --ok: #3dd68c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 20px 64px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  header { max-width: 1080px; margin: 0 auto 24px; }
+  h1 { margin: 0 0 4px; font-size: 24px; letter-spacing: -0.02em; }
+  .sub { margin: 0; color: var(--muted); font-size: 14px; }
+  .grid {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+  @media (max-width: 800px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px;
+  }
+  .panel h2 {
+    margin: 0 0 14px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+  label { display: block; margin-bottom: 14px; }
+  label span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  input, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font: inherit;
+    color: var(--fg);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    outline: none;
+    resize: vertical;
+  }
+  input:focus, textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+  }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+  button {
+    font: inherit;
+    padding: 9px 16px;
+    border-radius: 9px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--fg);
+    cursor: pointer;
+  }
+  button:hover { border-color: var(--accent); }
+  button.primary {
+    background: var(--accent);
+    color: var(--accent-fg);
+    border-color: transparent;
+    font-weight: 600;
+  }
+  .preview {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    background: var(--bg);
+    min-height: 180px;
+  }
+  .preview h3 { margin: 0 0 10px; font-size: 20px; letter-spacing: -0.01em; }
+  .preview p { margin: 0 0 8px; white-space: pre-wrap; }
+  .preview ul { margin: 8px 0 0; padding-left: 20px; }
+  .preview code {
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  .code {
+    margin-top: 20px;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  pre {
+    margin: 0;
+    padding: 16px;
+    overflow: auto;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font: 12.5px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace;
+    max-height: 320px;
+  }
+  .hint { color: var(--muted); font-size: 12.5px; margin: 8px 0 0; }
+  .toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translate(-50%, 12px);
+    background: var(--ok);
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s, transform .2s;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+</style>
+</head>
+<body>
+<header>
+  <h1>快速页面生成器</h1>
+  <p class="sub">填几个字段，右边实时预览，下面直接拿到能发布的 HTML 代码。纯前端，无依赖。</p>
+</header>
+
+<div class="grid">
+  <section class="panel">
+    <h2>输入</h2>
+    <label><span>标题</span><input id="title" value="给朋友看的临时页面"></label>
+    <label><span>副标题</span><input id="lead" value="这是个演示，内容随便改"></label>
+    <label><span>正文</span><textarea id="body" rows="5">支持多段文字，空行分段。
+也可以用 - 开头的行做成列表：
+- 第一条
+- 第二条
+行内代码用反引号包起来，比如 `git push`。</textarea></label>
+    <label><span>主题色</span><input id="color" type="color" value="#0a84ff" style="height:42px;padding:4px"></label>
+    <div class="row">
+      <button class="primary" id="copy">复制 HTML</button>
+      <button id="download">下载 .html</button>
+      <button id="reset">恢复默认</button>
+    </div>
+    <p class="hint">草稿会自动存在本机浏览器里，刷新不丢。</p>
+  </section>
+
+  <section class="panel">
+    <h2>预览</h2>
+    <div class="preview" id="preview"></div>
+  </section>
+</div>
+
+<div class="code">
+  <section class="panel">
+    <h2>生成的 HTML</h2>
+    <pre id="code"></pre>
+  </section>
+</div>
+
+<div class="toast" id="toast">已复制</div>
+
+<script>
+(function () {
+  var DEFAULTS = { title: '给朋友看的临时页面', lead: '这是个演示，内容随便改', color: '#0a84ff', body: document.getElementById('body').defaultValue };
+  var els = {
+    title: document.getElementById('title'),
+    lead: document.getElementById('lead'),
+    body: document.getElementById('body'),
+    color: document.getElementById('color'),
+    preview: document.getElementById('preview'),
+    code: document.getElementById('code'),
+    toast: document.getElementById('toast')
+  };
+  var KEY = 'quick-page-draft-v1';
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  function inline(s) {
+    return esc(s).replace(/`([^`]+)`/g, '<code>$1</code>');
+  }
+
+  function renderBody(text) {
+    var out = [], list = [];
+    function flush() {
+      if (list.length) { out.push('<ul>' + list.map(function (i) { return '<li>' + inline(i) + '</li>'; }).join('') + '</ul>'); list = []; }
+    }
+    text.split(/\r?\n/).forEach(function (line) {
+      var t = line.trim();
+      if (/^[-*]\s+/.test(t)) { list.push(t.replace(/^[-*]\s+/, '')); return; }
+      flush();
+      if (t) out.push('<p>' + inline(t) + '</p>');
+    });
+    flush();
+    return out.join('\n');
+  }
+
+  function build() {
+    var title = els.title.value || '未命名页面';
+    var lead = els.lead.value;
+    var color = els.color.value;
+    var inner = renderBody(els.body.value);
+
+    els.preview.innerHTML =
+      '<h3 style="color:' + esc(color) + '">' + inline(title) + '</h3>' +
+      (lead ? '<p style="color:var(--muted)">' + inline(lead) + '</p>' : '') + inner;
+
+    var html = [
+      '<!DOCTYPE html>',
+      '<html lang="zh-CN">',
+      '<head>',
+      '<meta charset="utf-8">',
+      '<meta name="viewport" content="width=device-width, initial-scale=1">',
+      '<title>' + esc(title) + '</title>',
+      '<style>',
+      '  body{max-width:680px;margin:0 auto;padding:48px 20px;',
+      '    font:16px/1.7 -apple-system,"PingFang SC",sans-serif;color:#1c1c1e;background:#fff}',
+      '  h1{font-size:28px;letter-spacing:-.02em;color:' + color + '}',
+      '  code{background:#f0f0f3;padding:2px 5px;border-radius:4px;font-size:14px}',
+      '  @media(prefers-color-scheme:dark){body{background:#111;color:#f2f2f7}code{background:#26262b}}',
+      '</style>',
+      '</head>',
+      '<body>',
+      '<h1>' + inline(title) + '</h1>',
+      lead ? '<p style="color:#6b6b70">' + inline(lead) + '</p>' : '',
+      inner,
+      '</body>',
+      '</html>'
+    ].filter(function (l) { return l !== ''; }).join('\n');
+
+    els.code.textContent = html;
+    return html;
+  }
+
+  function save() {
+    try {
+      localStorage.setItem(KEY, JSON.stringify({
+        title: els.title.value, lead: els.lead.value,
+        body: els.body.value, color: els.color.value
+      }));
+    } catch (e) {}
+  }
+
+  function toast(msg) {
+    els.toast.textContent = msg;
+    els.toast.classList.add('show');
+    setTimeout(function () { els.toast.classList.remove('show'); }, 1600);
+  }
+
+  function copy(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { toast('已复制'); }, function () { fallback(text); });
+    } else { fallback(text); }
+    function fallback(t) {
+      var ta = document.createElement('textarea');
+      ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast('已复制'); } catch (e) { toast('复制失败，请手动选中'); }
+      document.body.removeChild(ta);
+    }
+  }
+
+  try {
+    var d = JSON.parse(localStorage.getItem(KEY) || 'null');
+    if (d) {
+      els.title.value = d.title || DEFAULTS.title;
+      els.lead.value = d.lead || '';
+      els.body.value = d.body || '';
+      els.color.value = d.color || DEFAULTS.color;
+    }
+  } catch (e) {}
+
+  ['input', 'change'].forEach(function (ev) {
+    [els.title, els.lead, els.body, els.color].forEach(function (el) {
+      el.addEventListener(ev, function () { save(); build(); });
+    });
+  });
+
+  document.getElementById('copy').addEventListener('click', function () { copy(build()); });
+
+  document.getElementById('download').addEventListener('click', function () {
+    var blob = new Blob([build()], { type: 'text/html;charset=utf-8' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'index.html';
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  });
+
+  document.getElementById('reset').addEventListener('click', function () {
+    els.title.value = DEFAULTS.title;
+    els.lead.value = DEFAULTS.lead;
+    els.body.value = DEFAULTS.body;
+    els.color.value = DEFAULTS.color;
+    save(); build();
+    toast('已恢复默认');
+  });
+
+  build();
+})();
+</script>
+</body>
+</html>
