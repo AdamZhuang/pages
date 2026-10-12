@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Adam 的临时页面</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f7f7f8;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --card: #ffffff;
+    --line: #e5e5ea;
+    --accent: #0a84ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111113;
+      --fg: #f2f2f7;
+      --muted: #9a9aa0;
+      --card: #1b1b1e;
+      --line: #2c2c30;
+      --accent: #4da3ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    width: 100%;
+    max-width: 640px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 36px 32px;
+  }
+  h1 {
+    margin: 0 0 6px;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+  }
+  .sub {
+    margin: 0 0 28px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+  }
+  li:first-child { border-top: 0; }
+  .k { color: var(--muted); flex: none; }
+  .v { text-align: right; word-break: break-word; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer {
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Adam 的临时页面</h1>
+  <p class="sub">这是通过 GitHub Pages 发布的临时站点，内容会随时更新或下线。</p>
+
+  <ul>
+    <li><span class="k">仓库</span><span class="v"><a href="https://github.com/AdamZhuang/pages">AdamZhuang/pages</a></span></li>
+    <li><span class="k">用途</span><span class="v">临时分享 HTML / 页面</span></li>
+    <li><span class="k">状态</span><span class="v">在线</span></li>
+  </ul>
+
+  <footer>
+    更新方式：本地修改后 <code>git push</code>，Pages 会自动重新部署。
+  </footer>
+</main>
+</body>
+</html>
