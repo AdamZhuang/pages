@@ -270,6 +270,51 @@
   .tool-name { color: var(--text-soft); font-weight: 600; }
   .tool-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+  /* ── 工具记录：默认折叠成一行，展开才占版面（对齐上游 Mac 应用）──────── */
+  .toolwrap {
+    margin: 2px 0 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-soft);
+    overflow: hidden;
+  }
+  .toolwrap-hd {
+    display: flex; align-items: center; gap: 7px;
+    width: 100%; padding: 7px 10px;
+    border: 0; background: transparent; color: var(--muted);
+    font: inherit; font-size: 12px; text-align: left; cursor: pointer;
+  }
+  .toolwrap-hd .chev { flex: 0 0 auto; transition: transform 140ms var(--ease); }
+  .toolwrap.is-open .toolwrap-hd .chev { transform: rotate(90deg); }
+  .toolwrap-hd .tname { color: var(--text-soft); font-weight: 600; }
+  .toolwrap-hd .tprev {
+    flex: 1 1 auto; min-width: 0;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .toolwrap-hd .tn {
+    flex: 0 0 auto; padding: 0 5px;
+    border-radius: 999px; background: var(--surface);
+    color: var(--muted-2); font-size: 11px;
+  }
+  .toolwrap-rows { display: none; border-top: 1px solid var(--border); }
+  .toolwrap.is-open .toolwrap-rows { display: block; }
+  .toolwrap-rows .tool { padding: 5px 10px; border: 0; border-radius: 0; background: transparent; max-width: 100%; }
+  .toolwrap-rows .tool + .tool { border-top: 1px solid var(--border); }
+
+  /* ── 交接标记（居中，不是气泡）────────────────────────────────── */
+  .handoff {
+    align-self: center;
+    max-width: 86%;
+    margin: 8px 0;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: var(--bg-soft);
+    color: var(--muted-2);
+    font-size: 12px;
+    text-align: center;
+  }
+  .handoff .ho-a, .handoff .ho-b { color: var(--muted); font-weight: 600; }
+
   /* ── 思考过程：压成一行，超长横向滚动（marquee），视觉退到最不显眼的一档 ── */
   .think {
     display: flex; align-items: center; gap: 7px;
@@ -785,8 +830,21 @@
                 <span class="bubble-time">09:36</span>
               </div>
 
-              <div class="tool"><span class="tool-dot"></span><span class="tool-name">read</span><span class="tool-text">services/desktop-agent/src/lorca/client.ts</span></div>
-              <div class="tool"><span class="tool-dot is-running"></span><span class="tool-name">bash</span><span class="tool-text">npm run test:agent-service</span></div>
+              <div class="toolwrap">
+                <button class="toolwrap-hd" type="button">
+                  <svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                  <span class="tname">bash</span>
+                  <span class="tprev">npm run test:agent-service</span>
+                  <span class="tn">2</span>
+                </button>
+                <div class="toolwrap-rows">
+                  <div class="tool"><span class="tool-dot"></span><span class="tool-name">read</span><span class="tool-text">services/desktop-agent/src/lorca/client.ts</span></div>
+                  <div class="tool"><span class="tool-dot is-running"></span><span class="tool-name">bash</span><span class="tool-text">npm run test:agent-service</span></div>
+                </div>
+              </div>
+
+              <!-- 交接：居中标记行，不是气泡。占位灰（上游就是这个口径） -->
+              <div class="handoff"><span class="ho-a">研发工程师</span> 已把话带到 <span class="ho-b">卜卜</span></div>
 
               <!-- 思考：一行，超长横向滚动，不占版面 -->
               <div class="think" title="思考过程（一行，超出横向滚动）">
@@ -1049,6 +1107,22 @@
         <li>会话归属：<code>chats.set_section { chat_id, section_id | null }</code>（null = 移出分组）。</li>
         <li>折叠：<code>sections.collapse { id, collapsed }</code>。</li>
         <li>同样 fail-closed；<code>chats.hide</code> / <code>chats.mute</code> <b>不在本期</b>（隐藏与静音是另一件事，别混进来）。</li>
+      </ul>
+
+      <h3>工具记录（新 · 待开发）</h3>
+      <ul>
+        <li><b>上游 Mac 应用根本不把工具调用画进聊天记录</b>：CLI 存成 <code>tool</code> 消息只是为了让下一轮模型重建上下文，界面一条都不渲染，只留底部一行「正在工作 / 思考中 + 当前工具」（来源：<code>docs/architecture/macos-chat.md</code>）。</li>
+        <li>所以工具行<b>不能一条一个格子堆在聊天流里</b>——这就是你截图里「太多工具调用」的根源。本稿改成：连续的 <code>tool</code> 消息<b>合并成一个折叠块，默认收成一行</b>（工具名 + 最近一条命令 + 条数），点开才展开，展开的每条只占一行。旧稿那两行散落的工具条已删。</li>
+        <li><b>底部那行「思考中 · 当前工具」留着</b>：折叠块只是翻账用，平时不用看。</li>
+        <li>唯一例外是<b>需要你动手的命令卡</b>（Auto-review 在问、或命令交给你了）：它要展开、带 Allow / Deny，不能被折进折叠块。</li>
+      </ul>
+
+      <h3>交接（handoff）（新 · 待开发）</h3>
+      <ul>
+        <li>上游口径：bot 之间的话是<b>居中标记行</b>，不是气泡 —— 「已把话带到 ◉ X」/「来自 ◉ X 的消息」，全灰、小字、无加粗（来源：<code>macos-chat.md</code> 的 <code>HandoffCellView</code>）。</li>
+        <li>现在 avatar 落到兜底分支，直接显示成 <code>（handoff）</code> —— 跟截图一致，属于没接。本稿改成上图那种居中标记行。</li>
+        <li><b>会话列表的预览行也要改</b>：现在预览显示「（handoff）」，应显示「已把话带到 卜卜」。<code>previewOf()</code> 的兜底 <code>（${body.kind}）</code> 要补 <code>handoff</code> 分支。</li>
+        <li>上游还有 <code>Notice</code> 变体（例程开跑时的「例程 · 名字」标记），同类处理，别当气泡。</li>
       </ul>
 
       <h3>头像（已实现 · 对应提交 27c3b5e7）</h3>
