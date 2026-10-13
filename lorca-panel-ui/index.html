@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>avatar × lorca 控制面板 · UI 稿</title>
+<style>
+  /* 颜色 / 圆角 / 动效全部取自 avatar tokens.css，保证跟 App 内视觉同源。 */
+  :root {
+    --bg: #f5f6f8;
+    --bg-soft: #f2f3f5;
+    --surface: #ffffff;
+    --border: #eaecf0;
+    --border-strong: #d9dce1;
+    --text: #1f2329;
+    --text-soft: #373c43;
+    --muted: #646a73;
+    --muted-2: #8f959e;
+    --accent: #3370ff;
+    --accent-strong: #245bdb;
+    --accent-soft: #eef3ff;
+    --accent-border: #c9d8ff;
+    --info: #3978b8;
+    --info-soft: #e8f1fb;
+    --warning: #95611d;
+    --warning-soft: #fbf1df;
+    --warning-border: #e6d2ae;
+    --danger: #b04458;
+    --danger-soft: #fae9ed;
+    --success: #2f7a4a;
+    --success-soft: #e8f4ec;
+    --success-border: #b8d7c3;
+    --shadow-sm: 0 2px 8px rgba(31, 35, 41, 0.05);
+    --shadow-md: 0 10px 30px rgba(31, 35, 41, 0.08);
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 32px 20px 64px;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1000px; margin: 0 auto; }
+
+  /* ── 页头 ─────────────────────────────────────────────────────────── */
+  .page-head h1 { margin: 0 0 4px; font-size: 22px; letter-spacing: -0.01em; }
+  .page-sub { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 9px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--muted-2); }
+  .badge.is-now::before { background: var(--success); }
+  .badge.is-p1::before { background: var(--accent); }
+  .badge.is-p2::before { background: var(--warning); }
+  .badge.is-p3::before { background: var(--muted-2); }
+
+  /* ── 切屏 ─────────────────────────────────────────────────────────── */
+  .switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 4px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+  .switcher button {
+    flex: 1 1 auto;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 140ms var(--ease), color 140ms var(--ease);
+  }
+  .switcher button:hover { color: var(--text); }
+  .switcher button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent-strong); }
+
+  .stage { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
+
+  /* ── 手机框 ───────────────────────────────────────────────────────── */
+  .phone {
+    flex: 0 0 auto;
+    width: 390px;
+    height: 780px;
+    border: 1px solid var(--border-strong);
+    border-radius: 42px;
+    background: var(--surface);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    position: relative;
+  }
+  .phone-inner { position: absolute; inset: 0; display: flex; flex-direction: column; }
+  .screen { display: none; flex: 1; min-height: 0; flex-direction: column; background: var(--bg); }
+  .screen.is-active { display: flex; }
+
+  /* 状态栏 + 顶部（沿用 App 内的 .bot-* / .lorca-* 口径：白底、17px 标题、下方 1px 分隔线） */
+  .statusbar {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 22px 4px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .statusbar span:last-child { color: var(--muted); font-weight: 500; }
+
+  .hdr {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px 10px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .hdr-title { font-size: 17px; font-weight: 600; }
+  .hdr-sub { font-size: 12px; color: var(--muted); }
+  .hdr-spacer { flex: 1; }
+
+  .pill {
+    padding: 4px 9px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg-soft);
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .pill.is-ok { border-color: var(--success-border); background: var(--success-soft); color: var(--success); }
+  .pill.is-warn { border-color: var(--warning-border); background: var(--warning-soft); color: var(--warning); }
+
+  .icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+  }
+  .icon-btn:hover { background: var(--bg-soft); }
+
+  .tabs {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 4px;
+    padding: 8px 14px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .tabs button {
+    padding: 5px 12px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .tabs button[aria-selected="true"] { border-color: var(--accent-border); background: var(--accent-soft); color: var(--accent-strong); }
+
+  .body { flex: 1; min-height: 0; overflow-y: auto; }
+
+  /* ── 会话列表 ─────────────────────────────────────────────────────── */
+  .rows { margin: 0; padding: 0; list-style: none; background: var(--surface); }
+  .rows > li + li .row { border-top: 1px solid var(--border); }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 14px;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+  }
+  .row:hover { background: var(--bg-soft); }
+  .avatar {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .avatar.is-gray { background: var(--bg-soft); color: var(--muted); }
+  .row-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+  .row-top { display: flex; align-items: baseline; gap: 8px; }
+  .row-name { flex: 1; min-width: 0; font-size: 15px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .row-time { flex: 0 0 auto; font-size: 11px; color: var(--muted); }
+  .row-preview { font-size: 13px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .unread {
+    flex: 0 0 auto;
+    min-width: 20px;
+    padding: 2px 6px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .foot {
+    flex: 0 0 auto;
+    padding: 8px 14px 10px;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+  }
+
+  /* ── 会话详情 ─────────────────────────────────────────────────────── */
+  .thread { display: flex; flex-direction: column; gap: 10px; padding: 14px; }
+  .bubble-wrap { display: flex; flex-direction: column; gap: 3px; max-width: 84%; align-self: flex-start; }
+  .bubble-wrap.is-mine { align-self: flex-end; align-items: flex-end; }
+  .bubble-author { font-size: 11px; color: var(--muted); }
+  .bubble {
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    font-size: 14px;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+  .bubble.is-mine { border-color: var(--accent-border); background: var(--accent-soft); }
+  .bubble-time { font-size: 10px; color: var(--muted); }
+
+  .tool {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    align-self: flex-start;
+    max-width: 84%;
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .tool-dot { flex: 0 0 auto; width: 6px; height: 6px; border-radius: 50%; background: var(--muted-2); }
+  .tool-dot.is-running { background: var(--accent); }
+  .tool-dot.is-error { background: var(--danger); }
+  .tool-name { color: var(--text-soft); font-weight: 600; }
+  .tool-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  .working {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    align-self: flex-start;
+    padding: 6px 11px;
+    border: 1px dashed var(--accent-border);
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    font-size: 12px;
+  }
+  .dots { display: inline-flex; gap: 3px; }
+  .dots i { width: 4px; height: 4px; border-radius: 50%; background: currentColor; animation: blink 1.1s infinite var(--ease); }
+  .dots i:nth-child(2) { animation-delay: .18s; }
+  .dots i:nth-child(3) { animation-delay: .36s; }
+  @keyframes blink { 0%, 60%, 100% { opacity: .25; } 30% { opacity: 1; } }
+
+  .composer {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px calc(12px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .input {
+    flex: 1;
+    min-width: 0;
+    padding: 9px 12px;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    background: var(--bg-soft);
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .send {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+  }
+  .stop {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 11px;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--danger);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* ── 例程 ─────────────────────────────────────────────────────────── */
+  .sect { padding: 14px; }
+  .sect-label { margin: 0 0 8px; color: var(--muted); font-size: 12px; font-weight: 600; }
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--surface);
+    overflow: hidden;
+  }
+  .card + .card { margin-top: 10px; }
+  .routine { display: flex; align-items: center; gap: 12px; padding: 12px 14px; }
+  .routine + .routine { border-top: 1px solid var(--border); }
+  .routine-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+  .routine-name { font-size: 14px; font-weight: 600; }
+  .routine-meta { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); }
+  .dot { flex: 0 0 auto; width: 6px; height: 6px; border-radius: 50%; background: var(--muted-2); }
+  .dot.is-on { background: var(--success); }
+  .dot.is-off { background: var(--muted-2); }
+  .routine-actions { display: flex; gap: 6px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 11px;
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn:hover { background: var(--bg-soft); }
+  .btn.is-primary { border-color: var(--accent-border); background: var(--accent-soft); color: var(--accent-strong); }
+  .btn.is-danger { border-color: var(--danger-soft); color: var(--danger); }
+  .note {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--warning-border);
+    border-radius: 9px;
+    background: var(--warning-soft);
+    color: var(--warning);
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* ── 权限卡 ───────────────────────────────────────────────────────── */
+  .perm {
+    align-self: stretch;
+    padding: 12px 13px;
+    border: 1px solid var(--warning-border);
+    border-radius: 14px;
+    background: var(--warning-soft);
+  }
+  .perm-head { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; color: var(--warning); font-size: 12px; font-weight: 600; }
+  .perm-body { margin: 0 0 4px; color: var(--text-soft); font-size: 13px; line-height: 1.6; }
+  .perm-cmd {
+    display: block;
+    margin: 6px 0 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(31, 35, 41, 0.06);
+    color: var(--text);
+    font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+    overflow-wrap: anywhere;
+  }
+  .perm-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+  .perm.is-pending { border-color: var(--border-strong); background: var(--surface); }
+  .perm.is-pending .perm-head { color: var(--muted); }
+  .perm-hint { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
+
+  /* ── 右侧说明 ─────────────────────────────────────────────────────── */
+  .notes { flex: 1 1 320px; min-width: 300px; max-width: 420px; }
+  .notes h2 { margin: 0 0 10px; font-size: 15px; }
+  .notes table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .notes th, .notes td { padding: 8px 6px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  .notes th { color: var(--muted); font-weight: 600; font-size: 12px; }
+  .notes td:last-child { color: var(--muted); white-space: nowrap; }
+  .notes ul { margin: 16px 0 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
+  .notes li { margin-bottom: 6px; }
+
+  @media (max-width: 780px) {
+    body { padding: 20px 12px 48px; }
+    .phone { width: 100%; max-width: 390px; height: 720px; margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="page-head">
+    <h1>avatar × lorca 控制面板</h1>
+    <p class="page-sub">UI 稿 · 手机端 390pt · 2026-10-13 · 纯静态，未接真数据，只用于确认版面与范围</p>
+    <div class="legend">
+      <span class="badge is-now">已有</span>
+      <span class="badge is-p1">P1 只读补齐 + 启停例程</span>
+      <span class="badge is-p2">P2 发消息 / 停 turn</span>
+      <span class="badge is-p3">P3 权限卡应答</span>
+    </div>
+  </header>
+
+  <div class="switcher" role="tablist">
+    <button type="button" role="tab" data-screen="list" aria-selected="true">会话列表 · 已有</button>
+    <button type="button" role="tab" data-screen="chat" aria-selected="false">会话详情 · P2</button>
+    <button type="button" role="tab" data-screen="routines" aria-selected="false">例程 · P1</button>
+    <button type="button" role="tab" data-screen="perm" aria-selected="false">权限卡 · P3</button>
+  </div>
+
+  <div class="stage">
+    <div class="phone">
+      <div class="phone-inner">
+
+        <!-- ── 1. 会话列表（现有版面，只加例程 Tab）───────────────── -->
+        <section class="screen is-active" data-screen="list">
+          <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
+          <div class="hdr">
+            <span class="hdr-title">Bot</span>
+            <span class="hdr-spacer"></span>
+            <span class="pill is-ok">已连接</span>
+            <button class="icon-btn" type="button" aria-label="刷新">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+            </button>
+          </div>
+          <div class="tabs">
+            <button type="button" aria-selected="true">会话</button>
+            <button type="button" aria-selected="false">例程</button>
+          </div>
+          <div class="body">
+            <ul class="rows">
+              <li><button class="row" type="button">
+                <span class="avatar">研</span>
+                <span class="row-main">
+                  <span class="row-top"><span class="row-name">研发工程师</span><span class="row-time">09:38</span></span>
+                  <span class="row-preview">contract 测试已补齐，等一期范围拍板</span>
+                </span>
+                <span class="unread">2</span>
+              </button></li>
+              <li><button class="row" type="button">
+                <span class="avatar is-gray">G</span>
+                <span class="row-main">
+                  <span class="row-top"><span class="row-name">GitHub 调研</span><span class="row-time">09:31</span></span>
+                  <span class="row-preview">协议面约 150 个方法，面板只能是子集</span>
+                </span>
+              </button></li>
+              <li><button class="row" type="button">
+                <span class="avatar is-gray">产</span>
+                <span class="row-main">
+                  <span class="row-top"><span class="row-name">avatar 开发群</span><span class="row-time">昨天</span></span>
+                  <span class="row-preview">你：先出个 UI 稿，简洁美观一点</span>
+                </span>
+              </button></li>
+              <li><button class="row" type="button">
+                <span class="avatar is-gray">产</span>
+                <span class="row-main">
+                  <span class="row-top"><span class="row-name">产品经理</span><span class="row-time">昨天</span></span>
+                  <span class="row-preview">需要你确认一期范围才能动接口</span>
+                </span>
+              </button></li>
+            </ul>
+          </div>
+          <div class="foot">4 个会话 · 只读，这一版不开放写操作</div>
+        </section>
+
+        <!-- ── 2. 会话详情（P2：加输入框 / 停止）─────────────────── -->
+        <section class="screen" data-screen="chat">
+          <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
+          <div class="hdr">
+            <button class="icon-btn" type="button" aria-label="返回">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <span>
+              <span class="hdr-title">研发工程师</span>
+            </span>
+            <span class="hdr-spacer"></span>
+            <button class="stop" type="button">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+              停止
+            </button>
+          </div>
+          <div class="body">
+            <div class="thread">
+              <div class="bubble-wrap">
+                <span class="bubble-author">你</span>
+                <div class="bubble">一期只做看状态 + 启停例程，先把接口写出来</div>
+                <span class="bubble-time">09:36</span>
+              </div>
+              <div class="tool"><span class="tool-dot"></span><span class="tool-name">read</span><span class="tool-text">services/desktop-agent/src/lorca/client.ts</span></div>
+              <div class="tool"><span class="tool-dot is-running"></span><span class="tool-name">bash</span><span class="tool-text">npm run test:agent-service</span></div>
+              <div class="working">研发工程师 正在工作<span class="dots"><i></i><i></i><i></i></span></div>
+              <div class="bubble-wrap">
+                <span class="bubble-author">研发工程师</span>
+                <div class="bubble">桥接层加 <code>routines.update</code> 就能启停；<code>routines.run</code> 会在本机真起一个 turn，所以单独留一期。</div>
+                <span class="bubble-time">09:38</span>
+              </div>
+            </div>
+          </div>
+          <div class="composer">
+            <span class="input">发消息给 研发工程师…</span>
+            <button class="send" type="button" aria-label="发送">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- ── 3. 例程（P1）────────────────────────────────────────── -->
+        <section class="screen" data-screen="routines">
+          <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
+          <div class="hdr">
+            <span class="hdr-title">Bot</span>
+            <span class="hdr-spacer"></span>
+            <span class="pill is-ok">已连接</span>
+          </div>
+          <div class="tabs">
+            <button type="button" aria-selected="false">会话</button>
+            <button type="button" aria-selected="true">例程</button>
+          </div>
+          <div class="body">
+            <div class="sect">
+              <p class="sect-label">产品经理 · 3 个例程</p>
+              <div class="card">
+                <div class="routine">
+                  <span class="dot is-on"></span>
+                  <span class="routine-main">
+                    <span class="routine-name">晨间简报</span>
+                    <span class="routine-meta">每工作日 08:30 · 下次 10-14 08:30</span>
+                  </span>
+                  <span class="routine-actions">
+                    <button class="btn" type="button">运行</button>
+                    <button class="btn" type="button">暂停</button>
+                  </span>
+                </div>
+                <div class="routine">
+                  <span class="dot is-on"></span>
+                  <span class="routine-main">
+                    <span class="routine-name">每周路线图复盘</span>
+                    <span class="routine-meta">每周一 10:00 · 上次 10-13 10:00</span>
+                  </span>
+                  <span class="routine-actions">
+                    <button class="btn" type="button">运行</button>
+                    <button class="btn" type="button">暂停</button>
+                  </span>
+                </div>
+                <div class="routine">
+                  <span class="dot is-off"></span>
+                  <span class="routine-main">
+                    <span class="routine-name">竞品动态巡检</span>
+                    <span class="routine-meta">已暂停 · 每小时</span>
+                  </span>
+                  <span class="routine-actions">
+                    <button class="btn is-primary" type="button">启用</button>
+                  </span>
+                </div>
+              </div>
+              <div class="note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+                <span>「运行」会在本机真的起一个 turn，可能触发命令与权限卡；启用 / 暂停只改调度，无副作用。</span>
+              </div>
+            </div>
+          </div>
+          <div class="foot">启停走 routines.update（lorca 没有 pause / resume 方法）</div>
+        </section>
+
+        <!-- ── 4. 权限卡（P3）───────────────────────────────────────── -->
+        <section class="screen" data-screen="perm">
+          <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
+          <div class="hdr">
+            <button class="icon-btn" type="button" aria-label="返回">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <span class="hdr-title">研发工程师</span>
+            <span class="hdr-spacer"></span>
+            <span class="pill is-warn">等待授权</span>
+          </div>
+          <div class="body">
+            <div class="thread">
+              <div class="tool"><span class="tool-dot is-running"></span><span class="tool-name">bash</span><span class="tool-text">npm run test:agent-service</span></div>
+              <div class="perm">
+                <div class="perm-head">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>
+                  需要你确认
+                </div>
+                <p class="perm-body">研发工程师 请求在本机执行一条命令：</p>
+                <code class="perm-cmd">git push origin main</code>
+                <div class="perm-actions">
+                  <button class="btn is-primary" type="button">允许一次</button>
+                  <button class="btn" type="button">总是允许</button>
+                  <button class="btn is-danger" type="button">拒绝</button>
+                </div>
+              </div>
+
+              <div class="perm is-pending">
+                <div class="perm-head">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  已在 Mac 上应答过
+                </div>
+                <p class="perm-body">同一条请求在 lorca 桌面端被批准，这里同步为已通过，不再可点。</p>
+                <p class="perm-hint">无人应答时 turn 会停在这里，面板要显式呈现「挂起」而不是转圈。</p>
+              </div>
+            </div>
+          </div>
+          <div class="composer">
+            <span class="input">授权未决，暂不能发新消息</span>
+            <button class="send" type="button" aria-label="发送" disabled style="opacity:.4">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+            </button>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <aside class="notes">
+      <h2>这稿定了什么</h2>
+      <table>
+        <thead><tr><th>期</th><th>内容</th><th>研发估</th></tr></thead>
+        <tbody>
+          <tr><td>已有</td><td>会话列表、气泡、工具行、实时增量（只读）</td><td>—</td></tr>
+          <tr><td>P1</td><td>例程列表进 roster、启用 / 暂停 / 运行、面板交互</td><td>4–5d</td></tr>
+          <tr><td>P2</td><td>输入框 + 发送（乐观行对齐 message_id）、停止 turn</td><td>+4–5d</td></tr>
+          <tr><td>P3</td><td>权限卡呈现与应答 permission.answer、挂起态</td><td>+3–4d</td></tr>
+        </tbody>
+      </table>
+
+      <ul>
+        <li>沿用现有 <code>.lorca-*</code> 版面与 tokens.css，不新造一套视觉。</li>
+        <li>本稿不含：attention / handoffs / reviews 展示、bot 配置编辑、账号与 relay 管理、远端访问。</li>
+        <li>「运行」与「发送」有本机副作用，是 P1 与 P2 的分界线，等范围拍板。</li>
+      </ul>
+    </aside>
+  </div>
+</div>
+
+<script>
+  const tabs = [...document.querySelectorAll('.switcher button')];
+  const screens = [...document.querySelectorAll('.screen')];
+  function show(name) {
+    tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.screen === name)));
+    screens.forEach((s) => s.classList.toggle('is-active', s.dataset.screen === name));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  tabs.forEach((t) => t.addEventListener('click', () => show(t.dataset.screen)));
+</script>
+</body>
+</html>
