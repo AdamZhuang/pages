@@ -126,6 +126,48 @@
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   .empty { color: var(--muted); font-style: italic; }
+  .spark { display: block; width: 100%; height: 34px; margin: 6px 0 0; overflow: visible; }
+  .trend { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+  .trend .cell {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 12px;
+    background: color-mix(in srgb, var(--accent) 4%, transparent);
+  }
+  .trend .cell .name { font-size: 13.5px; color: var(--muted); margin: 0; }
+  .trend .cell .val { font-size: 19px; font-weight: 650; margin: 2px 0 0; font-variant-numeric: tabular-nums; }
+  .trend .cell .chg { font-size: 13px; margin: 2px 0 0; }
+  /* Phone: stack the table into cards, keep everything inside the viewport. */
+  @media (max-width: 640px) {
+    body { padding: 26px 14px 52px; font-size: 15.5px; }
+    h1 { font-size: 25px; }
+    .head { margin-bottom: 20px; }
+    section { padding: 18px 16px; border-radius: 12px; margin-bottom: 14px; }
+    h2 { font-size: 16px; }
+    h3 { font-size: 14.5px; }
+    .callout { padding: 12px 14px; }
+    .tablewrap { overflow-x: visible; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    table { font-size: 14px; }
+    thead { display: none; }
+    tr {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      background: color-mix(in srgb, var(--accent) 4%, transparent);
+    }
+    tr:last-child { margin-bottom: 0; }
+    td { border-bottom: 0; padding: 2px 0; white-space: normal; text-align: left; }
+    td:first-child { font-weight: 650; font-size: 14.5px; margin-bottom: 3px; }
+    td.num { text-align: left; font-variant-numeric: tabular-nums; }
+    td[data-label]::before {
+      content: attr(data-label) "\2009";
+      color: var(--muted);
+      font-weight: 400;
+    }
+    footer { font-size: 12px; }
+  }
 </style>
 </head>
 
@@ -134,16 +176,95 @@
   <div class="head">
     <p class="eyebrow">Macro Daily</p>
     <h1>宏观日报</h1>
-    <p class="meta">2026-10-13 · 由「观潮」生成</p>
+    <p class="meta">2026-10-13 · 由「观潮」生成 · 数据截至北京时间 08:26</p>
   </div>
 
   <section>
     <h2>今日判断</h2>
     <div class="callout">
-      <p>主线仍是美国的利率与美元：10 年期美债收益率停在 5.2% 上方，联邦基金目标区间 9 月刚上调到 3.75–4.00%，美元指数回到 102.6。高实际利率压制黄金与成长股，而原油、铜因供给端走强。中国一侧，9 月制造业 PMI 回到 50.1 的扩张区间，8 月 CPI 同比只有 0.8%，价格压力很弱，人民币小幅走强到 6.68 附近。</p>
+      <p>隔夜是「能源涨、利率高、美元强」的组合：WTI 收 92.95 美元、布伦特 105.72 美元，近 6 个交易日分别 +3.9% 和 +5.4%；10 年期美债收益率 5.24%，美元指数 102.55。美股内部明显分化：道指 +1.1% 走强，纳指 -0.8% 走弱。中国一侧 A 股偏软（沪深 300 -1.2%），人民币小幅走强。</p>
     </div>
-    <p><span class="tag judgement">判断</span> 黄金从 9 月 17 日高点回落，主因是美债实际利率与美元双双走高，而不是避险需求消失——同期 VIX 只在 15 附近，市场并不恐慌。若 10 年期收益率维持在 5% 以上，黄金更可能在 4,100–4,250 区间震荡；油价走高带来的通胀含义会限制货币宽松空间，对长久期债券不利。</p>
-    <p><span class="tag fact">事实</span> 10 年期美债收益率 5.24%、2 年期 4.75%，10Y-2Y 利差 +0.44 个百分点；联邦基金目标区间 3.75–4.00%，有效利率 EFFR 3.88%；美元指数 102.57。以上为 2026-10-12 数据，来源见页脚。</p>
+    <p><span class="tag judgement">判断</span> 主导变量仍是美国的利率与美元：联邦基金目标区间 3.75–4.00% 未变，10 年期收益率稳在 5.2% 上方，压制黄金与长久期成长股；原油走高是当前通胀里最不顺的一环，会限制货币宽松空间。道指强、纳指弱说明资金从长久期成长转向现金流靠前的价值股，这与高利率环境一致。黄金近一周小幅上涨，但仍在 4,100–4,250 区间内震荡，未突破。</p>
+    <p><span class="tag fact">事实</span> 10 年期美债收益率 5.24%、2 年期 4.75%（FRED 10-08 收盘），10Y-2Y 利差 +0.44 个百分点（10-09）；联邦基金目标区间 3.75–4.00%，有效利率 EFFR 3.88%（10-08）。中国 Shibor 隔夜 1.296%、1 周 1.346%（10-12）。</p>
+  </section>
+
+  <section>
+    <h2>大类资产走势</h2>
+    <p class="meta">每张卡片下的区间为各自的近 6 个交易日收盘价口径（港股、A 股与美股交易日不完全对齐）；迷你走势图由收盘价归一化绘制，红涨绿跌。</p>
+    <div class="trend">
+      <div class="cell">
+        <p class="name">标普 500</p>
+        <p class="val">7,807.24</p>
+        <p class="chg up">+0.43% <span class="flat">· 10-05–10-12</span></p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#d93838" stroke-width="2" stroke-linejoin="round" points="0.0,24.8 20.0,3.0 40.0,11.3 60.0,29.0 80.0,6.6 100.0,8.7"/></svg>
+      </div>
+      <div class="cell">
+        <p class="name">纳斯达克综指</p>
+        <p class="val">27,245.90</p>
+        <p class="chg down">-0.84% <span class="flat">· 10-05–10-12</span></p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#1f9d55" stroke-width="2" stroke-linejoin="round" points="0.0,10.8 20.0,3.0 40.0,6.9 60.0,29.0 80.0,17.9 100.0,25.6"/></svg>
+      </div>
+      <div class="cell">
+        <p class="name">道琼斯工业指数</p>
+        <p class="val">51,850.55</p>
+        <p class="chg up">+1.14% <span class="flat">· 10-05–10-12</span></p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#d93838" stroke-width="2" stroke-linejoin="round" points="0.0,25.6 20.0,15.8 40.0,29.0 60.0,27.0 80.0,10.6 100.0,3.0"/></svg>
+      </div>
+      <div class="cell">
+        <p class="name">上证指数</p>
+        <p class="val">3,797.24</p>
+        <p class="chg down">-0.69% <span class="flat">· 09-28–10-12</span></p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#1f9d55" stroke-width="2" stroke-linejoin="round" points="0.0,13.7 20.0,9.8 40.0,3.0 60.0,20.5 80.0,19.4 100.0,29.0"/></svg>
+      </div>
+      <div class="cell">
+        <p class="name">沪深 300</p>
+        <p class="val">4,287.98</p>
+        <p class="chg down">-1.22% <span class="flat">· 09-28–10-12</span></p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#1f9d55" stroke-width="2" stroke-linejoin="round" points="0.0,9.3 20.0,7.6 40.0,3.0 60.0,20.7 80.0,18.1 100.0,29.0"/></svg>
+      </div>
+      <div class="cell">
+        <p class="name">恒生指数</p>
+        <p class="val">24,211.35</p>
+        <p class="chg up">+1.00% <span class="flat">· 10-02–10-09</span></p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#d93838" stroke-width="2" stroke-linejoin="round" points="0.0,19.2 20.0,15.6 40.0,3.0 60.0,10.9 80.0,29.0 100.0,6.6"/></svg>
+      </div>
+      <div class="cell">
+        <p class="name">COMEX 黄金</p>
+        <p class="val">$4,189.4</p>
+        <p class="chg up">+0.78% <span class="flat">· 10-05–10-12</span></p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#d93838" stroke-width="2" stroke-linejoin="round" points="0.0,23.5 20.0,13.0 40.0,29.0 60.0,23.4 80.0,3.0 100.0,12.3"/></svg>
+      </div>
+      <div class="cell">
+        <p class="name">WTI 原油</p>
+        <p class="val">$92.95</p>
+        <p class="chg up">+3.94% <span class="flat">· 10-05–10-12</span></p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#d93838" stroke-width="2" stroke-linejoin="round" points="0.0,22.6 20.0,22.5 40.0,29.0 60.0,11.1 80.0,9.1 100.0,3.0"/></svg>
+      </div>
+      <div class="cell">
+        <p class="name">10 年期美债收益率</p>
+        <p class="val">5.24%</p>
+        <p class="chg down">-7bp <span class="flat">· 10-05–10-12</span></p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#1f9d55" stroke-width="2" stroke-linejoin="round" points="0.0,3.0 20.0,16.6 40.0,14.0 60.0,29.0 80.0,24.8 100.0,26.1"/></svg>
+      </div>
+      <div class="cell">
+        <p class="name">美元指数 DXY</p>
+        <p class="val">102.55</p>
+        <p class="chg up">+0.37% <span class="flat">· 10-05–10-12</span></p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#d93838" stroke-width="2" stroke-linejoin="round" points="0.0,16.7 20.0,29.0 40.0,14.2 60.0,17.8 80.0,15.3 100.0,3.0"/></svg>
+      </div>
+      <div class="cell">
+        <p class="name">USD/CNY</p>
+        <p class="val">6.6918</p>
+        <p class="chg down">-0.19% <span class="flat">· 10-05–10-13</span></p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#1f9d55" stroke-width="2" stroke-linejoin="round" points="0.0,3.0 20.0,3.0 40.0,3.0 60.0,3.0 80.0,7.9 100.0,29.0"/></svg>
+      </div>
+      <div class="cell">
+        <p class="name">COMEX 铜</p>
+        <p class="val">$6.741</p>
+        <p class="chg up">+2.36% <span class="flat">· 10-05–10-12</span></p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#d93838" stroke-width="2" stroke-linejoin="round" points="0.0,21.2 20.0,20.2 40.0,19.9 60.0,29.0 80.0,14.5 100.0,3.0"/></svg>
+      </div>
+    </div>
   </section>
 
   <section>
@@ -154,28 +275,31 @@
           <tr><th>指标</th><th>最新</th><th>变动</th><th>备注</th></tr>
         </thead>
         <tbody>
-          <tr><td>美国 10 年期国债收益率</td><td class="num">5.24%</td><td class="num flat">+0bp</td><td>10-12 盘中；FRED 10-08 收盘 5.22%</td></tr>
-          <tr><td>美国 2 年期国债收益率</td><td class="num">4.75%</td><td class="num flat">—</td><td>FRED，10-08 收盘</td></tr>
-          <tr><td>美元指数 DXY</td><td class="num">102.57</td><td class="num up">+0.35%</td><td>10-12 盘中，对比 10-09 收盘 102.21</td></tr>
-          <tr><td>WTI 原油</td><td class="num">$94.13</td><td class="num up">+2.48%</td><td>11 月合约，10-12 盘中</td></tr>
-          <tr><td>布伦特原油</td><td class="num">$106.99</td><td class="num up">+2.17%</td><td>10-12 盘中</td></tr>
-          <tr><td>COMEX 黄金</td><td class="num">$4,194.3</td><td class="num down">-0.52%</td><td>12 月合约，10-12 盘中</td></tr>
-          <tr><td>标普 500</td><td class="num">7,800.42</td><td class="num down">-0.14%</td><td>10-12 盘中</td></tr>
-          <tr><td>纳斯达克综指</td><td class="num">27,237.14</td><td class="num down">-0.47%</td><td>10-12 盘中</td></tr>
-          <tr><td>道琼斯工业指数</td><td class="num">51,823.69</td><td class="num up">+0.33%</td><td>10-12 盘中</td></tr>
-          <tr><td>VIX 波动率</td><td class="num">15.22</td><td class="num up">+2.6%</td><td>10-12 盘中</td></tr>
-          <tr><td>USD/CNY</td><td class="num">6.6821</td><td class="num down">-0.30%</td><td>10-12 盘中，对比 10-09 6.7021</td></tr>
-          <tr><td>USD/CNH 离岸</td><td class="num">6.6950</td><td class="num flat">—</td><td>10-13 02:37 北京时间</td></tr>
-          <tr><td>上证指数</td><td class="num">3,797.24</td><td class="num down">-0.43%</td><td>10-12 收盘</td></tr>
-          <tr><td>沪深 300</td><td class="num">4,287.98</td><td class="num down">-0.68%</td><td>10-12 收盘</td></tr>
-          <tr><td>恒生指数</td><td class="num">24,211.35</td><td class="num up">+1.79%</td><td>10-09 收盘（10-12 休市）</td></tr>
-          <tr><td>日经 225</td><td class="num">69,030.92</td><td class="num down">-0.02%</td><td>10-09 收盘</td></tr>
-          <tr><td>中国 10 年期国债收益率</td><td class="num">1.69%</td><td class="num flat">—</td><td>OECD 月度均值，2026 年 8 月</td></tr>
-          <tr><td>中国 8 月 CPI 同比</td><td class="num">+0.8%</td><td class="num up">+0.3pp</td><td>7 月为 +0.5%</td></tr>
-          <tr><td>中国 9 月官方制造业 PMI</td><td class="num">50.1</td><td class="num up">+0.3</td><td>8 月 49.8，重回扩张</td></tr>
-          <tr><td>美国 8 月 CPI 同比</td><td class="num">+3.40%</td><td class="num flat">持平</td><td>核心 +2.45%（BLS）</td></tr>
-          <tr><td>美国 9 月失业率</td><td class="num">4.2%</td><td class="num flat">持平</td><td>8 月亦为 4.2%</td></tr>
-          <tr><td>美国 9 月非农就业</td><td class="num">+2.9 万</td><td class="num down">放缓</td><td>8 月 +13.3 万（BLS）</td></tr>
+          <tr><td>美国 10 年期国债收益率</td><td class="num" data-label="最新">5.24%</td><td class="num down" data-label="变动">-7bp</td><td data-label="备注">美债收盘收益率；窗口 10-05–10-12</td></tr>
+          <tr><td>美元指数 DXY</td><td class="num" data-label="最新">102.55</td><td class="num up" data-label="变动">+0.37%</td><td data-label="备注">ICE 美元指数；窗口 10-05–10-12</td></tr>
+          <tr><td>WTI 原油</td><td class="num" data-label="最新">$92.95</td><td class="num up" data-label="变动">+3.94%</td><td data-label="备注">11 月合约；窗口 10-05–10-12</td></tr>
+          <tr><td>布伦特原油</td><td class="num" data-label="最新">$105.72</td><td class="num up" data-label="变动">+5.38%</td><td data-label="备注">窗口 10-05–10-12</td></tr>
+          <tr><td>COMEX 黄金</td><td class="num" data-label="最新">$4,189.4</td><td class="num up" data-label="变动">+0.78%</td><td data-label="备注">12 月合约；窗口 10-05–10-12</td></tr>
+          <tr><td>COMEX 白银</td><td class="num" data-label="最新">$60.44</td><td class="num down" data-label="变动">-0.70%</td><td data-label="备注">窗口 10-05–10-12</td></tr>
+          <tr><td>COMEX 铜</td><td class="num" data-label="最新">$6.741</td><td class="num up" data-label="变动">+2.36%</td><td data-label="备注">窗口 10-05–10-12</td></tr>
+          <tr><td>标普 500</td><td class="num" data-label="最新">7,807.24</td><td class="num up" data-label="变动">+0.43%</td><td data-label="备注">窗口 10-05–10-12</td></tr>
+          <tr><td>纳斯达克综指</td><td class="num" data-label="最新">27,245.90</td><td class="num down" data-label="变动">-0.84%</td><td data-label="备注">窗口 10-05–10-12</td></tr>
+          <tr><td>道琼斯工业指数</td><td class="num" data-label="最新">51,850.55</td><td class="num up" data-label="变动">+1.14%</td><td data-label="备注">窗口 10-05–10-12</td></tr>
+          <tr><td>VIX 波动率</td><td class="num" data-label="最新">15.21</td><td class="num down" data-label="变动">-2.00%</td><td data-label="备注">窗口 10-05–10-12</td></tr>
+          <tr><td>上证指数</td><td class="num" data-label="最新">3,797.24</td><td class="num down" data-label="变动">-0.69%</td><td data-label="备注">收盘；窗口 09-28–10-12</td></tr>
+          <tr><td>沪深 300</td><td class="num" data-label="最新">4,287.98</td><td class="num down" data-label="变动">-1.22%</td><td data-label="备注">收盘；窗口 09-28–10-12</td></tr>
+          <tr><td>恒生指数</td><td class="num" data-label="最新">24,211.35</td><td class="num up" data-label="变动">+1.00%</td><td data-label="备注">收盘；窗口 10-02–10-09</td></tr>
+          <tr><td>USD/CNY</td><td class="num" data-label="最新">6.6918</td><td class="num down" data-label="变动">-0.19%</td><td data-label="备注">窗口 10-05–10-13</td></tr>
+          <tr><td>中国 Shibor 隔夜</td><td class="num" data-label="最新">1.296%</td><td class="num down" data-label="变动">-6.6bp</td><td data-label="备注">10-12，对比 09-30；中国货币网</td></tr>
+          <tr><td>中国 Shibor 1 周</td><td class="num" data-label="最新">1.346%</td><td class="num down" data-label="变动">-2.5bp</td><td data-label="备注">10-12；中国货币网</td></tr>
+          <tr><td>中国 10 年期国债收益率</td><td class="num" data-label="最新">1.69%</td><td class="num flat" data-label="变动">—</td><td data-label="备注">OECD 月度均值，2026 年 8 月</td></tr>
+          <tr><td>中国 8 月 CPI 同比</td><td class="num" data-label="最新">+0.8%</td><td class="num up" data-label="变动">+0.3pp</td><td data-label="备注">7 月 +0.5%；统计局</td></tr>
+          <tr><td>中国 8 月 PPI 同比</td><td class="num" data-label="最新">+3.8%</td><td class="num up" data-label="变动">+0.3pp</td><td data-label="备注">7 月 +3.5%；统计局</td></tr>
+          <tr><td>中国 9 月官方制造业 PMI</td><td class="num" data-label="最新">50.1</td><td class="num up" data-label="变动">+0.3</td><td data-label="备注">8 月 49.8，重回扩张</td></tr>
+          <tr><td>中国二季度 GDP 同比</td><td class="num" data-label="最新">+4.7%</td><td class="num flat" data-label="变动">—</td><td data-label="备注">统计局，上半年累计</td></tr>
+          <tr><td>美国 8 月 CPI 同比</td><td class="num" data-label="最新">+3.40%</td><td class="num flat" data-label="变动">持平</td><td data-label="备注">核心 +2.45%；BLS</td></tr>
+          <tr><td>美国 9 月失业率</td><td class="num" data-label="最新">4.2%</td><td class="num flat" data-label="变动">持平</td><td data-label="备注">8 月亦为 4.2%；BLS</td></tr>
+          <tr><td>美国 9 月非农就业</td><td class="num" data-label="最新">+2.9 万</td><td class="num down" data-label="变动">放缓</td><td data-label="备注">8 月 +13.3 万；BLS</td></tr>
         </tbody>
       </table>
     </div>
@@ -186,36 +310,35 @@
     <h3>增长与就业</h3>
     <ul>
       <li>美国 9 月非农仅 +2.9 万，8 月 +13.3 万，就业增速明显放缓；失业率 4.2%，连续两个月持平。</li>
-      <li>中国 9 月官方制造业 PMI 50.1、非制造业 50.2，制造业重回扩张区间，8 月为 49.8。</li>
-      <li>日本日经 10-06 盘中高点 70,684 后回落约 2.3%，10-09 收 69,030.92。</li>
+      <li>中国 9 月官方制造业 PMI 50.1、非制造业 50.2，制造业重回扩张；二季度 GDP 同比 +4.7%。</li>
+      <li>今日（10-13）中国无新公布数据；下一次重要发布为 9 月 CPI/PPI。</li>
     </ul>
     <h3>通胀与政策</h3>
     <ul>
-      <li>美国 8 月 CPI 同比 3.40%、核心 2.45%，较 5 月的 4.25% 明显回落，但整体仍在 3% 上方。</li>
-      <li>联邦基金目标区间自 2026-09-17 起为 3.75–4.00%，有效利率 3.88%：9 月上调 25 个基点。政策仍偏紧。</li>
-      <li>中国 8 月 CPI 同比 0.8%（7 月 0.5%），价格压力偏弱，与偏低的 10 年期国债收益率互相印证。</li>
+      <li>美国 8 月 CPI 同比 3.40%、核心 2.45%，整体仍在 3% 上方；联邦基金目标区间自 2026-09-17 起为 3.75–4.00%，10-12 未变。</li>
+      <li>中国 8 月 CPI 同比 0.8%、PPI 同比 3.8%：消费端价格偏弱，工业端受大宗商品推升转正走高。</li>
+      <li>中国货币市场偏松：Shibor 隔夜 1.296%、1 周 1.346%，均低于 9 月底水平。</li>
     </ul>
     <h3>市场与资产含义</h3>
     <ul>
-      <li>美债：10 年期 5.24%、2 年期 4.75%，曲线正斜率 +0.44 个百分点。不倒挂，但绝对水平高，压制长久期资产估值。</li>
-      <li>黄金：9/17 高点 4,400 以来回落，今日 4,194.3。高实际利率与强美元是主要压制，判断依据见「今日判断」。</li>
-      <li>原油：WTI 94.13、布伦特 106.99，近一周连续走高；能源是当前通胀中最不顺的一环，限制放松空间。</li>
-      <li>外汇：美元指数 102.57，人民币在 6.68 附近小幅偏强，离岸 6.6950。</li>
-      <li>铜：6.758 美元/磅，较 10-09 上涨 1.7%，与原油同向，指向供给端而非需求端主导。</li>
+      <li>股：美股风格分化，道指近 6 日 +1.1%、纳指 -0.8%，高利率下资金偏向价值；A 股偏软（沪深 300 -1.2%），港股相对强（恒生 +1.0%）。</li>
+      <li>债：美债 10 年期 5.24%、2 年期 4.75%，曲线 +0.44 个百分点正斜率但绝对水平高；中国 10 年期国债收益率约 1.69%，中美利差仍大。</li>
+      <li>汇：美元指数 102.55 偏强，USD/CNY 6.6918 小幅走强。</li>
+      <li>商品：原油、铜同向走强（WTI +3.9%、铜 +2.4%），黄金 +0.8% 但未破区间上沿，白银 -0.7% 落后。</li>
     </ul>
   </section>
 
   <section>
     <h2>不确定之处</h2>
-    <p>10-12 美股与商品交易时段尚未结束（北京时间 10-13 02:36 截取），表中所有「盘中」数字收盘后会变。</p>
-    <p>官方现货口径与期货口径在 10 月初出现明显分歧：EIA 布伦特现货 10-06 为 125.44 美元，而期货 10-12 为 106.99 美元，相差约 18 美元；本窗口内无法判定哪一个失真，表中采用期货（可交易基准）。</p>
-    <p>中国 10 年期国债收益率只有 OECD 月度均值（2026 年 8 月 1.69%），没有当日值；中国 LPR 当日值本次未取到，不做推断。</p>
+    <p>中国 10 年期国债收益率只有 OECD 月度均值（2026 年 8 月 1.69%），没有当日值；本窗口内未能从公开接口取到当日中国国债收益率曲线。</p>
+    <p>各资产交易日不完全对齐：恒生指数最新为 10-09 收盘，A 股最新为 10-12 收盘，美股/商品为 10-12 收盘，USD/CNY 为 10-13 盘中，因此「近 6 个交易日」的起止日期各卡片不同（已逐条标注）。</p>
+    <p>官方现货口径与期货口径仍有分歧：EIA 布伦特现货 10-06 为 125.44 美元，而期货 10-12 收 105.72 美元，相差约 20 美元；表中采用期货（可交易基准）。</p>
     <p>美国 2025 年 10 月 CPI 因拨款中断缺失（BLS 标注），同比基期存在缺口；联邦基金利率的 9 月调整由 FRED 目标区间反推，未取到声明原文。</p>
   </section>
 
   <footer>
     <p>本文由宏观分析师「观潮」生成，区分事实与判断，不构成投资建议。</p>
-    <p>来源：Yahoo Finance（指数、期货、汇率，2026-10-12 盘中）、FRED（美债收益率、联邦基金利率、失业率）、BLS（CPI、非农就业）、OECD（中国长期利率月度）、东方财富数据接口（中国 CPI、PMI）、新浪财经（A 股收盘、离岸人民币）。更新方式：本地生成后 <code>git push</code>，GitHub Pages 自动部署。</p>
+    <p>来源：Yahoo Finance（指数、期货、汇率收盘）、新浪财经（A 股日线）、FRED（美债收益率、联邦基金利率、失业率）、BLS（CPI、非农）、OECD（中国长期利率月度）、中国货币网（Shibor）、东方财富数据接口（中国 CPI、PPI、PMI、GDP）。更新方式：本地生成后 <code>git push</code>，GitHub Pages 自动部署。</p>
   </footer>
 </main>
 </body>
