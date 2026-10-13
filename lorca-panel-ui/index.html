@@ -21,8 +21,6 @@
     --accent-strong: #245bdb;
     --accent-soft: #eef3ff;
     --accent-border: #c9d8ff;
-    --info: #3978b8;
-    --info-soft: #e8f1fb;
     --warning: #95611d;
     --warning-soft: #fbf1df;
     --warning-border: #e6d2ae;
@@ -50,22 +48,17 @@
 
   .wrap { max-width: 1000px; margin: 0 auto; }
 
-  /* ── 页头 ─────────────────────────────────────────────────────────── */
   .page-head h1 { margin: 0 0 4px; font-size: 22px; letter-spacing: -0.01em; }
   .page-sub { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
   .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
 
   .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
+    display: inline-flex; align-items: center; gap: 5px;
     padding: 3px 9px;
     border: 1px solid var(--border);
     border-radius: 999px;
     background: var(--surface);
-    font-size: 12px;
-    line-height: 1.5;
-    color: var(--muted);
+    font-size: 12px; line-height: 1.5; color: var(--muted);
   }
   .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--muted-2); }
   .badge.is-now::before { background: var(--success); }
@@ -73,13 +66,9 @@
   .badge.is-p2::before { background: var(--warning); }
   .badge.is-p3::before { background: var(--muted-2); }
 
-  /* ── 切屏 ─────────────────────────────────────────────────────────── */
   .switcher {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    padding: 4px;
-    margin-bottom: 20px;
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding: 4px; margin-bottom: 20px;
     border: 1px solid var(--border);
     border-radius: 11px;
     background: var(--surface);
@@ -88,13 +77,9 @@
   .switcher button {
     flex: 1 1 auto;
     padding: 8px 12px;
-    border: 0;
-    border-radius: 8px;
-    background: transparent;
-    color: var(--muted);
-    font: inherit;
-    font-size: 13px;
-    font-weight: 600;
+    border: 0; border-radius: 8px;
+    background: transparent; color: var(--muted);
+    font: inherit; font-size: 13px; font-weight: 600;
     cursor: pointer;
     transition: background-color 140ms var(--ease), color 140ms var(--ease);
   }
@@ -105,46 +90,36 @@
 
   .stage { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
 
-  /* ── 手机框 ───────────────────────────────────────────────────────── */
   .phone {
     flex: 0 0 auto;
-    width: 390px;
-    height: 780px;
+    width: 390px; height: 780px;
     border: 1px solid var(--border-strong);
     border-radius: 42px;
     background: var(--surface);
     box-shadow: var(--shadow-md);
-    overflow: hidden;
-    position: relative;
+    overflow: hidden; position: relative;
   }
   .phone-inner { position: absolute; inset: 0; display: flex; flex-direction: column; }
   .screen { display: none; flex: 1; min-height: 0; flex-direction: column; background: var(--bg); }
   .screen.is-active { display: flex; }
 
-  /* 状态栏 + 顶部（沿用 App 内的 .bot-* / .lorca-* 口径：白底、17px 标题、下方 1px 分隔线） */
   .statusbar {
     flex: 0 0 auto;
-    display: flex;
-    justify-content: space-between;
+    display: flex; justify-content: space-between;
     padding: 12px 22px 4px;
     background: var(--surface);
-    color: var(--text);
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 12px; font-weight: 600;
   }
   .statusbar span:last-child { color: var(--muted); font-weight: 500; }
 
   .hdr {
     flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex; align-items: center; gap: 10px;
     padding: 8px 14px 10px;
     background: var(--surface);
     border-bottom: 1px solid var(--border);
   }
   .hdr-title { font-size: 17px; font-weight: 600; }
-  .hdr-sub { font-size: 12px; color: var(--muted); }
   .hdr-spacer { flex: 1; }
 
   .pill {
@@ -153,103 +128,110 @@
     border-radius: 999px;
     background: var(--bg-soft);
     color: var(--muted);
-    font-size: 12px;
-    line-height: 1.4;
+    font-size: 12px; line-height: 1.4;
   }
   .pill.is-ok { border-color: var(--success-border); background: var(--success-soft); color: var(--success); }
   .pill.is-warn { border-color: var(--warning-border); background: var(--warning-soft); color: var(--warning); }
 
   .icon-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--surface);
-    color: var(--text);
+    display: flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px;
+    border: 1px solid var(--border); border-radius: 8px;
+    background: var(--surface); color: var(--text);
     cursor: pointer;
   }
   .icon-btn:hover { background: var(--bg-soft); }
 
   .tabs {
     flex: 0 0 auto;
-    display: flex;
-    gap: 4px;
+    display: flex; gap: 4px;
     padding: 8px 14px;
     background: var(--surface);
     border-bottom: 1px solid var(--border);
   }
   .tabs button {
     padding: 5px 12px;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    background: transparent;
-    color: var(--muted);
-    font: inherit;
-    font-size: 13px;
-    font-weight: 600;
+    border: 1px solid transparent; border-radius: 999px;
+    background: transparent; color: var(--muted);
+    font: inherit; font-size: 13px; font-weight: 600;
     cursor: pointer;
   }
   .tabs button[aria-selected="true"] { border-color: var(--accent-border); background: var(--accent-soft); color: var(--accent-strong); }
 
   .body { flex: 1; min-height: 0; overflow-y: auto; }
 
+  /* ── Bot 头像 ─────────────────────────────────────────────────────── */
+  /* lorca 的 Bot 带 symbol_name（SF Symbol 名）+ accent（8 色）+ 可选 avatar 图片。
+     有图用图；没图就画 accent 渐变底 + symbol，跟 lorca 两个原生客户端同一口径。 */
+  .bav {
+    position: relative;
+    flex: 0 0 auto;
+    display: flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px;
+    border-radius: 12px;
+    color: #fff;
+    overflow: hidden;
+  }
+  .bav svg { width: 20px; height: 20px; }
+  .bav img { width: 100%; height: 100%; object-fit: cover; }
+  .bav.is-sm { width: 30px; height: 30px; border-radius: 10px; }
+  .bav.is-sm svg { width: 16px; height: 16px; }
+  .bav.is-xs { width: 22px; height: 22px; border-radius: 7px; }
+  .bav.is-xs svg { width: 12px; height: 12px; }
+  .bav.is-contact {
+    background: var(--bg-soft); color: var(--muted);
+    font-size: 14px; font-weight: 600;
+  }
+  .bav.is-contact.is-sm { font-size: 12px; }
+
+  /* accent 八色，取 lorca 的 accent 名（desktop/theme.go 的 accentColor）*/
+  .a-indigo { background: linear-gradient(145deg, #7474F2, #4A4ACB); }
+  .a-blue   { background: linear-gradient(145deg, #5C8DFF, #2458D8); }
+  .a-teal   { background: linear-gradient(145deg, #2BC0AE, #0E8C7E); }
+  .a-green  { background: linear-gradient(145deg, #4CC182, #22855A); }
+  .a-orange { background: linear-gradient(145deg, #F7A45C, #D97420); }
+  .a-pink   { background: linear-gradient(145deg, #F5789F, #CC3F6D); }
+  .a-purple { background: linear-gradient(145deg, #A57BF0, #7444CE); }
+  .a-red    { background: linear-gradient(145deg, #EE6C80, #C23A53); }
+
+  /* 正在工作：job.started 的呼吸绿点，压在头像右下角 */
+  .bav-dot {
+    position: absolute; right: -2px; bottom: -2px;
+    width: 11px; height: 11px;
+    border: 2px solid var(--surface);
+    border-radius: 50%;
+    background: #2FA36B;
+    animation: breathe 1.6s ease-in-out infinite;
+  }
+  .bav.is-sm .bav-dot { width: 9px; height: 9px; }
+  @keyframes breathe { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
   /* ── 会话列表 ─────────────────────────────────────────────────────── */
   .rows { margin: 0; padding: 0; list-style: none; background: var(--surface); }
   .rows > li + li .row { border-top: 1px solid var(--border); }
   .row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    padding: 12px 14px;
-    border: 0;
-    background: transparent;
-    color: var(--text);
-    text-align: left;
-    cursor: pointer;
+    display: flex; align-items: center; gap: 12px;
+    width: 100%; padding: 12px 14px;
+    border: 0; background: transparent; color: var(--text);
+    text-align: left; cursor: pointer;
   }
   .row:hover { background: var(--bg-soft); }
-  .avatar {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 12px;
-    background: var(--accent-soft);
-    color: var(--accent-strong);
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .avatar.is-gray { background: var(--bg-soft); color: var(--muted); }
   .row-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
   .row-top { display: flex; align-items: baseline; gap: 8px; }
   .row-name { flex: 1; min-width: 0; font-size: 15px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .row-time { flex: 0 0 auto; font-size: 11px; color: var(--muted); }
   .row-preview { font-size: 13px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .unread {
-    flex: 0 0 auto;
-    min-width: 20px;
-    padding: 2px 6px;
-    border-radius: 999px;
-    background: var(--accent);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 600;
-    text-align: center;
+    flex: 0 0 auto; min-width: 20px; padding: 2px 6px;
+    border-radius: 999px; background: var(--accent); color: #fff;
+    font-size: 11px; font-weight: 600; text-align: center;
   }
   .foot {
     flex: 0 0 auto;
     padding: 8px 14px 10px;
     border-top: 1px solid var(--border);
     background: var(--surface);
-    color: var(--muted);
-    font-size: 11px;
-    text-align: center;
+    color: var(--muted); font-size: 11px; text-align: center;
   }
 
   /* ── 会话详情 ─────────────────────────────────────────────────────── */
@@ -259,28 +241,27 @@
   .bubble-author { font-size: 11px; color: var(--muted); }
   .bubble {
     padding: 9px 12px;
-    border: 1px solid var(--border);
-    border-radius: 14px;
+    border: 1px solid var(--border); border-radius: 14px;
     background: var(--surface);
-    font-size: 14px;
-    line-height: 1.55;
+    font-size: 14px; line-height: 1.55;
     overflow-wrap: anywhere;
   }
   .bubble.is-mine { border-color: var(--accent-border); background: var(--accent-soft); }
   .bubble-time { font-size: 10px; color: var(--muted); }
 
+  /* 群聊：头像贴气泡底边，同一 bot 的连续气泡只在第一条旁边挂头像 */
+  .bubble-row { display: flex; align-items: flex-end; gap: 7px; align-self: flex-start; max-width: 92%; }
+  .bubble-row .bubble-wrap { max-width: 100%; }
+  .bubble-row.is-follow { padding-left: 29px; }
+  .bubble-spacer { flex: 0 0 22px; width: 22px; }
+
   .tool {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    align-self: flex-start;
-    max-width: 84%;
+    display: flex; align-items: center; gap: 7px;
+    align-self: flex-start; max-width: 84%;
     padding: 5px 10px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
+    border: 1px solid var(--border); border-radius: 999px;
     background: var(--surface);
-    font-size: 12px;
-    color: var(--muted);
+    font-size: 12px; color: var(--muted);
   }
   .tool-dot { flex: 0 0 auto; width: 6px; height: 6px; border-radius: 50%; background: var(--muted-2); }
   .tool-dot.is-running { background: var(--accent); }
@@ -288,16 +269,46 @@
   .tool-name { color: var(--text-soft); font-weight: 600; }
   .tool-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+  /* ── 思考过程：压成一行，超长横向滚动（marquee），视觉退到最不显眼的一档 ── */
+  .think {
+    display: flex; align-items: center; gap: 7px;
+    align-self: stretch;
+    padding: 1px 0;
+    color: var(--muted-2);
+    font-size: 11.5px; line-height: 1.6;
+  }
+  .think-ico { flex: 0 0 auto; opacity: .75; display: flex; }
+  .think-view {
+    flex: 1; min-width: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 16px), transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 16px), transparent 100%);
+  }
+  .think-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 22s linear infinite;
+  }
+  .think-track > span { padding-right: 72px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  /* 短到放得下时不动：只留一行，不加动画 */
+  .think.is-static .think-track { animation: none; }
+  .think.is-static .think-view { -webkit-mask-image: none; mask-image: none; }
+  .think-toggle {
+    flex: 0 0 auto;
+    padding: 0 2px;
+    border: 0; background: transparent;
+    color: var(--muted-2); font: inherit; font-size: 11.5px;
+    cursor: pointer;
+  }
+  .think-toggle:hover { color: var(--muted); }
+
   .working {
-    display: flex;
-    align-items: center;
-    gap: 7px;
+    display: flex; align-items: center; gap: 7px;
     align-self: flex-start;
     padding: 6px 11px;
-    border: 1px dashed var(--accent-border);
-    border-radius: 999px;
-    background: var(--accent-soft);
-    color: var(--accent-strong);
+    border: 1px dashed var(--accent-border); border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent-strong);
     font-size: 12px;
   }
   .dots { display: inline-flex; gap: 3px; }
@@ -308,60 +319,38 @@
 
   .composer {
     flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: flex; align-items: center; gap: 8px;
     padding: 10px 12px calc(12px + env(safe-area-inset-bottom));
     border-top: 1px solid var(--border);
     background: var(--surface);
   }
   .input {
-    flex: 1;
-    min-width: 0;
+    flex: 1; min-width: 0;
     padding: 9px 12px;
-    border: 1px solid var(--border-strong);
-    border-radius: 999px;
-    background: var(--bg-soft);
-    color: var(--muted);
+    border: 1px solid var(--border-strong); border-radius: 999px;
+    background: var(--bg-soft); color: var(--muted);
     font-size: 14px;
   }
   .send {
     flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border: 0;
-    border-radius: 50%;
-    background: var(--accent);
-    color: #fff;
-    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px;
+    border: 0; border-radius: 50%;
+    background: var(--accent); color: #fff; cursor: pointer;
   }
   .stop {
     flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    display: flex; align-items: center; gap: 5px;
     padding: 6px 11px;
-    border: 1px solid var(--border-strong);
-    border-radius: 999px;
-    background: var(--surface);
-    color: var(--danger);
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
+    border: 1px solid var(--border-strong); border-radius: 999px;
+    background: var(--surface); color: var(--danger);
+    font-size: 12px; font-weight: 600; cursor: pointer;
   }
 
   /* ── 例程 ─────────────────────────────────────────────────────────── */
   .sect { padding: 14px; }
   .sect-label { margin: 0 0 8px; color: var(--muted); font-size: 12px; font-weight: 600; }
-  .card {
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    background: var(--surface);
-    overflow: hidden;
-  }
+  .card { border: 1px solid var(--border); border-radius: 9px; background: var(--surface); overflow: hidden; }
   .card + .card { margin-top: 10px; }
   .routine { display: flex; align-items: center; gap: 12px; padding: 12px 14px; }
   .routine + .routine { border-top: 1px solid var(--border); }
@@ -370,55 +359,34 @@
   .routine-meta { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); }
   .dot { flex: 0 0 auto; width: 6px; height: 6px; border-radius: 50%; background: var(--muted-2); }
   .dot.is-on { background: var(--success); }
-  .dot.is-off { background: var(--muted-2); }
   .routine-actions { display: flex; gap: 6px; }
   .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
+    display: inline-flex; align-items: center; gap: 5px;
     padding: 6px 11px;
-    border: 1px solid var(--border-strong);
-    border-radius: 8px;
-    background: var(--surface);
-    color: var(--text);
-    font: inherit;
-    font-size: 12px;
-    font-weight: 600;
+    border: 1px solid var(--border-strong); border-radius: 8px;
+    background: var(--surface); color: var(--text);
+    font: inherit; font-size: 12px; font-weight: 600;
     cursor: pointer;
   }
   .btn:hover { background: var(--bg-soft); }
   .btn.is-primary { border-color: var(--accent-border); background: var(--accent-soft); color: var(--accent-strong); }
   .btn.is-danger { border-color: var(--danger-soft); color: var(--danger); }
   .note {
-    display: flex;
-    gap: 8px;
-    margin-top: 10px;
-    padding: 10px 12px;
-    border: 1px solid var(--warning-border);
-    border-radius: 9px;
-    background: var(--warning-soft);
-    color: var(--warning);
-    font-size: 12px;
-    line-height: 1.55;
+    display: flex; gap: 8px;
+    margin-top: 10px; padding: 10px 12px;
+    border: 1px solid var(--warning-border); border-radius: 9px;
+    background: var(--warning-soft); color: var(--warning);
+    font-size: 12px; line-height: 1.55;
   }
+  .note svg { flex: 0 0 auto; margin-top: 2px; }
 
   /* ── 权限卡 ───────────────────────────────────────────────────────── */
-  .perm {
-    align-self: stretch;
-    padding: 12px 13px;
-    border: 1px solid var(--warning-border);
-    border-radius: 14px;
-    background: var(--warning-soft);
-  }
+  .perm { align-self: stretch; padding: 12px 13px; border: 1px solid var(--warning-border); border-radius: 14px; background: var(--warning-soft); }
   .perm-head { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; color: var(--warning); font-size: 12px; font-weight: 600; }
   .perm-body { margin: 0 0 4px; color: var(--text-soft); font-size: 13px; line-height: 1.6; }
   .perm-cmd {
-    display: block;
-    margin: 6px 0 10px;
-    padding: 8px 10px;
-    border-radius: 8px;
-    background: rgba(31, 35, 41, 0.06);
-    color: var(--text);
+    display: block; margin: 6px 0 10px; padding: 8px 10px;
+    border-radius: 8px; background: rgba(31, 35, 41, 0.06); color: var(--text);
     font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
     overflow-wrap: anywhere;
   }
@@ -430,12 +398,14 @@
   /* ── 右侧说明 ─────────────────────────────────────────────────────── */
   .notes { flex: 1 1 320px; min-width: 300px; max-width: 420px; }
   .notes h2 { margin: 0 0 10px; font-size: 15px; }
+  .notes h3 { margin: 20px 0 8px; font-size: 13px; color: var(--muted); }
   .notes table { width: 100%; border-collapse: collapse; font-size: 13px; }
   .notes th, .notes td { padding: 8px 6px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
   .notes th { color: var(--muted); font-weight: 600; font-size: 12px; }
   .notes td:last-child { color: var(--muted); white-space: nowrap; }
-  .notes ul { margin: 16px 0 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
+  .notes ul { margin: 12px 0 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
   .notes li { margin-bottom: 6px; }
+  .notes code { padding: 1px 4px; border-radius: 4px; background: var(--bg-soft); font-size: 12px; }
 
   @media (max-width: 780px) {
     body { padding: 20px 12px 48px; }
@@ -460,6 +430,7 @@
     <button type="button" role="tab" data-screen="list" aria-selected="true">会话列表 · 已有</button>
     <button type="button" role="tab" data-screen="states" aria-selected="false">未连接态 · 已有</button>
     <button type="button" role="tab" data-screen="chat" aria-selected="false">会话详情 · P2</button>
+    <button type="button" role="tab" data-screen="group" aria-selected="false">群聊与头像 · P2</button>
     <button type="button" role="tab" data-screen="routines" aria-selected="false">例程 · P1</button>
     <button type="button" role="tab" data-screen="perm" aria-selected="false" class="is-out" disabled>权限卡 · P3 不在本期</button>
   </div>
@@ -486,37 +457,55 @@
           <div class="body">
             <ul class="rows">
               <li><button class="row" type="button">
-                <span class="avatar">研</span>
+                <span class="bav a-teal">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l1.7 4.6 4.6 1.7-4.6 1.7L12 15.2l-1.7-4.6L5.7 8.9l4.6-1.7z"/><path d="M18.6 14.4l.8 2.1 2.1.8-2.1.8-.8 2.1-.8-2.1-2.1-.8 2.1-.8z" opacity=".8"/></svg>
+                  <span class="bav-dot"></span>
+                </span>
                 <span class="row-main">
                   <span class="row-top"><span class="row-name">研发工程师</span><span class="row-time">09:38</span></span>
-                  <span class="row-preview">contract 测试已补齐，等一期范围拍板</span>
+                  <span class="row-preview">正在工作 · contract 测试已补齐，等一期范围拍板</span>
                 </span>
                 <span class="unread">2</span>
               </button></li>
               <li><button class="row" type="button">
-                <span class="avatar is-gray">G</span>
+                <span class="bav a-indigo">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="7" cy="15" r="4"/><circle cx="17" cy="15" r="4"/><path d="M7 11V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4"/></svg>
+                </span>
                 <span class="row-main">
                   <span class="row-top"><span class="row-name">GitHub 调研</span><span class="row-time">09:31</span></span>
                   <span class="row-preview">协议面约 150 个方法，面板只能是子集</span>
                 </span>
               </button></li>
               <li><button class="row" type="button">
-                <span class="avatar is-gray">产</span>
+                <span class="bav a-orange">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 17l5-6 4 3 7-8"/><path d="M15 6h5v5"/></svg>
+                </span>
                 <span class="row-main">
                   <span class="row-top"><span class="row-name">avatar 开发群</span><span class="row-time">昨天</span></span>
                   <span class="row-preview">你：先出个 UI 稿，简洁美观一点</span>
                 </span>
               </button></li>
               <li><button class="row" type="button">
-                <span class="avatar is-gray">产</span>
+                <span class="bav a-blue">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M8 9l2.5 2L8 13"/><path d="M12.5 13h4"/></svg>
+                </span>
                 <span class="row-main">
                   <span class="row-top"><span class="row-name">产品经理</span><span class="row-time">昨天</span></span>
                   <span class="row-preview">需要你确认一期范围才能动接口</span>
                 </span>
               </button></li>
+              <li><button class="row" type="button">
+                <span class="bav a-pink">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 20a8 8 0 1 1 8-8c0 2.2-1.6 3-2.6 3H15a2 2 0 0 0-1.4 3.4c.4.5.2 1.6-1.6 1.6z"/><circle cx="8.5" cy="11" r="1"/><circle cx="12" cy="8.5" r="1"/><circle cx="15.5" cy="11" r="1"/></svg>
+                </span>
+                <span class="row-main">
+                  <span class="row-top"><span class="row-name">画报队友</span><span class="row-time">10-11</span></span>
+                  <span class="row-preview">周报画好了，图在附件里</span>
+                </span>
+              </button></li>
             </ul>
           </div>
-          <div class="foot">4 个会话 · 只读，这一版不开放写操作</div>
+          <div class="foot">5 个会话 · 只读，这一版不开放写操作</div>
         </section>
 
         <!-- ── 1b. 未连接态（现有 5 个连接态的呈现，第一眼就会看到）────── -->
@@ -569,16 +558,17 @@
           <div class="foot">状态文字与 App 内一致：已连接 / 连接中 / 未安装 / 未运行 / 异常</div>
         </section>
 
-        <!-- ── 2. 会话详情（P2：加输入框 / 停止）─────────────────── -->
+        <!-- ── 2. 会话详情（P2：加输入框 / 停止 / 头像 / 一行思考）──────── -->
         <section class="screen" data-screen="chat">
           <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
           <div class="hdr">
             <button class="icon-btn" type="button" aria-label="返回">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
-            <span>
-              <span class="hdr-title">研发工程师</span>
+            <span class="bav a-teal is-sm">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l1.7 4.6 4.6 1.7-4.6 1.7L12 15.2l-1.7-4.6L5.7 8.9l4.6-1.7z"/><path d="M18.6 14.4l.8 2.1 2.1.8-2.1.8-.8 2.1-.8-2.1-2.1-.8 2.1-.8z" opacity=".8"/></svg>
             </span>
+            <span class="hdr-title">研发工程师</span>
             <span class="hdr-spacer"></span>
             <button class="stop" type="button">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
@@ -592,13 +582,38 @@
                 <div class="bubble">一期只做看状态 + 启停例程，先把接口写出来</div>
                 <span class="bubble-time">09:36</span>
               </div>
+
               <div class="tool"><span class="tool-dot"></span><span class="tool-name">read</span><span class="tool-text">services/desktop-agent/src/lorca/client.ts</span></div>
               <div class="tool"><span class="tool-dot is-running"></span><span class="tool-name">bash</span><span class="tool-text">npm run test:agent-service</span></div>
+
+              <!-- 思考：一行，超长横向滚动，不占版面 -->
+              <div class="think" title="思考过程（一行，超出横向滚动）">
+                <span class="think-ico">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+                </span>
+                <span class="think-view">
+                  <span class="think-track">
+                    <span>思考中 · 先看 client.ts 有没有转发 job.thinking，没转发就得先在桥接层加一条事件；再确认 routines.update 的字段名，lorca 日更，参数可能变；然后按白名单 fail-closed 收口，白名单外一律不渲染。</span>
+                    <span>思考中 · 先看 client.ts 有没有转发 job.thinking，没转发就得先在桥接层加一条事件；再确认 routines.update 的字段名，lorca 日更，参数可能变；然后按白名单 fail-closed 收口，白名单外一律不渲染。</span>
+                  </span>
+                </span>
+                <button class="think-toggle" type="button" aria-label="展开思考">展开</button>
+              </div>
+
               <div class="working">研发工程师 正在工作<span class="dots"><i></i><i></i><i></i></span></div>
+
               <div class="bubble-wrap">
                 <span class="bubble-author">研发工程师</span>
                 <div class="bubble">桥接层加 <code>routines.update</code> 就能启停；<code>routines.run</code> 会在本机真起一个 turn，所以单独留一期。</div>
                 <span class="bubble-time">09:38</span>
+              </div>
+
+              <!-- 短思考：放得下就不动 -->
+              <div class="think is-static">
+                <span class="think-ico">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+                </span>
+                <span class="think-view"><span class="think-track"><span>思考中 · 核对验收标准</span></span></span>
               </div>
             </div>
           </div>
@@ -610,7 +625,97 @@
           </div>
         </section>
 
-        <!-- ── 3. 例程（P1）────────────────────────────────────────── -->
+        <!-- ── 3. 群聊与头像（P2）───────────────────────────────────── -->
+        <section class="screen" data-screen="group">
+          <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
+          <div class="hdr">
+            <button class="icon-btn" type="button" aria-label="返回">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <span class="hdr-title">avatar 开发群</span>
+            <span class="hdr-spacer"></span>
+            <span class="pill">4 个队友</span>
+          </div>
+          <div class="body">
+            <div class="thread">
+              <div class="bubble-row">
+                <span class="bav a-orange is-xs is-contact" style="background:var(--bg-soft);color:var(--muted)">你</span>
+                <span class="bubble-wrap is-mine">
+                  <div class="bubble is-mine">先出个 UI 稿，简洁美观一点</div>
+                  <span class="bubble-time">09:40</span>
+                </span>
+              </div>
+
+              <!-- 群聊：头像贴气泡底边；同一 bot 的连续气泡只在第一条挂头像 -->
+              <div class="bubble-row">
+                <span class="bav a-blue is-xs">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M8 9l2.5 2L8 13"/><path d="M12.5 13h4"/></svg>
+                </span>
+                <span class="bubble-wrap">
+                  <span class="bubble-author">产品经理</span>
+                  <div class="bubble">一期范围我按 P1 收口，验收标准写白名单 fail-closed。</div>
+                </span>
+              </div>
+              <div class="bubble-row is-follow">
+                <span class="bubble-spacer"></span>
+                <span class="bubble-wrap">
+                  <div class="bubble">排期：P1 4–5 人日；P2 等 P1 上线复核协议再估。</div>
+                  <span class="bubble-time">09:41</span>
+                </span>
+              </div>
+
+              <div class="bubble-row">
+                <span class="bav a-teal is-xs">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l1.7 4.6 4.6 1.7-4.6 1.7L12 15.2l-1.7-4.6L5.7 8.9l4.6-1.7z"/><path d="M18.6 14.4l.8 2.1 2.1.8-2.1.8-.8 2.1-.8-2.1-2.1-.8 2.1-.8z" opacity=".8"/></svg>
+                </span>
+                <span class="bubble-wrap">
+                  <span class="bubble-author">研发工程师</span>
+                  <div class="bubble">头像字段是 <code>symbol_name</code> + <code>accent</code>，另有可选 <code>avatar</code> 图片；有图用图，没图画渐变底。</div>
+                </span>
+              </div>
+
+              <div class="bubble-row">
+                <span class="bav a-indigo is-xs">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><circle cx="7" cy="15" r="4"/><circle cx="17" cy="15" r="4"/><path d="M7 11V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4"/></svg>
+                </span>
+                <span class="bubble-wrap">
+                  <span class="bubble-author">GitHub 调研</span>
+                  <div class="bubble">提醒：<code>accent</code> 一共 8 个值，色板在 <code>desktop/theme.go</code>，缺一个会回落到 indigo。</div>
+                </span>
+              </div>
+
+              <div class="bubble-row">
+                <span class="bav is-xs is-contact">Z</span>
+                <span class="bubble-wrap">
+                  <span class="bubble-author">Telegram · Adam</span>
+                  <div class="bubble">频道里进来的人用首字母灰底，跟 bot 的头像区分开。</div>
+                  <span class="bubble-time">09:43</span>
+                </span>
+              </div>
+
+              <div class="think">
+                <span class="think-ico">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+                </span>
+                <span class="think-view">
+                  <span class="think-track">
+                    <span>研发工程师 思考中 · 核对 8 个 accent 与 SF Symbol 的对应，确认空 symbol 时的兜底是首字而不是空格，再检查群聊里连续气泡的头像只在第一条出现。</span>
+                    <span>研发工程师 思考中 · 核对 8 个 accent 与 SF Symbol 的对应，确认空 symbol 时的兜底是首字而不是空格，再检查群聊里连续气泡的头像只在第一条出现。</span>
+                  </span>
+                </span>
+                <button class="think-toggle" type="button" aria-label="展开思考">展开</button>
+              </div>
+            </div>
+          </div>
+          <div class="composer">
+            <span class="input">发消息给 avatar 开发群…</span>
+            <button class="send" type="button" aria-label="发送">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- ── 4. 例程（P1）────────────────────────────────────────── -->
         <section class="screen" data-screen="routines">
           <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
           <div class="hdr">
@@ -627,10 +732,12 @@
               <p class="sect-label">产品经理 · 3 个例程</p>
               <div class="card">
                 <div class="routine">
-                  <span class="dot is-on"></span>
+                  <span class="bav a-blue is-sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M8 9l2.5 2L8 13"/><path d="M12.5 13h4"/></svg>
+                  </span>
                   <span class="routine-main">
                     <span class="routine-name">晨间简报</span>
-                    <span class="routine-meta">每工作日 08:30 · 下次 10-14 08:30</span>
+                    <span class="routine-meta"><span class="dot is-on"></span>每工作日 08:30 · 下次 10-14 08:30</span>
                   </span>
                   <span class="routine-actions">
                     <button class="btn" type="button">运行</button>
@@ -638,10 +745,12 @@
                   </span>
                 </div>
                 <div class="routine">
-                  <span class="dot is-on"></span>
+                  <span class="bav a-blue is-sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M8 9l2.5 2L8 13"/><path d="M12.5 13h4"/></svg>
+                  </span>
                   <span class="routine-main">
                     <span class="routine-name">每周路线图复盘</span>
-                    <span class="routine-meta">每周一 10:00 · 上次 10-13 10:00</span>
+                    <span class="routine-meta"><span class="dot is-on"></span>每周一 10:00 · 上次 10-13 10:00</span>
                   </span>
                   <span class="routine-actions">
                     <button class="btn" type="button">运行</button>
@@ -649,10 +758,12 @@
                   </span>
                 </div>
                 <div class="routine">
-                  <span class="dot is-off"></span>
+                  <span class="bav a-blue is-sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M8 9l2.5 2L8 13"/><path d="M12.5 13h4"/></svg>
+                  </span>
                   <span class="routine-main">
                     <span class="routine-name">竞品动态巡检</span>
-                    <span class="routine-meta">已暂停 · 每小时</span>
+                    <span class="routine-meta"><span class="dot"></span>已暂停 · 每小时</span>
                   </span>
                   <span class="routine-actions">
                     <button class="btn is-primary" type="button">启用</button>
@@ -668,13 +779,16 @@
           <div class="foot">启停走 routines.update（lorca 没有 pause / resume 方法）</div>
         </section>
 
-        <!-- ── 4. 权限卡（P3）───────────────────────────────────────── -->
+        <!-- ── 5. 权限卡（P3）───────────────────────────────────────── -->
         <section class="screen" data-screen="perm">
           <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
           <div class="hdr">
             <button class="icon-btn" type="button" aria-label="返回">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
+            <span class="bav a-teal is-sm">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l1.7 4.6 4.6 1.7-4.6 1.7L12 15.2l-1.7-4.6L5.7 8.9l4.6-1.7z"/><path d="M18.6 14.4l.8 2.1 2.1.8-2.1.8-.8 2.1-.8-2.1-2.1-.8 2.1-.8z" opacity=".8"/></svg>
+            </span>
             <span class="hdr-title">研发工程师</span>
             <span class="hdr-spacer"></span>
             <span class="pill is-warn">等待授权</span>
@@ -724,16 +838,32 @@
         <tbody>
           <tr><td>已有</td><td>会话列表、气泡、工具行、实时增量（只读）</td><td>—</td></tr>
           <tr><td>P1</td><td>例程列表进 roster、启用 / 暂停 / 运行、面板交互</td><td>4–5d</td></tr>
-          <tr><td>P2</td><td>输入框 + 发送（乐观行对齐 message_id）、停止 turn</td><td>+4–5d</td></tr>
+          <tr><td>P2</td><td>输入框 + 发送（乐观行对齐 message_id）、停止 turn、头像、思考一行</td><td>+4–5d</td></tr>
           <tr><td>P3</td><td>权限卡呈现与应答 permission.answer、挂起态</td><td>+3–4d</td></tr>
         </tbody>
       </table>
+
+      <h3>头像（本次新增）</h3>
+      <ul>
+        <li>lorca 的 Bot 带 <code>symbol_name</code>（SF Symbol 名）、<code>accent</code>（8 色）、可选 <code>avatar</code> 图片（来源：<code>crates/cli/src/model.rs</code> Bot 结构）。</li>
+        <li>规则：有图用图 → 没图用 accent 渐变底 + symbol → 都没用就回退首字方块（现有实现）。</li>
+        <li>8 个 accent 名与回退色（indigo）见 <code>desktop/theme.go</code> 的 <code>accentColor</code>；<code>symbol_name</code> 是 SF Symbol 字符串，Web 端要备一张映射表，认不出就回退首字。</li>
+        <li>频道里进来的外部人（<code>author.kind = contact</code>）用首字母灰底，与 bot 的头像区分开。</li>
+        <li>群聊里同一 bot 的连续气泡只在第一条挂头像，后续气泡缩进对齐 —— 跟 macOS 客户端一致。</li>
+      </ul>
+
+      <h3>思考过程（本次新增）</h3>
+      <ul>
+        <li>呈现：压成一行、字号 11.5、<code>--muted-2</code>、无边框无底色，超长横向 marquee 滚动，放得下就不动；右侧「展开」看全文。</li>
+        <li><b>事实要先对齐</b>：lorca 给 app 的 payload 里<b>没有思考正文</b> —— <code>Message::for_app</code> 只处理 Tool / Permission，落库的只有 <code>Text</code> / <code>Tool</code> / <code>Notice</code> / <code>Permission</code>，<code>text_parts</code> 也只取 Text 段。app 面拿到的思考只有一个状态：<code>job.thinking</code> 事件（macOS 读成「Thinking…」）。</li>
+        <li>所以这一行现在只能显示「思考中 · 最近一条工具/命令」，或者用 <code>message.updated</code> 的流式正文兜底（那是回复正文，不是思考）。<b>要真思考文本，得先向 lorca 提协议需求</b>，不是 avatar 这边能自己解决的。</li>
+        <li>依赖：<code>services/desktop-agent/src/lorca/client.ts</code> 现在只转发 <code>job.started</code> / <code>job.finished</code>，要这一行得先加 <code>job.thinking</code>（+ 可选 <code>job.retry</code>）转发，并给 <code>LorcaStreamEvent</code> 加成员。</li>
+      </ul>
 
       <ul>
         <li>沿用现有 <code>.lorca-*</code> 版面与 tokens.css，不新造一套视觉。</li>
         <li>本稿不含：attention / handoffs / reviews 展示、bot 配置编辑、账号与 relay 管理、远端访问。</li>
         <li>权限卡（P3）保留为版面参考，但不在本期范围，切屏入口已置灰。</li>
-        <li>「运行」与「发送」有本机副作用，是 P1 与 P2 的分界线，等范围拍板。</li>
       </ul>
     </aside>
   </div>
