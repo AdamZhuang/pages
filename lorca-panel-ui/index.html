@@ -396,6 +396,54 @@
   .perm.is-pending .perm-head { color: var(--muted); }
   .perm-hint { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
 
+  .grip { flex: 0 0 auto; color: var(--muted-2); display: flex; }
+  .grip svg { pointer-events: none; }
+
+  /* ── 分组（sections）──────────────────────────────────────────────── */
+  .grouptabs {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 6px;
+    padding: 8px 14px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .grouptabs::-webkit-scrollbar { display: none; }
+  .grouptabs .gtab {
+    flex: 0 0 auto;
+    padding: 5px 11px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--muted);
+    font: inherit; font-size: 13px;
+    cursor: pointer;
+  }
+  .grouptabs .gtab[aria-selected="true"] {
+    border-color: var(--accent-border);
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    font-weight: 600;
+  }
+  .gtab .gtab-n { margin-left: 4px; color: var(--muted-2); font-size: 11px; }
+  .gtab[aria-selected="true"] .gtab-n { color: var(--accent-strong); }
+  .gtab.is-add { color: var(--muted); padding: 5px 9px; }
+
+  .gsec { border-bottom: 1px solid var(--border); }
+  .gsec-hd {
+    display: flex; align-items: center; gap: 6px;
+    width: 100%; padding: 8px 14px;
+    border: 0; background: var(--surface);
+    color: var(--muted); font: inherit; font-size: 12px; font-weight: 600;
+    cursor: pointer; text-align: left;
+  }
+  .gsec-hd svg { transition: transform 140ms var(--ease); }
+  .gsec.is-folded .gsec-hd svg { transform: rotate(-90deg); }
+  .gsec.is-folded .gsec-rows { display: none; }
+  .gsec-n { margin-left: auto; color: var(--muted-2); font-weight: 500; }
+
   /* ── 右侧说明 ─────────────────────────────────────────────────────── */
   .notes { flex: 1 1 320px; min-width: 300px; max-width: 420px; }
   .notes h2 { margin: 0 0 10px; font-size: 15px; }
@@ -429,6 +477,8 @@
 
   <div class="switcher" role="tablist">
     <button type="button" role="tab" data-screen="list" aria-selected="true">会话列表 · 已有</button>
+    <button type="button" role="tab" data-screen="groups" aria-selected="false">分组 Tab · 新</button>
+    <button type="button" role="tab" data-screen="gmanage" aria-selected="false">分组管理 · 新</button>
     <button type="button" role="tab" data-screen="states" aria-selected="false">未连接态 · 已有</button>
     <button type="button" role="tab" data-screen="chat" aria-selected="false">会话详情 · P2</button>
     <button type="button" role="tab" data-screen="group" aria-selected="false">群聊与头像 · P2</button>
@@ -546,6 +596,170 @@
             </div>
           </div>
           <div class="foot">状态文字与 App 内一致：已连接 / 连接中 / 未安装 / 未运行 / 异常</div>
+        </section>
+
+        <!-- ── 1c. 分组 Tab（新）───────────────────────────────────── -->
+        <section class="screen" data-screen="groups">
+          <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
+          <div class="hdr">
+            <span class="hdr-title">Bot</span>
+            <span class="hdr-spacer"></span>
+            <span class="pill is-ok">已连接</span>
+            <button class="icon-btn" type="button" aria-label="刷新">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+            </button>
+          </div>
+          <div class="tabs">
+            <button type="button" aria-selected="true">会话</button>
+            <button type="button" aria-selected="false">例程</button>
+          </div>
+          <!-- 分组 Tab 条：全部（默认）+ 各分组 + 新建；横向滚动，不换行 -->
+          <div class="grouptabs" role="tablist">
+            <button class="gtab" type="button" role="tab" aria-selected="false">全部<span class="gtab-n">8</span></button>
+            <button class="gtab" type="button" role="tab" aria-selected="true">开发<span class="gtab-n">4</span></button>
+            <button class="gtab" type="button" role="tab" aria-selected="false">自媒体<span class="gtab-n">3</span></button>
+            <button class="gtab" type="button" role="tab" aria-selected="false">财经<span class="gtab-n">1</span></button>
+            <button class="gtab is-add" type="button" aria-label="新建分组">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+            </button>
+          </div>
+          <div class="body">
+            <!-- 置顶优先（跟上游同一规则） -->
+            <ul class="rows">
+              <li><button class="row" type="button">
+                <span class="bav a-indigo">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                </span>
+                <span class="row-main">
+                  <span class="row-top"><span class="row-name">avatar 开发群</span><span class="row-time">13:13</span></span>
+                  <span class="row-preview">bash: Running</span>
+                </span>
+              </button></li>
+            </ul>
+            <!-- 分组标题（可折叠，collapsed 跨设备同步） -->
+            <div class="gsec">
+              <button class="gsec-hd" type="button">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                开发
+                <span class="gsec-n">3</span>
+              </button>
+              <div class="gsec-rows">
+                <ul class="rows">
+                  <li><button class="row" type="button">
+                    <span class="bav a-teal">研</span>
+                    <span class="row-main">
+                      <span class="row-top"><span class="row-name">研发工程师</span><span class="row-time">13:00</span></span>
+                      <span class="row-preview">看完了，比上午那次明显轻松了</span>
+                    </span>
+                    <span class="unread">2</span>
+                  </button></li>
+                  <li><button class="row" type="button">
+                    <span class="bav a-indigo">G</span>
+                    <span class="row-main">
+                      <span class="row-top"><span class="row-name">GitHub 调研</span><span class="row-time">09:28</span></span>
+                      <span class="row-preview">**是，应用代码全是 Go**（前端可选）</span>
+                    </span>
+                  </button></li>
+                  <li><button class="row" type="button">
+                    <span class="bav a-blue">产</span>
+                    <span class="row-main">
+                      <span class="row-top"><span class="row-name">产品经理</span><span class="row-time">昨天</span></span>
+                      <span class="row-preview">需要你确认一期范围才能动接口</span>
+                    </span>
+                  </button></li>
+                </ul>
+              </div>
+            </div>
+            <!-- 折叠态（collapsed 由上游同步到每台设备） -->
+            <div class="gsec is-folded">
+              <button class="gsec-hd" type="button">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                自媒体
+                <span class="gsec-n">3</span>
+              </button>
+              <div class="gsec-rows"><ul class="rows"></ul></div>
+            </div>
+            <!-- 未分组：只在该分组有会话时出现；名字用「未分组」，不跟「全部」重名 -->
+            <div class="gsec">
+              <button class="gsec-hd" type="button">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                未分组
+                <span class="gsec-n">1</span>
+              </button>
+              <div class="gsec-rows">
+                <ul class="rows">
+                  <li><button class="row" type="button">
+                    <span class="bav a-pink">卜</span>
+                    <span class="row-main">
+                      <span class="row-top"><span class="row-name">卜卜</span><span class="row-time">09:26</span></span>
+                      <span class="row-preview">改好了，我自己读了文件核对</span>
+                    </span>
+                  </button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="foot">默认「全部」· 分组与归属都存在 lorca 的 roster 里，跨设备同步</div>
+        </section>
+
+        <!-- ── 1d. 分组管理（新）──────────────────────────────────── -->
+        <section class="screen" data-screen="gmanage">
+          <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
+          <div class="hdr">
+            <button class="icon-btn" type="button" aria-label="返回">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <span class="hdr-title">分组</span>
+            <span class="hdr-spacer"></span>
+            <button class="icon-btn" type="button" aria-label="新建分组">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+            </button>
+          </div>
+          <div class="body">
+            <div class="sect">
+              <p class="sect-label">拖动排序 · 点名字重命名 · 右侧是组内会话数</p>
+              <div class="card">
+                <div class="routine">
+                  <span class="grip">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.4"/><circle cx="15" cy="6" r="1.4"/><circle cx="9" cy="12" r="1.4"/><circle cx="15" cy="12" r="1.4"/><circle cx="9" cy="18" r="1.4"/><circle cx="15" cy="18" r="1.4"/></svg>
+                  </span>
+                  <span class="routine-main">
+                    <span class="routine-name">开发</span>
+                    <span class="routine-meta">4 个会话</span>
+                  </span>
+                  <button class="btn" type="button">重命名</button>
+                  <button class="btn is-danger" type="button">删除</button>
+                </div>
+                <div class="routine">
+                  <span class="grip">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.4"/><circle cx="15" cy="6" r="1.4"/><circle cx="9" cy="12" r="1.4"/><circle cx="15" cy="12" r="1.4"/><circle cx="9" cy="18" r="1.4"/><circle cx="15" cy="18" r="1.4"/></svg>
+                  </span>
+                  <span class="routine-main">
+                    <span class="routine-name">自媒体</span>
+                    <span class="routine-meta">3 个会话</span>
+                  </span>
+                  <button class="btn" type="button">重命名</button>
+                  <button class="btn is-danger" type="button">删除</button>
+                </div>
+                <div class="routine">
+                  <span class="grip">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.4"/><circle cx="15" cy="6" r="1.4"/><circle cx="9" cy="12" r="1.4"/><circle cx="15" cy="12" r="1.4"/><circle cx="9" cy="18" r="1.4"/><circle cx="15" cy="18" r="1.4"/></svg>
+                  </span>
+                  <span class="routine-main">
+                    <span class="routine-name">财经</span>
+                    <span class="routine-meta">1 个会话</span>
+                  </span>
+                  <button class="btn" type="button">重命名</button>
+                  <button class="btn is-danger" type="button">删除</button>
+                </div>
+              </div>
+              <div class="note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+                <span>删除分组只删分组，组里的会话回到「未分组」，不会丢会话。分组名字最多 60 字。</span>
+              </div>
+            </div>
+          </div>
+          <div class="foot">建 / 改名 / 删 / 排序 = sections.create · rename · delete · reorder</div>
         </section>
 
         <!-- ── 2. 会话详情（P2：加输入框 / 停止 / 头像 / 一行思考）──────── -->
@@ -817,6 +1031,25 @@
           <tr><td>P3</td><td>权限卡呈现与应答 permission.answer、挂起态</td><td>+3–4d</td></tr>
         </tbody>
       </table>
+
+      <h3>分组（新 · 待开发）</h3>
+      <ul>
+        <li><b>上游本来就有分组</b>：roster 带 <code>sections: [{id,name,collapsed}]</code>，每个会话的 meta 带 <code>section_id</code>（来源：<code>docs/architecture/sidebar.md</code>、<code>model.rs</code> 的 <code>ChatMeta.section_id</code>）。你的账号里已经建好了 <b>3 个分组：开发 / 自媒体 / 财经</b>，10 个会话里 9 个已归属。</li>
+        <li>所以这不是新功能，是<b>把已有数据接出来</b>：只读就能让分组 Tab 跑起来；要能建 / 改名 / 删 / 移会话，才需要写方法。</li>
+        <li><b>Tab 条</b>：默认「全部」（不加 header，与现有列表一致）+ 各分组 + 「＋」新建；横向滚动，不换行。</li>
+        <li><b>组内排序与上游一致</b>：置顶优先，其余按最新活动倒序；折叠状态走 <code>collapsed</code>，跨设备同步。</li>
+        <li><b>「未分组」只在真有会话时出现</b>，且名字用「未分组」、<b>不叫「全部」</b> —— 两个都叫「全部」用户分不清。</li>
+        <li><b>隐藏的会话不进任何分组</b>（上游有 <code>is_hidden</code>，本稿不画，但规则先定死）。</li>
+      </ul>
+
+      <h3>分组：白名单要从 5 个扩到 10 个</h3>
+      <ul>
+        <li>只读（Tab 能跑）：<b>无新方法</b>。sections 与 section_id 已随 <code>bootstrap</code> / <code>roster.changed</code> 到达，只是现在被 <code>client.ts</code> 丢掉了。</li>
+        <li>建 / 改名 / 删 / 排序：<code>sections.create { id?, name, chat_id? }</code> · <code>sections.rename { id, name }</code> · <code>sections.delete { id }</code> · <code>sections.reorder { ids }</code>。</li>
+        <li>会话归属：<code>chats.set_section { chat_id, section_id | null }</code>（null = 移出分组）。</li>
+        <li>折叠：<code>sections.collapse { id, collapsed }</code>。</li>
+        <li>同样 fail-closed；<code>chats.hide</code> / <code>chats.mute</code> <b>不在本期</b>（隐藏与静音是另一件事，别混进来）。</li>
+      </ul>
 
       <h3>头像（已实现 · 对应提交 27c3b5e7）</h3>
       <ul>
