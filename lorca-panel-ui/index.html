@@ -812,24 +812,20 @@
         <tbody>
           <tr><td>已有</td><td>会话列表、气泡、工具行、实时增量（只读）</td><td>—</td></tr>
           <tr><td>P1</td><td>例程列表进 roster、启用 / 暂停 / 运行、面板交互</td><td>4–5d</td></tr>
-          <tr><td>P2</td><td>输入框 + 发送（乐观行对齐 message_id）、停止 turn、思考一行</td><td>+4–5d</td></tr>
+          <tr><td>P2</td><td>输入框 + 发送（乐观行对齐 message_id）、停止 turn、思考一行</td><td>已交付</td></tr>
+          <tr><td>P2+</td><td>图标头像、图片头像、群聊头像簇（原估 1.5d，实际半天）</td><td>已交付</td></tr>
           <tr><td>P3</td><td>权限卡呈现与应答 permission.answer、挂起态</td><td>+3–4d</td></tr>
         </tbody>
       </table>
 
-      <h3>头像（本次新增）</h3>
+      <h3>头像（已实现 · 对应提交 27c3b5e7）</h3>
       <ul>
-        <li><b>本期只做一档</b>：accent 渐变底 + 首字方块（就是现在稿子里的样子）。这是「实现成本为零、观感提升最大」的那一档。</li>
+        <li><b>四档回退</b>：真实图片头像 → accent 渐变底 + Lucide 图标（由 <code>symbol_name</code> 映射）→ accent 渐变底 + 首字 → 认不出一律回退首字。图片字节由 agent 代读（<code>GET /lorca/bots/:id/avatar</code>），手机 WebView 拿不到本机路径。</li>
         <li>accent 合法值 8 个：blue / teal / green / orange / pink / purple / red，<b>缺省 / 认不出一律回退 indigo</b>（来源：<code>desktop/theme.go</code> 的 <code>accentColor</code>）。</li>
+        <li>SF Symbol → Lucide 映射表<b>重写而非复制</b>（上游 <code>desktop/icons_lucide.go</code> 是 GPL-3.0，且 329 条是 SVG 形状数据，不需要搬）；只覆盖实际用到的几十个 symbol，其余回退首字。</li>
+        <li>群聊头像取<b>成员头像簇</b>（2×2 错位叠放，最多 4 个），不是拿第一个成员的颜色 —— 之前那是错的。</li>
         <li>频道里进来的外部人（<code>author.kind = contact</code>）用首字母灰底，与 bot 的头像区分开。</li>
         <li>群聊里同一 bot 的连续气泡只在第一条挂头像，后续气泡缩进对齐 —— 跟 macOS 客户端一致。</li>
-      </ul>
-
-      <h3>头像：本期不做，记为下一期（约 1.5 天）</h3>
-      <ul>
-        <li><b>symbol_name 图标</b>：SF Symbol → Web 图标的映射表在 <code>desktop/icons_lucide.go</code>，177 条。那个文件在 GPL-3.0 仓库里，<b>只能读着重写，不能复制</b>；本期不做，认不出的 symbol 直接回退首字。</li>
-        <li><b>avatar 图片</b>：lorca 的 Bot 有 <code>avatar: Option&lt;Attachment&gt;</code> 字段（<code>crates/cli/src/model.rs:129</code>），但 <code>lorca.d.ts</code> 与 <code>client.ts</code> 都没接。要接得解析 Attachment + 取字节（手机 WebView 拿不到本机文件，得让 agent 代取）。</li>
-        <li>两项加起来约 1.5 天，换不来本期核心价值，所以推到下一期；<b>数据面缺口已记录</b>，不是遗漏。</li>
       </ul>
 
       <h3>思考过程（本次新增）</h3>
@@ -837,7 +833,14 @@
         <li>呈现：压成一行、字号 11.5、<code>--muted-2</code>、无边框无底色，超长横向 marquee 滚动，放得下就不动；右侧「展开」看全文。</li>
         <li><b>事实要先对齐</b>：lorca 给 app 的 payload 里<b>没有思考正文</b> —— <code>Message::for_app</code> 只处理 Tool / Permission，落库的只有 <code>Text</code> / <code>Tool</code> / <code>Notice</code> / <code>Permission</code>，<code>text_parts</code> 也只取 Text 段。app 面拿到的思考只有一个状态：<code>job.thinking</code> 事件（macOS 读成「Thinking…」）。</li>
         <li>所以这一行现在只能显示「思考中 · 最近一条工具/命令」，或者用 <code>message.updated</code> 的流式正文兜底（那是回复正文，不是思考）。<b>要真思考文本，得先向 lorca 提协议需求</b>，不是 avatar 这边能自己解决的。</li>
-        <li>依赖：<code>services/desktop-agent/src/lorca/client.ts</code> 现在只转发 <code>job.started</code> / <code>job.finished</code>，要这一行得先加 <code>job.thinking</code>（+ 可选 <code>job.retry</code>）转发，并给 <code>LorcaStreamEvent</code> 加成员。</li>
+        <li>依赖：<code>job.thinking</code> 转发已加（提交 0578e259）；思考行当前显示「正在干什么」（如「bash Running」），<b>不声称有思考正文</b>。</li>
+      </ul>
+
+      <h3>例程：失败路径也要显出来（验收项，来自调研实读）</h3>
+      <ul>
+        <li><code>routines.run</code> <b>会失败</b>：已在跑 → <code>“… is running right now.”</code>；额度不够 → <code>budgets.admit</code> 拒绝。UI 不能只做乐观置灰，要把这两种错误显出来。</li>
+        <li><code>routines.update { enabled: true }</code> <b>不是纯布尔写</b>：<code>set_enabled</code> 先过 <code>workflows::allow_enable</code>，工作流包里的例程可能被拒，启用失败要有文案。</li>
+        <li><b>文案别提「在 bot 的 Runner 上运行」</b>：<code>run_now</code> 没有 Runner 守卫，turn 起在收到请求的那个 CLI 上；<code>state = waiting_for_runner</code> 也不意味着 <code>run</code> 会被拒。</li>
       </ul>
 
       <ul>
