@@ -100,6 +100,8 @@
   }
   .switcher button:hover { color: var(--text); }
   .switcher button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent-strong); }
+  .switcher button.is-out { color: var(--muted-2); cursor: not-allowed; }
+  .switcher button.is-out:hover { color: var(--muted-2); }
 
   .stage { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
 
@@ -456,9 +458,10 @@
 
   <div class="switcher" role="tablist">
     <button type="button" role="tab" data-screen="list" aria-selected="true">会话列表 · 已有</button>
+    <button type="button" role="tab" data-screen="states" aria-selected="false">未连接态 · 已有</button>
     <button type="button" role="tab" data-screen="chat" aria-selected="false">会话详情 · P2</button>
     <button type="button" role="tab" data-screen="routines" aria-selected="false">例程 · P1</button>
-    <button type="button" role="tab" data-screen="perm" aria-selected="false">权限卡 · P3</button>
+    <button type="button" role="tab" data-screen="perm" aria-selected="false" class="is-out" disabled>权限卡 · P3 不在本期</button>
   </div>
 
   <div class="stage">
@@ -514,6 +517,56 @@
             </ul>
           </div>
           <div class="foot">4 个会话 · 只读，这一版不开放写操作</div>
+        </section>
+
+        <!-- ── 1b. 未连接态（现有 5 个连接态的呈现，第一眼就会看到）────── -->
+        <section class="screen" data-screen="states">
+          <div class="statusbar"><span>9:41</span><span>未连接</span></div>
+          <div class="hdr">
+            <span class="hdr-title">Bot</span>
+            <span class="hdr-spacer"></span>
+            <span class="pill is-warn">未运行</span>
+            <button class="icon-btn" type="button" aria-label="刷新">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+            </button>
+          </div>
+          <div class="body">
+            <div class="sect">
+              <p class="sect-label">连不上时首屏长这样 · 文案与 LorcaPanel.tsx 的 5 个态一一对应</p>
+              <div class="card">
+                <div class="routine">
+                  <span class="routine-main">
+                    <span class="routine-name">未运行</span>
+                    <span class="routine-meta">unreachable · 127.0.0.1:4862 连不上，先 <code>lorca serve</code></span>
+                  </span>
+                  <span class="pill is-warn">当前</span>
+                </div>
+                <div class="routine">
+                  <span class="routine-main">
+                    <span class="routine-name">未安装</span>
+                    <span class="routine-meta">token-missing · 没找到 <code>~/.lorca/serve-token</code>，跑一次 <code>lorca service install</code></span>
+                  </span>
+                </div>
+                <div class="routine">
+                  <span class="routine-main">
+                    <span class="routine-name">连接中</span>
+                    <span class="routine-meta">connecting · 已连上过，正在重连；重连成功后整体重拉一次</span>
+                  </span>
+                </div>
+                <div class="routine">
+                  <span class="routine-main">
+                    <span class="routine-name">异常</span>
+                    <span class="routine-meta">error · 直接显示最近一次失败原因，不吞掉</span>
+                  </span>
+                </div>
+              </div>
+              <div class="note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+                <span>这排不是新功能：<code>LorcaPanel.tsx</code> 已经有这 5 个态，稿子之前漏画了，这里补齐。状态条不参与 P1/P2 排期。</span>
+              </div>
+            </div>
+          </div>
+          <div class="foot">状态文字与 App 内一致：已连接 / 连接中 / 未安装 / 未运行 / 异常</div>
         </section>
 
         <!-- ── 2. 会话详情（P2：加输入框 / 停止）─────────────────── -->
@@ -679,6 +732,7 @@
       <ul>
         <li>沿用现有 <code>.lorca-*</code> 版面与 tokens.css，不新造一套视觉。</li>
         <li>本稿不含：attention / handoffs / reviews 展示、bot 配置编辑、账号与 relay 管理、远端访问。</li>
+        <li>权限卡（P3）保留为版面参考，但不在本期范围，切屏入口已置灰。</li>
         <li>「运行」与「发送」有本机副作用，是 P1 与 P2 的分界线，等范围拍板。</li>
       </ul>
     </aside>
@@ -693,7 +747,7 @@
     screens.forEach((s) => s.classList.toggle('is-active', s.dataset.screen === name));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  tabs.forEach((t) => t.addEventListener('click', () => show(t.dataset.screen)));
+  tabs.forEach((t) => { if (!t.disabled) t.addEventListener('click', () => show(t.dataset.screen)); });
 </script>
 </body>
 </html>
