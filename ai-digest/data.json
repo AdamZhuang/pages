@@ -1,174 +1,102 @@
 {
-  "date": "2026-10-13",
-  "generated_at": "2026-10-13T22:43:24.781482+08:00",
+  "date": "2026-10-14",
+  "generated_at": "2026-10-14T09:01:06.433901+08:00",
   "hn": [
     {
-      "title": "Muse Wonder",
-      "link": "https://research.meta.ai/blog/muse-wonder",
-      "points": 651,
-      "comments": 360,
-      "date": "2026-10-12 16:48Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50059115"
-    },
-    {
-      "title": "GLM-Legal",
-      "link": "https://z.ai/blog/glm-legal",
-      "points": 627,
-      "comments": 347,
-      "date": "2026-10-12 16:11Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50058507"
-    },
-    {
-      "title": "AI is a tool and using it well takes skill",
-      "link": "https://yyhh.org/blog/2026/10/ai-is-a-tool/",
-      "points": 513,
-      "comments": 408,
-      "date": "2026-10-12 21:40Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50063427"
-    },
-    {
-      "title": "AI coding agents generate more code, but not more software",
-      "link": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
-      "points": 346,
-      "comments": 290,
-      "date": "2026-10-12 17:14Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50059523"
-    },
-    {
-      "title": "Why aren't AI companies being charged for hacking?",
-      "link": "https://mortoray.com/why-arent-ai-companies-being-charged-for-hacking/",
-      "points": 324,
-      "comments": 359,
-      "date": "2026-10-12 14:52Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50057278"
-    },
-    {
-      "title": "'AI' Is Not a Tool by Rich Hickey",
-      "link": "https://www.linkedin.com/pulse/ai-tool-rich-hickey-kjl8e",
-      "points": 289,
-      "comments": 153,
-      "date": "2026-10-12 18:00Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50060269"
-    },
-    {
-      "title": "Intel D270 GPU AI Accelerator–Up to 480 GB LPDDR5X",
-      "link": "https://www.intel.com/content/www/us/en/products/details/discrete-gpus/data-center-gpu/d-series.html",
-      "points": 276,
-      "comments": 149,
-      "date": "2026-10-12 21:35Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50063365"
-    },
-    {
-      "title": "AI models can provably hide arbitrary capabilities",
-      "link": "https://arxiv.org/abs/2610.13928",
-      "points": 253,
-      "comments": 120,
-      "date": "2026-10-13 02:07Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50065692"
-    },
-    {
-      "title": "OpenFatigue™ – Open is the new closed",
-      "link": "https://openfatigue.ai/",
-      "points": 229,
-      "comments": 51,
-      "date": "2026-10-12 19:08Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50061278"
-    },
-    {
-      "title": "An hour of audio transcribed in about 13s on MacBook Air",
-      "link": "https://eg2.haku.sh/",
-      "points": 218,
-      "comments": 57,
-      "date": "2026-10-13 11:27Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50069971"
-    },
-    {
-      "title": "Kevin Kelly's 2016 AI Predictions, 10 Years Later",
-      "link": "https://taylor.town/kk-ai-2026",
-      "points": 204,
-      "comments": 80,
-      "date": "2026-10-12 15:16Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50057668"
-    },
-    {
-      "title": "Launch HN: Agent37 (YC F26) – Low-cost agent sandboxes for running agents",
-      "link": "https://news.ycombinator.com/item?id=50059096",
-      "points": 148,
-      "comments": 103,
-      "date": "2026-10-12 16:46Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50059096"
-    },
-    {
-      "title": "I turned my unused Kindle into a photo frame with GPT-6 Astra",
-      "link": "https://nirajrajgor.com/blog/kindle-photo-frame-with-ai",
-      "points": 144,
-      "comments": 99,
-      "date": "2026-10-12 23:07Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50064318"
-    },
-    {
-      "title": "Character.ai Files for Bankruptcy",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney",
-      "points": 125,
-      "comments": 86,
-      "date": "2026-10-13 11:24Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50069942"
-    },
-    {
-      "title": "Show HN: Use your OpenAI subscription to create audiobooks",
-      "link": "https://pdftomp3.com/connect-ai/",
-      "points": 108,
-      "comments": 55,
-      "date": "2026-10-13 10:08Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50069337"
-    },
-    {
-      "title": "Threat of AI share crash puts world financial stability at risk, says IMF",
-      "link": "https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks",
-      "points": 100,
-      "comments": 115,
-      "date": "2026-10-13 05:57Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50067356"
-    },
-    {
-      "title": "AI models may be capable of self-replicating without access to a datacenter",
-      "link": "https://www.anthropic.com/research/self-replicating-ai",
-      "points": 91,
-      "comments": 104,
-      "date": "2026-10-12 19:25Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50061603"
-    },
-    {
-      "title": "Character.ai files for Chapter 11 bankruptcy",
+      "title": "Character.ai has initiated voluntary Chapter 11 bankruptcy",
       "link": "https://blog.character.ai/an-update-on-character-ai/",
-      "points": 91,
-      "comments": 35,
+      "points": 284,
+      "comments": 266,
       "date": "2026-10-13 07:28Z",
       "hn_link": "https://news.ycombinator.com/item?id=50068036"
     },
     {
-      "title": "Epic Games tells employees to use AI to get Disney game done",
-      "link": "https://www.avclub.com/epic-games-disney-ai-delay",
-      "points": 83,
-      "comments": 71,
-      "date": "2026-10-12 20:07Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50062237"
+      "title": "AI models can provably hide arbitrary capabilities",
+      "link": "https://arxiv.org/abs/2610.13928",
+      "points": 272,
+      "comments": 136,
+      "date": "2026-10-13 02:07Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50065692"
+    },
+    {
+      "title": "I posted to HN, and then my website was flooded with AI bot traffic",
+      "link": "https://www.sammystraus.com/#i-posted-to-hn-and-then-my-website-was-flooded-with-ai-bot-traffic",
+      "points": 238,
+      "comments": 146,
+      "date": "2026-10-13 15:25Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50073221"
+    },
+    {
+      "title": "Show HN: Use your OpenAI subscription to create audiobooks",
+      "link": "https://pdftomp3.com/connect-ai/",
+      "points": 159,
+      "comments": 80,
+      "date": "2026-10-13 10:08Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50069337"
+    },
+    {
+      "title": "Character.ai Files for Bankruptcy",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney",
+      "points": 145,
+      "comments": 21,
+      "date": "2026-10-13 11:24Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50069942"
+    },
+    {
+      "title": "How to engineer an AI harness for game development",
+      "link": "https://kylekukshtel.com/ai-harness-engineering-game-development-claude-code",
+      "points": 128,
+      "comments": 58,
+      "date": "2026-10-13 14:14Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50072120"
+    },
+    {
+      "title": "Threat of AI share crash puts world financial stability at risk, says IMF",
+      "link": "https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks",
+      "points": 110,
+      "comments": 124,
+      "date": "2026-10-13 05:57Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50067356"
     },
     {
       "title": "DishwasherBench – Can Frontier Models Stack a Dishwasher?",
       "link": "https://github.com/composo-ai/DishwasherBench",
-      "points": 77,
-      "comments": 44,
+      "points": 83,
+      "comments": 52,
       "date": "2026-10-13 08:24Z",
       "hn_link": "https://news.ycombinator.com/item?id=50068437"
     },
     {
-      "title": "\"Today we're laying off a large part of the Airtable team \"",
-      "link": "https://twitter.com/fedesimio/status/2109713695165329511",
-      "points": 42,
-      "comments": 19,
-      "date": "2026-10-12 19:56Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50062076"
+      "title": "Document Review with Unsiloed and TypeSafe Jev",
+      "link": "https://www.unsiloed.ai/blog/document-review-unsiloed-typesafe-jev",
+      "points": 46,
+      "comments": 7,
+      "date": "2026-10-13 08:24Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50068443"
+    },
+    {
+      "title": "Show HN: Spotatui, a Spotify TUI/GUI without web API rate limits",
+      "link": "https://github.com/LargeModGames/spotatui",
+      "points": 45,
+      "comments": 8,
+      "date": "2026-10-13 11:32Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50070010"
+    },
+    {
+      "title": "Scientists wonder: Is my AI stealing my ideas?",
+      "link": "https://www.scientificamerican.com/article/scientists-worry-ai-is-stealing-their-ideas/",
+      "points": 41,
+      "comments": 23,
+      "date": "2026-10-13 16:05Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50073926"
+    },
+    {
+      "title": "Show HN: Parsimony – an open-source benchmark for how much code AI models add",
+      "link": "https://parsimony.lasu.dev/",
+      "points": 41,
+      "comments": 3,
+      "date": "2026-10-13 19:50Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50077619"
     }
   ],
   "feeds": [
@@ -232,6 +160,24 @@
       "url": "https://www.ifanr.com/feed",
       "items": [
         {
+          "title": "早报｜苹果发布十多款「果家」新品/Gemini 4来了，写代码更省心/3999元，阶跃智能体手机发布",
+          "link": "https://www.ifanr.com/1684137?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Wed, 14 Oct 2026 00:08:24 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "一加 16 体验：收敛锐气，依然是「不出错」的旗舰",
+          "link": "https://www.ifanr.com/1684097?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Tue, 13 Oct 2026 16:08:16 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "刚刚，苹果 HomeView 发布！10+ 款「果家」新品，你能买到的只有一个",
+          "link": "https://www.ifanr.com/1684070?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Tue, 13 Oct 2026 15:01:40 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
           "title": "理想 i6 化名「Li 6」，吉利拿下福特工厂，这届巴黎车展全是中国车",
           "link": "https://www.ifanr.com/1684048?utm_source=rss&utm_medium=rss&utm_campaign=",
           "date": "Tue, 13 Oct 2026 14:37:37 +0000",
@@ -259,24 +205,6 @@
           "title": "2026 年，日本翻盖手机终于过气了",
           "link": "https://www.ifanr.com/1683941?utm_source=rss&utm_medium=rss&utm_campaign=",
           "date": "Tue, 13 Oct 2026 04:30:03 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "早报｜对话库克：Apple Watch要做「个人守护者」/华为折叠屏出货量突破2000万台/DeepSeek拟入局具身智能",
-          "link": "https://www.ifanr.com/1683909?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Tue, 13 Oct 2026 00:17:03 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "三电机+千匹马力！阿维塔 T09 巴黎首秀，攻入旗舰大六座市场",
-          "link": "https://www.ifanr.com/1683851?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Mon, 12 Oct 2026 01:04:53 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "早报｜我们跟库克聊了聊iPhone Duo/继QClaw后，腾讯再关停一个Agent/SpaceXAI改名SpaceXSI",
-          "link": "https://www.ifanr.com/1683302?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Mon, 12 Oct 2026 00:12:37 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         }
       ],
@@ -342,51 +270,51 @@
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "items": [
         {
-          "title": "DLSS 5 gets toned down for its Hogwarts Legacy debut next month",
-          "link": "https://www.theverge.com/news/1009904/dlss-5-hogwarts-legacy-changes-improvements",
-          "date": "2026-10-13T09:58:28-04:00",
+          "title": "OpenAI employee arrested for allegedly planting a bug in a conference room",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1010642/openai-employee-arrested-recording-device",
+          "date": "2026-10-13T17:36:13-04:00",
           "desc": ""
         },
         {
-          "title": "Apple launches HomeView, its first smart display for the home",
-          "link": "https://www.theverge.com/tech/1009704/apple-homeview-smart-display-first-look",
-          "date": "2026-10-13T09:28:40-04:00",
+          "title": "Shopify opens its catalog up to more AI agents",
+          "link": "https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents",
+          "date": "2026-10-13T16:23:23-04:00",
           "desc": ""
         },
         {
-          "title": "Character.AI files for bankruptcy",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney",
-          "date": "2026-10-13T06:32:23-04:00",
+          "title": "Xbox is officially embracing the chaos of AI-powered game ports",
+          "link": "https://www.theverge.com/news/1010406/xbox-labs-game-decompiling-emulation-exploration",
+          "date": "2026-10-13T15:10:43-04:00",
           "desc": ""
         },
         {
-          "title": "Meta has some Wonder Full new AI models",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1009479/meta-muse-wonder-full-ai-model",
-          "date": "2026-10-12T07:13:10-04:00",
+          "title": "I don’t miss the camera on the Ray-Ban Meta Audio glasses",
+          "link": "https://www.theverge.com/tech/1009128/ray-ban-meta-audio-glasses-review-smart-glasses-headphones-wearables",
+          "date": "2026-10-13T15:01:42-04:00",
           "desc": ""
         },
         {
-          "title": "Microsoft’s new AI chip makes it less reliant on Nvidia’s GPUs",
-          "link": "https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout",
-          "date": "2026-10-12T09:33:06-04:00",
+          "title": "Facebook will let you customize your feed algorithm using AI",
+          "link": "https://www.theverge.com/tech/1010344/meta-facebook-your-algorithm-ai",
+          "date": "2026-10-13T13:01:31-04:00",
           "desc": ""
         },
         {
-          "title": "Silicon Valley is falling in line with Trump’s attempt to rename AI",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1009406/silicon-valley-is-falling-in-line-with-trumps-attempt-to-rename-ai",
-          "date": "2026-10-11T14:33:56-04:00",
+          "title": "Google makes it easier to launch your vibe-coded apps",
+          "link": "https://www.theverge.com/tech/1009066/google-play-vibe-coded-android-apps-launch",
+          "date": "2026-10-13T12:47:06-04:00",
           "desc": ""
         },
         {
-          "title": "Learning to use local AI is exciting, overwhelming, and frustrating",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1008484/learning-local-ai-hermes-qwen-model-mac-studio-testing-diary-progress",
-          "date": "2026-10-11T00:53:46-04:00",
+          "title": "It’s ‘incomprehensible’ that Instagram allowed an AI image of Mia Goth to spread, say her reps",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1010277/mia-goth-instagram-ai-shirt-deepfake-divorce",
+          "date": "2026-10-13T17:48:23-04:00",
           "desc": ""
         },
         {
-          "title": "Satya Nadella says we should assume all AI models are ‘compromised’",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
-          "date": "2026-10-10T18:10:17-04:00",
+          "title": "Google finally releases Gemini 4 Argon",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1009862/google-releases-gemini-4-argon",
+          "date": "2026-10-13T08:12:37-04:00",
           "desc": ""
         }
       ],
@@ -396,6 +324,30 @@
       "name": "Ars Technica · AI",
       "url": "https://arstechnica.com/ai/feed/",
       "items": [
+        {
+          "title": "Disney offers $20M for Character.AI’s scandal-plagued chatbot tech",
+          "link": "https://arstechnica.com/tech-policy/2026/10/disney-offers-20m-for-character-ais-scandal-plagued-chatbot-tech/",
+          "date": "Tue, 13 Oct 2026 18:23:33 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Google wants to host your personal vibe-coded apps in the Play Store",
+          "link": "https://arstechnica.com/google/2026/10/google-wants-to-host-your-personal-vibe-coded-apps-in-the-play-store/",
+          "date": "Tue, 13 Oct 2026 17:00:39 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Gemini 4 Argon begins rolling out in Gemini app and Antigravity, but only if you pay",
+          "link": "https://arstechnica.com/ai/2026/10/gemini-4-argon-begins-rolling-out-in-gemini-app-and-antigravity-but-only-if-you-pay/",
+          "date": "Tue, 13 Oct 2026 16:00:02 +0000",
+          "desc": ""
+        },
+        {
+          "title": "They war-gamed dimming the Sun. It went even worse than you think.",
+          "link": "https://arstechnica.com/science/2026/10/they-war-gamed-dimming-the-sun-it-went-even-worse-than-you-think/",
+          "date": "Tue, 13 Oct 2026 15:17:59 +0000",
+          "desc": ""
+        },
         {
           "title": "Epic Games reportedly pivoting to \"AI first\" game development model",
           "link": "https://arstechnica.com/gaming/2026/10/report-epic-games-goes-all-in-on-ai-for-disney-collaboration/",
@@ -419,30 +371,6 @@
           "link": "https://arstechnica.com/ai/2026/10/inside-amazons-robotic-arms-race-and-what-it-means-for-the-future-of-human-work/",
           "date": "Mon, 12 Oct 2026 12:43:10 +0000",
           "desc": ""
-        },
-        {
-          "title": "Ukraine’s drones knock out AI data center belonging to \"Russia’s Google\"",
-          "link": "https://arstechnica.com/gadgets/2026/10/ukraines-drones-knock-out-ai-data-center-belonging-to-russias-google/",
-          "date": "Fri, 09 Oct 2026 22:04:07 +0000",
-          "desc": ""
-        },
-        {
-          "title": "AI coding agents generate more code, but not more software",
-          "link": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
-          "date": "Fri, 09 Oct 2026 19:43:50 +0000",
-          "desc": ""
-        },
-        {
-          "title": "AI disqualification yields new Nikon Small World in Motion winner",
-          "link": "https://arstechnica.com/science/2026/10/winning-nikon-small-world-in-motion-video-disqualified-for-ai-use/",
-          "date": "Fri, 09 Oct 2026 18:44:06 +0000",
-          "desc": ""
-        },
-        {
-          "title": "Nvidia's big bet on physical AI aims for safer robotaxis, humanoid robots",
-          "link": "https://arstechnica.com/ai/2026/10/nvidias-big-bet-on-physical-ai-aims-for-safer-robotaxis-humanoid-robots/",
-          "date": "Thu, 08 Oct 2026 11:15:33 +0000",
-          "desc": ""
         }
       ],
       "error": null
@@ -452,51 +380,51 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "items": [
         {
-          "title": "TechCrunch Disrupt 2026: Day 1",
-          "link": "https://techcrunch.com/2026/10/13/techcrunch-disrupt-2026-day-1/",
-          "date": "Tue, 13 Oct 2026 14:00:00 +0000",
+          "title": "Science Corporation implants its vision-restoring chip in its first Stargardt disease patient",
+          "link": "https://techcrunch.com/2026/10/13/science-corporation-implants-its-vision-restoring-chip-in-its-first-stargardt-disease-patient/",
+          "date": "Tue, 13 Oct 2026 23:13:31 +0000",
           "desc": ""
         },
         {
-          "title": "SpaceXSI bundles X Premium, Grok and Cursor into one subscription",
-          "link": "https://techcrunch.com/2026/10/13/spacexsi-bundles-x-premium-grok-and-cursor-into-one-subscription/",
-          "date": "Tue, 13 Oct 2026 13:50:19 +0000",
+          "title": "Cerebras CEO says we’re nearing a future where everyone has a personal AI assistant at home",
+          "link": "https://techcrunch.com/2026/10/13/cerebras-ceo-says-were-nearing-a-future-where-everyone-has-a-personal-ai-assistant-at-home/",
+          "date": "Tue, 13 Oct 2026 23:05:34 +0000",
           "desc": ""
         },
         {
-          "title": "The final Disrupt Stage lineup: Three days of conversations you won’t hear anywhere outside of TechCrunch Disrupt 2026",
-          "link": "https://techcrunch.com/2026/10/13/the-final-disrupt-stage-lineup-three-days-of-conversations-you-wont-hear-anywhere-outside-of-techcrunch-disrupt-2026/",
-          "date": "Tue, 13 Oct 2026 13:28:06 +0000",
+          "title": "Industrial Next wants factory robots to switch tasks in minutes, not weeks",
+          "link": "https://techcrunch.com/2026/10/13/industrial-next-wants-factory-robots-to-switch-tasks-in-minutes-not-weeks/",
+          "date": "Tue, 13 Oct 2026 23:00:00 +0000",
           "desc": ""
         },
         {
-          "title": "Amex introduces a framework to prevent AI agents from making unauthorized purchases",
-          "link": "https://techcrunch.com/2026/10/13/amex-introduces-a-framework-to-prevent-ai-agents-from-making-unauthorized-purchases/",
-          "date": "Tue, 13 Oct 2026 13:00:00 +0000",
+          "title": "Cerebras CEO pushes back on AI doomsday warnings",
+          "link": "https://techcrunch.com/2026/10/13/cerebras-ceo-pushes-back-on-ai-doomsday-warnings/",
+          "date": "Tue, 13 Oct 2026 22:36:59 +0000",
           "desc": ""
         },
         {
-          "title": "Just 5 years in, interactive chatbot platform Character.AI files for bankruptcy",
-          "link": "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/",
-          "date": "Tue, 13 Oct 2026 12:23:42 +0000",
+          "title": "Judge orders OpenAI to turn over hiring records in Apple trade secrets case",
+          "link": "https://techcrunch.com/2026/10/13/judge-orders-openai-to-turn-over-hiring-records-in-apple-trade-secrets-case/",
+          "date": "Tue, 13 Oct 2026 20:36:44 +0000",
           "desc": ""
         },
         {
-          "title": "Meta releases its first frontier model, Muse Wonder",
-          "link": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/",
-          "date": "Mon, 12 Oct 2026 17:56:56 +0000",
+          "title": "Flox Intelligence is building AI to keep wildlife away from trains, airports, and roads",
+          "link": "https://techcrunch.com/2026/10/13/flox-intelligence-is-building-ai-to-keep-wildlife-away-from-trains-airports-and-roads/",
+          "date": "Tue, 13 Oct 2026 18:30:00 +0000",
           "desc": ""
         },
         {
-          "title": "WindBorne wins a hefty US Air Force contract for its balloon data",
-          "link": "https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/",
-          "date": "Mon, 12 Oct 2026 17:19:14 +0000",
+          "title": "Facebook is giving users more control over their algorithm",
+          "link": "https://techcrunch.com/2026/10/13/facebook-is-giving-users-more-control-over-their-algorithm/",
+          "date": "Tue, 13 Oct 2026 18:05:24 +0000",
           "desc": ""
         },
         {
-          "title": "Honeyjar offers AI tools to improve PR and comms at every company",
-          "link": "https://techcrunch.com/2026/10/12/honeyjar-offers-ai-tools-to-improve-pr-and-comms-at-every-company/",
-          "date": "Mon, 12 Oct 2026 15:45:00 +0000",
+          "title": "Laplace Intelligence red-teams robots and self-driving cars before they hit the real world",
+          "link": "https://techcrunch.com/2026/10/13/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-they-hit-the-real-world/",
+          "date": "Tue, 13 Oct 2026 17:30:00 +0000",
           "desc": ""
         }
       ],
@@ -506,6 +434,30 @@
       "name": "The Decoder",
       "url": "https://the-decoder.com/feed/",
       "items": [
+        {
+          "title": "406 scientists demand AI models be cut off from the internet immediately",
+          "link": "https://the-decoder.com/406-scientists-demand-ai-models-be-cut-off-from-the-internet-immediately/",
+          "date": "Tue, 13 Oct 2026 18:50:44 +0000",
+          "desc": "406 scientists, including Geoffrey Hinton, Yoshua Bengio, and Stuart Russell, are demanding that companies immediately disconnect AI models from the internet. Their open letter responds to incidents where AI systems brok"
+        },
+        {
+          "title": "Gemini 4 Argon is now available worldwide as Google's most capable frontier model",
+          "link": "https://the-decoder.com/gemini-4-argon-is-now-available-worldwide-as-googles-most-capable-frontier-model/",
+          "date": "Tue, 13 Oct 2026 18:00:49 +0000",
+          "desc": "Google is making Gemini 4 Argon available worldwide through its API, the Gemini app, and Google Antigravity. The frontier model is aggressively priced but trails Anthropic's Claude Opus 5.5 and Meta's Muse Wonder Full in"
+        },
+        {
+          "title": "Machine learning pioneer Michael I. Jordan dismantles AI doom rhetoric as \"grand moralizing performance\"",
+          "link": "https://the-decoder.com/machine-learning-pioneer-michael-i-jordan-dismantles-ai-doom-rhetoric-as-grand-moralizing-performance/",
+          "date": "Tue, 13 Oct 2026 17:12:41 +0000",
+          "desc": "Michael I. Jordan, described by Science as \"the most influential computer scientist,\" considers warnings about superintelligence pure science fiction. He calls the resignations of young AI researchers a \"grand moralizing"
+        },
+        {
+          "title": "Character.ai will shut down if no buyer emerges, capping a fall from $2.7 billion Google deal to bankruptcy",
+          "link": "https://the-decoder.com/character-ai-will-shut-down-if-no-buyer-emerges-capping-a-fall-from-2-7-billion-google-deal-to-bankruptcy/",
+          "date": "Tue, 13 Oct 2026 15:27:39 +0000",
+          "desc": "Character.ai has filed for bankruptcy and is looking for a buyer. If none steps up, the platform shuts down. Founded by ex-Google researchers, the company once had over 20 million users but is now battling lawsuits over "
+        },
         {
           "title": "Western mathematicians fear AI makes them dumber while China builds an entire alliance for it",
           "link": "https://the-decoder.com/western-mathematicians-fear-ai-makes-them-dumber-while-china-builds-an-entire-alliance-for-it/",
@@ -529,30 +481,6 @@
           "link": "https://the-decoder.com/metas-new-frontier-model-muse-wonder-full-breaks-into-the-ai-top-tier/",
           "date": "Mon, 12 Oct 2026 18:48:29 +0000",
           "desc": "Meta's new Muse Wonder models rank in the top three on six out of ten benchmarks, with the biggest gains in agentic tasks. But the cost per task has nearly tripled.\nThe article Meta's new frontier model Muse Wonder Full "
-        },
-        {
-          "title": "Sakana AI's self-improving model gets better at solving and judging, but can't catch its own blind spots",
-          "link": "https://the-decoder.com/sakana-ais-self-improving-model-gets-better-at-solving-and-judging-but-cant-catch-its-own-blind-spots/",
-          "date": "Mon, 12 Oct 2026 17:58:54 +0000",
-          "desc": "Sakana AI's MASS method lets one language model improve itself by solving tasks, judging results, and refining workflows, reaching a win rate of nearly 70 percent against the base model after two rounds. But when the mod"
-        },
-        {
-          "title": "Clearing chat history helps AI agents find better solutions",
-          "link": "https://the-decoder.com/clearing-chat-history-helps-ai-agents-find-better-solutions/",
-          "date": "Mon, 12 Oct 2026 16:10:00 +0000",
-          "desc": "Microsoft researchers found that autonomous AI agents get trapped in what they call \"idea basins\" because of their growing chat context, local solution regions they can't escape. Their \"Fork-and-Flush\" method clears the "
-        },
-        {
-          "title": "Microsoft plans to scale its own Maia AI chips to gigawatt levels by 2027",
-          "link": "https://the-decoder.com/microsoft-plans-to-scale-its-own-maia-ai-chips-to-gigawatt-levels-by-2027/",
-          "date": "Mon, 12 Oct 2026 15:24:03 +0000",
-          "desc": "Microsoft will make its in-house Azure Maia chips the main AI inference system across its products starting in 2027, deploying them at multi-gigawatt scale. The upcoming Maia 300 should deliver 40 percent more tokens per"
-        },
-        {
-          "title": "White House reverses course and restores UK AI Safety Institute's access to frontier models",
-          "link": "https://the-decoder.com/white-house-reverses-course-and-restores-uk-ai-safety-institutes-access-to-frontier-models/",
-          "date": "Mon, 12 Oct 2026 13:14:54 +0000",
-          "desc": "The White House has reversed course and restored the UK's AI Security Institute's early access to AI models from Anthropic, Google DeepMind, and OpenAI. In September, the Trump administration had told the companies to st"
         }
       ],
       "error": null
@@ -617,6 +545,12 @@
       "url": "https://openai.com/news/rss.xml",
       "items": [
         {
+          "title": "Higgsfield takes AI video from 1 minute to over 10",
+          "link": "https://openai.com/index/higgsfield-longer-videos-voice",
+          "date": "Tue, 13 Oct 2026 12:00:00 GMT",
+          "desc": ""
+        },
+        {
           "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
           "link": "https://openai.com/index/sophos",
           "date": "Fri, 09 Oct 2026 07:00:00 GMT",
@@ -657,12 +591,6 @@
           "link": "https://openai.com/index/teens-learn-and-plan",
           "date": "Wed, 07 Oct 2026 12:00:00 GMT",
           "desc": ""
-        },
-        {
-          "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
-          "link": "https://openai.com/index/radisson",
-          "date": "Wed, 07 Oct 2026 07:00:00 GMT",
-          "desc": ""
         }
       ],
       "error": null
@@ -671,6 +599,12 @@
       "name": "Google AI Blog",
       "url": "https://blog.google/technology/ai/rss/",
       "items": [
+        {
+          "title": "Gemini 4 Argon: Built to solve your hardest problems",
+          "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "date": "Tue, 13 Oct 2026 16:00:00 +0000",
+          "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-argon__blog-header__27.max-600x600.format-webp.webp\">We’re giving developers, enterprises, scientists, and consumers access to Gemini 4 A"
+        },
         {
           "title": "Introducing Playground: Create and play custom games",
           "link": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
@@ -712,12 +646,6 @@
           "link": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/",
           "date": "Thu, 17 Sep 2026 20:00:00 +0000",
           "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/data-commons.max-600x600.format-webp.webp\">Google and the UN system have launched the UN System Data Commons, a new open platform making global st"
-        },
-        {
-          "title": "AI for Societal Impact",
-          "link": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/",
-          "date": "Tue, 15 Sep 2026 16:00:00 +0000",
-          "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Health_Header.gif\">Explore this collection to see how experts and local leaders are using AI breakthroughs to ensure everyone can share t"
         }
       ],
       "error": null
@@ -725,13 +653,68 @@
     {
       "name": "DeepMind Blog",
       "url": "https://deepmind.google/blog/rss.xml",
-      "items": [],
+      "items": [
+        {
+          "title": "Developing Gemini 4 Argon responsibly and safely",
+          "link": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+          "date": "Tue, 13 Oct 2026 19:43:07 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Gemini 4 Argon for Robotics",
+          "link": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+          "date": "Tue, 13 Oct 2026 16:01:58 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Gemini 4 Argon: Built to solve your hardest problems",
+          "link": "https://deepmind.google/blog/introducing-gemini-4-argon/",
+          "date": "Tue, 13 Oct 2026 16:01:52 +0000",
+          "desc": ""
+        },
+        {
+          "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+          "link": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
+          "date": "Tue, 06 Oct 2026 19:57:04 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Gemini 4 Argon: our next era of frontier intelligence",
+          "link": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+          "date": "Wed, 30 Sep 2026 20:01:45 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Introducing SynthID Bio",
+          "link": "https://deepmind.google/blog/introducing-synthid-bio/",
+          "date": "Wed, 30 Sep 2026 15:03:07 +0000",
+          "desc": "Proof of concept for watermarking AI-generated proteins while preserving biological function."
+        },
+        {
+          "title": "Introducing Gemini 3.8 Live with Live Avatar",
+          "link": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
+          "date": "Thu, 24 Sep 2026 16:20:39 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Advancing Private AI Compute with secure, server-side memory",
+          "link": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
+          "date": "Wed, 23 Sep 2026 16:00:57 +0000",
+          "desc": "Introducing private, server-side memory to Private AI Compute for personal AI."
+        }
+      ],
       "error": null
     },
     {
       "name": "Hugging Face Blog",
       "url": "https://huggingface.co/blog/feed.xml",
       "items": [
+        {
+          "title": "Run fast, private agents on-device with LFM2.5-24B-A2B",
+          "link": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+          "date": "Tue, 13 Oct 2026 17:05:48 GMT",
+          "desc": ""
+        },
         {
           "title": "Impactful scheduling for GPU clusters",
           "link": "https://huggingface.co/blog/allenai/impactful-scheduling",
@@ -742,12 +725,6 @@
           "title": "The model that didn't exist, so you made it yourself",
           "link": "https://huggingface.co/blog/building-with-ml-intern",
           "date": "Thu, 08 Oct 2026 00:00:00 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Multimodal open d1 decision models for the edge",
-          "link": "https://huggingface.co/blog/LiquidAI/open-d1",
-          "date": "Wed, 07 Oct 2026 16:54:33 GMT",
           "desc": ""
         },
         {
