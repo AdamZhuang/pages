@@ -613,7 +613,7 @@
     <p>不是「设计得好」，是它<b>敢不显示</b>。四个机制，都能在 lorca 源码里对上：</p>
     <ul>
       <li><b>不挂逐条时间戳。</b><code>transcript.tsx</code> 里没有任何 per-message 时间渲染，<code>bubbleFooter</code> 只在消息失败时画一个警告三角。时间只以「断层」形式出现：<code>SEPARATOR_GAP_SECS = 15 * 60</code>，超过 15 分钟或跨天插一条居中日期行。</li>
-      <li><b>名字与头像只在「一段」开头出现。</b><code>groupStart = 时间断层 || 作者变了</code>；<code>showsName</code> 只在 groupStart 且是群聊时为真。头像贴气泡<b>底边</b>（<code>alignSelf: "flex-end"</code>），后续气泡缩进对齐。</li>
+      <li><b>名字只在「一段」开头出现，头像只在这一段最后一条。</b><code>groupStart = 时间断层 || 作者变了</code>；<code>showsName</code> 只在 groupStart 且是群聊时为真。<b>头像挂在段末那条</b>（<code>groupEnd && showsAvatar</code>），贴气泡<b>底边</b>（<code>alignSelf: "flex-end"</code>），段中气泡用等宽占位保持缩进 —— 头像跟着段落的收尾走，一段只出现一次，位置正好落在这一块的下沿。</li>
       <li><b>靠颜色分人，不靠装饰。</b>bot 气泡是浅灰填充 <code>#E9E9EB</code>（<code>theme.ts</code> 的 <code>botBubble</code>）无边框；自己是 <code>systemBlue</code>。没有描边、没有投影。</li>
       <li><b>chrome 极少。</b>头部只有返回 + 标题 + 一个「…」；输入区只有 <code>+</code> + 输入框 + 麦克风，占位文字直接写「给 X 发消息」。</li>
     </ul>
