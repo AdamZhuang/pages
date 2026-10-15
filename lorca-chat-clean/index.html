@@ -382,6 +382,9 @@
               <span class="hdr-title">自媒体选题维护</span>
             </div>
             <span class="hdr-spacer"></span>
+            <button class="icon-btn" type="button" aria-label="命令细节"><span class="icon-btn-badge">7</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>
+            </button>
             <button class="icon-btn is-plain" type="button" aria-label="更多">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
             </button>
@@ -462,6 +465,9 @@
               <span class="hdr-title">自媒体选题维护</span>
             </div>
             <span class="hdr-spacer"></span>
+            <button class="icon-btn" type="button" aria-label="命令细节"><span class="icon-btn-badge">7</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>
+            </button>
             <button class="icon-btn is-plain" type="button" aria-label="更多">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
             </button>
@@ -538,6 +544,9 @@
               <span class="hdr-title">avatar 开发群</span>
             </div>
             <span class="hdr-spacer"></span>
+            <button class="icon-btn" type="button" aria-label="命令细节"><span class="icon-btn-badge">4</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>
+            </button>
             <button class="icon-btn is-plain" type="button" aria-label="更多">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
             </button>
@@ -634,8 +643,14 @@
 
     <h3>4. 本期做什么（P2 · 结构）</h3>
     <ul>
-      <li><b>头部收敛</b>：默认只留「返回 + 标题 + ⋯」，「命令细节 / 置顶 / 移到分组」进 ⋯ 菜单；运行中的「停止」留在原位（它是运行时的唯一高频动作，不该埋进菜单）。</li>
+      <li><b>头部收敛（B 方案，已定稿）</b>：进 ⋯ 菜单的<b>只有「置顶会话」与「移到分组」</b>；<b>「命令细节」留在头部原位</b>，带隐藏条数角标。理由：角标是「有东西被藏起来了」的信号，埋进菜单就白做了可发现性 —— 用户不会为了知道「藏了几条」去点开菜单。运行中的「停止」留在原位（运行时的唯一高频动作）。</li>
       <li><b>去掉标题下的副标题</b>（「3 位成员」/ 模型名）。成员数在群聊里由头像已经说清，模型名属于设置。</li>
+    </ul>
+
+    <h3>4.1 研发复核补的两处（产品已确认）</h3>
+    <ul>
+      <li><b>那个 span 不只时间戳。</b><code>LorcaPanel.tsx:2325</code> / <code>:2367</code> 实际是 <code>{message.pending ? "发送中…" : formatClock(...)}</code>，同时是乐观行「正在发」的唯一视觉出口（配合 <code>.lorca-bubble.is-pending</code>）。<b>做法：保留这个 span，但只在自己发且未落地的消息上渲染</b> —— 正常情况下一条时间戳都没有，只在发送中那几百毫秒里显示「发送中…」。既满足「去掉逐条时间戳」，又不砍发送反馈。这条是研发提的，产品确认采纳。</li>
+      <li><b>跨天判定是冗余的。</b>上游 <code>separated</code> 只看时间断层（<code>transcript.tsx:63</code>），没有单独的跨天判断；而跨天必然 &gt; 15 分钟，是它的子集。所以实现上只需一个条件，不用写两套。</li>
     </ul>
 
     <h3>5. 本期不做（明确）</h3>
@@ -653,22 +668,24 @@
       <li>跨天或间隔 ≥ 15 分钟时，出现居中日期行；间隔 &lt; 15 分钟不出现。</li>
       <li>头像与所在段最后一条气泡的<b>底边对齐</b>；连续气泡缩进不塌陷（占位仍在）。</li>
       <li>bot 气泡无描边、无投影，填充为 <code>#e9e9eb</code>；自己的气泡保持品牌蓝。</li>
-      <li>头部默认控件 ≤ 3（P2 完成后）。</li>
+      <li>头部默认控件 <b>≤ 4</b>（返回 + 标题 + <b>命令细节+角标</b> + ⋯），且<b>「命令细节」必须留在头部、带隐藏条数角标</b>，不得埋进菜单；运行中的「停止」仍在原位。</li>
       <li>工具块行为不变：默认收起、可展开、条数角标正确（回归）。</li>
       <li>出 before/after 截图对比作为交付证据。</li>
     </ul>
 
-    <h3>7. 估工（产品侧初估，待研发确认）</h3>
+    <h3>7. 估工（两份复核口径待澄清）</h3>
+    <p>产品侧初估 <b>2.25 天</b>。研发复核给了<b>两个不一致的数</b>，已请其澄清：</p>
     <table>
-      <thead><tr><th>块</th><th>内容</th><th>天</th></tr></thead>
+      <thead><tr><th>来源</th><th>P1 视觉</th><th>P1 测试</th><th>P2 头部</th><th>真机</th><th>合计</th></tr></thead>
       <tbody>
-        <tr><td>P1 视觉</td><td>日期分隔行 + 间距分档 + 头像对齐 + 气泡填充/圆角 + CSS 收尾</td><td>1.0</td></tr>
-        <tr><td>P1 测试</td><td>版面契约测试增量（分隔行阈值、间距分档、头像对齐、气泡样式）</td><td>0.5</td></tr>
-        <tr><td>P2 头部</td><td>⋯ 菜单收纳 + 移除副标题 + 返回层回归</td><td>0.5</td></tr>
-        <tr><td>真机核对</td><td>本机真实会话过一遍 + before/after 截图</td><td>0.25</td></tr>
-        <tr><td><b>合计</b></td><td></td><td><b>2.25</b></td></tr>
+        <tr><td>产品初估</td><td>1.0</td><td>0.5</td><td>0.5</td><td>0.25</td><td>2.25</td></tr>
+        <tr><td>研发复核（第一份）</td><td>1.4</td><td>0.6</td><td>0.65</td><td>0.5</td><td><b>3.15</b>（报 3）</td></tr>
+        <tr><td>研发复核（第二份，收到 B 更正后）</td><td colspan="4">称「2.25 成立」，但理由与第一份相同（<code>buildRows</code> 要改成带 next 前瞻的一遍扫描、⋯ 菜单是新组件）</td><td><b>2.25</b>（报 2.5）</td></tr>
       </tbody>
     </table>
+    <p><b>差额在哪：</b>P1 视觉 1.0 vs 1.4（差在 ① 发送中 span 要改条件渲染而非直删；② <code>.lorca-thread</code> 的 gap 要拆到行级、涉及 <code>buildRows</code> 两边配合，且工具折叠块会截断连续段；③ 分隔行与段判定的插入点要和它对齐）、P1 测试 0.5 vs 0.6、P2 0.5 vs 0.65（⋯ 菜单是面板里没有的新组件）、真机 0.25 vs 0.5。</p>
+    <p>按第一份的逐条理由看，<b>P1 确实不是 1.0 能盖住的</b>；产品侧倾向按 <b>2.5–3 天</b> 记账，具体数待研发澄清（要它说清第二份为何把 P1 降回 1.0）。</p>
+    <p><b>不含</b>：安卓真机回归（返回键行为只能真机验）、深色主题适配（avatar 目前只有浅色）。</p>
 
     <h3>8. 风险</h3>
     <ul>
@@ -679,7 +696,7 @@
     </ul>
 
     <div class="callout">
-      <b>要你确认一件事：</b>头部那三个控件（命令细节 / 置顶 / 移到分组）收进 ⋯ 之后，<b>「命令细节」会多一次点击</b> —— 它带隐藏条数角标，是你之前特意加的可发现性入口。我倾向收（低频），但这条会牺牲一点可发现性。你选：<b>A. 全收进 ⋯</b>；<b>B. 只收「置顶 / 移到分组」，「命令细节」留在头部</b>。我默认按 B 实现，因为角标是「有东西被藏起来了」的信号，埋进菜单就白做了。
+      <b>已定稿（2026-10-15）：头部按 B 方案。</b>进 ⋯ 的只有「置顶会话」与「移到分组」；<b>「命令细节」留在头部</b>，带隐藏条数角标 —— 角标是「有东西被藏起来了」的信号，埋进菜单就白做了可发现性。运行中的「停止」仍在原位。所以 P2 之后头部是 4 个控件（返回 / 标题 / 命令细节 / ⋯），运行中加「停止」为 5 个。本稿之前那版文末写成「三个全收进 ⋯」（A 方案），与三屏图不一致，已按 B 改正。
     </div>
   </div>
 </div>
