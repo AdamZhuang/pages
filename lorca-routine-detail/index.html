@@ -760,13 +760,15 @@ return items.filter(i => !seen.includes(i.id));</div>
         <tr><td><code>paused</code></td><td>已暂停</td><td>「到点不再运行，历史与配置都留着。启用后从那一刻重新算排期。」</td><td>启用</td></tr>
         <tr><td><code>waiting_for_runner</code></td><td>等待 Runner</td><td>「{runner} 现在离线，例程等它回来。别的机器不会接手 —— 例程绑在这台 Runner 上。」</td><td>运行一次不可用（离线起不来）· 暂停可用</td></tr>
         <tr><td><code>failed</code> · 检查线</td><td>检查失败</td><td>「检查脚本报错退出了。{bot} 拿到了这个错误，能让它改；它会按退避重试。」</td><td>运行一次 · 暂停</td></tr>
-        <tr><td><code>failed</code> · 模型连不上</td><td>连不上模型</td><td>「上次运行没能连上模型服务。下次到点自己重试，连着失败会越等越久。」</td><td>运行一次 · 暂停</td></tr>
-        <tr><td><code>failed</code> · 模型登录被拒</td><td>模型登录失败</td><td>「上次运行登录模型服务被拒。在设置里重新连上；连着三次就会停住。」</td><td>运行一次 · 暂停</td></tr>
+        <tr><td><code>failed</code> · 模型连不上</td><td>检查失败</td><td>「上次运行没能连上模型服务。下次到点自己重试，连着失败会越等越久。」</td><td>运行一次 · 暂停</td></tr>
+        <tr><td><code>failed</code> · 模型登录被拒</td><td>检查失败</td><td>「上次运行登录模型服务被拒。在设置里重新连上；连着三次就会停住。」</td><td>运行一次 · 暂停</td></tr>
         <tr><td><code>blocked</code> · 等登录</td><td>等一个登录</td><td>「连着三次登录失败，lorca 把它停了。在设置里把供应商重新连上，再点启用；不重新连，启用也起不来。」</td><td>运行一次不可用 · 启用</td></tr>
         <tr><td><code>blocked</code> · 检查越权</td><td>检查被拦</td><td>「检查脚本想做一件它没权限做的事。跟 {bot} 说，让它改。」</td><td>运行一次 · 暂停</td></tr>
       </tbody>
     </table>
-    <p>后四行来自研发的实测发现：<code>health</code> 有两个写入点 —— 检查跑完（<code>routines.rs:742</code> 的 <code>checked()</code>）与运行连不上模型（<code>routines.rs:559</code> 的 <code>record_failure</code>，调用点 <code>turns.rs</code>）。所以 <code>failed</code> 至少有三条来源，「检查脚本报错退出了」不能当通用文案。区分方法：<code>health.model.status</code> 有值且 <code>health.status</code> 无值 = 模型线，反之 = 检查线；<code>authentication_failures</code> / <code>connection_failures</code> 再分登录与连不上。</p>
+    <p><b>failed 三支的状态词都是「检查失败」，只有人话分行。</b>用户要先知道「它现在不工作」，再知道「是哪里坏了」—— 状态词是给眼睛扫的，人话是给脑子读的。（本表 2026-10-15 修正：初稿给三支写了三个状态词，与「状态词不拆」自相矛盾，研发指出后改掉。）</p>
+    <p><b>判定口径（研发修正，产品采纳）</b>：不能用「<code>health.model.status</code> 有值」当模型线 —— 实测健康例程的 <code>health.status</code> 是 <code>ready</code> 而不是 null，<code>model.status</code> 也可能有值，「有值」会把健康例程算进检查线。正确写法是先看 <code>state === "failed"</code>（上游 <code>routine_state</code> 已经算好），再在页内分来源：<code>health.model.status === "failed"</code> → 模型线，再看 <code>authentication_failures &gt; 0</code> 分登录被拒、否则 <code>connection_failures &gt; 0</code> 分连不上；两者都是 0 就兜一句通用模型线文案。否则 <code>health.status === "failed"</code> → 检查线。</p>
+    <p>后四行来自研发的实测发现：<code>health</code> 有两个写入点 —— 检查跑完（<code>routines.rs:742</code> 的 <code>checked()</code>）与运行连不上模型（<code>routines.rs:559</code> 的 <code>record_failure</code>，调用点 <code>turns.rs</code>）。所以 <code>failed</code> 至少有三条来源，「检查脚本报错退出了」不能当通用文案。另外 <code>CheckStatus</code> 是四值（<code>quiet</code> / <code>ready</code> / <code>failed</code> / <code>blocked</code>，<code>routine_health.rs:31</code>），健康例程的 <code>status</code> 是 <code>ready</code>。</p>
 
     <h3>2.2 三条要改的地方（研发实测，产品已确认）</h3>
     <table>
@@ -784,7 +786,7 @@ return items.filter(i => !seen.includes(i.id));</div>
         </tr>
         <tr>
           <td><code>health.model</code> 与 <code>health.status</code> 两条线都会把例程推成 <code>failed</code>，没 check 也会</td>
-          <td><b>按来源分三句</b>（见 2.1 表）。原稿「检查脚本报错退出了」只当检查线用。<b>但不分两个状态词</b>：状态词仍统一显示上游的 <code>failed</code> 对应词，只有人话分行。理由是用户要先知道「它现在不工作」，再知道「是哪里坏了」</td>
+          <td><b>按来源分三句</b>（见 2.1 表）。原稿「检查脚本报错退出了」只当检查线用。<b>但不分状态词</b>：三支仍统一显示上游 <code>failed</code> 对应词「检查失败」，只有人话分行。判定精确到 <code>health.model.status === "failed"</code>，不能写「有值」（健康例程的 <code>health.status</code> 是 <code>ready</code>，会把健康例程算进检查线 —— 研发实测指出）</td>
           <td>含在详情页 3.25d 内</td>
         </tr>
       </tbody>
@@ -807,6 +809,7 @@ return items.filter(i => !seen.includes(i.id));</div>
     </ul>
 
     <h3>5. 验收标准（研发交付时按这个验）</h3>
+    <p><b>估工（研发定稿，2026-10-15）：列表入口 0.5d + 详情页 4.4d = 4.9d，报 5 天。</b>产品侧原记的 3.75 是研发上一版算错的数（子项相加实为 4.0），不是「没算中文化」；本次拍板新增三项（列表行中文化 0.1 + blocked 桥接映射 0.1 + failed 三分支 0.25 + 测试增量 0.05）。<b>可砍项（需产品同意）</b>：排期中文化 0.6（面板里唯一的中英混排，已明确不接受）、fixture 测试 0.15、真机/真数据核对 0.25。<b>不含</b>：评审、安卓真机回归（返回键行为只能真机验）。</p>
     <ul>
       <li>列表页每行整行可点进详情，右侧不再有「运行 / 暂停」按钮；误触不会起 turn。</li>
       <li>详情页六个状态（<code>on</code> / <code>running</code> / <code>paused</code> / <code>waiting_for_runner</code> / <code>failed</code> / <code>blocked</code>）各有对应文案，<b>状态词直接显示上游的 <code>state</code>，界面不自己推导</b>。</li>
@@ -816,12 +819,20 @@ return items.filter(i => !seen.includes(i.id));</div>
       <li>无 check 的例程不显示「上次检查 / 上次成功的检查」两行。</li>
       <li>roster 实时更新到达时，详情页跟着变（例程可能在别的设备上被改）。</li>
       <li>停止 / 删除 / 编辑在这页<b>都不可达</b>（要么没有入口，要么明确置灰并说明去哪做）。</li>
+      <li><code>failed</code> 三支的<b>状态词都显示「检查失败」</b>（不拆），只有第二行按来源分三句；判定用 <code>health.model.status === "failed"</code>，不得用「有值」。</li>
+      <li>「检查」段与「上次检查 / 上次成功的检查」的显示条件是 <code>check !== null</code>，<b>不是</b> <code>health !== null</code>（没 check 的例程也会因模型线进 failed）。</li>
     </ul>
 
-    <h3>6. 要研发确认的两件事</h3>
+    <h3>6. 已确认与待确认</h3>
+    <p><b>已确认（2026-10-15，研发定稿采纳）</b>：</p>
     <ul>
-      <li>状态头的文案要不要复用 lorca 的英文原文？lorca 手机端是走 i18n 的（<code>t("Needs sign-in")</code>），中文是它自己的译文。avatar 直接写中文，还是跟 lorca 术语对齐（比如「等待 Runner」是否照抄）？</li>
-      <li><code>health.model</code> 与 <code>health.status</code> 是两条独立的失败线（前者是模型供应商，后者是检查脚本/插件）。一期只显示合并后的一句话，还是要分开显示？我倾向合并 —— 分开是运维视角，不是用户视角。</li>
+      <li><code>health.model</code> 与 <code>health.status</code> 两条失败线<b>合并成一个状态词</b>（「检查失败」），只把「怎么修」分行 —— 分开是运维视角，不是用户视角。</li>
+      <li><code>schedule_text</code> 中文化写成<b>共用函数</b> <code>scheduleText()</code>，列表行与详情页都调它，按真实 8 个值做 fixture。</li>
+      <li>白名单不扩（18 个方法内已覆盖）；<code>bootstrap</code> 走 internalMethods。</li>
+    </ul>
+    <p><b>待确认</b>：</p>
+    <ul>
+      <li>状态词的中文措辞是否定稿（「开启 / 正在运行… / 已暂停 / 等待 Runner / 检查失败 / 等一个登录 / 检查被拦」）？特别「等待 Runner」这个词 —— lorca 手机端英文是 <code>Waiting for Runner</code>，中文里「Runner」是保留英文还是改成「运行机」？我倾向保留，因为 lorca 自己的中文文案也用 Runner，用户已经认识这个词。</li>
     </ul>
   </div>
 </div>
