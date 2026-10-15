@@ -782,12 +782,12 @@ return items.filter(i => !seen.includes(i.id));</div>
         <tr>
           <td><code>blocked</code> 态点「运行一次」必 502：上游拒绝文案是「… is paused after three failed sign-ins in a row. Reconnect, then resume it.」（<code>routines.rs:496</code>），<code>translateRoutineError</code> 认不出</td>
           <td><b>桥接层补一条映射</b>：匹 <code>/paused after three failed sign-ins/</code> → 409 + <code>lorca_routine_signed_out</code> + 中文「还没重新登录，这个例程现在跑不起来；在设置里重新连上供应商再启用」。<b>同时</b>详情页在 <code>blocked</code> 且 <code>paused_reason === "authentication"</code> 时，把「运行一次」直接置灰并给出这句原因 —— 不靠用户点了才知道。UI 稿已补这一屏</td>
-          <td>含在详情页 3.25d 内</td>
+          <td>含在详情页 4.4d 内</td>
         </tr>
         <tr>
           <td><code>health.model</code> 与 <code>health.status</code> 两条线都会把例程推成 <code>failed</code>，没 check 也会</td>
           <td><b>按来源分三句</b>（见 2.1 表）。原稿「检查脚本报错退出了」只当检查线用。<b>但不分状态词</b>：三支仍统一显示上游 <code>failed</code> 对应词「检查失败」，只有人话分行。判定精确到 <code>health.model.status === "failed"</code>，不能写「有值」（健康例程的 <code>health.status</code> 是 <code>ready</code>，会把健康例程算进检查线 —— 研发实测指出）</td>
-          <td>含在详情页 3.25d 内</td>
+          <td>含在详情页 4.4d 内</td>
         </tr>
       </tbody>
     </table>
@@ -829,6 +829,7 @@ return items.filter(i => !seen.includes(i.id));</div>
       <li><code>health.model</code> 与 <code>health.status</code> 两条失败线<b>合并成一个状态词</b>（「检查失败」），只把「怎么修」分行 —— 分开是运维视角，不是用户视角。</li>
       <li><code>schedule_text</code> 中文化写成<b>共用函数</b> <code>scheduleText()</code>，列表行与详情页都调它，按真实 8 个值做 fixture。</li>
       <li>白名单不扩（18 个方法内已覆盖）；<code>bootstrap</code> 走 internalMethods。</li>
+      <li><b>「等待 Runner」保留英文 Runner，不改成「运行机」</b>（研发核到上游背书：lorca <code>mobile/src/i18n/zh.ts:481</code> 是 <code>"Runner": "Runner"</code> 原样不译、<code>zh.ts:845</code> 是 <code>"Waiting for Runner": "等待 Runner"</code>，与本文状态词一字不差；avatar 自己 <code>LorcaPanel.tsx:144</code> 也已在用「Runner 离线」）。另：「运行机」在 avatar 的 <code>apps/mobile/src</code>、<code>packages/protocol</code>、<code>services/desktop-agent/src</code> 三个目录里零命中 —— 改它等于凭空造一个用户没见过的词。</li>
     </ul>
     <p><b>待确认</b>：</p>
     <ul>
