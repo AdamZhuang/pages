@@ -1,36 +1,44 @@
 {
   "date": "2026-10-15",
-  "generated_at": "2026-10-15T04:30:42.043781+08:00",
+  "generated_at": "2026-10-15T08:36:34.024195+08:00",
   "hn": [
     {
-      "title": "AI agents aren't 'going rogue.' Frontier labs are skipping security basics",
+      "title": "Containment and monitoring failures are to blame for AI hacking reports: experts",
       "link": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
-      "points": 704,
-      "comments": 317,
+      "points": 820,
+      "comments": 442,
       "date": "2026-10-14 17:45Z",
       "hn_link": "https://news.ycombinator.com/item?id=50091788"
     },
     {
-      "title": "ASML's strong orders ease fears AI spending boom is running out of steam",
-      "link": "https://www.reuters.com/business/asml-forecasts-q4-sales-above-expectations-ai-chip-demand-2026-10-14/",
-      "points": 164,
-      "comments": 161,
-      "date": "2026-10-14 14:38Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50088430"
-    },
-    {
       "title": "Banks are now trying to offload the AI data center debt they just underwrote",
       "link": "https://startupfortune.com/banks-are-now-trying-to-offload-the-ai-data-center-debt-they-just-underwrote/",
-      "points": 140,
-      "comments": 111,
+      "points": 263,
+      "comments": 207,
       "date": "2026-10-14 18:32Z",
       "hn_link": "https://news.ycombinator.com/item?id=50092664"
     },
     {
+      "title": "ASML's strong orders ease fears AI spending boom is running out of steam",
+      "link": "https://www.reuters.com/business/asml-forecasts-q4-sales-above-expectations-ai-chip-demand-2026-10-14/",
+      "points": 168,
+      "comments": 167,
+      "date": "2026-10-14 14:38Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50088430"
+    },
+    {
+      "title": "We’re releasing Jev 1.14.0 along with experimental features for dreamers",
+      "link": "https://typesafe.ai/blog/jev-1-14",
+      "points": 154,
+      "comments": 54,
+      "date": "2026-10-14 21:11Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50095353"
+    },
+    {
       "title": "TV4 postpones show after AI agent erases edited material",
       "link": "https://swedenherald.com/article/tv4-postpones-the-challenge-until-2027-after-technical-failure-erases-edited-footage",
-      "points": 130,
-      "comments": 73,
+      "points": 139,
+      "comments": 78,
       "date": "2026-10-14 10:28Z",
       "hn_link": "https://news.ycombinator.com/item?id=50085323"
     },
@@ -43,36 +51,52 @@
       "hn_link": "https://news.ycombinator.com/item?id=50081151"
     },
     {
-      "title": "Show HN: Pulse Local, a Mac budgeting app whose AI models run on your machine",
-      "link": "https://pulseos.finance",
-      "points": 111,
-      "comments": 70,
-      "date": "2026-10-13 23:13Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50080275"
-    },
-    {
       "title": "AI is mass decompiling games. That's both awesome and scary",
       "link": "https://popcar.bearblog.dev/ai-is-mass-decompiling-games-thats-both-awesome-and-scary/",
-      "points": 90,
-      "comments": 130,
+      "points": 94,
+      "comments": 147,
       "date": "2026-10-14 14:47Z",
       "hn_link": "https://news.ycombinator.com/item?id=50088534"
     },
     {
       "title": "Anthropic conjures threat that doesn't exist yet to stoke fears of AI apocalypse",
       "link": "https://www.theregister.com/ai-and-ml/2026/10/13/anthropic-conjures-another-threat-that-doesnt-exist-yet-to-stoke-fears-of-ai-apocalypse/5302866",
-      "points": 72,
-      "comments": 86,
+      "points": 74,
+      "comments": 88,
       "date": "2026-10-14 05:53Z",
       "hn_link": "https://news.ycombinator.com/item?id=50082962"
     },
     {
+      "title": "Show HN: I wrote an email app that accepts only one sender per inbox",
+      "link": "https://clova.email/",
+      "points": 73,
+      "comments": 57,
+      "date": "2026-10-14 17:00Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50090932"
+    },
+    {
+      "title": "Has AI tells",
+      "link": "https://theconsensus.dev/blog/2026/10/14/has-ai-tells.html?focus=1",
+      "points": 69,
+      "comments": 72,
+      "date": "2026-10-14 16:52Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50090799"
+    },
+    {
       "title": "Character.ai's Bankruptcy Documents Show the Economics of AI Don't Work",
       "link": "https://www.404media.co/character-ais-bankruptcy-documents-show-the-economics-of-ai-dont-work/",
-      "points": 59,
+      "points": 62,
       "comments": 87,
       "date": "2026-10-14 15:39Z",
       "hn_link": "https://news.ycombinator.com/item?id=50089395"
+    },
+    {
+      "title": "I let an AI run my startup for a week",
+      "link": "https://daily.tinyprojects.dev/221",
+      "points": 57,
+      "comments": 56,
+      "date": "2026-10-14 10:25Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50085296"
     },
     {
       "title": "Agent erased full season of \"The Challenge Swe\": \"Hundreds of days of work gone\"",
@@ -81,30 +105,6 @@
       "comments": 61,
       "date": "2026-10-14 10:21Z",
       "hn_link": "https://news.ycombinator.com/item?id=50085259"
-    },
-    {
-      "title": "Has AI Tells",
-      "link": "https://theconsensus.dev/blog/2026/10/14/has-ai-tells.html?focus=1",
-      "points": 52,
-      "comments": 44,
-      "date": "2026-10-14 16:52Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50090799"
-    },
-    {
-      "title": "I let an AI run my startup for a week",
-      "link": "https://daily.tinyprojects.dev/221",
-      "points": 49,
-      "comments": 54,
-      "date": "2026-10-14 10:25Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50085296"
-    },
-    {
-      "title": "Show HN: I wrote an email app that accepts only one sender per inbox",
-      "link": "https://clova.email/",
-      "points": 41,
-      "comments": 34,
-      "date": "2026-10-14 17:00Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50090932"
     }
   ],
   "feeds": [
@@ -168,6 +168,12 @@
       "url": "https://www.ifanr.com/feed",
       "items": [
         {
+          "title": "早报｜iPhone Duo完成大模型备案，有望12月上线/企业微信与WorkBuddy打通/OPPO与Manus官宣合作",
+          "link": "https://www.ifanr.com/1684374?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 15 Oct 2026 00:13:28 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
           "title": "苹果 HomeView 上手汇总：「果家」首秀小惊艳，SiriAI 很聪明",
           "link": "https://www.ifanr.com/1684341?utm_source=rss&utm_medium=rss&utm_campaign=",
           "date": "Wed, 14 Oct 2026 12:35:44 +0000",
@@ -207,12 +213,6 @@
           "title": "企业微信和 WorkBuddy 组了个「王炸局」，AI 终于不用人伺候了",
           "link": "https://www.ifanr.com/1684200?utm_source=rss&utm_medium=rss&utm_campaign=",
           "date": "Wed, 14 Oct 2026 02:30:24 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "早报｜苹果发布十多款「果家」新品/Gemini 4来了，写代码更省心/3999元，阶跃智能体手机发布",
-          "link": "https://www.ifanr.com/1684137?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 14 Oct 2026 00:08:24 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         }
       ],
@@ -278,9 +278,21 @@
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "items": [
         {
+          "title": "McKinsey is making job applicants spar with a fake AI client",
+          "link": "https://www.theverge.com/news/1011654/mckinsey-ai-client-interview",
+          "date": "2026-10-14T18:53:31-04:00",
+          "desc": ""
+        },
+        {
+          "title": "Eight states sue OpenAI, saying ChatGPT isn’t safe for kids",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety",
+          "date": "2026-10-14T17:17:29-04:00",
+          "desc": ""
+        },
+        {
           "title": "The AI race is back on",
           "link": "https://www.theverge.com/ai-artificial-intelligence/1011311/the-ai-race-is-back-on",
-          "date": "2026-10-14T15:06:03-04:00",
+          "date": "2026-10-14T20:16:12-04:00",
           "desc": ""
         },
         {
@@ -312,18 +324,6 @@
           "link": "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft",
           "date": "2026-10-14T12:05:21-04:00",
           "desc": ""
-        },
-        {
-          "title": "Square’s new kiosk lets you talk to AI for help with your order",
-          "link": "https://www.theverge.com/tech/1009086/square-kiosk",
-          "date": "2026-10-13T15:34:42-04:00",
-          "desc": ""
-        },
-        {
-          "title": "Android is using AI to suss out scammers in Google Messages",
-          "link": "https://www.theverge.com/tech/1010928/android-scam-protection-enhanced-protection-google-messages",
-          "date": "2026-10-14T11:15:59-04:00",
-          "desc": ""
         }
       ],
       "error": null
@@ -332,6 +332,12 @@
       "name": "Ars Technica · AI",
       "url": "https://arstechnica.com/ai/feed/",
       "items": [
+        {
+          "title": "Epic says its new vibe-coded Epic Games Launcher is faster than Steam",
+          "link": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/",
+          "date": "Wed, 14 Oct 2026 21:15:56 +0000",
+          "desc": ""
+        },
         {
           "title": "Researchers use AI to design proteins that cut up other proteins",
           "link": "https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins/",
@@ -373,12 +379,6 @@
           "link": "https://arstechnica.com/ai/2026/10/gemini-4-argon-begins-rolling-out-in-gemini-app-and-antigravity-but-only-if-you-pay/",
           "date": "Tue, 13 Oct 2026 16:00:02 +0000",
           "desc": ""
-        },
-        {
-          "title": "They war-gamed dimming the Sun. It went even worse than you think.",
-          "link": "https://arstechnica.com/science/2026/10/they-war-gamed-dimming-the-sun-it-went-even-worse-than-you-think/",
-          "date": "Tue, 13 Oct 2026 15:17:59 +0000",
-          "desc": ""
         }
       ],
       "error": null
@@ -387,6 +387,18 @@
       "name": "TechCrunch · AI",
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "items": [
+        {
+          "title": "Gudea leverages AI to help organizations prevent social media crises before they erupt",
+          "link": "https://techcrunch.com/2026/10/14/gudea-leverages-ai-to-help-organizations-prevent-social-media-crises-before-they-erupt/",
+          "date": "Thu, 15 Oct 2026 00:00:00 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Flock CEO says its microphones detect ‘just gunshots’ — its website says different",
+          "link": "https://techcrunch.com/2026/10/14/flock-ceo-says-its-microphones-detect-just-gunshots-its-website-says-different/",
+          "date": "Wed, 14 Oct 2026 21:30:33 +0000",
+          "desc": ""
+        },
         {
           "title": "YouTube Music launches new labels as AI-generated music floods streaming platforms",
           "link": "https://techcrunch.com/2026/10/14/youtube-music-launches-new-labels-as-ai-generated-music-floods-streaming-platforms/",
@@ -421,18 +433,6 @@
           "title": "Floqer’s AI agents research sales prospects so teams don’t have to",
           "link": "https://techcrunch.com/2026/10/14/floqers-ai-agents-help-b2b-revenue-teams-research-customers/",
           "date": "Wed, 14 Oct 2026 15:00:00 +0000",
-          "desc": ""
-        },
-        {
-          "title": "TechCrunch Disrupt 2026: Day 2",
-          "link": "https://techcrunch.com/2026/10/14/techcrunch-disrupt-2026-day-2/",
-          "date": "Wed, 14 Oct 2026 14:30:00 +0000",
-          "desc": ""
-        },
-        {
-          "title": "Scimplify raises $25M to challenge China’s grip on critical materials with AI",
-          "link": "https://techcrunch.com/2026/10/14/scimplify-raises-25m-to-challenge-chinas-grip-on-critical-materials-with-ai/",
-          "date": "Wed, 14 Oct 2026 11:00:00 +0000",
           "desc": ""
         }
       ],
@@ -571,6 +571,12 @@
           "desc": ""
         },
         {
+          "title": "How Block is building AI-powered security with OpenAI technology",
+          "link": "https://openai.com/index/block-ai-powered-security",
+          "date": "Wed, 14 Oct 2026 07:00:00 GMT",
+          "desc": ""
+        },
+        {
           "title": "The EU’s next chapter in AI is agentic",
           "link": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
           "date": "Wed, 14 Oct 2026 00:00:00 GMT",
@@ -592,12 +598,6 @@
           "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
           "link": "https://openai.com/index/sophos",
           "date": "Fri, 09 Oct 2026 07:00:00 GMT",
-          "desc": ""
-        },
-        {
-          "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
-          "link": "https://openai.com/index/oracle",
-          "date": "Thu, 08 Oct 2026 16:00:00 GMT",
           "desc": ""
         }
       ],
@@ -661,7 +661,56 @@
     {
       "name": "DeepMind Blog",
       "url": "https://deepmind.google/blog/rss.xml",
-      "items": [],
+      "items": [
+        {
+          "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+          "link": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+          "date": "Wed, 14 Oct 2026 02:00:14 +0000",
+          "desc": "Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to intercept conversational scams in private chats with zero cloud data egress."
+        },
+        {
+          "title": "Developing Gemini 4 Argon responsibly and safely",
+          "link": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+          "date": "Tue, 13 Oct 2026 19:43:07 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Gemini 4 Argon for Robotics",
+          "link": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+          "date": "Tue, 13 Oct 2026 16:01:58 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Gemini 4 Argon: Built to solve your hardest problems",
+          "link": "https://deepmind.google/blog/introducing-gemini-4-argon/",
+          "date": "Tue, 13 Oct 2026 16:01:52 +0000",
+          "desc": ""
+        },
+        {
+          "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+          "link": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
+          "date": "Tue, 06 Oct 2026 19:57:04 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Gemini 4 Argon: our next era of frontier intelligence",
+          "link": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+          "date": "Wed, 30 Sep 2026 20:01:45 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Introducing SynthID Bio",
+          "link": "https://deepmind.google/blog/introducing-synthid-bio/",
+          "date": "Wed, 30 Sep 2026 15:03:07 +0000",
+          "desc": "Proof of concept for watermarking AI-generated proteins while preserving biological function."
+        },
+        {
+          "title": "Introducing Gemini 3.8 Live with Live Avatar",
+          "link": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
+          "date": "Thu, 24 Sep 2026 16:20:39 +0000",
+          "desc": ""
+        }
+      ],
       "error": null
     },
     {
@@ -723,13 +772,13 @@
       "name": "arXiv cs.AI",
       "url": "https://export.arxiv.org/rss/cs.AI",
       "items": [],
-      "error": null
+      "error": "本期无条目"
     },
     {
       "name": "arXiv cs.CL",
       "url": "https://export.arxiv.org/rss/cs.CL",
       "items": [],
-      "error": null
+      "error": "本期无条目"
     }
   ]
 }
