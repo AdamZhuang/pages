@@ -11,6 +11,7 @@
 - `index.html` — 站点首页
 - `demo.html` — 快速页面生成器 Demo
 - `finance-reporter/` — 宏观分析师「观潮」的每日日报归档，见该目录 README
+- `macro-report/` — 宏观观察员的全球宏观日报（工作日每天更新）
 
 ## 注意
 
