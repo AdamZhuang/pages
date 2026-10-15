@@ -233,6 +233,7 @@
     <button type="button" role="tab" data-screen="failed" aria-selected="false">详情 · 检查失败</button>
     <button type="button" role="tab" data-screen="offline" aria-selected="false">详情 · 等待 Runner</button>
     <button type="button" role="tab" data-screen="paused" aria-selected="false">详情 · 已暂停</button>
+    <button type="button" role="tab" data-screen="blocked" aria-selected="false">详情 · 被停住</button>
   </div>
 
   <div class="stage">
@@ -465,8 +466,12 @@ return items.filter(i => !seen.includes(i.id));</div>
               </span>
               <span class="state-main">
                 <span class="state-title">检查失败</span>
-                <span class="state-note">检查脚本报错退出了。产品经理拿到了这个错误，能让它改脚本；它会按退避重试。</span>
+                <span class="state-note">检查脚本报错退出了。产品经理拿到了这个错误，能让它改；它会按退避重试。</span>
               </span>
+            </div>
+            <div class="note is-plain" style="margin:0 14px">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M11 12h1v4h1"/></svg>
+              <span><b>这一屏只是 failed 的一种。</b>health 有两个写入点，模型线也会把例程推进 failed：连不上模型服务、或模型登录被拒。那两种情况没有 check 也照样发生，所以「检查脚本报错退出了」不能当 failed 的通用文案 —— 完整的三条分支见文末「六态文案表」。</span>
             </div>
 
             <div class="sect">
@@ -649,6 +654,74 @@ return items.filter(i => !seen.includes(i.id));</div>
           <div class="foot">暂停态：只有「启用」一个动作</div>
         </section>
 
+        <!-- ── 6. 详情 · 被停住（blocked）──────────────────────────── -->
+        <section class="screen" data-screen="blocked">
+          <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
+          <div class="hdr">
+            <button class="icon-btn" type="button" aria-label="返回">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <span class="hdr-title">晨间简报</span>
+            <span class="hdr-spacer"></span>
+            <span class="pill is-warn">等一个登录</span>
+          </div>
+          <div class="body">
+            <div class="state">
+              <span class="state-ico is-warn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+              </span>
+              <span class="state-main">
+                <span class="state-title">等一个登录</span>
+                <span class="state-note">连着三次登录失败，lorca 把它停了。在设置里把供应商重新连上，再点启用；不重新连，启用也起不来。</span>
+              </span>
+            </div>
+
+            <div class="sect">
+              <div class="card">
+                <div class="row btn-row is-disabled">
+                  <span class="row-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5l12 7-12 7z"/></svg></span>
+                  <span class="row-main"><span class="row-title">运行一次</span><span class="row-sub">还没重新登录，现在跑不起来。</span></span>
+                  <span class="row-value">不可用</span>
+                </div>
+                <div class="row btn-row">
+                  <span class="row-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></span>
+                  <span class="row-main"><span class="row-title">启用</span></span>
+                </div>
+              </div>
+              <div class="note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+                <span><b>这一屏就是研发说的 502。</b>上游的拒绝文案是「{名字} is paused after three failed sign-ins in a row. Reconnect, then resume it.」，桥接层的 <code>translateRoutineError</code> 认不出它，会当 502 报错。修法见文末「三条要改的地方」。</span>
+              </div>
+            </div>
+
+            <div class="sect">
+              <p class="sect-label">调度</p>
+              <div class="card">
+                <div class="row">
+                  <span class="row-main"><span class="row-title">每工作日 08:30</span></span>
+                  <span class="row-value">Asia/Shanghai</span>
+                </div>
+                <div class="row">
+                  <span class="row-main"><span class="row-title">下次运行</span></span>
+                  <span class="row-value">—</span>
+                </div>
+                <div class="row">
+                  <span class="row-main"><span class="row-title">上次运行</span><span class="row-sub">失败</span></span>
+                  <span class="row-value">10-14 08:30</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sect">
+              <p class="sect-label">任务</p>
+              <div class="card">
+                <div class="prose">把昨天的产品进展整理成三行简报：昨天交付了什么、今天要推进什么、有什么卡住。卡住的事要写清是谁在等。</div>
+              </div>
+            </div>
+          </div>
+          <div class="foot">blocked：状态词说「等什么」，人话说「怎么解」</div>
+        </section>
+
       </div>
     </div>
   </div>
@@ -677,6 +750,46 @@ return items.filter(i => !seen.includes(i.id));</div>
       </tbody>
     </table>
 
+    <h3>2.1 六态文案表（产品拍板稿）</h3>
+    <p>状态词一律取上游 <code>state</code>，界面不推导。括号里是这一档的判定来源。</p>
+    <table>
+      <thead><tr><th>state</th><th>状态词</th><th>人话（第二行）</th><th>动作区</th></tr></thead>
+      <tbody>
+        <tr><td><code>on</code></td><td>开启</td><td>「{排期} 由 {bot} 运行，结果发在这个会话里。」</td><td>运行一次 · 暂停</td></tr>
+        <tr><td><code>running</code></td><td>正在运行…</td><td>「{bot} 正在这台机器上跑这一轮，过程发在会话里。」</td><td>运行一次置灰（正在跑，等它结束）· 暂停可用，副文案说明不影响这一轮</td></tr>
+        <tr><td><code>paused</code></td><td>已暂停</td><td>「到点不再运行，历史与配置都留着。启用后从那一刻重新算排期。」</td><td>启用</td></tr>
+        <tr><td><code>waiting_for_runner</code></td><td>等待 Runner</td><td>「{runner} 现在离线，例程等它回来。别的机器不会接手 —— 例程绑在这台 Runner 上。」</td><td>运行一次不可用（离线起不来）· 暂停可用</td></tr>
+        <tr><td><code>failed</code> · 检查线</td><td>检查失败</td><td>「检查脚本报错退出了。{bot} 拿到了这个错误，能让它改；它会按退避重试。」</td><td>运行一次 · 暂停</td></tr>
+        <tr><td><code>failed</code> · 模型连不上</td><td>连不上模型</td><td>「上次运行没能连上模型服务。下次到点自己重试，连着失败会越等越久。」</td><td>运行一次 · 暂停</td></tr>
+        <tr><td><code>failed</code> · 模型登录被拒</td><td>模型登录失败</td><td>「上次运行登录模型服务被拒。在设置里重新连上；连着三次就会停住。」</td><td>运行一次 · 暂停</td></tr>
+        <tr><td><code>blocked</code> · 等登录</td><td>等一个登录</td><td>「连着三次登录失败，lorca 把它停了。在设置里把供应商重新连上，再点启用；不重新连，启用也起不来。」</td><td>运行一次不可用 · 启用</td></tr>
+        <tr><td><code>blocked</code> · 检查越权</td><td>检查被拦</td><td>「检查脚本想做一件它没权限做的事。跟 {bot} 说，让它改。」</td><td>运行一次 · 暂停</td></tr>
+      </tbody>
+    </table>
+    <p>后四行来自研发的实测发现：<code>health</code> 有两个写入点 —— 检查跑完（<code>routines.rs:742</code> 的 <code>checked()</code>）与运行连不上模型（<code>routines.rs:559</code> 的 <code>record_failure</code>，调用点 <code>turns.rs</code>）。所以 <code>failed</code> 至少有三条来源，「检查脚本报错退出了」不能当通用文案。区分方法：<code>health.model.status</code> 有值且 <code>health.status</code> 无值 = 模型线，反之 = 检查线；<code>authentication_failures</code> / <code>connection_failures</code> 再分登录与连不上。</p>
+
+    <h3>2.2 三条要改的地方（研发实测，产品已确认）</h3>
+    <table>
+      <thead><tr><th>发现</th><th>产品决定</th><th>工作量</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>schedule_text</code> 上游下发的是英文（「Every day at 4:30 AM」「Weekdays at 8:30 AM」，来源 <code>schedule.rs:398-455</code>）</td>
+          <td><b>要中文化，认到「列表入口 + 详情页」里。</b>理由：排期是这页最常看的一行，夹英文是面板里唯一的中英混排；lorca 手机端自己就写了这个转换（<code>mobile/src/ui/format.ts:84-114</code>），说明上游不打算做本地化。照它的口径重写（不抄代码）：先匹 <code>Every day</code> / <code>Weekdays</code> / <code>Weekends</code> / <code>Every N days|hours|minutes</code> / <code>Every hour at :MM</code> / <code>On the … of every month</code>，认不出的原样显示（<code>Cron …</code> 直接留英文，不编）</td>
+          <td>0.5d（研发原估，认可）</td>
+        </tr>
+        <tr>
+          <td><code>blocked</code> 态点「运行一次」必 502：上游拒绝文案是「… is paused after three failed sign-ins in a row. Reconnect, then resume it.」（<code>routines.rs:496</code>），<code>translateRoutineError</code> 认不出</td>
+          <td><b>桥接层补一条映射</b>：匹 <code>/paused after three failed sign-ins/</code> → 409 + <code>lorca_routine_signed_out</code> + 中文「还没重新登录，这个例程现在跑不起来；在设置里重新连上供应商再启用」。<b>同时</b>详情页在 <code>blocked</code> 且 <code>paused_reason === "authentication"</code> 时，把「运行一次」直接置灰并给出这句原因 —— 不靠用户点了才知道。UI 稿已补这一屏</td>
+          <td>含在详情页 3.25d 内</td>
+        </tr>
+        <tr>
+          <td><code>health.model</code> 与 <code>health.status</code> 两条线都会把例程推成 <code>failed</code>，没 check 也会</td>
+          <td><b>按来源分三句</b>（见 2.1 表）。原稿「检查脚本报错退出了」只当检查线用。<b>但不分两个状态词</b>：状态词仍统一显示上游的 <code>failed</code> 对应词，只有人话分行。理由是用户要先知道「它现在不工作」，再知道「是哪里坏了」</td>
+          <td>含在详情页 3.25d 内</td>
+        </tr>
+      </tbody>
+    </table>
+
     <h3>3. 白名单：本期一个新方法都不用加</h3>
     <ul>
       <li>详情页要的字段<b>上游本来就在 roster 里</b>：<code>routine_out</code> 是在 <code>Routine</code> 的 serde 输出上补了 <code>schedule_text</code> / <code>next_run_at</code> / <code>is_running</code> / <code>state</code>，而 <code>prompt</code>、<code>check</code>、<code>health</code>、<code>missed_run_policy</code>、<code>timezone</code> 本来就在 <code>Routine</code> 里（来源：<code>model.rs:937</code>）。</li>
@@ -688,8 +801,7 @@ return items.filter(i => !seen.includes(i.id));</div>
     <ul>
       <li><b>删除例程</b>：需要 <code>routines.delete</code>（不在白名单）。而且「在手机上删掉一个会定时起 turn 的东西」不该是面板里的顺手动作 —— 先只读。</li>
       <li><b>在详情页编辑排期 / 任务 / 检查</b>：需要 <code>routines.update</code> 的其余字段 + 一套表单。lorca 自己都要 <code>routines.describe</code> 校验排期串，avatar 没有这个能力，也不该有。要改就在会话里说。</li>
-      <li><b>运行历史（过去 N 次的列表）</b>：上游<b>没有这个数据</b>。<code>CheckHealth</code> 只留最近一次（<code>last_check_at</code> / <code>last_success_at</code> / <code>status</code> / 失败次数 / <code>retry_at</code>），没有 runs 列表，也没有 <code>routines.history</code> 方法。要做就得先提上游需求。</li>
-      <li><b>停掉正在跑的这一轮</b>：上游没有 <code>routines.stop</code>，只能走 <code>chats.stop</code>。本稿只在运行态用文案指路，不加按钮。</li>
+      <li><b>运行历史（过去 N 次的列表）</b>：上游<b>没有这个数据</b>。<code>CheckHealth</code> 只留最近一次（<code>last_check_at</code> / <code>last_success_at</code> / <code>status</code> / 失败次数 / <code>retry_at</code>），没有 runs 列表，也没有 <code>routines.history</code> 方法。要做就得先提上游需求。</li>      <li><b>停掉正在跑的这一轮</b>：上游没有 <code>routines.stop</code>，只能走 <code>chats.stop</code>。本稿只在运行态用文案指路，不加按钮。</li>
       <li><b>事件例程（监听 PR）/ 日历例程 / 一次性提醒</b>：字段在（<code>events</code> / <code>calendar</code> / <code>once_at</code>），但三种形态各要一套文案，且 <code>events</code> 还牵扯 GitHub App 安装、webhook key 展示与重置（<code>routines.regenerate_key</code> 不在白名单）。放 P2，本期详情页只做定时例程。</li>
       <li><b>额度 / Limits</b>：lorca 两端都有「额度用尽则暂停」这一档（<code>limitsSummary</code>）。avatar 没有 budgets 数据源，本期状态头里不出现这一档，但状态词表要留位置。</li>
     </ul>
