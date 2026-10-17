@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>avatar 会话列表动作 · UI 稿 v4（issue #1）</title>
+<style>
+  /* 颜色 / 圆角 / 动效取自 apps/mobile/src/styles/tokens.css 与 lorca.css，跟 App 内视觉同源。 */
+  :root {
+    --bg: #f5f6f8;
+    --bg-soft: #f2f3f5;
+    --surface: #ffffff;
+    --border: #eaecf0;
+    --border-subtle: rgba(0, 0, 0, 0.06);
+    --border-strong: #d9dce1;
+    --text: #1f2329;
+    --text-soft: #373c43;
+    --muted: #646a73;
+    --muted-2: #8f959e;
+    --accent: #3370ff;
+    --accent-strong: #245bdb;
+    --accent-soft: #eef3ff;
+    --danger: #b04458;
+    --danger-soft: #fae9ed;
+    --success: #2f7a4a;
+    --shadow-sm: 0 2px 8px rgba(31, 35, 41, 0.05);
+    --shadow-lg: 0 12px 32px rgba(31, 35, 41, 0.16);
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+    --slot: 84px;      /* 单个滑动动作槽宽 */
+    --slots: 252px;    /* 三槽全开 = 84 × 3 */
+    --row-h: 71px;     /* 行高：12.5*2 padding + 46 avatar */
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px 64px;
+    background: var(--bg); color: var(--text);
+    font: 15px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  .page-head h1 { margin: 0 0 4px; font-size: 22px; letter-spacing: -0.01em; }
+  .page-sub { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
+  .page-sub a { color: var(--accent-strong); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 9px; border: 1px solid var(--border); border-radius: 999px;
+    background: var(--surface); font-size: 12px; line-height: 1.5; color: var(--muted);
+  }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--muted-2); }
+  .badge.is-p1::before { background: var(--accent); }
+  .badge.is-p2::before { background: var(--success); }
+  .badge.is-out::before { background: var(--danger); }
+  .badge.is-v2::before { background: #a35f00; }
+
+  .switcher {
+    display: flex; flex-wrap: wrap; gap: 6px; padding: 4px; margin-bottom: 20px;
+    border: 1px solid var(--border); border-radius: 11px; background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+  .switcher button {
+    flex: 1 1 auto; padding: 8px 12px; border: 0; border-radius: 8px;
+    background: transparent; color: var(--muted);
+    font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+    transition: background-color 140ms var(--ease), color 140ms var(--ease);
+  }
+  .switcher button:hover { color: var(--text); }
+  .switcher button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent-strong); }
+
+  .stage { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
+  .phone {
+    flex: 0 0 auto; width: 390px; height: 780px;
+    border: 1px solid var(--border-strong); border-radius: 42px;
+    background: var(--surface); box-shadow: var(--shadow-sm);
+    overflow: hidden; position: relative;
+  }
+  .phone-inner { position: absolute; inset: 0; display: flex; flex-direction: column; }
+  .screen { display: none; flex: 1; min-height: 0; flex-direction: column; background: var(--bg); }
+  .screen.is-active { display: flex; }
+
+  .statusbar {
+    flex: 0 0 auto; display: flex; justify-content: space-between;
+    padding: 12px 22px 4px; background: var(--surface);
+    font-size: 12px; font-weight: 600;
+  }
+  .statusbar span:last-child { color: var(--muted); font-weight: 500; }
+
+  .hdr {
+    flex: 0 0 auto; display: flex; align-items: center; gap: 10px;
+    padding: 8px 16px 10px; background: var(--surface); border-bottom: 1px solid var(--border);
+  }
+  .hdr-title { font-size: 19px; font-weight: 700; letter-spacing: -0.3px; }
+  .hdr-spacer { flex: 1; }
+  .hdr-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--surface); color: var(--text);
+  }
+
+  /* ── 会话列表 ─────────────────────────────────────────────── */
+  .list { flex: 1; min-height: 0; overflow-y: auto; padding-bottom: 24px; }
+  .gsec-hd {
+    display: flex; align-items: center; gap: 6px;
+    padding: 6px 16px 8px; color: var(--muted);
+    font-size: 12px; font-weight: 650;
+  }
+  .gsec-n { font-weight: 400; opacity: 0.7; }
+  .gsec-hd.is-hidden-hd { color: var(--muted-2); }
+
+  .lrow { position: relative; background: var(--bg); }
+  /* 行内裁剪：滑动时行整体右移，右侧多出来的部分在这里被裁掉；
+     ⋯ 菜单挂在 .lrow 上、不被裁。 */
+  .lrow-clip { position: relative; overflow: hidden; }
+
+  /* 动作槽在行尾（右侧）：手指向左滑，行左移，右边的槽依次露出来。
+     row-reverse 让 DOM 顺序（置顶 / 隐藏 / ⋯）的第一格贴最右边 —— 也就是最先露出的那一格。 */
+  .lrow-acts {
+    position: absolute; top: 0; right: 0; bottom: 0;
+    display: flex; flex-direction: row-reverse;
+  }
+  .slot {
+    width: var(--slot); height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+    border: 0; padding: 0;
+    color: #fff; font: inherit; font-size: 11px; font-weight: 600;
+  }
+  .slot.is-pin { background: var(--accent); }
+  .slot.is-unpin { background: var(--accent); }
+  .slot.is-hide { background: #646a73; }
+  .slot.is-unhide { background: var(--accent); }
+  .slot.is-more { background: #373c43; }
+  .slot.is-more:active, .slot.is-pin:active, .slot.is-hide:active, .slot.is-unhide:active { filter: brightness(0.9); }
+  .slot svg { display: block; }
+
+  .lrow-track {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; gap: 12px;
+    width: 100%; min-height: var(--row-h);
+    padding: 12.5px 16px;
+    background: var(--surface); color: var(--text);
+    text-align: left; touch-action: pan-y;
+    will-change: transform;
+  }
+  .lrow-track.is-static { transform: none !important; }
+  .lrow-track::after {
+    content: ''; position: absolute; left: 74px; right: 0; bottom: 0; height: 1px;
+    background: var(--border-subtle); pointer-events: none;
+  }
+  .lrow-track.is-open::after, .lrow-track.is-dragging::after { background: transparent; }
+
+  .avatar {
+    flex: 0 0 auto; width: 46px; height: 46px; border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+    background: #e5e5f9; color: #3d3bab; font-size: 16px; font-weight: 650;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .avatar.is-green { background: #e1f6e6; color: #1f8a3b; }
+  .avatar.is-orange { background: #fdeedb; color: #a35f00; }
+  .avatar.is-teal { background: #ddf2f5; color: #1c7484; }
+  .avatar.is-plain { background: var(--bg-soft); color: var(--muted); }
+
+  .row-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+  .row-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .row-name {
+    font-size: 15.5px; font-weight: 650; color: var(--text);
+    display: flex; align-items: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pin-badge { display: inline-flex; margin-left: 5px; color: var(--accent); }
+  .row-time { flex: 0 0 auto; font-size: 11.5px; color: var(--muted-2); font-variant-numeric: tabular-nums; }
+  .row-preview {
+    font-size: 13.5px; line-height: 1.4; color: var(--muted);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .row-working { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--accent-strong); }
+  .dots { display: inline-flex; gap: 2px; }
+  .dots i { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); opacity: .35; }
+  .dots i:nth-child(1) { opacity: 1; }
+
+  .unread {
+    flex: 0 0 auto; min-width: 18px; padding: 2px 7px; border-radius: 999px;
+    background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; text-align: center;
+  }
+
+  /* ── ⋯ 菜单（从第三格展开，所以贴行首） ────────────────────── */
+  .row-menu {
+    /* 菜单挂在 ⋯ 格下方：⋯ 是自右数第三格，所以右边缘对齐 2 格 + 8px 处。 */
+    position: absolute; top: calc(100% + 4px); right: calc(2 * var(--slot) + 8px); z-index: 4;
+    min-width: 168px; padding: 4px;
+    border: 1px solid var(--border); border-radius: 12px; background: var(--surface);
+    box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 2px;
+  }
+  .row-menu[hidden] { display: none; }
+  .row-menu.is-up { top: auto; bottom: calc(100% + 4px); }
+  .row-menu > button {
+    display: flex; align-items: center; gap: 8px; width: 100%;
+    padding: 8px 10px; border: 0; border-radius: 9px; background: transparent;
+    color: var(--text); font: inherit; font-size: 13.5px; text-align: left;
+  }
+  .row-menu > button.is-danger { color: var(--danger); }
+  .row-menu > button:disabled { color: var(--muted-2); }
+  .row-menu .sep { height: 1px; margin: 3px 6px; background: var(--border); }
+  .menu-scrim { position: absolute; inset: 0; z-index: 3; background: transparent; }
+
+  /* ── 底部确认面板（删除） ─────────────────────────────────── */
+  .sheet-scrim {
+    position: absolute; inset: 0; z-index: 10;
+    background: rgba(15, 23, 42, 0.45); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .sheet {
+    background: var(--surface);
+    border-top-left-radius: 20px; border-top-right-radius: 20px;
+    padding: 16px 20px calc(24px + 18px);
+    box-shadow: var(--shadow-lg);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .sheet-handle { width: 36px; height: 4px; border-radius: 2px; background: var(--border-strong); align-self: center; }
+  .sheet h3 { margin: 2px 0 0; font-size: 16px; font-weight: 700; }
+  .sheet p { margin: 0; font-size: 13px; line-height: 1.55; color: var(--text-soft); }
+  .sheet ul { margin: 2px 0 0; padding-left: 18px; font-size: 13px; line-height: 1.6; color: var(--muted); }
+  .sheet-warn { color: var(--danger); font-weight: 650; }
+  .sheet-actions { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    width: 100%; padding: 11px 14px; border-radius: 12px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text); font: inherit; font-size: 15px; font-weight: 600;
+  }
+  .btn.is-danger { border-color: var(--danger); background: var(--danger); color: #fff; }
+  .btn.is-quiet { border-color: transparent; background: var(--bg-soft); color: var(--muted); }
+
+  /* ── 规格栏 ─────────────────────────────────────────────── */
+  .spec { flex: 1 1 520px; min-width: 340px; display: flex; flex-direction: column; gap: 16px; }
+  .card {
+    padding: 16px 18px; border: 1px solid var(--border); border-radius: 14px;
+    background: var(--surface); box-shadow: var(--shadow-sm);
+  }
+  .card h2 { margin: 0 0 10px; font-size: 14px; font-weight: 700; }
+  .card h2 .tag {
+    margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: var(--accent-soft);
+    color: var(--accent-strong); font-size: 11px; font-weight: 650;
+  }
+  .card h2 .tag.is-warn { background: #fbf1df; color: #95611d; }
+  .card p, .card li { font-size: 13px; line-height: 1.6; color: var(--text-soft); }
+  .card ul { margin: 6px 0 0; padding-left: 18px; }
+  .card li + li { margin-top: 3px; }
+  .card code {
+    padding: 1px 5px; border-radius: 5px; background: var(--bg-soft);
+    font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th, td { padding: 6px 8px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { color: var(--muted); font-weight: 650; }
+  td code { white-space: nowrap; }
+  .kv { display: flex; gap: 10px; font-size: 13px; }
+  .kv + .kv { margin-top: 6px; }
+  .kv b { flex: 0 0 108px; font-weight: 650; }
+  .kv span { color: var(--text-soft); }
+  .note {
+    margin-top: 10px; padding: 9px 12px; border-radius: 10px;
+    background: var(--danger-soft); color: #7d2a3a; font-size: 12.5px; line-height: 1.55;
+  }
+  .note.is-warn { background: #fbf1df; color: #7a4d10; }
+  .hint { color: var(--muted); font-size: 12px; }
+  .demo-bar { display: flex; gap: 8px; margin-top: 10px; }
+  .demo-bar button {
+    padding: 6px 12px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--surface); color: var(--muted); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
+  }
+  .demo-bar button:hover { color: var(--text); }
+  .readout {
+    margin-top: 10px; padding: 8px 10px; border-radius: 8px; background: var(--bg-soft);
+    font: 12px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted);
+  }
+  @media (max-width: 900px) {
+    body { padding: 20px 12px 48px; }
+    .phone { width: 100%; max-width: 390px; height: 720px; margin: 0 auto; }
+    .spec { min-width: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="page-head">
+    <h1>会话列表：滑动三格（置顶 / 隐藏 / ⋯）+ Hidden 组</h1>
+    <p class="page-sub">
+      issue #1 · 产品 UI 稿 <b>v4</b> · 2026-10-17 · 视觉取自 <code>apps/mobile/src/styles/{tokens,lorca}.css</code> ·
+      上游口径 <code>docs/architecture/sidebar.md</code>、<code>phone-app.md</code>
+    </p>
+  </div>
+  <div class="legend">
+    <span class="badge is-v2">v4 变更：手指向左滑 · 三格贴行尾 · 常态无 ⋯ · 左缘排除区取消</span>
+    <span class="badge is-p1">P1 · 本期</span>
+    <span class="badge is-p2">P2 · 下一期</span>
+    <span class="badge is-out">不做</span>
+    <span class="badge">行宽按真机 394px 算；动作槽 84px × 3 = 252px</span>
+  </div>
+
+  <div class="switcher" role="tablist">
+    <button type="button" role="tab" data-screen="before" aria-selected="true">现状 · 改前</button>
+    <button type="button" role="tab" data-screen="swipe" aria-selected="false">① 滑动三格</button>
+    <button type="button" role="tab" data-screen="menu" aria-selected="false">② 第三格 ⋯ 菜单</button>
+    <button type="button" role="tab" data-screen="hidden" aria-selected="false">③ Hidden 分组</button>
+    <button type="button" role="tab" data-screen="confirm" aria-selected="false">④ 删除二次确认</button>
+  </div>
+
+  <div class="stage">
+    <div class="phone">
+      <div class="phone-inner">
+        <div class="statusbar"><span>9:41</span><span>lorca · 已连接</span></div>
+        <div class="hdr">
+          <span class="hdr-title">Bot</span>
+          <span class="hdr-spacer"></span>
+          <span class="hdr-btn" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+          <span class="hdr-btn" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 7 19.4a1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.9H1a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 2.6 7a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 7 2.6h.1A1.7 1.7 0 0 0 8.3 1V1a2 2 0 1 1 4 0v.1A1.7 1.7 0 0 0 15 2.6a1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0 1.2 2.9H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+          </span>
+        </div>
+
+        <!-- 现状（改前）：行就是纯 button，无滑动、无 ⋯ —— 按 LorcaPanel.tsx 的 LorcaChatRow 复刻。 -->
+        <section class="screen is-active" data-screen="before">
+          <div class="list">
+            <div class="gsec-hd">置顶 <span class="gsec-n">1</span></div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-track is-static">
+                  <span class="avatar is-green">研</span>
+                  <span class="row-main">
+                    <span class="row-top">
+                      <span class="row-name">研发工程师
+                        <span class="pin-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17v5l-1-1v-4l-4-1 2-2V4h6v10l2 2-4 1z"/></svg></span>
+                      </span>
+                      <span class="row-time">14:22</span>
+                    </span>
+                    <span class="row-preview">已推 origin/main，APK 747 装机</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-track is-static">
+                  <span class="avatar is-teal">观</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">观潮</span><span class="row-time">13:05</span></span>
+                    <span class="row-preview">宏观日报已归档到 finance-reporter/</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="gsec-hd">开发 <span class="gsec-n">2</span></div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-track is-static">
+                  <span class="avatar is-orange">产</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">产品经理</span><span class="row-time">12:40</span></span>
+                    <span class="row-working"><span class="dots"><i></i><i></i><i></i></span>正在响应…</span>
+                  </span>
+                  <span class="unread">3</span>
+                </div>
+              </div>
+            </div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-track is-static">
+                  <span class="avatar is-plain">A</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">Alex（外部）</span><span class="row-time">昨天</span></span>
+                    <span class="row-preview">Thanks, will take a look.</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="hint" style="margin:10px 16px 0;color:var(--muted-2)">
+            改前：行是纯 <code>&lt;button&gt;</code>（<code>LorcaPanel.tsx</code> 的 <code>LorcaChatRow</code>），
+            行尾**没有任何 ⋯**、没有滑动、没有隐藏入口；隐藏的会话被过滤出所有分组，而 Hidden 组不存在。
+          </p>
+        </section>
+
+        <!-- ① 滑动三格：手指向左滑，行左移，行尾三格依次露出（最右的置顶先出） -->
+        <section class="screen" data-screen="swipe">
+          <div class="list" id="demo-list">
+            <div class="gsec-hd">置顶 <span class="gsec-n">1</span></div>
+
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-acts">
+                  <button class="slot is-unpin" type="button">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 17v5"/><path d="M9 10.8V4h6v6.8l2 2.2v1H7v-1z"/></svg>
+                    取消置顶
+                  </button>
+                  <button class="slot is-hide" type="button">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9.9 4.2A9.8 9.8 0 0 1 12 4c5 0 9 5 9 8a12 12 0 0 1-2.2 3.4M6.6 6.6A12.5 12.5 0 0 0 3 12c0 3 4 8 9 8a9.6 9.6 0 0 0 4.2-.9"/><path d="M3 3l18 18"/></svg>
+                    隐藏
+                  </button>
+                  <button class="slot is-more" type="button" data-more>
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>
+                    更多
+                  </button>
+                </div>
+                <div class="lrow-track" data-row>
+                  <span class="avatar is-green">研</span>
+                  <span class="row-main">
+                    <span class="row-top">
+                      <span class="row-name">研发工程师
+                        <span class="pin-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17v5l-1-1v-4l-4-1 2-2V4h6v10l2 2-4 1z"/></svg></span>
+                      </span>
+                      <span class="row-time">14:22</span>
+                    </span>
+                    <span class="row-preview">已推 origin/main，APK 747 装机</span>
+                  </span>
+                </div>
+              </div>
+              <div class="row-menu" hidden>
+                <button type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  移到分组
+                </button>
+                <button type="button" disabled>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12l5 5L20 4"/><path d="M13 19l3 3 6-7"/></svg>
+                  标记为已读
+                </button>
+                <div class="sep"></div>
+                <button type="button" class="is-danger">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg>
+                  删除会话
+                </button>
+              </div>
+            </div>
+
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-acts">
+                  <button class="slot is-pin" type="button">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 17v5"/><path d="M9 10.8V4h6v6.8l2 2.2v1H7v-1z"/></svg>
+                    置顶
+                  </button>
+                  <button class="slot is-hide" type="button">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9.9 4.2A9.8 9.8 0 0 1 12 4c5 0 9 5 9 8a12 12 0 0 1-2.2 3.4M6.6 6.6A12.5 12.5 0 0 0 3 12c0 3 4 8 9 8a9.6 9.6 0 0 0 4.2-.9"/><path d="M3 3l18 18"/></svg>
+                    隐藏
+                  </button>
+                  <button class="slot is-more" type="button" data-more>
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>
+                    更多
+                  </button>
+                </div>
+                <div class="lrow-track" data-row>
+                  <span class="avatar is-teal">观</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">观潮</span><span class="row-time">13:05</span></span>
+                    <span class="row-preview">宏观日报已归档到 finance-reporter/</span>
+                  </span>
+                </div>
+              </div>
+              <div class="row-menu" hidden>
+                <button type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  移到分组
+                </button>
+                <button type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12l5 5L20 4"/><path d="M13 19l3 3 6-7"/></svg>
+                  标记为已读
+                </button>
+                <div class="sep"></div>
+                <button type="button" class="is-danger">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg>
+                  删除会话
+                </button>
+              </div>
+            </div>
+
+            <div class="gsec-hd">开发 <span class="gsec-n">2</span></div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-acts">
+                  <button class="slot is-pin" type="button">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 17v5"/><path d="M9 10.8V4h6v6.8l2 2.2v1H7v-1z"/></svg>
+                    置顶
+                  </button>
+                  <button class="slot is-hide" type="button">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9.9 4.2A9.8 9.8 0 0 1 12 4c5 0 9 5 9 8a12 12 0 0 1-2.2 3.4M6.6 6.6A12.5 12.5 0 0 0 3 12c0 3 4 8 9 8a9.6 9.6 0 0 0 4.2-.9"/><path d="M3 3l18 18"/></svg>
+                    隐藏
+                  </button>
+                  <button class="slot is-more" type="button" data-more>
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>
+                    更多
+                  </button>
+                </div>
+                <div class="lrow-track" data-row>
+                  <span class="avatar is-orange">产</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">产品经理</span><span class="row-time">12:40</span></span>
+                    <span class="row-working"><span class="dots"><i></i><i></i><i></i></span>正在响应…</span>
+                  </span>
+                  <span class="unread">3</span>
+                </div>
+              </div>
+              <div class="row-menu" hidden>
+                <button type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  移到分组
+                </button>
+                <button type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12l5 5L20 4"/><path d="M13 19l3 3 6-7"/></svg>
+                  标记为已读
+                </button>
+                <div class="sep"></div>
+                <button type="button" class="is-danger">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg>
+                  删除会话
+                </button>
+              </div>
+            </div>
+
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-acts">
+                  <button class="slot is-pin" type="button">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 17v5"/><path d="M9 10.8V4h6v6.8l2 2.2v1H7v-1z"/></svg>
+                    置顶
+                  </button>
+                  <button class="slot is-hide" type="button">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9.9 4.2A9.8 9.8 0 0 1 12 4c5 0 9 5 9 8a12 12 0 0 1-2.2 3.4M6.6 6.6A12.5 12.5 0 0 0 3 12c0 3 4 8 9 8a9.6 9.6 0 0 0 4.2-.9"/><path d="M3 3l18 18"/></svg>
+                    隐藏
+                  </button>
+                  <button class="slot is-more" type="button" data-more>
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>
+                    更多
+                  </button>
+                </div>
+                <div class="lrow-track" data-row>
+                  <span class="avatar is-plain">A</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">Alex（外部）</span><span class="row-time">昨天</span></span>
+                    <span class="row-preview">Thanks, will take a look.</span>
+                  </span>
+                </div>
+              </div>
+              <div class="row-menu" hidden>
+                <button type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  移到分组
+                </button>
+                <button type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12l5 5L20 4"/><path d="M13 19l3 3 6-7"/></svg>
+                  标记为已读
+                </button>
+                <div class="sep"></div>
+                <button type="button" class="is-danger">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg>
+                  删除会话
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ② 第三格 ⋯ 菜单 -->
+        <section class="screen" data-screen="menu">
+          <div class="list" style="position:relative">
+            <div class="gsec-hd">置顶 <span class="gsec-n">1</span></div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-acts">
+                  <button class="slot is-unpin" type="button" style="background:#5b8bff">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 17v5"/><path d="M9 10.8V4h6v6.8l2 2.2v1H7v-1z"/></svg>
+                    取消置顶
+                  </button>
+                  <button class="slot is-hide" type="button" style="background:#8a9099">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9.9 4.2A9.8 9.8 0 0 1 12 4c5 0 9 5 9 8a12 12 0 0 1-2.2 3.4M6.6 6.6A12.5 12.5 0 0 0 3 12c0 3 4 8 9 8a9.6 9.6 0 0 0 4.2-.9"/><path d="M3 3l18 18"/></svg>
+                    隐藏
+                  </button>
+                  <button class="slot is-more" type="button" data-more style="background:#14171c">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>
+                    更多
+                  </button>
+                </div>
+                <div class="lrow-track" data-row style="transform:translateX(-252px)">
+                  <span class="avatar is-green">研</span>
+                  <span class="row-main">
+                    <span class="row-top">
+                      <span class="row-name">研发工程师
+                        <span class="pin-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17v5l-1-1v-4l-4-1 2-2V4h6v10l2 2-4 1z"/></svg></span>
+                      </span>
+                      <span class="row-time">14:22</span>
+                    </span>
+                    <span class="row-preview">已推 origin/main，APK 747 装机</span>
+                  </span>
+                </div>
+              </div>
+              <div class="row-menu">
+                <button type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  移到分组
+                </button>
+                <button type="button" disabled>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12l5 5L20 4"/><path d="M13 19l3 3 6-7"/></svg>
+                  标记为已读
+                </button>
+                <div class="sep"></div>
+                <button type="button" class="is-danger">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg>
+                  删除会话
+                </button>
+              </div>
+            </div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-track is-static">
+                  <span class="avatar is-teal">观</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">观潮</span><span class="row-time">13:05</span></span>
+                    <span class="row-preview">宏观日报已归档到 finance-reporter/</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="gsec-hd">开发 <span class="gsec-n">2</span></div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-track is-static">
+                  <span class="avatar is-orange">产</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">产品经理</span><span class="row-time">12:40</span></span>
+                    <span class="row-preview">UI 稿 v2 已出，三格稿在评审</span>
+                  </span>
+                  <span class="unread">3</span>
+                </div>
+              </div>
+            </div>
+            <p class="hint" style="margin:10px 16px 0;color:var(--muted-2)">
+              菜单从第三格（行首 252px 处）展开，不再重复「置顶 / 隐藏」——那两件事已经是格子。
+            </p>
+          </div>
+        </section>
+
+        <!-- ③ Hidden 分组 -->
+        <section class="screen" data-screen="hidden">
+          <div class="list">
+            <div class="gsec-hd">置顶 <span class="gsec-n">1</span></div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-track is-static">
+                  <span class="avatar is-green">研</span>
+                  <span class="row-main">
+                    <span class="row-top">
+                      <span class="row-name">研发工程师
+                        <span class="pin-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17v5l-1-1v-4l-4-1 2-2V4h6v10l2 2-4 1z"/></svg></span>
+                      </span>
+                      <span class="row-time">14:22</span>
+                    </span>
+                    <span class="row-preview">已推 origin/main，APK 747 装机</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="gsec-hd">开发 <span class="gsec-n">1</span></div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-track is-static">
+                  <span class="avatar is-orange">产</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">产品经理</span><span class="row-time">12:40</span></span>
+                    <span class="row-preview">UI 稿 v2 已出，三格稿在评审</span>
+                  </span>
+                  <span class="unread">3</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gsec-hd is-hidden-hd">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+              隐藏 <span class="gsec-n">2</span>
+            </div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-acts">
+                  <button class="slot is-unhide" type="button">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    取消隐藏
+                  </button>
+                  <button class="slot is-more" type="button" data-more>
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>
+                    更多
+                  </button>
+                </div>
+                <div class="lrow-track" data-row data-slots="2">
+                  <span class="avatar is-plain">N</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">Newsletter</span><span class="row-time">周一</span></span>
+                    <span class="row-preview">Weekly digest · 42 items</span>
+                  </span>
+                  <span class="unread">12</span>
+                </div>
+              </div>
+              <div class="row-menu" hidden>
+                <button type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  移到分组（并取消隐藏）
+                </button>
+                <button type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12l5 5L20 4"/><path d="M13 19l3 3 6-7"/></svg>
+                  标记为已读
+                </button>
+                <div class="sep"></div>
+                <button type="button" class="is-danger">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg>
+                  删除会话
+                </button>
+              </div>
+            </div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-acts">
+                  <button class="slot is-unhide" type="button">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    取消隐藏
+                  </button>
+                  <button class="slot is-more" type="button" data-more>
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>
+                    更多
+                  </button>
+                </div>
+                <div class="lrow-track" data-row data-slots="2">
+                  <span class="avatar is-teal">观</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">观潮 · 旧话题</span><span class="row-time">10-09</span></span>
+                    <span class="row-working"><span class="dots"><i></i><i></i><i></i></span>正在响应…</span>
+                  </span>
+                </div>
+              </div>
+              <div class="row-menu" hidden>
+                <button type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  移到分组（并取消隐藏）
+                </button>
+                <button type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12l5 5L20 4"/><path d="M13 19l3 3 6-7"/></svg>
+                  标记为已读
+                </button>
+                <div class="sep"></div>
+                <button type="button" class="is-danger">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg>
+                  删除会话
+                </button>
+              </div>
+            </div>
+            <p class="hint" style="margin:10px 16px 0;color:var(--muted-2)">
+              Hidden 行只给两格（取消隐藏 / ⋯）：在 Hidden 里「置顶」会顺带把会话移出 Hidden，两个动作互相抵消，容易误操作。
+              未读数与运行中状态照常显示；隐藏会取消置顶，所以隐藏行不带置顶角标。
+            </p>
+          </div>
+        </section>
+
+        <!-- ④ 删除确认 -->
+        <section class="screen" data-screen="confirm">
+          <div class="list">
+            <div class="gsec-hd">置顶 <span class="gsec-n">1</span></div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-track is-static">
+                  <span class="avatar is-green">研</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">研发工程师</span><span class="row-time">14:22</span></span>
+                    <span class="row-preview">已推 origin/main，APK 747 装机</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="gsec-hd">开发 <span class="gsec-n">1</span></div>
+            <div class="lrow">
+              <div class="lrow-clip">
+                <div class="lrow-track is-static">
+                  <span class="avatar is-orange">产</span>
+                  <span class="row-main">
+                    <span class="row-top"><span class="row-name">产品经理</span><span class="row-time">12:40</span></span>
+                    <span class="row-preview">UI 稿 v2 已出，三格稿在评审</span>
+                  </span>
+                  <span class="unread">3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sheet-scrim">
+            <div class="sheet">
+              <div class="sheet-handle"></div>
+              <h3>删除会话「产品经理」？</h3>
+              <p>这个会话和它的全部内容都会从所有设备上删掉：</p>
+              <ul>
+                <li>全部消息与附件</li>
+                <li>已读标记</li>
+                <li>正在运行的任务会被取消</li>
+              </ul>
+              <p class="sheet-warn">不可撤销，也无法从回收站恢复。</p>
+              <div class="sheet-actions">
+                <button class="btn is-danger" type="button">删除会话</button>
+                <button class="btn is-quiet" type="button">取消</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- ── 规格栏 ──────────────────────────────────────────── -->
+    <div class="spec">
+      <div class="card">
+        <h2>滑动：数值尺子<span class="tag">验收依据</span></h2>
+        <table>
+          <tr><th>项</th><th>值</th></tr>
+          <tr><td>方向 · 进入横向</td><td><code>|dx| ≥ 10px 且 |dx| ≥ 1.5·|dy|</code>（<b>向左为负</b>，只有负向开格）</td></tr>
+          <tr><td>方向 · 交回纵向</td><td><code>|dy| ≥ 10px 且 |dy| &gt; |dx|</code></td></tr>
+          <tr><td>未起判区（1.0 &lt; |dx|/|dy| &lt; 1.5）</td><td>既不横向也不纵向：行不跟手，方向等下一次移动；不按斜滑猜</td></tr>
+          <tr><td>起判前（|dx| &lt; 10px）</td><td>行不跟手（位移 0）</td></tr>
+          <tr><td>起手排除区</td><td><b>v4 取消</b>：左滑与系统返回手势（左缘向右拖）不再冲突，不再需要排除区</td></tr>
+          <tr><td>吸附 · 回 0</td><td>松手时 open <code>&lt; 42px</code></td></tr>
+          <tr><td>吸附 · 一档 84px</td><td><code>42 ≤ open &lt; 126</code> → 露最右的「置顶」</td></tr>
+          <tr><td>吸附 · 二档 168px</td><td><code>126 ≤ open &lt; 210</code> → 露「置顶 + 隐藏」</td></tr>
+          <tr><td>吸附 · 三档 252px</td><td><code>open ≥ 210</code> → 露「置顶 + 隐藏 + ⋯」</td></tr>
+          <tr><td>已开态反方向滑</td><td>每 <code>42px</code> 收一档：252 → 168 → 84 → 0</td></tr>
+          <tr><td>动作槽</td><td>每个 84px 宽 × 行高；图标 17px + 文字 11px/600 白</td></tr>
+          <tr><td>槽序</td><td>露出顺序（自右向左）：置顶/取消置顶 · 隐藏 · ⋯；视觉上自左向右为 ⋯ / 隐藏 / 置顶（Hidden 行：取消隐藏 · ⋯，上限 168px）</td></tr>
+          <tr><td>行宽余量（v4 实测）</td><td>行左移 open 后可见的是行<b>右端</b> <code>394 − open</code> 那一段：一档 84px 时可见 310px（头像整块移出，名字左边被切约 10px），三档 252px 时可见 138px（<b>时间仍在最右可见</b>，名字/预览只剩尾部约 88px，且是<b>尾部</b>不是开头）</td></tr>
+          <tr><td>一次只开一行</td><td>开新行前旧行直接回 0（不做并行动画）</td></tr>
+          <tr><td>列表一滚即关</td><td>列表真实滚动量 <code>|ΔscrollTop| &gt; 6px</code> 即关（<b>不按手指 dy 判</b>）</td></tr>
+          <tr><td>关行不吃点击</td><td>行开着时点行内其它区域：只关行，本次点击不透传</td></tr>
+        </table>
+        <p class="hint" style="margin-top:8px">这些数是「实现可微调、验收须回归」：真机上若 1.5 倍比导致斜滑误判，允许提数据改，改完群里同步并重跑同一组判定。</p>
+        <div class="demo-bar">
+          <button type="button" id="demo-reset">重置演示行</button>
+          <button type="button" id="demo-open">开满三档</button>
+        </div>
+        <div class="readout" id="readout">① 屏的行可拖动 —— 手指**向左**滑（格子从右侧出），读数打在这里。</div>
+      </div>
+
+      <div class="card">
+        <h2>v4 相对 v3 的变更<span class="tag is-warn">按 Adam 口径</span></h2>
+        <div class="kv"><b>方向</b><span><b>手指向左滑</b>（行左移、格子从右侧出），对齐 iOS / 上游 iPhone 行的惯例</span></div>
+        <div class="kv"><b>槽位</b><span>三格移到<b>行尾（右）</b>：<code>.lrow-acts { right: 0; flex-direction: row-reverse }</code>，露出顺序 置顶 → 隐藏 → ⋯</span></div>
+        <div class="kv"><b>菜单锚点</b><span>⋯ 菜单改挂在 ⋯ 格下方（<code>right: calc(2·slot + 8px)</code>），不再贴行首</span></div>
+        <div class="kv"><b>左缘排除区取消</b><span>左滑不再与系统返回手势抢 —— 那条已知风险随方向变更消解，AC-14 去掉</span></div>
+        <div class="kv"><b>版面口径重算</b><span>左移后留下的是行<b>右端</b>：一档起头像移出、名字被切左边；三档时时间仍可见、名字只剩尾部 —— 与右滑正好相反</span></div>
+        <div class="kv"><b>不变</b><span>常态无行尾 ⋯、⋯ 菜单瘦身（不含置顶/隐藏）、Hidden 行两格、吸附数值 42/126/210、一次只开一行、滚动 &gt; 6px 关行</span></div>
+      </div>
+
+      <div class="card">
+        <h2>① 滑动露出的三格<span class="tag">P1</span></h2>
+        <div class="kv"><b>第一格（最右、先出）</b><span>置顶 / 取消置顶（按当前态取反）· 蓝 <code>#3370ff</code></span></div>
+        <div class="kv"><b>第二格</b><span>隐藏 · 中性灰 <code>#646a73</code></span></div>
+        <div class="kv"><b>第三格</b><span>⋯ 更多 · 深灰 <code>#373c43</code>；点开菜单</span></div>
+        <div class="kv"><b>不放进滑动</b><span>删除 —— 只走第三格菜单 + 二次确认，避免误触不可撤销操作</span></div>
+        <p class="hint" style="margin-top:8px">「取消隐藏」是体验补全、不是能力补全：上游 hide 顺带取消置顶、pin / set_section 顺带取消隐藏，所以验收只验「入口可达 + 结果与上游一致」。</p>
+        <div class="note is-warn">
+          三档的版面后果（方向改左滑后重算，数值见「行宽余量」）：行左移后露出的是行<b>右端</b> —— 一档 84px 时<b>头像整块移出、名字左边被切掉约 10px</b>；三档 252px 时<b>时间仍在最右可见</b>，名字/预览只剩尾部约 88px（是尾部，不是开头带省略号）。处理方式不变：<b>行内容不做位移也不淡出、保持原位</b>（iOS 标准行为，重排会让滑动看着抖），滑回即恢复；三档不常驻（点任一格或回弹就收）。
+          <b>不为 P1 收窄槽宽、也不为版面重排</b>：要「名字从头显示 + 时间常驻」就得重排（例如把名字改到不随行位移的浮层），那是另一个设计，不进本期。
+        </div>
+        <div class="note">
+          <b>v4 消解</b>：方向改成左滑后，手指是<b>向左</b>走，而系统返回手势是左缘<b>向右</b>拖 —— 两者不再抢，左缘排除区与「加 Capacitor 手势排除插件」都不需要了。右侧没有系统手势；真机上若某 ROM 有右缘手势，再量再定。
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>③ Hidden 分组<span class="tag">P1</span></h2>
+        <ul>
+          <li>位置：置顶 → 各分组 → 未分组 → <b>隐藏</b>；<b>没有隐藏会话时整组不出现</b>。</li>
+          <li>组头照分组头样式（12px/650 <code>--muted</code>）+ 数量，<b>默认折叠</b>。</li>
+          <li>折叠态<b>只存本地</b>：<code>avatar:lorca:hidden-collapsed</code>（同 <code>avatar:lorca:show-tools</code> 口径），<b>不调 <code>sections.collapse</code></b> —— 上游 Hidden 折叠是每台设备各自的事，写回上游会污染分组折叠。</li>
+          <li>组内行按最新活动倒序（<code>byActivity</code>）；未读数、运行中状态照常显示；不带置顶角标。</li>
+          <li>点行照常进详情页（隐藏不等于不可读）。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>④ 删除二次确认<span class="tag">P1</span></h2>
+        <ul>
+          <li>形态：底部动作面板（复用 <code>.lorca-move</code> 骨架），标题带会话名。</li>
+          <li>正文说清影响：全部消息与附件、已读标记一并删除；正在运行的任务会被取消。</li>
+          <li>红色一行写死「不可撤销，也无法从回收站恢复」；主按钮 <code>--danger</code>，取消为安静按钮。</li>
+          <li>删掉的正是当前打开的详情页 → 回列表并清空选中；列表空了显示空态，<b>不自动打开别的会话</b>。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>范围与不做什么</h2>
+        <div class="kv"><b>P1</b><span>① 滑动三格 ② 第三格 ⋯ 菜单 ③ Hidden 组 ④ 白名单扩 <code>chats.hide</code> / <code>chats.mute</code> / <code>chats.delete</code>（各带契约测试）⑤ 删除二次确认</span></div>
+        <div class="kv"><b>P2</b><span>静音/取消静音 + 行上静音标记；详情页 ⋯ 补隐藏与静音。静音不是纯 UI：协议 + 归一化要一起动（<code>mute</code> 现在 avatar 一行都没读）</span></div>
+        <div class="kv"><b>不做</b><span>会话重命名、会话搜索、长按菜单、分组拖拽、左滑标记已读、行尾常显 ⋯</span></div>
+        <div class="note">「列表一滚即关」按 <b>真实滚动量</b>判，不按手指 dy —— 否则已锁定横向的斜滑会因 dy 抖动把行误关。行上需 <code>touch-action: pan-y</code>，WebView 里才既保住原生纵向滚动又收到横向 pointer 事件。</div>
+      </div>
+
+      <div class="card">
+        <h2>验收口径（可逐条核）</h2>
+        <ul>
+          <li><b>AC-1</b> 常态行<b>向左滑</b>：84px 露「置顶」、168px 露「隐藏」、252px 露「⋯」；三格各 84px，露出顺序为 置顶 → 隐藏 → ⋯（最右格先出）；三格都贴在行尾（右）一侧。</li>
+          <li><b>AC-2</b> 向左滑松手：41px 回 0、100px 停 84px、150px 停 168px、220px 停 252px（四点各测一次）；向右滑不开格。</li>
+          <li><b>AC-3</b> 向左：<code>dx=-20,|dy|=8</code> → 横向、行跟手；<code>dx=-20,|dy|=25</code> → 纵向、交回滚动；<code>dx=-20,|dy|=16</code> → 未起判区、行不跟手。</li>
+          <li><b>AC-4</b> A 行开着时滑 B 行，A 立即回 0，只有一行是开的。</li>
+          <li><b>AC-5</b> 行开着时列表纵向滚动 &gt; 6px，行关闭；按住不动、<code>scrollTop</code> 不变时不关。</li>
+          <li><b>AC-6</b> 行开着时点行内正文，只关行、不进详情页；行关着时点正文正常进详情页。</li>
+          <li><b>AC-7</b> 常态行尾<b>没有</b> ⋯（与「现状 · 改前」屏逐行对比）。</li>
+          <li><b>AC-7b</b> 版面（左滑）：一档 84px 时头像整块移出、名字左边被切约 10px；三档 252px 时可见 138px，时间仍在最右可见，名字/预览只剩尾部；名字/预览不发生位移或淡出（除滑动本身）。</li>
+          <li><b>AC-8</b> 点第三格 ⋯ 开菜单，三项齐全（移到分组 / 标记为已读 / 删除会话）；未读为 0 时「标记为已读」置灰；点外面关；返回键先关菜单。</li>
+          <li><b>AC-9</b> 隐藏一个会话：它离开原分组、进列表底部「隐藏」组、未读数与运行中状态都在、置顶角标消失。</li>
+          <li><b>AC-10</b> Hidden 组默认折叠；展开后杀掉 App 重开仍是展开（本地存）；另一台设备的分组折叠态不受影响。</li>
+          <li><b>AC-11</b> 取消隐藏后会话回原分组；隐藏组里最后一个取消后，「隐藏」组头消失。</li>
+          <li><b>AC-12</b> 删除：确认面板文案含「不可撤销」与附件/已读/运行中任务三项；确认后行从列表消失；若删的是当前打开的会话，回到列表且不自动打开别的会话。</li>
+          <li><b>AC-13</b> 白名单三条各有一条契约测试；白名单外的方法仍然 fail-closed。</li>
+          <li><b>AC-15</b> Hidden 行 ⋯ 菜单第一项写作「移到分组（并取消隐藏）」——上游 <code>set_section</code> 会顺带把会话移出 Hidden。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── 屏切换 ──────────────────────────────────────────────────
+  const buttons = Array.from(document.querySelectorAll('.switcher button'));
+  const screens = Array.from(document.querySelectorAll('.screen'));
+  function show(name) {
+    const button = buttons.find((b) => b.dataset.screen === name) ?? buttons[0];
+    buttons.forEach((b) => b.setAttribute('aria-selected', String(b === button)));
+    screens.forEach((s) => s.classList.toggle('is-active', s.dataset.screen === button.dataset.screen));
+  }
+  buttons.forEach((button) => button.addEventListener('click', () => show(button.dataset.screen)));
+  // 支持 #swipe / #menu / #hidden / #confirm / #before 直链，方便截图与评审指位置；
+  // #swipe-open 额外把首行摆成开满态。
+  if (location.hash) {
+    const [name, ...flags] = location.hash.slice(1).split('-');
+    show(name);
+    if (flags.includes('open')) setTimeout(() => document.getElementById('demo-open').click(), 0);
+  }
+
+  // ── 滑动演示：与稿子里同一组数值，可当尺子用 ──────────────────
+  // 演示专用：① 屏再补几行，让列表真的能滚，好核 AC-5「列表一滚即关」。
+  // 手写的那 4 行才是规格样本，这几行只是让列表溢出。
+  const MORE_ROWS = [
+    { name: '日报助手', preview: 'AI 晨报 2026-10-17 已发布', time: '11:20', letter: '报', accent: 'is-teal' },
+    { name: '宏观分析师', preview: '收盘复盘已归档', time: '10:02', letter: '宏', accent: 'is-orange' },
+    { name: 'Info Feed', preview: '52 条来源 · 3 条未读', time: '09:40', letter: 'I', accent: 'is-plain', unread: 3 },
+    { name: 'Finance Bot', preview: 'Preopen 已生成', time: '09:05', letter: 'F', accent: 'is-green' },
+    { name: 'Jamie（外部）', preview: 'Can you send the deck?', time: '昨天', letter: 'J', accent: 'is-plain' },
+    { name: '运维助手', preview: '证书还有 12 天过期', time: '昨天', letter: '运', accent: 'is-plain' }
+  ];
+  (() => {
+    const listEl = document.getElementById('demo-list');
+    const template = listEl.querySelector('.lrow');
+    if (!listEl || !template) return;
+    for (const spec of MORE_ROWS) {
+      const node = template.cloneNode(true);
+      node.querySelector('.row-name').textContent = spec.name;
+      node.querySelector('.row-time').textContent = spec.time;
+      node.querySelector('.row-preview').textContent = spec.preview;
+      const avatar = node.querySelector('.avatar');
+      avatar.className = 'avatar ' + spec.accent;
+      avatar.textContent = spec.letter;
+      const unread = node.querySelector('.unread');
+      if (spec.unread) {
+        if (unread) {
+          unread.textContent = String(spec.unread);
+        } else {
+          const badge = document.createElement('span');
+          badge.className = 'unread';
+          badge.textContent = String(spec.unread);
+          node.querySelector('.row-main').after(badge);
+        }
+      } else if (unread) {
+        unread.remove();
+      }
+      const menu = node.querySelector('.row-menu');
+      if (menu) menu.setAttribute('hidden', '');
+      node.querySelector('.lrow-track').style.transform = '';
+      node.querySelector('.lrow-track').classList.remove('is-open');
+      listEl.appendChild(node);
+    }
+  })();
+
+  const LOCK_PX = 10;       // 方向判定最小位移
+  const LOCK_RATIO = 1.5;   // 横向 / 纵向 比
+  const SLOT = 84;          // 单个动作槽宽
+  const SCROLL_CLOSE = 6;   // 列表滚动关闭阈值（真实滚动量）
+
+  const readout = document.getElementById('readout');
+  const tracks = Array.from(document.querySelectorAll('.lrow-track[data-row]'));
+  let openTrack = null;
+
+  const currentOpen = (track) => {
+    const m = (track.style.transform || '').match(/-?[\d.]+/);
+    return m ? Math.abs(parseFloat(m[0])) : 0;
+  };
+  const maxFor = (track) => Number(track.dataset.slots ?? 3) * SLOT;
+  const menuFor = (track) => track.closest('.lrow').querySelector('.row-menu');
+  const setX = (track, open) => { track.style.transform = open > 0 ? 'translateX(' + (-open) + 'px)' : ''; };
+
+  function closeMenus(except) {
+    document.querySelectorAll('.row-menu').forEach((menu) => {
+      if (menu !== except) menu.setAttribute('hidden', '');
+    });
+  }
+  function closeOpen(except) {
+    if (openTrack && openTrack !== except) {
+      setX(openTrack, 0);
+      openTrack.classList.remove('is-open');
+      const menu = menuFor(openTrack);
+      if (menu) menu.setAttribute('hidden', '');
+      openTrack = null;
+    }
+  }
+
+  tracks.forEach((track) => {
+    let dragging = false, axis = null;
+    let startX = 0, startY = 0, startOpen = 0;
+
+    track.addEventListener('pointerdown', (event) => {
+      dragging = true; axis = null;
+      startX = event.clientX; startY = event.clientY;
+      startOpen = openTrack === track ? currentOpen(track) : 0;
+      try { track.setPointerCapture(event.pointerId); } catch (e) { /* 演示环境可能无真实指针 */ }
+    });
+
+    track.addEventListener('pointermove', (event) => {
+      if (!dragging) return;
+      const dx = event.clientX - startX;
+      const dy = event.clientY - startY;
+      if (axis === null) {
+        if (Math.abs(dx) >= LOCK_PX && Math.abs(dx) >= LOCK_RATIO * Math.abs(dy)) {
+          axis = 'x';
+          closeOpen(track);
+          closeMenus(null);
+          track.classList.add('is-dragging');
+          readout.textContent = '方向锁定：横向（dx=' + dx.toFixed(0) + ' dy=' + dy.toFixed(0) + '）';
+        } else if (Math.abs(dy) >= LOCK_PX && Math.abs(dy) > Math.abs(dx)) {
+          axis = 'y';
+          readout.textContent = '方向判定：交回原生纵向滚动';
+          return;
+        } else if (Math.abs(dx) < LOCK_PX && Math.abs(dy) < LOCK_PX) {
+          readout.textContent = '未起判（|dx|=' + Math.abs(dx).toFixed(0) + ' < ' + LOCK_PX + '）：行不跟手';
+          return;
+        } else {
+          // 斜滑未定区：位移够了但方向没拉开（1.0 < |dx|/|dy| < 1.5）—— 不猜，等下一次移动。
+          readout.textContent = '斜滑未定（|dx|=' + Math.abs(dx).toFixed(0) + ' |dy|=' + Math.abs(dy).toFixed(0)
+            + '，比 ' + (Math.abs(dy) ? (Math.abs(dx) / Math.abs(dy)).toFixed(2) : '∞') + ' < ' + LOCK_RATIO
+            + '）：行不跟手，方向继续等下一次移动';
+          return;
+        }
+      }
+      if (axis !== 'x') return;
+      const max = maxFor(track);
+      // 向左滑 dx 为负：行左移，格子从右侧露出。
+      const open = Math.max(0, Math.min(max, startOpen - dx));
+      setX(track, open);
+      readout.textContent = '横向跟手 · 位移 ' + open.toFixed(0) + 'px / 上限 ' + max + 'px（'
+        + Math.round(open / SLOT) + ' 档）';
+    });
+
+    const end = () => {
+      if (!dragging) return;
+      dragging = false;
+      track.classList.remove('is-dragging');
+      if (axis !== 'x') { axis = null; return; }
+      axis = null;
+      const max = maxFor(track);
+      const open = currentOpen(track);
+      let target;
+      if (startOpen === 0) {
+        // 起点关闭：按绝对位移吸附到最近的 84 的倍数
+        target = Math.max(0, Math.min(max, Math.round(open / SLOT) * SLOT));
+      } else {
+        const reversed = startOpen - open;   // 反方向（向右）滑走的距离
+        if (reversed >= SLOT / 2) {
+          // 每 42px 收一档
+          target = Math.max(0, startOpen - Math.floor(reversed / (SLOT / 2)) * SLOT);
+        } else if (open > startOpen) {
+          target = Math.max(startOpen, Math.min(max, Math.round(open / SLOT) * SLOT));
+        } else {
+          target = startOpen;
+        }
+      }
+      setX(track, target);
+      track.classList.toggle('is-open', target > 0);
+      openTrack = target > 0 ? track : null;
+      if (target === 0) {
+        const menu = menuFor(track);
+        if (menu) menu.setAttribute('hidden', '');
+      }
+      readout.textContent = '松手 ' + open.toFixed(0) + 'px（起点 ' + startOpen + '）→ 吸附 ' + target
+        + 'px = ' + (target / SLOT) + ' 档（回 0 < ' + SLOT / 2 + ' · 一档 42–125 · 二档 126–209 · 三档 ≥ 210）';
+    };
+    track.addEventListener('pointerup', end);
+    track.addEventListener('pointercancel', end);
+
+    // AC-6：行开着时点行内其它区域 —— 只关行，不进详情页。
+    track.addEventListener('click', (event) => {
+      if (openTrack === track) {
+        event.preventDefault();
+        event.stopPropagation();
+        closeOpen(null);
+        readout.textContent = '行是开的：这次点击被吃掉（只关行，不进详情页）';
+      }
+    });
+  });
+
+  // 第三格 ⋯：开菜单（AC-8）
+  document.querySelectorAll('.slot[data-more]').forEach((slot) => {
+    slot.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const row = slot.closest('.lrow');
+      const menu = row.querySelector('.row-menu');
+      if (!menu) return;
+      const willOpen = menu.hasAttribute('hidden');
+      closeMenus(menu);
+      if (willOpen) {
+        menu.removeAttribute('hidden');
+        // 行下方空间不足时向上展开
+        const rect = row.getBoundingClientRect();
+        menu.classList.toggle('is-up', rect.bottom + menu.offsetHeight + 8 > window.innerHeight);
+        readout.textContent = '第三格 ⋯：菜单已开（移到分组 / 标记为已读 / 删除会话）';
+      } else {
+        menu.setAttribute('hidden', '');
+        readout.textContent = '第三格 ⋯：菜单已关';
+      }
+    });
+  });
+
+  // 列表一滚即关：按真实滚动量判，不按手指 dy。
+  const list = document.getElementById('demo-list');
+  if (list) {
+    let lastTop = list.scrollTop;
+    list.addEventListener('scroll', () => {
+      const delta = Math.abs(list.scrollTop - lastTop);
+      if (delta > SCROLL_CLOSE) {
+        if (openTrack) {
+          closeOpen(null);
+          readout.textContent = '列表滚动 ' + delta.toFixed(0) + 'px > ' + SCROLL_CLOSE + 'px → 关闭已开行';
+        }
+        closeMenus(null);
+      }
+      lastTop = list.scrollTop;
+    });
+  }
+
+  document.getElementById('demo-reset').addEventListener('click', () => {
+    closeOpen(null);
+    closeMenus(null);
+    readout.textContent = '已重置。手指向左滑。';
+  });
+  document.getElementById('demo-open').addEventListener('click', () => {
+    const track = tracks.find((t) => maxFor(t) === SLOT * 3);
+    if (!track) return;
+    closeOpen(track);
+    setX(track, SLOT * 3);
+    track.classList.add('is-open');
+    openTrack = track;
+    readout.textContent = '开满三档：252px = 置顶 84 + 隐藏 84 + ⋯ 84';
+  });
+</script>
+</body>
+</html>
