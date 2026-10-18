@@ -312,6 +312,8 @@
           <li><b>配额卡在最上</b>，余额卡沉到最底下 —— 他说「主要是看订阅配额的」。</li>
           <li>配额卡里三档：<b>最近 5 小时 / 最近 7 天 / 本月</b>，各一行百分比 + 进度条 + 重置时间。</li>
           <li>主数字写<b>「已用 x%」</b>（进度条填满 = 用完），副行<b>「剩 y% · 10-24 16:57 重置」</b>。</li>
+          <li>重置时间格式<b>只有三种</b>：当天「今天 18:31 重置」、同年「10-24 16:57 重置」、跨年「2027-01-05 09:00 重置」。
+            <b>同年不许带年份、每档都带时分</b>（三档格式必须一致，不能 7 天那行有 16:57、本月那行只有日期）。</li>
           <li>≥80% 转警示色、满 100% 转危险色 —— 撞限流前能看出来。</li>
         </ul>
         <div class="note is-info">
@@ -381,7 +383,7 @@
 <script>
 /* ══ 文案表：前端只按码取，代码里不许出现第二份英文 ══ */
 const COPY = {
-  not_configured: { title: "还没设置 Cline API key", desc: "填一次就能看到 Cline 账户余额。", action: "设置 API key", tone: "idle" },
+  not_configured: { title: "还没设置 Cline API key", desc: "填一次就能看到订阅配额和账户余额。", action: "设置 API key", tone: "idle" },
   key_invalid: { title: "这个 key 不被接受", desc: "到 Cline 账户页重新复制一个，再替换掉现在这个。", action: "替换 key", tone: "bad" },
   network_unreachable: { title: "连不上 Cline，检查网络后再试", desc: "手机或电脑的网络断了，或者 Cline 那边暂时不通。", action: "重试", tone: "warn" },
   upstream_no_data: { title: "Cline 返回了空数据，暂时取不到", desc: "", action: "重试" },

@@ -100,7 +100,7 @@ PASS  取消关闭弹层
     "额度"
   ],
   "quota_tab_last": "额度",
-  "nokey_status": "还没设置 Cline API key 填一次就能看到 Cline 账户余额。 设置 API key",
+  "nokey_status": "还没设置 Cline API key 填一次就能看到订阅配额和账户余额。 设置 API key",
   "nokey_status_code": "not_configured",
   "nokey_cards": 0,
   "nokey_action": "设置 API key",
