@@ -101,7 +101,7 @@ const HARNESS = String.raw`
   out.nokey_action = text(document.querySelector('.status-actions .btn'));
   out.nokey_has_spinner = !!document.querySelector('.spinner, [aria-busy="true"]');
 
-  // ── 屏 ③：两档配额（v2 版面） ───────────────────────────────
+  // ── 屏 ③：三档配额（v3：官方 usage-limits 一次拿全） ─────────
   M.setScreen('ok'); await tick();
   out.ok_status_bar = document.querySelectorAll('[data-status]').length;
   out.ok_card_order = texts('[data-card] .card-hd h3');
@@ -113,28 +113,36 @@ const HARNESS = String.raw`
   out.ok_win_bars = Array.from(document.querySelectorAll('[data-card="quota"] .bar')).map((b) => ({
     role: b.getAttribute('role'), now: b.getAttribute('aria-valuenow'), width: b.querySelector('i')?.style.width
   }));
-  out.ok_has_30d = /30 天|最近 30/.test(document.querySelector('[data-card="quota"]')?.innerText || '');
+  out.ok_quota_note_gone = !/与官方口径可能有差异|每笔调用费用/.test(document.querySelector('[data-card="quota"]')?.innerText || '');
   out.ok_balance = text(document.querySelector('[data-balance]'));
   out.ok_balance_note = text(document.querySelector('[data-card="balance"] .card-note'));
   out.ok_balance_has_currency = /[$€£¥]/.test(out.ok_balance || '');
   out.ok_reset_row = document.querySelectorAll('[data-card="balance"] .card-row').length;
-  out.ok_quota_note = text(document.querySelector('[data-card="quota"] .win-note'));
 
-  // ── 屏 ④：7 天还在读（两档各自加载） ─────────────────────────
+  // ── 屏 ④：整卡读取中（v3：不再分档加载） ─────────────────────
   M.setScreen('loading'); await tick();
-  const win5 = document.querySelector('[data-win="5h"]');
-  const win7 = document.querySelector('[data-win="7d"]');
-  out.loading_5h_has_pct = /已用/.test(text(win5?.querySelector('.win-used')) || '');
-  out.loading_7d_text = text(win7?.querySelector('.win-used'));
-  out.loading_7d_has_skeleton = !!win7?.querySelector('.skeleton');
-  out.loading_7d_has_bar = !!win7?.querySelector('.bar');
+  const loadingCard = document.querySelector('[data-card="quota"]');
+  out.loading_card_loading = loadingCard?.dataset.loading === "1";
+  out.loading_text = text(loadingCard?.querySelector('.win-name'));
+  out.loading_has_skeleton = !!loadingCard?.querySelector('.skeleton');
+  out.loading_has_bar = !!loadingCard?.querySelector('.bar');
+  out.loading_balance_still_there = !!document.querySelector('[data-balance]');
 
-  // ── 屏 ⑤：7 天到 82%（警示色） ──────────────────────────────
+  // ── 屏 ⑤：7 天到 84%（警示色） ──────────────────────────────
   M.setScreen('high'); await tick();
   const win7h = document.querySelector('[data-win="7d"]');
   out.high_7d_used = text(win7h?.querySelector('.win-used'));
   out.high_7d_is_warn = !!win7h?.querySelector('.win-used.is-high');
   out.high_7d_bar_warn = !!win7h?.querySelector('.bar > i.is-high');
+  out.high_5h_stays_normal = !document.querySelector('[data-win="5h"] .win-used.is-high');
+
+  // ── 屏 ⑥：5 小时用满（危险色） ──────────────────────────────
+  M.setScreen('full'); await tick();
+  const win5f = document.querySelector('[data-win="5h"]');
+  out.full_5h_used = text(win5f?.querySelector('.win-used'));
+  out.full_5h_is_danger = !!win5f?.querySelector('.win-used.is-full');
+  out.full_5h_bar_danger = !!win5f?.querySelector('.bar > i.is-full');
+  out.full_5h_bar_width = win5f?.querySelector('.bar > i')?.style.width;
 
   // ── 屏 ⑥：空数据（块级原因，不顶到全局条） ────────────────────
   M.setScreen('nodata'); await tick();
@@ -230,16 +238,17 @@ async function run() {
   const shots = [
     ['before', 'shot-1-before-tabs.png'],
     ['nokey', 'shot-2-no-key.png'],
-    ['ok', 'shot-3-quota-bars.png'],
-    ['loading', 'shot-4-loading-7d.png'],
-    ['high', 'shot-5-high-usage.png'],
-    ['nodata', 'shot-6-no-data.png'],
-    ['invalid', 'shot-7-key-invalid.png'],
-    ['offline', 'shot-8-offline.png'],
-    ['sheet', 'shot-9-sheet.png'],
-    ['sheet-filled', 'shot-10-sheet-filled.png'],
-    ['clearing', 'shot-11-clear-confirm.png'],
-    ['narrow', 'shot-12-narrow.png']
+    ['ok', 'shot-3-quota-three-windows.png'],
+    ['loading', 'shot-4-loading.png'],
+    ['high', 'shot-5-warn-84.png'],
+    ['full', 'shot-6-full-100.png'],
+    ['nodata', 'shot-7-no-data.png'],
+    ['invalid', 'shot-8-key-invalid.png'],
+    ['offline', 'shot-9-offline.png'],
+    ['sheet', 'shot-10-sheet.png'],
+    ['sheet-filled', 'shot-11-sheet-filled.png'],
+    ['clearing', 'shot-12-clear-confirm.png'],
+    ['narrow', 'shot-13-narrow.png']
   ];
   fs.mkdirSync(path.resolve(__dirname, 'evidence'), { recursive: true });
   for (const [screen, file] of shots) {
@@ -274,20 +283,22 @@ async function run() {
   ok('有余额时无全局条', results.ok_status_bar === 0, results.ok_status_bar);
   ok('配额卡在最上', results.ok_quota_first === true, results.ok_card_order);
   ok('余额卡沉底', results.ok_balance_last === true, results.ok_card_order);
-  ok('两档是 5 小时 / 7 天', JSON.stringify(results.ok_win_names) === JSON.stringify(['最近 5 小时', '最近 7 天']), results.ok_win_names);
-  ok('主数字写「已用 x%」', results.ok_win_used?.every((t) => /^已用 \d+\.\d%$/.test(t)), results.ok_win_used);
-  ok('副行写「剩 y%」', results.ok_win_sub?.every((t) => /^剩 \d+\.\d%$/.test(t)), results.ok_win_sub);
-  ok('进度条是真 progressbar 且宽度对应百分比', results.ok_win_bars?.length === 2 && results.ok_win_bars.every((b) => b.role === 'progressbar' && b.width === b.now + '%'), results.ok_win_bars);
-  ok('不显示 30 天那格', results.ok_has_30d === false, results.ok_has_30d);
+  ok('三档是 5 小时 / 7 天 / 本月', JSON.stringify(results.ok_win_names) === JSON.stringify(['最近 5 小时', '最近 7 天', '本月']), results.ok_win_names);
+  ok('主数字写「已用 x%」且是上游整数', JSON.stringify(results.ok_win_used) === JSON.stringify(['已用 5%', '已用 34%', '已用 17%']), results.ok_win_used);
+  ok('副行写「剩 y% + 重置时间」', results.ok_win_sub?.every((t) => /^剩 \d+% · .+重置$/.test(t)), results.ok_win_sub);
+  ok('进度条是真 progressbar 且宽度对应百分比', results.ok_win_bars?.length === 3 && results.ok_win_bars.every((b) => b.role === 'progressbar' && b.width === b.now + '%'), results.ok_win_bars);
+  ok('配额卡不再有「口径可能有差异」小字', results.ok_quota_note_gone === true, results.ok_quota_note_gone);
   ok('余额数值不加货币符号', results.ok_balance_has_currency === false, results.ok_balance);
   ok('余额带「不是配额」小字', /不是 ClinePass 订阅配额/.test(results.ok_balance_note || ''), results.ok_balance_note);
   ok('无 resetAt 不渲染重置行', results.ok_reset_row === 0, results.ok_reset_row);
-  ok('配额卡有口径小字', /每笔调用费用/.test(results.ok_quota_note || ''), results.ok_quota_note);
 
-  ok('5 小时先到先显示', results.loading_5h_has_pct === true, results.loading_5h_has_pct);
-  ok('7 天未到时显示「正在读取…」', results.loading_7d_text === '正在读取…', results.loading_7d_text);
-  ok('7 天未到时是骨架不是空进度条', results.loading_7d_has_skeleton === true && results.loading_7d_has_bar === false, [results.loading_7d_has_skeleton, results.loading_7d_has_bar]);
-  ok('82% 转警示色', results.high_7d_is_warn === true && results.high_7d_bar_warn === true, [results.high_7d_used, results.high_7d_is_warn, results.high_7d_bar_warn]);
+  ok('读取中是整卡加载', results.loading_card_loading === true, results.loading_card_loading);
+  ok('加载文案「正在读取…」', results.loading_text === '正在读取…', results.loading_text);
+  ok('加载是骨架不是空进度条', results.loading_has_skeleton === true && results.loading_has_bar === false, [results.loading_has_skeleton, results.loading_has_bar]);
+  ok('加载时余额块不受影响', results.loading_balance_still_there === true, results.loading_balance_still_there);
+  ok('84% 转警示色', results.high_7d_is_warn === true && results.high_7d_bar_warn === true, [results.high_7d_used, results.high_7d_is_warn, results.high_7d_bar_warn]);
+  ok('没到 80% 的档不转警示色', results.high_5h_stays_normal === true, results.high_5h_stays_normal);
+  ok('用满 100% 转危险色', results.full_5h_is_danger === true && results.full_5h_bar_danger === true && results.full_5h_bar_width === '100%', [results.full_5h_used, results.full_5h_is_danger, results.full_5h_bar_width]);
 
   ok('块级原因不顶到全局条', results.nodata_global_bar === 0, results.nodata_global_bar);
   ok('两块各自降级（配额在上、余额在下）', results.nodata_quota_reason === 'upstream_no_data' && results.nodata_balance_reason === 'upstream_no_data' && (results.nodata_card_order[0] || '').includes('配额'), [results.nodata_quota_reason, results.nodata_balance_reason, results.nodata_card_order]);

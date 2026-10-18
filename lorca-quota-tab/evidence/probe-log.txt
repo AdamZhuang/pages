@@ -1,4 +1,4 @@
-探针结果 49/49
+探针结果 51/51
 PASS  五条原因码齐备
 PASS  前三条是全局级
 PASS  后两条是块级
@@ -14,19 +14,21 @@ PASS  没配 key 不转圈
 PASS  有余额时无全局条
 PASS  配额卡在最上
 PASS  余额卡沉底
-PASS  两档是 5 小时 / 7 天
-PASS  主数字写「已用 x%」
-PASS  副行写「剩 y%」
+PASS  三档是 5 小时 / 7 天 / 本月
+PASS  主数字写「已用 x%」且是上游整数
+PASS  副行写「剩 y% + 重置时间」
 PASS  进度条是真 progressbar 且宽度对应百分比
-PASS  不显示 30 天那格
+PASS  配额卡不再有「口径可能有差异」小字
 PASS  余额数值不加货币符号
 PASS  余额带「不是配额」小字
 PASS  无 resetAt 不渲染重置行
-PASS  配额卡有口径小字
-PASS  5 小时先到先显示
-PASS  7 天未到时显示「正在读取…」
-PASS  7 天未到时是骨架不是空进度条
-PASS  82% 转警示色
+PASS  读取中是整卡加载
+PASS  加载文案「正在读取…」
+PASS  加载是骨架不是空进度条
+PASS  加载时余额块不受影响
+PASS  84% 转警示色
+PASS  没到 80% 的档不转警示色
+PASS  用满 100% 转危险色
 PASS  块级原因不顶到全局条
 PASS  两块各自降级（配额在上、余额在下）
 PASS  块级降级带重试
@@ -112,41 +114,54 @@ PASS  取消关闭弹层
   "ok_balance_last": true,
   "ok_win_names": [
     "最近 5 小时",
-    "最近 7 天"
+    "最近 7 天",
+    "本月"
   ],
   "ok_win_used": [
-    "已用 10.5%",
-    "已用 34.0%"
+    "已用 5%",
+    "已用 34%",
+    "已用 17%"
   ],
   "ok_win_sub": [
-    "剩 89.5%",
-    "剩 66.0%"
+    "剩 95% · 今天 18:31重置",
+    "剩 66% · 10-24 16:57重置",
+    "剩 83% · 11-16 16:57重置"
   ],
   "ok_win_bars": [
     {
       "role": "progressbar",
-      "now": "10.49",
-      "width": "10.49%"
+      "now": "5",
+      "width": "5%"
     },
     {
       "role": "progressbar",
-      "now": "34.03",
-      "width": "34.03%"
+      "now": "34",
+      "width": "34%"
+    },
+    {
+      "role": "progressbar",
+      "now": "17",
+      "width": "17%"
     }
   ],
-  "ok_has_30d": false,
+  "ok_quota_note_gone": true,
   "ok_balance": "12.34",
   "ok_balance_note": "Cline 账户余额，不是 ClinePass 订阅配额",
   "ok_balance_has_currency": false,
   "ok_reset_row": 0,
-  "ok_quota_note": "按 Cline 记录的每笔调用费用汇总，与官方口径可能有差异。",
-  "loading_5h_has_pct": true,
-  "loading_7d_text": "正在读取…",
-  "loading_7d_has_skeleton": true,
-  "loading_7d_has_bar": false,
-  "high_7d_used": "已用 82.4%",
+  "loading_card_loading": true,
+  "loading_text": "正在读取…",
+  "loading_has_skeleton": true,
+  "loading_has_bar": false,
+  "loading_balance_still_there": true,
+  "high_7d_used": "已用 84%",
   "high_7d_is_warn": true,
   "high_7d_bar_warn": true,
+  "high_5h_stays_normal": true,
+  "full_5h_used": "已用 100%",
+  "full_5h_is_danger": true,
+  "full_5h_bar_danger": true,
+  "full_5h_bar_width": "100%",
   "nodata_global_bar": 0,
   "nodata_balance_reason": "upstream_no_data",
   "nodata_quota_reason": "upstream_no_data",

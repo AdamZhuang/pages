@@ -268,8 +268,9 @@
 <div class="wrap">
   <h1>avatar Bot 页「额度」Tab · UI 稿 v1（issue #3）</h1>
   <p class="page-sub">
-    v2（2026-10-18）：配额卡挪到最上、按 5 小时 / 7 天两档各带进度条；余额卡沉底；30 天不显示；
-    key 输入框改成<b>普通文本格子</b>（粘贴优先）。稿子里<b>没有任何真实凭据</b>，示例值都是编的。
+    v3（2026-10-18）：配额改用官方 <code>GET /api/v1/users/me/plan/usage-limits</code> 一次拿三档，
+    5 小时 / 7 天 / 本月各带进度条与重置时间；余额卡沉底；key 输入框是普通文本格子。
+    稿子里<b>没有任何真实凭据</b>，百分比是上游返回的样例值。
   </p>
   <div class="legend">
     <span class="badge is-p1">P1 · 本期做</span>
@@ -281,14 +282,15 @@
     <button type="button" data-screen="before" aria-selected="true">① 改前 · 三档 Tab</button>
     <button type="button" data-screen="nokey">② 额度 · 没配 key</button>
     <button type="button" data-screen="ok">③ 额度 · 两档配额</button>
-    <button type="button" data-screen="loading">④ 额度 · 7 天还在读</button>
-    <button type="button" data-screen="high">⑤ 额度 · 7 天到 82%</button>
-    <button type="button" data-screen="nodata">⑥ 额度 · 空数据</button>
-    <button type="button" data-screen="invalid">⑦ 额度 · key 不被接受</button>
-    <button type="button" data-screen="offline">⑧ 额度 · 连不上 Cline</button>
-    <button type="button" data-screen="sheet">⑨ 设置 key 弹层</button>
-    <button type="button" data-screen="clearing">⑩ 清除二次确认</button>
-    <button type="button" data-screen="narrow">⑪ 360px 窄屏</button>
+    <button type="button" data-screen="loading">④ 额度 · 读取中</button>
+    <button type="button" data-screen="high">⑤ 额度 · 7 天到 84%</button>
+    <button type="button" data-screen="full">⑥ 额度 · 5 小时用满</button>
+    <button type="button" data-screen="nodata">⑦ 额度 · 空数据</button>
+    <button type="button" data-screen="invalid">⑧ 额度 · key 不被接受</button>
+    <button type="button" data-screen="offline">⑨ 额度 · 连不上 Cline</button>
+    <button type="button" data-screen="sheet">⑩ 设置 key 弹层</button>
+    <button type="button" data-screen="clearing">⑪ 清除二次确认</button>
+    <button type="button" data-screen="narrow">⑫ 360px 窄屏</button>
   </div>
 
   <div class="stage">
@@ -305,28 +307,27 @@
       </div>
 
       <div class="card">
-        <h2>版面顺序（v2 改口） <span class="tag2">Adam 2026-10-18</span></h2>
+        <h2>版面顺序 <span class="tag2">Adam 2026-10-18</span></h2>
         <ul>
           <li><b>配额卡在最上</b>，余额卡沉到最底下 —— 他说「主要是看订阅配额的」。</li>
-          <li>配额卡里两档：<b>最近 5 小时</b> / <b>最近 7 天</b>，各一行百分比 + 进度条。</li>
-          <li>主数字写<b>「已用 x%」</b>（进度条填满 = 用完），副行小字<b>「剩 y%」</b>。</li>
+          <li>配额卡里三档：<b>最近 5 小时 / 最近 7 天 / 本月</b>，各一行百分比 + 进度条 + 重置时间。</li>
+          <li>主数字写<b>「已用 x%」</b>（进度条填满 = 用完），副行<b>「剩 y% · 10-24 16:57 重置」</b>。</li>
           <li>≥80% 转警示色、满 100% 转危险色 —— 撞限流前能看出来。</li>
-          <li><b>30 天那格不显示</b>：见下一条。</li>
         </ul>
-        <div class="note is-warn">
-          <b>30 天为什么砍掉</b>：usages 只回溯到 <code>2026-10-17 08:57</code>（3972 条到头），30 天窗口实际只覆盖约 1.4 天。
-          数据不完整时算出来的百分比是<b>错信息</b>，比「取不到」更糟 —— 用户会拿 17% 当成真实月用量。
-          等确认保留期再上第三格，记进 issue 待办，不算本期。
+        <div class="note is-info">
+          <b>三档都是上游给的</b>（v3 改口）：官方 <code>GET /api/v1/users/me/plan/usage-limits</code> 一次返回
+          <code>five_hour</code> / <code>weekly</code> / <code>monthly</code> 三档的 <code>percentUsed</code> 与 <code>resetsAt</code>。
+          之前「30 天不显示」是因为我自己按记录求和、只覆盖 1.4 天 —— 那个理由现在不成立了，<b>本月放开显示</b>。
         </div>
       </div>
 
       <div class="card">
-        <h2>两档独立加载 <span class="tag2">图 ③</span></h2>
+        <h2>一次拿全，不用分档加载 <span class="tag2">v3</span></h2>
         <ul>
-          <li>5 小时翻 3 页就够，7 天要翻很多页 —— <b>谁先到谁先显示</b>，各带各的骨架。</li>
-          <li>图 ③：5 小时已经出数，7 天那行还是「正在读取…」+ 灰条。</li>
-          <li>缓存按窗口分开、<b>5 分钟</b>（研发定）：这个数是「已用多少」，5 分钟内变不到影响判断。</li>
-          <li>刷新按钮点了就重拉，不读缓存。</li>
+          <li>v2 的「5 小时先到、7 天补上」<b>作废</b>：一个请求几百毫秒返回三档，分档加载没有意义了。</li>
+          <li>保留一个<b>整卡加载态</b>（图 ④）：点刷新后卡片显示「正在读取…」+ 骨架，几秒内出结果。</li>
+          <li>缓存 5 分钟仍保留，但只为省流量，不再是为了掩盖 15 秒的等待。</li>
+          <li>百分比<b>原样显示上游的整数</b>，不补小数位、不自己四舍五入 —— 不加工精度。</li>
         </ul>
       </div>
 
@@ -357,6 +358,7 @@
           <li>配额这块挂了不影响余额块（图 ⑤：两块都空数据，各自说明）。</li>
           <li><b>没有 <code>resetAt</code> 就不渲染「重置时间」这一行</b>，不留空行占位。</li>
           <li>余额数值<b>不加货币符号</b>（上游只给 number，单位不知道就不写），小字固定「Cline 账户余额，不是 ClinePass 订阅配额」。</li>
+          <li><b>配额卡不再有「与官方口径可能有差异」那句小字</b>（v3）：数字就是上游算的，留着反而是自我怀疑。</li>
           <li><code>key_invalid</code> / <code>network_unreachable</code> 时两块保留骨架、内容位写「—」，<b>不重复全局条那句原因</b>。</li>
         </ul>
       </div>
@@ -444,24 +446,18 @@ function statusBar(code) {
  * 算出来的百分比是错信息（会让人拿它当真实月用量）。
  */
 function winRow(w) {
-  // w: { name, usedPct, leftPct, loading }
-  if (w.loading) {
-    return `
-      <div class="win is-loading" data-win="${w.key}">
-        <div class="win-hd"><span class="win-name">${esc(w.name)}</span><span class="win-used">正在读取…</span></div>
-        <div class="skeleton"></div>
-      </div>`;
-  }
-  const pct = Math.max(0, Math.min(100, w.usedPct));
+  // w: { key, name, pct, resetsAt }
+  // pct 是上游 percentUsed **原样**（整数就显示整数，不补小数位 —— 不自己加工精度）。
+  const pct = Math.max(0, Math.min(100, w.pct));
   const tone = pct >= 100 ? " is-full" : pct >= 80 ? " is-high" : "";
   return `
     <div class="win" data-win="${w.key}" data-used="${pct}">
       <div class="win-hd">
         <span class="win-name">${esc(w.name)}</span>
-        <span class="win-used${tone}">已用 ${pct.toFixed(1)}%</span>
+        <span class="win-used${tone}">已用 ${pct}%</span>
       </div>
       <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><i class="${tone}" style="width:${pct}%"></i></div>
-      <div class="win-sub">剩 ${(100 - pct).toFixed(1)}%</div>
+      <div class="win-sub">剩 ${100 - pct}%${w.resetsAt ? ` · ${esc(w.resetsAt)}重置` : ""}</div>
     </div>`;
 }
 
@@ -475,12 +471,18 @@ function quotaCard(state) {
         ${c.desc ? `<p class="card-note">${esc(c.desc)}</p>` : ""}
       </div>`;
   }
+  if (state.kind === "loading") {
+    return `
+      <div class="card" data-card="quota" data-loading="1">
+        <div class="card-hd"><h3>ClinePass 订阅配额</h3></div>
+        <div class="win is-loading"><div class="win-hd"><span class="win-name">正在读取…</span></div><div class="skeleton"></div></div>
+      </div>`;
+  }
   if (state.kind === "value") {
     return `
       <div class="card" data-card="quota">
-        <div class="card-hd"><h3>ClinePass 订阅配额</h3><span class="tag">已用 / 上限</span></div>
+        <div class="card-hd"><h3>ClinePass 订阅配额</h3><span class="tag">已用</span></div>
         ${state.windows.map(winRow).join("")}
-        <p class="win-note">按 Cline 记录的每笔调用费用汇总，与官方口径可能有差异。</p>
       </div>`;
   }
   return `
@@ -583,14 +585,25 @@ function clearSheet() {
 
 /* ══ 屏定义 ══ */
 /* 5h / 7d 两档的样例数值取自研发 2026-10-18 的只读实测（10.49% / 34.03%）。 */
+/*
+ * 三档样例取自研发 2026-10-18 用真 key 只读打 `GET /api/v1/users/me/plan/usage-limits` 的返回：
+ * five_hour 5% / weekly 34% / monthly 17%，resetsAt 已按手机本地时间显示（上游给的是 UTC）。
+ */
 const WINS = {
   ok: [
-    { key: "5h", name: "最近 5 小时", usedPct: 10.49 },
-    { key: "7d", name: "最近 7 天", usedPct: 34.03 }
+    { key: "5h", name: "最近 5 小时", pct: 5, resetsAt: "今天 18:31" },
+    { key: "7d", name: "最近 7 天", pct: 34, resetsAt: "10-24 16:57" },
+    { key: "30d", name: "本月", pct: 17, resetsAt: "11-16 16:57" }
   ],
   high: [
-    { key: "5h", name: "最近 5 小时", usedPct: 10.49 },
-    { key: "7d", name: "最近 7 天", usedPct: 82.4 }
+    { key: "5h", name: "最近 5 小时", pct: 5, resetsAt: "今天 18:31" },
+    { key: "7d", name: "最近 7 天", pct: 84, resetsAt: "10-24 16:57" },
+    { key: "30d", name: "本月", pct: 17, resetsAt: "11-16 16:57" }
+  ],
+  full: [
+    { key: "5h", name: "最近 5 小时", pct: 100, resetsAt: "今天 18:31" },
+    { key: "7d", name: "最近 7 天", pct: 34, resetsAt: "10-24 16:57" },
+    { key: "30d", name: "本月", pct: 17, resetsAt: "11-16 16:57" }
   ]
 };
 
@@ -604,38 +617,37 @@ const SCREENS = {
     status: "not_configured", hideCards: true, updatedAt: "—"
   }),
   ok: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
-    status: null, updatedAt: "16:20",
+    status: null, updatedAt: "17:36",
     quota: { kind: "value", windows: WINS.ok },
     balance: { kind: "value", value: "12.34" }
   }),
   loading: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
-    status: null, updatedAt: "16:19",
-    quota: {
-      kind: "value",
-      windows: [
-        { key: "5h", name: "最近 5 小时", usedPct: 10.49 },
-        { key: "7d", name: "最近 7 天", loading: true }
-      ]
-    },
+    status: null, updatedAt: "17:35",
+    quota: { kind: "loading" },
     balance: { kind: "value", value: "12.34" }
   }),
   high: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
-    status: null, updatedAt: "16:20",
+    status: null, updatedAt: "17:36",
     quota: { kind: "value", windows: WINS.high },
     balance: { kind: "value", value: "12.34" }
   }),
+  full: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: null, updatedAt: "17:36",
+    quota: { kind: "value", windows: WINS.full },
+    balance: { kind: "value", value: "12.34" }
+  }),
   nodata: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
-    status: null, updatedAt: "16:22",
+    status: null, updatedAt: "17:37",
     quota: { kind: "reason", code: "upstream_no_data" },
     balance: { kind: "reason", code: "upstream_no_data" }
   }),
   invalid: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
-    status: "key_invalid", updatedAt: "16:24",
+    status: "key_invalid", updatedAt: "17:38",
     quota: { kind: "placeholder" },
     balance: { kind: "placeholder" }
   }),
   offline: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
-    status: "network_unreachable", updatedAt: "16:26",
+    status: "network_unreachable", updatedAt: "17:39",
     quota: { kind: "placeholder" },
     balance: { kind: "placeholder" }
   }),
@@ -649,16 +661,16 @@ const SCREENS = {
     status: "not_configured", hideCards: true, updatedAt: "—"
   }) + keySheet({ value: "sk-cline-demo-not-a-real-key", error: "保存失败，请检查网络后再试" }),
   clearing: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
-    status: null, updatedAt: "16:28",
+    status: null, updatedAt: "17:36",
     quota: { kind: "value", windows: WINS.ok },
     balance: { kind: "value", value: "12.34" }
   }) + clearSheet(),
   saved: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
-    status: "key_invalid", updatedAt: "16:30",
+    status: "key_invalid", updatedAt: "17:40",
     quota: { kind: "placeholder" }, balance: { kind: "placeholder" }
   }) + `<div class="toast" data-toast>已设置</div>`,
   narrow: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
-    status: null, updatedAt: "16:20",
+    status: null, updatedAt: "17:36",
     quota: { kind: "value", windows: WINS.ok },
     balance: { kind: "value", value: "12.34" }
   })
