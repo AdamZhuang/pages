@@ -143,6 +143,25 @@
   .card.is-flat .card-main { font-size: 17px; font-weight: 650; letter-spacing: -0.2px; }
   .placeholder { margin: 0; font-size: 15px; font-weight: 650; color: var(--muted-2); letter-spacing: 1px; }
 
+  /* ── 配额分档（5 小时 / 7 天） ── */
+  .win { display: flex; flex-direction: column; gap: 7px; padding: 12px 0 0; }
+  .win + .win { border-top: 1px solid var(--border); margin-top: 4px; }
+  .win-hd { display: flex; align-items: baseline; gap: 8px; }
+  .win-name { font-size: 13px; font-weight: 650; color: var(--text-soft); }
+  .win-used { margin-left: auto; font-size: 20px; font-weight: 700; letter-spacing: -0.4px; }
+  .win-used.is-high { color: var(--warning); }
+  .win-used.is-full { color: var(--danger); }
+  .win-sub { font-size: 11.5px; color: var(--muted-2); }
+  .bar { height: 7px; border-radius: 4px; background: var(--bg-soft); overflow: hidden; }
+  .bar > i { display: block; height: 100%; border-radius: 4px; background: var(--accent); }
+  .bar > i.is-high { background: var(--warning); }
+  .bar > i.is-full { background: var(--danger); }
+  .win-note { font-size: 11.5px; color: var(--muted-2); line-height: 1.45; }
+  /* 分档加载态：谁先到谁先显示，各自转各自的 */
+  .win.is-loading .win-used { font-size: 13px; font-weight: 600; color: var(--muted-2); }
+  .skeleton { height: 7px; border-radius: 4px; background: linear-gradient(90deg, var(--bg-soft) 25%, #e7e9ee 50%, var(--bg-soft) 75%); background-size: 200% 100%; animation: shimmer 1.2s linear infinite; }
+  @keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+
   /* 全局状态条：只反映 key 层（not_configured / key_invalid / network_unreachable） */
   .status-bar {
     display: flex; flex-direction: column; gap: 10px;
@@ -187,9 +206,11 @@
   .sheet-desc { margin: 3px 0 0; font-size: 12px; line-height: 1.4; color: var(--muted); }
   .secret-field { display: flex; flex-direction: column; gap: 6px; }
   .secret-label { font-size: 13px; font-weight: 600; }
+  /* 普通文本格子：不要密文输入（粘贴优先，Adam 2026-10-18 定）。
+     安全性由「打开弹层永远空白 + 不回显」保证，不靠遮挡。 */
   .secret-wrap {
     display: flex; align-items: center; gap: 8px;
-    background: var(--bg-soft); border: 1px solid var(--border); border-radius: 10px; padding: 0 10px;
+    background: var(--bg-soft); border: 1px solid var(--border); border-radius: 10px; padding: 0 12px;
   }
   .secret-wrap.is-focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(51, 112, 255, 0.12); background: var(--surface); }
   .secret-input {
@@ -197,7 +218,7 @@
     font: 13.5px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--text);
     letter-spacing: 0.02em;
   }
-  .eye-btn { padding: 6px; border: 0; border-radius: 6px; background: none; color: var(--muted); display: flex; }
+  .secret-input::placeholder { letter-spacing: 0; font-family: inherit; }
   .sheet-error {
     padding: 8px 12px; border-radius: 8px; background: rgba(176, 68, 88, 0.08);
     border: 1px solid rgba(176, 68, 88, 0.2); color: var(--danger);
@@ -247,8 +268,8 @@
 <div class="wrap">
   <h1>avatar Bot 页「额度」Tab · UI 稿 v1（issue #3）</h1>
   <p class="page-sub">
-    Tab 顺序按研发核过的现状：<b>会话 / 已完成 / 自动化 / 额度</b>（额度排最后）。
-    key 由 Adam 自己在页面里填，稿子里<b>没有任何真实凭据</b>，输入框里的圆点全是假的。
+    v2（2026-10-18）：配额卡挪到最上、按 5 小时 / 7 天两档各带进度条；余额卡沉底；30 天不显示；
+    key 输入框改成<b>普通文本格子</b>（粘贴优先）。稿子里<b>没有任何真实凭据</b>，示例值都是编的。
   </p>
   <div class="legend">
     <span class="badge is-p1">P1 · 本期做</span>
@@ -259,13 +280,15 @@
   <div class="switcher" role="tablist">
     <button type="button" data-screen="before" aria-selected="true">① 改前 · 三档 Tab</button>
     <button type="button" data-screen="nokey">② 额度 · 没配 key</button>
-    <button type="button" data-screen="ok">③ 额度 · 有余额（配额取不到）</button>
-    <button type="button" data-screen="nodata">④ 额度 · 余额空数据</button>
-    <button type="button" data-screen="invalid">⑤ 额度 · key 不被接受</button>
-    <button type="button" data-screen="offline">⑥ 额度 · 连不上 Cline</button>
-    <button type="button" data-screen="sheet">⑦ 设置 key 弹层</button>
-    <button type="button" data-screen="clearing">⑧ 清除二次确认</button>
-    <button type="button" data-screen="narrow">⑨ 360px 窄屏</button>
+    <button type="button" data-screen="ok">③ 额度 · 两档配额</button>
+    <button type="button" data-screen="loading">④ 额度 · 7 天还在读</button>
+    <button type="button" data-screen="high">⑤ 额度 · 7 天到 82%</button>
+    <button type="button" data-screen="nodata">⑥ 额度 · 空数据</button>
+    <button type="button" data-screen="invalid">⑦ 额度 · key 不被接受</button>
+    <button type="button" data-screen="offline">⑧ 额度 · 连不上 Cline</button>
+    <button type="button" data-screen="sheet">⑨ 设置 key 弹层</button>
+    <button type="button" data-screen="clearing">⑩ 清除二次确认</button>
+    <button type="button" data-screen="narrow">⑪ 360px 窄屏</button>
   </div>
 
   <div class="stage">
@@ -276,15 +299,40 @@
         <h2>Tab 与页面骨架 <span class="tag2">AC-1</span></h2>
         <ul>
           <li>四档：<b>会话 / 已完成 / 自动化 / 额度</b>，额度排最后（图 ① 是改前的三档，只用来对比）。</li>
-          <li>「已完成」仍只在真有已完成会话时出现（issue #1 定稿），额度<b>永远出现</b> —— 它是入口，不是有数据才给的列表。</li>
-          <li>额度页顶部一行：左边「ClinePass」，右边「刷新」+「上次更新 16:20」。进入 Tab 拉一次，之后只靠这个按钮（不做轮询）。</li>
+          <li>「已完成」仍只在真有已完成会话时出现（issue #1 定稿），额度<b>永远出现</b>。</li>
+          <li>页头一行：左「ClinePass」、右「上次更新 16:20」+「刷新」。进入 Tab 拉一次，之后只靠按钮（不做轮询）。</li>
         </ul>
       </div>
 
       <div class="card">
-        <h2>没配 key 时不画两块 <span class="tag2">AC-2</span></h2>
-        <p>按研发的倾向定稿：<code>not_configured</code> 时<b>不渲染余额 / 配额两张卡</b>，屏上只有一条状态条 + 「设置 API key」按钮。</p>
-        <div class="note is-info">理由：两块都必然空，各降级一次就是两行「取不到」，比空态更糊。空态要有明确下一步，不是把「没东西」排两遍。</div>
+        <h2>版面顺序（v2 改口） <span class="tag2">Adam 2026-10-18</span></h2>
+        <ul>
+          <li><b>配额卡在最上</b>，余额卡沉到最底下 —— 他说「主要是看订阅配额的」。</li>
+          <li>配额卡里两档：<b>最近 5 小时</b> / <b>最近 7 天</b>，各一行百分比 + 进度条。</li>
+          <li>主数字写<b>「已用 x%」</b>（进度条填满 = 用完），副行小字<b>「剩 y%」</b>。</li>
+          <li>≥80% 转警示色、满 100% 转危险色 —— 撞限流前能看出来。</li>
+          <li><b>30 天那格不显示</b>：见下一条。</li>
+        </ul>
+        <div class="note is-warn">
+          <b>30 天为什么砍掉</b>：usages 只回溯到 <code>2026-10-17 08:57</code>（3972 条到头），30 天窗口实际只覆盖约 1.4 天。
+          数据不完整时算出来的百分比是<b>错信息</b>，比「取不到」更糟 —— 用户会拿 17% 当成真实月用量。
+          等确认保留期再上第三格，记进 issue 待办，不算本期。
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>两档独立加载 <span class="tag2">图 ③</span></h2>
+        <ul>
+          <li>5 小时翻 3 页就够，7 天要翻很多页 —— <b>谁先到谁先显示</b>，各带各的骨架。</li>
+          <li>图 ③：5 小时已经出数，7 天那行还是「正在读取…」+ 灰条。</li>
+          <li>缓存按窗口分开、<b>5 分钟</b>（研发定）：这个数是「已用多少」，5 分钟内变不到影响判断。</li>
+          <li>刷新按钮点了就重拉，不读缓存。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>没配 key 时不画卡 <span class="tag2">AC-2</span></h2>
+        <p><code>not_configured</code> 时<b>不渲染两块卡</b>，只有状态条 + 「设置 API key」。两块都必然空，各降级一次就是两行「取不到」，比空态更糊。</p>
       </div>
 
       <div class="card">
@@ -299,27 +347,28 @@
         </table>
         <div class="note is-warn">
           <b>层级不许串</b>：前三条是全局条，后两条只出现在它自己那张卡里。前端只按码取文案，不许自己拼英文、不许把上游原文或 HTTP 状态码写进界面。
+          <br><code>quota_unavailable</code> 现在基本用不上了（接口已找到），但保留 —— 订阅过期 / 无 entitlements 时还会落回它。
         </div>
       </div>
 
       <div class="card">
         <h2>两块独立降级 <span class="tag2">AC-7</span></h2>
         <ul>
-          <li><b>块一 Cline 账户余额</b>：有值就显示数值，<b>不加货币符号</b>（上游只给 number，单位不知道就不写）；小字固定一句「Cline 账户余额，不是 ClinePass 订阅配额」。</li>
-          <li><b>块二 ClinePass 订阅配额</b>：常态就是 <code>quota_unavailable</code>，<b>不做百分比假进度条</b>。</li>
-          <li>余额这块挂了不影响配额块那行文案（图 ④：余额空数据，配额照常说明原因）。</li>
-          <li><b>没有 <code>resetAt</code> 就不渲染「重置时间」这一行</b>，不留空行占位（本稿所有屏都没有这一行，因为接口当前不给）。</li>
-          <li><code>key_invalid</code> / <code>network_unreachable</code> 时两块保留骨架、内容位写「—」+ 一句「拿到有效数据后显示」；<b>不重复全局条的原因文案</b>（图 ⑤⑥）。</li>
+          <li>配额这块挂了不影响余额块（图 ⑤：两块都空数据，各自说明）。</li>
+          <li><b>没有 <code>resetAt</code> 就不渲染「重置时间」这一行</b>，不留空行占位。</li>
+          <li>余额数值<b>不加货币符号</b>（上游只给 number，单位不知道就不写），小字固定「Cline 账户余额，不是 ClinePass 订阅配额」。</li>
+          <li><code>key_invalid</code> / <code>network_unreachable</code> 时两块保留骨架、内容位写「—」，<b>不重复全局条那句原因</b>。</li>
         </ul>
       </div>
 
       <div class="card">
-        <h2>设置 key <span class="tag2">AC-3 / AC-5</span></h2>
+        <h2>设置 key：普通文本格子 <span class="tag2">v2 改口</span></h2>
         <ul>
-          <li>复用抽屉版面与密文/明文切换，<b>提交改打桌面端新端点</b>（研发方案：<code>PUT /clinepass/key</code>）。</li>
-          <li>保存成功只回 toast「已设置」；<b>永不回显</b>，重新打开弹层输入框是空的（要改就是重填，不是编辑旧值）。</li>
-          <li>清除走二次确认，文案「清除后将看不到额度」；清完回到图 ②，落盘文件由后端删除。</li>
-          <li>保存失败留在弹层里、给一行错误 + 保留输入内容（不吞掉用户刚粘的那串）。</li>
+          <li>输入框<b>不要密文、不要眼睛按钮、不要安全键盘</b>，就是普通文本框（<code>type="text"</code>，关掉自动纠正/首字母大写）—— 粘贴优先。</li>
+          <li>安全性改由<b>「打开弹层永远是空的」</b>保证：已存的 key 永不回显，要换就重新粘一次。</li>
+          <li>保存成功只回 toast「已设置」；清除走二次确认「清除后将看不到额度」。</li>
+          <li>保存失败留在弹层、错误行 + <b>不丢用户刚粘的那串</b>。</li>
+          <li>自测截图规矩：<code>key_invalid</code> 那态用假 key；有额度那态<b>截之前把弹层关掉</b>，别让真 key 进截图。</li>
         </ul>
         <div class="readout" id="readout">—</div>
       </div>
@@ -388,8 +437,61 @@ function statusBar(code) {
 }
 
 /* ══ 两块卡 ══ */
+/*
+ * 配额卡在最上（Adam 2026-10-18：主要是看订阅配额），余额卡挪到最后。
+ * 配额分 5 小时 / 7 天两档，**各自独立加载**：谁先到谁先显示，不让人对着一个转圈等全部。
+ * 30 天那格**不显示**：usages 只回溯到 2026-10-17，30 天窗口实际只覆盖 1.4 天，
+ * 算出来的百分比是错信息（会让人拿它当真实月用量）。
+ */
+function winRow(w) {
+  // w: { name, usedPct, leftPct, loading }
+  if (w.loading) {
+    return `
+      <div class="win is-loading" data-win="${w.key}">
+        <div class="win-hd"><span class="win-name">${esc(w.name)}</span><span class="win-used">正在读取…</span></div>
+        <div class="skeleton"></div>
+      </div>`;
+  }
+  const pct = Math.max(0, Math.min(100, w.usedPct));
+  const tone = pct >= 100 ? " is-full" : pct >= 80 ? " is-high" : "";
+  return `
+    <div class="win" data-win="${w.key}" data-used="${pct}">
+      <div class="win-hd">
+        <span class="win-name">${esc(w.name)}</span>
+        <span class="win-used${tone}">已用 ${pct.toFixed(1)}%</span>
+      </div>
+      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><i class="${tone}" style="width:${pct}%"></i></div>
+      <div class="win-sub">剩 ${(100 - pct).toFixed(1)}%</div>
+    </div>`;
+}
+
+function quotaCard(state) {
+  if (state.kind === "reason") {
+    const c = COPY[state.code];
+    return `
+      <div class="card is-flat" data-card="quota" data-reason="${state.code}">
+        <div class="card-hd"><h3>ClinePass 订阅配额</h3></div>
+        <p class="reason">${esc(c.title)}</p>
+        ${c.desc ? `<p class="card-note">${esc(c.desc)}</p>` : ""}
+      </div>`;
+  }
+  if (state.kind === "value") {
+    return `
+      <div class="card" data-card="quota">
+        <div class="card-hd"><h3>ClinePass 订阅配额</h3><span class="tag">已用 / 上限</span></div>
+        ${state.windows.map(winRow).join("")}
+        <p class="win-note">按 Cline 记录的每笔调用费用汇总，与官方口径可能有差异。</p>
+      </div>`;
+  }
+  return `
+    <div class="card is-flat" data-card="quota" data-placeholder="1">
+      <div class="card-hd"><h3>ClinePass 订阅配额</h3></div>
+      <p class="placeholder">—</p>
+      <p class="card-note">拿到有效数据后显示</p>
+    </div>`;
+}
+
 function balanceCard(state) {
-  // state: { kind: "value", value, updatedAt } | { kind: "reason", code } | { kind: "placeholder" }
   if (state.kind === "value") {
     return `
       <div class="card" data-card="balance">
@@ -416,27 +518,9 @@ function balanceCard(state) {
     </div>`;
 }
 
-function quotaCard(state) {
-  if (state.kind === "reason") {
-    const c = COPY[state.code];
-    return `
-      <div class="card is-flat" data-card="quota" data-reason="${state.code}">
-        <div class="card-hd"><h3>ClinePass 订阅配额</h3></div>
-        <p class="reason">${esc(c.title)}</p>
-        ${c.desc ? `<p class="card-note">${esc(c.desc)}</p>` : ""}
-      </div>`;
-  }
-  return `
-    <div class="card is-flat" data-card="quota" data-placeholder="1">
-      <div class="card-hd"><h3>ClinePass 订阅配额</h3></div>
-      <p class="placeholder">—</p>
-      <p class="card-note">拿到有效数据后显示</p>
-    </div>`;
-}
-
 /* ══ 额度页 ══ */
 function quotaScreen(spec) {
-  const cards = spec.hideCards ? "" : balanceCard(spec.balance) + quotaCard(spec.quota);
+  const cards = spec.hideCards ? "" : quotaCard(spec.quota) + balanceCard(spec.balance);
   return `
     <div class="body">
       <div class="sect">
@@ -467,11 +551,11 @@ function keySheet(opts) {
         <div class="secret-field">
           <span class="secret-label">API key</span>
           <div class="secret-wrap${filled ? " is-focus" : ""}">
-            <input class="secret-input" id="key-input" type="${opts.plain ? "text" : "password"}"
+            <input class="secret-input" id="key-input" type="text"
+                   inputmode="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
                    placeholder="粘贴 Cline 的 API key" value="${esc(opts.value)}" aria-label="Cline API key">
-            <button class="eye-btn" type="button" data-action="toggle-plain" aria-label="显示或隐藏">${SVG.eye}</button>
           </div>
-          <p class="sheet-hint">在 Cline 官网账户页生成；这里填完就不会再显示。</p>
+          <p class="sheet-hint">在 Cline 官网账户页生成。粘贴进来就能存；保存后不再回显，要换就重新粘一次。</p>
         </div>
         ${opts.error ? `<div class="sheet-error" data-sheet-error>${esc(opts.error)}</div>` : ""}
         <div class="sheet-actions">
@@ -498,6 +582,18 @@ function clearSheet() {
 }
 
 /* ══ 屏定义 ══ */
+/* 5h / 7d 两档的样例数值取自研发 2026-10-18 的只读实测（10.49% / 34.03%）。 */
+const WINS = {
+  ok: [
+    { key: "5h", name: "最近 5 小时", usedPct: 10.49 },
+    { key: "7d", name: "最近 7 天", usedPct: 34.03 }
+  ],
+  high: [
+    { key: "5h", name: "最近 5 小时", usedPct: 10.49 },
+    { key: "7d", name: "最近 7 天", usedPct: 82.4 }
+  ]
+};
+
 const SCREENS = {
   before: () => header("routines", { done: 2, routines: 3 }, false) + `
     <div class="body">
@@ -509,46 +605,62 @@ const SCREENS = {
   }),
   ok: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
     status: null, updatedAt: "16:20",
-    balance: { kind: "value", value: "12.34" },
-    quota: { kind: "reason", code: "quota_unavailable" }
-  }) + `<div class="toast" style="display:none"></div>`,
+    quota: { kind: "value", windows: WINS.ok },
+    balance: { kind: "value", value: "12.34" }
+  }),
+  loading: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: null, updatedAt: "16:19",
+    quota: {
+      kind: "value",
+      windows: [
+        { key: "5h", name: "最近 5 小时", usedPct: 10.49 },
+        { key: "7d", name: "最近 7 天", loading: true }
+      ]
+    },
+    balance: { kind: "value", value: "12.34" }
+  }),
+  high: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: null, updatedAt: "16:20",
+    quota: { kind: "value", windows: WINS.high },
+    balance: { kind: "value", value: "12.34" }
+  }),
   nodata: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
     status: null, updatedAt: "16:22",
-    balance: { kind: "reason", code: "upstream_no_data" },
-    quota: { kind: "reason", code: "quota_unavailable" }
+    quota: { kind: "reason", code: "upstream_no_data" },
+    balance: { kind: "reason", code: "upstream_no_data" }
   }),
   invalid: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
     status: "key_invalid", updatedAt: "16:24",
-    balance: { kind: "placeholder" },
-    quota: { kind: "placeholder" }
+    quota: { kind: "placeholder" },
+    balance: { kind: "placeholder" }
   }),
   offline: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
     status: "network_unreachable", updatedAt: "16:26",
-    balance: { kind: "placeholder" },
-    quota: { kind: "placeholder" }
+    quota: { kind: "placeholder" },
+    balance: { kind: "placeholder" }
   }),
   sheet: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
     status: "not_configured", hideCards: true, updatedAt: "—"
-  }) + keySheet({ value: "", plain: false }),
+  }) + keySheet({ value: "" }),
   "sheet-filled": () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
     status: "not_configured", hideCards: true, updatedAt: "—"
-  }) + keySheet({ value: "sk-cline-demo-not-a-real-key", plain: true }),
+  }) + keySheet({ value: "sk-cline-demo-not-a-real-key" }),
   "sheet-error": () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
     status: "not_configured", hideCards: true, updatedAt: "—"
-  }) + keySheet({ value: "sk-cline-demo-not-a-real-key", plain: false, error: "保存失败，请检查网络后再试" }),
+  }) + keySheet({ value: "sk-cline-demo-not-a-real-key", error: "保存失败，请检查网络后再试" }),
   clearing: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
     status: null, updatedAt: "16:28",
-    balance: { kind: "value", value: "12.34" },
-    quota: { kind: "reason", code: "quota_unavailable" }
+    quota: { kind: "value", windows: WINS.ok },
+    balance: { kind: "value", value: "12.34" }
   }) + clearSheet(),
   saved: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
     status: "key_invalid", updatedAt: "16:30",
-    balance: { kind: "placeholder" }, quota: { kind: "placeholder" }
+    quota: { kind: "placeholder" }, balance: { kind: "placeholder" }
   }) + `<div class="toast" data-toast>已设置</div>`,
   narrow: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
     status: null, updatedAt: "16:20",
-    balance: { kind: "value", value: "12.34" },
-    quota: { kind: "reason", code: "quota_unavailable" }
+    quota: { kind: "value", windows: WINS.ok },
+    balance: { kind: "value", value: "12.34" }
   })
 };
 
@@ -578,7 +690,6 @@ document.getElementById("phone").addEventListener("click", (e) => {
   const action = el.dataset.action;
   if (action === "open-sheet") { state.screen = "sheet"; render(); return; }
   if (action === "close-sheet") { state.screen = "ok"; render(); return; }
-  if (action === "toggle-plain") { state.screen = state.screen === "sheet" ? "sheet-filled" : "sheet"; render(); return; }
   if (action === "save-key") { state.screen = "saved"; render(); return; }
   if (action === "retry" || action === "refresh") { state.screen = "ok"; render(); return; }
 });

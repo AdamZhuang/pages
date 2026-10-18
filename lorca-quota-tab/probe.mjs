@@ -101,23 +101,47 @@ const HARNESS = String.raw`
   out.nokey_action = text(document.querySelector('.status-actions .btn'));
   out.nokey_has_spinner = !!document.querySelector('.spinner, [aria-busy="true"]');
 
-  // ── 屏 ③：有余额 + 配额取不到（AC-7 混搭） ───────────────────
+  // ── 屏 ③：两档配额（v2 版面） ───────────────────────────────
   M.setScreen('ok'); await tick();
   out.ok_status_bar = document.querySelectorAll('[data-status]').length;
+  out.ok_card_order = texts('[data-card] .card-hd h3');
+  out.ok_quota_first = (out.ok_card_order[0] || '').includes('配额');
+  out.ok_balance_last = (out.ok_card_order[out.ok_card_order.length - 1] || '').includes('余额');
+  out.ok_win_names = texts('[data-card="quota"] .win-name');
+  out.ok_win_used = texts('[data-card="quota"] .win-used');
+  out.ok_win_sub = texts('[data-card="quota"] .win-sub');
+  out.ok_win_bars = Array.from(document.querySelectorAll('[data-card="quota"] .bar')).map((b) => ({
+    role: b.getAttribute('role'), now: b.getAttribute('aria-valuenow'), width: b.querySelector('i')?.style.width
+  }));
+  out.ok_has_30d = /30 天|最近 30/.test(document.querySelector('[data-card="quota"]')?.innerText || '');
   out.ok_balance = text(document.querySelector('[data-balance]'));
   out.ok_balance_note = text(document.querySelector('[data-card="balance"] .card-note'));
   out.ok_balance_has_currency = /[$€£¥]/.test(out.ok_balance || '');
   out.ok_reset_row = document.querySelectorAll('[data-card="balance"] .card-row').length;
-  out.ok_quota_reason = text(document.querySelector('[data-card="quota"] .reason'));
-  out.ok_quota_note = text(document.querySelector('[data-card="quota"] .card-note'));
-  out.ok_quota_has_progressbar = !!document.querySelector('[role="progressbar"], progress');
-  out.ok_card_titles = texts('[data-card] .card-hd h3');
+  out.ok_quota_note = text(document.querySelector('[data-card="quota"] .win-note'));
 
-  // ── 屏 ④：余额空数据（块级原因，不顶到全局条） ────────────────
+  // ── 屏 ④：7 天还在读（两档各自加载） ─────────────────────────
+  M.setScreen('loading'); await tick();
+  const win5 = document.querySelector('[data-win="5h"]');
+  const win7 = document.querySelector('[data-win="7d"]');
+  out.loading_5h_has_pct = /已用/.test(text(win5?.querySelector('.win-used')) || '');
+  out.loading_7d_text = text(win7?.querySelector('.win-used'));
+  out.loading_7d_has_skeleton = !!win7?.querySelector('.skeleton');
+  out.loading_7d_has_bar = !!win7?.querySelector('.bar');
+
+  // ── 屏 ⑤：7 天到 82%（警示色） ──────────────────────────────
+  M.setScreen('high'); await tick();
+  const win7h = document.querySelector('[data-win="7d"]');
+  out.high_7d_used = text(win7h?.querySelector('.win-used'));
+  out.high_7d_is_warn = !!win7h?.querySelector('.win-used.is-high');
+  out.high_7d_bar_warn = !!win7h?.querySelector('.bar > i.is-high');
+
+  // ── 屏 ⑥：空数据（块级原因，不顶到全局条） ────────────────────
   M.setScreen('nodata'); await tick();
   out.nodata_global_bar = document.querySelectorAll('[data-status]').length;
   out.nodata_balance_reason = document.querySelector('[data-card="balance"]')?.dataset.reason;
   out.nodata_quota_reason = document.querySelector('[data-card="quota"]')?.dataset.reason;
+  out.nodata_card_order = texts('[data-card] .card-hd h3');
   out.nodata_balance_action = text(document.querySelector('[data-card="balance"] .inline-action'));
 
   // ── 屏 ⑤：key 无效（全局条 + 两块骨架保留） ─────────────────
@@ -135,24 +159,25 @@ const HARNESS = String.raw`
   out.offline_action = text(document.querySelector('.status-actions .btn'));
   out.offline_cards = document.querySelectorAll('[data-card]').length;
 
-  // ── 屏 ⑦：设置 key 弹层（AC-3） ─────────────────────────────
+  // ── 屏 ⑨：设置 key 弹层（普通文本格子，v2 改口） ─────────────
   M.setScreen('sheet'); await tick();
   const input = document.getElementById('key-input');
   out.sheet_title = text(document.querySelector('.sheet h3'));
   out.sheet_input_type = input?.type;
   out.sheet_input_empty = input?.value === '';
+  out.sheet_has_eye_button = !!document.querySelector('.eye-btn, [data-action="toggle-plain"]');
+  out.sheet_autocomplete = input?.getAttribute('autocomplete');
+  out.sheet_autocapitalize = input?.getAttribute('autocapitalize');
+  out.sheet_autocorrect = input?.getAttribute('autocorrect');
+  out.sheet_spellcheck = input?.getAttribute('spellcheck');
   out.sheet_save_disabled = document.querySelector('[data-action="save-key"]')?.disabled;
-  // 点「显示/隐藏」→ 明文，但只是本地输入，不是回显已存 key
-  document.querySelector('[data-action="toggle-plain"]').click(); await tick();
-  out.sheet_plain_type = document.getElementById('key-input')?.type;
-  out.sheet_plain_value_present = (document.getElementById('key-input')?.value || '').length > 0;
 
   // 保存失败态：留在弹层 + 错误行 + 输入不丢
   M.setScreen('sheet-error'); await tick();
   out.sheet_error_shown = text(document.querySelector('[data-sheet-error]'));
   out.sheet_error_keeps_value = (document.getElementById('key-input')?.value || '').length > 0;
 
-  // ── 屏 ⑧：清除二次确认 ─────────────────────────────────────
+  // ── 屏 ⑩：清除二次确认 ─────────────────────────────────────
   M.setScreen('clearing'); await tick();
   out.clear_title = text(document.querySelector('.sheet h3'));
   out.clear_desc = text(document.querySelector('.sheet-desc'));
@@ -163,7 +188,7 @@ const HARNESS = String.raw`
   out.saved_toast = text(document.querySelector('[data-toast]'));
   out.saved_no_key_on_screen = !/sk-/.test(document.body.innerText);
 
-  // ── 屏 ⑨：360px 窄屏溢出 ──────────────────────────────────
+  // ── 屏 ⑪：360px 窄屏溢出 ──────────────────────────────────
   M.setScreen('narrow'); await tick();
   const phone = document.getElementById('phone');
   out.narrow_phone_width = Math.round(phone.getBoundingClientRect().width);
@@ -205,14 +230,16 @@ async function run() {
   const shots = [
     ['before', 'shot-1-before-tabs.png'],
     ['nokey', 'shot-2-no-key.png'],
-    ['ok', 'shot-3-balance.png'],
-    ['nodata', 'shot-4-no-data.png'],
-    ['invalid', 'shot-5-key-invalid.png'],
-    ['offline', 'shot-6-offline.png'],
-    ['sheet', 'shot-7-sheet.png'],
-    ['sheet-filled', 'shot-8-sheet-filled.png'],
-    ['clearing', 'shot-9-clear-confirm.png'],
-    ['narrow', 'shot-10-narrow.png']
+    ['ok', 'shot-3-quota-bars.png'],
+    ['loading', 'shot-4-loading-7d.png'],
+    ['high', 'shot-5-high-usage.png'],
+    ['nodata', 'shot-6-no-data.png'],
+    ['invalid', 'shot-7-key-invalid.png'],
+    ['offline', 'shot-8-offline.png'],
+    ['sheet', 'shot-9-sheet.png'],
+    ['sheet-filled', 'shot-10-sheet-filled.png'],
+    ['clearing', 'shot-11-clear-confirm.png'],
+    ['narrow', 'shot-12-narrow.png']
   ];
   fs.mkdirSync(path.resolve(__dirname, 'evidence'), { recursive: true });
   for (const [screen, file] of shots) {
@@ -245,14 +272,25 @@ async function run() {
   ok('没配 key 不转圈', results.nokey_has_spinner === false, results.nokey_has_spinner);
 
   ok('有余额时无全局条', results.ok_status_bar === 0, results.ok_status_bar);
+  ok('配额卡在最上', results.ok_quota_first === true, results.ok_card_order);
+  ok('余额卡沉底', results.ok_balance_last === true, results.ok_card_order);
+  ok('两档是 5 小时 / 7 天', JSON.stringify(results.ok_win_names) === JSON.stringify(['最近 5 小时', '最近 7 天']), results.ok_win_names);
+  ok('主数字写「已用 x%」', results.ok_win_used?.every((t) => /^已用 \d+\.\d%$/.test(t)), results.ok_win_used);
+  ok('副行写「剩 y%」', results.ok_win_sub?.every((t) => /^剩 \d+\.\d%$/.test(t)), results.ok_win_sub);
+  ok('进度条是真 progressbar 且宽度对应百分比', results.ok_win_bars?.length === 2 && results.ok_win_bars.every((b) => b.role === 'progressbar' && b.width === b.now + '%'), results.ok_win_bars);
+  ok('不显示 30 天那格', results.ok_has_30d === false, results.ok_has_30d);
   ok('余额数值不加货币符号', results.ok_balance_has_currency === false, results.ok_balance);
   ok('余额带「不是配额」小字', /不是 ClinePass 订阅配额/.test(results.ok_balance_note || ''), results.ok_balance_note);
   ok('无 resetAt 不渲染重置行', results.ok_reset_row === 0, results.ok_reset_row);
-  ok('配额常态取不到', /上游没有提供读取订阅配额的接口/.test(results.ok_quota_reason || ''), results.ok_quota_reason);
-  ok('配额不做假进度条', results.ok_quota_has_progressbar === false, results.ok_quota_has_progressbar);
+  ok('配额卡有口径小字', /每笔调用费用/.test(results.ok_quota_note || ''), results.ok_quota_note);
+
+  ok('5 小时先到先显示', results.loading_5h_has_pct === true, results.loading_5h_has_pct);
+  ok('7 天未到时显示「正在读取…」', results.loading_7d_text === '正在读取…', results.loading_7d_text);
+  ok('7 天未到时是骨架不是空进度条', results.loading_7d_has_skeleton === true && results.loading_7d_has_bar === false, [results.loading_7d_has_skeleton, results.loading_7d_has_bar]);
+  ok('82% 转警示色', results.high_7d_is_warn === true && results.high_7d_bar_warn === true, [results.high_7d_used, results.high_7d_is_warn, results.high_7d_bar_warn]);
 
   ok('块级原因不顶到全局条', results.nodata_global_bar === 0, results.nodata_global_bar);
-  ok('余额块级降级到 upstream_no_data', results.nodata_balance_reason === 'upstream_no_data', results.nodata_balance_reason);
+  ok('两块各自降级（配额在上、余额在下）', results.nodata_quota_reason === 'upstream_no_data' && results.nodata_balance_reason === 'upstream_no_data' && (results.nodata_card_order[0] || '').includes('配额'), [results.nodata_quota_reason, results.nodata_balance_reason, results.nodata_card_order]);
   ok('块级降级带重试', results.nodata_balance_action === '重试', results.nodata_balance_action);
 
   ok('key 无效走全局条', results.invalid_status_code === 'key_invalid', results.invalid_status_code);
@@ -263,10 +301,11 @@ async function run() {
   ok('连不上带重试', results.offline_action === '重试', results.offline_action);
 
   ok('弹层标题正确', results.sheet_title === '设置 Cline API key', results.sheet_title);
-  ok('弹层输入是密文', results.sheet_input_type === 'password', results.sheet_input_type);
+  ok('输入框是普通文本框', results.sheet_input_type === 'text', results.sheet_input_type);
+  ok('没有密文眼睛按钮', results.sheet_has_eye_button === false, results.sheet_has_eye_button);
+  ok('关掉自动纠正/首字母大写', results.sheet_autocomplete === 'off' && results.sheet_autocapitalize === 'off' && results.sheet_autocorrect === 'off' && results.sheet_spellcheck === 'false', [results.sheet_autocomplete, results.sheet_autocapitalize, results.sheet_autocorrect, results.sheet_spellcheck]);
   ok('重开弹层输入为空（不回显）', results.sheet_input_empty === true, results.sheet_input_empty);
   ok('空输入不能保存', results.sheet_save_disabled === true, results.sheet_save_disabled);
-  ok('可切明文', results.sheet_plain_type === 'text', results.sheet_plain_type);
   ok('保存失败留在弹层且不丢输入', !!results.sheet_error_shown && results.sheet_error_keeps_value, [results.sheet_error_shown, results.sheet_error_keeps_value]);
   ok('保存成功只回「已设置」', results.saved_toast === '已设置', results.saved_toast);
   ok('屏幕上不出现 key 明文', results.saved_no_key_on_screen === true, results.saved_no_key_on_screen);
