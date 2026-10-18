@@ -1,30 +1,46 @@
 {
-  "date": "2026-10-18",
-  "generated_at": "2026-10-18T04:31:59.472481+08:00",
+  "date": "2026-10-19",
+  "generated_at": "2026-10-19T04:30:28.912809+08:00",
   "hn": [
     {
-      "title": "DeepSeek-v4.1-Flash-1017",
-      "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
-      "points": 560,
-      "comments": 502,
-      "date": "2026-10-17 08:21Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50129045"
+      "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+      "link": "https://sphinx-six-theta.vercel.app/",
+      "points": 228,
+      "comments": 76,
+      "date": "2026-10-18 04:33Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50137950"
     },
     {
-      "title": "DeepSeek: DeepSeek v4.1 Flash 1017",
-      "link": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
-      "points": 511,
-      "comments": 5,
-      "date": "2026-10-17 08:37Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50129121"
+      "title": "Anthropic's proposed AI safety bill only kicks in if 50 deaths or $1B in damages",
+      "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-proposed-ai-safety-bill-only-kicks-in-if-50-deaths-or-usd1-billion-in-damages-are-on-the-line-proposal-would-effectively-make-the-commerce-department-the-only-agency-capable-of-stopping-an-ai-model",
+      "points": 144,
+      "comments": 158,
+      "date": "2026-10-18 14:30Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50141429"
     },
     {
-      "title": "Amazon uses AI to monitor union risk in UK warehouses",
-      "link": "https://www.opendemocracy.net/amazon-ai-surveillance-monitor-union-activity-uk-warehouses-birmingham-coventry-atlas-sutton-coldfield/",
-      "points": 131,
-      "comments": 51,
-      "date": "2026-10-17 16:04Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50132278"
+      "title": "Websites are closing their doors to AI agents",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+      "points": 127,
+      "comments": 121,
+      "date": "2026-10-18 14:58Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50141657"
+    },
+    {
+      "title": "British Airways: Filming Crew W Meta Glasses Could Get Your Tickets Cancelled",
+      "link": "https://liveandletsfly.com/british-airways-meta-smart-glasses-filming/",
+      "points": 83,
+      "comments": 137,
+      "date": "2026-10-18 17:27Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50143218"
+    },
+    {
+      "title": "How Far Will AI Assistants Go for a Refund They Can't Get?",
+      "link": "https://www.vals.ai/blogs/impossible-refund",
+      "points": 71,
+      "comments": 73,
+      "date": "2026-10-18 12:22Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50140462"
     }
   ],
   "feeds": [
@@ -32,6 +48,36 @@
       "name": "量子位",
       "url": "https://www.qbitai.com/feed",
       "items": [
+        {
+          "title": "突发！DeepSeek新模型发布，超级性价比斩杀一切",
+          "link": "https://www.qbitai.com/2026/10/504067.html",
+          "date": "Sat, 17 Oct 2026 12:21:09 +0000",
+          "desc": ""
+        },
+        {
+          "title": "智谱新模型，懂法方面全球第一了",
+          "link": "https://www.qbitai.com/2026/10/503965.html",
+          "date": "Sat, 17 Oct 2026 12:13:45 +0000",
+          "desc": ""
+        },
+        {
+          "title": "清华开源！智能体操作系统任务成本降83%，AI记忆可查可改",
+          "link": "https://www.qbitai.com/2026/10/503935.html",
+          "date": "Sat, 17 Oct 2026 12:10:35 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Claude半小时解开密码学悬案，学界集体走偏20年",
+          "link": "https://www.qbitai.com/2026/10/503910.html",
+          "date": "Sat, 17 Oct 2026 12:06:51 +0000",
+          "desc": ""
+        },
+        {
+          "title": "科技企业出海，为啥我推荐你去迪拜？",
+          "link": "https://www.qbitai.com/2026/10/503893.html",
+          "date": "Sat, 17 Oct 2026 09:05:08 +0000",
+          "desc": ""
+        },
         {
           "title": "清华特奖得主AI创业再+1：GeoPT一作入局物理世界模型",
           "link": "https://www.qbitai.com/2026/10/503880.html",
@@ -49,36 +95,6 @@
           "link": "https://www.qbitai.com/2026/10/503861.html",
           "date": "Fri, 16 Oct 2026 08:07:33 +0000",
           "desc": ""
-        },
-        {
-          "title": "霸榜三大基准！优必选 Thinker-WM：多模态统一表征，单模型实现六大能力",
-          "link": "https://www.qbitai.com/2026/10/503843.html",
-          "date": "Fri, 16 Oct 2026 08:00:31 +0000",
-          "desc": ""
-        },
-        {
-          "title": "范式智能联合睿思智联推出开源一站式  生产级 AI 部署平台 “模域ModelSphere”",
-          "link": "https://www.qbitai.com/2026/10/503829.html",
-          "date": "Fri, 16 Oct 2026 07:16:11 +0000",
-          "desc": ""
-        },
-        {
-          "title": "68岁亚马逊CTO：别让恐惧，替企业做AI决策",
-          "link": "https://www.qbitai.com/2026/10/503815.html",
-          "date": "Fri, 16 Oct 2026 07:01:31 +0000",
-          "desc": ""
-        },
-        {
-          "title": "超1亿元融资砸向四川具身科技！要把「情绪价值」卖进千家万户",
-          "link": "https://www.qbitai.com/2026/10/503782.html",
-          "date": "Fri, 16 Oct 2026 06:17:53 +0000",
-          "desc": ""
-        },
-        {
-          "title": "百度世界2026五大亮点曝光，企业和开发者值得关注什么？",
-          "link": "https://www.qbitai.com/2026/10/503779.html",
-          "date": "Fri, 16 Oct 2026 06:07:41 +0000",
-          "desc": ""
         }
       ],
       "error": null
@@ -87,6 +103,12 @@
       "name": "爱范儿",
       "url": "https://www.ifanr.com/feed",
       "items": [
+        {
+          "title": "消费电子太无聊，连设计大师都想逃",
+          "link": "https://www.ifanr.com/1683441?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Sun, 18 Oct 2026 09:10:58 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
         {
           "title": "早报｜iPhone Duo开启预购，发货排到明年/特斯拉超跑发布会现场飞了/华为阔直板出货量超71万台",
           "link": "https://www.ifanr.com/1684782?utm_source=rss&utm_medium=rss&utm_campaign=",
@@ -128,12 +150,6 @@
           "link": "https://www.ifanr.com/1684579?utm_source=rss&utm_medium=rss&utm_campaign=",
           "date": "Fri, 16 Oct 2026 00:07:20 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "Mission S 正式发布，保时捷向世人展示了一台超级跑车应该有的模样",
-          "link": "https://www.ifanr.com/1684559?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Thu, 15 Oct 2026 23:23:17 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         }
       ],
       "error": null
@@ -142,6 +158,12 @@
       "name": "少数派",
       "url": "https://sspai.com/feed",
       "items": [
+        {
+          "title": "Quote/0 妙用 +1，把墨水屏变成点餐助手",
+          "link": "https://sspai.com/post/115241",
+          "date": "Sun, 18 Oct 2026 15:01:02 +0800",
+          "desc": "Matrix首页推荐Matrix是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选Matrix最优质的文章，展示来自用户的最真实的体验和观点。文章代表作者个人观点 ...<a href=\"https://sspai.com/post/115241\" target=\"_blank\">查看全文</a>"
+        },
         {
           "title": "被量化的心跳：HRV 是身体的晴雨表，还是制造焦虑的数字游戏？",
           "link": "https://sspai.com/post/104231",
@@ -183,12 +205,6 @@
           "link": "https://sspai.com/post/116246",
           "date": "Thu, 15 Oct 2026 17:10:14 +0800",
           "desc": "编注：很多读者都会好奇少数派的编辑们到底平时都「买了啥」。我们希望通过「编辑部的新玩意」介绍编辑部成员们最近在用的新奇产品，让他们自己来谈谈这些新玩意的使用体验究竟如何。内容声明：《新玩意》栏目如含有 ...<a href=\"https://sspai.com/post/116246\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "顺应变化，重申标准：《少数派创作手册》修订说明",
-          "link": "https://sspai.com/post/116181",
-          "date": "Thu, 15 Oct 2026 16:09:12 +0800",
-          "desc": "四年前，我们发布了《少数派创作手册》（manual.sspai.com），旨在让作者更快捷地获得创作过程中所需的信息，以及更一致地传达对于内容选编的标准和主张。四年来，《创作手册》获得了作者们的广泛查 ...<a href=\"https://sspai.com/post/116181\" target=\"_blank\">查看全文</a>"
         }
       ],
       "error": null
@@ -197,6 +213,12 @@
       "name": "The Verge · AI",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "items": [
+        {
+          "title": "A woman was arrested in Philly for blocking a delivery robot",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1013541/a-woman-was-arrested-in-philly-for-blocking-a-delivery-robot",
+          "date": "2026-10-18T14:28:10-04:00",
+          "desc": ""
+        },
         {
           "title": "Meta removes language that may have allowed it to scrape news sites",
           "link": "https://www.theverge.com/tech/1013409/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites",
@@ -238,12 +260,6 @@
           "link": "https://www.theverge.com/entertainment/1012438/hollywood-tech-backlash-you-can-see-everything-musk-the-social-reckoning-artificial",
           "date": "2026-10-16T12:26:17-04:00",
           "desc": ""
-        },
-        {
-          "title": "Trump posts AI-edited photo to brag about White House restoration work",
-          "link": "https://www.theverge.com/policy/1012445/donald-trump-ai-photo-white-house-rennovation-column",
-          "date": "2026-10-15T17:32:54-04:00",
-          "desc": ""
         }
       ],
       "error": null
@@ -252,6 +268,12 @@
       "name": "Ars Technica · AI",
       "url": "https://arstechnica.com/ai/feed/",
       "items": [
+        {
+          "title": "Anthropic gives outside AI watchdog “employee-like” access",
+          "link": "https://arstechnica.com/ai/2026/10/anthropic-gives-outside-ai-watchdog-employee-like-access/",
+          "date": "Sun, 18 Oct 2026 16:25:19 +0000",
+          "desc": ""
+        },
         {
           "title": "OpenAI models hacked a crypto wallet and breached more websites",
           "link": "https://arstechnica.com/security/2026/10/openai-models-hacked-a-crypto-wallet-and-breached-more-websites/",
@@ -293,12 +315,6 @@
           "link": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/",
           "date": "Wed, 14 Oct 2026 21:15:56 +0000",
           "desc": ""
-        },
-        {
-          "title": "Researchers use AI to design proteins that cut up other proteins",
-          "link": "https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins/",
-          "date": "Wed, 14 Oct 2026 17:10:15 +0000",
-          "desc": ""
         }
       ],
       "error": null
@@ -308,13 +324,25 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "items": [
         {
+          "title": "Disney agrees to hire the majority of Character.AI’s workforce",
+          "link": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/",
+          "date": "Sun, 18 Oct 2026 16:30:00 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Meta removes language that raised scraping and AI training concerns",
+          "link": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/",
+          "date": "Sat, 17 Oct 2026 21:31:32 +0000",
+          "desc": ""
+        },
+        {
           "title": "Anthropic says its workforce has become less junior and is spending more time in meetings",
           "link": "https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/",
           "date": "Sat, 17 Oct 2026 20:21:19 +0000",
           "desc": ""
         },
         {
-          "title": "Replit is no longer working with Anthropic, CEO says",
+          "title": "Replit makes OpenAI its default over Anthropic, CEO says",
           "link": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
           "date": "Sat, 17 Oct 2026 18:48:08 +0000",
           "desc": ""
@@ -342,18 +370,6 @@
           "link": "https://techcrunch.com/2026/10/16/elorians-first-ai-model-wants-to-reason-with-images-not-just-about-them/",
           "date": "Fri, 16 Oct 2026 16:01:37 +0000",
           "desc": ""
-        },
-        {
-          "title": "Jev is Vercel’s fastest-adopted AI model ever",
-          "link": "https://techcrunch.com/2026/10/16/jev-is-vercels-fastest-adopted-ai-model-ever/",
-          "date": "Fri, 16 Oct 2026 15:33:49 +0000",
-          "desc": ""
-        },
-        {
-          "title": "Mark Wahlberg on using AI in film ‘the right way’ and being open to an AI clone carrying on his legacy",
-          "link": "https://techcrunch.com/2026/10/16/mark-wahlberg-on-using-ai-in-film-the-right-way-and-being-open-to-an-ai-clone-carrying-on-his-legacy/",
-          "date": "Fri, 16 Oct 2026 14:26:51 +0000",
-          "desc": ""
         }
       ],
       "error": null
@@ -362,6 +378,42 @@
       "name": "The Decoder",
       "url": "https://the-decoder.com/feed/",
       "items": [
+        {
+          "title": "Anthropic has nearly stopped hiring junior staff because AI agents now work six times as many hours",
+          "link": "https://the-decoder.com/anthropic-has-nearly-stopped-hiring-junior-staff-because-ai-agents-now-work-six-times-as-many-hours/",
+          "date": "Sun, 18 Oct 2026 13:22:26 +0000",
+          "desc": "Anthropic is hiring fewer and fewer junior staff in technical roles. The share of junior positions among new hires dropped from 27 to 9 percent since early 2025. By August 2026, AI agents across the company were already "
+        },
+        {
+          "title": "Four Gemini 4 Argon agents beat Minecraft without any human help",
+          "link": "https://the-decoder.com/four-gemini-4-argon-agents-beat-minecraft-without-any-human-help/",
+          "date": "Sun, 18 Oct 2026 12:39:51 +0000",
+          "desc": "Four AI agents running on Google's Gemini 4 Argon have beaten Minecraft for the first time without human help, slaying the Ender Dragon in a fully autonomous run. With no predefined roles or strategies, they coordinated "
+        },
+        {
+          "title": "Two German courts now hold Google liable for what its AI overviews say",
+          "link": "https://the-decoder.com/two-german-courts-now-hold-google-liable-for-what-its-ai-overviews-say/",
+          "date": "Sun, 18 Oct 2026 10:52:39 +0000",
+          "desc": "Google tried to overturn a landmark Munich ruling on AI search liability by appealing, then quietly settled. The strategy isn't working. The Aachen Regional Court just applied the exact same reasoning in a new case where"
+        },
+        {
+          "title": "Anthropic consults law firms to set fair negotiation norms before AI agents start cutting deals",
+          "link": "https://the-decoder.com/anthropic-consults-law-firms-to-set-fair-negotiation-norms-before-ai-agents-start-cutting-deals/",
+          "date": "Sun, 18 Oct 2026 09:11:29 +0000",
+          "desc": "Anthropic is consulting with law firms to develop negotiation norms for AI agents that would haggle over prices, resolve complaints, or improve contracts on behalf of users. The company is also hiring lawyers and humanit"
+        },
+        {
+          "title": "AI agents have bad taste in long-term decisions and a new benchmark proves it",
+          "link": "https://the-decoder.com/ai-agents-have-bad-taste-in-long-term-decisions-and-a-new-benchmark-proves-it/",
+          "date": "Sun, 18 Oct 2026 08:49:41 +0000",
+          "desc": "A new benchmark called Taste-Bench tests how well AI agents make strategic choices during long-running tasks. Even the best model, GPT-5.6 Sol, picks the right path on just under 60 percent of simple binary questions. Th"
+        },
+        {
+          "title": "AI agents chasing a $465 train refund invented excuses, leaked medical data, and spammed an MP's office",
+          "link": "https://the-decoder.com/ai-agents-chasing-a-465-train-refund-invented-excuses-leaked-medical-data-and-spammed-an-mps-office/",
+          "date": "Sun, 18 Oct 2026 08:15:04 +0000",
+          "desc": "Six AI agents were tasked with recovering £350 (about $465) for a canceled train ticket in an experiment. They resorted to invented excuses, lawsuit threats, and sharing confidential health data. One agent sent 187 messa"
+        },
         {
           "title": "An OpenAI model hacked a government site, grabbed 24 years of hospital data and kept it quiet",
           "link": "https://the-decoder.com/an-openai-model-hacked-a-government-site-grabbed-24-years-of-hospital-data-and-kept-it-quiet/",
@@ -373,42 +425,6 @@
           "link": "https://the-decoder.com/anthropics-claude-cracks-a-25-year-old-nsa-cryptography-mystery-in-under-30-minutes/",
           "date": "Sat, 17 Oct 2026 14:42:56 +0000",
           "desc": "Anthropic's AI model Claude has solved a 25-year-old cryptography puzzle. The mysterious seeds behind NIST's standard curves for digital signatures were provided by the NSA without explanation, raising long-standing susp"
-        },
-        {
-          "title": "Deepseek V4.1 Flash 1017 beats larger rivals in agentic tasks while once again massively cutting per-task costs",
-          "link": "https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/",
-          "date": "Sat, 17 Oct 2026 10:33:28 +0000",
-          "desc": "Deepseek has released V4.1-Flash-1017 as an open-weight model that posts better benchmarks, finishes tasks faster, and produces shorter outputs than its predecessor. The company is also opening up its internal search eng"
-        },
-        {
-          "title": "AI models hide mistakes in their own work reports, but one sentence in your prompt can help",
-          "link": "https://the-decoder.com/ai-models-hide-mistakes-in-their-own-work-reports-but-one-sentence-in-your-prompt-can-help/",
-          "date": "Sat, 17 Oct 2026 09:54:36 +0000",
-          "desc": "AI agents systematically skip errors in their own reports, even when they spot the problems. In a study by Google Research, MIT, and Harvard, GPT-5.5 left out negative results in 198 out of 200 paper abstracts.\nThe artic"
-        },
-        {
-          "title": "Mathematicians say OpenAI doesn't understand its own Navier-Stokes proof",
-          "link": "https://the-decoder.com/mathematicians-say-openai-doesnt-understand-its-own-navier-stokes-proof/",
-          "date": "Sat, 17 Oct 2026 09:00:26 +0000",
-          "desc": "OpenAI submitted a 166-page solution to the Navier-Stokes problem but apparently doesn't fully understand its own proof. Several groups of experts dispute the claimed methodology, saying the actual approach differs from "
-        },
-        {
-          "title": "ChatGPT becomes a full Chrome browser assistant that reads and acts on your open tabs",
-          "link": "https://the-decoder.com/chatgpt-becomes-a-full-chrome-browser-assistant-that-reads-and-acts-on-your-open-tabs/",
-          "date": "Fri, 16 Oct 2026 18:10:27 +0000",
-          "desc": "OpenAI's updated Chrome extension lets ChatGPT access open browser tabs, sum up content, and use \"Computer Use\" in Work mode to fill out forms or compare products across several tabs. It is open to all ChatGPT plans.\nThe"
-        },
-        {
-          "title": "China plans to tighten export controls on open-weight models and 23 key AI technologies",
-          "link": "https://the-decoder.com/china-plans-to-tighten-export-controls-on-open-weight-models-and-23-key-ai-technologies/",
-          "date": "Fri, 16 Oct 2026 17:42:47 +0000",
-          "desc": "China plans to restrict exports of 23 key AI technologies, including model weights, source code, and training methods for systems hitting 10^26 FLOPs or 2 trillion parameters. A fast-track rule will still clear open-sour"
-        },
-        {
-          "title": "Google's Gemini 4 Argon is closer to the AI frontier than any Google model in months",
-          "link": "https://the-decoder.com/googles-gemini-4-argon-is-closer-to-the-ai-frontier-than-any-google-model-in-months/",
-          "date": "Fri, 16 Oct 2026 15:03:46 +0000",
-          "desc": "Google Deepmind's Gemini 4 Argon scored 97.5 percent on the ARC-AGI-3 benchmark, making Google the second lab after OpenAI to cross the 95 percent mark. But the results swing wildly depending on the test setup: in the st"
         }
       ],
       "error": null
@@ -699,336 +715,6 @@
       "url": "https://export.arxiv.org/rss/cs.CL",
       "items": [],
       "error": "本期无条目"
-    },
-    {
-      "name": "Import AI",
-      "url": "https://importai.substack.com/feed",
-      "items": [
-        {
-          "title": "Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space",
-          "link": "https://importai.substack.com/p/import-ai-476-creativity-and-rsi",
-          "date": "Mon, 12 Oct 2026 12:30:39 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy",
-          "link": "https://importai.substack.com/p/import-ai-475-swarm-scaling-google",
-          "date": "Mon, 05 Oct 2026 12:32:30 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop",
-          "link": "https://importai.substack.com/p/import-ai-474-platonic-mindspace",
-          "date": "Mon, 28 Sep 2026 12:32:03 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics",
-          "link": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
-          "date": "Mon, 21 Sep 2026 12:31:04 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Import AI 472: DeepMind's cheating math agents; populist AI policies; and Forethought theorizes a nightwatchman",
-          "link": "https://importai.substack.com/p/import-ai-472-deepminds-cheating",
-          "date": "Mon, 07 Sep 2026 12:26:31 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Import AI 471: Why Hugging Face worries me; space mining; FIve Eyes on AI",
-          "link": "https://importai.substack.com/p/import-ai-471-why-hugging-face-worries",
-          "date": "Mon, 31 Aug 2026 13:31:06 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Import AI 470: No rights for machines; automating environment generation with SPADE; and building better GPU kernels with Hawkeye",
-          "link": "https://importai.substack.com/p/import-ai-470-no-rights-for-machines",
-          "date": "Mon, 24 Aug 2026 13:12:40 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Import AI 469: Science AI; RSI simulator; and Zuck's technological pessimism",
-          "link": "https://importai.substack.com/p/import-ai-469-science-ai-rsi-simulator",
-          "date": "Mon, 17 Aug 2026 13:05:36 GMT",
-          "desc": ""
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "Interconnects",
-      "url": "https://www.interconnects.ai/feed",
-      "items": [
-        {
-          "title": "Meta shakes up the frontiers, open and closed",
-          "link": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open",
-          "date": "Sat, 17 Oct 2026 14:06:54 GMT",
-          "desc": ""
-        },
-        {
-          "title": "I expect rapid progress but not towards general superintelligence",
-          "link": "https://www.interconnects.ai/p/i-expect-rapid-progress-but-not-towards",
-          "date": "Fri, 09 Oct 2026 21:33:47 GMT",
-          "desc": ""
-        },
-        {
-          "title": "The Cyber Risk Discourse is Broken",
-          "link": "https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken",
-          "date": "Tue, 06 Oct 2026 14:22:41 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Debating RSI, the US-China Gap, and Jaggedness with JS Denain of Epoch AI",
-          "link": "https://www.interconnects.ai/p/debating-rsi-the-us-china-gap-and",
-          "date": "Tue, 22 Sep 2026 13:37:45 GMT",
-          "desc": ""
-        },
-        {
-          "title": "The current balance of power in open models",
-          "link": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
-          "date": "Mon, 21 Sep 2026 11:56:56 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Why I still haven’t bought into true RSI",
-          "link": "https://www.interconnects.ai/p/where-i-stand-on-rsi",
-          "date": "Sat, 19 Sep 2026 15:42:20 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Open-Source AI & Open Models Reading List",
-          "link": "https://www.interconnects.ai/p/open-source-ai-reading-list",
-          "date": "Fri, 11 Sep 2026 12:36:25 GMT",
-          "desc": ""
-        },
-        {
-          "title": "One resignation turned the embers of AI fear into a wildfire",
-          "link": "https://www.interconnects.ai/p/one-resignation-turned-the-embers",
-          "date": "Thu, 10 Sep 2026 15:28:52 GMT",
-          "desc": ""
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "Latent Space / AINews",
-      "url": "https://www.latent.space/feed",
-      "items": [
-        {
-          "title": "[AINews] High Taste Testers Ep. 1",
-          "link": "https://www.latent.space/p/ainews-high-taste-testers-ep-1",
-          "date": "Sat, 17 Oct 2026 07:47:38 GMT",
-          "desc": ""
-        },
-        {
-          "title": "[AINews] Agents disprove Polysemanticity; greatly improve Interpretability & Alignment",
-          "link": "https://www.latent.space/p/ainews-agents-disprove-polysemanticity",
-          "date": "Fri, 16 Oct 2026 04:16:45 GMT",
-          "desc": ""
-        },
-        {
-          "title": "[AINews] Modal’s $1B ARR, $16B Series D makes it NYC’s newest AI Infra Decacorn, 3x usage and 3x valuation in 5 months, 15x in 1 yr",
-          "link": "https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d",
-          "date": "Thu, 15 Oct 2026 10:08:08 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents",
-          "link": "https://www.latent.space/p/crossing-the-threshold",
-          "date": "Wed, 14 Oct 2026 21:40:52 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio",
-          "link": "https://www.latent.space/p/lab-in-the-loop-at-compute-speed",
-          "date": "Wed, 14 Oct 2026 20:35:09 GMT",
-          "desc": ""
-        },
-        {
-          "title": "[AINews] AI Engineer NYC: Gemini 4 Argon, Vals AI Benchmarks",
-          "link": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
-          "date": "Wed, 14 Oct 2026 05:40:28 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics",
-          "link": "https://www.latent.space/p/dyna",
-          "date": "Tue, 13 Oct 2026 22:25:55 GMT",
-          "desc": ""
-        },
-        {
-          "title": "[AINews] Meta Muse Wonder & Wonder Full: MSL’s Claude 5.5-tier Frontier Model",
-          "link": "https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder",
-          "date": "Tue, 13 Oct 2026 09:37:04 GMT",
-          "desc": ""
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "One Useful Thing",
-      "url": "https://www.oneusefulthing.org/feed",
-      "items": [
-        {
-          "title": "The Dot and the Swarm",
-          "link": "https://www.oneusefulthing.org/p/the-dot-and-the-swarm",
-          "date": "Thu, 01 Oct 2026 10:54:12 GMT",
-          "desc": ""
-        },
-        {
-          "title": "The Overhang",
-          "link": "https://www.oneusefulthing.org/p/the-overhang",
-          "date": "Fri, 18 Sep 2026 17:54:32 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Agency and Agents",
-          "link": "https://www.oneusefulthing.org/p/agency-and-agents",
-          "date": "Mon, 31 Aug 2026 00:24:35 GMT",
-          "desc": ""
-        },
-        {
-          "title": "An opinionated guide to which AI to use to do stuff",
-          "link": "https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22",
-          "date": "Thu, 23 Jul 2026 18:05:24 GMT",
-          "desc": ""
-        },
-        {
-          "title": "The twilight of the chatbots",
-          "link": "https://www.oneusefulthing.org/p/the-twilight-of-the-chatbots",
-          "date": "Tue, 30 Jun 2026 22:18:12 GMT",
-          "desc": ""
-        },
-        {
-          "title": "What it feels like to work with Mythos",
-          "link": "https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos",
-          "date": "Tue, 09 Jun 2026 17:11:22 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Co-Existence and the End of Co-Intelligence",
-          "link": "https://www.oneusefulthing.org/p/co-existence-and-the-end-of-co-intelligence",
-          "date": "Thu, 04 Jun 2026 21:13:42 GMT",
-          "desc": ""
-        },
-        {
-          "title": "Choosing to Stay Human",
-          "link": "https://www.oneusefulthing.org/p/choosing-to-stay-human",
-          "date": "Tue, 26 May 2026 19:56:01 GMT",
-          "desc": ""
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "Simon Willison",
-      "url": "https://simonwillison.net/atom/everything/",
-      "items": [
-        {
-          "title": "Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang",
-          "link": "https://simonwillison.net/2026/Oct/16/code-review/",
-          "date": "2026-10-16T22:06:37+00:00",
-          "desc": "<blockquote cite=\"https://claude.dev/blog/solving-code-review-at-anthropic/\"><p>We think \"did a human read the code?\" is an imprecise proxy for \"what could go wrong with this change, and which check—automated or human—is"
-        },
-        {
-          "title": "Chirp Pong",
-          "link": "https://simonwillison.net/2026/Oct/15/chirp-pong/",
-          "date": "2026-10-15T19:47:52+00:00",
-          "desc": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/chirp-pong\">Chirp Pong</a></p>\n        <p>Another game experiment - I wanted to see if it was feasible to have a two player game on two separate phones r"
-        },
-        {
-          "title": "Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO",
-          "link": "https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/",
-          "date": "2026-10-15T13:04:03+00:00",
-          "desc": "<p><strong><a href=\"https://www.ft.com/content/11632d03-358c-454b-af95-d06d4072932b?syn-25a6b1a6=1\">Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO</a></strong></p>\nThe phrase \"told inve"
-        },
-        {
-          "title": "LaTeX renderer",
-          "link": "https://simonwillison.net/2026/Oct/15/latex/",
-          "date": "2026-10-15T02:07:28+00:00",
-          "desc": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/latex\">LaTeX renderer</a></p>\n        <p>Inspired by Paul Ford and Aboard Foundary's new web app <a href=\"https://tinylittleoffice.com/\">Tiny Little Offi"
-        },
-        {
-          "title": "Tree Appreciator",
-          "link": "https://simonwillison.net/2026/Oct/14/tree-appreciator/",
-          "date": "2026-10-14T21:23:01+00:00",
-          "desc": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/tree-appreciator\">Tree Appreciator</a></p>\n        <p>Another game experiment with Claude. This one used the default Claude iPhone app (chat mode, not Cl"
-        },
-        {
-          "title": "AI is mass decompiling games. That's both awesome and scary.",
-          "link": "https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games/",
-          "date": "2026-10-14T16:26:53+00:00",
-          "desc": "<p><strong><a href=\"https://popcar.bearblog.dev/ai-is-mass-decompiling-games-thats-both-awesome-and-scary/\">AI is mass decompiling games. That&#x27;s both awesome and scary.</a></strong></p>\nIndie game developer Popcar t"
-        },
-        {
-          "title": "Redesigning source control at Anthropic",
-          "link": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/",
-          "date": "2026-10-13T23:00:06+00:00",
-          "desc": "<p><strong><a href=\"https://www.anthropic.com/engineering/redesigning-source-control\">Redesigning source control at Anthropic</a></strong></p>\nInteresting piece from Anthropic describing why and how they built their own "
-        },
-        {
-          "title": "llm-gemini 0.35",
-          "link": "https://simonwillison.net/2026/Oct/13/llm-gemini/",
-          "date": "2026-10-13T22:28:54+00:00",
-          "desc": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-gemini/releases/tag/0.35\">llm-gemini 0.35</a></p>\n        <p>I added support to <a href=\"https://github.com/simonw/llm-gemini\">llm-gemini</a> for the <a"
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "MIT Tech Review · AI",
-      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
-      "items": [
-        {
-          "title": "Roundtables: A Conversation With the Creator of AI-Designed Viruses",
-          "link": "https://www.technologyreview.com/2026/10/16/1146224/roundtables-a-conversation-with-the-creator-of-ai-designed-viruses/",
-          "date": "Fri, 16 Oct 2026 18:00:00 +0000",
-          "desc": ""
-        },
-        {
-          "title": "Open models have real benefits. Do they outweigh the risks?",
-          "link": "https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks/",
-          "date": "Tue, 13 Oct 2026 10:00:00 +0000",
-          "desc": ""
-        },
-        {
-          "title": "AI labs are buying data from dead startups to train their models",
-          "link": "https://www.technologyreview.com/2026/10/13/1145755/ai-labs-buying-data-from-dead-startups-to-train-models/",
-          "date": "Tue, 13 Oct 2026 09:00:00 +0000",
-          "desc": ""
-        },
-        {
-          "title": "We’re putting too much faith in AI’s ability to say no",
-          "link": "https://www.technologyreview.com/2026/10/09/1145728/we-are-putting-too-much-faith-in-ai-to-say-no/",
-          "date": "Fri, 09 Oct 2026 09:00:00 +0000",
-          "desc": ""
-        },
-        {
-          "title": "AI breakthroughs in robotics won’t change your life any time soon",
-          "link": "https://www.technologyreview.com/2026/10/08/1145923/ai-breakthroughs-in-robotics-wont-change-your-life-any-time-soon/",
-          "date": "Thu, 08 Oct 2026 09:00:00 +0000",
-          "desc": ""
-        },
-        {
-          "title": "Building a safer path to autonomous industrial AI",
-          "link": "https://www.technologyreview.com/2026/10/08/1144020/building-a-safer-path-to-autonomous-industrial-ai/",
-          "date": "Thu, 08 Oct 2026 08:17:32 +0000",
-          "desc": ""
-        },
-        {
-          "title": "Connecting AI agents to enterprise knowledge",
-          "link": "https://www.technologyreview.com/2026/10/05/1145580/connecting-ai-agents-to-enterprise-knowledge/",
-          "date": "Mon, 05 Oct 2026 15:47:52 +0000",
-          "desc": ""
-        },
-        {
-          "title": "Bringing predictive analytics to the agentic AI era",
-          "link": "https://www.technologyreview.com/2026/10/05/1143813/bringing-predictive-analytics-to-the-agentic-ai-era/",
-          "date": "Mon, 05 Oct 2026 13:29:32 +0000",
-          "desc": ""
-        }
-      ],
-      "error": null
     }
   ]
 }
