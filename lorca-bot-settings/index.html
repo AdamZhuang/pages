@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>avatar 队友设置（运行方式）· UI 稿 v1（issue #8）</title>
+<style>
+  /* 颜色 / 圆角 / 阴影取自 apps/mobile/src/styles/tokens.css，抽屉骨架取自 lorca.css 的 .lorca-move-sheet，
+     ⋯ 菜单取自 .lorca-more-menu。稿子与 App 内视觉同源。 */
+  :root {
+    --bg: #f5f6f8;
+    --bg-soft: #f2f3f5;
+    --surface: #ffffff;
+    --border: #eaecf0;
+    --border-strong: #d9dce1;
+    --text: #1f2329;
+    --text-soft: #373c43;
+    --muted: #646a73;
+    --muted-2: #8f959e;
+    --accent: #3370ff;
+    --accent-strong: #245bdb;
+    --accent-soft: #eef3ff;
+    --danger: #b04458;
+    --danger-soft: #fae9ed;
+    --success: #2f7a4a;
+    --warning: #95611d;
+    --warning-soft: #fbf1df;
+    --bot-fill: #e9e9eb;
+    --shadow-sm: 0 2px 8px rgba(31, 35, 41, 0.05);
+    --shadow-lg: 0 24px 64px rgba(31, 35, 41, 0.2);
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px 64px;
+    background: var(--bg); color: var(--text);
+    font: 15px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  h1 { margin: 0 0 4px; font-size: 22px; letter-spacing: -0.01em; }
+  .page-sub { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
+  .page-sub a { color: var(--accent-strong); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 9px; border: 1px solid var(--border); border-radius: 999px;
+    background: var(--surface); font-size: 12px; line-height: 1.5; color: var(--muted);
+  }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--muted-2); }
+  .badge.is-p1::before { background: var(--accent); }
+  .badge.is-out::before { background: var(--danger); }
+  .badge.is-real::before { background: var(--success); }
+
+  .switcher {
+    display: flex; flex-wrap: wrap; gap: 6px; padding: 4px; margin-bottom: 20px;
+    border: 1px solid var(--border); border-radius: 11px; background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+  .switcher button {
+    flex: 1 1 auto; padding: 8px 12px; border: 0; border-radius: 8px;
+    background: transparent; color: var(--muted);
+    font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+  }
+  .switcher button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent-strong); }
+
+  .stage { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
+  .phone {
+    flex: 0 0 auto; width: 390px; height: 780px;
+    border: 1px solid var(--border-strong); border-radius: 42px;
+    background: var(--surface); box-shadow: var(--shadow-sm);
+    overflow: hidden; position: relative;
+  }
+  .phone.is-narrow { width: 360px; height: 720px; }
+  .phone-inner { position: absolute; inset: 0; display: flex; flex-direction: column; }
+
+  .statusbar {
+    flex: 0 0 auto; display: flex; justify-content: space-between;
+    padding: 12px 22px 4px; background: var(--surface);
+    font-size: 12px; font-weight: 600;
+  }
+  .statusbar span:last-child { color: var(--muted); font-weight: 500; }
+
+  .hdr {
+    flex: 0 0 auto; display: flex; align-items: center; gap: 8px;
+    padding: 8px 14px 10px; background: var(--surface); border-bottom: 1px solid var(--border);
+  }
+  .hdr-title { font-size: 17px; font-weight: 650; letter-spacing: -0.2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .hdr-spacer { flex: 1; }
+  .icon-btn {
+    flex: 0 0 auto; display: flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--surface); color: var(--text);
+  }
+  .icon-btn.is-plain { border-color: transparent; background: transparent; }
+  .icon-btn.is-active { background: var(--bg-soft); }
+
+  /* ── 会话流（照 lorca-chat-clean 定稿：浅灰气泡、段末 6px、头像贴底） ── */
+  .thread { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; padding: 14px 14px 20px; }
+  .row { display: flex; gap: 8px; max-width: 88%; align-items: flex-end; margin-top: 3px; }
+  .row.is-group-start { margin-top: 14px; }
+  .row.is-first { margin-top: 0; }
+  .row.is-mine { align-self: flex-end; flex-direction: row-reverse; }
+  .avatar {
+    flex: 0 0 auto; width: 28px; height: 28px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 12px; font-weight: 600;
+  }
+  .a-orange { background: linear-gradient(145deg, #F7A45C, #D97420); }
+  .a-teal { background: linear-gradient(145deg, #2BC0AE, #0E8C7E); }
+  .bubble-wrap { display: flex; flex-direction: column; gap: 3px; min-width: 0; max-width: 100%; }
+  .bubble-wrap.is-mine { align-items: flex-end; }
+  .author { font-size: 11px; color: var(--muted-2); margin-left: 2px; }
+  .bubble { padding: 10px 14px; border-radius: 18px; font-size: 14px; line-height: 1.55; overflow-wrap: anywhere; }
+  .bubble.is-bot { background: var(--bot-fill); border: 0; border-bottom-left-radius: 6px; }
+  .bubble.is-mine { background: var(--accent); color: #fff; border-bottom-right-radius: 6px; }
+  .day { align-self: center; margin: 14px 0 6px; font-size: 11.5px; color: var(--muted-2); }
+
+  /* ── ⋯ 菜单（照 .lorca-more-menu） ── */
+  .more-wrap { position: relative; flex: 0 0 auto; }
+  .more-menu {
+    position: absolute; top: calc(100% + 6px); right: 0; z-index: 4;
+    min-width: 152px; padding: 4px;
+    border: 1px solid var(--border); border-radius: 12px; background: var(--surface);
+    box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 2px;
+  }
+  .more-menu > button {
+    display: flex; align-items: center; gap: 8px; width: 100%;
+    padding: 8px 10px; border: 0; border-radius: 9px; background: transparent;
+    color: var(--text); font: inherit; font-size: 13.5px; text-align: left;
+  }
+  .more-menu > button.is-new { background: var(--accent-soft); color: var(--accent-strong); font-weight: 650; }
+  .menu-scrim { position: absolute; inset: 0; z-index: 3; }
+
+  /* ── 底部抽屉（照 .lorca-move-sheet） ── */
+  .sheet-scrim {
+    position: absolute; inset: 0; z-index: 10;
+    background: rgba(31, 35, 41, 0.42);
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .sheet {
+    background: var(--surface);
+    border-top-left-radius: 20px; border-top-right-radius: 20px;
+    padding: 12px 20px 20px;
+    box-shadow: var(--shadow-lg);
+    display: flex; flex-direction: column; gap: 10px;
+    max-height: 92%; min-height: 0;
+  }
+  .sheet-handle { width: 36px; height: 4px; border-radius: 2px; background: var(--border-strong); align-self: center; }
+  .sheet-hd { display: flex; align-items: center; gap: 10px; }
+  .sheet-hd h3 { margin: 0; font-size: 16px; font-weight: 700; }
+  .sheet-hd .sheet-sub { font-size: 12px; color: var(--muted-2); }
+  .sheet-x {
+    margin-left: auto; padding: 5px 10px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--surface); color: var(--muted); font: inherit; font-size: 12.5px; font-weight: 600;
+  }
+  .sheet-hint { margin: 2px 0 0; font-size: 11.5px; line-height: 1.5; color: var(--muted-2); }
+
+  /* 三段行：标签左、当前值右、chevron 最右 */
+  .optgroup { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .optrow {
+    display: flex; align-items: center; gap: 10px; width: 100%;
+    padding: 12px 12px 12px 14px; border: 0; border-bottom: 1px solid var(--border);
+    background: var(--surface); color: var(--text); font: inherit; text-align: left;
+  }
+  .optrow:last-child { border-bottom: 0; }
+  .optrow-label { flex: 0 0 auto; font-size: 14.5px; }
+  .optrow-value {
+    flex: 1 1 auto; min-width: 0; text-align: right;
+    font-size: 13.5px; color: var(--muted);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .optrow-value.is-empty { color: var(--muted-2); }
+  .chev { flex: 0 0 auto; color: var(--muted-2); display: flex; }
+
+  /* 选择列表 */
+  .search {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-soft);
+    color: var(--muted-2); font-size: 13px;
+  }
+  .search input { flex: 1; min-width: 0; border: 0; background: transparent; font: inherit; color: var(--text); outline: none; }
+  .pick-list { min-height: 0; overflow-y: auto; margin: 0 -6px; padding: 0 6px; }
+  .pick-row {
+    display: flex; align-items: flex-start; gap: 10px; width: 100%;
+    padding: 10px 8px; border: 0; border-radius: 10px; background: transparent;
+    color: var(--text); font: inherit; text-align: left;
+  }
+  .pick-row:active { background: var(--bg-soft); }
+  .pick-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .pick-label { font-size: 14.5px; line-height: 1.4; overflow-wrap: anywhere; }
+  .pick-sub {
+    font: 11.5px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--muted-2); overflow-wrap: anywhere;
+  }
+  .pick-check { flex: 0 0 auto; color: var(--accent); padding-top: 2px; }
+  .pick-divider { height: 1px; margin: 6px 8px; background: var(--border); }
+  .pick-row.is-selected .pick-label { font-weight: 650; color: var(--accent-strong); }
+  /* 未接入：整行标灰、不可点，原因写在右侧 —— 不是点了才报错 */
+  .pick-row.is-disabled { color: var(--muted-2); cursor: default; }
+  .pick-row.is-disabled .pick-label { color: var(--muted-2); }
+  .pick-reason { flex: 0 0 auto; font-size: 11.5px; color: var(--muted-2); padding-top: 3px; }
+
+  /* ── 规格栏 ── */
+  .spec { flex: 1 1 480px; min-width: 330px; display: flex; flex-direction: column; gap: 14px; }
+  .card {
+    padding: 16px 18px; border: 1px solid var(--border); border-radius: 14px;
+    background: var(--surface); box-shadow: var(--shadow-sm);
+  }
+  .card h2 { margin: 0 0 8px; font-size: 14px; font-weight: 700; }
+  .card h2 .tag {
+    margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: var(--accent-soft);
+    color: var(--accent-strong); font-size: 11px; font-weight: 650;
+  }
+  .card h2 .tag.is-warn { background: var(--warning-soft); color: var(--warning); }
+  .card p, .card li { font-size: 13px; line-height: 1.6; color: var(--text-soft); }
+  .card ul { margin: 6px 0 0; padding-left: 18px; }
+  .card li + li { margin-top: 4px; }
+  .card code {
+    padding: 1px 5px; border-radius: 5px; background: var(--bg-soft);
+    font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th, td { padding: 6px 8px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { color: var(--muted); font-weight: 650; }
+  td code { white-space: nowrap; }
+  .note { margin-top: 10px; padding: 9px 12px; border-radius: 10px; background: var(--danger-soft); color: #7d2a3a; font-size: 12.5px; line-height: 1.55; }
+  .note.is-warn { background: var(--warning-soft); color: #7a4d10; }
+  .note.is-info { background: var(--accent-soft); color: var(--accent-strong); }
+  .readout {
+    margin-top: 10px; padding: 8px 10px; border-radius: 8px; background: var(--bg-soft);
+    font: 12px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted);
+  }
+  @media (max-width: 900px) {
+    body { padding: 20px 12px 48px; }
+    .phone, .phone.is-narrow { width: 100%; max-width: 390px; height: 720px; margin: 0 auto; }
+    .spec { min-width: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>avatar 队友设置（运行方式）· UI 稿 v1（issue #8）</h1>
+  <p class="page-sub">
+    入口在 DM 会话详情页的 ⋯ 菜单；面板里不新造 bot 详情页。
+    数据是<b>本机 lorca bootstrap 实拉的</b>（60 条内置模型 / 8 个服务商 / 2 个自定义 provider 39 条模型），
+    不含凭据掩码串。
+  </p>
+  <div class="legend">
+    <span class="badge is-p1">P1 · 本期做</span>
+    <span class="badge is-real">真实目录数据</span>
+    <span class="badge is-out">不做：bots.create / permissions / 按 chat 覆盖</span>
+  </div>
+
+  <div class="switcher" role="tablist">
+    <button type="button" data-screen="before" aria-selected="true">① 改前 · ⋯ 菜单</button>
+    <button type="button" data-screen="after">② 改后 · 菜单多一项</button>
+    <button type="button" data-screen="settings">③ 队友设置 · 三段</button>
+    <button type="button" data-screen="provider">④ 选服务商</button>
+    <button type="button" data-screen="model">⑤ 选模型</button>
+    <button type="button" data-screen="thinking">⑥ 选思考</button>
+    <button type="button" data-screen="switched">⑦ 换服务商后</button>
+    <button type="button" data-screen="nolevels">⑧ 无思考档的模型</button>
+    <button type="button" data-screen="narrow">⑨ 360px 窄屏</button>
+  </div>
+
+  <div class="stage">
+    <div class="phone" id="phone"><div class="phone-inner" id="phone-inner"></div></div>
+
+    <div class="spec">
+      <div class="card">
+        <h2>入口与层级 <span class="tag">P1</span></h2>
+        <ul>
+          <li>⋯ 菜单加第四项<b>「队友设置」</b>，排在「移到分组」之后、「显示命令细节」之前（两个会话级动作在前，运行方式跟命令细节相邻）。</li>
+          <li>只在 <b>DM</b>（单 bot 会话）出现；群聊里不出现 —— 一个群有多个 bot，按 bot 存的值没有唯一目标。</li>
+          <li>面板里不新建页面：抽屉（复用 <code>.lorca-move-sheet</code> 骨架）→ 再点一层进选择列表，返回即回三段。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>三段与当前值 <span class="tag">AC-4</span></h2>
+        <table>
+          <tr><th>行</th><th>当前值怎么来</th><th>卜卜的实际显示</th></tr>
+          <tr><td>服务商</td><td>内置查表；自定义取 <code>provider.name</code>，缺了才退到 <code>custom:</code> 后半段</td><td><b>magpie</b></td></tr>
+          <tr><td>模型</td><td>目录里按 id 找 <code>name</code>，找不到才显示 id；未设显示「默认（第一个模型名）」</td><td><b>cline-pass/deepseek-v4.1-flash</b></td></tr>
+          <tr><td>思考</td><td>档位中文表；未设显示「默认」</td><td><b>高</b></td></tr>
+        </table>
+        <div class="note is-warn">
+          研发方案里写的「magpie 那条模型恰好没 name，就显示 id」<b>不成立</b>：实拉数据里它 name = <code>cline-pass/deepseek-v4.1-flash</code>（id 是 <code>clinepass/cline-pass/deepseek-v4.1-flash</code>）。
+          回退规则照上游 <code>modelLabel = name?.trim() || id</code>，magpie 里<b>只有</b> <code>clinepass/cline-free/mimo-v2.6-flash</code> 一条没 name。列表里 id 作副行等宽显示，两者都看得到。
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>三段的三条规则 <span class="tag">AC-6 / 7 / 8</span></h2>
+        <ul>
+          <li><b>模型只列所选服务商的</b>（已与研发对齐）：内置 60 条按 provider 过滤，自定义走 <code>providers[].models</code>；<code>decides:true</code> 的两条（<code>jev-1.13</code> / <code>jev-1.13-free</code>）不出现。</li>
+          <li><b>思考只列该模型支持的档</b>，顺序照目录（低→高）；<code>levels: []</code> 的模型整段不出现（magpie 的 <code>mimo-v2.6-flash</code>、cli-proxy 的 <code>minimax-m3</code> 都是）。</li>
+          <li><b>未接入的 provider 整行标灰、右侧写「未接入」</b>，点不动 —— 不靠点了才报错。当前 5 个内置未接入（只有 Grok 接入）。</li>
+        </ul>
+        <div class="note is-info">
+          顺序照上游 <code>providerKinds()</code>：6 个内置在前、分隔线、自定义在下。副作用是<b>打开服务商列表先看到 5 行灰</b>。
+          要不要改成「已接入优先」？我按上游画，这条留给你定 —— 改的话只是排序，不影响协议。
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>联动（照上游） <span class="tag">AC-5</span></h2>
+        <ul>
+          <li>换服务商 → 模型与思考<b>都清回默认</b>（见图 ⑦：切到 Grok 后模型变「默认（Grok 4.7）」、思考变「默认」）。</li>
+          <li>换模型 → 新模型不支持当前档才清思考；支持就保留（<code>high</code> 换到同样支持 high 的模型不清）。</li>
+          <li>写回后<b>重拉 roster</b>，界面不做乐观改 —— 失败就是 toast + 保持原值（与置顶/分组同口径，研发已确认）。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>窄屏与长名字 <span class="tag">AC-9</span></h2>
+        <ul>
+          <li>三段行的当前值<b>单行省略</b>（<code>text-overflow: ellipsis</code>），点进选择列表能看全。</li>
+          <li>列表里 id 作副行等宽字体、<b>换行不截断</b> —— 最长那类 <code>clinepass/cline-pass/deepseek-v4.1-flash</code> 在 360px 下折两行完整可读（图 ⑨ 与图 ⑤）。</li>
+          <li>抽屉全宽、内部滚动，页面不横向溢出（探针逐屏量 <code>scrollWidth ≤ clientWidth</code>）。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>搜索框的出现条件 <span class="tag">v1 补充</span></h2>
+        <p>模型列表 <b>≥ 8 条</b>才显示搜索框（magpie 10 条有、Grok 2 条没有）。搜索匹配 <code>name</code> 与 <code>id</code> 两处，大小写不敏感。服务商与思考列表不加搜索。</p>
+        <div class="readout" id="readout">—</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+/* ══ 纯逻辑：这几段就是要交给研发落到 apps/mobile/src/lorca/botRuntime.ts 的东西 ══ */
+const BUILTIN_KINDS = ["deepseek", "anthropic", "opencode", "opencode-go", "chatgpt", "grok"];
+const BUILTIN_LABELS = {
+  deepseek: "DeepSeek", anthropic: "Anthropic", opencode: "OpenCode Zen",
+  "opencode-go": "OpenCode Go", chatgpt: "ChatGPT", grok: "Grok"
+};
+const LEVEL_LABELS = { off: "关闭", minimal: "最低", low: "低", medium: "中", high: "高", xhigh: "超高", max: "最高" };
+const ALL_LEVELS = ["off", "minimal", "low", "medium", "high", "xhigh", "max"];
+const CUSTOM_PREFIX = "custom:";
+const DECISION_APIS = ["system-one", "decisions"];
+
+const isCustomProvider = (kind) => kind.startsWith(CUSTOM_PREFIX);
+const isDecisionAPI = (api) => DECISION_APIS.includes(api);
+
+function providerStatus(kind) {
+  return window.CATALOG_PROVIDERS.find((p) => p.kind === kind);
+}
+
+/* 服务商显示名：内置查表；自定义取 provider.name，缺了才退到 slug。 */
+function providerLabel(kind) {
+  if (isCustomProvider(kind)) return (providerStatus(kind)?.name) || kind.slice(CUSTOM_PREFIX.length);
+  return BUILTIN_LABELS[kind] || kind;
+}
+
+/* 合并目录：内置 models[] + 自定义 providers[].models（自定义 decides 由 provider.api 决定）。 */
+function catalog() {
+  const custom = window.CATALOG_PROVIDERS
+    .filter((p) => isCustomProvider(p.kind) && !isDecisionAPI(p.api))
+    .flatMap((p) => p.models.map((m) => ({
+      provider: p.kind, id: m.id, name: (m.name || "").trim() || m.id,
+      levels: m.levels || [], decides: isDecisionAPI(p.api)
+    })));
+  return [...window.CATALOG_MODELS.map((m) => ({ ...m })), ...custom];
+}
+
+/* 服务商列表：内置在前（固定 6 个），分隔线，自定义在下；决策型自定义不进。 */
+function providerChoices() {
+  const builtin = BUILTIN_KINDS.map((kind) => ({
+    kind, label: providerLabel(kind), group: "builtin",
+    connected: !!providerStatus(kind)?.is_connected
+  }));
+  const custom = window.CATALOG_PROVIDERS
+    .filter((p) => isCustomProvider(p.kind) && !isDecisionAPI(p.api))
+    .map((p) => ({ kind: p.kind, label: providerLabel(p.kind), group: "custom", connected: !!p.is_connected }));
+  return [...builtin, ...custom];
+}
+
+/* 某服务商下 bot 能选的模型：按目录顺序，决策模型剔除。 */
+function modelsFor(provider) {
+  return catalog().filter((m) => m.provider === provider && !m.decides);
+}
+
+/* 该模型支持的思考档；model 未设时取该服务商第一个模型（上游 thinkingLevels 口径）。 */
+function levelsFor(provider, model) {
+  const offered = modelsFor(provider);
+  const known = offered.find((m) => m.id === (model ?? offered[0]?.id));
+  if (known) return known.levels;
+  return ALL_LEVELS.filter((level) => offered.some((m) => m.levels.includes(level)));
+}
+
+/* 联动：换服务商清模型与思考；换模型不支持当前档才清思考。 */
+function nextRuntime(cur, patch) {
+  if (patch.provider !== undefined) {
+    if (patch.provider === cur.provider) return { ...cur };
+    return { provider: patch.provider, model: null, thinking: null };
+  }
+  if (patch.model !== undefined) {
+    const next = { ...cur, model: patch.model };
+    if (next.thinking && !levelsFor(cur.provider, patch.model).includes(next.thinking)) next.thinking = null;
+    return next;
+  }
+  if (patch.thinking !== undefined) return { ...cur, thinking: patch.thinking };
+  return { ...cur };
+}
+
+/* 当前值三行 */
+function modelValue(bot) {
+  const offered = modelsFor(bot.provider);
+  if (bot.model) return offered.find((m) => m.id === bot.model)?.name ?? bot.model;
+  return offered[0] ? `默认（${offered[0].name}）` : "默认";
+}
+function thinkingValue(bot) {
+  return bot.thinking ? (LEVEL_LABELS[bot.thinking] || bot.thinking) : "默认";
+}
+
+/* ══ 状态 ══ */
+const START = { name: "卜卜", provider: "custom:127-0-0-1", model: "clinepass/cline-pass/deepseek-v4.1-flash", thinking: "high" };
+const state = { screen: "before", bot: { ...START }, picker: null, query: "" };
+
+/* ══ 图标 ══ */
+const SVG = {
+  back: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>',
+  more: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>',
+  chev: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>',
+  check: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
+  pin: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5"/><path d="M9 10.8V4h6v6.8l2 2.2H7z"/></svg>',
+  folder: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h5l2 2h11v9H3z"/></svg>',
+  slider: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10"/><path d="M18 6h2"/><circle cx="16" cy="6" r="2"/><path d="M4 18h2"/><path d="M10 18h10"/><circle cx="8" cy="18" r="2"/></svg>',
+  term: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>'
+};
+
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* ══ 会话详情页底图（改前 / 改后共用） ══ */
+function chatBackground(menuOpen, withEntry) {
+  const items = [
+    `<button type="button">${SVG.pin}<span>置顶会话</span></button>`,
+    `<button type="button">${SVG.folder}<span>移到分组</span></button>`,
+    withEntry ? `<button type="button" class="is-new" data-action="open-settings">${SVG.slider}<span>队友设置</span></button>` : "",
+    `<button type="button">${SVG.term}<span>显示命令细节</span></button>`
+  ].join("");
+  return `
+    <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
+    <div class="hdr">
+      <button class="icon-btn is-plain" type="button" aria-label="返回">${SVG.back}</button>
+      <span class="hdr-title">卜卜</span>
+      <span class="hdr-spacer"></span>
+      <div class="more-wrap">
+        <button class="icon-btn${menuOpen ? " is-active" : ""}" type="button" aria-label="更多" aria-haspopup="menu" aria-expanded="${menuOpen}">${SVG.more}</button>
+        ${menuOpen ? `<div class="menu-scrim"></div><div class="more-menu" role="menu">${items}</div>` : ""}
+      </div>
+    </div>
+    <div class="thread">
+      <div class="day">今天 09:12</div>
+      <div class="row is-group-start is-first">
+        <span class="avatar a-orange">卜</span>
+        <div class="bubble-wrap"><span class="author">卜卜</span><div class="bubble is-bot">三条选题都查过了，来源都是官方博客。</div></div>
+      </div>
+      <div class="row">
+        <span class="avatar a-orange">卜</span>
+        <div class="bubble-wrap"><div class="bubble is-bot">第一条我觉得能做，正好接着之前那条线。</div></div>
+      </div>
+      <div class="row is-group-start is-mine">
+        <div class="bubble-wrap is-mine"><div class="bubble is-mine">那就做第一条，定了。</div></div>
+      </div>
+      <div class="row is-group-start">
+        <span class="avatar a-orange">卜</span>
+        <div class="bubble-wrap"><span class="author">卜卜</span><div class="bubble is-bot">收到，我登记进选题库。</div></div>
+      </div>
+    </div>`;
+}
+
+/* ══ 三段抽屉 ══ */
+function settingsSheet(bot) {
+  const levels = levelsFor(bot.provider, bot.model);
+  return `
+    <div class="sheet-scrim">
+      <div class="sheet" role="dialog" aria-label="队友设置">
+        <div class="sheet-handle"></div>
+        <div class="sheet-hd"><h3>队友设置</h3><span class="sheet-sub">${esc(bot.name)}</span><button class="sheet-x" type="button">完成</button></div>
+        <div class="optgroup" id="optgroup">
+          <button class="optrow" type="button" data-action="open-provider">
+            <span class="optrow-label">服务商</span>
+            <span class="optrow-value" data-value="provider">${esc(providerLabel(bot.provider))}</span>
+            <span class="chev">${SVG.chev}</span>
+          </button>
+          <button class="optrow" type="button" data-action="open-model">
+            <span class="optrow-label">模型</span>
+            <span class="optrow-value" data-value="model">${esc(modelValue(bot))}</span>
+            <span class="chev">${SVG.chev}</span>
+          </button>
+          ${levels.length > 0 ? `
+          <button class="optrow" type="button" data-action="open-thinking" data-row="thinking">
+            <span class="optrow-label">思考</span>
+            <span class="optrow-value${bot.thinking ? "" : " is-empty"}" data-value="thinking">${esc(thinkingValue(bot))}</span>
+            <span class="chev">${SVG.chev}</span>
+          </button>` : ""}
+        </div>
+        <p class="sheet-hint">改动从下一轮生效，正在跑的回合不受影响。</p>
+      </div>
+    </div>`;
+}
+
+/* ══ 选择列表抽屉 ══ */
+function pickerSheet(kind, bot, query) {
+  const levels = levelsFor(bot.provider, bot.model);
+  let body = "";
+  let search = "";
+
+  if (kind === "provider") {
+    const choices = providerChoices();
+    const rows = [];
+    choices.forEach((c, i) => {
+      if (i > 0 && choices[i - 1].group === "builtin" && c.group === "custom") rows.push('<div class="pick-divider"></div>');
+      const selected = c.kind === bot.provider;
+      const cls = ["pick-row", selected ? "is-selected" : "", c.connected ? "" : "is-disabled"].filter(Boolean).join(" ");
+      rows.push(`
+        <button type="button" class="${cls}" data-kind="${esc(c.kind)}" ${c.connected ? "" : 'aria-disabled="true" tabindex="-1"'} data-group="${c.group}">
+          <span class="pick-main"><span class="pick-label">${esc(c.label)}</span></span>
+          ${selected ? `<span class="pick-check">${SVG.check}</span>` : (c.connected ? "" : '<span class="pick-reason">未接入</span>')}
+        </button>`);
+    });
+    body = rows.join("");
+  }
+
+  if (kind === "model") {
+    const offered = modelsFor(bot.provider);
+    if (offered.length >= 8) {
+      search = `<label class="search"><span aria-hidden="true">🔍</span><input id="model-search" type="search" placeholder="搜索模型" value="${esc(query)}" aria-label="搜索模型"></label>`;
+    }
+    const q = query.trim().toLowerCase();
+    const shown = q ? offered.filter((m) => m.name.toLowerCase().includes(q) || m.id.toLowerCase().includes(q)) : offered;
+    const rows = [];
+    rows.push(`
+      <button type="button" class="pick-row${bot.model ? "" : " is-selected"}" data-model="">
+        <span class="pick-main"><span class="pick-label">默认（${esc(offered[0]?.name ?? "")}）</span></span>
+        ${bot.model ? "" : `<span class="pick-check">${SVG.check}</span>`}
+      </button>
+      <div class="pick-divider"></div>`);
+    shown.forEach((m) => {
+      const selected = m.id === bot.model;
+      rows.push(`
+        <button type="button" class="pick-row${selected ? " is-selected" : ""}" data-model="${esc(m.id)}">
+          <span class="pick-main">
+            <span class="pick-label">${esc(m.name)}</span>
+            <span class="pick-sub">${esc(m.id)}</span>
+          </span>
+          ${selected ? `<span class="pick-check">${SVG.check}</span>` : ""}
+        </button>`);
+    });
+    body = rows.join("");
+  }
+
+  if (kind === "thinking") {
+    const rows = [`
+      <button type="button" class="pick-row${bot.thinking ? "" : " is-selected"}" data-thinking="">
+        <span class="pick-main"><span class="pick-label">默认</span></span>
+        ${bot.thinking ? "" : `<span class="pick-check">${SVG.check}</span>`}
+      </button>
+      <div class="pick-divider"></div>`];
+    levels.forEach((level) => {
+      const selected = level === bot.thinking;
+      rows.push(`
+        <button type="button" class="pick-row${selected ? " is-selected" : ""}" data-thinking="${level}">
+          <span class="pick-main"><span class="pick-label">${esc(LEVEL_LABELS[level] || level)}</span></span>
+          ${selected ? `<span class="pick-check">${SVG.check}</span>` : ""}
+        </button>`);
+    });
+    body = rows.join("");
+  }
+
+  const title = { provider: "服务商", model: "模型", thinking: "思考" }[kind];
+  return `
+    <div class="sheet-scrim">
+      <div class="sheet" role="dialog" aria-label="${title}">
+        <div class="sheet-handle"></div>
+        <div class="sheet-hd"><h3>${title}</h3><button class="sheet-x" type="button" data-action="back">返回</button></div>
+        ${search}
+        <div class="pick-list" id="pick-list">${body}</div>
+      </div>
+    </div>`;
+}
+
+/* ══ 渲染 ══ */
+function render() {
+  const inner = document.getElementById("phone-inner");
+  const phone = document.getElementById("phone");
+  const s = state.screen;
+  const bot = state.bot;
+  phone.classList.toggle("is-narrow", s === "narrow");
+
+  if (s === "before") inner.innerHTML = chatBackground(true, false);
+  else if (s === "after") inner.innerHTML = chatBackground(true, true);
+  else if (s === "settings") inner.innerHTML = chatBackground(false, false) + settingsSheet(bot);
+  else if (s === "provider") inner.innerHTML = chatBackground(false, false) + pickerSheet("provider", bot, state.query);
+  else if (s === "model") inner.innerHTML = chatBackground(false, false) + pickerSheet("model", bot, state.query);
+  else if (s === "thinking") inner.innerHTML = chatBackground(false, false) + pickerSheet("thinking", bot, state.query);
+  else if (s === "switched") {
+    /* ⑦：换服务商之后 —— 模型与思考都回默认 */
+    state.bot = nextRuntime({ ...START }, { provider: "grok" });
+    inner.innerHTML = chatBackground(false, false) + settingsSheet(state.bot);
+  } else if (s === "nolevels") {
+    /* ⑧：换到一个 levels 为空的模型 —— 思考整段不出现，值清回默认 */
+    state.bot = nextRuntime({ ...START }, { model: "clinepass/cline-free/mimo-v2.6-flash" });
+    inner.innerHTML = chatBackground(false, false) + settingsSheet(state.bot);
+  } else if (s === "narrow") {
+    inner.innerHTML = chatBackground(false, false) + settingsSheet(bot);
+  }
+
+  document.querySelectorAll(".switcher button").forEach((b) => {
+    b.setAttribute("aria-selected", String(b.dataset.screen === s));
+  });
+
+  const readout = document.getElementById("readout");
+  if (readout) {
+    readout.textContent = `bot = ${bot.provider} / ${bot.model ?? "(默认)"} / ${bot.thinking ?? "(默认)"}`;
+  }
+}
+
+/* ══ 交互 ══ */
+document.querySelectorAll(".switcher button").forEach((b) => {
+  b.addEventListener("click", () => {
+    state.screen = b.dataset.screen;
+    state.query = "";
+    if (state.screen !== "switched" && state.screen !== "nolevels") state.bot = { ...START };
+    render();
+  });
+});
+
+document.getElementById("phone").addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-action], .pick-row");
+  if (!btn) return;
+  const action = btn.dataset.action;
+
+  if (action === "open-settings") { state.screen = "settings"; render(); return; }
+  if (action === "open-provider") { state.screen = "provider"; render(); return; }
+  if (action === "open-model") { state.screen = "model"; render(); return; }
+  if (action === "open-thinking") { state.screen = "thinking"; render(); return; }
+  if (action === "back") { state.screen = "settings"; state.query = ""; render(); return; }
+
+  if (btn.classList.contains("pick-row")) {
+    if (btn.classList.contains("is-disabled") || btn.getAttribute("aria-disabled") === "true") return;
+    if (btn.dataset.kind !== undefined && btn.dataset.kind !== "") {
+      state.bot = nextRuntime(state.bot, { provider: btn.dataset.kind });
+      state.screen = "settings"; render(); return;
+    }
+    if (btn.dataset.model !== undefined) {
+      state.bot = nextRuntime(state.bot, { model: btn.dataset.model || null });
+      state.screen = "settings"; render(); return;
+    }
+    if (btn.dataset.thinking !== undefined) {
+      state.bot = nextRuntime(state.bot, { thinking: btn.dataset.thinking || null });
+      state.screen = "settings"; render(); return;
+    }
+  }
+});
+
+document.getElementById("phone").addEventListener("input", (e) => {
+  if (e.target.id === "model-search") {
+    state.query = e.target.value;
+    const list = document.getElementById("pick-list");
+    const scroll = list ? list.scrollTop : 0;
+    render();
+    const again = document.getElementById("pick-list");
+    if (again) again.scrollTop = scroll;
+    const input = document.getElementById("model-search");
+    if (input) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); }
+  }
+});
+
+render();
+
+/* 探针用 */
+window.__mock = {
+  state, render,
+  catalog, providerChoices, providerLabel, modelsFor, levelsFor, nextRuntime, modelValue, thinkingValue,
+  setScreen(screen) { state.screen = screen; state.query = ""; state.bot = { ...START }; render(); },
+  setBot(patch) { state.bot = nextRuntime(state.bot, patch); render(); }
+};
+</script>
+</body>
+</html>

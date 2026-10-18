@@ -1,0 +1,263 @@
+# 队友设置 UI 稿 v1 探针 — 26/26
+
+PASS  AC-4 当前值：服务商显示 magpie
+PASS  AC-4 当前值：模型显示 name
+PASS  AC-4 当前值：思考显示「高」
+PASS  AC-4 三段齐（服务商/模型/思考）
+PASS  入口：改前菜单没有「队友设置」
+PASS  入口：改后菜单有「队友设置」
+PASS  入口：位置在「移到分组」之后
+PASS  AC-8 未接入 provider 标灰且不可点
+PASS  AC-8 已接入 provider 可点
+PASS  AC-8 服务商顺序：内置在前、自定义在后
+PASS  AC-8 内置与自定义之间一条分隔线
+PASS  AC-7 decides 模型不进候选（目录里 2 条）
+PASS  AC-7 magpie 10 条全在，jev 不在模型列表
+PASS  AC-6 思考只列该模型支持的档（low/high/max）
+PASS  AC-6 当前档选中「高」
+PASS  AC-5 换服务商：模型与思考都回默认
+PASS  AC-5 换模型不支持当前档：思考回默认
+PASS  AC-5 换模型支持当前档：思考保留
+PASS  AC-6 无档模型：思考整段不出现
+PASS  AC-9 360px 抽屉不横向溢出
+PASS  AC-9 360px 当前值单行省略
+PASS  AC-9 长 id 在选择列表里换行不截断
+PASS  搜索框：magpie 10 条时出现
+PASS  搜索「grok」只剩 grok 两条 + 默认行
+PASS  点未接入的服务商不生效
+PASS  点模型后回到三段且值更新
+
+## 原始读数
+{
+  "catalog_total": 99,
+  "catalog_decides": [
+    "opencode/jev-1.13",
+    "opencode/jev-1.13-free"
+  ],
+  "models_magpie": [
+    "clinepass/cline-pass/deepseek-v4.1-flash",
+    "clinepass/cline-free/mimo-v2.6-flash",
+    "grok/grok-4.7",
+    "grok/grok-4.6",
+    "workbuddy-ai/deepseek-v4.1-flash",
+    "opencode-2-free/deepseek-v4.1-flash-free",
+    "opencode-2-free/glm-5.3-flash-free",
+    "codex/gpt-6-luna",
+    "codex/gpt-5.6-terra",
+    "codex/gpt-5.6-luna"
+  ],
+  "models_magpie_has_decides": false,
+  "levels_magpie_longest": [
+    "low",
+    "high",
+    "max"
+  ],
+  "levels_empty_model": [],
+  "levels_cli_minimax": [],
+  "levels_unknown_model_falls_back": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+  ],
+  "provider_label_magpie": "magpie",
+  "provider_label_cli": "CLI Proxy",
+  "provider_label_opencode": "OpenCode Zen",
+  "provider_label_gone_custom": "gone",
+  "provider_order": [
+    "DeepSeek(未接入)",
+    "Anthropic(未接入)",
+    "OpenCode Zen(未接入)",
+    "OpenCode Go(未接入)",
+    "ChatGPT(未接入)",
+    "Grok",
+    "CLI Proxy",
+    "magpie"
+  ],
+  "provider_groups": [
+    "builtin",
+    "builtin",
+    "builtin",
+    "builtin",
+    "builtin",
+    "builtin",
+    "custom",
+    "custom"
+  ],
+  "switch_provider_clears": {
+    "provider": "grok",
+    "model": null,
+    "thinking": null
+  },
+  "switch_same_provider_keeps": {
+    "provider": "custom:127-0-0-1",
+    "model": "clinepass/cline-pass/deepseek-v4.1-flash",
+    "thinking": "high"
+  },
+  "switch_model_unsupported_clears": {
+    "provider": "custom:127-0-0-1",
+    "model": "clinepass/cline-free/mimo-v2.6-flash",
+    "thinking": null
+  },
+  "switch_model_keeps_high": {
+    "provider": "custom:127-0-0-1",
+    "model": "grok/grok-4.7",
+    "thinking": "high"
+  },
+  "switch_model_supported_keeps": {
+    "provider": "custom:cli-proxy",
+    "model": "gpt-5.6-terra",
+    "thinking": "high"
+  },
+  "switch_thinking_sets": {
+    "provider": "custom:127-0-0-1",
+    "model": "clinepass/cline-pass/deepseek-v4.1-flash",
+    "thinking": "max"
+  },
+  "menu_before": [
+    "置顶会话",
+    "移到分组",
+    "显示命令细节"
+  ],
+  "menu_before_has_entry": false,
+  "menu_after": [
+    "置顶会话",
+    "移到分组",
+    "队友设置",
+    "显示命令细节"
+  ],
+  "menu_after_has_entry": true,
+  "menu_after_index": 2,
+  "settings_labels": [
+    "服务商",
+    "模型",
+    "思考"
+  ],
+  "settings_provider_value": "magpie",
+  "settings_model_value": "cline-pass/deepseek-v4.1-flash",
+  "settings_thinking_value": "高",
+  "settings_hint": "改动从下一轮生效，正在跑的回合不受影响。",
+  "provider_rows": [
+    {
+      "label": "DeepSeek",
+      "selected": false,
+      "disabled": true,
+      "reason": "未接入"
+    },
+    {
+      "label": "Anthropic",
+      "selected": false,
+      "disabled": true,
+      "reason": "未接入"
+    },
+    {
+      "label": "OpenCode Zen",
+      "selected": false,
+      "disabled": true,
+      "reason": "未接入"
+    },
+    {
+      "label": "OpenCode Go",
+      "selected": false,
+      "disabled": true,
+      "reason": "未接入"
+    },
+    {
+      "label": "ChatGPT",
+      "selected": false,
+      "disabled": true,
+      "reason": "未接入"
+    },
+    {
+      "label": "Grok",
+      "selected": false,
+      "disabled": false,
+      "reason": null
+    },
+    {
+      "label": "CLI Proxy",
+      "selected": false,
+      "disabled": false,
+      "reason": null
+    },
+    {
+      "label": "magpie",
+      "selected": true,
+      "disabled": false,
+      "reason": null
+    }
+  ],
+  "provider_divider_count": 1,
+  "model_search_shown": true,
+  "model_rows_count": 11,
+  "model_first_label": "默认（cline-pass/deepseek-v4.1-flash）",
+  "model_has_jev": false,
+  "model_longest_sub": "clinepass/cline-pass/deepseek-v4.1-flash",
+  "model_longest_overflow": {
+    "scrollWidth": 276,
+    "clientWidth": 276
+  },
+  "narrow_doc_overflow": {
+    "scrollWidth": 1180,
+    "clientWidth": 1180
+  },
+  "narrow_sheet_overflow": {
+    "scrollWidth": 358,
+    "clientWidth": 358
+  },
+  "search_grok_rows": [
+    "默认（cline-pass/deepseek-v4.1-flash）",
+    "Grok 4.7",
+    "Grok 4.6"
+  ],
+  "thinking_rows": [
+    "默认",
+    "低",
+    "高",
+    "最高"
+  ],
+  "thinking_selected": [
+    "高"
+  ],
+  "switched_provider": "Grok",
+  "switched_model": "默认（Grok 4.7）",
+  "switched_thinking": "默认",
+  "switched_rows": [
+    "服务商",
+    "模型",
+    "思考"
+  ],
+  "nolevels_rows": [
+    "服务商",
+    "模型"
+  ],
+  "nolevels_model": "clinepass/cline-free/mimo-v2.6-flash",
+  "narrow_phone_width": 360,
+  "narrow_settings_overflow": {
+    "doc": {
+      "scrollWidth": 1180,
+      "clientWidth": 1180
+    },
+    "sheet": {
+      "scrollWidth": 358,
+      "clientWidth": 358
+    },
+    "value": {
+      "scrollWidth": 227,
+      "clientWidth": 227,
+      "ellipsis": "ellipsis"
+    }
+  },
+  "click_model_result": {
+    "screen_has_settings": true,
+    "model": "Grok 4.7",
+    "thinking": "高",
+    "rows": [
+      "服务商",
+      "模型",
+      "思考"
+    ]
+  },
+  "click_disabled_stays": true
+}
