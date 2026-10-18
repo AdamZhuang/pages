@@ -1,0 +1,154 @@
+探针结果 38/38
+PASS  五条原因码齐备
+PASS  前三条是全局级
+PASS  后两条是块级
+PASS  未知码不编文案
+PASS  每条码都有下一步
+PASS  主文案无码名/上游原文/状态码
+PASS  改前没有额度 Tab
+PASS  额度排最后
+PASS  四档顺序正确
+PASS  没配 key 不画两块卡
+PASS  没配 key 有设置入口
+PASS  没配 key 不转圈
+PASS  有余额时无全局条
+PASS  余额数值不加货币符号
+PASS  余额带「不是配额」小字
+PASS  无 resetAt 不渲染重置行
+PASS  配额常态取不到
+PASS  配额不做假进度条
+PASS  块级原因不顶到全局条
+PASS  余额块级降级到 upstream_no_data
+PASS  块级降级带重试
+PASS  key 无效走全局条
+PASS  key 无效保留两块骨架
+PASS  key 无效不出现上游英文/状态码
+PASS  连不上走全局条
+PASS  连不上带重试
+PASS  弹层标题正确
+PASS  弹层输入是密文
+PASS  重开弹层输入为空（不回显）
+PASS  空输入不能保存
+PASS  可切明文
+PASS  保存失败留在弹层且不丢输入
+PASS  保存成功只回「已设置」
+PASS  屏幕上不出现 key 明文
+PASS  清除二次确认文案
+PASS  窄屏不横向溢出
+PASS  点设置入口开弹层
+PASS  取消关闭弹层
+
+原始读回：
+{
+  "codes": [
+    "key_invalid",
+    "network_unreachable",
+    "not_configured",
+    "quota_unavailable",
+    "upstream_no_data"
+  ],
+  "level_global": [
+    "global",
+    "global",
+    "global"
+  ],
+  "level_block": [
+    "block",
+    "block"
+  ],
+  "unknown_code_copy": null,
+  "cards_not_configured": false,
+  "cards_key_invalid": true,
+  "code_actions": {
+    "not_configured": "设置 API key",
+    "key_invalid": "替换 key",
+    "network_unreachable": "重试",
+    "upstream_no_data": "重试",
+    "quota_unavailable": "可在 Cline 官网账户页查看用量"
+  },
+  "codes_without_next_step": [],
+  "copy_has_banned": {
+    "not_configured": false,
+    "key_invalid": false,
+    "network_unreachable": false,
+    "upstream_no_data": false,
+    "quota_unavailable": false
+  },
+  "tabs_before": [
+    "会话",
+    "已完成",
+    "自动化"
+  ],
+  "tabs_before_has_quota": false,
+  "tabs_after": [
+    "会话",
+    "已完成",
+    "自动化",
+    "额度"
+  ],
+  "quota_tab_last": "额度",
+  "nokey_status": "还没设置 Cline API key 填一次就能看到 Cline 账户余额。 设置 API key",
+  "nokey_status_code": "not_configured",
+  "nokey_cards": 0,
+  "nokey_action": "设置 API key",
+  "nokey_has_spinner": false,
+  "ok_status_bar": 0,
+  "ok_balance": "12.34",
+  "ok_balance_note": "Cline 账户余额，不是 ClinePass 订阅配额",
+  "ok_balance_has_currency": false,
+  "ok_reset_row": 0,
+  "ok_quota_reason": "上游没有提供读取订阅配额的接口",
+  "ok_quota_note": "可在 Cline 官网账户页查看用量",
+  "ok_quota_has_progressbar": false,
+  "ok_card_titles": [
+    "Cline 账户余额",
+    "ClinePass 订阅配额"
+  ],
+  "nodata_global_bar": 0,
+  "nodata_balance_reason": "upstream_no_data",
+  "nodata_quota_reason": "quota_unavailable",
+  "nodata_balance_action": "重试",
+  "invalid_status_code": "key_invalid",
+  "invalid_status_text": "这个 key 不被接受",
+  "invalid_cards": 2,
+  "invalid_placeholders": [
+    "—",
+    "—"
+  ],
+  "invalid_has_upstream_english": false,
+  "offline_status_code": "network_unreachable",
+  "offline_status_text": "连不上 Cline，检查网络后再试",
+  "offline_action": "重试",
+  "offline_cards": 2,
+  "sheet_title": "设置 Cline API key",
+  "sheet_input_type": "password",
+  "sheet_input_empty": true,
+  "sheet_save_disabled": true,
+  "sheet_plain_type": "text",
+  "sheet_plain_value_present": true,
+  "sheet_error_shown": "保存失败，请检查网络后再试",
+  "sheet_error_keeps_value": true,
+  "clear_title": "清除 API key",
+  "clear_desc": "清除后将看不到额度。",
+  "clear_confirm": "清除",
+  "saved_toast": "已设置",
+  "saved_no_key_on_screen": true,
+  "narrow_phone_width": 360,
+  "narrow_doc_overflow": {
+    "scrollWidth": 1180,
+    "clientWidth": 1180
+  },
+  "narrow_body_overflow": {
+    "scrollWidth": 358,
+    "clientWidth": 358
+  },
+  "narrow_balance": "12.34",
+  "click_open_sheet": {
+    "screen": "sheet",
+    "has_input": true
+  },
+  "click_close_sheet": {
+    "screen": "ok",
+    "has_sheet": false
+  }
+}

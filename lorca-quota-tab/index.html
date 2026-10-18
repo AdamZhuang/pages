@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>avatar Bot 页「额度」Tab · UI 稿 v1（issue #3）</title>
+<style>
+  /* 颜色 / 圆角 / 阴影取自 apps/mobile/src/styles/tokens.css；
+     Tab 行取自 lorca.css 的 .lorca-tabs-seamless / .lorca-tab-text；
+     抽屉取自 .lorca-sheet / .lorca-secret-field；卡片沿用面板卡片的视觉语言。 */
+  :root {
+    --bg: #f5f6f8; --bg-soft: #f2f3f5; --surface: #ffffff;
+    --border: #eaecf0; --border-strong: #d9dce1;
+    --text: #1f2329; --text-soft: #373c43; --muted: #646a73; --muted-2: #8f959e;
+    --accent: #3370ff; --accent-strong: #245bdb; --accent-soft: #eef3ff;
+    --danger: #b04458; --danger-soft: #fae9ed;
+    --success: #2f7a4a; --success-soft: #e8f4ec;
+    --warning: #95611d; --warning-soft: #fbf1df;
+    --shadow-sm: 0 2px 8px rgba(31, 35, 41, 0.05);
+    --shadow-lg: 0 24px 64px rgba(31, 35, 41, 0.2);
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px 64px;
+    background: var(--bg); color: var(--text);
+    font: 15px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  h1 { margin: 0 0 4px; font-size: 22px; letter-spacing: -0.01em; }
+  .page-sub { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
+  .page-sub a { color: var(--accent-strong); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 9px; border: 1px solid var(--border); border-radius: 999px;
+    background: var(--surface); font-size: 12px; line-height: 1.5; color: var(--muted);
+  }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--muted-2); }
+  .badge.is-p1::before { background: var(--accent); }
+  .badge.is-out::before { background: var(--danger); }
+  .badge.is-real::before { background: var(--success); }
+
+  .switcher {
+    display: flex; flex-wrap: wrap; gap: 6px; padding: 4px; margin-bottom: 20px;
+    border: 1px solid var(--border); border-radius: 11px; background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+  .switcher button {
+    flex: 1 1 auto; padding: 8px 12px; border: 0; border-radius: 8px;
+    background: transparent; color: var(--muted);
+    font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+  }
+  .switcher button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent-strong); }
+
+  .stage { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
+  .phone {
+    flex: 0 0 auto; width: 390px; height: 780px;
+    border: 1px solid var(--border-strong); border-radius: 42px;
+    background: var(--surface); box-shadow: var(--shadow-sm);
+    overflow: hidden; position: relative;
+  }
+  .phone.is-narrow { width: 360px; height: 720px; }
+  .phone-inner { position: absolute; inset: 0; display: flex; flex-direction: column; }
+
+  .statusbar {
+    flex: 0 0 auto; display: flex; justify-content: space-between;
+    padding: 12px 22px 4px; background: var(--surface);
+    font-size: 12px; font-weight: 600;
+  }
+  .statusbar span:last-child { color: var(--muted); font-weight: 500; }
+
+  /* ── 顶栏（照 .lorca-hdr：标题左、连接 pill 与 ⋯ 右） ── */
+  .hdr {
+    flex: 0 0 auto; display: flex; align-items: center; gap: 10px;
+    padding: 10px 16px 4px; background: var(--surface);
+  }
+  .hdr-title { font-size: 24px; font-weight: 750; letter-spacing: -0.4px; line-height: 1.15; }
+  .hdr-spacer { flex: 1; }
+  .conn-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 550;
+    background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.16); color: #dc2626;
+  }
+  .conn-pill.is-ok { display: none; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .icon-btn {
+    flex: 0 0 auto; display: flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--surface); color: var(--text);
+  }
+  .icon-btn.is-round { border-radius: 50%; border: 0; background: var(--bg-soft); }
+  .icon-btn.is-plain { border-color: transparent; background: transparent; }
+
+  /* ── Tab 行（照 .lorca-tabs-seamless / .lorca-tab-text） ── */
+  .tabs { flex: 0 0 auto; display: flex; align-items: center; gap: 22px; padding: 8px 16px 4px; background: var(--surface); }
+  .tab {
+    position: relative; display: inline-flex; align-items: baseline; gap: 4px;
+    padding: 4px 0 8px; border: 0; background: transparent;
+    color: var(--muted-2); font: inherit; font-size: 18px; font-weight: 550;
+    letter-spacing: -0.3px; cursor: pointer;
+  }
+  .tab.is-active { color: var(--text); font-weight: 750; }
+  .tab.is-active::after {
+    content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 2.5px;
+    background: var(--accent); border-radius: 3px;
+  }
+  .tab-n { font-size: 12.5px; font-weight: 600; opacity: 0.75; }
+
+  /* ── 额度页 ── */
+  .body { flex: 1; min-height: 0; overflow-y: auto; padding: 14px 16px 24px; display: flex; flex-direction: column; gap: 12px; }
+  .sect { display: flex; align-items: center; gap: 8px; padding: 2px 2px 0; }
+  .sect h2 { margin: 0; font-size: 13px; font-weight: 650; color: var(--muted); letter-spacing: 0.2px; }
+  .sect-spacer { flex: 1; }
+  .sect-time { font-size: 11.5px; color: var(--muted-2); }
+  .mini-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 10px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--surface); color: var(--text-soft);
+    font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
+  }
+  .mini-btn:active { background: var(--bg-soft); }
+  .mini-btn[disabled] { color: var(--muted-2); }
+
+  .card {
+    padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+    background: var(--surface); box-shadow: var(--shadow-sm);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .card-hd { display: flex; align-items: center; gap: 8px; }
+  .card-hd h3 { margin: 0; font-size: 13.5px; font-weight: 650; color: var(--text-soft); }
+  .card-hd .tag { margin-left: auto; font-size: 11.5px; color: var(--muted-2); }
+  .card-main { font-size: 26px; font-weight: 700; letter-spacing: -0.6px; line-height: 1.25; }
+  .card-note { margin: 0; font-size: 11.5px; line-height: 1.5; color: var(--muted-2); }
+  .card-row { display: flex; align-items: center; gap: 8px; }
+  .card-row .k { font-size: 12.5px; color: var(--muted); }
+  .card-row .v { margin-left: auto; font-size: 12.5px; font-weight: 600; color: var(--text-soft); }
+  .reason { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--text-soft); }
+  .card.is-flat { border-style: dashed; box-shadow: none; background: var(--surface); }
+  .card.is-flat .card-main { font-size: 17px; font-weight: 650; letter-spacing: -0.2px; }
+  .placeholder { margin: 0; font-size: 15px; font-weight: 650; color: var(--muted-2); letter-spacing: 1px; }
+
+  /* 全局状态条：只反映 key 层（not_configured / key_invalid / network_unreachable） */
+  .status-bar {
+    display: flex; flex-direction: column; gap: 10px;
+    padding: 14px 16px; border-radius: 14px; border: 1px solid var(--border);
+    background: var(--surface); box-shadow: var(--shadow-sm);
+  }
+  .status-bar.is-warn { border-color: var(--warning); background: var(--warning-soft); }
+  .status-bar.is-bad { border-color: var(--danger); background: var(--danger-soft); }
+  .status-bar.is-idle { border-color: var(--border-strong); background: var(--bg-soft); }
+  .status-title { font-size: 15px; font-weight: 700; line-height: 1.4; }
+  .status-desc { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--text-soft); }
+  .status-actions { display: flex; gap: 10px; }
+  .btn {
+    height: 38px; padding: 0 16px; border-radius: 10px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text-soft);
+    font: inherit; font-size: 14px; font-weight: 650; cursor: pointer;
+  }
+  .btn.is-primary { border: 0; background: var(--accent); color: #fff; }
+  .btn.is-danger { border-color: var(--danger); color: var(--danger); background: transparent; }
+  .btn.is-block { flex: 1; }
+  .inline-action {
+    align-self: flex-start; padding: 0; border: 0; background: transparent;
+    color: var(--accent-strong); font: inherit; font-size: 13px; font-weight: 650; cursor: pointer;
+  }
+  .foot-hint { margin: 2px 2px 0; font-size: 11.5px; line-height: 1.5; color: var(--muted-2); }
+
+  /* ── 抽屉（照 .lorca-sheet / .lorca-secret-field） ── */
+  .sheet-scrim {
+    position: absolute; inset: 0; z-index: 10;
+    background: rgba(31, 35, 41, 0.42);
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .sheet {
+    background: var(--surface);
+    border-top-left-radius: 20px; border-top-right-radius: 20px;
+    padding: 12px 20px 20px; box-shadow: var(--shadow-lg);
+    display: flex; flex-direction: column; gap: 14px; max-height: 88%; min-height: 0;
+  }
+  .sheet-handle { width: 36px; height: 4px; border-radius: 2px; background: var(--border-strong); align-self: center; }
+  .sheet-hd { display: flex; align-items: flex-start; gap: 10px; }
+  .sheet-hd h3 { margin: 0; font-size: 16.5px; font-weight: 700; }
+  .sheet-desc { margin: 3px 0 0; font-size: 12px; line-height: 1.4; color: var(--muted); }
+  .secret-field { display: flex; flex-direction: column; gap: 6px; }
+  .secret-label { font-size: 13px; font-weight: 600; }
+  .secret-wrap {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--bg-soft); border: 1px solid var(--border); border-radius: 10px; padding: 0 10px;
+  }
+  .secret-wrap.is-focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(51, 112, 255, 0.12); background: var(--surface); }
+  .secret-input {
+    flex: 1; height: 42px; border: 0; background: transparent; outline: none;
+    font: 13.5px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--text);
+    letter-spacing: 0.02em;
+  }
+  .eye-btn { padding: 6px; border: 0; border-radius: 6px; background: none; color: var(--muted); display: flex; }
+  .sheet-error {
+    padding: 8px 12px; border-radius: 8px; background: rgba(176, 68, 88, 0.08);
+    border: 1px solid rgba(176, 68, 88, 0.2); color: var(--danger);
+    font-size: 12.5px; line-height: 1.4;
+  }
+  .sheet-actions { display: flex; align-items: center; gap: 10px; margin-top: 2px; }
+  .sheet-actions .btn { flex: 1; }
+  .sheet-actions .btn.is-primary { flex: 1.5; }
+  .sheet-hint { margin: 0; font-size: 11.5px; line-height: 1.5; color: var(--muted-2); }
+
+  /* toast */
+  .toast {
+    position: absolute; left: 50%; bottom: 84px; transform: translateX(-50%);
+    padding: 9px 16px; border-radius: 10px; background: rgba(31, 35, 41, 0.9);
+    color: #fff; font-size: 13px; font-weight: 600; white-space: nowrap; z-index: 20;
+  }
+
+  /* ── 规格栏 ── */
+  .spec { flex: 1 1 480px; min-width: 330px; display: flex; flex-direction: column; gap: 14px; }
+  .spec .card { gap: 0; }
+  .spec h2 { margin: 0 0 8px; font-size: 14px; font-weight: 700; }
+  .spec h2 .tag2 { margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: 11px; font-weight: 650; }
+  .spec h2 .tag2.is-warn { background: var(--warning-soft); color: var(--warning); }
+  .spec p, .spec li { font-size: 13px; line-height: 1.6; color: var(--text-soft); margin: 0; }
+  .spec ul { margin: 6px 0 0; padding-left: 18px; }
+  .spec li + li { margin-top: 4px; }
+  .spec code { padding: 1px 5px; border-radius: 5px; background: var(--bg-soft); font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th, td { padding: 6px 8px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { color: var(--muted); font-weight: 650; }
+  td code { white-space: nowrap; }
+  .note { margin-top: 10px; padding: 9px 12px; border-radius: 10px; background: var(--danger-soft); color: #7d2a3a; font-size: 12.5px; line-height: 1.55; }
+  .note.is-warn { background: var(--warning-soft); color: #7a4d10; }
+  .note.is-info { background: var(--accent-soft); color: var(--accent-strong); }
+  .readout {
+    margin-top: 10px; padding: 8px 10px; border-radius: 8px; background: var(--bg-soft);
+    font: 12px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted);
+  }
+  @media (max-width: 900px) {
+    body { padding: 20px 12px 48px; }
+    .phone, .phone.is-narrow { width: 100%; max-width: 390px; height: 720px; margin: 0 auto; }
+    .spec { min-width: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>avatar Bot 页「额度」Tab · UI 稿 v1（issue #3）</h1>
+  <p class="page-sub">
+    Tab 顺序按研发核过的现状：<b>会话 / 已完成 / 自动化 / 额度</b>（额度排最后）。
+    key 由 Adam 自己在页面里填，稿子里<b>没有任何真实凭据</b>，输入框里的圆点全是假的。
+  </p>
+  <div class="legend">
+    <span class="badge is-p1">P1 · 本期做</span>
+    <span class="badge is-real">原因码口径已与研发锁定</span>
+    <span class="badge is-out">不做：CPA / 告警 / 用量明细 / 自动刷新</span>
+  </div>
+
+  <div class="switcher" role="tablist">
+    <button type="button" data-screen="before" aria-selected="true">① 改前 · 三档 Tab</button>
+    <button type="button" data-screen="nokey">② 额度 · 没配 key</button>
+    <button type="button" data-screen="ok">③ 额度 · 有余额（配额取不到）</button>
+    <button type="button" data-screen="nodata">④ 额度 · 余额空数据</button>
+    <button type="button" data-screen="invalid">⑤ 额度 · key 不被接受</button>
+    <button type="button" data-screen="offline">⑥ 额度 · 连不上 Cline</button>
+    <button type="button" data-screen="sheet">⑦ 设置 key 弹层</button>
+    <button type="button" data-screen="clearing">⑧ 清除二次确认</button>
+    <button type="button" data-screen="narrow">⑨ 360px 窄屏</button>
+  </div>
+
+  <div class="stage">
+    <div class="phone" id="phone"><div class="phone-inner" id="phone-inner"></div></div>
+
+    <div class="spec">
+      <div class="card">
+        <h2>Tab 与页面骨架 <span class="tag2">AC-1</span></h2>
+        <ul>
+          <li>四档：<b>会话 / 已完成 / 自动化 / 额度</b>，额度排最后（图 ① 是改前的三档，只用来对比）。</li>
+          <li>「已完成」仍只在真有已完成会话时出现（issue #1 定稿），额度<b>永远出现</b> —— 它是入口，不是有数据才给的列表。</li>
+          <li>额度页顶部一行：左边「ClinePass」，右边「刷新」+「上次更新 16:20」。进入 Tab 拉一次，之后只靠这个按钮（不做轮询）。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>没配 key 时不画两块 <span class="tag2">AC-2</span></h2>
+        <p>按研发的倾向定稿：<code>not_configured</code> 时<b>不渲染余额 / 配额两张卡</b>，屏上只有一条状态条 + 「设置 API key」按钮。</p>
+        <div class="note is-info">理由：两块都必然空，各降级一次就是两行「取不到」，比空态更糊。空态要有明确下一步，不是把「没东西」排两遍。</div>
+      </div>
+
+      <div class="card">
+        <h2>原因码与人话 <span class="tag2">AC-4 / AC-6</span></h2>
+        <table>
+          <tr><th>码</th><th>层级</th><th>主文案</th><th>下一步</th></tr>
+          <tr><td><code>not_configured</code></td><td>全局</td><td>还没设置 Cline API key</td><td>设置 API key</td></tr>
+          <tr><td><code>key_invalid</code></td><td>全局</td><td>这个 key 不被接受</td><td>替换 key（附：到 Cline 账户页重新复制）</td></tr>
+          <tr><td><code>network_unreachable</code></td><td>全局</td><td>连不上 Cline，检查网络后再试</td><td>重试</td></tr>
+          <tr><td><code>upstream_no_data</code></td><td>块级</td><td>Cline 返回了空数据，暂时取不到</td><td>重试</td></tr>
+          <tr><td><code>quota_unavailable</code></td><td>块级</td><td>上游没有提供读取订阅配额的接口</td><td>可在 Cline 官网账户页查看用量</td></tr>
+        </table>
+        <div class="note is-warn">
+          <b>层级不许串</b>：前三条是全局条，后两条只出现在它自己那张卡里。前端只按码取文案，不许自己拼英文、不许把上游原文或 HTTP 状态码写进界面。
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>两块独立降级 <span class="tag2">AC-7</span></h2>
+        <ul>
+          <li><b>块一 Cline 账户余额</b>：有值就显示数值，<b>不加货币符号</b>（上游只给 number，单位不知道就不写）；小字固定一句「Cline 账户余额，不是 ClinePass 订阅配额」。</li>
+          <li><b>块二 ClinePass 订阅配额</b>：常态就是 <code>quota_unavailable</code>，<b>不做百分比假进度条</b>。</li>
+          <li>余额这块挂了不影响配额块那行文案（图 ④：余额空数据，配额照常说明原因）。</li>
+          <li><b>没有 <code>resetAt</code> 就不渲染「重置时间」这一行</b>，不留空行占位（本稿所有屏都没有这一行，因为接口当前不给）。</li>
+          <li><code>key_invalid</code> / <code>network_unreachable</code> 时两块保留骨架、内容位写「—」+ 一句「拿到有效数据后显示」；<b>不重复全局条的原因文案</b>（图 ⑤⑥）。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>设置 key <span class="tag2">AC-3 / AC-5</span></h2>
+        <ul>
+          <li>复用抽屉版面与密文/明文切换，<b>提交改打桌面端新端点</b>（研发方案：<code>PUT /clinepass/key</code>）。</li>
+          <li>保存成功只回 toast「已设置」；<b>永不回显</b>，重新打开弹层输入框是空的（要改就是重填，不是编辑旧值）。</li>
+          <li>清除走二次确认，文案「清除后将看不到额度」；清完回到图 ②，落盘文件由后端删除。</li>
+          <li>保存失败留在弹层里、给一行错误 + 保留输入内容（不吞掉用户刚粘的那串）。</li>
+        </ul>
+        <div class="readout" id="readout">—</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══ 文案表：前端只按码取，代码里不许出现第二份英文 ══ */
+const COPY = {
+  not_configured: { title: "还没设置 Cline API key", desc: "填一次就能看到 Cline 账户余额。", action: "设置 API key", tone: "idle" },
+  key_invalid: { title: "这个 key 不被接受", desc: "到 Cline 账户页重新复制一个，再替换掉现在这个。", action: "替换 key", tone: "bad" },
+  network_unreachable: { title: "连不上 Cline，检查网络后再试", desc: "手机或电脑的网络断了，或者 Cline 那边暂时不通。", action: "重试", tone: "warn" },
+  upstream_no_data: { title: "Cline 返回了空数据，暂时取不到", desc: "", action: "重试" },
+  quota_unavailable: { title: "上游没有提供读取订阅配额的接口", desc: "可在 Cline 官网账户页查看用量", action: "" }
+};
+
+/* ══ 图标 ══ */
+const SVG = {
+  more: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>',
+  eye: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="2.6"/></svg>',
+  refresh: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.6 6"/><path d="M20 4v7h-7"/></svg>',
+  key: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8"/><path d="M17 4l3 3"/></svg>'
+};
+
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* ══ 顶栏 + Tab ══ */
+function header(activeTab, tabCounts, withQuota = true) {
+  const tabs = [
+    ["chats", "会话", ""],
+    ["done", "已完成", tabCounts.done ? `<span class="tab-n">${tabCounts.done}</span>` : null],
+    ["routines", "自动化", tabCounts.routines ? `<span class="tab-n">${tabCounts.routines}</span>` : null],
+    ["quota", "额度", ""]
+  ];
+  const shown = tabs
+    .filter(([, , badge]) => badge !== null)
+    .filter(([id]) => withQuota || id !== "quota");
+  return `
+    <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
+    <div class="hdr">
+      <span class="hdr-title">Bot</span>
+      <span class="hdr-spacer"></span>
+      <div class="conn-pill is-ok"><span class="dot"></span><span>未连接</span></div>
+      <button class="icon-btn is-round" type="button" aria-label="更多操作">${SVG.more}</button>
+    </div>
+    <div class="tabs" role="tablist" aria-label="主视图">
+      ${shown.map(([id, label, badge]) => `
+        <button type="button" role="tab" class="tab${activeTab === id ? " is-active" : ""}"
+                aria-selected="${activeTab === id}" data-tab="${id}">${label}${badge || ""}</button>`).join("")}
+    </div>`;
+}
+
+/* ══ 全局状态条 ══ */
+function statusBar(code) {
+  const c = COPY[code];
+  const tone = c.tone === "bad" ? "is-bad" : c.tone === "warn" ? "is-warn" : "is-idle";
+  return `
+    <div class="status-bar ${tone}" role="status" data-status="${code}">
+      <div class="status-title">${esc(c.title)}</div>
+      ${c.desc ? `<p class="status-desc">${esc(c.desc)}</p>` : ""}
+      <div class="status-actions">
+        <button class="btn ${code === "not_configured" ? "is-primary" : ""}" type="button" data-action="${code === "not_configured" ? "open-sheet" : "retry"}">${esc(c.action)}</button>
+      </div>
+    </div>`;
+}
+
+/* ══ 两块卡 ══ */
+function balanceCard(state) {
+  // state: { kind: "value", value, updatedAt } | { kind: "reason", code } | { kind: "placeholder" }
+  if (state.kind === "value") {
+    return `
+      <div class="card" data-card="balance">
+        <div class="card-hd"><h3>Cline 账户余额</h3><span class="tag">刚刚更新</span></div>
+        <div class="card-main" data-balance>${esc(state.value)}</div>
+        <p class="card-note">Cline 账户余额，不是 ClinePass 订阅配额</p>
+        ${state.resetAt ? `<div class="card-row"><span class="k">重置时间</span><span class="v">${esc(state.resetAt)}</span></div>` : ""}
+      </div>`;
+  }
+  if (state.kind === "reason") {
+    const c = COPY[state.code];
+    return `
+      <div class="card is-flat" data-card="balance" data-reason="${state.code}">
+        <div class="card-hd"><h3>Cline 账户余额</h3></div>
+        <p class="reason">${esc(c.title)}</p>
+        <button class="inline-action" type="button" data-action="retry">${esc(c.action)}</button>
+      </div>`;
+  }
+  return `
+    <div class="card is-flat" data-card="balance" data-placeholder="1">
+      <div class="card-hd"><h3>Cline 账户余额</h3></div>
+      <p class="placeholder">—</p>
+      <p class="card-note">拿到有效数据后显示</p>
+    </div>`;
+}
+
+function quotaCard(state) {
+  if (state.kind === "reason") {
+    const c = COPY[state.code];
+    return `
+      <div class="card is-flat" data-card="quota" data-reason="${state.code}">
+        <div class="card-hd"><h3>ClinePass 订阅配额</h3></div>
+        <p class="reason">${esc(c.title)}</p>
+        ${c.desc ? `<p class="card-note">${esc(c.desc)}</p>` : ""}
+      </div>`;
+  }
+  return `
+    <div class="card is-flat" data-card="quota" data-placeholder="1">
+      <div class="card-hd"><h3>ClinePass 订阅配额</h3></div>
+      <p class="placeholder">—</p>
+      <p class="card-note">拿到有效数据后显示</p>
+    </div>`;
+}
+
+/* ══ 额度页 ══ */
+function quotaScreen(spec) {
+  const cards = spec.hideCards ? "" : balanceCard(spec.balance) + quotaCard(spec.quota);
+  return `
+    <div class="body">
+      <div class="sect">
+        <h2>ClinePass</h2>
+        <span class="sect-spacer"></span>
+        <span class="sect-time">${esc(spec.updatedAt || "—")}</span>
+        <button class="mini-btn" type="button" data-action="refresh">${SVG.refresh}<span>刷新</span></button>
+      </div>
+      ${spec.status ? statusBar(spec.status) : ""}
+      ${cards}
+      ${spec.hideCards ? `<p class="foot-hint">额度用的是 Cline 账户的 API key，不走本机 CPA。</p>` : ""}
+    </div>`;
+}
+
+/* ══ 抽屉：设置 key ══ */
+function keySheet(opts) {
+  const filled = opts.value.length > 0;
+  return `
+    <div class="sheet-scrim">
+      <div class="sheet" role="dialog" aria-label="设置 Cline API key">
+        <div class="sheet-handle"></div>
+        <div class="sheet-hd">
+          <div>
+            <h3>设置 Cline API key</h3>
+            <p class="sheet-desc">key 只存在这台电脑上，不会同步、不会进聊天记录。</p>
+          </div>
+        </div>
+        <div class="secret-field">
+          <span class="secret-label">API key</span>
+          <div class="secret-wrap${filled ? " is-focus" : ""}">
+            <input class="secret-input" id="key-input" type="${opts.plain ? "text" : "password"}"
+                   placeholder="粘贴 Cline 的 API key" value="${esc(opts.value)}" aria-label="Cline API key">
+            <button class="eye-btn" type="button" data-action="toggle-plain" aria-label="显示或隐藏">${SVG.eye}</button>
+          </div>
+          <p class="sheet-hint">在 Cline 官网账户页生成；这里填完就不会再显示。</p>
+        </div>
+        ${opts.error ? `<div class="sheet-error" data-sheet-error>${esc(opts.error)}</div>` : ""}
+        <div class="sheet-actions">
+          <button class="btn" type="button" data-action="close-sheet">取消</button>
+          <button class="btn is-primary" type="button" data-action="save-key" ${filled ? "" : "disabled"}>保存</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+/* ══ 抽屉：清除二次确认 ══ */
+function clearSheet() {
+  return `
+    <div class="sheet-scrim">
+      <div class="sheet" role="dialog" aria-label="清除 API key">
+        <div class="sheet-handle"></div>
+        <div class="sheet-hd"><div><h3>清除 API key</h3><p class="sheet-desc">清除后将看不到额度。</p></div></div>
+        <div class="sheet-actions">
+          <button class="btn" type="button" data-action="close-sheet">取消</button>
+          <button class="btn is-primary is-danger" type="button" data-action="confirm-clear">清除</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+/* ══ 屏定义 ══ */
+const SCREENS = {
+  before: () => header("routines", { done: 2, routines: 3 }, false) + `
+    <div class="body">
+      <div class="card"><div class="card-hd"><h3>改前：只有三档</h3></div>
+        <p class="card-note">会话 / 已完成 / 自动化 —— 这是 issue #1 交付后的现状，本稿只加第四档「额度」。</p></div>
+    </div>`,
+  nokey: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: "not_configured", hideCards: true, updatedAt: "—"
+  }),
+  ok: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: null, updatedAt: "16:20",
+    balance: { kind: "value", value: "12.34" },
+    quota: { kind: "reason", code: "quota_unavailable" }
+  }) + `<div class="toast" style="display:none"></div>`,
+  nodata: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: null, updatedAt: "16:22",
+    balance: { kind: "reason", code: "upstream_no_data" },
+    quota: { kind: "reason", code: "quota_unavailable" }
+  }),
+  invalid: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: "key_invalid", updatedAt: "16:24",
+    balance: { kind: "placeholder" },
+    quota: { kind: "placeholder" }
+  }),
+  offline: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: "network_unreachable", updatedAt: "16:26",
+    balance: { kind: "placeholder" },
+    quota: { kind: "placeholder" }
+  }),
+  sheet: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: "not_configured", hideCards: true, updatedAt: "—"
+  }) + keySheet({ value: "", plain: false }),
+  "sheet-filled": () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: "not_configured", hideCards: true, updatedAt: "—"
+  }) + keySheet({ value: "sk-cline-demo-not-a-real-key", plain: true }),
+  "sheet-error": () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: "not_configured", hideCards: true, updatedAt: "—"
+  }) + keySheet({ value: "sk-cline-demo-not-a-real-key", plain: false, error: "保存失败，请检查网络后再试" }),
+  clearing: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: null, updatedAt: "16:28",
+    balance: { kind: "value", value: "12.34" },
+    quota: { kind: "reason", code: "quota_unavailable" }
+  }) + clearSheet(),
+  saved: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: "key_invalid", updatedAt: "16:30",
+    balance: { kind: "placeholder" }, quota: { kind: "placeholder" }
+  }) + `<div class="toast" data-toast>已设置</div>`,
+  narrow: () => header("quota", { done: 2, routines: 3 }) + quotaScreen({
+    status: null, updatedAt: "16:20",
+    balance: { kind: "value", value: "12.34" },
+    quota: { kind: "reason", code: "quota_unavailable" }
+  })
+};
+
+const state = { screen: "before" };
+
+function render() {
+  const inner = document.getElementById("phone-inner");
+  const phone = document.getElementById("phone");
+  phone.classList.toggle("is-narrow", state.screen === "narrow");
+  inner.innerHTML = SCREENS[state.screen]();
+  document.querySelectorAll(".switcher button").forEach((b) => {
+    b.setAttribute("aria-selected", String(b.dataset.screen === state.screen));
+  });
+  const readout = document.getElementById("readout");
+  if (readout) {
+    readout.textContent = `screen = ${state.screen}`;
+  }
+}
+
+document.querySelectorAll(".switcher button").forEach((b) => {
+  b.addEventListener("click", () => { state.screen = b.dataset.screen; render(); });
+});
+
+document.getElementById("phone").addEventListener("click", (e) => {
+  const el = e.target.closest("[data-action]");
+  if (!el) return;
+  const action = el.dataset.action;
+  if (action === "open-sheet") { state.screen = "sheet"; render(); return; }
+  if (action === "close-sheet") { state.screen = "ok"; render(); return; }
+  if (action === "toggle-plain") { state.screen = state.screen === "sheet" ? "sheet-filled" : "sheet"; render(); return; }
+  if (action === "save-key") { state.screen = "saved"; render(); return; }
+  if (action === "retry" || action === "refresh") { state.screen = "ok"; render(); return; }
+});
+
+/* 给探针用的钩子：纯逻辑 + 换屏 */
+window.__mock = {
+  COPY,
+  screenOf: () => state.screen,
+  setScreen: (s) => { state.screen = s; render(); },
+  /** 前端只按码取文案：未知码必须落到 null，而不是把码原样印出来 */
+  copyFor: (code) => (Object.prototype.hasOwnProperty.call(COPY, code) ? COPY[code] : null),
+  /** 五个码的层级：全局 vs 块级 —— 实现里别串层 */
+  levelOf: (code) => (["not_configured", "key_invalid", "network_unreachable"].includes(code) ? "global" : "block"),
+  /** 未配 key 时是否画卡（false = 只留状态条） */
+  cardsRendered: (code) => code !== "not_configured"
+};
+
+render();
+</script>
+</body>
+</html>
