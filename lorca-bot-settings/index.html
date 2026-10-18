@@ -301,8 +301,8 @@
           <li><b>未接入的 provider 整行标灰、右侧写「未接入」</b>，点不动 —— 不靠点了才报错。当前 5 个内置未接入（只有 Grok 接入）。</li>
         </ul>
         <div class="note is-info">
-          顺序照上游 <code>providerKinds()</code>：6 个内置在前、分隔线、自定义在下。副作用是<b>打开服务商列表先看到 5 行灰</b>。
-          要不要改成「已接入优先」？我按上游画，这条留给你定 —— 改的话只是排序，不影响协议。
+          <b>排序（已定稿 2026-10-18，与研发对齐）</b>：内置段内<b>已接入的排前面</b>，未接入的保持内置原序跟在后面；分隔线之后是自定义段（现在全已接入，顺序不动）。
+          理由：<code>is_connected</code> 只有内置会为 false，重排影响面就只有那几行，而「打开先看到 5 行灰」是首屏唯一的信息噪音。不动协议、不动 AC-8。
         </div>
       </div>
 
@@ -370,12 +370,15 @@ function catalog() {
   return [...window.CATALOG_MODELS.map((m) => ({ ...m })), ...custom];
 }
 
-/* 服务商列表：内置在前（固定 6 个），分隔线，自定义在下；决策型自定义不进。 */
+/* 服务商列表：内置在前（已接入的排前面，其余保持内置原序），分隔线，自定义在下；决策型自定义不进。
+   只有内置的 is_connected 会为 false，所以重排只影响未接入的那几行。 */
 function providerChoices() {
-  const builtin = BUILTIN_KINDS.map((kind) => ({
-    kind, label: providerLabel(kind), group: "builtin",
-    connected: !!providerStatus(kind)?.is_connected
-  }));
+  const builtin = BUILTIN_KINDS
+    .map((kind) => ({
+      kind, label: providerLabel(kind), group: "builtin",
+      connected: !!providerStatus(kind)?.is_connected
+    }))
+    .sort((a, b) => Number(b.connected) - Number(a.connected));
   const custom = window.CATALOG_PROVIDERS
     .filter((p) => isCustomProvider(p.kind) && !isDecisionAPI(p.api))
     .map((p) => ({ kind: p.kind, label: providerLabel(p.kind), group: "custom", connected: !!p.is_connected }));

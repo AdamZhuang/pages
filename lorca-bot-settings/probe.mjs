@@ -86,6 +86,7 @@ const HARNESS = String.raw`
   const choices = M.providerChoices();
   out.provider_order = choices.map((c) => c.label + (c.connected ? '' : '(未接入)'));
   out.provider_groups = choices.map((c) => c.group);
+  out.provider_first_is_connected = choices[0].connected;
 
   // 联动（AC-5）
   const start = { provider: 'custom:127-0-0-1', model: 'clinepass/cline-pass/deepseek-v4.1-flash', thinking: 'high' };
@@ -272,7 +273,9 @@ async function run() {
   check('入口：位置在「移到分组」之后', results.menu_after_index === 2, results.menu_after_index);
   check('AC-8 未接入 provider 标灰且不可点', results.provider_rows.some((r) => r.disabled && r.reason === '未接入'), results.provider_rows.filter((r) => r.disabled).length);
   check('AC-8 已接入 provider 可点', results.provider_rows.filter((r) => !r.disabled).every((r) => r.reason === null), results.provider_rows.filter((r) => !r.disabled).map((r) => r.label));
-  check('AC-8 服务商顺序：内置在前、自定义在后', JSON.stringify(results.provider_groups) === JSON.stringify(['builtin', 'builtin', 'builtin', 'builtin', 'builtin', 'builtin', 'custom', 'custom']), results.provider_order);
+  check('AC-8 服务商顺序：已接入的内置在前、其余内置按原序、自定义最后', JSON.stringify(results.provider_order) === JSON.stringify([
+    'Grok', 'DeepSeek(未接入)', 'Anthropic(未接入)', 'OpenCode Zen(未接入)', 'OpenCode Go(未接入)', 'ChatGPT(未接入)', 'CLI Proxy', 'magpie'
+  ]), results.provider_order);
   check('AC-8 内置与自定义之间一条分隔线', results.provider_divider_count === 1, results.provider_divider_count);
   check('AC-7 decides 模型不进候选（目录里 2 条）', results.catalog_decides.length === 2 && results.models_magpie_has_decides === false, results.catalog_decides);
   check('AC-7 magpie 10 条全在，jev 不在模型列表', results.model_rows_count === 11 && results.model_has_jev === false, { rows: results.model_rows_count, has_jev: results.model_has_jev });

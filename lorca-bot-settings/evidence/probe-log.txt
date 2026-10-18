@@ -9,7 +9,7 @@ PASS  入口：改后菜单有「队友设置」
 PASS  入口：位置在「移到分组」之后
 PASS  AC-8 未接入 provider 标灰且不可点
 PASS  AC-8 已接入 provider 可点
-PASS  AC-8 服务商顺序：内置在前、自定义在后
+PASS  AC-8 服务商顺序：已接入的内置在前、其余内置按原序、自定义最后
 PASS  AC-8 内置与自定义之间一条分隔线
 PASS  AC-7 decides 模型不进候选（目录里 2 条）
 PASS  AC-7 magpie 10 条全在，jev 不在模型列表
@@ -66,12 +66,12 @@ PASS  点模型后回到三段且值更新
   "provider_label_opencode": "OpenCode Zen",
   "provider_label_gone_custom": "gone",
   "provider_order": [
+    "Grok",
     "DeepSeek(未接入)",
     "Anthropic(未接入)",
     "OpenCode Zen(未接入)",
     "OpenCode Go(未接入)",
     "ChatGPT(未接入)",
-    "Grok",
     "CLI Proxy",
     "magpie"
   ],
@@ -85,6 +85,7 @@ PASS  点模型后回到三段且值更新
     "custom",
     "custom"
   ],
+  "provider_first_is_connected": true,
   "switch_provider_clears": {
     "provider": "grok",
     "model": null,
@@ -140,6 +141,12 @@ PASS  点模型后回到三段且值更新
   "settings_hint": "改动从下一轮生效，正在跑的回合不受影响。",
   "provider_rows": [
     {
+      "label": "Grok",
+      "selected": false,
+      "disabled": false,
+      "reason": null
+    },
+    {
       "label": "DeepSeek",
       "selected": false,
       "disabled": true,
@@ -168,12 +175,6 @@ PASS  点模型后回到三段且值更新
       "selected": false,
       "disabled": true,
       "reason": "未接入"
-    },
-    {
-      "label": "Grok",
-      "selected": false,
-      "disabled": false,
-      "reason": null
     },
     {
       "label": "CLI Proxy",
