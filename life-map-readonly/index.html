@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>人生地图 · 只读化与自我认知结构 · UI 稿 v1（示例数据）</title>
+<style>
+  /* 颜色 / 圆角 / 阴影取自 apps/mobile/src/styles/tokens.css；人生地图自身的骨架
+     （.life-map-intro / -tabs / -now-card / -timeline / -themes）取自 life-map.css。
+     领域色沿用现有口径：工作 = accent、关系 #be607b、生活 #4f8b74、创造 #7d67c8。 */
+  :root {
+    --bg: #f5f6f8; --bg-soft: #f2f3f5; --surface: #ffffff;
+    --border: #eaecf0; --border-strong: #d9dce1;
+    --text: #1f2329; --text-soft: #373c43; --muted: #646a73; --muted-2: #8f959e;
+    --accent: #3370ff; --accent-strong: #245bdb; --accent-soft: #eef3ff; --accent-border: #c9d8ff;
+    --danger: #b04458; --danger-soft: #fae9ed;
+    --success: #2f7a4a; --success-soft: #e8f4ec;
+    --warning: #95611d; --warning-soft: #fbf1df; --warning-border: #e6d2ae;
+    --work: #3370ff; --relationship: #be607b; --life: #4f8b74; --creation: #7d67c8;
+    --shadow-sm: 0 2px 8px rgba(31, 35, 41, 0.05);
+    --shadow-lg: 0 24px 64px rgba(31, 35, 41, 0.2);
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px 72px; background: var(--bg); color: var(--text);
+    font: 15px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  h1 { margin: 0 0 4px; font-size: 22px; letter-spacing: -0.01em; }
+  .page-sub { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
+  .page-sub a { color: var(--accent-strong); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px;
+    border: 1px solid var(--border); border-radius: 999px; background: var(--surface);
+    font-size: 12px; line-height: 1.5; color: var(--muted);
+  }
+  .badge.new { border-color: var(--accent-border); background: var(--accent-soft); color: var(--accent-strong); }
+  .badge.gone { border-color: #e7c4cd; background: var(--danger-soft); color: var(--danger); }
+
+  /* 屏切换 */
+  .switcher { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .switcher button {
+    padding: 7px 12px; border: 1px solid var(--border); border-radius: 999px;
+    background: var(--surface); color: var(--muted); font: inherit; font-size: 12.5px;
+    font-weight: 600; cursor: pointer; transition: all .15s var(--ease);
+  }
+  .switcher button:hover { border-color: var(--border-strong); color: var(--text); }
+  .switcher button[aria-selected="true"] { border-color: var(--accent-border); background: var(--accent-soft); color: var(--accent-strong); }
+
+  .stage { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+
+  /* 手机壳 */
+  .phone {
+    flex: 0 0 auto; width: 390px; height: 780px;
+    border: 1px solid var(--border-strong); border-radius: 42px;
+    background: var(--surface); box-shadow: var(--shadow-sm);
+    overflow: hidden; position: relative;
+  }
+  .phone.is-narrow { width: 360px; height: 720px; }
+  .phone-inner { position: absolute; inset: 0; display: flex; flex-direction: column; }
+  .statusbar { flex: 0 0 auto; display: flex; justify-content: space-between; padding: 12px 22px 4px; font-size: 12px; font-weight: 600; }
+  .statusbar span:last-child { color: var(--muted); font-weight: 500; }
+  .hdr {
+    flex: 0 0 auto; display: flex; align-items: center; gap: 8px;
+    padding: 8px 14px 10px; border-bottom: 1px solid var(--border);
+  }
+  .hdr h2 { margin: 0; font-size: 17px; font-weight: 700; }
+  .hdr .back { width: 30px; height: 30px; display: grid; place-items: center; color: var(--text); }
+  .hdr .spacer { flex: 1; }
+  .hdr .icon { width: 32px; height: 32px; display: grid; place-items: center; color: var(--muted); }
+  .scroll { flex: 1; overflow-y: auto; padding: 12px 14px calc(20px + env(safe-area-inset-bottom)); }
+  .scroll::-webkit-scrollbar { width: 0; }
+
+  /* ── 人生地图骨架（照 life-map.css） ── */
+  .lm-screen { display: grid; gap: 12px; }
+  .lm-intro {
+    display: grid; grid-template-columns: 46px minmax(0,1fr) 38px; align-items: center; gap: 12px;
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
+    border-radius: 16px; padding: 14px;
+    background: linear-gradient(140deg, var(--surface), color-mix(in srgb, var(--accent-soft) 72%, var(--surface)));
+  }
+  .lm-intro-icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: var(--accent); color: #fff; font-size: 20px; }
+  .lm-intro > div:nth-child(2) { display: grid; gap: 3px; min-width: 0; }
+  .lm-intro strong { font-size: 16px; }
+  .lm-intro span { overflow: hidden; color: var(--muted); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+  .lm-intro > button { display: grid; place-items: center; width: 38px; height: 38px; border: 0; border-radius: 12px; background: color-mix(in srgb, var(--accent) 9%, var(--surface)); color: var(--accent); cursor: pointer; }
+  .lm-trust { margin: -4px 3px 0; color: var(--muted-2); font-size: 11.5px; line-height: 1.5; }
+  .lm-tabs { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 4px; padding: 4px; border-radius: 13px; background: var(--bg-soft); }
+  .lm-tabs button { min-height: 40px; border: 0; border-radius: 10px; background: transparent; color: var(--muted); font: inherit; font-size: 14px; font-weight: 750; cursor: pointer; }
+  .lm-tabs button.active { background: var(--surface); color: var(--text); box-shadow: var(--shadow-sm); }
+  .lm-filters { display: flex; gap: 8px; overflow-x: auto; padding: 0 1px 2px; scrollbar-width: none; }
+  .lm-filters::-webkit-scrollbar { display: none; }
+  .lm-filters button {
+    flex: 0 0 auto; min-height: 34px; padding: 0 13px; border: 1px solid var(--border); border-radius: 999px;
+    background: var(--surface); color: var(--muted); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
+  }
+  .lm-filters button.active { border-color: var(--accent-border); background: var(--accent-soft); color: var(--accent-strong); }
+  .lm-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 4px 3px 0; }
+  .lm-heading strong { font-size: 14px; }
+  .lm-heading span { color: var(--muted-2); font-size: 11.5px; }
+
+  /* ── 新：覆盖度条 ── */
+  .cov { display: grid; gap: 7px; padding: 13px 14px; border: 1px solid var(--border); border-radius: 15px; background: var(--surface); }
+  .cov-title { display: flex; align-items: baseline; justify-content: space-between; }
+  .cov-title strong { font-size: 13.5px; }
+  .cov-title span { color: var(--muted-2); font-size: 11.5px; }
+  .cov-row { display: grid; grid-template-columns: 46px minmax(0,1fr) auto; align-items: center; gap: 9px; }
+  .cov-name { font-size: 12.5px; font-weight: 700; color: var(--text-soft); }
+  .cov-bar { display: flex; gap: 3px; align-items: center; }
+  .cov-pip { width: 13px; height: 7px; border-radius: 3px; background: var(--border); }
+  .cov-pip.on { background: currentColor; }
+  .cov-row.work { color: var(--work); } .cov-row.relationship { color: var(--relationship); }
+  .cov-row.life { color: var(--life); } .cov-row.creation { color: var(--creation); }
+  .cov-gap { font-size: 11px; color: var(--muted-2); white-space: nowrap; }
+  .cov-gap.warn { color: var(--warning); }
+  .cov-gap.empty { color: var(--danger); font-weight: 700; }
+  .cov-foot { color: var(--muted-2); font-size: 11px; line-height: 1.5; }
+
+  /* ── 新：变化层 ── */
+  .chg { display: grid; gap: 10px; }
+  .chg-card { border: 1px solid var(--border); border-radius: 15px; background: var(--surface); overflow: hidden; }
+  .chg-top { display: flex; align-items: center; gap: 8px; padding: 12px 14px 9px; }
+  .chg-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .chg-card.work .chg-dot { background: var(--work); } .chg-card.relationship .chg-dot { background: var(--relationship); }
+  .chg-card.life .chg-dot { background: var(--life); } .chg-card.creation .chg-dot { background: var(--creation); }
+  .chg-top strong { font-size: 14px; }
+  .chg-top .tag { margin-left: auto; padding: 2px 7px; border-radius: 6px; background: var(--bg-soft); color: var(--muted); font-size: 10.5px; font-weight: 700; }
+  .chg-body { display: grid; gap: 0; padding: 0 14px 12px; }
+  .chg-step { display: grid; grid-template-columns: 54px minmax(0,1fr); gap: 10px; padding: 8px 0; border-top: 1px dashed var(--border); }
+  .chg-step:first-child { border-top: 0; }
+  .chg-when { color: var(--muted-2); font-size: 11.5px; font-weight: 700; font-variant-numeric: tabular-nums; padding-top: 2px; }
+  .chg-what { font-size: 13px; line-height: 1.55; color: var(--text-soft); }
+  .chg-what b { color: var(--text); font-weight: 700; }
+  .chg-mid { margin-top: 6px; padding: 8px 10px; border-radius: 10px; background: var(--bg-soft); font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .chg-mid em { font-style: normal; color: var(--text-soft); font-weight: 700; }
+  .chg-evidence { margin-top: 7px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .chg-chip {
+    display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border: 1px solid var(--border);
+    border-radius: 999px; background: var(--surface); color: var(--muted); font: inherit; font-size: 11px; cursor: pointer;
+  }
+  .chg-chip:hover { border-color: var(--accent-border); color: var(--accent-strong); }
+
+  /* ── 现在卡（照 .life-map-now-card） ── */
+  .now-grid { display: grid; gap: 10px; }
+  .now-card {
+    position: relative; display: grid; grid-template-columns: 28px minmax(0,1fr) 18px; gap: 5px 9px;
+    border: 1px solid var(--border); border-radius: 15px; padding: 15px; background: var(--surface);
+    color: var(--muted); text-align: left; font: inherit; cursor: pointer; width: 100%;
+  }
+  .now-card > .ico { grid-row: 1 / span 2; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; background: var(--surface-muted); }
+  .now-card.work > .ico { color: var(--work); } .now-card.relationship > .ico { color: var(--relationship); }
+  .now-card.life > .ico { color: var(--life); } .now-card.creation > .ico { color: var(--creation); }
+  .now-card > span { color: var(--muted-2); font-size: 11px; font-weight: 750; }
+  .now-card > strong { font-size: 15px; color: var(--text); }
+  .now-card > p { grid-column: 2 / 4; margin: 3px 0 0; color: var(--text-soft); font-size: 13px; line-height: 1.55; }
+  .now-card > .chev { grid-column: 3; grid-row: 1 / span 2; align-self: center; color: var(--muted-2); }
+  .now-card.is-empty { border-style: dashed; }
+  .now-card.is-empty > strong { color: var(--muted); }
+
+  /* ── 轨迹（照 .life-map-timeline） ── */
+  .tl { position: relative; display: grid; gap: 0; }
+  .tl::before { content: ""; position: absolute; left: 9px; top: 16px; bottom: 16px; width: 1px; background: var(--border); }
+  .tl-item { position: relative; display: grid; grid-template-columns: 19px minmax(0,1fr); gap: 10px; padding: 7px 0; }
+  .tl-dot { width: 9px; height: 9px; margin: 6px 0 0 5px; border-radius: 50%; z-index: 1; }
+  .tl-item.work .tl-dot { background: var(--work); } .tl-item.relationship .tl-dot { background: var(--relationship); }
+  .tl-item.life .tl-dot { background: var(--life); } .tl-item.creation .tl-dot { background: var(--creation); }
+  .tl-body { min-width: 0; }
+  .tl-when { color: var(--muted-2); font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .tl-title { font-size: 13.5px; font-weight: 700; margin: 1px 0 2px; }
+  .tl-sum { color: var(--text-soft); font-size: 12.5px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .tl-gap { display: flex; align-items: center; gap: 8px; margin: 4px 0 4px 29px; color: var(--muted-2); font-size: 11px; }
+  .tl-gap::before, .tl-gap::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+
+  /* ── 主题（照 .life-map-theme-list） ── */
+  .th-list { display: grid; gap: 10px; }
+  .th-card { border: 1px solid var(--border); border-radius: 15px; background: var(--surface); padding: 13px 14px; }
+  .th-top { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .th-top .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .th-card.work .dot { background: var(--work); } .th-card.relationship .dot { background: var(--relationship); }
+  .th-card.life .dot { background: var(--life); } .th-card.creation .dot { background: var(--creation); }
+  .th-top strong { font-size: 14px; }
+  .th-top .n { margin-left: auto; color: var(--muted-2); font-size: 11px; }
+  .th-sum { margin: 0; color: var(--text-soft); font-size: 13px; line-height: 1.55; }
+  .th-ev { margin-top: 9px; border-top: 1px solid var(--border); padding-top: 8px; display: grid; gap: 6px; }
+  .th-ev-row { display: grid; grid-template-columns: 16px minmax(0,1fr); gap: 7px; align-items: start; }
+  .th-ev-row .bullet { color: var(--muted-2); font-size: 11px; line-height: 1.6; }
+  .th-ev-row .txt { color: var(--text-soft); font-size: 12.5px; line-height: 1.5; }
+  .th-ev-more { color: var(--accent-strong); font-size: 11.5px; font-weight: 700; background: none; border: 0; padding: 2px 0; text-align: left; cursor: pointer; font-family: inherit; }
+
+  /* ── 详情 / 原文 ── */
+  /* z-index 必须有：.tl-item / .th-card 是 position:relative，会在同一层叠上下文里
+     盖过没写 z-index 的 absolute 浮层 —— 症状是时间轴的小圆点穿透到浮层文字上。 */
+  .detail-backdrop { position: absolute; inset: 0; z-index: 20; background: rgba(31,35,41,.28); display: flex; align-items: flex-end; }
+  .detail { width: 100%; max-height: 82%; display: flex; flex-direction: column; background: var(--surface); border-radius: 20px 20px 0 0; box-shadow: var(--shadow-lg); }
+  .detail-handle { width: 38px; height: 4px; border-radius: 2px; background: var(--border-strong); margin: 8px auto 2px; }
+  .detail-hdr { display: flex; align-items: center; gap: 8px; padding: 8px 16px 10px; }
+  .detail-hdr .badge-d { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; background: var(--bg-soft); color: var(--muted); font-size: 11.5px; font-weight: 700; }
+  .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted-2); }
+  .badge-dot.relationship { background: var(--relationship); }
+  .src-mark { width: 3px; height: 12px; border-radius: 2px; background: var(--border-strong); }
+  .detail-hdr .x { margin-left: auto; width: 30px; height: 30px; display: grid; place-items: center; color: var(--muted); }
+  .detail-body { overflow-y: auto; padding: 0 16px 20px; }
+  .detail-body h3 { margin: 4px 0 6px; font-size: 18px; line-height: 1.35; }
+  .detail-time { color: var(--muted-2); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .detail-p { margin: 10px 0 0; color: var(--text-soft); font-size: 14px; line-height: 1.65; }
+  .src-box { margin-top: 14px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .src-head { display: flex; align-items: center; gap: 7px; padding: 9px 11px; background: var(--bg-soft); font-size: 11.5px; color: var(--muted); }
+  .src-head strong { color: var(--text-soft); font-size: 12px; }
+  .src-head .open { margin-left: auto; color: var(--accent-strong); font-weight: 700; }
+  .src-raw { padding: 11px; font-size: 12.5px; line-height: 1.7; color: var(--text-soft); white-space: pre-wrap; background: var(--surface); }
+  .src-raw .hl { background: #fff8e1; box-shadow: 0 0 0 2px #fff8e1; }
+  .src-note { padding: 0 11px 10px; color: var(--muted-2); font-size: 11px; }
+
+  /* 状态条 */
+  .lm-fresh { display: flex; align-items: center; gap: 10px; padding: 11px 13px; border: 1px solid var(--warning-border); border-radius: 14px; background: var(--warning-soft); color: #7a5416; font-size: 12.5px; }
+  .lm-fresh strong { font-size: 13px; }
+  .lm-fresh button { margin-left: auto; border: 1px solid #efd6a4; border-radius: 9px; background: #fffdf8; color: #865b17; font: inherit; font-size: 12px; font-weight: 700; padding: 5px 10px; cursor: pointer; }
+  .lm-empty { display: grid; place-items: center; gap: 6px; padding: 26px 18px; border: 1px dashed var(--border-strong); border-radius: 15px; color: var(--muted); text-align: center; }
+  .lm-empty strong { font-size: 14px; color: var(--text-soft); }
+  /* 空态标记：一个空心圈 + 领域色，比放一个字形干净（不放 emoji、也不放方块）。 */
+  .empty-mark { width: 30px; height: 30px; border-radius: 50%; border: 2px dashed var(--border-strong); }
+  .empty-mark.creation { border-color: color-mix(in srgb, var(--creation) 55%, var(--border-strong)); }
+  .lm-empty span { font-size: 12px; }
+
+  /* 改前：写入入口 */
+  .old-collection { display: grid; gap: 8px; }
+  .old-capture { display: flex; align-items: center; gap: 11px; padding: 13px; border: 1px solid var(--border); border-radius: 15px; background: var(--surface); }
+  .old-capture .ico { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: var(--accent-soft); color: var(--accent); }
+  .old-capture div { display: grid; gap: 2px; min-width: 0; }
+  .old-capture strong { font-size: 13.5px; }
+  .old-capture small { color: var(--muted-2); font-size: 11.5px; }
+  .old-inbox { display: flex; align-items: center; gap: 8px; padding: 11px 13px; border: 1px solid var(--border); border-radius: 13px; background: var(--surface); color: var(--text-soft); font-size: 13px; font-weight: 700; }
+  .old-inbox b { margin-left: auto; padding: 1px 7px; border-radius: 999px; background: var(--danger-soft); color: var(--danger); font-size: 11px; }
+  .old-chat { display: flex; align-items: center; gap: 8px; padding: 11px 13px; border: 1px solid var(--border); border-radius: 13px; background: var(--surface); color: var(--text-soft); font-size: 13px; font-weight: 700; }
+  .mark-gone { position: relative; }
+  .mark-gone::after {
+    content: "摘掉"; position: absolute; right: 8px; top: -7px; padding: 1px 7px;
+    border-radius: 999px; background: var(--danger); color: #fff; font-size: 10px; font-weight: 700;
+    box-shadow: 0 0 0 2px var(--surface);
+  }
+
+  /* 说明面板 */
+  .notes { flex: 1 1 380px; min-width: 320px; max-width: 460px; display: grid; gap: 12px; align-content: start; }
+  .note { border: 1px solid var(--border); border-radius: 14px; background: var(--surface); padding: 14px 16px; }
+  .note h3 { margin: 0 0 8px; font-size: 14px; }
+  .note p { margin: 0 0 8px; color: var(--text-soft); font-size: 13px; line-height: 1.6; }
+  .note p:last-child { margin-bottom: 0; }
+  .note ul { margin: 0; padding-left: 18px; color: var(--text-soft); font-size: 13px; line-height: 1.65; }
+  .note code { padding: 1px 5px; border-radius: 5px; background: var(--bg-soft); font-size: 11.5px; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .note.warn { border-color: var(--warning-border); background: var(--warning-soft); }
+  .note.warn h3 { color: #7a5416; }
+  .note.new { border-color: var(--accent-border); background: linear-gradient(160deg, var(--surface), var(--accent-soft)); }
+  table.tbl { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.tbl th, table.tbl td { padding: 6px 8px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  table.tbl th { color: var(--muted); font-weight: 700; font-size: 11.5px; }
+  table.tbl td { color: var(--text-soft); }
+
+  @media (max-width: 900px) {
+    .stage { flex-direction: column; }
+    .phone, .phone.is-narrow { width: 100%; max-width: 390px; height: 720px; margin: 0 auto; }
+    .notes { max-width: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>人生地图 · 只读化与自我认知结构</h1>
+  <p class="page-sub">
+    UI 稿 v1 · 2026-10-18 · 产品经理 ·
+    示例数据：<b>全部虚构</b>。这是编出来的一个人（周叙），只借用真实数据的<strong>形态</strong>（4 份来源 / 4 张现在卡 / 21 个节点 / 5 个主题 / 工作跨度大中间空档 / 关系密集 / 生活与创造为空），人名、公司、地点、时间、事件没有一样是真的。
+  </p>
+  <div class="legend">
+    <span class="badge gone">摘掉</span>
+    <span class="badge new">新加</span>
+    <span class="badge">保留不变</span>
+  </div>
+
+  <div class="switcher" role="tablist" aria-label="屏">
+    <button type="button" data-screen="before" aria-selected="true">① 改前 · 现状</button>
+    <button type="button" data-screen="overview">② 改后 · 总览（覆盖度 + 现在）</button>
+    <button type="button" data-screen="changes">③ 改后 · 变化（核心）</button>
+    <button type="button" data-screen="timeline">④ 改后 · 轨迹</button>
+    <button type="button" data-screen="themes">⑤ 改后 · 主题 + 证据</button>
+    <button type="button" data-screen="source">⑥ 点开看原文</button>
+    <button type="button" data-screen="empty">⑦ 空领域态</button>
+    <button type="button" data-screen="narrow">⑧ 360px 窄屏</button>
+  </div>
+
+  <div class="stage">
+    <div class="phone" id="phone"><div class="phone-inner" id="phone-inner"></div></div>
+    <aside class="notes" id="notes"></aside>
+  </div>
+</div>
+
+<script>
+/* ══ 示例数据（全部虚构） ══
+   这是编出来的一个人，跟任何真实的人无关：周叙，2017 年本科毕业，做过后端与工具。
+   只保留真实数据的**形态** —— 4 份来源 / 4 张现在卡 / 21 个经历节点 / 5 个主题，
+   工作 4 条（跨 8 年、中间 21 个月空档）、关系 17 条（挤在 8 个月里）、生活 0、创造 0。
+   关系这条线故意编成**越走越远**的：一段合作变成朋友、又慢慢变回客气 ——
+   变化层不只是「变好」，双向都要能画。 */
+const DOMAINS = [
+  { key: "work", label: "工作" },
+  { key: "relationship", label: "关系" },
+  { key: "life", label: "生活" },
+  { key: "creation", label: "创造" },
+];
+
+const NOW = [
+  { domain: "work", title: "在职", summary: "在一家做开发者工具的小公司，负责命令行工具那一块。", section: "已确认 · 在职", path: "memory/personal/life-map/v1/store.json" },
+  { domain: "relationship", title: "关系当前状态", summary: "对象：阿岚（前合作者）；关系状态：从搭档变成朋友，最近半年联系越来越少；截至 2025-10-19：上一次见面是两个多月前，聊得挺客气。", section: "当前关系快照", path: "memory/relationship/contact-a.md" },
+  { domain: "life", title: "把熬夜戒了", summary: "从六月开始把手机充电器挪出卧室，现在基本十二点前睡，早上不用闹钟也能醒。", section: "已确认 · 把熬夜戒了", path: "memory/personal/life-map/v1/store.json" },
+  { domain: "creation", title: "做了个没人用的小工具", summary: "花两个月写了个命令行小工具，发出去两个月，下载量两位数，但自己每天在用。", section: "已确认 · 小工具", path: "memory/personal/life-map/v1/store.json" },
+];
+
+const THEMES = [
+  { domain: "work", title: "工作里的优先级", n: 3, summary: "能不能把东西做完 → 有没有人真的用 → 钱。", evidence: ["能不能把东西做完：半途而废的项目最消耗人。", "有没有人真的用：哪怕只有几十个人用，也比给内部交差有劲。", "钱：排在第三，但房贷压着，不能真的排第三。"] },
+  { domain: "work", title: "技术偏好与去向", n: 4, summary: "喜欢命令行和底层工具，不喜欢做界面；在想要不要一直待在小公司。", evidence: ["喜欢命令行和底层工具，把复杂的事收成一条命令。", "不喜欢做界面，能不做就不做。", "短期打算：把手上这个工具做扎实，先让它有一千个用户。", "待明确：小公司做工具能走多远，还是迟早要回大厂。"] },
+  { domain: "relationship", title: "关系里的需要", n: 4, summary: "一起做点事、能直说、不用维护。", evidence: ["一起做点事：光吃饭聊天撑不住一段关系，得有事一起干。", "能直说：有意见当面讲，别憋着。", "不用维护：隔三个月不见，再见还能接着聊。"] },
+  { domain: "relationship", title: "相处起来舒服的方式", n: 4, summary: "有事说事、别客套、答应的事做到。", evidence: ["有事说事，别绕。", "别客套，客套一起出现就说明关系变了。", "答应的事做到，做不到提前说。"] },
+  { domain: "life", title: "业余在做什么", n: 2, summary: "骑车、拼模型；在整理旧照片。", evidence: ["骑车，周末会骑三四十公里。", "拼模型，一年拼两三个；在整理旧照片。"] },
+];
+
+/* 变化层：这一层的数据现在**不存在**，是编的示意。
+   真实系统里它必须由 Bot 跨时间聚合，代码抽不出来。 */
+const CHANGES = [
+  {
+    domain: "work",
+    title: "职业重心",
+    tag: "2 个时间点",
+    steps: [
+      { when: "2018–2021", what: "<b>把系统做稳</b>：在物流公司做调度系统，天天处理线上故障，学会先把东西做对再做快。" },
+      { when: "2025", what: "<b>想让人真的用</b>：在小公司做命令行工具，开始关心下载量和用户反馈，而不是上线时间。" },
+    ],
+    middle: "中间发生了什么：<em>2021 年转去做开发者工具</em>，从「内部交差」变成「外面有人挑毛病」。",
+    evidence: ["工具公司 (2021.8 - 至今)", "物流公司 (2017.7 - 2021.8)", "技术偏好与去向"],
+  },
+  {
+    domain: "relationship",
+    title: "和阿岚的关系",
+    tag: "4 个时间点",
+    steps: [
+      { when: "2025-02", what: "<b>搭档</b>：一起接了个外包，一周见三次，说话不用绕。" },
+      { when: "2025-05", what: "<b>朋友</b>：项目结束，但还约着吃饭，聊到半夜。" },
+      { when: "2025-07", what: "<b>变慢</b>：约了三次没约成，回消息从当天变成隔天。" },
+      { when: "2025-10", what: "<b>客气</b>：最后一次见面聊得很客气，谁都没提下次。" },
+    ],
+    middle: "中间发生了什么：<em>17 条记录</em>，从一起改代码，到只剩节日问候。",
+    evidence: ["2025-10-19 最后一次见面，聊得很客气", "2025-05-24 项目结束那天吃了顿好的", "2025-02-11 第一次一起改代码"],
+  },
+];
+
+const EVENTS = [
+  { date: "2025-10-19", domain: "relationship", title: "最后一次见面，聊得很客气", summary: "在商场碰见，一起喝了杯东西，聊了工作、聊了天气。走的时候说了「有空再约」，谁都没接。", },
+  { date: "2025-09-14", domain: "relationship", title: "看到对方的新项目，没被叫上", summary: "对方发了个动态，跟别人做的东西。我看完点了个赞，没留言。", },
+  { date: "2025-08-30", domain: "relationship", title: "第三次没约成", summary: "对方说这周有事，我说那下周，然后就没有下周了。", },
+  { date: "2025-07-12", domain: "relationship", title: "回消息变成隔天", summary: "以前当天回，现在隔一天。我也开始隔一天回。", },
+  { date: "2025-05-24", domain: "relationship", title: "项目结束那天吃了顿好的", summary: "结完账去吃了顿烧烤，说以后还要一起做点别的，当时是真心的。", },
+  { date: "2025-03-02", domain: "relationship", title: "第一次争执", summary: "因为一个接口的写法吵了半小时，最后按对方的来，我其实不服。", },
+  { date: "2023-02", domain: "work", title: "第一个自己写的工具", summary: "把每天要敲的一串命令收成一个脚本，后来变成现在这个工具的雏形。", },
+];
+
+const COVERAGE = [
+  { domain: "work", n: 4, pips: 4, gap: "2021-08 → 2023-02 空 21 个月", warn: true },
+  { domain: "relationship", n: 17, pips: 5, gap: "最近 2025-10 · 连续", warn: false },
+  { domain: "life", n: 0, pips: 0, gap: "还没建立", empty: true },
+  { domain: "creation", n: 0, pips: 0, gap: "还没建立", empty: true },
+];
+
+/* ══ 图标（用字符代替 lucide，稿子不引外部依赖） ══ */
+/* 图标：领域四个用内联 SVG，照 App 里的 lucide 线性图标（BriefcaseBusiness / Heart /
+   UserRound / Sparkles）画，stroke 走 currentColor 由 CSS 上色。
+   其余小图标仍用中性字形（不引 emoji —— emoji 会渲染成彩色脏点）。 */
+function domainIcon(domain, size = 16) {
+  const open = `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">`;
+  const paths = {
+    work: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M2 13h20"/>',
+    relationship: '<path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/>',
+    life: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+    creation: '<path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/>',
+  };
+  return open + paths[domain] + '</svg>';
+}
+
+const ICO = {
+  sparkle: "✦", refresh: "↻", back: "‹", more: "⋯", chev: "›", x: "✕",
+  pencil: "✎", inbox: "▤", chat: "◇", file: "≡", history: "◷",
+};
+
+const label = (k) => (DOMAINS.find((d) => d.key === k) || { label: k }).label;
+
+/* ══ 组件 ══ */
+function statusbar() {
+  return `<div class="statusbar"><span>9:41</span><span>Avatar</span></div>`;
+}
+function hdr(title) {
+  return `<div class="hdr"><span class="back">${ICO.back}</span><h2>${title}</h2><span class="spacer"></span><span class="icon">${ICO.refresh}</span></div>`;
+}
+function intro(sources, events) {
+  return `<header class="lm-intro">
+    <div class="lm-intro-icon">${ICO.sparkle}</div>
+    <div><strong>从经历里看见自己</strong><span>${sources} 份本地资料 · ${events} 个经历节点</span></div>
+    <button type="button" aria-label="刷新人生地图">${ICO.refresh}</button>
+  </header>`;
+}
+function trust() {
+  return `<p class="lm-trust">当前内容来自原始资料与本人确认记录，不包含未经确认的 AI 推测。</p>`;
+}
+function tabs(active) {
+  const items = [["now", "现在"], ["timeline", "轨迹"], ["themes", "主题"]];
+  return `<nav class="lm-tabs" aria-label="人生地图视图">${items.map(([k, t]) =>
+    `<button type="button" class="${active === k ? "active" : ""}" aria-pressed="${active === k}">${t}</button>`).join("")}</nav>`;
+}
+function filters(active = "all") {
+  const items = [["all", "全部"], ...DOMAINS.map((d) => [d.key, d.label])];
+  return `<div class="lm-filters" role="group" aria-label="领域筛选">${items.map(([k, t]) =>
+    `<button type="button" class="${active === k ? "active" : ""}" aria-pressed="${active === k}">${t}</button>`).join("")}</div>`;
+}
+
+/* 覆盖度条 */
+function coverage() {
+  return `<section class="cov" aria-label="覆盖度">
+    <div class="cov-title"><strong>覆盖度</strong><span>哪里记了 · 哪里空着</span></div>
+    ${COVERAGE.map((c) => `
+      <div class="cov-row ${c.domain}">
+        <span class="cov-name">${label(c.domain)}</span>
+        <span class="cov-bar">${[0,1,2,3,4].map((i) => `<i class="cov-pip${i < c.pips ? " on" : ""}"></i>`).join("")}</span>
+        <span class="cov-gap ${c.empty ? "empty" : c.warn ? "warn" : ""}">${c.n} 条 · ${c.gap}</span>
+      </div>`).join("")}
+    <p class="cov-foot">证据条数来自本地资料与已确认记录；空档期是两次记录之间超过 90 天的间隔。</p>
+  </section>`;
+}
+
+/* 现在卡 */
+function nowCards() {
+  return `<div class="now-grid">${NOW.map((n) => `
+    <button type="button" class="now-card ${n.domain}">
+      <span class="ico">${domainIcon(n.domain, 17)}</span>
+      <span>${label(n.domain)}</span>
+      <strong>${n.title}</strong>
+      <p>${n.summary}</p>
+      <span class="chev">${ICO.chev}</span>
+    </button>`).join("")}</div>`;
+}
+
+/* 变化层 */
+function changesLayer() {
+  return `<div class="chg">${CHANGES.map((c) => `
+    <article class="chg-card ${c.domain}">
+      <div class="chg-top"><i class="chg-dot"></i><strong>${c.title}</strong><span class="tag">${c.tag}</span></div>
+      <div class="chg-body">
+        ${c.steps.map((s) => `<div class="chg-step"><span class="chg-when">${s.when}</span><span class="chg-what">${s.what}</span></div>`).join("")}
+        <div class="chg-mid">${c.middle}</div>
+        <div class="chg-evidence">${c.evidence.map((e) => `<button type="button" class="chg-chip">${ICO.file} ${e}</button>`).join("")}</div>
+      </div>
+    </article>`).join("")}</div>`;
+}
+
+/* 轨迹 */
+function timeline() {
+  return `<div class="tl">${EVENTS.map((e, i) => `
+    <div class="tl-item ${e.domain}">
+      <i class="tl-dot"></i>
+      <div class="tl-body">
+        <div class="tl-when">${e.date}</div>
+        <div class="tl-title">${e.title}</div>
+        <div class="tl-sum">${e.summary}</div>
+      </div>
+    </div>
+    ${i === 5 ? `<div class="tl-gap">下面这段没有记录</div>` : ""}`).join("")}</div>`;
+}
+
+/* 主题 */
+function themesLayer() {
+  return `<div class="th-list">${THEMES.map((t) => `
+    <article class="th-card ${t.domain}">
+      <div class="th-top"><i class="dot"></i><strong>${t.title}</strong><span class="n">${t.n} 条证据</span></div>
+      <p class="th-sum">${t.summary}</p>
+      <div class="th-ev">
+        ${t.evidence.slice(0, 2).map((e, i) => `<div class="th-ev-row"><span class="bullet">${i + 1}</span><span class="txt">${e}</span></div>`).join("")}
+        ${t.evidence.length > 2 ? `<button type="button" class="th-ev-more">展开其余 ${t.evidence.length - 2} 条证据</button>` : ""}
+      </div>
+    </article>`).join("")}</div>`;
+}
+
+/* 详情 + 原文 */
+function detailSheet() {
+  return `<div class="detail-backdrop">
+    <article class="detail" role="dialog" aria-modal="true">
+      <div class="detail-handle"></div>
+      <div class="detail-hdr">
+        <span class="badge-d"><i class="badge-dot relationship"></i>关系</span>
+        <span class="x">${ICO.x}</span>
+      </div>
+      <div class="detail-body">
+        <h3>最后一次见面，聊得很客气</h3>
+        <time class="detail-time">2025-10-19 · 精确到日</time>
+        <p class="detail-p">2025 年 10 月 19 日，在商场碰见，一起喝了杯东西。聊了工作、聊了天气，谁都没提之前约过没约成的事。</p>
+        <div class="src-box">
+          <div class="src-head"><i class="src-mark"></i><strong>原文</strong> <span>memory/relationship/contact-a.md</span> <span class="open">收起</span></div>
+          <div class="src-raw">### 2025-10-19 最后一次见面，聊得很客气
+
+<span class="hl">2025年10月19日，在商场碰见，一起喝了杯东西。聊了工作、聊了天气。</span>问了一下对方最近在忙什么，说是在跟人做新东西，没细讲。走的时候说了「有空再约」，谁都没接这句。回来路上想了一下，大概就是这样了。</div>
+          <p class="src-note">只显示这一节。原文只读，改内容请找 Bot。</p>
+        </div>
+      </div>
+    </article>
+  </div>`;
+}
+
+/* ══ 屏 ══ */
+const SCREENS = {
+  /* ① 改前：现状（有写入入口） */
+  before() {
+    return `${statusbar()}${hdr("人生地图")}
+      <div class="scroll"><div class="lm-screen">
+        ${intro(4, 21)}
+        ${trust()}
+        <div class="old-collection">
+          <div class="old-capture mark-gone"><span class="ico">${ICO.pencil}</span><div><strong>记录此刻或一段经历</strong><small>文字、图片，也可以只记一句话</small></div></div>
+          <div class="old-inbox mark-gone">${ICO.inbox}<span>收件箱</span><b>1</b></div>
+          <div class="old-chat mark-gone">${ICO.chat}<span>找 Avatar 聊聊</span></div>
+        </div>
+        <div class="lm-fresh"><span>${ICO.history}</span><div><strong>工作状态建议更新</strong><br><span style="font-size:11.5px">另有 2 项待补充</span></div><button type="button">更新</button></div>
+        ${tabs("now")}
+        ${filters("all")}
+        ${nowCards()}
+      </div></div>`;
+  },
+
+  /* ② 改后总览 */
+  overview() {
+    return `${statusbar()}${hdr("人生地图")}
+      <div class="scroll"><div class="lm-screen">
+        ${intro(4, 21)}
+        ${trust()}
+        ${coverage()}
+        <div class="lm-heading"><strong>现在</strong><span>每个领域一条</span></div>
+        ${nowCards()}
+        <div class="lm-heading"><strong>变化</strong><span>2 个主题</span></div>
+        ${changesLayer()}
+      </div></div>`;
+  },
+
+  /* ③ 变化层 */
+  changes() {
+    return `${statusbar()}${hdr("人生地图")}
+      <div class="scroll"><div class="lm-screen">
+        ${tabs("now")}
+        <div class="lm-heading"><strong>变化</strong><span>以前 → 现在 · 中间发生了什么</span></div>
+        ${changesLayer()}
+      </div></div>`;
+  },
+
+  /* ④ 轨迹 */
+  timeline() {
+    return `${statusbar()}${hdr("人生地图")}
+      <div class="scroll"><div class="lm-screen">
+        ${tabs("timeline")}
+        ${filters("all")}
+        ${timeline()}
+      </div></div>`;
+  },
+
+  /* ⑤ 主题 */
+  themes() {
+    return `${statusbar()}${hdr("人生地图")}
+      <div class="scroll"><div class="lm-screen">
+        ${tabs("themes")}
+        ${filters("all")}
+        ${themesLayer()}
+      </div></div>`;
+  },
+
+  /* ⑥ 原文 */
+  source() {
+    return `${statusbar()}${hdr("人生地图")}
+      <div class="scroll" style="position:relative;padding:0">
+        <div class="lm-screen" style="padding:12px 14px 0">
+          ${tabs("timeline")}
+          ${timeline()}
+        </div>
+        ${detailSheet()}
+      </div>`;
+  },
+
+  /* ⑦ 空领域态 */
+  empty() {
+    return `${statusbar()}${hdr("人生地图")}
+      <div class="scroll"><div class="lm-screen">
+        ${coverage()}
+        <div class="lm-heading"><strong>现在</strong><span>创造 · 还没建立</span></div>
+        <div class="lm-empty">
+          <span class="empty-mark creation"></span>
+          <strong>这个领域还没有记录</strong>
+          <span>跟人生地图 Bot 说一句就行，比如「最近在做什么东西」。</span>
+        </div>
+        <div class="lm-heading"><strong>变化</strong><span>暂无</span></div>
+        <div class="lm-empty" style="padding:18px">
+          <span>还没有两个时间点可以对比。</span>
+        </div>
+      </div></div>`;
+  },
+
+  /* ⑧ 360 窄屏 */
+  narrow() {
+    return `${statusbar()}${hdr("人生地图")}
+      <div class="scroll"><div class="lm-screen">
+        ${coverage()}
+        ${nowCards()}
+        <div class="lm-heading"><strong>变化</strong><span>2 个主题</span></div>
+        ${changesLayer()}
+      </div></div>`;
+  },
+};
+
+/* ══ 说明面板 ══ */
+const NOTES = {
+  before: `
+    <div class="note">
+      <h3>① 改前 · 现状</h3>
+      <p>三个写入入口（红标「摘掉」）：<strong>记录此刻</strong>、<strong>收件箱</strong>、<strong>找 Avatar 聊聊</strong>。这一屏现在是「能记」，不是「能看见自己」。</p>
+      <p>视图只有 现在 / 轨迹 / 主题 三层，且抽取靠<strong>硬编码章节名</strong> —— 换标题内容就消失。</p>
+    </div>
+    <div class="note warn">
+      <h3>真实数据的形态（内容已虚构）</h3>
+      <table class="tbl">
+        <tr><th>领域</th><th>经历</th></tr>
+        <tr><td>工作</td><td>4 条</td></tr>
+        <tr><td>关系</td><td>17 条</td></tr>
+        <tr><td>生活</td><td><b style="color:#b04458">0 条</b></td></tr>
+        <tr><td>创造</td><td><b style="color:#b04458">0 条</b></td></tr>
+      </table>
+      <p style="margin-top:8px">分布是畸形的：生活与创造一条经历都没有，那两格「现在」是收件箱手填的。稿里借的只是这个<strong>分布</strong>，故事是编的。</p>
+    </div>
+    <div class="note">
+      <h3>还有哪些资料根本没读</h3>
+      <ul>
+        <li><code>memory/dev/</code> — <strong>36 份</strong>开发记录</li>
+        <li><code>personal/investment.md</code> — 资产与投资</li>
+        <li><code>memory/tools/index.md</code></li>
+      </ul>
+      <p style="margin-top:8px">写得最多的那部分，地图完全看不见。</p>
+    </div>`,
+
+  overview: `
+    <div class="note new">
+      <h3>② 总览 · 新加两层</h3>
+      <p><strong>覆盖度条</strong>（第 5 层）：四个领域各显示证据数与空档期。<code>生活</code> 与 <code>创造</code> 直接写「还没建立」，而不是留空。</p>
+      <p><strong>变化卡</strong>（第 4 层）：以前 → 现在，中间发生了什么。这是这一屏的灵魂。</p>
+    </div>
+    <div class="note">
+      <h3>顺序为什么这么排</h3>
+      <p>覆盖度在最上：先告诉你<strong>哪里空着</strong>，再看内容。空的地方比有内容的地方更有信息量。</p>
+      <p>变化排在现在后面：先知道「现在是什么」，再看「怎么变成这样」。</p>
+    </div>
+    <div class="note warn">
+      <h3>写入入口全没了</h3>
+      <p>随手记、收件箱、找 Avatar 聊聊、编辑弹层 —— 全部摘掉。录入交给 Bot。</p>
+      <p>桌面端 <code>/life-map/inbox/*</code> 与 <code>sync-conversation</code> <strong>保留</strong>，留给 Bot 用。</p>
+    </div>`,
+
+  changes: `
+    <div class="note new">
+      <h3>③ 变化 · 这一屏为什么最值钱</h3>
+      <p>只给「现在」是<strong>静态画像</strong>；给「变化」才是<strong>认识自己的过程</strong>。</p>
+      <p>每一块三件事：<strong>起点 → 终点 → 中间发生了什么</strong>。中间的记录可点开看原文。</p>
+    </div>
+    <div class="note warn">
+      <h3>这一层现在不存在</h3>
+      <p>稿里这两张卡是<strong>编的示意</strong>：结构照着真实资料的形态（跨 8 年的两段工作、8 个月里 17 条关系记录），内容全虚构。</p>
+      <p>真实系统里它不是代码能抽出来的 —— 必须由 Bot 跨时间聚合。这也是为什么方案里 P2 要一份结构化 <code>map.json</code>。</p>
+    </div>
+    <div class="note">
+      <h3>没有变化数据时怎么办</h3>
+      <p>整块<strong>不出现</strong>（不是画个空框）。见第 ⑦ 屏。</p>
+    </div>`,
+
+  timeline: `
+    <div class="note">
+      <h3>④ 轨迹 · 保留不变</h3>
+      <p>按日期倒序的时间轴，按领域上色（工作 = 蓝 / 关系 = 玫红 / 生活 = 绿 / 创造 = 紫，沿用 <code>life-map.css</code> 现有口径）。</p>
+    </div>
+    <div class="note new">
+      <h3>新加：空档提示</h3>
+      <p>两次记录之间超过 90 天，插一条虚线「下面这段没有记录」。这比什么都不说诚实。</p>
+    </div>
+    <div class="note">
+      <h3>点任意一条 → 看原文</h3>
+      <p>见第 ⑥ 屏。</p>
+    </div>`,
+
+  themes: `
+    <div class="note">
+      <h3>⑤ 主题 · 补上证据链</h3>
+      <p>现在只写「4 条原始线索」，点不开那 4 条是什么 —— <strong>不可信，也没法自己判断</strong>。</p>
+      <p>改后：默认露 2 条，其余折叠。「展开其余 N 条证据」点开后每条都能再点进原文。</p>
+    </div>
+    <div class="note warn">
+      <h3>数据来源仍然是硬编码</h3>
+      <p>主题只认 6 个<strong>写死的白名单章节名</strong>（<code>life-map.ts:270-277</code>），章节名对不上就整块消失。稿里这 5 个主题是按同样的数量与结构编的，名字不是真实的那 6 个。</p>
+      <p>P2 换成 <code>map.json</code> 之后才不受章节名约束。</p>
+    </div>`,
+
+  source: `
+    <div class="note new">
+      <h3>⑥ 点开看原文</h3>
+      <p>现在 <code>source</code> 只给「文件路径 + 章节名」，<strong>手机用户打不开那个文件</strong>。</p>
+      <p>改后：由 agent 读那一段回来，只显示这一节（不是整个文件），命中行高亮。只读 —— 底部写清「改内容请找 Bot」。</p>
+    </div>
+    <div class="note warn">
+      <h3>一条安全口径</h3>
+      <p>只回<strong>这一节</strong>，不回整份文件。路径来自地图数据而不是客户端传参，防穿越。</p>
+    </div>`,
+
+  empty: `
+    <div class="note">
+      <h3>⑦ 空领域态</h3>
+      <p>覆盖度条里 <code>创造</code> 是「还没建立」，点进去就是这一屏。</p>
+      <p>不画空框、不编一句「暂未填写」—— 直接说「这个领域还没有记录」，并给出<strong>唯一可做的事</strong>：跟 Bot 说一句。</p>
+    </div>
+    <div class="note warn">
+      <h3>没有变化数据</h3>
+      <p>「变化」整块不出现，只留一句「还没有两个时间点可以对比」。不画空的对比卡。</p>
+    </div>`,
+
+  narrow: `
+    <div class="note">
+      <h3>⑧ 360px 窄屏</h3>
+      <p>检查三件事：覆盖度条的三列不挤成两行、变化卡的时间列（54px）不把正文压没、领域名不折行。</p>
+      <p>变化卡在 360px 下时间列保持 54px、正文自动换行；长证据标题截断并可展开。</p>
+    </div>
+    <div class="note new">
+      <h3>这一屏的验收</h3>
+      <p>主体 <code>scrollWidth == clientWidth</code>，没有任何元素越过右边缘。</p>
+    </div>`,
+};
+
+/* ══ 渲染 ══ */
+const state = { screen: "before" };
+const phone = document.getElementById("phone");
+const inner = document.getElementById("phone-inner");
+const notes = document.getElementById("notes");
+
+function render() {
+  const s = state.screen;
+  inner.innerHTML = SCREENS[s]();
+  notes.innerHTML = NOTES[s] || "";
+  phone.classList.toggle("is-narrow", s === "narrow");
+  document.querySelectorAll(".switcher button").forEach((b) => {
+    b.setAttribute("aria-selected", String(b.dataset.screen === s));
+  });
+}
+
+document.querySelectorAll(".switcher button").forEach((b) => {
+  b.addEventListener("click", () => { state.screen = b.dataset.screen; render(); });
+});
+
+render();
+</script>
+</body>
+</html>
