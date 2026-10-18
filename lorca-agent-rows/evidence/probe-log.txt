@@ -1,0 +1,341 @@
+{
+  "tabs": [
+    "before",
+    "after",
+    "working",
+    "done",
+    "failed",
+    "narrow"
+  ],
+  "screens": [
+    "before",
+    "after",
+    "working",
+    "done",
+    "failed",
+    "narrow"
+  ],
+  "initial_active": "before",
+  "hash_deeplink": "failed",
+  "markers": [
+    {
+      "kind": "start",
+      "text": "已发消息给 Claude Code · 会话列表滑动三格 + Hidden 组 + 删除 工作中",
+      "preview": "你把这个 issue 做掉：会话列表左滑三格…",
+      "state": "工作中",
+      "tag": "BUTTON",
+      "role": "button"
+    },
+    {
+      "kind": "send",
+      "text": "已发消息给 Claude Code · 会话列表滑动三格 + Hidden 组 + 删除 工作中",
+      "preview": "顺手把侧栏的排序也看一眼。",
+      "state": "工作中",
+      "tag": "BUTTON",
+      "role": "button"
+    },
+    {
+      "kind": "message",
+      "text": "来自 Claude Code · 会话列表滑动三格 + Hidden 组 + 删除",
+      "preview": "做完了，PR #12 开好了：三个动作改成左滑露出…",
+      "state": null,
+      "tag": "BUTTON",
+      "role": "button"
+    },
+    {
+      "kind": "failed",
+      "text": "来自 Claude Code · 会话列表滑动三格 + Hidden 组 + 删除",
+      "preview": "API Error: 400 Your account (2101112570) does not have…",
+      "state": null,
+      "tag": "BUTTON",
+      "role": "button"
+    },
+    {
+      "kind": "stopped",
+      "text": "已发消息给 Claude Code · 会话列表滑动三格 + Hidden 组 + 删除 已停止",
+      "preview": "先别推了，把分支留着。",
+      "state": "已停止",
+      "tag": "BUTTON",
+      "role": "button"
+    }
+  ],
+  "marker_count": 5,
+  "toolrun_names": [
+    "bash"
+  ],
+  "toolrun_has_coding_agent": false,
+  "after_text_has_coding_agent": false,
+  "before_text_has_coding_agent": true,
+  "markers_centered": true,
+  "marker_line_widths": [
+    320,
+    320,
+    320,
+    320,
+    320
+  ],
+  "marker_preview_widths": [
+    217,
+    150,
+    257,
+    300,
+    127
+  ],
+  "marker_maxwidth_css": "320px",
+  "title_visible_chars": {
+    "box": 102,
+    "per_char": 11.5,
+    "chars": 8
+  },
+  "marker_padding_tops": [
+    14,
+    6,
+    14,
+    6,
+    14
+  ],
+  "preview_nowrap": [
+    "nowrap",
+    "nowrap",
+    "nowrap",
+    "nowrap",
+    "nowrap"
+  ],
+  "preview_ellipsis": [
+    "ellipsis",
+    "ellipsis",
+    "ellipsis",
+    "ellipsis",
+    "ellipsis"
+  ],
+  "failed_preview_color": "rgb(176, 68, 88)",
+  "normal_preview_color": "rgb(143, 149, 158)",
+  "marker_font_sizes": {
+    "line": "11.5px",
+    "preview": "11.5px"
+  },
+  "agentmark": {
+    "w": 14,
+    "h": 14,
+    "l": 118,
+    "r": 132
+  },
+  "state_classes_in_css": [
+    "is-working",
+    "is-asking",
+    "is-review",
+    "is-done",
+    "is-failed",
+    "is-stopped"
+  ],
+  "sheets": {
+    "working": {
+      "state_attr": "working",
+      "has_backdrop": true,
+      "has_handle": true,
+      "has_title": true,
+      "title": "会话列表滑动三格 + Hidden 组 + 删除（issue #1 P1）",
+      "has_close_top": true,
+      "has_close_bottom": true,
+      "where": "Claude Code · 工作中 · main · Workbench",
+      "has_stop": true,
+      "pr": null,
+      "steps": [
+        "思考了 3 秒",
+        "正在浏览 16 个文件，5 次搜索",
+        "运行了 npm test -- --watch=false",
+        "编辑了 apps/mobile/src/lorca/LorcaPanel.tsx"
+      ],
+      "has_prompt": true,
+      "has_plan": true,
+      "plan_entries": 3,
+      "has_output": false,
+      "has_failure": false,
+      "has_statusline": true,
+      "has_input": false,
+      "has_composer": false,
+      "foot": "分支 main · 跟随中（本机每 2 秒）"
+    },
+    "done": {
+      "state_attr": "done",
+      "has_backdrop": false,
+      "has_handle": true,
+      "has_title": true,
+      "title": "会话列表滑动三格 + Hidden 组 + 删除（issue #1 P1）",
+      "has_close_top": true,
+      "has_close_bottom": true,
+      "where": "Claude Code · 待审核 · feat/list-swipe · Workbench",
+      "has_stop": false,
+      "pr": "PR #12",
+      "steps": [
+        "思考了 3 秒",
+        "浏览了 16 个文件，5 次搜索",
+        "运行了 npm test -- --watch=false",
+        "编辑了 apps/mobile/src/lorca/LorcaPanel.tsx"
+      ],
+      "has_prompt": true,
+      "has_plan": true,
+      "plan_entries": 3,
+      "has_output": true,
+      "has_failure": false,
+      "has_statusline": true,
+      "has_input": false,
+      "has_composer": false,
+      "foot": "feat/list-swipe · +184 −37，涉及 6 个文件 · 已停止跟随"
+    },
+    "failed": {
+      "state_attr": "failed",
+      "has_backdrop": false,
+      "has_handle": true,
+      "has_title": true,
+      "title": "会话列表滑动三格 + Hidden 组 + 删除（issue #1 P1）",
+      "has_close_top": true,
+      "has_close_bottom": true,
+      "where": "Claude Code · 运行失败 · main · Workbench",
+      "has_stop": false,
+      "pr": null,
+      "steps": [
+        "运行了 npm test -- --watch=false"
+      ],
+      "has_prompt": true,
+      "has_plan": false,
+      "plan_entries": 0,
+      "has_output": true,
+      "has_failure": true,
+      "has_statusline": true,
+      "has_input": false,
+      "has_composer": false,
+      "foot": "main · 已停止跟随（它已结束）"
+    },
+    "narrow": {
+      "state_attr": "narrow",
+      "has_backdrop": false,
+      "has_handle": true,
+      "has_title": true,
+      "title": "会话列表滑动三格 + Hidden 组 + 删除（issue #1 P1）",
+      "has_close_top": true,
+      "has_close_bottom": true,
+      "where": "Claude Code · 工作中 · main · Workbench",
+      "has_stop": false,
+      "pr": null,
+      "steps": [
+        "运行了 ./gradlew :app:assembleDebug --no-daemon --stacktrace --info",
+        "运行了 npm test -- --watch=false",
+        "编辑了 apps/mobile/src/lorca/LorcaPanel.tsx"
+      ],
+      "has_prompt": true,
+      "has_plan": true,
+      "plan_entries": 2,
+      "has_output": true,
+      "has_failure": false,
+      "has_statusline": true,
+      "has_input": false,
+      "has_composer": false,
+      "foot": "分支 main · 跟随中（本机每 2 秒）"
+    }
+  },
+  "sheet_height_ratio": 0.918,
+  "sheet_radius": "20px",
+  "sheet_pad_x": "16px",
+  "step_line": {
+    "size": "14px",
+    "lh": "19px"
+  },
+  "prompt_folded": {
+    "clamped": "6",
+    "has_more": true,
+    "more_text": "显示更多"
+  },
+  "prompt_unfolded_clamp": "none",
+  "output_block": {
+    "size": "12px",
+    "family": true,
+    "max_height": "132px",
+    "overflow_y": "auto"
+  },
+  "close_paths": [
+    "backdrop",
+    "top-close",
+    "bottom-close"
+  ],
+  "narrow": {
+    "phone_width": 360,
+    "screen_in_narrow_shell": true,
+    "screen_width": 358,
+    "overflows": [],
+    "scroll_width": 358,
+    "client_width": 358,
+    "long_command": {
+      "text": "运行了 ./gradlew :app:assembleDebug --no-da…",
+      "overflow": "hidden",
+      "text_overflow": "ellipsis",
+      "white_space": "nowrap",
+      "clipped": true
+    },
+    "expandable_steps": 2,
+    "shell_cleared": true
+  },
+  "notes_has_sections": true,
+  "notes_mentions_upstream_files": true,
+  "notes_has_two_open_questions": true,
+  "screens_seen": [
+    "before",
+    "after",
+    "working",
+    "done",
+    "failed",
+    "narrow"
+  ]
+}
+
+--- 判定 ---
+PASS  ① 六个屏齐全
+PASS  ① 默认落在「现状」屏
+PASS  ① 直链 #failed 能直接打开失败屏
+PASS  ② 会话流里五个标记行（启动 / 发消息 / 报告 / 失败 / 已停止）
+PASS  ② 启动行文案 =「已发消息给 Claude Code · 标题 [工作中]」
+PASS  ② 报告行文案 =「来自 Claude Code · 标题」且无状态词
+PASS  ② 失败行整行走失败色（预览红）
+PASS  ② 发消息行（target_agent_id）也是「已发消息给」+ 状态
+PASS  ② 已停止行状态词为「已停止」
+PASS  ② 标记行可点（button / role）
+PASS  ② 标记行居中（左右留白相等）
+PASS  ② 行内最大宽 320px
+PASS  ② 预览行最大宽 300px 且 1 行省略
+PASS  ② 段首 14px / 段中 6px
+PASS  ② 标题在标记行里可显示 8–9 字（取舍已写明）
+PASS  ② 字号 11.5px（行与预览）
+PASS  ② 智能体标记 14px 见方
+PASS  ② 状态词六档样式齐全
+PASS  ② 折叠块里没有 coding_agent
+PASS  ② 改后屏文本不出现 coding_agent（AC-3 / AC-10）
+PASS  ① 现状屏作为基线仍出现 coding_agent（对比有效）
+PASS  ③ 四屏浮层都有把手 + 标题 + 关闭
+PASS  ③ 工作中：状态行含「工作中」、有停止、无 PR
+PASS  ③ 已结束：状态行含「待审核」、有 PR #12、无停止
+PASS  ③ 失败：状态行含「运行失败」、无停止、无 PR
+PASS  ③ 失败屏有错误行
+PASS  ③ 三态都有提示词卡与状态行
+PASS  ③ 步骤覆盖：思考 / 浏览 / 运行 / 编辑 / 计划
+PASS  ③ 编辑行带 +N −N 与颜色
+PASS  ③ 计划清单条目齐全（3 条 / 2 条）
+PASS  ③ 命令可展开看输出
+PASS  ③ 只读：浮层里没有输入框
+PASS  ③ 浮层高度 = 屏高 92%
+PASS  ③ 浮层上圆角 20px / 左右内边距 16px
+PASS  ③ 步骤行 14px / 行高 19px
+PASS  ③ 提示词超 6 行折叠 + 「显示更多」
+PASS  ③ 短提示词不折叠
+PASS  ③ 命令输出块 12px 等宽、6 行后内部滚动
+PASS  ③ 底部有分支 / 跟随状态与关闭按钮
+PASS  ⑤ 窄屏壳 360pt 且装着 ⑥ 屏
+PASS  ⑤ 窄屏无横向溢出
+PASS  ⑤ 浮层主体无横向滚动（scrollWidth == clientWidth）
+PASS  ⑤ 长命令一行截断（ellipsis + 实际被裁）
+PASS  ⑤ 截断的行仍可展开（有 chevron）
+PASS  ⑤ 切走后窄屏壳清空（不重复挂载）
+PASS  ⑥ 结论区五段齐全
+PASS  ⑥ 结论区指到上游文件（可核）
+PASS  ⑥ 两条待确认口径写在结论区
+
+48/48 通过
