@@ -5,6 +5,7 @@
     "working",
     "done",
     "failed",
+    "failed-start",
     "narrow"
   ],
   "screens": [
@@ -13,6 +14,7 @@
     "working",
     "done",
     "failed",
+    "failed-start",
     "narrow"
   ],
   "initial_active": "before",
@@ -154,7 +156,11 @@
       "has_statusline": true,
       "has_input": false,
       "has_composer": false,
-      "foot": "分支 main · 跟随中 · 每 5 秒"
+      "foot": "分支 main · 跟随中 · 每 5 秒",
+      "reason": null,
+      "reason_color": null,
+      "has_nothing": false,
+      "nothing_text": null
     },
     "done": {
       "state_attr": "done",
@@ -181,7 +187,11 @@
       "has_statusline": true,
       "has_input": false,
       "has_composer": false,
-      "foot": "feat/list-swipe · +184 −37，涉及 6 个文件 · 已结束，不再刷新"
+      "foot": "feat/list-swipe · +184 −37，涉及 6 个文件 · 已结束，不再刷新",
+      "reason": null,
+      "reason_color": null,
+      "has_nothing": false,
+      "nothing_text": null
     },
     "failed": {
       "state_attr": "failed",
@@ -205,7 +215,37 @@
       "has_statusline": true,
       "has_input": false,
       "has_composer": false,
-      "foot": "main · 已结束，不再刷新"
+      "foot": "main · 已结束，不再刷新",
+      "reason": "失败原因：Claude Code exited with code 1",
+      "reason_color": "rgb(176, 68, 88)",
+      "has_nothing": false,
+      "nothing_text": null
+    },
+    "failed-start": {
+      "state_attr": "failed-start",
+      "has_backdrop": false,
+      "has_handle": true,
+      "has_title": true,
+      "title": "会话列表滑动三格 + Hidden 组 + 删除（issue #1 P1）",
+      "has_close_top": true,
+      "has_close_bottom": true,
+      "where": "Claude Code · 运行失败",
+      "has_stop": false,
+      "pr": null,
+      "steps": [],
+      "has_prompt": false,
+      "has_plan": false,
+      "plan_entries": 0,
+      "has_output": false,
+      "has_failure": false,
+      "has_statusline": false,
+      "has_input": false,
+      "has_composer": false,
+      "foot": "已结束，不再刷新",
+      "reason": "失败原因：Claude Code is not installed on this Runner. Leave agent out to use one that is, or ask the user to install it.",
+      "reason_color": "rgb(176, 68, 88)",
+      "has_nothing": true,
+      "nothing_text": "这次运行没有留下步骤。"
     },
     "narrow": {
       "state_attr": "narrow",
@@ -231,7 +271,11 @@
       "has_statusline": true,
       "has_input": false,
       "has_composer": false,
-      "foot": "分支 main · 跟随中 · 每 5 秒"
+      "foot": "分支 main · 跟随中 · 每 5 秒",
+      "reason": null,
+      "reason_color": null,
+      "has_nothing": false,
+      "nothing_text": null
     }
   },
   "sheet_height_ratio": 0.898,
@@ -279,6 +323,7 @@
   "notes_has_sections": true,
   "notes_mentions_upstream_files": true,
   "notes_has_two_open_questions": true,
+  "notes_failure_section": true,
   "screens_seen": [
     "before",
     "after",
@@ -290,7 +335,7 @@
 }
 
 --- 判定 ---
-PASS  ① 六个屏齐全
+PASS  ① 七个屏齐全
 PASS  ① 默认落在「现状」屏
 PASS  ① 直链 #failed 能直接打开失败屏
 PASS  ② 会话流里五个标记行（启动 / 发消息 / 报告 / 失败 / 已停止）
@@ -322,6 +367,13 @@ PASS  ③ 编辑行带 +N −N 与颜色
 PASS  ③ 计划清单条目齐全（3 条 / 2 条）
 PASS  ③ 命令可展开看输出
 PASS  ③ 只读：浮层里没有输入框
+PASS  ⑦ 失败原因行：状态行下方一行，走失败色，带「失败原因：」
+PASS  ⑦ 失败原因取 outcome（不是上游英文报错原文）
+PASS  ⑦ 只有失败态有失败原因行（其余四屏不占位）
+PASS  ⑦ 启动失败屏：有失败原因行（outcome 文案）
+PASS  ⑦ 启动失败屏：主体是空态、不是错误框
+PASS  ⑦ 启动失败屏：没有任何步骤
+PASS  ⑦ 启动失败屏：状态行只到状态词，不报英文原名
 PASS  ③ 浮层高度 = 屏高 90%
 PASS  ③ 360pt 屏上留缝 ≥ 70px（够点外面关）
 PASS  ③ 浮层上圆角 20px / 左右内边距 16px
@@ -338,7 +390,8 @@ PASS  ⑤ 长命令一行截断（ellipsis + 实际被裁）
 PASS  ⑤ 截断的行仍可展开（有 chevron）
 PASS  ⑤ 切走后窄屏壳清空（不重复挂载）
 PASS  ⑥ 结论区五段齐全
+PASS  ⑥ 失败态口径写在结论区（本次补充）
 PASS  ⑥ 结论区指到上游文件（可核）
 PASS  ⑥ 两条待确认口径写在结论区
 
-50/50 通过
+58/58 通过

@@ -97,7 +97,8 @@ async function shot(ws, screen, name, clip) {
     ['after', 'shot-02-after.png'],
     ['working', 'shot-03-working.png'],
     ['done', 'shot-04-done.png'],
-    ['failed', 'shot-05-failed.png']
+    ['failed', 'shot-05-failed.png'],
+    ['failed-start', 'shot-06-failed-start.png']
   ]) {
     await shot(ws, screen, name, clip);
   }
@@ -117,8 +118,8 @@ async function shot(ws, screen, name, clip) {
   });
   const narrowClip = JSON.parse(narrowBox.result.value);
   const narrowShot = await ws.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, clip: narrowClip });
-  fs.writeFileSync(path.join(OUT, 'shot-06-narrow.png'), Buffer.from(narrowShot.data, 'base64'));
-  console.log('写入 evidence/shot-06-narrow.png');
+  fs.writeFileSync(path.join(OUT, 'shot-07-narrow.png'), Buffer.from(narrowShot.data, 'base64'));
+  console.log('写入 evidence/shot-07-narrow.png');
 
   // 整幅页（含结论区）单独一张
   await ws.send('Emulation.clearDeviceMetricsOverride');

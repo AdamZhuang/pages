@@ -150,7 +150,7 @@ const HARNESS = String.raw`
 
   // ── ③ 详情浮层：三态（AC-4 / AC-5） ───────────────────────────
   out.sheets = {};
-  for (const state of ['working', 'done', 'failed', 'narrow']) {
+  for (const state of ['working', 'done', 'failed', 'failed-start', 'narrow']) {
     const sc = screen(state);
     const sheet = sc.querySelector('.sheet');
     const body = sc.querySelector('[data-probe="sheet-body"]');
@@ -176,7 +176,11 @@ const HARNESS = String.raw`
       has_input: !!sc.querySelector('.sheet input, .sheet textarea, .sheet [contenteditable]'),
       // 浮层里不能再有 composer
       has_composer: !!sc.querySelector('.sheet .composer'),
-      foot: sc.querySelector('[data-probe="foot"]').textContent.trim()
+      foot: sc.querySelector('[data-probe="foot"]').textContent.trim(),
+      reason: sc.querySelector('[data-probe="reason"]')?.textContent.trim() ?? null,
+      reason_color: sc.querySelector('[data-probe="reason"]') ? getComputedStyle(sc.querySelector('[data-probe="reason"]')).color : null,
+      has_nothing: !!sc.querySelector('[data-probe="nothing"]'),
+      nothing_text: sc.querySelector('[data-probe="nothing"]')?.textContent.trim() ?? null
     };
   }
   // 工作中：有停止、无 PR；已结束：有 PR、无停止；失败：都没有
@@ -255,6 +259,8 @@ const HARNESS = String.raw`
   out.notes_has_sections = ['会话流', '详情浮层', '列表预览', '数值尺子', '不做'].every((s) => notes.includes(s));
   out.notes_mentions_upstream_files = ['transcript.tsx', 'AgentScreen.tsx', 'lorca.css'].every((s) => notes.includes(s));
   out.notes_has_two_open_questions = notes.includes('标记行带状态词') && notes.includes('标记行写智能体名');
+  // 失败态口径（2026-10-18 补充）
+  out.notes_failure_section = ['失败态', '失败原因', 'never started', 'stopped'].every((s) => notes.includes(s));
 
   // ── ⑦ 视觉证据用：三态与窄屏都可见过 ──────────────────────────
   out.screens_seen = ['before', 'after', 'working', 'done', 'failed', 'narrow'];
@@ -263,7 +269,7 @@ const HARNESS = String.raw`
 `;
 
 const checks = (out) => [
-  ['① 六个屏齐全', out.tabs.length === 6 && out.screens.length === 6 && out.tabs.join() === out.screens.join()],
+  ['① 七个屏齐全', out.tabs.length === 7 && out.screens.length === 7 && out.tabs.join() === out.screens.join()],
   ['① 默认落在「现状」屏', out.initial_active === 'before'],
   ['① 直链 #failed 能直接打开失败屏', out.hash_deeplink === 'failed'],
 
@@ -285,7 +291,7 @@ const checks = (out) => [
   ['② 改后屏文本不出现 coding_agent（AC-3 / AC-10）', out.after_text_has_coding_agent === false],
   ['① 现状屏作为基线仍出现 coding_agent（对比有效）', out.before_text_has_coding_agent === true],
 
-  ['③ 四屏浮层都有把手 + 标题 + 关闭', ['working', 'done', 'failed', 'narrow'].every((s) => out.sheets[s].has_handle && out.sheets[s].has_title && out.sheets[s].has_close_top)],
+  ['③ 四屏浮层都有把手 + 标题 + 关闭', ['working', 'done', 'failed', 'failed-start', 'narrow'].every((s) => out.sheets[s].has_handle && out.sheets[s].has_title && out.sheets[s].has_close_top)],
   ['③ 工作中：状态行含「工作中」、有停止、无 PR', out.sheets.working.where.includes('工作中') && out.sheets.working.has_stop === true && out.sheets.working.pr === null],
   ['③ 已结束：状态行含「待审核」、有 PR #12、无停止', out.sheets.done.where.includes('待审核') && out.sheets.done.pr === 'PR #12' && out.sheets.done.has_stop === false],
   ['③ 失败：状态行含「运行失败」、无停止、无 PR', out.sheets.failed.where.includes('运行失败') && out.sheets.failed.has_stop === false && out.sheets.failed.pr === null],
@@ -295,7 +301,15 @@ const checks = (out) => [
   ['③ 编辑行带 +N −N 与颜色', out.sheets.working.has_plan === true && true],
   ['③ 计划清单条目齐全（3 条 / 2 条）', out.sheets.working.plan_entries === 3 && out.sheets.narrow.plan_entries === 2],
   ['③ 命令可展开看输出', out.sheets.done.has_output === true && out.sheets.narrow.has_output === true],
-  ['③ 只读：浮层里没有输入框', ['working', 'done', 'failed', 'narrow'].every((s) => out.sheets[s].has_input === false && out.sheets[s].has_composer === false)],
+  ['③ 只读：浮层里没有输入框', ['working', 'done', 'failed', 'failed-start', 'narrow'].every((s) => out.sheets[s].has_input === false && out.sheets[s].has_composer === false)],
+
+  ['⑦ 失败原因行：状态行下方一行，走失败色，带「失败原因：」', out.sheets.failed.reason !== null && out.sheets.failed.reason.startsWith('失败原因：') && out.sheets.failed.reason_color.includes('176, 68, 88')],
+  ['⑦ 失败原因取 outcome（不是上游英文报错原文）', out.sheets.failed.reason.includes('Claude Code exited with code 1')],
+  ['⑦ 只有失败态有失败原因行（其余四屏不占位）', ['working', 'done', 'narrow'].every((s) => out.sheets[s].reason === null)],
+  ['⑦ 启动失败屏：有失败原因行（outcome 文案）', out.sheets['failed-start'].reason !== null && out.sheets['failed-start'].reason.startsWith('失败原因：')],
+  ['⑦ 启动失败屏：主体是空态、不是错误框', out.sheets['failed-start'].has_nothing === true && out.sheets['failed-start'].nothing_text === '这次运行没有留下步骤。'],
+  ['⑦ 启动失败屏：没有任何步骤', out.sheets['failed-start'].steps.length === 0 && out.sheets['failed-start'].has_prompt === false],
+  ['⑦ 启动失败屏：状态行只到状态词，不报英文原名', out.sheets['failed-start'].where.includes('运行失败') && !/coding_agent/.test(out.sheets['failed-start'].where)],
   ['③ 浮层高度 = 屏高 90%', Math.abs(out.sheet_height_ratio - 0.90) < 0.01],
   ['③ 360pt 屏上留缝 ≥ 70px（够点外面关）', out.gap_360 >= 70],
   ['③ 浮层上圆角 20px / 左右内边距 16px', out.sheet_radius === '20px' && out.sheet_pad_x === '16px'],
@@ -306,14 +320,14 @@ const checks = (out) => [
   ['③ 底部有分支 / 跟随状态与关闭按钮', out.sheets.working.foot.includes('每 5 秒') && out.sheets.done.foot.includes('已结束，不再刷新') && out.sheets.failed.foot.includes('已结束，不再刷新')],
   ['③ 跟随文案不含 2 秒（手机端永远不是 Runner）', !JSON.stringify(out.sheets).includes('2 秒')],
 
-  ['⑤ 窄屏壳 360pt 且装着 ⑥ 屏', out.narrow.phone_width === 360 && out.narrow.screen_in_narrow_shell === true],
-  ['⑤ 窄屏无横向溢出', out.narrow.overflows.length === 0],
+  ['⑤ 窄屏壳 360pt 且装着 ⑥ 屏', out.narrow.phone_width === 360 && out.narrow.screen_in_narrow_shell === true],  ['⑤ 窄屏无横向溢出', out.narrow.overflows.length === 0],
   ['⑤ 浮层主体无横向滚动（scrollWidth == clientWidth）', out.narrow.scroll_width === out.narrow.client_width],
   ['⑤ 长命令一行截断（ellipsis + 实际被裁）', out.narrow.long_command.text_overflow === 'ellipsis' && out.narrow.long_command.clipped === true],
   ['⑤ 截断的行仍可展开（有 chevron）', out.narrow.expandable_steps >= 1],
   ['⑤ 切走后窄屏壳清空（不重复挂载）', out.narrow.shell_cleared === true],
 
   ['⑥ 结论区五段齐全', out.notes_has_sections === true],
+  ['⑥ 失败态口径写在结论区（本次补充）', out.notes_failure_section === true],
   ['⑥ 结论区指到上游文件（可核）', out.notes_mentions_upstream_files === true],
   ['⑥ 两条待确认口径写在结论区', out.notes_has_two_open_questions === true]
 ];

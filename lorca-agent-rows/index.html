@@ -275,6 +275,16 @@
     font-size: 12px; color: var(--muted);
   }
   .sheet-actions { flex: 0 0 auto; display: flex; gap: 8px; padding: 8px 16px 10px; }
+  /* 失败原因：与状态行分开一行。理由见结论区「失败态」一节 —— 原因可能是上游的长英文句子，
+     塞进状态行会被 360px 截断，而且会把六档状态词挤掉。 */
+  .sheet-reason {
+    flex: 0 0 auto;
+    padding: 6px 16px 0;
+    color: var(--danger); font-size: 12px; line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+  .sheet-reason .lead { font-weight: 600; }
+  .sheet-nothing { padding: 4px 0; font-size: 13px; color: var(--muted); }
   .sheet-action {
     display: inline-flex; align-items: center; gap: 5px;
     padding: 6px 12px; border: 0; border-radius: 8px;
@@ -388,7 +398,8 @@
     <button type="button" role="tab" data-screen="working" aria-selected="false">③ 详情 · 工作中</button>
     <button type="button" role="tab" data-screen="done" aria-selected="false">④ 详情 · 已结束</button>
     <button type="button" role="tab" data-screen="failed" aria-selected="false">⑤ 详情 · 失败</button>
-    <button type="button" role="tab" data-screen="narrow" aria-selected="false">⑥ 窄屏 360</button>
+    <button type="button" role="tab" data-screen="failed-start" aria-selected="false">⑥ 详情 · 启动失败（没跑起来）</button>
+    <button type="button" role="tab" data-screen="narrow" aria-selected="false">⑦ 窄屏 360</button>
   </div>
 
   <div class="stage">
@@ -773,6 +784,7 @@ Tests: 42 passed, 42 total</div>
                   <button class="sheet-close" type="button">关闭</button>
                 </div>
                 <div class="sheet-where" style="color:var(--danger)" data-probe="where">Claude Code · 运行失败 · main · Workbench</div>
+                <div class="sheet-reason" data-probe="reason"><span class="lead">失败原因：</span>Claude Code exited with code 1</div>
                 <div class="sheet-actions" style="display:none"></div>
                 <div class="sheet-body" data-probe="sheet-body">
                   <div class="step">
@@ -804,10 +816,51 @@ npm ERR!   npm run</div>
           </div>
         </section>
 
-        <!-- ══ ⑥ 窄屏 360 ══════════════════════════════════════════ -->
-        <section class="screen" data-screen="narrow">
-          <div class="statusbar"><span>9:41</span><span>360pt</span></div>
+        <!-- ══ ⑥ 详情 · 启动失败（agent 从没跑起来）═════════════════
+             这一屏是补的那条：启动失败时 agent 从没进 by_row，所以没有任何步骤，
+             主体是空的 —— 唯一的线索就是卡上的 outcome。没有这一行，用户看到的就是一片空白。 -->
+        <section class="screen" data-screen="failed-start">
+          <div class="statusbar"><span>9:41</span><span>lorca v1.0.15</span></div>
           <div class="hdr">
+            <button class="icon-btn is-plain" type="button" aria-label="返回">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <span class="hdr-title">自媒体选题维护</span>
+            <span class="hdr-spacer"></span>
+          </div>
+          <div class="thread" style="padding:0">
+            <div class="backdrop">
+              <div class="sheet" data-probe="sheet" data-state="failed-start">
+                <div class="sheet-handle"></div>
+                <div class="sheet-head">
+                  <div class="sheet-head-text">
+                    <div class="sheet-title">
+                      <span class="mark" aria-hidden="true">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8l-4 4 4 4"/><path d="M15 8l4 4-4 4"/></svg>
+                      </span>
+                      <span class="t">会话列表滑动三格 + Hidden 组 + 删除（issue #1 P1）</span>
+                    </div>
+                  </div>
+                  <button class="sheet-close" type="button">关闭</button>
+                </div>
+                <div class="sheet-where" style="color:var(--danger)" data-probe="where">Claude Code · 运行失败</div>
+                <div class="sheet-reason" data-probe="reason"><span class="lead">失败原因：</span>Claude Code is not installed on this Runner. Leave agent out to use one that is, or ask the user to install it.</div>
+                <div class="sheet-actions" style="display:none"></div>
+                <div class="sheet-body" data-probe="sheet-body">
+                  <div class="step"><p class="sheet-nothing" data-probe="nothing">这次运行没有留下步骤。</p></div>
+                </div>
+                <div class="sheet-foot">
+                  <span class="grow" data-probe="foot">已结束，不再刷新</span>
+                  <button class="sheet-close" type="button">关闭</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══ ⑦ 窄屏 360 ══════════════════════════════════════════ -->
+        <section class="screen" data-screen="narrow">
+          <div class="statusbar"><span>9:41</span><span>360pt</span></div>          <div class="hdr">
             <button class="icon-btn is-plain" type="button" aria-label="返回">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
@@ -915,6 +968,7 @@ Tests: 42 passed, 42 total</div>
       <tr><th>位置</th><th>内容</th></tr>
       <tr><td>把手 + 标题栏</td><td>智能体标记 + 标题（最多 3 行）+ 关闭（iOS「完成」/ Android「关闭」）</td></tr>
       <tr><td>状态行</td><td>{智能体名} · {状态词} · {分支} · {设备}（缺的项不占位，失败时整行走失败色）</td></tr>
+      <tr><td>失败原因行</td><td>仅 <code>state === "failed"</code> 且 <code>outcome</code> 非空时出现：<b>失败原因：{outcome}</b>，走失败色、可换行；其余情况不占位</td></tr>
       <tr><td>动作行</td><td>运行中一个「停止」；有 PR 时一个 PR 入口（<code>#12</code>）；都没有时整行不占位</td></tr>
       <tr><td>主体（可滚）</td><td>按时间顺序列步骤：提示词卡（超 6 行折叠，「显示更多」）/ 状态行 / 思考了 N 秒（可展开正文）/ 它说的话 / 工具步骤（读与搜索折成「浏览了 N 个文件 M 次搜索」，命令可展开输出，编辑带 +N −N）/ 计划清单 / 错误行</td></tr>
       <tr><td>底部</td><td>分支 + 改动统计（<code>+184 −37，涉及 6 个文件</code>）+ 关闭</td></tr>
@@ -963,14 +1017,28 @@ Tests: 42 passed, 42 total</div>
     <p><b>我的取舍是保留状态词</b>，理由：标题只用于「认得出是哪个任务」（前几个字通常够），而「干到哪了」是这一行唯一的可扫视信号，也是点开浮层的动机。完整标题在浮层标题栏里完整可读（最多 3 行）。</p>
     <p>如果你更在意标题完整度，备选是把状态词移到预览行右端（标题能多 4 个字）—— 但状态会离标题变远，扫视时容易读成预览的一部分。你定。</p>
 
-    <h3>7. 与 issue #4 验收标准的对应（逐条可核）</h3>
+    <h3>7. 失败态（本次补充，2026-10-18）</h3>
+    <p>复核时发现的缺口：<b>启动失败</b>的智能体从没进上游的 agent 表（<code>by_row</code> 查不到），所以点开浮层拉 <code>coding.transcript</code> 只会失败 —— 主体一片空白 + 一句英文报错。而上游给的真原因就在卡上的 <code>outcome</code>（桥接层已经收进协议了，界面一处没画）。</p>
+    <table>
+      <tr><th>位置</th><th>口径</th></tr>
+      <tr><td>桥接层</td><td>上游的 <code>That coding agent never started</code> 要翻成 <b>404</b>（不是 502），且说清是「这个智能体没有跑起来」，不能说成「这一行不是启动行」——两种 404 是不同的错</td></tr>
+      <tr><td>浮层主体</td><td>拉不到运行记录时**不弹错误框**，走已有空态「这次运行没有留下步骤。」（原因由下面那行给）</td></tr>
+      <tr><td>失败原因行</td><td>状态行下方一行「<b>失败原因：</b>{outcome}」，<b>仅 <code>state === "failed"</code> 且 <code>outcome</code> 非空</b>；数据取会话流那一行的卡（<code>fallback</code>），不等 transcript</td></tr>
+    </table>
+    <p><b>两处与上游不同，都是有意：</b></p>
+    <ul>
+      <li><b>不替换状态行</b>（上游 macOS <code>AgentCellView.swift:36</code> 是整条替成「失败：{outcome}」）。理由：360pt 上 outcome 可能是一整句英文，替掉状态行就把「哪个智能体、哪个分支」挤掉了；上游那样写是因为它的 detail 只有一行位置，浮层里有两行。</li>
+      <li><b><code>stopped</code> 的 outcome 本期不画</b>（上游也只画 <code>failed</code> 那档）。stopped 的 outcome 常常就是「Stopped」这类词，摆在「失败原因：」后面是假话。状态词「已停止」已经说清了。要画得另起一档标签，P2 再说。</li>
+    </ul>
+
+    <h3>8. 与 issue #4 验收标准的对应（逐条可核）</h3>
     <table>
       <tr><th>AC</th><th>本稿里对应哪一块</th></tr>
       <tr><td>1 <code>agent_message</code> 不降级</td><td>不在 UI 稿范围（桥接层），但 ② 屏「来自 …」行就是它的渲染结果</td></tr>
       <tr><td>2 工具行带 <code>agent</code> / <code>target_agent_id</code></td><td>不在 UI 稿范围；② 屏同时演示了两种（启动行 / 发消息行）</td></tr>
       <tr><td>3 居中标记行、不出现英文原名</td><td>② 屏五条标记行；① 屏是对照基线；探针核「② 屏文本无 <code>coding_agent</code>、① 屏有」</td></tr>
-      <tr><td>4 点开详情、顶部有标题 / 状态行 / 停止 / 底部关闭</td><td>③ 屏（有停止无 PR）；④ 屏（有 PR 无停止）</td></tr>
-      <tr><td>5 七种步骤 + 工具可展开</td><td>③④⑤ 屏：提示词 / 状态行 / 思考 / 它说的话 / 工具步骤 / 计划 / 错误行；④ 屏演示了展开的命令输出</td></tr>
+      <tr><td>4 点开详情、顶部有标题 / 状态行 / 停止 / 底部关闭</td><td>③ 屏（有停止无 PR）；④ 屏（有 PR 无停止）；⑤ 屏（失败 + 失败原因行）；⑥ 屏（启动失败：无步骤、无错误框、有失败原因行）</td></tr>
+      <tr><td>5 七种步骤 + 工具可展开</td><td>③④⑤ 屏：提示词 / 状态行 / 思考 / 它说的话 / 工具步骤 / 计划 / 错误行；④ 屏演示了展开的命令输出；⑥ 屏演示「一个步骤都没有」的空态</td></tr>
       <tr><td>6 2 秒 / 5 秒跟随、结束就停</td><td>③ 屏底部「跟随中 · 每 5 秒」；④⑤ 屏「已结束，不再刷新」——手机端永远不是 Runner，所以只有 5 秒这一档；节奏本身由研发实现</td></tr>
       <tr><td>7 点外面 / 返回键关</td><td>四屏浮层都有 <code>backdrop</code> 层（点外面关）+ 顶部与底部两个关闭按钮；返回键走已有 <code>useBackLayer</code>。**浮层上方那条缝不接收关闭**（防误关，研发建议，已采纳）</td></tr>
       <tr><td>8 窄屏 360 不溢出、长命令截断可展开</td><td>⑥ 屏（360pt 壳）；探针核无横向溢出、长命令 ellipsis 且可展开</td></tr>
@@ -983,6 +1051,10 @@ Tests: 42 passed, 42 total</div>
       研发核出的三处已改到稿子里：<b>报告行不画状态词</b>（只红色区分 failed）、
       <b>发消息行反查不到启动行时没有状态词</b>、<b>浮层降到 90% 且上方那条缝不接收关闭</b>；
       跟随文案改成「跟随中 · 每 5 秒 / 已结束，不再刷新 / 已暂停 · 回到最新」（手机端永远不是 Runner，2 秒那档写错了）。
+      <br><br>
+      <b>本次补充（Adam 2026-10-18 点头）</b>：⑥ 屏「启动失败」—— 桥接层把
+      <code>never started</code> 翻成 404、浮层不弹错误框、状态行下面一行「失败原因：{outcome}」。
+      验收时按这三条逐项核（另见下方第 7 节）。
     </div>
       待你确认的两条口径：<b>①标记行带状态词</b>、<b>②标记行写智能体名</b>（都偏离上游，理由是不引 logo 资产）。
       你点头后我把这两条写进 issue #4 的验收标准，研发照此实现。
