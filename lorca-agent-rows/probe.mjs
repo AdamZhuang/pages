@@ -186,6 +186,8 @@ const HARNESS = String.raw`
   const sheetW = screen('working').querySelector('.sheet');
   const phoneW = sheetW.closest('.phone').getBoundingClientRect();
   out.sheet_height_ratio = +(sheetW.getBoundingClientRect().height / phoneW.height).toFixed(3);
+  // 360pt 壳（740 高）上那条缝的实际像素（要够点外面关，且不接收关闭）
+  out.gap_360 = Math.round(740 * (1 - out.sheet_height_ratio));
   out.sheet_radius = getComputedStyle(sheetW).borderTopLeftRadius;
   out.sheet_pad_x = getComputedStyle(screen('working').querySelector('.sheet-body')).paddingLeft;
   // 步骤行 14px / 行高 19 / 行距 6
@@ -267,8 +269,8 @@ const checks = (out) => [
 
   ['② 会话流里五个标记行（启动 / 发消息 / 报告 / 失败 / 已停止）', out.marker_count === 5],
   ['② 启动行文案 =「已发消息给 Claude Code · 标题 [工作中]」', /^已发消息给 Claude Code · 会话列表滑动三格/.test(out.markers[0].text) && out.markers[0].state === '工作中'],
-  ['② 报告行文案 =「来自 Claude Code · 标题」且无状态词', /^来自 Claude Code · 会话列表滑动三格/.test(out.markers[2].text) && out.markers[2].state === null],
-  ['② 失败行整行走失败色（预览红）', out.failed_preview_color !== out.normal_preview_color && out.failed_preview_color.includes('176, 68, 88')],
+  ['② 已完成报告行不带状态词（不挂「已完成」噪声）', out.markers[2].state === null],
+  ['② 失败报告行带「运行失败」且预览红', out.markers[3].state === '运行失败' && out.failed_preview_color.includes('176, 68, 88')],
   ['② 发消息行（target_agent_id）也是「已发消息给」+ 状态', /^已发消息给 Claude Code/.test(out.markers[1].text) && out.markers[1].state === '工作中'],
   ['② 已停止行状态词为「已停止」', out.markers[4].state === '已停止'],
   ['② 标记行可点（button / role）', out.markers.every((m) => m.tag === 'BUTTON' || m.role === 'button')],
@@ -294,13 +296,15 @@ const checks = (out) => [
   ['③ 计划清单条目齐全（3 条 / 2 条）', out.sheets.working.plan_entries === 3 && out.sheets.narrow.plan_entries === 2],
   ['③ 命令可展开看输出', out.sheets.done.has_output === true && out.sheets.narrow.has_output === true],
   ['③ 只读：浮层里没有输入框', ['working', 'done', 'failed', 'narrow'].every((s) => out.sheets[s].has_input === false && out.sheets[s].has_composer === false)],
-  ['③ 浮层高度 = 屏高 92%', Math.abs(out.sheet_height_ratio - 0.92) < 0.01],
+  ['③ 浮层高度 = 屏高 90%', Math.abs(out.sheet_height_ratio - 0.90) < 0.01],
+  ['③ 360pt 屏上留缝 ≥ 70px（够点外面关）', out.gap_360 >= 70],
   ['③ 浮层上圆角 20px / 左右内边距 16px', out.sheet_radius === '20px' && out.sheet_pad_x === '16px'],
   ['③ 步骤行 14px / 行高 19px', out.step_line.size === '14px' && out.step_line.lh === '19px'],
   ['③ 提示词超 6 行折叠 + 「显示更多」', out.prompt_folded.clamped === '6' && out.prompt_folded.has_more === true && out.prompt_folded.more_text === '显示更多'],
   ['③ 短提示词不折叠', out.prompt_unfolded_clamp === 'none'],
   ['③ 命令输出块 12px 等宽、6 行后内部滚动', out.output_block.size === '12px' && out.output_block.family === true && out.output_block.max_height === '132px' && out.output_block.overflow_y === 'auto'],
-  ['③ 底部有分支 / 跟随状态与关闭按钮', out.sheets.working.foot.includes('每 2 秒') && out.sheets.done.foot.includes('已停止跟随') && out.sheets.failed.foot.includes('它已结束')],
+  ['③ 底部有分支 / 跟随状态与关闭按钮', out.sheets.working.foot.includes('每 5 秒') && out.sheets.done.foot.includes('已结束，不再刷新') && out.sheets.failed.foot.includes('已结束，不再刷新')],
+  ['③ 跟随文案不含 2 秒（手机端永远不是 Runner）', !JSON.stringify(out.sheets).includes('2 秒')],
 
   ['⑤ 窄屏壳 360pt 且装着 ⑥ 屏', out.narrow.phone_width === 360 && out.narrow.screen_in_narrow_shell === true],
   ['⑤ 窄屏无横向溢出', out.narrow.overflows.length === 0],

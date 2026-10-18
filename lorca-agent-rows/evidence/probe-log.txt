@@ -44,9 +44,9 @@
     },
     {
       "kind": "failed",
-      "text": "来自 Claude Code · 会话列表滑动三格 + Hidden 组 + 删除",
+      "text": "来自 Claude Code · 会话列表滑动三格 + Hidden 组 + 删除 运行失败",
       "preview": "API Error: 400 Your account (2101112570) does not have…",
-      "state": null,
+      "state": "运行失败",
       "tag": "BUTTON",
       "role": "button"
     },
@@ -154,7 +154,7 @@
       "has_statusline": true,
       "has_input": false,
       "has_composer": false,
-      "foot": "分支 main · 跟随中（本机每 2 秒）"
+      "foot": "分支 main · 跟随中 · 每 5 秒"
     },
     "done": {
       "state_attr": "done",
@@ -181,7 +181,7 @@
       "has_statusline": true,
       "has_input": false,
       "has_composer": false,
-      "foot": "feat/list-swipe · +184 −37，涉及 6 个文件 · 已停止跟随"
+      "foot": "feat/list-swipe · +184 −37，涉及 6 个文件 · 已结束，不再刷新"
     },
     "failed": {
       "state_attr": "failed",
@@ -205,7 +205,7 @@
       "has_statusline": true,
       "has_input": false,
       "has_composer": false,
-      "foot": "main · 已停止跟随（它已结束）"
+      "foot": "main · 已结束，不再刷新"
     },
     "narrow": {
       "state_attr": "narrow",
@@ -231,10 +231,11 @@
       "has_statusline": true,
       "has_input": false,
       "has_composer": false,
-      "foot": "分支 main · 跟随中（本机每 2 秒）"
+      "foot": "分支 main · 跟随中 · 每 5 秒"
     }
   },
-  "sheet_height_ratio": 0.918,
+  "sheet_height_ratio": 0.898,
+  "gap_360": 75,
   "sheet_radius": "20px",
   "sheet_pad_x": "16px",
   "step_line": {
@@ -294,8 +295,8 @@ PASS  ① 默认落在「现状」屏
 PASS  ① 直链 #failed 能直接打开失败屏
 PASS  ② 会话流里五个标记行（启动 / 发消息 / 报告 / 失败 / 已停止）
 PASS  ② 启动行文案 =「已发消息给 Claude Code · 标题 [工作中]」
-PASS  ② 报告行文案 =「来自 Claude Code · 标题」且无状态词
-PASS  ② 失败行整行走失败色（预览红）
+PASS  ② 已完成报告行不带状态词（不挂「已完成」噪声）
+PASS  ② 失败报告行带「运行失败」且预览红
 PASS  ② 发消息行（target_agent_id）也是「已发消息给」+ 状态
 PASS  ② 已停止行状态词为「已停止」
 PASS  ② 标记行可点（button / role）
@@ -321,13 +322,15 @@ PASS  ③ 编辑行带 +N −N 与颜色
 PASS  ③ 计划清单条目齐全（3 条 / 2 条）
 PASS  ③ 命令可展开看输出
 PASS  ③ 只读：浮层里没有输入框
-PASS  ③ 浮层高度 = 屏高 92%
+PASS  ③ 浮层高度 = 屏高 90%
+PASS  ③ 360pt 屏上留缝 ≥ 70px（够点外面关）
 PASS  ③ 浮层上圆角 20px / 左右内边距 16px
 PASS  ③ 步骤行 14px / 行高 19px
 PASS  ③ 提示词超 6 行折叠 + 「显示更多」
 PASS  ③ 短提示词不折叠
 PASS  ③ 命令输出块 12px 等宽、6 行后内部滚动
 PASS  ③ 底部有分支 / 跟随状态与关闭按钮
+PASS  ③ 跟随文案不含 2 秒（手机端永远不是 Runner）
 PASS  ⑤ 窄屏壳 360pt 且装着 ⑥ 屏
 PASS  ⑤ 窄屏无横向溢出
 PASS  ⑤ 浮层主体无横向滚动（scrollWidth == clientWidth）
@@ -338,4 +341,4 @@ PASS  ⑥ 结论区五段齐全
 PASS  ⑥ 结论区指到上游文件（可核）
 PASS  ⑥ 两条待确认口径写在结论区
 
-48/48 通过
+50/50 通过
