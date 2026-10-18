@@ -99,16 +99,19 @@ const HARNESS = String.raw`
     left_gap: Math.round(actsBox.left - rowBox.left),
     width: Math.round(actsBox.width)
   };
-  // 露出顺序 = 视觉上从右往左数
+  // 视觉顺序 = 自左向右（Adam 2026-10-18 定：置顶 · 隐藏 · ⋯）
   const slotBoxes = Array.from(acts.querySelectorAll('.slot')).map((el) => {
     const b = el.getBoundingClientRect();
     return { text: el.textContent.trim(), left: Math.round(b.left), right: Math.round(b.right) };
-  }).sort((a, b) => b.right - a.right);
-  out.reveal_order = slotBoxes.map((x) => x.text);
+  }).sort((a, b) => a.left - b.left);
+  out.visual_order = slotBoxes.map((x) => x.text);
 
   // AC-2 四个吸附点
+  // 只有两态：125 → 0、126 → 全开 252
   reset(); drag(trackA, -41, 0);   out.snap_41 = px(trackA);
   reset(); drag(trackA, -100, 0);  out.snap_100 = px(trackA);
+  reset(); drag(trackA, -125, 0);  out.snap_125 = px(trackA);
+  reset(); drag(trackA, -126, 0);  out.snap_126 = px(trackA);
   reset(); drag(trackA, -150, 0);  out.snap_150 = px(trackA);
   reset(); drag(trackA, -220, 0);  out.snap_220 = px(trackA);
   // 上限封顶
@@ -122,8 +125,8 @@ const HARNESS = String.raw`
   const trackH = document.querySelector('.screen[data-screen="hidden"] .lrow-track[data-slots="2"]');
   const hiddenMax = Number(trackH.dataset.slots) * 84;
   fire(trackH, 'pointerdown', 360, 300);
-  fire(trackH, 'pointermove', 40, 300);  // dx = −320，远超两格上限
-  fire(trackH, 'pointerup', 40, 300);
+  fire(trackH, 'pointermove', 276, 300);  // dx = −84，正好两格行阈值
+  fire(trackH, 'pointerup', 276, 300);
   out.hidden_row = {
     slots: Number(trackH.dataset.slots),
     max: hiddenMax,
@@ -152,16 +155,16 @@ const HARNESS = String.raw`
 
   // 左缘起手（v4 不再有排除区）：向左滑照常开格
   reset();
-  begin(trackA, 8, 300); moveTo(trackA, -100, 0, 8, 300); endDrag(trackA, -100, 0, 8, 300);
+  begin(trackA, 8, 300); moveTo(trackA, -126, 0, 8, 300); endDrag(trackA, -126, 0, 8, 300);
   out.left_edge_drag = px(trackA);
 
   // AC-4 一次只开一行
-  reset(); drag(trackA, -100, 0); const aOpen = px(trackA);
-  drag(trackB, -100, 0);
+  reset(); drag(trackA, -126, 0); const aOpen = px(trackA);
+  drag(trackB, -126, 0);
   out.one_at_a_time = { a: aOpen, aAfter: px(trackA), b: px(trackB) };
 
   // AC-6 行开着时点正文：只关行，点击被吃掉
-  reset(); drag(trackA, -100, 0);
+  reset(); drag(trackA, -126, 0);
   await tick();
   const before = px(trackA);
   const clickEvent = new MouseEvent('click', { bubbles: true, cancelable: true });
@@ -190,7 +193,7 @@ const HARNESS = String.raw`
   out.ac8_toggle_close = menu.hasAttribute('hidden');
 
   // AC-5 列表真实滚动量 > 6px 关行
-  reset(); drag(trackA, -220, 0);
+  reset(); drag(trackA, -126, 0);
   await tick();
   const openBefore = px(trackA);
   list.scrollTop = 8;
@@ -198,7 +201,7 @@ const HARNESS = String.raw`
   out.scroll_close = { before: openBefore, after: px(trackA), note: note() };
 
   // scrollTop 不变 → 不关
-  reset(); drag(trackA, -100, 0);
+  reset(); drag(trackA, -126, 0);
   await tick();
   list.dispatchEvent(new Event('scroll'));
   out.scroll_noop_keeps_open = px(trackA);
@@ -207,10 +210,9 @@ const HARNESS = String.raw`
   reset(); drag(trackA, -252, 0);
   await tick();
   const full = px(trackA);
-  drag(trackA, 42, 0); await tick(); const s1 = px(trackA);
-  drag(trackA, 42, 0); await tick(); const s2 = px(trackA);
-  drag(trackA, 42, 0); await tick(); const s3 = px(trackA);
-  out.reopen_steps = { full, s1, s2, s3 };
+  drag(trackA, 41, 0); await tick(); const shortBack = px(trackA);   // 不足 42 → 回全开
+  drag(trackA, 42, 0); await tick(); const closed = px(trackA);     // ≥ 42 → 关
+  out.reverse = { full, shortBack, closed };
 
   // AC-7 常态行尾没有 ⋯（稿里没有 .more-btn）
   out.no_row_end_more = document.querySelectorAll('.more-btn').length === 0;
@@ -223,28 +225,31 @@ const HARNESS = String.raw`
 const checks = (out) => [
   ['AC-1 三格各 84px', out.slot_widths.length === 3 && out.slot_widths.every((w) => w === 84)],
   ['AC-1 三格贴行尾（右对齐，右侧无缝隙）', out.acts_anchor.right_gap === 0 && out.acts_anchor.left_gap > 0 && out.acts_anchor.width === 252],
-  ['AC-1 露出顺序 = 置顶 → 隐藏 → 更多', out.reveal_order.join('/').includes('置顶') && out.reveal_order.join('/').includes('隐藏') && out.reveal_order.join('/').includes('更多') && out.reveal_order[0].includes('置顶')],
+  ['AC-1 槽序（左→右）= 置顶 · 完成 · ⋯', out.visual_order.length === 3 && out.visual_order[0].includes('置顶') && out.visual_order[1].includes('完成') && out.visual_order[2].includes('更多')],
   ['AC-2 松手 41px → 0', out.snap_41 === 0],
-  ['AC-2 松手 100px → 84px（一档）', out.snap_100 === 84],
-  ['AC-2 松手 150px → 168px（二档）', out.snap_150 === 168],
-  ['AC-2 松手 220px → 252px（三档）', out.snap_220 === 252],
+  ['AC-2 松手 100px → 0（无中间档）', out.snap_100 === 0],
+  ['AC-2 松手 125px → 0（阈值下）', out.snap_125 === 0],
+  ['AC-2 松手 126px → 全开 252（阈值上）', out.snap_126 === 252],
+  ['AC-2 松手 150px → 全开 252', out.snap_150 === 252],
+  ['AC-2 松手 220px → 全开 252', out.snap_220 === 252],
   ['上限封顶 252px', out.snap_over === 252],
-  ['Hidden 行两格封顶 168px（槽 = 取消隐藏 / 更多）', out.hidden_row.slots === 2 && out.hidden_row.open === 168 && out.hidden_row.slots_in_dom.join('/').includes('取消隐藏') && out.hidden_row.slots_in_dom.join('/').includes('更多')],
+  ['已完成行两格阈值 84 → 全开 168（槽 = 取消完成 / 更多）', out.hidden_row.slots === 2 && out.hidden_row.open === 168 && out.hidden_row.slots_in_dom.join('/').includes('取消完成') && out.hidden_row.slots_in_dom.join('/').includes('更多')],
   ['AC-3 dx−20/dy8 → 横向、行跟手', out.diag_horizontal.x === 20 && out.diag_horizontal.note.includes('横向')],
   ['AC-3 dx−20/dy25 → 纵向、交回滚动', out.diag_vertical.x === 0 && out.diag_vertical.note.includes('纵向')],
   ['AC-3 dx−20/dy16 → 未起判区、行不跟手', out.diag_dead.x === 0 && out.diag_dead.note.includes('斜滑未定')],
   ['起判前不跟手（5px 位移 0）', out.before_lock.x === 0 && out.before_lock.note.includes('未起判')],
   ['向右滑不开格', out.rightward === 0],
-  ['左缘起手向左滑照常开格（v4 无排除区）', out.left_edge_drag === 84],
-  ['AC-4 A 开着滑 B → A 回 0、只 B 开', out.one_at_a_time.a === 84 && out.one_at_a_time.aAfter === 0 && out.one_at_a_time.b === 84],
-  ['AC-6 行开着点正文只关行、点击被吃', out.ac6_open.before === 84 && out.ac6_open.after === 0 && out.ac6_open.defaultPrevented === true],
+  ['左缘起手向左滑照常开格（无排除区）', out.left_edge_drag === 252],
+  ['AC-4 A 开着滑 B → A 回 0、只 B 开', out.one_at_a_time.a === 252 && out.one_at_a_time.aAfter === 0 && out.one_at_a_time.b === 252],
+  ['AC-6 行开着点正文只关行、点击被吃', out.ac6_open.before === 252 && out.ac6_open.after === 0 && out.ac6_open.defaultPrevented === true],
   ['AC-6 行关着点正文正常透传', out.ac6_closed.defaultPrevented === false],
   ['AC-8 第三格 ⋯ 开菜单，三项齐全且不重复置顶/隐藏', out.ac8_menu.open === true && out.ac8_menu.items.length === 3 && !out.ac8_menu.items.join('/').includes('置顶') && !out.ac8_menu.items.join('/').includes('隐藏')],
   ['AC-8 未读为 0 时「标记为已读」置灰', out.ac8_menu.disabled.some((d) => d === true)],
   ['AC-8 再点一次关菜单', out.ac8_toggle_close === true],
   ['AC-5 滚动 8px 关行', out.scroll_close.before === 252 && out.scroll_close.after === 0],
-  ['scrollTop 不变不关行', out.scroll_noop_keeps_open === 84],
-  ['反向（向右）滑每 42px 收一档 252→168→84→0', out.reopen_steps.full === 252 && out.reopen_steps.s1 === 168 && out.reopen_steps.s2 === 84 && out.reopen_steps.s3 === 0],
+  ['scrollTop 不变不关行', out.scroll_noop_keeps_open === 252],
+  ['AC-2b 向右滑 41px → 回全开 252', out.reverse.full === 252 && out.reverse.shortBack === 252],
+  ['AC-2b 向右滑 42px → 关回 0', out.reverse.closed === 0],
   ['AC-7 常态行尾没有 ⋯', out.no_row_end_more === true]
 ];
 

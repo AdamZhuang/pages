@@ -6,7 +6,7 @@
   ],
   "slot_order": [
     "取消置顶",
-    "隐藏",
+    "完成",
     "更多"
   ],
   "row_width": 388,
@@ -15,14 +15,16 @@
     "left_gap": 136,
     "width": 252
   },
-  "reveal_order": [
+  "visual_order": [
     "取消置顶",
-    "隐藏",
+    "完成",
     "更多"
   ],
   "snap_41": 0,
-  "snap_100": 84,
-  "snap_150": 168,
+  "snap_100": 0,
+  "snap_125": 0,
+  "snap_126": 252,
+  "snap_150": 252,
   "snap_220": 252,
   "snap_over": 252,
   "rightward": 0,
@@ -31,13 +33,13 @@
     "max": 168,
     "open": 168,
     "slots_in_dom": [
-      "取消隐藏",
+      "取消完成",
       "更多"
     ]
   },
   "diag_horizontal": {
     "x": 20,
-    "note": "横向跟手 · 位移 20px / 上限 252px（0 档）"
+    "note": "横向跟手 · 位移 20px / 上限 252px（过 126px 松手即全开）"
   },
   "diag_vertical": {
     "x": 0,
@@ -51,14 +53,14 @@
     "x": 0,
     "note": "未起判（|dx|=5 < 10）：行不跟手"
   },
-  "left_edge_drag": 84,
+  "left_edge_drag": 252,
   "one_at_a_time": {
-    "a": 84,
+    "a": 252,
     "aAfter": 0,
-    "b": 84
+    "b": 252
   },
   "ac6_open": {
-    "before": 84,
+    "before": 252,
     "after": 0,
     "defaultPrevented": true,
     "note": "行是开的：这次点击被吃掉（只关行，不进详情页）"
@@ -86,12 +88,11 @@
     "after": 0,
     "note": "列表滚动 8px > 6px → 关闭已开行"
   },
-  "scroll_noop_keeps_open": 84,
-  "reopen_steps": {
+  "scroll_noop_keeps_open": 252,
+  "reverse": {
     "full": 252,
-    "s1": 168,
-    "s2": 84,
-    "s3": 0
+    "shortBack": 252,
+    "closed": 0
   },
   "no_row_end_more": true
 }
@@ -99,19 +100,21 @@
 --- 判定 ---
 PASS  AC-1 三格各 84px
 PASS  AC-1 三格贴行尾（右对齐，右侧无缝隙）
-PASS  AC-1 露出顺序 = 置顶 → 隐藏 → 更多
+PASS  AC-1 槽序（左→右）= 置顶 · 完成 · ⋯
 PASS  AC-2 松手 41px → 0
-PASS  AC-2 松手 100px → 84px（一档）
-PASS  AC-2 松手 150px → 168px（二档）
-PASS  AC-2 松手 220px → 252px（三档）
+PASS  AC-2 松手 100px → 0（无中间档）
+PASS  AC-2 松手 125px → 0（阈值下）
+PASS  AC-2 松手 126px → 全开 252（阈值上）
+PASS  AC-2 松手 150px → 全开 252
+PASS  AC-2 松手 220px → 全开 252
 PASS  上限封顶 252px
-PASS  Hidden 行两格封顶 168px（槽 = 取消隐藏 / 更多）
+PASS  已完成行两格阈值 84 → 全开 168（槽 = 取消完成 / 更多）
 PASS  AC-3 dx−20/dy8 → 横向、行跟手
 PASS  AC-3 dx−20/dy25 → 纵向、交回滚动
 PASS  AC-3 dx−20/dy16 → 未起判区、行不跟手
 PASS  起判前不跟手（5px 位移 0）
 PASS  向右滑不开格
-PASS  左缘起手向左滑照常开格（v4 无排除区）
+PASS  左缘起手向左滑照常开格（无排除区）
 PASS  AC-4 A 开着滑 B → A 回 0、只 B 开
 PASS  AC-6 行开着点正文只关行、点击被吃
 PASS  AC-6 行关着点正文正常透传
@@ -120,7 +123,8 @@ PASS  AC-8 未读为 0 时「标记为已读」置灰
 PASS  AC-8 再点一次关菜单
 PASS  AC-5 滚动 8px 关行
 PASS  scrollTop 不变不关行
-PASS  反向（向右）滑每 42px 收一档 252→168→84→0
+PASS  AC-2b 向右滑 41px → 回全开 252
+PASS  AC-2b 向右滑 42px → 关回 0
 PASS  AC-7 常态行尾没有 ⋯
 
-25/25 通过
+28/28 通过
