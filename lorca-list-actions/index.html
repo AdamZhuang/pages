@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>avatar 会话列表动作 · UI 稿 v6（issue #1）</title>
+<title>avatar 会话列表动作 · UI 稿 v7（issue #1）</title>
 <style>
   /* 颜色 / 圆角 / 动效取自 apps/mobile/src/styles/tokens.css 与 lorca.css，跟 App 内视觉同源。 */
   :root {
@@ -307,12 +307,12 @@
   <div class="page-head">
     <h1>会话列表：滑动三格（置顶 / 完成 / ⋯）+ 已完成 tab</h1>
     <p class="page-sub">
-      issue #1 · 产品 UI 稿 <b>v6</b> · 2026-10-18 · 视觉取自 <code>apps/mobile/src/styles/{tokens,lorca}.css</code> ·
+      issue #1 · 产品 UI 稿 <b>v7</b> · 2026-10-18 · 视觉取自 <code>apps/mobile/src/styles/{tokens,lorca}.css</code> ·
       上游口径 <code>docs/architecture/sidebar.md</code>、<code>phone-app.md</code>
     </p>
   </div>
   <div class="legend">
-    <span class="badge is-v2">v6 变更：槽序 置顶 · 完成 · ⋯ · 一滑到底 · 顶部 tab 会话/已完成/自动化</span>
+    <span class="badge is-v2">v7 变更：槽序 置顶 · 完成 · ⋯ · 一滑到底 · 顶部 tab 会话/已完成/自动化</span>
     <span class="badge is-p1">P1 · 本期</span>
     <span class="badge is-p2">P2 · 下一期</span>
     <span class="badge is-out">不做</span>
@@ -789,7 +789,7 @@
               <ul>
                 <li>全部消息与附件</li>
                 <li>已读标记</li>
-                <li>正在运行的任务会被取消</li>
+                <li>正在运行的任务会停掉</li>
               </ul>
               <p class="sheet-warn">不可撤销，也无法从回收站恢复。</p>
               <div class="sheet-actions">
@@ -873,7 +873,7 @@
           <li>点「已完成」筛出全部已完成会话，按最新活动倒序（<code>byActivity</code>）；未读数、运行中状态照常显示；不带置顶角标。</li>
           <li>点行照常进详情页（完成不等于不可读）。</li>
           <li><b>没有折叠态</b>：tab 是筛选、不是可折叠的组，所以「默认折叠 + 折叠态存本地」这条随本方案作废（原 <code>avatar:lorca:hidden-collapsed</code> 那段代码删掉）。</li>
-          <li>实现口径：<code>SectionFilter</code> 加一档哨兵值 <code>__hidden</code>（带前缀，免得跟上游生成的分组 id 撞名）。</li>
+          <li>实现口径：<b>不动 <code>SectionFilter</code></b>（它只管「会话」tab 里的分组筛选，塞哨兵只会多一条死分支）；改成扩 <code>Tab</code> 联合类型 —— <code>type Tab = "chats" | "done" | "routines"</code>，第三个 tab 是一屏、不是筛选。</li>
           <li>「已完成」tab 里每行仍是<b>两格</b>：取消完成 · ⋯（这里「置顶」会顺带把会话移出已完成，两个动作互相抵消）。</li>
         </ul>
       </div>
@@ -882,7 +882,7 @@
         <h2>④ 删除二次确认<span class="tag">P1</span></h2>
         <ul>
           <li>形态：底部动作面板（复用 <code>.lorca-move</code> 骨架），标题带会话名。</li>
-          <li>正文说清影响：全部消息与附件、已读标记一并删除；正在运行的任务会被取消。</li>
+          <li>正文说清影响：全部消息与附件、已读标记一并删除；<b>正在运行的任务会停掉</b>（用「停掉」不用「取消」，免得跟「完成」串味）。</li>
           <li>红色一行写死「不可撤销，也无法从回收站恢复」；主按钮 <code>--danger</code>，取消为安静按钮。</li>
           <li>删掉的正是当前打开的详情页 → 回列表并清空选中；列表空了显示空态，<b>不自动打开别的会话</b>。</li>
         </ul>
@@ -912,7 +912,7 @@
           <li><b>AC-9</b> 点「完成」：会话离开原分组、从「会话」tab 消失、顶部出现「已完成」tab（带条数）；切到该 tab 能看到它，未读数与运行中状态都在、置顶角标消失。</li>
           <li><b>AC-10</b> 「已完成」tab 是筛选不是折叠组：切到它、杀掉 App 重开仍能看到内容（不涉及折叠态）；另一台设备的分组折叠态不受影响。</li>
           <li><b>AC-11</b> 取消完成后会话回到原分组；最后一个取消完成时，「已完成」tab 消失。</li>
-          <li><b>AC-12</b> 删除：确认面板文案含「不可撤销」与附件/已读/运行中任务三项；确认后行从列表消失；若删的是当前打开的会话，回到列表且不自动打开别的会话。</li>
+          <li><b>AC-12</b> 删除：确认面板文案含「不可撤销」与附件/已读/「正在运行的任务会停掉」三项；确认后行从列表消失；若删的是当前打开的会话，回到列表且不自动打开别的会话。</li>
           <li><b>AC-13</b> 白名单三条各有一条契约测试；白名单外的方法仍然 fail-closed。</li>
           <li><b>AC-15</b> 已完成行的 ⋯ 菜单第一项写作「移到分组（并取消完成）」——上游 <code>set_section</code> 会顺带把会话移出 Hidden；该行只有两格（取消完成 · ⋯）。</li>
         </ul>
