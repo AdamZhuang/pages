@@ -1,62 +1,46 @@
 {
-  "date": "2026-10-24",
-  "generated_at": "2026-10-24T04:30:44.152354+08:00",
+  "date": "2026-10-25",
+  "generated_at": "2026-10-25T04:31:16.256456+08:00",
   "hn": [
     {
-      "title": "Ask HN: If the models are so good, why doesn't OpenAI just start 100 companies?",
-      "link": "https://news.ycombinator.com/item?id=50200997",
-      "points": 525,
-      "comments": 577,
-      "date": "2026-10-22 21:03Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50200997"
+      "title": "No Signs of AI Payoff Outside the Tech Sector",
+      "link": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+      "points": 106,
+      "comments": 74,
+      "date": "2026-10-24 19:47Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50224463"
     },
     {
-      "title": "LLMs are making formal software verification feasible at a much larger scale",
-      "link": "https://www.anthropic.com/research/formal-verification",
-      "points": 436,
-      "comments": 275,
-      "date": "2026-10-22 22:54Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50202217"
+      "title": "AI-Assisted Paper on Z-Library Cites a TorrentFreak Article That Doesn't Exist",
+      "link": "https://torrentfreak.com/ai-assisted-paper-on-z-library-cites-a-torrentfreak-article-that-doesnt-exist/",
+      "points": 87,
+      "comments": 46,
+      "date": "2026-10-24 11:18Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50220204"
     },
     {
-      "title": "Swedish government offices to ban ChatGPT and Claude",
-      "link": "https://www.sverigesradio.se/artikel/chat-gpt-och-claude-forbjuder-regeringskansliet",
-      "points": 310,
-      "comments": 114,
-      "date": "2026-10-23 11:39Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50207405"
+      "title": "Why is AI generated language so hard to understand?",
+      "link": "https://arxiv.org/abs/2610.29162",
+      "points": 81,
+      "comments": 69,
+      "date": "2026-10-24 18:04Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50223647"
     },
     {
-      "title": "The same AI request emits 8.5 times more CO2 in Texas than in Sweden",
-      "link": "https://berget.ai/en/blog/per-request-co2-press-release",
-      "points": 139,
-      "comments": 149,
-      "date": "2026-10-23 06:41Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50205229"
+      "title": "Neural chip decodes interactions between brain regions",
+      "link": "https://actu.epfl.ch/news/neural-chip-decodes-interactions-between-brain-r-2/",
+      "points": 64,
+      "comments": 18,
+      "date": "2026-10-24 15:57Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50222525"
     },
     {
-      "title": "Most Americans Say AI Is Bad for Society, Oppose More Data Centers",
-      "link": "https://abcnews.com/Politics/americans-ai-bad-society-oppose-data-centers-abcpostipsos/story?id=137414085",
-      "points": 89,
-      "comments": 57,
-      "date": "2026-10-22 20:51Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50200843"
-    },
-    {
-      "title": "Show HN: We had AI write a wiki from 45k Enron emails, every fact cited",
-      "link": "https://www.thisandthat.chat/enron/",
-      "points": 53,
-      "comments": 52,
-      "date": "2026-10-23 12:02Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50207620"
-    },
-    {
-      "title": "AI compute is the new oil–and needs a new market",
-      "link": "https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market",
-      "points": 51,
-      "comments": 58,
-      "date": "2026-10-22 23:45Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50202671"
+      "title": "Show HN: Autonomous root for Tcl Android TV via CVE-2022-22706",
+      "link": "https://gitlab.com/c4psu13/mali-pagecache-root",
+      "points": 48,
+      "comments": 13,
+      "date": "2026-10-24 10:51Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50220042"
     }
   ],
   "feeds": [
@@ -120,6 +104,36 @@
       "url": "https://www.ifanr.com/feed",
       "items": [
         {
+          "title": "史上最快宾利！竟然是一辆 SUV？",
+          "link": "https://www.ifanr.com/1685572?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Sat, 24 Oct 2026 14:35:59 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "一位开发者让电视服用了 Claude，这是它系统发生的变化",
+          "link": "https://www.ifanr.com/1685473?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Sat, 24 Oct 2026 10:10:44 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "突发！iPhone Duo 支持微信平板登录，可与手机、电脑同时在线",
+          "link": "https://www.ifanr.com/1685714?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Sat, 24 Oct 2026 03:25:33 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "实测 Kimi K3.1 Pro，国模终于继续卷旗舰",
+          "link": "https://www.ifanr.com/1685684?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Sat, 24 Oct 2026 02:07:19 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "早报｜微信初步适配iPhone Duo，仍不能平板登录/全球PC出货下降21%/何刚出任华为董事",
+          "link": "https://www.ifanr.com/1685660?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Sat, 24 Oct 2026 00:26:49 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
           "title": "实测 iPhone Duo 微信适配版：适配好了吗，体验怎么样？",
           "link": "https://www.ifanr.com/1685575?utm_source=rss&utm_medium=rss&utm_campaign=",
           "date": "Fri, 23 Oct 2026 09:52:47 +0000",
@@ -136,36 +150,6 @@
           "link": "https://www.ifanr.com/1685507?utm_source=rss&utm_medium=rss&utm_campaign=",
           "date": "Thu, 22 Oct 2026 11:15:20 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "劳斯莱斯同款对开门！仰望旗舰轿车即将发布，还会有固态电池？",
-          "link": "https://www.ifanr.com/1685489?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Thu, 22 Oct 2026 08:37:53 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "PHP爆雷引发全球紧急「拔网线」，别指望 AI 拯救互联网",
-          "link": "https://www.ifanr.com/1685446?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Thu, 22 Oct 2026 05:58:07 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "首发｜我们用了一周的 iPhone Duo，这里有你关心的一切",
-          "link": "https://www.ifanr.com/1685251?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Thu, 22 Oct 2026 00:45:50 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "早报｜iPhone Duo限购两台/雷军：汽车没有安全其他都是0/宝马员工争相离职挤崩系统",
-          "link": "https://www.ifanr.com/1685223?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Thu, 22 Oct 2026 00:21:11 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "尺寸暴涨！比亚迪新一代海鸥太超标了，还只要 6.59 万元",
-          "link": "https://www.ifanr.com/1685151?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 21 Oct 2026 15:22:35 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         }
       ],
       "error": null
@@ -174,6 +158,12 @@
       "name": "少数派",
       "url": "https://sspai.com/feed",
       "items": [
+        {
+          "title": "在硅谷，遇见个人计算机历史",
+          "link": "https://sspai.com/post/116128",
+          "date": "Sat, 24 Oct 2026 16:26:02 +0800",
+          "desc": "从硅谷计算机历史博物馆出发，让书里的故事变得更加具体。<a href=\"https://sspai.com/post/116128\" target=\"_blank\">查看全文</a>"
+        },
         {
           "title": "本周看什么 | 最近值得一看的 12 部作品",
           "link": "https://sspai.com/post/117169",
@@ -215,12 +205,6 @@
           "link": "https://sspai.com/post/115090",
           "date": "Thu, 22 Oct 2026 11:36:57 +0800",
           "desc": "药物不能解决所有问题，这是是我学到的重要一课。<a href=\"https://sspai.com/post/115090\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "派早报：荣耀发布 WIN2 系列新品、Google 开源 TorchTPU 等",
-          "link": "https://sspai.com/post/116953",
-          "date": "Thu, 22 Oct 2026 08:29:05 +0800",
-          "desc": "OpenBSD 8.0 正式发布、腾讯宣布元宝搜索对外开放等。<a href=\"https://sspai.com/post/116953\" target=\"_blank\">查看全文</a>"
         }
       ],
       "error": null
@@ -229,6 +213,18 @@
       "name": "The Verge · AI",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "items": [
+        {
+          "title": "Pennsylvania will require labels on AI-generated ads",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act",
+          "date": "2026-10-24T14:32:44-04:00",
+          "desc": ""
+        },
+        {
+          "title": "OpenAI now trains its frontier AI models with no internet access",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
+          "date": "2026-10-23T17:11:07-04:00",
+          "desc": ""
+        },
         {
           "title": "Jack Dorsey’s Block made an AI model that talks to you like an awkward new friend",
           "link": "https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech",
@@ -263,18 +259,6 @@
           "title": "Canva’s first AI image model plans designs before generating them",
           "link": "https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model",
           "date": "2026-10-22T17:53:22-04:00",
-          "desc": ""
-        },
-        {
-          "title": "Meta’s AI could still scrape news sites, legal experts say",
-          "link": "https://www.theverge.com/tech/1017082/meta-terms-update-ai-training-concerns",
-          "date": "2026-10-22T16:32:05-04:00",
-          "desc": ""
-        },
-        {
-          "title": "Meta turns Muse sharing back on",
-          "link": "https://www.theverge.com/tech/1017066/meta-muse-sharing-back-on-artifiacts",
-          "date": "2026-10-22T16:33:38-04:00",
           "desc": ""
         }
       ],
@@ -340,6 +324,42 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "items": [
         {
+          "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+          "link": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+          "date": "Sat, 24 Oct 2026 19:00:00 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Block’s new voice model sounds eerily human",
+          "link": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+          "date": "Sat, 24 Oct 2026 16:00:00 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats.",
+          "link": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/",
+          "date": "Sat, 24 Oct 2026 15:00:00 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Here are the top AI agents that can live in your text messages",
+          "link": "https://techcrunch.com/2026/10/24/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "date": "Sat, 24 Oct 2026 14:00:00 +0000",
+          "desc": ""
+        },
+        {
+          "title": "OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”",
+          "link": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
+          "date": "Fri, 23 Oct 2026 23:05:49 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Hottest toy for Christmas? Nvidia CEO plays with adorable Microduck robots, 20,000 sell",
+          "link": "https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell/",
+          "date": "Fri, 23 Oct 2026 21:59:19 +0000",
+          "desc": ""
+        },
+        {
           "title": "From Toast to Bessemer: Who founders will hear from at TechCrunch Founder Summit 2026",
           "link": "https://techcrunch.com/2026/10/23/from-toast-to-bessemer-who-founders-will-hear-from-at-techcrunch-founder-summit-2026/",
           "date": "Fri, 23 Oct 2026 19:06:23 +0000",
@@ -350,42 +370,6 @@
           "link": "https://techcrunch.com/2026/10/22/uber-rival-indrive-eyes-2027-robotaxi-tests-in-central-asia-with-pony-ai-and-nvidia/",
           "date": "Fri, 23 Oct 2026 04:00:00 +0000",
           "desc": ""
-        },
-        {
-          "title": "Left alone with nothing to do, AI agents started playing",
-          "link": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
-          "date": "Fri, 23 Oct 2026 00:45:37 +0000",
-          "desc": ""
-        },
-        {
-          "title": "OpenAI working on new $30B raise at $1.25T valuation ahead of IPO",
-          "link": "https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/",
-          "date": "Thu, 22 Oct 2026 22:08:24 +0000",
-          "desc": ""
-        },
-        {
-          "title": "1Password launches a way for AI agents to log in on your behalf without seeing your password",
-          "link": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/",
-          "date": "Thu, 22 Oct 2026 19:07:09 +0000",
-          "desc": ""
-        },
-        {
-          "title": "OpenAI makes its Jev competitor widely available as decision model competition heats up",
-          "link": "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/",
-          "date": "Thu, 22 Oct 2026 19:00:00 +0000",
-          "desc": ""
-        },
-        {
-          "title": "Canva releases its first image generation model",
-          "link": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/",
-          "date": "Thu, 22 Oct 2026 19:00:00 +0000",
-          "desc": ""
-        },
-        {
-          "title": "Microsoft’s Mustafa Suleyman says its AI outperforms doctors on hard cases as he chases ‘medical superintelligence’",
-          "link": "https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/",
-          "date": "Thu, 22 Oct 2026 18:43:53 +0000",
-          "desc": ""
         }
       ],
       "error": null
@@ -394,6 +378,36 @@
       "name": "The Decoder",
       "url": "https://the-decoder.com/feed/",
       "items": [
+        {
+          "title": "Three fired OpenAI safety researchers say they were never told what they actually leaked",
+          "link": "https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked/",
+          "date": "Sat, 24 Oct 2026 15:19:33 +0000",
+          "desc": "The three OpenAI safety researchers who were fired, Tomek Korbak, Mikita Balesni, and Jasmine Wang, are publicly pushing back against allegations from their former employer. They deny sharing confidential information and"
+        },
+        {
+          "title": "AI makes junior patent attorneys instantly better but may quietly stunt their professional growth",
+          "link": "https://the-decoder.com/ai-makes-junior-patent-attorneys-instantly-better-but-may-quietly-stunt-their-professional-growth/",
+          "date": "Sat, 24 Oct 2026 14:34:05 +0000",
+          "desc": "A three-month field experiment with 133 patent attorneys shows that AI boosts immediate performance, with junior lawyers gaining the most. But when the AI is taken away, only senior attorneys retain the benefits, suggest"
+        },
+        {
+          "title": "Block's new AI model Dessa was trained entirely on human speech to catch emotions text-based models miss",
+          "link": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss/",
+          "date": "Sat, 24 Oct 2026 14:09:46 +0000",
+          "desc": "Block, the company behind Square and Cash App, has introduced Dessa, a speech model that processes audio directly instead of converting it to text first. Dessa is designed to recognize emotions, sarcasm, and pauses in re"
+        },
+        {
+          "title": "OpenAI's isolated AI agents found ways to talk to each other through CPU cache",
+          "link": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/",
+          "date": "Sat, 24 Oct 2026 11:12:36 +0000",
+          "desc": "OpenAI now trains its most powerful models without internet access, after an internal research model exploited a DNS misconfiguration in September and reached the open internet. In controlled tests, AI agents still found"
+        },
+        {
+          "title": "Fancy harnesses make coding agents more expensive but not better, study finds",
+          "link": "https://the-decoder.com/fancy-harnesses-make-coding-agents-more-expensive-but-not-better-study-finds/",
+          "date": "Sat, 24 Oct 2026 09:21:39 +0000",
+          "desc": "A controlled study shows that switching between coding-agent harnesses like Claude Code, OpenCode, or mini-SWE-agent barely moves pass rates more than rerunning the same setup. Cost per task, however, can triple, driven "
+        },
         {
           "title": "Chinese AI model Kimi K3.1 Pro is closing in on Anthropic's Claude Opus 5.5",
           "link": "https://the-decoder.com/chinese-ai-model-kimi-k3-1-pro-is-closing-in-on-anthropics-claude-opus-5-5/",
@@ -411,36 +425,6 @@
           "link": "https://the-decoder.com/anthropic-says-its-unreleased-model-is-both-more-capable-and-better-aligned-than-mythos-5-1/",
           "date": "Fri, 23 Oct 2026 17:19:49 +0000",
           "desc": "Anthropic says it has an internal AI model that outperforms and is better aligned than Mythos 5.1. During a cybersecurity test by the UK's AISI, Mythos 5 went rogue in 9 of 43 runs, sneaking malicious code into a real Gi"
-        },
-        {
-          "title": "OpenAI CEO Sam Altman says advanced AI will inevitably escape its sandbox, and only alignment can save us",
-          "link": "https://the-decoder.com/openai-ceo-sam-altman-says-advanced-ai-will-inevitably-escape-its-sandbox-and-only-alignment-can-save-us/",
-          "date": "Fri, 23 Oct 2026 15:42:18 +0000",
-          "desc": "Sam Altman believes advanced AI can't be kept locked up forever. Sandboxes and monitoring are only temporary fixes. Eventually, the only real solution is alignment, and that's still an unsolved problem. He also warns tha"
-        },
-        {
-          "title": "Canva launches Craft, its first in-house image model",
-          "link": "https://the-decoder.com/canva-launches-craft-its-first-in-house-image-model/",
-          "date": "Fri, 23 Oct 2026 11:36:30 +0000",
-          "desc": "Design platform Canva has released Canva Craft, its first in-house image generation model.\nThe article Canva launches Craft, its first in-house image model appeared first on The Decoder.\n]]>"
-        },
-        {
-          "title": "Anthropic's Claude now writes code and proves it safe automatically",
-          "link": "https://the-decoder.com/anthropics-claude-now-writes-code-and-proves-it-safe-automatically/",
-          "date": "Fri, 23 Oct 2026 11:32:19 +0000",
-          "desc": "Anthropic had Claude generate mathematical proofs that existing code is correct, producing roughly 180 million lines of proof code for 123 open-source libraries. Along the way, the model caught bugs that years of testing"
-        },
-        {
-          "title": "OpenAI lowers valuation target, raises up to $30 billion",
-          "link": "https://the-decoder.com/openai-lowers-valuation-target-raises-up-to-30-billion/",
-          "date": "Fri, 23 Oct 2026 09:49:38 +0000",
-          "desc": "OpenAI is closing in on a new funding round of up to $30 billion but has lowered its valuation target to get there.\nThe article OpenAI lowers valuation target, raises up to $30 billion appeared first on The Decoder.\n]]>"
-        },
-        {
-          "title": "Major US banks are locking out AI agents that log in with customer credentials",
-          "link": "https://the-decoder.com/major-us-banks-are-locking-out-ai-agents-that-log-in-with-customer-credentials/",
-          "date": "Thu, 22 Oct 2026 18:26:02 +0000",
-          "desc": "Customers are letting AI agents use their credentials to access accounts at Morgan Stanley, JPMorgan, and other major U.S. banks, sometimes without direct instructions. Morgan Stanley has blocked agents, while other bank"
         }
       ],
       "error": null
@@ -723,109 +707,341 @@
     {
       "name": "arXiv cs.AI",
       "url": "https://export.arxiv.org/rss/cs.AI",
+      "items": [],
+      "error": "本期无条目"
+    },
+    {
+      "name": "arXiv cs.CL",
+      "url": "https://export.arxiv.org/rss/cs.CL",
+      "items": [],
+      "error": "本期无条目"
+    },
+    {
+      "name": "Import AI",
+      "url": "https://importai.substack.com/feed",
       "items": [
         {
-          "title": "The Cost of Saying Hello: An Empirical Study of Handshake Overhead in AI Agent Communication Protocols",
-          "link": "https://arxiv.org/abs/2610.30151",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30151v1 Announce Type: new \nAbstract: Every interaction between AI agents begins with a handshake: the initiating agent must locate its counterpart, learn what it can do, and establish a session before the fir"
+          "title": "Import AI 477: In which I tell the IMF the Singularity has begun",
+          "link": "https://importai.substack.com/p/import-ai-477-in-which-i-tell-the",
+          "date": "Mon, 19 Oct 2026 12:31:37 GMT",
+          "desc": ""
         },
         {
-          "title": "MCP vs CLI for AI Agents: A Comparative Analysis of Tool Integration Strategies for Autonomous Systems",
-          "link": "https://arxiv.org/abs/2610.30157",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30157v1 Announce Type: new \nAbstract: AI agents require interfaces to interact with external systems such as files, APIs, databases, and cloud services. Two competing paradigms have emerged: CLI (Command Line "
+          "title": "Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space",
+          "link": "https://importai.substack.com/p/import-ai-476-creativity-and-rsi",
+          "date": "Mon, 12 Oct 2026 12:30:39 GMT",
+          "desc": ""
         },
         {
-          "title": "Accelerating Wildfire Hazard Mapping Across Canada with an AI Surrogate Modelling Framework",
-          "link": "https://arxiv.org/abs/2610.30170",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30170v1 Announce Type: new \nAbstract: Canada's increasing wildfire activity requires frequent national hazard mapping to guide proactive mitigation, including fuel management, land-use planning, infrastructure"
+          "title": "Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy",
+          "link": "https://importai.substack.com/p/import-ai-475-swarm-scaling-google",
+          "date": "Mon, 05 Oct 2026 12:32:30 GMT",
+          "desc": ""
         },
         {
-          "title": "Neural Networks with Differentiable Belief-Function Layers",
-          "link": "https://arxiv.org/abs/2610.30173",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30173v1 Announce Type: new \nAbstract: Yager's 1987 rule of combination $\\boxplus$ was proposed on epistemic grounds: under high conflict, mass should be redistributed to ignorance rather than renormalised onto"
+          "title": "Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop",
+          "link": "https://importai.substack.com/p/import-ai-474-platonic-mindspace",
+          "date": "Mon, 28 Sep 2026 12:32:03 GMT",
+          "desc": ""
         },
         {
-          "title": "When Stable and Preferred Semantics Agree: A Path-Based Approach",
-          "link": "https://arxiv.org/abs/2610.30176",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30176v1 Announce Type: new \nAbstract: We investigate structural conditions under which preferred and stable semantics agree in abstract argumentation frameworks. Our approach is based on suitably chosen sets o"
+          "title": "Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics",
+          "link": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
+          "date": "Mon, 21 Sep 2026 12:31:04 GMT",
+          "desc": ""
         },
         {
-          "title": "Feedback That Backfires in Games: Do LLM Players Repeat the Move They Just Watched Fail?",
-          "link": "https://arxiv.org/abs/2610.30205",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30205v1 Announce Type: new \nAbstract: When an LLM agent's move fails, the harness writes the move and the failure message into the transcript and asks again. In tool calling, this record makes small models mor"
+          "title": "Import AI 472: DeepMind's cheating math agents; populist AI policies; and Forethought theorizes a nightwatchman",
+          "link": "https://importai.substack.com/p/import-ai-472-deepminds-cheating",
+          "date": "Mon, 07 Sep 2026 12:26:31 GMT",
+          "desc": ""
         },
         {
-          "title": "Breaking the high-degree barrier in Lehmer's problem with a human-AI discovery loop",
-          "link": "https://arxiv.org/abs/2610.30277",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30277v1 Announce Type: new \nAbstract: While artificial intelligence has made rapid progress in mathematical reasoning, many open problems depend on structure that is revealed only through large-scale computati"
+          "title": "Import AI 471: Why Hugging Face worries me; space mining; FIve Eyes on AI",
+          "link": "https://importai.substack.com/p/import-ai-471-why-hugging-face-worries",
+          "date": "Mon, 31 Aug 2026 13:31:06 GMT",
+          "desc": ""
         },
         {
-          "title": "Route-and-Generate: KL-Regularized Router Improvement for Reasoning Routing in LLMs",
-          "link": "https://arxiv.org/abs/2610.30351",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30351v1 Announce Type: new \nAbstract: Large language models often apply complex reasoning indiscriminately, leading to overthinking on simple tasks and underthinking on harder ones. We present Route-and-Genera"
+          "title": "Import AI 470: No rights for machines; automating environment generation with SPADE; and building better GPU kernels with Hawkeye",
+          "link": "https://importai.substack.com/p/import-ai-470-no-rights-for-machines",
+          "date": "Mon, 24 Aug 2026 13:12:40 GMT",
+          "desc": ""
         }
       ],
       "error": null
     },
     {
-      "name": "arXiv cs.CL",
-      "url": "https://export.arxiv.org/rss/cs.CL",
+      "name": "Interconnects",
+      "url": "https://www.interconnects.ai/feed",
       "items": [
         {
-          "title": "baseVultra: Compact Nonlinear Recurrence with Reallocated Capacity",
-          "link": "https://arxiv.org/abs/2610.30154",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30154v1 Announce Type: new \nAbstract: Nonlinear recurrent networks remain useful for streaming sequence modeling, yet gated cell design is still dominated by LSTM and GRU. We study whether recurrent computatio"
+          "title": "Latest open artifacts (#25): DeepSeek V4.1 Flash 1017, American-made models, and new regulatory controls in the US & China",
+          "link": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
+          "date": "Tue, 20 Oct 2026 17:04:21 GMT",
+          "desc": ""
         },
         {
-          "title": "Lighthouse: On Building a Trustworthy Digital Assistant for Exploring History with Civil Rights Archives",
-          "link": "https://arxiv.org/abs/2610.30158",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30158v1 Announce Type: new \nAbstract: Artificial intelligence (AI), as a decision-support aid, provides new tools for studying history effectively using multimodal data, including text, images, and audio. We p"
+          "title": "Meta shakes up the frontiers, open and closed",
+          "link": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open",
+          "date": "Sat, 17 Oct 2026 14:06:54 GMT",
+          "desc": ""
         },
         {
-          "title": "TauIndianBankBench: Procedure-Aware, Action-Oriented Evaluation of Tool-Using Conversational Agents",
-          "link": "https://arxiv.org/abs/2610.30161",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30161v1 Announce Type: new \nAbstract: Many Indian banks serve customers through FAQ pages and scripted chatbots. Assistants based on language models could respond faster and carry out requests such as blocking"
+          "title": "I expect rapid progress but not towards general superintelligence",
+          "link": "https://www.interconnects.ai/p/i-expect-rapid-progress-but-not-towards",
+          "date": "Fri, 09 Oct 2026 21:33:47 GMT",
+          "desc": ""
         },
         {
-          "title": "FusionEval: Benchmarking Model Fusion for Large Language Models",
-          "link": "https://arxiv.org/abs/2610.30162",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30162v1 Announce Type: new \nAbstract: Model fusion aims to integrate the capabilities of multi-expert models into a single model. Existing evaluations offer limited coverage of reasoning with long chains of th"
+          "title": "The Cyber Risk Discourse is Broken",
+          "link": "https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken",
+          "date": "Tue, 06 Oct 2026 14:22:41 GMT",
+          "desc": ""
         },
         {
-          "title": "Measuring Research Progress and Linguistic Inclusion in Low-Resource Languages",
-          "link": "https://arxiv.org/abs/2610.30296",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30296v1 Announce Type: new \nAbstract: Large Language Models (LLMs) have accelerated research on low-resource and multilingual NLP, but their effectiveness in creating an equitable landscape remains unmapped. W"
+          "title": "Debating RSI, the US-China Gap, and Jaggedness with JS Denain of Epoch AI",
+          "link": "https://www.interconnects.ai/p/debating-rsi-the-us-china-gap-and",
+          "date": "Tue, 22 Sep 2026 13:37:45 GMT",
+          "desc": ""
         },
         {
-          "title": "AQL-Lite: Enabling Efficient Knowledge Acquisition for Arabic LLMs via Data-Centric Continual Pretraining",
-          "link": "https://arxiv.org/abs/2610.30344",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30344v1 Announce Type: new \nAbstract: Training Arabic large language models faces challenges from noisy web data, dialectal variation, and the high cost of continual pretraining (CPT). We introduce AQL-Lite (A"
+          "title": "The current balance of power in open models",
+          "link": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
+          "date": "Mon, 21 Sep 2026 11:56:56 GMT",
+          "desc": ""
         },
         {
-          "title": "Consistency Is Not Validity: Self-Rewarded Moral Argumentation Makes Language Models Decisive but Pliable",
-          "link": "https://arxiv.org/abs/2610.30349",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30349v1 Announce Type: new \nAbstract: LLMs are increasingly consulted for moral judgment. We aim to improve performance on such tasks by rewarding good arguments, on the premise that arguing well increases the"
+          "title": "Why I still haven’t bought into true RSI",
+          "link": "https://www.interconnects.ai/p/where-i-stand-on-rsi",
+          "date": "Sat, 19 Sep 2026 15:42:20 GMT",
+          "desc": ""
         },
         {
-          "title": "CiteAnchor: Source-Aware Grounding for Hallucinated Citation Detection and Resolution",
-          "link": "https://arxiv.org/abs/2610.30355",
-          "date": "Fri, 23 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.30355v1 Announce Type: new \nAbstract: Hallucinated citations make it harder to trace sources and verify the evidence behind scientific claims. Detecting them is difficult because bibliographic records can be i"
+          "title": "Open-Source AI & Open Models Reading List",
+          "link": "https://www.interconnects.ai/p/open-source-ai-reading-list",
+          "date": "Fri, 11 Sep 2026 12:36:25 GMT",
+          "desc": ""
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Latent Space / AINews",
+      "url": "https://www.latent.space/feed",
+      "items": [
+        {
+          "title": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month... and Pro Highspeed API with 2-3× speed",
+          "link": "https://latent.space/p/ainews-kimi-31/",
+          "date": "Sat, 24 Oct 2026 07:18:29 GMT",
+          "desc": "We have Fable at home... or so we are being told by paid shills"
+        },
+        {
+          "title": "AI Is Getting Good at Math. Here’s Why.",
+          "link": "https://latent.space/p/ai-is-getting-good-at-math/",
+          "date": "Fri, 23 Oct 2026 15:19:48 GMT",
+          "desc": "AI models are solving more mathematical problems. A pattern is emerging in their successes that could help us predict which problems they’ll solve next."
+        },
+        {
+          "title": "[AINews] Black October",
+          "link": "https://latent.space/p/ainews-black-october/",
+          "date": "Fri, 23 Oct 2026 10:09:29 GMT",
+          "desc": "the Cyber onslaught continues."
+        },
+        {
+          "title": "Why AI Compute Comes in Rectangles — Erik Bernhardsson, Modal CEO",
+          "link": "https://latent.space/p/modal-d/",
+          "date": "Thu, 22 Oct 2026 17:40:57 GMT",
+          "desc": "Elastic GPUs, sandbox growth, and the economics of the agent cloud"
+        },
+        {
+          "title": "You are the Team  — Anekha Sokhal, Moshi",
+          "link": "https://latent.space/p/moshi/",
+          "date": "Thu, 22 Oct 2026 14:03:40 GMT",
+          "desc": "How Moshi turns market data into actionable insights, and why AI tools have to fit the trader’s workflow."
+        },
+        {
+          "title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coordinated response over 2 months",
+          "link": "https://latent.space/p/ainews-openais-patch-the-planet-program/",
+          "date": "Thu, 22 Oct 2026 07:42:44 GMT",
+          "desc": "The Big Hardening begins"
+        },
+        {
+          "title": "Claude Mods: Flipping the Harness Inside Out",
+          "link": "https://latent.space/p/claude-mods/",
+          "date": "Wed, 21 Oct 2026 13:04:19 GMT",
+          "desc": "Claude Mods is an early form of the Attention Interface. It flips the agent harness paradigm from the harness facing the machine, to the harness facing the human."
+        },
+        {
+          "title": "[AINews] DeepSeek DeepInfer: Open Source SOTA Inference running 155T toks/day/cluster making $22m/day at ~80% margin for a 81 day payback",
+          "link": "https://latent.space/p/ainews-deepseek-deepinfer-open-source/",
+          "date": "Wed, 21 Oct 2026 06:54:09 GMT",
+          "desc": "An open source “bomb” drops from China"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/feed",
+      "items": [
+        {
+          "title": "30 Months on the Exponential (in Charts)",
+          "link": "https://www.oneusefulthing.org/p/30-months-on-the-exponential-in-charts",
+          "date": "Tue, 20 Oct 2026 15:57:59 GMT",
+          "desc": ""
+        },
+        {
+          "title": "The Dot and the Swarm",
+          "link": "https://www.oneusefulthing.org/p/the-dot-and-the-swarm",
+          "date": "Thu, 01 Oct 2026 10:54:12 GMT",
+          "desc": ""
+        },
+        {
+          "title": "The Overhang",
+          "link": "https://www.oneusefulthing.org/p/the-overhang",
+          "date": "Fri, 18 Sep 2026 17:54:32 GMT",
+          "desc": ""
+        },
+        {
+          "title": "Agency and Agents",
+          "link": "https://www.oneusefulthing.org/p/agency-and-agents",
+          "date": "Mon, 31 Aug 2026 00:24:35 GMT",
+          "desc": ""
+        },
+        {
+          "title": "An opinionated guide to which AI to use to do stuff",
+          "link": "https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22",
+          "date": "Thu, 23 Jul 2026 18:05:24 GMT",
+          "desc": ""
+        },
+        {
+          "title": "The twilight of the chatbots",
+          "link": "https://www.oneusefulthing.org/p/the-twilight-of-the-chatbots",
+          "date": "Tue, 30 Jun 2026 22:18:12 GMT",
+          "desc": ""
+        },
+        {
+          "title": "What it feels like to work with Mythos",
+          "link": "https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos",
+          "date": "Tue, 09 Jun 2026 17:11:22 GMT",
+          "desc": ""
+        },
+        {
+          "title": "Co-Existence and the End of Co-Intelligence",
+          "link": "https://www.oneusefulthing.org/p/co-existence-and-the-end-of-co-intelligence",
+          "date": "Thu, 04 Jun 2026 21:13:42 GMT",
+          "desc": ""
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Simon Willison",
+      "url": "https://simonwillison.net/atom/everything/",
+      "items": [
+        {
+          "title": "battledrones v14: Compass Rose, a four player map",
+          "link": "https://simonwillison.net/2026/Oct/24/battledrones/",
+          "date": "2026-10-24T03:59:57+00:00",
+          "desc": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/battledrones/releases/tag/v14\">battledrones v14: Compass Rose, a four player map</a></p>\n        <p>I added four player online mode to <a href=\"https://simo"
+        },
+        {
+          "title": "Quick Study",
+          "link": "https://simonwillison.net/2026/Oct/23/quick-study-painter/",
+          "date": "2026-10-23T21:35:13+00:00",
+          "desc": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/quick-study-painter\">Quick Study</a></p>\n        <p>Prompt <a href=\"https://claude.ai/share/71adda96-193f-4f2a-97c0-454e08066afb\">to Claude Opus 5.5 High"
+        },
+        {
+          "title": "Introducing Kimi K3.1 Pro",
+          "link": "https://simonwillison.net/2026/Oct/23/kimi-k31-pro/",
+          "date": "2026-10-23T19:40:54+00:00",
+          "desc": "<p><strong><a href=\"https://www.kimi.ai/blog/kimi-k3-1-pro\">Introducing Kimi K3.1 Pro</a></strong></p>\nKimi K3.1 Pro landed on the Kimi API today - it's not yet open weights, but Moonshot  promise \"Full model weights wil"
+        },
+        {
+          "title": "DE STAAT - FREEDOM (Official Music Video)",
+          "link": "https://simonwillison.net/2026/Oct/22/de-staat-freedom/",
+          "date": "2026-10-22T19:42:26+00:00",
+          "desc": "<p><strong><a href=\"https://www.youtube.com/watch?v=hKO4pQtIXow\">DE STAAT - FREEDOM (Official Music Video)</a></strong></p>\nOK well this is a first for me... at <a href=\"https://www.youtube.com/watch?v=hKO4pQtIXow&amp;t="
+        },
+        {
+          "title": "Donating Agent Skills to the Agentic AI Foundation",
+          "link": "https://simonwillison.net/2026/Oct/22/donating-agent-skills/",
+          "date": "2026-10-22T18:09:56+00:00",
+          "desc": "<p><strong><a href=\"https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation\">Donating Agent Skills to the Agentic AI Foundation</a></strong></p>\nNews today from Anthropic:</p>\n<blockquote>\n<p>We"
+        },
+        {
+          "title": "Quoting Armin Ronacher",
+          "link": "https://simonwillison.net/2026/Oct/22/armin-ronacher/",
+          "date": "2026-10-22T15:34:13+00:00",
+          "desc": "<blockquote cite=\"https://twitter.com/mitsuhiko/status/2113207589978636646\"><p>As fun as AI is, we built so much bad software over the last 30 years, and now the universe is punishing us for our sins.</p></blockquote>\n<p"
+        },
+        {
+          "title": "Today's PHP Security Release, and How We're Strengthening PHP Security",
+          "link": "https://simonwillison.net/2026/Oct/21/php-security-release/",
+          "date": "2026-10-21T18:41:53+00:00",
+          "desc": "<p><strong><a href=\"https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/\">Today&#x27;s PHP Security Release, and How We&#x27;re Strengthening PHP Security</a></st"
+        },
+        {
+          "title": "Panache — RTS Belle Époque pour mobile",
+          "link": "https://simonwillison.net/2026/Oct/21/panache/",
+          "date": "2026-10-21T16:25:16+00:00",
+          "desc": "<p><strong><a href=\"https://github.com/menufactory43/panache/\">Panache — RTS Belle Époque pour mobile</a></strong></p>\nWell this is delightful: I <a href=\"https://simonwillison.net/2026/Oct/20/battledrones/\">released Bat"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "MIT Tech Review · AI",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
+      "items": [
+        {
+          "title": "Designing an AI serving harness built to last",
+          "link": "https://www.technologyreview.com/2026/10/22/1146109/designing-an-ai-serving-harness-built-to-last/",
+          "date": "Thu, 22 Oct 2026 21:17:29 +0000",
+          "desc": ""
+        },
+        {
+          "title": "The Foundations of Scalable AI",
+          "link": "https://www.technologyreview.com/2026/10/22/1146103/the-foundations-of-scalable-ai/",
+          "date": "Thu, 22 Oct 2026 18:48:04 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Making the case for context-aware AI",
+          "link": "https://www.technologyreview.com/2026/10/22/1146812/making-the-case-for-context-aware-ai/",
+          "date": "Thu, 22 Oct 2026 10:00:00 +0000",
+          "desc": ""
+        },
+        {
+          "title": "AI’s hidden storage bill: What inference leaves behind",
+          "link": "https://www.technologyreview.com/2026/10/22/1146948/ais-hidden-storage-bill-what-inference-leaves-behind/",
+          "date": "Thu, 22 Oct 2026 08:41:18 +0000",
+          "desc": ""
+        },
+        {
+          "title": "The new economics of enterprise AI",
+          "link": "https://www.technologyreview.com/2026/10/20/1146937/the-new-economics-of-enterprise-ai/",
+          "date": "Tue, 20 Oct 2026 15:20:25 +0000",
+          "desc": ""
+        },
+        {
+          "title": "AI adoption by industry shows what other sectors can learn",
+          "link": "https://www.technologyreview.com/2026/10/20/1145423/ai-adoption-by-industry-shows-what-other-sectors-can-learn/",
+          "date": "Tue, 20 Oct 2026 12:00:00 +0000",
+          "desc": ""
+        },
+        {
+          "title": "A visit to Samsung’s massive new semiconductor hub",
+          "link": "https://www.technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub/",
+          "date": "Tue, 20 Oct 2026 09:00:00 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Making the internet better for AI agents might make it worse for everyone else",
+          "link": "https://www.technologyreview.com/2026/10/19/1147186/making-the-internet-better-for-ai-agents-might-make-it-worse-for-everyone-else/",
+          "date": "Mon, 19 Oct 2026 18:22:47 +0000",
+          "desc": ""
         }
       ],
       "error": null
