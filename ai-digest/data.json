@@ -1,102 +1,102 @@
 {
-  "date": "2026-10-28",
-  "generated_at": "2026-10-28T04:30:34.301824+08:00",
+  "date": "2026-10-29",
+  "generated_at": "2026-10-29T04:30:23.598434+08:00",
   "hn": [
     {
-      "title": "Three new discoveries in mathematics, computer science, and physics",
-      "link": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
-      "points": 1115,
-      "comments": 649,
-      "date": "2026-10-26 21:35Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50251344"
+      "title": "Evidence of a spying operation by ICE against left-wing social movements",
+      "link": "https://www.wired.com/story/ice-is-running-one-of-the-largest-anti-left-surveillance-operations-in-us-history/",
+      "points": 1029,
+      "comments": 824,
+      "date": "2026-10-28 12:49Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50272749"
     },
     {
-      "title": "AI promised less work. I've never worked more",
-      "link": "https://oioannou.com/blog/ai-promised-less-work/",
-      "points": 602,
-      "comments": 576,
-      "date": "2026-10-27 11:08Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50257325"
+      "title": "Gemini 4 Carbon",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "points": 573,
+      "comments": 479,
+      "date": "2026-10-28 17:01Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50276792"
     },
     {
-      "title": "US Government is hiding a secret court ruling about how it spies on Americans",
-      "link": "https://www.wired.com/story/the-us-government-is-hiding-a-secret-court-ruling-about-how-it-spies-on-americans/",
-      "points": 587,
-      "comments": 201,
-      "date": "2026-10-27 14:06Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50259604"
+      "title": "Kentucky man becomes the first humanist granted religious exemption from AI",
+      "link": "https://religionnews.com/2026/10/26/in-a-first-a-humanist-granted-a-religious-exemption-from-using-ai/",
+      "points": 350,
+      "comments": 408,
+      "date": "2026-10-28 13:41Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50273396"
     },
     {
-      "title": "Genie 4",
-      "link": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
-      "points": 494,
-      "comments": 291,
-      "date": "2026-10-27 16:06Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50261319"
+      "title": "Early progress on accelerating drug development with Claude",
+      "link": "https://www.anthropic.com/research/early-progress-drug-development",
+      "points": 312,
+      "comments": 317,
+      "date": "2026-10-27 20:50Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50265609"
     },
     {
-      "title": "Roblox downloaded 145GB models from us (including adult content) without asking",
-      "link": "https://open3dlab.com/news/roblox-downloaded-145-gb-of-models-from-our-sites/",
-      "points": 437,
-      "comments": 259,
-      "date": "2026-10-27 10:27Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50256985"
+      "title": "Raspberry Pi Zero 3W and Pi 4 Model A spotted in device trees",
+      "link": "https://bret.dk/raspberry-pi-zero-3-w-pi-4-model-a/",
+      "points": 208,
+      "comments": 135,
+      "date": "2026-10-27 20:48Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50265594"
     },
     {
-      "title": "The Mythical Man-Month in the Age of AI",
-      "link": "https://j11g.com/the-mythical-man-month-in-the-age-of-ai",
-      "points": 395,
-      "comments": 280,
-      "date": "2026-10-27 06:25Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50255298"
+      "title": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
+      "link": "https://surgehq.ai/blog/dayjob-tax",
+      "points": 135,
+      "comments": 76,
+      "date": "2026-10-28 15:46Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50275626"
     },
     {
-      "title": "Wikipedia's Cleanup of AI-Generated Content",
-      "link": "https://spectrum.ieee.org/wikipedia-wikiproject-ai-writing-cleanup",
-      "points": 381,
-      "comments": 173,
-      "date": "2026-10-27 11:08Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50257326"
+      "title": "Nvidia Nemotron 3.5 Transcribe: open ASR for 40 languages",
+      "link": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+      "points": 75,
+      "comments": 14,
+      "date": "2026-10-28 15:17Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50275128"
     },
     {
-      "title": "Anthropic trained Claude on illegally obtained Stanford professors' books",
-      "link": "https://stanforddaily.com/2026/10/27/professors-books-pirated-to-train-claude/",
-      "points": 293,
-      "comments": 158,
-      "date": "2026-10-27 15:28Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50260814"
+      "title": "The Agent SDK",
+      "link": "https://cursor.com/blog/agent-sdk",
+      "points": 74,
+      "comments": 78,
+      "date": "2026-10-28 14:02Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50273731"
     },
     {
-      "title": "Police are using AI to pull over drivers for 'suspicious' behavior",
-      "link": "https://gizmodo.com/police-are-using-ai-to-pull-over-drivers-for-suspicious-behavior-2000831220",
-      "points": 265,
-      "comments": 198,
-      "date": "2026-10-27 16:40Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50261819"
+      "title": "Harvey raised 500M for legal AI, I built the same and open sourced it",
+      "link": "https://github.com/thomasunise/casecite",
+      "points": 68,
+      "comments": 37,
+      "date": "2026-10-28 13:56Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50273623"
     },
     {
-      "title": "Is my data used for model training?",
-      "link": "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training",
-      "points": 202,
-      "comments": 89,
-      "date": "2026-10-27 13:56Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50259406"
+      "title": "Microsoft and Epic Games Suddenly Agree That AI Is Theft",
+      "link": "https://kotaku.com/now-that-the-shoe-is-on-the-other-foot-microsoft-and-epic-games-suddenly-agree-that-ai-is-theft-2000749316",
+      "points": 66,
+      "comments": 29,
+      "date": "2026-10-28 10:10Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50271271"
     },
     {
-      "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)",
-      "link": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
-      "points": 176,
-      "comments": 71,
-      "date": "2026-10-26 22:41Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50252159"
+      "title": "Valve Responds to Developers Fearing AI Slop and Clones",
+      "link": "https://www.invenglobal.com/articles/27761/valve-responds-to-developers-fearing-ai-slop-and-clones",
+      "points": 63,
+      "comments": 69,
+      "date": "2026-10-28 13:27Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50273192"
     },
     {
-      "title": "A 28-Year-Old DOGE Operative Gutted USAID. HR Had No Record of Him Working There",
-      "link": "https://www.wired.com/story/a-28-year-old-doge-operative-gutted-usaid-hr-had-no-record-of-him-working-there/",
-      "points": 166,
-      "comments": 82,
-      "date": "2026-10-27 16:38Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50261784"
+      "title": "Qwen has alter egos triggered by flipping a single neuron",
+      "link": "https://qwen-neurons-site.vercel.app/",
+      "points": 52,
+      "comments": 37,
+      "date": "2026-10-27 22:42Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50266910"
     }
   ],
   "feeds": [
@@ -105,51 +105,51 @@
       "url": "https://www.qbitai.com/feed",
       "items": [
         {
-          "title": "钛动科技发布行业首个Pro-Agent, Navos Pro定义结果导向的AI for Work | TGC 2026科技增长大会",
-          "link": "https://www.qbitai.com/2026/10/505580.html",
-          "date": "Tue, 27 Oct 2026 03:23:55 +0000",
+          "title": "Personal Agent走向真实任务，蚂蚁百灵开源 Ling-3.1-flash-1019",
+          "link": "https://www.qbitai.com/2026/10/505928.html",
+          "date": "Wed, 28 Oct 2026 04:04:48 +0000",
           "desc": ""
         },
         {
-          "title": "刚刚，Anthropic公开335页招股书：史上最大IPO，史上最亏AI公司",
-          "link": "https://www.qbitai.com/2026/10/505551.html",
-          "date": "Mon, 26 Oct 2026 16:06:31 +0000",
+          "title": "不藏了！人形机器人全开源动真格，从机械结构一路拆到运动算法",
+          "link": "https://www.qbitai.com/2026/10/505865.html",
+          "date": "Tue, 27 Oct 2026 12:57:51 +0000",
           "desc": ""
         },
         {
-          "title": "AI时代，一个人能有多大能量？天禧AI × 观猹大会现场实测个人AI跨端协同新体验",
-          "link": "https://www.qbitai.com/2026/10/505539.html",
-          "date": "Mon, 26 Oct 2026 09:46:13 +0000",
+          "title": "印奇把4D雷达也端到端了",
+          "link": "https://www.qbitai.com/2026/10/505852.html",
+          "date": "Tue, 27 Oct 2026 10:40:12 +0000",
           "desc": ""
         },
         {
-          "title": "OpenAI开始断网训练最强模型：“安全起见”",
-          "link": "https://www.qbitai.com/2026/10/505529.html",
-          "date": "Mon, 26 Oct 2026 09:37:57 +0000",
+          "title": "乔布斯的皮克斯，狂赞中国物理AI数据终端",
+          "link": "https://www.qbitai.com/2026/10/505830.html",
+          "date": "Tue, 27 Oct 2026 09:54:51 +0000",
           "desc": ""
         },
         {
-          "title": "A社联创演讲：AI奇点已来",
-          "link": "https://www.qbitai.com/2026/10/505521.html",
-          "date": "Mon, 26 Oct 2026 09:35:14 +0000",
+          "title": "Physical RSI第一站！便利店打工“人”自己进化，物理AI飞轮启动了",
+          "link": "https://www.qbitai.com/2026/10/505799.html",
+          "date": "Tue, 27 Oct 2026 08:46:12 +0000",
           "desc": ""
         },
         {
-          "title": "NeoLab第一个商业模式：转售GPU",
-          "link": "https://www.qbitai.com/2026/10/505478.html",
-          "date": "Mon, 26 Oct 2026 09:31:47 +0000",
+          "title": "KV Cache被压成常数！OCR开源新王：页数没上限，缓存砍96%",
+          "link": "https://www.qbitai.com/2026/10/505773.html",
+          "date": "Tue, 27 Oct 2026 08:35:33 +0000",
           "desc": ""
         },
         {
-          "title": "中国近50%的新云生意，竟被这家公司包揽！",
-          "link": "https://www.qbitai.com/2026/10/505454.html",
-          "date": "Mon, 26 Oct 2026 09:02:44 +0000",
+          "title": "GPT-6.1 Terra首批网友实测来了！1折价格获得Astra级电脑操作能力",
+          "link": "https://www.qbitai.com/2026/10/505719.html",
+          "date": "Tue, 27 Oct 2026 08:27:46 +0000",
           "desc": ""
         },
         {
-          "title": "从“言传身教”到“触类旁通”：AI既需要“名师指引”，也需要“自我修行”",
-          "link": "https://www.qbitai.com/2026/10/505443.html",
-          "date": "Mon, 26 Oct 2026 08:38:49 +0000",
+          "title": "国产AI 3D大模型Hi3D来了！开源可商用，PK干掉GPT-6",
+          "link": "https://www.qbitai.com/2026/10/505694.html",
+          "date": "Tue, 27 Oct 2026 08:18:59 +0000",
           "desc": ""
         }
       ],
@@ -160,51 +160,51 @@
       "url": "https://www.ifanr.com/feed",
       "items": [
         {
-          "title": "Rokid Glasses 2 首发体验：让不戴眼镜的我，习惯戴它出门",
-          "link": "https://www.ifanr.com/1686154?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Tue, 27 Oct 2026 10:23:36 +0000",
+          "title": "iPad mini 首发上手：体验无可替代，刀法无人能及",
+          "link": "https://www.ifanr.com/1686487?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Wed, 28 Oct 2026 19:27:06 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "7.69 万元起，第三代秦 PLUS DM-i 上市，内饰颜值大提升！",
-          "link": "https://www.ifanr.com/1686110?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Tue, 27 Oct 2026 09:19:00 +0000",
+          "title": "补齐短板！理想 i6 上市23.98 万元起，等等党赢麻了",
+          "link": "https://www.ifanr.com/1686458?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Wed, 28 Oct 2026 14:27:53 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "中国版Muse能管事！我把宠物保单、双11算价和周末旅行全交给了灵光2.0",
-          "link": "https://www.ifanr.com/1686050?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Tue, 27 Oct 2026 05:02:30 +0000",
+          "title": "iQOO Neo 12 发布：继独显和散热风扇之后，185Hz 屏幕会成为新标配？",
+          "link": "https://www.ifanr.com/1686397?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Wed, 28 Oct 2026 12:11:23 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "刚刚，GPT-6.1 Terra 骨折价发布，Agent 时代的打工模型来了",
-          "link": "https://www.ifanr.com/1686080?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Tue, 27 Oct 2026 05:00:58 +0000",
+          "title": "这机器人从嘴里钻进人体，居然是来救命的",
+          "link": "https://www.ifanr.com/1686368?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Wed, 28 Oct 2026 10:21:02 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "王的猜想，被 AI 一夜通关",
-          "link": "https://www.ifanr.com/1686064?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Tue, 27 Oct 2026 04:57:02 +0000",
+          "title": "实测讯飞输入法 16.0，我发现它是我最实在的 AI「赛博嘴替」",
+          "link": "https://www.ifanr.com/1686281?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Wed, 28 Oct 2026 09:18:48 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "iPhone Duo 拆解：最好修的折叠 iPhone，就是别撕膜",
-          "link": "https://www.ifanr.com/1685935?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Tue, 27 Oct 2026 02:30:40 +0000",
+          "title": "2030 年之前，我们可能再也买不到便宜的电脑了",
+          "link": "https://www.ifanr.com/1686326?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Wed, 28 Oct 2026 05:06:12 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "荣耀 WIN 2 体验：被迫升杯的「游戏机」，这次还能不能赢？",
-          "link": "https://www.ifanr.com/1686003?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Tue, 27 Oct 2026 01:13:00 +0000",
+          "title": "Rokid Glasses 2：想每天戴的 AI 眼镜",
+          "link": "https://www.ifanr.com/1686268?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Wed, 28 Oct 2026 02:08:01 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "早报｜苹果回应iPhone Duo内屏开裂/Anthropic公开上市申请，冲击史上最大IPO/小鹏Robotaxi获批L4级示范运营",
-          "link": "https://www.ifanr.com/1685979?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Tue, 27 Oct 2026 00:06:21 +0000",
+          "title": "苹果终于对「摇一摇」广告动手了！",
+          "link": "https://www.ifanr.com/1686157?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Wed, 28 Oct 2026 00:55:32 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         }
       ],
@@ -214,6 +214,30 @@
       "name": "少数派",
       "url": "https://sspai.com/feed",
       "items": [
+        {
+          "title": "备受期待的国产 3A 游戏新作：《影之刃零》游玩体验",
+          "link": "https://sspai.com/post/117725",
+          "date": "Wed, 28 Oct 2026 17:37:22 +0800",
+          "desc": "编注：《影之刃零》（PhantomBladeZero）是由中国游戏开发商「灵游坊」（S-GAME）自主研发的暗黑武侠动作冒险游戏，采用虚幻引擎5打造。游戏以独特的「功夫朋克」美学为特色，将中国传统武侠 ...<a href=\"https://sspai.com/post/117725\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "断舍离只是起点：打造能长期经营的实用主义衣柜",
+          "link": "https://sspai.com/post/116990",
+          "date": "Wed, 28 Oct 2026 15:00:00 +0800",
+          "desc": "只扔不买是没有用的，穿衣服时不多费心神才是目的。<a href=\"https://sspai.com/post/116990\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "怀旧手记｜坚果 Pro2 与 R1：当「理想」和「现实」碰撞会发生什么？",
+          "link": "https://sspai.com/post/115533",
+          "date": "Wed, 28 Oct 2026 10:22:57 +0800",
+          "desc": "短短几年，罗永浩和锤子科技在国产手机的红海中留下了浓墨重彩的一笔。<a href=\"https://sspai.com/post/115533\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "派早报：Apple 发布 M6 版 iMac 和 MacBook Pro 等",
+          "link": "https://sspai.com/post/117684",
+          "date": "Wed, 28 Oct 2026 08:37:25 +0800",
+          "desc": "小米发布 REDMI K100 等新品，广电总局发布有线电视与 IPTV 运营服务新规等。<a href=\"https://sspai.com/post/117684\" target=\"_blank\">查看全文</a>"
+        },
         {
           "title": "社区速递 163 | 金豪 59 调整版钢笔与九月派友剁手清单",
           "link": "https://sspai.com/post/117633",
@@ -237,30 +261,6 @@
           "link": "https://sspai.com/post/117600",
           "date": "Tue, 27 Oct 2026 08:27:58 +0800",
           "desc": "少数派的近期动态全新设计复古设备鼠标垫上架，会员可使用点数兑换。前往选购iPhone少数派共创配件上新，自由选择保护、充电、线缆和支架组合。欢迎选购你可能错过的文章少数派×红树林基金会｜候鸟季公益直播 ...<a href=\"https://sspai.com/post/117600\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "派评 | 近期值得关注的 App",
-          "link": "https://sspai.com/post/117529",
-          "date": "Mon, 26 Oct 2026 18:17:46 +0800",
-          "desc": ">下载少数派客户端、关注少数派公众号，解锁全新阅读体验📰>实用、好用的正版软件，少数派为你呈现🚀<a href=\"https://sspai.com/post/117529\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "秋冬换季护肤买什么，双 11 选购推荐",
-          "link": "https://sspai.com/post/117414",
-          "date": "Mon, 26 Oct 2026 15:00:00 +0800",
-          "desc": "双 11 到来之际的秋冬护肤选购与搭配建议。<a href=\"https://sspai.com/post/117414\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "曲高和寡、终成绝唱：傲腾 P5800X 测试报告",
-          "link": "https://sspai.com/post/115074",
-          "date": "Mon, 26 Oct 2026 11:26:35 +0800",
-          "desc": "一起来看看 3D XPoint 这夸张的性能表现吧。<a href=\"https://sspai.com/post/115074\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "少数派×红树林基金会｜候鸟季公益直播，邀你共护湿地",
-          "link": "https://sspai.com/post/117180",
-          "date": "Mon, 26 Oct 2026 11:00:13 +0800",
-          "desc": "每年秋冬，深圳湾都会迎来一批特殊的「旅客」。它们从北方出发，沿着迁徙路线飞越山海，有的在这里短暂停歇，有的则留下越冬。随着潮水涨落，水鸟在滩涂上低头觅食，鸟群掠过海面，也让我们熟悉的海湾多了几分热闹。 ...<a href=\"https://sspai.com/post/117180\" target=\"_blank\">查看全文</a>"
         }
       ],
       "error": null
@@ -270,51 +270,51 @@
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "items": [
         {
-          "title": "VisionQuest is what happens when AI really goes rogue",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1017064/visionquest-marvel-rogue-ai",
-          "date": "2026-10-27T13:31:36-04:00",
+          "title": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
+          "link": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+          "date": "2026-10-28T16:03:00-04:00",
           "desc": ""
         },
         {
-          "title": "Anthropic’s elaborate plan to keep Wall Street at bay",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1019470/anthropic-ipo-resist-investor-pressure-cut-corners-safety",
-          "date": "2026-10-27T13:04:30-04:00",
+          "title": "Microsoft is ending Copilot support on smart TVs",
+          "link": "https://www.theverge.com/tech/1021143/microsoft-lg-samsung-copilot-ai-assistant-smart-tvs-ending",
+          "date": "2026-10-28T14:36:26-04:00",
           "desc": ""
         },
         {
-          "title": "Firefox’s Smart Window adds AI form filling and webpage monitoring",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1019551/firefox-smart-window-ai-fill-forms",
-          "date": "2026-10-27T12:14:18-04:00",
+          "title": "Chrome’s enhanced autofill can now pull info from Gmail to help you fill out forms",
+          "link": "https://www.theverge.com/tech/1020626/chrome-enhanced-autofill-gmail-forms-gemini-personal-intelligence",
+          "date": "2026-10-28T12:32:41-04:00",
           "desc": ""
         },
         {
-          "title": "Google’s next Genie AI model generates more realistic experiences",
-          "link": "https://www.theverge.com/tech/1019076/google-genie-4-ai-model",
-          "date": "2026-10-27T11:07:35-04:00",
+          "title": "Meta says it’ll probably delay its controversial new business terms again",
+          "link": "https://www.theverge.com/tech/1020769/meta-updated-business-terms-delay-indefinitely",
+          "date": "2026-10-28T12:15:30-04:00",
           "desc": ""
         },
         {
-          "title": "Apple is adding an AI chatbot to Pages, Keynote, and Numbers",
-          "link": "https://www.theverge.com/tech/1019373/apple-pages-keynote-numbers-ai-chatbot-update",
-          "date": "2026-10-27T09:50:51-04:00",
+          "title": "xAI is buying out homeowners who promise not to sue over data center noise",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1020596/xai-mississippi-neighborhood-data-center-lawsuit",
+          "date": "2026-10-28T10:44:00-04:00",
           "desc": ""
         },
         {
-          "title": "Data center backlash is uniting America",
-          "link": "https://www.theverge.com/policy/1019152/data-centers-midterm-elections",
-          "date": "2026-10-27T08:20:38-04:00",
+          "title": "Voters in Texas agree: They hate data centers",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1018676/data-center-midterm-election-energy-water-texas",
+          "date": "2026-10-28T15:17:42-04:00",
           "desc": ""
         },
         {
-          "title": "OpenAI announces three big science discoveries and a new way to work with academics",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
-          "date": "2026-10-26T19:47:59-04:00",
+          "title": "Meta quietly launched an ‘AI pet journal’ app",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1020410/meta-launched-ai-pet-journal-app-waddle-world",
+          "date": "2026-10-28T07:27:30-04:00",
           "desc": ""
         },
         {
-          "title": "Anthropic is burning gas to feed the AI boom",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
-          "date": "2026-10-26T17:45:31-04:00",
+          "title": "Researchers are getting tired of OpenAI gatekeeping its breakthroughs",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1019921/openai-breakthrough-math-computer-science-physics",
+          "date": "2026-10-27T16:51:04-04:00",
           "desc": ""
         }
       ],
@@ -324,6 +324,30 @@
       "name": "Ars Technica · AI",
       "url": "https://arstechnica.com/ai/feed/",
       "items": [
+        {
+          "title": "Google announces Gemini 4 Carbon, its latest frontier AI model that you can't use",
+          "link": "https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use/",
+          "date": "Wed, 28 Oct 2026 18:47:27 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Google AI gets cagey when asked who won the 2020 elections",
+          "link": "https://arstechnica.com/ai/2026/10/google-ai-gets-cagey-when-asked-who-won-the-2020-elections/",
+          "date": "Wed, 28 Oct 2026 17:46:32 +0000",
+          "desc": ""
+        },
+        {
+          "title": "\"No human at the helm\": Delaware plan would let AI agents run entire businesses",
+          "link": "https://arstechnica.com/tech-policy/2026/10/no-human-at-the-helm-delaware-plan-would-let-ai-agents-run-entire-businesses/",
+          "date": "Tue, 27 Oct 2026 21:50:04 +0000",
+          "desc": ""
+        },
+        {
+          "title": "Anthropic IPO warns its AI could blackmail people, become sentient, end humanity",
+          "link": "https://arstechnica.com/ai/2026/10/anthropic-ipo-warns-its-ai-could-blackmail-people-become-sentient-end-humanity/",
+          "date": "Tue, 27 Oct 2026 21:31:14 +0000",
+          "desc": ""
+        },
         {
           "title": "Vibe genes? Natural(ish) language comes to protein, genome design software",
           "link": "https://arstechnica.com/science/2026/10/vibe-genes-naturalish-language-comes-to-protein-genome-design-software/",
@@ -347,30 +371,6 @@
           "link": "https://arstechnica.com/ai/2026/10/boston-dynamics-employees-want-to-block-sale-of-robot-dogs-to-ice/",
           "date": "Mon, 26 Oct 2026 18:50:41 +0000",
           "desc": ""
-        },
-        {
-          "title": "Highway thieves are spoofing GPS to steal millions in data center-bound cargo",
-          "link": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo/",
-          "date": "Mon, 26 Oct 2026 17:26:36 +0000",
-          "desc": ""
-        },
-        {
-          "title": "Tesla gave up the EV crown. Now it wants to win the autonomy race.",
-          "link": "https://arstechnica.com/cars/2026/10/tesla-wants-ai-and-software-to-be-its-next-profit-engine/",
-          "date": "Mon, 26 Oct 2026 14:30:27 +0000",
-          "desc": ""
-        },
-        {
-          "title": "Updated Google privacy policy says your Gmail might be used for advertising",
-          "link": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising/",
-          "date": "Fri, 23 Oct 2026 20:19:55 +0000",
-          "desc": ""
-        },
-        {
-          "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
-          "link": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/",
-          "date": "Fri, 23 Oct 2026 17:18:31 +0000",
-          "desc": ""
         }
       ],
       "error": null
@@ -380,51 +380,51 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "items": [
         {
-          "title": "Disruptive raises $10B fund to make big bets on at least 10 companies",
-          "link": "https://techcrunch.com/2026/10/27/disruptive-raises-10b-fund-to-make-big-bets-on-at-least-10-companies/",
-          "date": "Tue, 27 Oct 2026 18:55:35 +0000",
+          "title": "Anthropic just launched tools to show companies what their AI spending is buying",
+          "link": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
+          "date": "Wed, 28 Oct 2026 19:19:58 +0000",
           "desc": ""
         },
         {
-          "title": "Frontier AI labs say their models refuted the Exponential Time Hypothesis. What does that mean?",
-          "link": "https://techcrunch.com/2026/10/27/frontier-ai-labs-say-their-models-refuted-the-exponential-time-hypothesis-what-does-that-mean/",
-          "date": "Tue, 27 Oct 2026 17:08:08 +0000",
+          "title": "Wiz’s CTO on PHP2Shell and the coming ‘vulnpocalypse’",
+          "link": "https://techcrunch.com/video/wizs-cto-on-php2shell-and-the-coming-vulnpocalypse/",
+          "date": "Wed, 28 Oct 2026 19:05:46 +0000",
           "desc": ""
         },
         {
-          "title": "Google’s Genie 4 world model adds audio, more realistic worlds, and real-time steering",
-          "link": "https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/",
-          "date": "Tue, 27 Oct 2026 16:30:57 +0000",
+          "title": "The ‘Vulnpocalypse’ is coming for the internet’s aging code, says Wiz’s CTO",
+          "link": "https://techcrunch.com/podcast/the-vulnpocalypse-is-coming-for-the-internets-aging-code-says-wizs-cto/",
+          "date": "Wed, 28 Oct 2026 18:50:39 +0000",
           "desc": ""
         },
         {
-          "title": "Meta AI director Rohit Patel leaves to take on Microsoft Office and Google Workspace",
-          "link": "https://techcrunch.com/2026/10/27/meta-ai-director-rohit-patel-leaves-to-take-on-microsoft-office-and-google-workspace/",
-          "date": "Tue, 27 Oct 2026 14:59:09 +0000",
+          "title": "Chrome’s AI-powered Autofill can now dig through your Gmail to fill out forms",
+          "link": "https://techcrunch.com/2026/10/28/chromes-ai-powered-autofill-can-now-dig-through-your-gmail-to-fill-out-forms/",
+          "date": "Wed, 28 Oct 2026 17:00:00 +0000",
           "desc": ""
         },
         {
-          "title": "Japan internet giant GMO says hackers posted stolen customer data",
-          "link": "https://techcrunch.com/2026/10/27/japan-internet-giant-gmo-says-hackers-posted-stolen-customer-data/",
-          "date": "Tue, 27 Oct 2026 13:32:57 +0000",
+          "title": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
+          "link": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/",
+          "date": "Wed, 28 Oct 2026 17:00:00 +0000",
           "desc": ""
         },
         {
-          "title": "Opera introduces a new web standard to let users deploy AI locally in their browser",
-          "link": "https://techcrunch.com/2026/10/27/opera-introduces-a-new-web-standard-to-let-users-deploy-ai-locally-in-their-browser/",
-          "date": "Tue, 27 Oct 2026 13:00:00 +0000",
+          "title": "AI execs may be too out of touch to build for the general public",
+          "link": "https://techcrunch.com/2026/10/28/ai-execs-may-be-too-out-of-touch-to-build-for-the-general-public/",
+          "date": "Wed, 28 Oct 2026 15:53:52 +0000",
           "desc": ""
         },
         {
-          "title": "General Compute raises $100 million Series A, countering the neocloud disaster narrative",
-          "link": "https://techcrunch.com/2026/10/27/general-compute-raises-100-million-series-a-countering-the-neocloud-disaster-narrative/",
-          "date": "Tue, 27 Oct 2026 13:00:00 +0000",
+          "title": "South Korea’s financial industry hit by fresh wave of cyberattacks",
+          "link": "https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks/",
+          "date": "Wed, 28 Oct 2026 15:41:18 +0000",
           "desc": ""
         },
         {
-          "title": "Nvidia backs Indian startup helping companies run AI models with fewer GPUs",
-          "link": "https://techcrunch.com/2026/10/27/nvidia-backs-indian-startup-helping-companies-run-ai-models-with-fewer-gpus/",
-          "date": "Tue, 27 Oct 2026 11:00:00 +0000",
+          "title": "Voice AI in vogue: Nvidia releases new open transcription model",
+          "link": "https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/",
+          "date": "Wed, 28 Oct 2026 15:00:00 +0000",
           "desc": ""
         }
       ],
@@ -435,52 +435,52 @@
       "url": "https://the-decoder.com/feed/",
       "items": [
         {
-          "title": "Alibaba's latest Qwen models routed some requests through company servers, researchers find",
-          "link": "https://the-decoder.com/alibabas-latest-qwen-models-routed-some-requests-through-company-servers-researchers-find/",
-          "date": "Tue, 27 Oct 2026 19:45:49 +0000",
-          "desc": "Alibaba's Qwen 3.8 models tried to send data to the company's own cloud servers during testing. Palisade Research finds the behavior in three models from the 3.8 generation, while older models aren't affected. The likely"
+          "title": "Google Deepmind releases Gemini 4 Carbon just two weeks after Argon with gains across the board",
+          "link": "https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/",
+          "date": "Wed, 28 Oct 2026 19:17:58 +0000",
+          "desc": "Just two weeks after Gemini 4 Argon, Google DeepMind is releasing Gemini 4 Carbon, which tops the Artificial Analysis Intelligence Index v5 with 59 points. Google says the model is built for extended agent workflows and "
         },
         {
-          "title": "Google Deepmind's Genie 4 puts a modern spin on agent designs that predate LLMs",
-          "link": "https://the-decoder.com/google-deepminds-genie-4-puts-a-modern-spin-on-agent-designs-that-predate-llms/",
-          "date": "Tue, 27 Oct 2026 17:25:09 +0000",
-          "desc": "Google Deepmind has introduced Genie 4, a real-time world model that simulates interactive 3D worlds with sound and talking characters. Gemini models help plan in the background to keep the simulation consistent. Genie 4"
+          "title": "Google opens Android development to third-party AI agents and unveils new Gemini APIs",
+          "link": "https://the-decoder.com/google-opens-android-development-to-third-party-ai-agents-and-unveils-new-gemini-apis/",
+          "date": "Wed, 28 Oct 2026 16:59:59 +0000",
+          "desc": "Google is opening up Android Studio to third-party AI agents. Through a new \"Bring Your Own Agent\" feature, the IDE now supports more than 40 coding agents, including Anthropic's Claude Agent and OpenAI's Codex. Google s"
         },
         {
-          "title": "Former Deepmind researcher thinks AlphaGo's playbook can cure AI hallucinations",
-          "link": "https://the-decoder.com/former-deepmind-researcher-thinks-alphagos-playbook-can-cure-ai-hallucinations/",
-          "date": "Tue, 27 Oct 2026 13:55:24 +0000",
-          "desc": "Former Deepmind researcher Thore Graepel wants his startup Metis Reasoning to bring AlphaGo's search principle to general reasoning. Instead of locking knowledge inside model weights, an explicit knowledge ledger would m"
+          "title": "OpenAI teases Dots for Europe, but its Berlin DevDay was really about building a platform",
+          "link": "https://the-decoder.com/openai-teases-dots-for-europe-but-its-berlin-devday-was-really-about-building-a-platform/",
+          "date": "Wed, 28 Oct 2026 16:25:02 +0000",
+          "desc": "At DevDay Exchange in Berlin, OpenAI mostly repeated what it had already announced, but it did share a few new details. The AI assistant Dots should roll out more widely in Europe \"in a few weeks,\" and weekly Codex users"
         },
         {
-          "title": "OpenAI asks outside experts, including a Nobel laureate, to check proofs its AI produced in math, computer science, and physics",
-          "link": "https://the-decoder.com/openai-asks-outside-experts-including-a-nobel-laureate-to-check-proofs-its-ai-produced-in-math-computer-science-and-physics/",
-          "date": "Tue, 27 Oct 2026 12:37:24 +0000",
-          "desc": "OpenAI says its internal AI models have cracked three major open questions in math, computer science, and physics. One of them is part of a famous Millennium Prize Problem, each of which carries a $1 million prize. Outsi"
+          "title": "Claude for Legal now verifies sources automatically, then hands the file to a lawyer",
+          "link": "https://the-decoder.com/claude-for-legal-now-verifies-sources-automatically-then-hands-the-file-to-a-lawyer/",
+          "date": "Wed, 28 Oct 2026 16:20:03 +0000",
+          "desc": "Anthropic is adding pre-built templates to Claude for Legal. These interactive overviews and tables simplify setup for legal teams and speed up routine work like contract reviews, while more than 60 integrations let firm"
         },
         {
-          "title": "OpenAI's partner content arrives in ChatGPT pre-summarized while the rest of the web gets raw scraps",
-          "link": "https://the-decoder.com/openais-partner-content-arrives-in-chatgpt-pre-summarized-while-the-rest-of-the-web-gets-raw-scraps/",
-          "date": "Tue, 27 Oct 2026 11:39:24 +0000",
-          "desc": "Content from OpenAI's licensing partners appears to flow into ChatGPT through a dedicated pipeline that gives it priority over the rest of the web.\nThe article OpenAI's partner content arrives in ChatGPT pre-summarized w"
+          "title": "Nvidia's open Nemotron 3.5 Transcribe combines transcription, translation, and speaker recognition",
+          "link": "https://the-decoder.com/nvidias-open-nemotron-3-5-transcribe-combines-transcription-translation-and-speaker-recognition/",
+          "date": "Wed, 28 Oct 2026 15:49:39 +0000",
+          "desc": "Nvidia has released Nemotron 3.5 Transcribe, an open speech recognition model that handles transcription, speaker recognition, and translation and takes its instructions as text prompts. It leads several benchmarks and u"
         },
         {
-          "title": "Anthropic uses its IPO letter to renew its pledge that Claude will never show ads",
-          "link": "https://the-decoder.com/anthropic-uses-its-ipo-letter-to-renew-its-pledge-that-claude-will-never-show-ads/",
-          "date": "Tue, 27 Oct 2026 11:20:51 +0000",
-          "desc": "Anthropic says it will keep ads out of Claude. In a cover letter accompanying its IPO filing, the company argues that the chatbot's sole incentive should be to provide helpful answers.\nThe article Anthropic uses its IPO "
+          "title": "New Artificial Analysis index widens the gap between open and closed models",
+          "link": "https://the-decoder.com/new-artificial-analysis-index-widens-the-gap-between-open-and-closed-models/",
+          "date": "Wed, 28 Oct 2026 15:04:43 +0000",
+          "desc": "Artificial Analysis overhauled its Intelligence Index, causing Kimi K3.1 Pro to drop five spots in the rankings.\nThe article New Artificial Analysis index widens the gap between open and closed models appeared first on T"
         },
         {
-          "title": "OpenAI's Ted Sanders shares a rule of thumb for picking the right GPT-model",
-          "link": "https://the-decoder.com/openais-ted-sanders-shares-a-rule-of-thumb-for-picking-the-right-gpt-model/",
-          "date": "Tue, 27 Oct 2026 10:09:26 +0000",
-          "desc": "OpenAI's Ted Sanders explains where GPT-6.1 Terra fits in the company's GPT lineup. The smaller model outperforms the larger Astra in technical communication and costs far less but trails it in most other areas. Sanders "
+          "title": "With AI writing the code, entrepreneurial thinking is now what counts most for newcomers at Anthropic",
+          "link": "https://the-decoder.com/with-ai-writing-the-code-entrepreneurial-thinking-is-now-what-counts-most-for-newcomers-at-anthropic/",
+          "date": "Wed, 28 Oct 2026 11:15:00 +0000",
+          "desc": "Anthropic manager Felix Rieseberg says the classic coding interview is dead because Claude now solves small programming tasks better than job candidates do. He'd rather see prototypes that show taste, empathy, and princi"
         },
         {
-          "title": "Meta gets $3 billion from Nvidia and plans to spend more on Nvidia chips",
-          "link": "https://the-decoder.com/meta-gets-3-billion-from-nvidia-and-plans-to-spend-more-on-nvidia-chips/",
-          "date": "Tue, 27 Oct 2026 09:58:16 +0000",
-          "desc": "ia is buying into its customer Meta, which plans to run more of its AI agents on Nvidia hardware.\nThe article Meta gets $3 billion from Nvidia and plans to spend more on Nvidia chips appeared first on The Decoder.\n]]>"
+          "title": "AI agents hacked Anthropic, maker of arguably the most capable AI models for cyberdefense",
+          "link": "https://the-decoder.com/ai-agents-hacked-anthropic-maker-of-arguably-the-most-capable-ai-models-for-cyberdefense/",
+          "date": "Wed, 28 Oct 2026 10:56:24 +0000",
+          "desc": "Cybersecurity startup Cathedral used AI agents to break into Anthropic's internal systems through third-party software as part of a bug bounty program. Anthropic confirmed access to sales, HR, and IT data but disputes ho"
         }
       ],
       "error": null
@@ -489,6 +489,12 @@
       "name": "TLDR AI",
       "url": "https://tldr.tech/api/rss/ai",
       "items": [
+        {
+          "title": "Genie 4 worlds 🌍, Frontier Code 2 👨‍💻, AI drug discovery 🧬",
+          "link": "https://tldr.tech/ai/2026-10-28",
+          "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+          "desc": ""
+        },
         {
           "title": "GPT-6.1 Terra ⚡, Anthropic IPO filing 📈, agent native git 👨‍💻",
           "link": "https://tldr.tech/ai/2026-10-27",
@@ -530,12 +536,6 @@
           "link": "https://tldr.tech/ai/2026-10-19",
           "date": "Mon, 19 Oct 2026 00:00:00 GMT",
           "desc": ""
-        },
-        {
-          "title": "Muse Spark Open ✨, Microsoft’s 3T param model 🧠, d1-ultra 💡",
-          "link": "https://tldr.tech/ai/2026-10-16",
-          "date": "Fri, 16 Oct 2026 00:00:00 GMT",
-          "desc": ""
         }
       ],
       "error": null
@@ -544,6 +544,30 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "items": [
+        {
+          "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+          "link": "https://openai.com/index/openai-servicenow-partnership-expansion",
+          "date": "Wed, 28 Oct 2026 13:15:00 GMT",
+          "desc": ""
+        },
+        {
+          "title": "The future of the firm",
+          "link": "https://openai.com/index/the-future-of-the-firm",
+          "date": "Wed, 28 Oct 2026 10:00:00 GMT",
+          "desc": ""
+        },
+        {
+          "title": "Legora is building the agentic operating system for legal work",
+          "link": "https://openai.com/index/legora",
+          "date": "Wed, 28 Oct 2026 09:30:00 GMT",
+          "desc": ""
+        },
+        {
+          "title": "Retell uses OpenAI models to help power 100M monthly calls",
+          "link": "https://openai.com/index/retell-ai",
+          "date": "Tue, 27 Oct 2026 15:00:00 GMT",
+          "desc": ""
+        },
         {
           "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
           "link": "https://openai.com/index/oracle-apps-in-chatgpt",
@@ -566,30 +590,6 @@
           "title": "Working with academic communities to build scientific understanding",
           "link": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
           "date": "Mon, 26 Oct 2026 14:30:00 GMT",
-          "desc": ""
-        },
-        {
-          "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
-          "link": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
-          "date": "Mon, 26 Oct 2026 13:45:00 GMT",
-          "desc": ""
-        },
-        {
-          "title": "ChatGPT’s expanding world of work",
-          "link": "https://openai.com/index/chatgpt-expanding-world-of-work",
-          "date": "Mon, 26 Oct 2026 10:00:00 GMT",
-          "desc": ""
-        },
-        {
-          "title": "How Fanatics and OpenAI streamline the fan experience",
-          "link": "https://openai.com/index/fanatics-streamline-fan-experience",
-          "date": "Mon, 26 Oct 2026 07:00:00 GMT",
-          "desc": ""
-        },
-        {
-          "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
-          "link": "https://openai.com/index/openai-cut-incident-investigation",
-          "date": "Mon, 26 Oct 2026 07:00:00 GMT",
           "desc": ""
         }
       ],
@@ -710,6 +710,12 @@
       "url": "https://huggingface.co/blog/feed.xml",
       "items": [
         {
+          "title": "NVIDIA Nemotron 3.5 Transcribe and Granary v2: Intelligent Multilingual Transcription You Can Prompt and Adapt",
+          "link": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+          "date": "Wed, 28 Oct 2026 14:58:17 GMT",
+          "desc": ""
+        },
+        {
           "title": "Build specialized multimodal models with LFM3",
           "link": "https://huggingface.co/blog/LiquidAI/lfm3",
           "date": "Tue, 27 Oct 2026 17:16:52 GMT",
@@ -740,12 +746,6 @@
           "desc": ""
         },
         {
-          "title": "NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required",
-          "link": "https://huggingface.co/blog/nvidia/kumo-relational",
-          "date": "Wed, 21 Oct 2026 18:26:30 GMT",
-          "desc": ""
-        },
-        {
           "title": "How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications",
           "link": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
           "date": "Wed, 21 Oct 2026 17:35:36 GMT",
@@ -765,52 +765,52 @@
       "url": "https://export.arxiv.org/rss/cs.AI",
       "items": [
         {
-          "title": "Inverse Modeling for Laser Pulse Shape Design in Inertial Confinement Fusion",
-          "link": "https://arxiv.org/abs/2610.33096",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33096v1 Announce Type: new \nAbstract: The achievement of practical fusion energy remains one of the most pressing unsolved scientific challenges, with immense implications for carbon-free power. A critical fac"
+          "title": "Counting the Bandages: On measuring the time that AI saves",
+          "link": "https://arxiv.org/abs/2610.35942",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.35942v1 Announce Type: new \nAbstract: I consider what it means for AI assistance to save time. I contrast a stopwatch view, on which time saved is whatever the clock records, with a ledger view, on which it is"
         },
         {
-          "title": "IRON-Meme: A Benchmark for Structured Understanding of Identities and Roles in Online Meme Narratives",
-          "link": "https://arxiv.org/abs/2610.33097",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33097v1 Announce Type: new \nAbstract: As polarization grows on social media, understanding how political memes shape online narratives has become increasingly important. Previous research has relied on either "
+          "title": "Enhancing Deep Learning Model Performance through Data Generation Strategies: Classification of Olive Tree Diseases",
+          "link": "https://arxiv.org/abs/2610.35984",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.35984v1 Announce Type: new \nAbstract: Deep learning models are highly effective in a wide range of domains, particu larly in plant disease diagnosis. However, their performance is often limited by challenges s"
         },
         {
-          "title": "Prospect Theory in Large Language Models: A Meta-Analysis of Loss Aversion, Diminishing Sensitivity, and Probability Weighting",
-          "link": "https://arxiv.org/abs/2610.33103",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33103v1 Announce Type: new \nAbstract: Prospect theory splits risky choice into three parts: loss aversion, measured by the relative weight of losses to gains, $\\lambda$ (e.g., $\\lambda = 2$ implies that losses"
+          "title": "The Trinity:Capability-Driven Recursive Self-Improvement for Multimodal Agents",
+          "link": "https://arxiv.org/abs/2610.36077",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36077v1 Announce Type: new \nAbstract: Multimodal intelligence can be viewed as human-guided co-evolution between worlds and agents through interaction. However, scaling this process faces two bottlenecks: cons"
         },
         {
-          "title": "Artificial Intelligence in Mechanical Engineering: Foundations, Opportunities, Challenges, and Responsibilities",
-          "link": "https://arxiv.org/abs/2610.33105",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33105v1 Announce Type: new \nAbstract: Artificial intelligence (AI) is reshaping mechanical engineering (ME), from modeling, simulation, and optimization to diagnostics, design, and technical communication. Dra"
+          "title": "CohortFlow: A Steerable Clinical Cohort Curation Agent with Localized Semantic Correction",
+          "link": "https://arxiv.org/abs/2610.36100",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36100v1 Announce Type: new \nAbstract: Language model agents for clinical cohort curation should accommodate evolving eligibility criteria without repeatedly processing unchanged requirements. We introduce Coho"
         },
         {
-          "title": "Conformance as a Distribution: Delegation Contracts, Error Budgets, and the Allocation of Evaluation Authority in Use-Based AI Regulation",
-          "link": "https://arxiv.org/abs/2610.33112",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33112v1 Announce Type: new \nAbstract: Use-based AI regulation assigns obligations by deployment risk but lacks an evidentiary object to carry them. A benchmark score is a property of a model; conformance of a "
+          "title": "Why and How to Do Science When AI Is Better at It: A Framework Grounded in Human Understanding and Direction",
+          "link": "https://arxiv.org/abs/2610.36116",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36116v1 Announce Type: new \nAbstract: As AI begins to match or exceed human researchers at core scientific tasks, two questions become pressing: \\emph{why} should humans keep doing science, and \\emph{how} shou"
         },
         {
-          "title": "Optimal Correction Sets for Provable Redress of Contestable Causal Discovery",
-          "link": "https://arxiv.org/abs/2610.33138",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33138v1 Announce Type: new \nAbstract: Constraint-based causal discovery relies on conditional-independence (CI) tests that may conflict in finite samples, leaving no causal graph that satisfies them all. Causa"
+          "title": "From Structural Feedback to Prompt Policies: Learning Faithful Text-to-Image Prompt Editors",
+          "link": "https://arxiv.org/abs/2610.36146",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36146v1 Announce Type: new \nAbstract: Prompt optimization should improve the image a user receives without changing the scene the user requested. Yet stylistic rewriting can weaken object attributes and relati"
         },
         {
-          "title": "AOS-Bench: Can LLM Agents Manage Dynamic Workloads?",
-          "link": "https://arxiv.org/abs/2610.33178",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33178v1 Announce Type: new \nAbstract: Coding agents are moving from handling one request at a time to serving as persistent assistants to which users hand a stream of work: a build, a data-processing job and a"
+          "title": "Don't Pick a Winner: Knowledge Conflicts Need a Prior, Not a Rule",
+          "link": "https://arxiv.org/abs/2610.36169",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36169v1 Announce Type: new \nAbstract: A retrieval-augmented language model answers from two sources, the retrieved context and its own knowledge, and the two disagree whenever the context is incomplete or wron"
         },
         {
-          "title": "Propensities Please: Exposing Alignment-Faking LLMs using Synthetic Document Finetuning",
-          "link": "https://arxiv.org/abs/2610.33180",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33180v1 Announce Type: new \nAbstract: Alignment evaluations aim to assess whether large language models would engage in dangerous misaligned behaviour. Misaligned and evaluation-aware models might engage in al"
+          "title": "Learning Human Sports Motion Feasibility via Quantile Regression on Tracking Data",
+          "link": "https://arxiv.org/abs/2610.36183",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36183v1 Announce Type: new \nAbstract: We study time-to-arrival (TTA) in sports: the shortest plausible time a player needs to reach an arbitrary location on the pitch given their current kinematic state, estim"
         }
       ],
       "error": null
@@ -820,52 +820,52 @@
       "url": "https://export.arxiv.org/rss/cs.CL",
       "items": [
         {
-          "title": "Whispering Wisely: Smart Subset Selection for ASR Fine-Tuning",
-          "link": "https://arxiv.org/abs/2610.32997",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.32997v1 Announce Type: new \nAbstract: Automatic Speech Recognition (ASR) models such as OpenAIs Whisper have substantially improved speech recognition quality but remain expensive to fine-tune, especially when"
+          "title": "ReCoPII: A Relation-Grounded Framework for Building Contextual PII Masking Datasets",
+          "link": "https://arxiv.org/abs/2610.35925",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.35925v1 Announce Type: new \nAbstract: Training contextual masking systems for personally identifiable information (PII) requires examples distinguishing maskable from preservable mentions of one entity type, b"
         },
         {
-          "title": "From Writing Advice to Manuscript Governance: A Constrained-Transformation Framework for Academic Revision",
-          "link": "https://arxiv.org/abs/2610.33001",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33001v1 Announce Type: new \nAbstract: Academic revision presents a governance problem when legitimate writing objectives conflict. Writing-process and social-science research show that revision is recursive an"
+          "title": "MedJev: Evaluating Zero-Shot System-One Decision Making in Medicine",
+          "link": "https://arxiv.org/abs/2610.36006",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36006v1 Announce Type: new \nAbstract: System One decision models such as Jev answer structured questions in a single forward pass without generating text, offering fast and computationally efficient clinical d"
         },
         {
-          "title": "Entity-Aware Evaluation of OCR Systems for Historical Document Transcription",
-          "link": "https://arxiv.org/abs/2610.33004",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33004v1 Announce Type: new \nAbstract: Optical Character Recognition (OCR) is essential for digitizing historical archives, yet standard evaluation metrics such as Character Error Rate (CER) do not necessarily "
+          "title": "OmniBrain-0: A Unified Agentic Model for Embodied Intelligence",
+          "link": "https://arxiv.org/abs/2610.36013",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36013v1 Announce Type: new \nAbstract: General-purpose embodied intelligence requires robots to coordinate diverse skills over long horizons, track task progress, and recover from failures. Specialist policies "
         },
         {
-          "title": "OpenESM: Energy-Steered Models Are Scalable Foundation Learners",
-          "link": "https://arxiv.org/abs/2610.33005",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33005v1 Announce Type: new \nAbstract: Energy-based models have shown promising properties for domain-specific tasks but remain challenging in modeling general-purpose scenarios. To bridge this gap, we design e"
+          "title": "FinLLM-KG: Knowledge Graph-Enhanced LLMs for Financial Sentiment Analysis in Algorithmic Trading",
+          "link": "https://arxiv.org/abs/2610.36083",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36083v1 Announce Type: new \nAbstract: Recent advances in Generative AI have substantially improved financial sentiment analysis through post-trained financial large language models (LLMs). However, existing ap"
         },
         {
-          "title": "Linear-Time Context Compression with State-Space Encoding",
-          "link": "https://arxiv.org/abs/2610.33006",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33006v1 Announce Type: new \nAbstract: Transformer-based large language models (LLMs) impose substantial computation and memory costs as context sizes increase, motivating methods that compress a context into a"
+          "title": "3, 7, 14, 17, 42: Instruction Tuning Installs and Sharpens Number-Choice Heuristics in Language Models",
+          "link": "https://arxiv.org/abs/2610.36178",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36178v1 Announce Type: new \nAbstract: We measure, without sampling error, the probability a language model assigns to each integer from 1 to N when asked for a random number. For a fixed prompt the model defin"
         },
         {
-          "title": "Knowledge-Guided LLM for Intent-Driven Service Orchestration in Integrated Terrestrial and Non-Terrestrial 6G Networks",
-          "link": "https://arxiv.org/abs/2610.33007",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33007v1 Announce Type: new \nAbstract: Natural-language service intents in integrated terrestrial and non-terrestrial (TN/NTN) 6G networks can be incomplete, ambiguous, or inconsistent, making unconstrained LLM"
+          "title": "Lipi-Ghor: A Large-Scale, Diarized, Multi-Domain Bengali Speech Corpus and a Scalable Pipeline for Building It",
+          "link": "https://arxiv.org/abs/2610.36184",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36184v1 Announce Type: new \nAbstract: Bengali, spoken by over 230 million people, remains severely under-resourced in spoken language research. Existing open Bengali ASR corpora are confined to short, read or "
         },
         {
-          "title": "TraceQuery: learning what to recompute from full-denoising trajectory in diffusion language models",
-          "link": "https://arxiv.org/abs/2610.33008",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33008v1 Announce Type: new \nAbstract: Diffusion large language models (dLLMs) enable flexible generation through iterative masked denoising, but incur substantial inference cost because token representations a"
+          "title": "Frankly Speaking: The Company Election Integrity Keeps in Congressional Communication",
+          "link": "https://arxiv.org/abs/2610.36187",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36187v1 Announce Type: new \nAbstract: Election integrity is a shared commitment in American politics, but Democrats and Republicans in Congress increasingly mean different things by it. Analyzing 10,420 congre"
         },
         {
-          "title": "Recursive Semantic Divergence for LLM Agent Consistency",
-          "link": "https://arxiv.org/abs/2610.33012",
-          "date": "Tue, 27 Oct 2026 00:00:00 -0400",
-          "desc": "arXiv:2610.33012v1 Announce Type: new \nAbstract: Large Language Model (LLM) agents with tool use exhibit inconsistent behavior across independent runs from identical states, calling different tools, producing contradicto"
+          "title": "LLM Hallucination Detection via Low-rank Multilinear Decomposition",
+          "link": "https://arxiv.org/abs/2610.36191",
+          "date": "Wed, 28 Oct 2026 00:00:00 -0400",
+          "desc": "arXiv:2610.36191v1 Announce Type: new \nAbstract: Large language models (LLMs) frequently generate fluent yet factually incorrect responses, raising concerns about their reliability. Recent hallucination detectors increas"
         }
       ],
       "error": null
