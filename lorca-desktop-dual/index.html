@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>avatar 桌面操作台 · Bot 页双栏 UI 稿（issue #42）</title>
+<style>
+  /* 颜色 / 圆角 / 动效取 apps/mobile/src/styles/tokens.css，与 App 内视觉同源。 */
+  :root {
+    --bg: #f5f6f8;
+    --bg-soft: #f2f3f5;
+    --surface: #ffffff;
+    --border: #eaecf0;
+    --border-strong: #d9dce1;
+    --text: #1f2329;
+    --text-soft: #373c43;
+    --muted: #646a73;
+    --muted-2: #8f959e;
+    --accent: #3370ff;
+    --accent-strong: #245bdb;
+    --accent-soft: #eef3ff;
+    --bot-fill: #e9e9eb;
+    --shadow-sm: 0 2px 8px rgba(31, 35, 41, 0.05);
+    --shadow-lg: 0 12px 32px rgba(31, 35, 41, 0.14);
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 28px 20px 72px;
+    background: var(--bg); color: var(--text);
+    font: 15px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .doc { max-width: 1360px; margin: 0 auto; }
+  h1 { margin: 0 0 6px; font-size: 22px; letter-spacing: -0.01em; }
+  .sub { margin: 0 0 12px; color: var(--muted); font-size: 13px; }
+  .sub a { color: var(--accent-strong); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 10px; border: 1px solid var(--border); border-radius: 999px;
+    background: var(--surface); font-size: 12px; line-height: 1.5; color: var(--muted);
+  }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--muted-2); }
+  .badge.is-fake::before { background: var(--accent); }
+  .badge.is-keep::before { background: var(--success, #2f7a4a); }
+  .badge.is-new::before { background: #a35f00; }
+
+  section { margin-bottom: 42px; }
+  .sec-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+  .sec-head h2 { margin: 0; font-size: 16px; letter-spacing: -0.005em; }
+  .sec-note { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
+  .sec-note code { font-size: 12px; background: var(--bg-soft); padding: 1px 5px; border-radius: 4px; }
+
+  .fit { position: relative; overflow: hidden; border-radius: 16px; }
+  .caption {
+    display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center;
+    margin: 10px 2px 0; color: var(--muted); font-size: 12px;
+  }
+  .caption b { color: var(--text-soft); font-weight: 600; }
+  .caption .num { font-variant-numeric: tabular-nums; }
+
+  /* ============ 模拟的操作台外壳（只在稿子里存在） ============ */
+  .console {
+    width: var(--w, 1280px); height: var(--h, 820px);
+    position: absolute; top: 0; left: 0; transform-origin: top left;
+    display: flex; background: var(--bg);
+    font-size: 14px; color: var(--text);
+    border-radius: 16px; overflow: hidden;
+    box-shadow: var(--shadow-sm); border: 1px solid var(--border-strong);
+  }
+  /* 左导航：形态不动，只为给比例参照，宽度锁定 92px（与桌面操作台一致）。 */
+  .rail {
+    flex: 0 0 92px; width: 92px; background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 14px 0;
+  }
+  .rail-logo { width: 30px; height: 30px; border-radius: 9px; background: var(--accent-soft);
+    border: 1px solid #d6e2ff; margin-bottom: 10px; }
+  .rail-item {
+    width: 64px; padding: 7px 0; border-radius: 9px; text-align: center;
+    font-size: 11px; line-height: 1.4; color: var(--muted);
+  }
+  .rail-item.is-on { background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; }
+  .rail-dot { display: block; width: 16px; height: 16px; margin: 0 auto 3px; border-radius: 5px;
+    background: currentColor; opacity: 0.28; }
+  .rail-item.is-on .rail-dot { opacity: 0.55; }
+
+  .content { flex: 1; min-width: 0; padding: 26px; display: flex; }
+
+  /* Bot tab 的 .app-shell：宽屏解除 1020 上限（min(100%, 112rem)），动态/我的不动。
+     112rem = 1792px，本例面板最宽 1136，等价于 100%。 */
+  .app-shell { width: min(100%, 112rem); height: 100%; min-width: 0; margin: 0 auto; }
+
+  /* 容器查询挂在 .page-transition（Bot tab 那层），不是被查元素自己。
+     它的 inline-size 就是 Bot 面板可用宽度。 */
+  .page-transition { height: 100%; min-width: 0; container-type: inline-size; }
+
+  .view-stack { height: 100%; position: relative; display: flex; }
+
+  /* ---------- 左列：会话列表 ---------- */
+  .list-stage {
+    flex: 1; min-width: 0; height: 100%;
+    display: flex; flex-direction: column;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden;
+  }
+  .tabs {
+    display: flex; gap: 4px; padding: 10px 12px 8px; border-bottom: 1px solid var(--border);
+    flex: 0 0 auto;
+  }
+  .tab { padding: 5px 11px; border-radius: 8px; font-size: 13px; color: var(--muted); }
+  .tab.is-on { background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; }
+  .groups { flex: 1; min-height: 0; overflow-y: auto; padding-bottom: 8px; }
+  .group-head {
+    position: sticky; top: 0; z-index: 1;
+    display: flex; align-items: center; gap: 6px;
+    padding: 9px 14px 7px; background: var(--surface);
+    font-size: 12px; font-weight: 600; color: var(--muted);
+  }
+  .group-head .chev { width: 10px; height: 10px; border-left: 1.5px solid var(--muted-2);
+    border-bottom: 1.5px solid var(--muted-2); transform: rotate(-45deg); margin-top: -3px; }
+  .group-head .count { color: var(--muted-2); font-weight: 500; }
+
+  .row { position: relative; display: flex; gap: 11px; align-items: flex-start; padding: 10px 14px; }
+  .row + .row { margin-top: 1px; }
+  .row .avatar {
+    flex: 0 0 38px; width: 38px; height: 38px; border-radius: 12px;
+    background: var(--bg-soft); color: var(--muted);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 600;
+  }
+  .row-main { flex: 1; min-width: 0; }
+  .row-line { display: flex; align-items: baseline; gap: 8px; }
+  .row-name { flex: 1; min-width: 0; font-size: 14px; font-weight: 600;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-time { flex: 0 0 auto; font-size: 11px; color: var(--muted-2); font-variant-numeric: tabular-nums; }
+  .row-preview { margin-top: 2px; font-size: 12.5px; color: var(--muted);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-badge { display: inline-block; margin-right: 5px; padding: 0 5px; border-radius: 5px;
+    background: var(--bg-soft); color: var(--muted); font-size: 10.5px; line-height: 1.6; }
+
+  /* 新增：双栏「当前会话」选中态 —— 整行 accent-soft + 左侧 3px 指示条。
+     与 :active 的 bg-soft（#f2f3f5）区分：选中是蓝色系、按下是灰。 */
+  .row.is-current { background: var(--accent-soft); }
+  .row.is-current .row-name { color: var(--accent-strong); }
+  .row.is-current .row-preview { color: #5a7ec4; }
+  /* 指示条画在行轨道（.lorca-row-track）的 ::before，不画在滑动层 .lorca-row 上。 */
+  .row.is-current::before {
+    content: ""; position: absolute; left: 0; top: 7px; bottom: 7px; width: 3px;
+    border-radius: 0 2px 2px 0; background: var(--accent);
+  }
+  .row.is-pressed { background: var(--bg-soft); }
+
+  /* ---------- 右列：聊天 ---------- */
+  .scrim { display: none; }
+
+  /* 窄屏分支（现状，一字不改）：fixed 覆盖 + 推屏 + 遮罩。这里用 absolute 模拟，
+     因为稿子的外壳是相对定位的。 */
+  .screen {
+    position: absolute; inset: 0; z-index: 3;
+    display: flex; flex-direction: column;
+    background: var(--bg); border-radius: 14px;
+    box-shadow: -12px 0 28px rgba(31, 35, 41, 0.10);
+  }
+  .console[data-state="list"] .screen { display: none; }
+  .console[data-state="empty"] .screen { display: none; }
+  .console[data-state="empty"] .scrim { display: none; }
+
+  .chat-head {
+    flex: 0 0 auto; display: flex; align-items: center; gap: 10px;
+    padding: 13px 16px; border-bottom: 1px solid var(--border); background: var(--surface);
+    border-radius: 14px 14px 0 0;
+  }
+  .chat-back { width: 18px; height: 18px; border-left: 1.8px solid var(--text-soft);
+    border-bottom: 1.8px solid var(--text-soft); transform: rotate(45deg); flex: 0 0 auto; }
+  .chat-title { flex: 1; min-width: 0; font-size: 14px; font-weight: 600;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .chat-stop { padding: 2px 8px; border-radius: 7px; background: var(--bg-soft);
+    color: var(--muted); font-size: 12px; flex: 0 0 auto; }
+  .chat-more { flex: 0 0 auto; color: var(--muted); font-size: 15px; letter-spacing: 1px; }
+
+  .thread {
+    flex: 1; min-height: 0; overflow-y: auto;
+    padding: 18px 22px 8px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .day { align-self: center; font-size: 11px; color: var(--muted-2); }
+  .msg { display: flex; gap: 9px; align-items: flex-end; max-width: 100%; }
+  .msg .m-avatar { flex: 0 0 26px; width: 26px; height: 26px; border-radius: 9px;
+    background: var(--bg-soft); color: var(--muted-2); font-size: 10px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center; }
+  /* 气泡行长封顶：min(68ch, 100%)。14px 字号下 68ch ≈ 589px ≈ 41 汉字。
+     外层 .lorca-bubble-row 的 max-width:88% 不动，两层取小。 */
+  .bubble {
+    max-width: min(68ch, 100%);
+    padding: 9px 12px; border-radius: 12px 12px 12px 6px;
+    background: var(--bot-fill); color: var(--text-soft);
+    font-size: 14px; line-height: 1.62; white-space: pre-wrap; word-break: break-word;
+  }
+  .msg.is-me { justify-content: flex-end; }
+  .msg.is-me .bubble { background: var(--accent); color: #fff; border-radius: 12px 12px 6px 12px; }
+  .ruler {
+    position: relative; align-self: flex-start; margin-top: -6px;
+    border-top: 1px dashed #b9cdf6; padding-top: 3px;
+    font-size: 10.5px; color: #6d8bc9; font-variant-numeric: tabular-nums;
+  }
+
+  .composer {
+    flex: 0 0 auto; padding: 10px 14px 14px; border-top: 1px solid var(--border);
+    background: var(--surface); border-radius: 0 0 14px 14px;
+  }
+  .composer-box {
+    display: flex; align-items: flex-end; gap: 8px;
+    border: 1px solid var(--border-strong); border-radius: 12px; padding: 8px 10px;
+    background: var(--surface);
+  }
+  .composer-ph { flex: 1; color: var(--muted-2); font-size: 13.5px; line-height: 1.5; }
+  .send { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+
+  /* ---------- 右列空态（新增） ---------- */
+  .dual-empty {
+    display: none;
+    flex: 1; min-width: 0; align-items: center; justify-content: center;
+    background: var(--surface); border: 1px solid var(--border); border-left: 0;
+    border-radius: 0 14px 14px 0;
+    font-size: 13px; color: var(--muted-2);
+  }
+
+  /* ============ 双栏分支（唯一新增的一段） ============ */
+  @container (min-width: 60rem) {   /* 60rem = 18rem ÷ 30%，由左列比例反推，不另写数 */
+    .view-stack {
+      display: grid;
+      grid-template-columns: clamp(18rem, 30%, 26rem) 1fr;
+    }
+    .list-stage {
+      border-radius: 14px 0 0 14px;
+      border-right: 0;
+    }
+    .screen {
+      position: static;
+      border-radius: 0 14px 14px 0;
+      box-shadow: none;
+      border-left: 1px solid var(--border);  /* 列分隔线 */
+    }
+    .chat-head { border-radius: 0 14px 0 0; }
+    .composer { border-radius: 0 0 14px 0; }
+    .chat-back { display: none; }          /* 双栏下左列常显，返回键无意义 */
+    .console[data-state="empty"] .dual-empty { display: flex; }
+  }
+
+  /* ============ 规则卡片 ============ */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .card h3 { margin: 0 0 8px; font-size: 13.5px; }
+  .card p, .card li { margin: 0 0 6px; font-size: 13px; color: var(--muted); line-height: 1.65; }
+  .card ul { margin: 0; padding-left: 16px; }
+  .card code { font-size: 12px; background: var(--bg-soft); padding: 1px 5px; border-radius: 4px; color: var(--text-soft); }
+  .card b { color: var(--text-soft); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted-2); font-weight: 600; font-size: 12px; }
+  td { color: var(--muted); }
+  td code { font-size: 12px; background: var(--bg-soft); padding: 1px 5px; border-radius: 4px; color: var(--text-soft); }
+</style>
+</head>
+<body>
+<div class="doc">
+  <h1>桌面操作台 · Bot 页双栏 UI 稿</h1>
+  <p class="sub">issue <a href="https://github.com/AdamZhuang/avatar/issues/42">#42</a> · 按面板宽度自适应，比例不按像素 · 窄屏行为一字不改</p>
+  <div class="legend">
+    <span class="badge is-fake">示例数据：全部虚构</span>
+    <span class="badge is-new">本稿新增：双栏 / 选中态 / 空态</span>
+    <span class="badge is-keep">未改动：窄屏、动态、我的、桥接层</span>
+  </div>
+
+  <section>
+    <div class="sec-head"><h2>1 · 1280 宽：同屏双栏</h2><span class="badge">验收 1、4</span></div>
+    <p class="sec-note">面板可用宽 <b>1136px</b> ≥ 60rem（960px）→ 双栏。左列 <code>clamp(18rem,30%,26rem)</code> = 340.8px，右列 795.2px，正好 30:70。无遮罩、无推屏。返回键隐藏。</p>
+    <div class="fit" data-w="1280" data-h="820"></div>
+    <div class="caption"><span><b>左列</b> <span class="num">340.8px</span> = 30%</span><span><b>右列</b> <span class="num">795.2px</span> = 70%</span><span><b>气泡</b> <code>min(68ch,100%)</code> → 实测 <span class="num">589px</span> ≈ 41 汉字/行</span></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>2 · 同宽度，没有选中会话</h2><span class="badge">新增空态</span></div>
+    <p class="sec-note">右列居中一行「选择左侧会话」，13px 次要色，无图标、无按钮、无插画。左列无高亮行。</p>
+    <div class="fit" data-w="1280" data-h="820" data-state="empty"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>3 · 950 宽（面板 806px）：自动退回单栏</h2><span class="badge">验收 2、6</span></div>
+    <p class="sec-note">低于 60rem 即回退，回到现状：列表整幅 + 推屏 + 遮罩。断点落在窗口 <b>1104 → 1103</b>（面板 960 → 959），<b>验收找断点按 1104 找，不要按 960。</b>本段取验收要求的 950 作代表。</p>
+    <div class="fit" data-w="950" data-h="820" data-state="list"></div>
+    <div class="caption"><span><b>1104</b> 窗口 → 面板 960 → 双栏</span><span><b>1103</b> 窗口 → 面板 959 → 单栏</span><span>92 左导航 + 左右 padding 各 26</span><span>950 窗口 → 面板 806 → 单栏</span></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>4 · 手机 394px：逐像素不变</h2><span class="badge is-keep">不碰</span></div>
+    <p class="sec-note">394px 远小于 60rem，容器查询整块不命中，新增规则一条都不落。列表底部 tab、行高、间距保持现状。<b>本段仅为示意，不作为逐像素验收依据</b>——逐像素要真机截图比。</p>
+    <div class="fit" data-w="394" data-h="820" data-state="list" data-phone="1"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>规则</h2></div>
+    <div class="cards">
+      <div class="card">
+        <h3>断点与比例（一个数，两处用）</h3>
+        <table>
+          <tr><th>值</th><th>来源</th></tr>
+          <tr><td><code>clamp(18rem, 30%, 26rem)</code></td><td>左列 = 18rem 起、占 30%、26rem 封顶</td></tr>
+          <tr><td><code>60rem</code></td><td>18rem ÷ 30% = 60rem，反推，不另写</td></tr>
+          <tr><td><code>960px</code></td><td>60rem 换算的内容宽（= 窗口 1104）</td></tr>
+          <tr><td><code>min(100%, 112rem)</code></td><td>Bot tab 解除 1020 上限，只 Bot</td></tr>
+        </table>
+        <p style="margin-top:8px">容器查询挂 <code>.page-transition</code>（Bot tab 那层），不挂被查元素自身，也不读 <code>data-surface</code>。</p>
+      </div>
+
+      <div class="card">
+        <h3>选中态（新增）</h3>
+        <ul>
+          <li>整行 <code>accent-soft</code> + 左侧 3px 指示条</li>
+          <li>标题转 <code>accent-strong</code>，预览色降一档</li>
+          <li>与按下态 <code>bg-soft</code> 区分：选中蓝、按下灰</li>
+          <li>指示条画在行轨道 <code>::before</code>，不在滑动层上</li>
+          <li>窄屏也渲染，只是看不见 → 退出双栏不闪</li>
+        </ul>
+        <div style="margin-top:10px;border:1px solid var(--border);border-radius:10px;overflow:hidden">
+          <div class="row is-current" style="padding:10px 14px">
+            <div class="avatar">排</div>
+            <div class="row-main"><div class="row-line"><span class="row-name">排版匠</span><span class="row-time">14:32</span></div><div class="row-preview">分栏稿已放到 Pages</div></div>
+          </div>
+          <div class="row is-pressed" style="padding:10px 14px">
+            <div class="avatar">构</div>
+            <div class="row-main"><div class="row-line"><span class="row-name">构建小工</span><span class="row-time">13:05</span></div><div class="row-preview">这是按下态 bg-soft</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>气泡行长</h3>
+        <p><code>max-width: min(68ch, 100%)</code> 叠在气泡上，外层 88% 不动，两者取小。</p>
+        <p>14px 字号下 <code>1ch ≈ 8.67px</code>，<code>68ch ≈ 589px ≈ 41 汉字</code>。中文一行 41 字在上限边缘，可接受；ASCII 仍是 68 字符，正是 issue 要的「一行多少字」。</p>
+        <p>不改成 px：那会把「按比例」变回「按像素」。<code>pre</code> 保持横向滚动。</p>
+      </div>
+
+      <div class="card">
+        <h3>浮层（方案 A）</h3>
+        <p>全部全窗居中、遮罩压全窗，与单栏一致。判定：不出现浮层边缘正好压在列分隔线上的半遮。</p>
+        <p>还需一行：宽屏分支把 <code>.lorca-list-stage</code> 的 <code>will-change: transform</code> 归 <code>auto</code>，否则浮层被关进左列。portal 的那几个本来就是全窗。</p>
+      </div>
+
+      <div class="card">
+        <h3>本稿范围外</h3>
+        <ul>
+          <li>可拖动分隔条（记住宽度）→ P2 另开 issue</li>
+          <li>动态 / 我的双栏或重排</li>
+          <li>多窗口、同步布局偏好</li>
+          <li>手机端任何视觉 / 交互改动</li>
+          <li>lorca 桥接层、协议、白名单</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>待确认（产品已定，供研发对齐）</h3>
+        <ul>
+          <li>空态文案：<b>选择左侧会话</b>（单行，13px，居中，无图标无按钮）</li>
+          <li>左列分组头：保留 <code>sticky</code>，贴列顶</li>
+          <li>双栏下隐藏返回键</li>
+          <li>68ch 保持字面，不改 px</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+const ROWS = [
+  { group: "工坊", items: [
+    { name: "【工坊】抽屉面板改版", preview: "排版匠：分格比例我倾向 3:7", time: "14:32", badge: "群" },
+    { name: "排版匠", preview: "排班表我按两周一轮排", time: "14:32", current: true },
+    { name: "构建小工", preview: "产物两枚，已归档", time: "13:05" },
+  ]},
+  { group: "手记", items: [
+    { name: "手记 bot", preview: "收到，先记下这条", time: "昨天" },
+  ]},
+  { group: "账房", items: [
+    { name: "账房 bot", preview: "本月分类已整理完", time: "10-30" },
+  ]},
+];
+
+const THREAD = `
+  <div class="day">今天 14:20</div>
+  <div class="msg">
+    <div class="m-avatar">排</div>
+    <div class="bubble">社区花圃那事我问了物业，说可以借西侧那块空地，但冬季养护得我们自己排班。</div>
+  </div>
+  <div class="msg">
+    <div class="m-avatar">我</div>
+    <div class="bubble">那就先把排班拆成四块：翻土、覆膜、修枝、浇水。翻土挑向阳那半边先做，土上冻之后就铲不动了，碎石清出来堆到墙根，开春做排水沟正好用得上。覆膜别一次性铺满，留两条通道给积雪化成水走，不然开春整块地会端。修枝只处理去年新长的软枝，老枝一动树形就歪了，留到三月再修。浇水最难排，中午浇等于白浇，早晚各一班，每班两个人轮着来，一个人提着桶走完全程手会废。班表先按两周排一轮，谁缺就彼此对调，不用经过我。另外西侧风口那三棵挡风的，别碰，它们就靠那点遮挡活着。</div>
+  </div>
+  <div class="ruler">68ch · 一行 41 汉字上限</div>
+  <div class="msg is-me">
+    <div class="bubble">班表我来排，明天发群里。</div>
+  </div>
+`;
+
+function rowsHTML(state) {
+  let out = "";
+  for (const g of ROWS) {
+    out += `<div class="group-head"><span class="chev"></span>${g.group}<span class="count">${g.items.length}</span></div>`;
+    for (const it of g.items) {
+      const cur = state === "empty" ? false : it.current;
+      out += `<div class="row${cur ? " is-current" : ""}"${cur ? ' aria-current="true"' : ""}>
+        <div class="avatar">${it.name.replace(/[【】]/g, "").slice(0, 1)}</div>
+        <div class="row-main">
+          <div class="row-line"><span class="row-name">${it.name}</span><span class="row-time">${it.time}</span></div>
+          <div class="row-preview">${it.badge ? `<span class="row-badge">${it.badge}</span>` : ""}${it.preview}</div>
+        </div>
+      </div>`;
+    }
+  }
+  return out;
+}
+
+function consoleHTML(state, phone) {
+  return `<div class="console" data-state="${state}" style="--w:${this.w}px;--h:${this.h}px">
+    ${phone ? "" : `<div class="rail">
+      <div class="rail-logo"></div>
+      <div class="rail-item is-on"><span class="rail-dot"></span>对话</div>
+      <div class="rail-item"><span class="rail-dot"></span>动态</div>
+      <div class="rail-item"><span class="rail-dot"></span>我的</div>
+    </div>`}
+    <div class="content" style="${phone ? "padding:0" : ""}">
+      <div class="app-shell">
+        <div class="page-transition">
+          <div class="view-stack">
+            <div class="list-stage">
+              <div class="tabs">
+                <div class="tab is-on">会话</div><div class="tab">已完成</div><div class="tab">自动化</div>
+              </div>
+              <div class="groups">${rowsHTML(state)}</div>
+            </div>
+            <div class="scrim"></div>
+            <div class="screen">
+              <div class="chat-head">
+                <div class="chat-back"></div>
+                <div class="chat-title">排版匠</div>
+                <div class="chat-stop">停止</div>
+                <div class="chat-more">⋯</div>
+              </div>
+              <div class="thread">${THREAD}</div>
+              <div class="composer">
+                <div class="composer-box">
+                  <div class="composer-ph">发消息 / 输入 / 唤醒例程</div>
+                  <div class="send">↑</div>
+                </div>
+              </div>
+            </div>
+            <div class="dual-empty">选择左侧会话</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function mount() {
+  document.querySelectorAll(".fit").forEach((fit) => {
+    const w = +fit.dataset.w, h = +fit.dataset.h;
+    const state = fit.dataset.state || "chat";
+    const phone = fit.dataset.phone === "1";
+    fit.insertAdjacentHTML("afterbegin", consoleHTML.call({ w, h }, state, phone));
+    layout(fit, w, h);
+  });
+  window.addEventListener("resize", relayout);
+}
+function layout(fit, w, h) {
+  const s = Math.min(1, fit.clientWidth / w);
+  const frame = fit.querySelector(".console");
+  frame.style.transform = `scale(${s})`;
+  fit.style.height = (h * s) + "px";
+}
+function relayout() {
+  document.querySelectorAll(".fit").forEach((fit) => {
+    layout(fit, +fit.dataset.w, +fit.dataset.h);
+  });
+}
+mount();
+</script>
+</body>
+</html>
