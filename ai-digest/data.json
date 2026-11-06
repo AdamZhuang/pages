@@ -1,12 +1,12 @@
 {
   "date": "2026-11-07",
-  "generated_at": "2026-11-07T02:12:17.031013+08:00",
+  "generated_at": "2026-11-07T04:30:28.657521+08:00",
   "hn": [
     {
       "title": "Claude Code向网站发送邮箱地址",
       "link": "https://github.com/anthropics/claude-code/issues/107757",
-      "points": 1499,
-      "comments": 469,
+      "points": 1527,
+      "comments": 479,
       "date": "2026-11-05 22:17Z",
       "hn_link": "https://news.ycombinator.com/item?id=50385272",
       "title_en": "Claude Code sends your email address to websites"
@@ -14,8 +14,8 @@
     {
       "title": "Cuban称Facebook明知AI深度伪造诈骗广告",
       "link": "https://finance.yahoo.com/technology/ai/articles/mark-cuban-says-facebook-knowingly-213000020.html",
-      "points": 475,
-      "comments": 218,
+      "points": 484,
+      "comments": 221,
       "date": "2026-11-05 23:09Z",
       "hn_link": "https://news.ycombinator.com/item?id=50385870",
       "title_en": "Cuban: Facebook knowingly runs AI deepfake scam ads; docs say $16B fraud revenue"
@@ -30,19 +30,10 @@
       "title_en": "RIP Cybertruck"
     },
     {
-      "title": "匈牙利公开共产时期档案 涉6万前特工",
-      "link": "https://www.euronews.com/2026/11/04/hungary-communist-era-files-opened-up-to-60000-former-agents-revealed",
-      "points": 230,
-      "comments": 70,
-      "date": "2026-11-05 19:16Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50383163",
-      "title_en": "Hungary: Communist-era files released, up to 60k former agents revealed"
-    },
-    {
       "title": "Gemini Omni 1.2 Flash 登场",
       "link": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
-      "points": 217,
-      "comments": 166,
+      "points": 255,
+      "comments": 199,
       "date": "2026-11-06 13:35Z",
       "hn_link": "https://news.ycombinator.com/item?id=50392118",
       "title_en": "Gemini Omni 1.2 Flash"
@@ -50,8 +41,8 @@
     {
       "title": "我难以相信AI研发富有巧思",
       "link": "https://www.lesswrong.com/posts/DALNiKBjMGMF8grme/arjun-panickssery-s-shortform?commentId=fJtaHHHfx45tD7BSL",
-      "points": 161,
-      "comments": 163,
+      "points": 162,
+      "comments": 169,
       "date": "2026-11-06 05:19Z",
       "hn_link": "https://news.ycombinator.com/item?id=50388513",
       "title_en": "I struggle to believe that AI R&D is ingenious"
@@ -59,56 +50,65 @@
     {
       "title": "AI机器人涌入大学图书馆 公共访问受威胁",
       "link": "https://www.cbc.ca/news/world/university-libraries-ai-data-scraping-bots-9.7408287",
-      "points": 97,
-      "comments": 47,
+      "points": 115,
+      "comments": 53,
       "date": "2026-11-06 14:13Z",
       "hn_link": "https://news.ycombinator.com/item?id=50392499",
       "title_en": "University libraries are being swarmed by AI bots, putting public access at risk"
     },
     {
+      "title": "Anthropic IPO买家看估值低至1.1万亿美元",
+      "link": "https://www.bloomberg.com/news/articles/2026-11-06/anthropic-ipo-valuation-expectations-pressured-after-ai-rout",
+      "points": 102,
+      "comments": 249,
+      "date": "2026-11-06 16:54Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50394906",
+      "title_en": "Anthropic IPO buyers see valuation as low as $1.1T"
+    },
+    {
+      "title": "Anthropic IPO估值谈判降至1.3万亿美元",
+      "link": "https://epyhia.com/anthropic-ipo-valuation-talks-drop-to-1-3-trillion-as-major-investors",
+      "points": 93,
+      "comments": 1,
+      "date": "2026-11-06 17:21Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50395318",
+      "title_en": "Anthropic IPO valuation talks drop to $1.3T"
+    },
+    {
       "title": "大投资者怀疑Anthropic IPO能达1.5万亿美元估值",
       "link": "https://www.wsj.com/finance/major-investors-are-skeptical-anthropic-ipo-can-achieve-1-5-trillion-valuation-ca965d8b’",
-      "points": 88,
-      "comments": 102,
+      "points": 89,
+      "comments": 104,
       "date": "2026-11-06 00:31Z",
       "hn_link": "https://news.ycombinator.com/item?id=50386597",
       "title_en": "Major Investors Are Skeptical Anthropic IPO Can Achieve $1.5T Valuation"
     },
     {
-      "title": "闭源AI模型主导性价比前沿",
-      "link": "https://village.dev/blog/closed-ai-models-now-dominate-the-price-performance-frontier/",
-      "points": 76,
-      "comments": 70,
-      "date": "2026-11-06 02:49Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50387546",
-      "title_en": "Closed AI models dominate the price-performance frontier"
-    },
-    {
       "title": "AI助力科学发现 研究者如何使用Claude",
       "link": "https://www.anthropic.com/research/how-researchers-use-claude",
-      "points": 68,
-      "comments": 29,
+      "points": 81,
+      "comments": 33,
       "date": "2026-11-06 09:13Z",
       "hn_link": "https://news.ycombinator.com/item?id=50389990",
       "title_en": "AI for scientific discovery: How researchers use Claude"
     },
     {
-      "title": "App Store 2026数据 AI定价与弃用应用",
-      "link": "https://obelisk.club/research/app-store-2026",
-      "points": 59,
-      "comments": 51,
-      "date": "2026-11-06 07:59Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50389448",
-      "title_en": "App Store 2026 in numbers: AI, pricing, abandoned apps"
+      "title": "闭源AI模型主导性价比前沿",
+      "link": "https://village.dev/blog/closed-ai-models-now-dominate-the-price-performance-frontier/",
+      "points": 76,
+      "comments": 71,
+      "date": "2026-11-06 02:49Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50387546",
+      "title_en": "Closed AI models dominate the price-performance frontier"
     },
     {
-      "title": "Anthropic IPO估值谈判降至1.3万亿美元",
-      "link": "https://epyhia.com/anthropic-ipo-valuation-talks-drop-to-1-3-trillion-as-major-investors",
-      "points": 45,
-      "comments": 20,
-      "date": "2026-11-06 17:21Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50395318",
-      "title_en": "Anthropic IPO valuation talks drop to $1.3T"
+      "title": "Microsoft逐步终止Oracle AI云容量租用协议",
+      "link": "https://www.reuters.com/business/microsoft-is-winding-down-oracle-deal-rent-ai-cloud-capacity-bloomberg-news-2026-11-06/",
+      "points": 60,
+      "comments": 12,
+      "date": "2026-11-06 18:04Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50395933",
+      "title_en": "Microsoft is winding down Oracle deal to rent AI cloud capacity"
     }
   ],
   "feeds": [
@@ -282,16 +282,23 @@
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "items": [
         {
+          "title": "AI数据中心最新进展汇总",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy",
+          "date": "2026-11-06T15:03:32-05:00",
+          "desc": "",
+          "title_en": "All the latest updates on AI data centers"
+        },
+        {
           "title": "Meta Muse AI可为当前所需应用版本创建自定义空间",
           "link": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
-          "date": "2026-11-06T13:10:10-05:00",
+          "date": "2026-11-06T15:00:43-05:00",
           "desc": "",
           "title_en": "Meta’s Muse AI can create custom ‘spaces’ for the version of the app you need right now"
         },
         {
           "title": "AI成约会新雷区",
           "link": "https://www.theverge.com/ai-artificial-intelligence/1028609/ai-dating-feelings-doomers-singularity",
-          "date": "2026-11-06T12:03:13-05:00",
+          "date": "2026-11-06T14:58:08-05:00",
           "desc": "",
           "title_en": "AI is the new dating dealbreaker"
         },
@@ -329,13 +336,6 @@
           "date": "2026-11-05T19:37:56-05:00",
           "desc": "",
           "title_en": "OpenAI is stepping back from NDAs for data center projects"
-        },
-        {
-          "title": "Airbnb开发AI旅行代理",
-          "link": "https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings",
-          "date": "2026-11-05T19:06:12-05:00",
-          "desc": "",
-          "title_en": "Airbnb is working on an AI travel agent"
         }
       ],
       "error": null
@@ -408,6 +408,20 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "items": [
         {
+          "title": "数百个Artex AI黑客工具公网暴露",
+          "link": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+          "date": "Fri, 06 Nov 2026 18:44:38 +0000",
+          "desc": "",
+          "title_en": "Hundreds of Artex AI hacking tools found publicly exposed to the web"
+        },
+        {
+          "title": "Meta推出Spaces与Muse代理协作新方式",
+          "link": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+          "date": "Fri, 06 Nov 2026 18:44:20 +0000",
+          "desc": "",
+          "title_en": "Meta introduces Spaces, a new way to collaborate with your Muse agent"
+        },
+        {
           "title": "蓝潮中期选举或重塑AI行业",
           "link": "https://techcrunch.com/podcast/how-a-blue-wave-midterm-might-reshape-the-ai-industry/",
           "date": "Fri, 06 Nov 2026 18:00:00 +0000",
@@ -448,20 +462,6 @@
           "date": "Fri, 06 Nov 2026 13:00:00 +0000",
           "desc": "",
           "title_en": "Physicl raises $10M to make the digital world real enough for robots"
-        },
-        {
-          "title": "Palo Alto Networks洽谈5亿美元收购AI代理安全初创Clutch",
-          "link": "https://techcrunch.com/2026/11/05/palo-alto-networks-in-talks-to-buy-ai-agent-security-startup-clutch-for-500m/",
-          "date": "Fri, 06 Nov 2026 06:28:32 +0000",
-          "desc": "",
-          "title_en": "Palo Alto Networks in talks to buy AI agent security startup Clutch for $500M"
-        },
-        {
-          "title": "Airbnb称2027上半年推出AI旅行代理",
-          "link": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
-          "date": "Thu, 05 Nov 2026 22:40:55 +0000",
-          "desc": "",
-          "title_en": "Airbnb says it’s launching an AI travel agent in the first half of 2027"
         }
       ],
       "error": null
@@ -470,6 +470,13 @@
       "name": "The Decoder",
       "url": "https://the-decoder.com/feed/",
       "items": [
+        {
+          "title": "Ripple-65B Preview展现强智能体编码成果",
+          "link": "https://the-decoder.com/ripple-65b-preview-delivers-strong-agentic-coding-results-as-a-fully-apache-2-0-open-us-model/",
+          "date": "Fri, 06 Nov 2026 19:47:04 +0000",
+          "desc": "Ricursive Intelligence is releasing Ripple-65B Preview, a 65-billion-parameter open-weight language model that the company says achieves the top score among open-source U.S. models on the TerminalBench 2.1 coding benchma",
+          "title_en": "Ripple-65B Preview delivers strong agentic coding results as a fully Apache 2.0 open US model"
+        },
         {
           "title": "Perplexity推出常驻AI代理",
           "link": "https://the-decoder.com/perplexity-now-has-its-own-always-on-ai-agent/",
@@ -518,13 +525,6 @@
           "date": "Thu, 05 Nov 2026 20:36:25 +0000",
           "desc": "With GPT-6 Cyber, OpenAI is introducing an AI model built to find security vulnerabilities in software, develop exploits, and suggest patches. According to OpenAI, it has already found 81 previously unknown vulnerabiliti",
           "title_en": "OpenAIs GPT-6 Cyber can both break into systems and propose how to fix them"
-        },
-        {
-          "title": "Gemini Omni 1.2 Flash将AI视频延长至15秒并降价30%",
-          "link": "https://the-decoder.com/googles-gemini-omni-1-2-flash-stretches-ai-video-clips-to-15-seconds-and-cuts-pricing-by-30-percent/",
-          "date": "Thu, 05 Nov 2026 19:05:31 +0000",
-          "desc": "Google Deepmind is making Gemini Omni 1.2 Flash generally available. The video-generation model now creates clips up to 15 seconds long, can be edited step by step via conversation, and costs just $0.07 per second at 720",
-          "title_en": "Google's Gemini Omni 1.2 Flash stretches AI video clips to 15 seconds and cuts pricing by 30 percent"
         }
       ],
       "error": null
@@ -597,6 +597,20 @@
       "url": "https://openai.com/news/rss.xml",
       "items": [
         {
+          "title": "与Hacktron合作发现OpenAI系统漏洞",
+          "link": "https://openai.com/index/partnering-with-hacktron",
+          "date": "Fri, 06 Nov 2026 08:00:00 GMT",
+          "desc": "",
+          "title_en": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems"
+        },
+        {
+          "title": "衡量AI代理日常湿实验室科研表现",
+          "link": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+          "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+          "desc": "",
+          "title_en": "Measuring how AI agents handle everyday wet-lab science"
+        },
+        {
           "title": "澳大利亚大学培养AI原生毕业生",
           "link": "https://openai.com/index/australian-universities-ai-native-graduates",
           "date": "Thu, 05 Nov 2026 17:00:00 GMT",
@@ -637,20 +651,6 @@
           "date": "Thu, 05 Nov 2026 00:45:15 GMT",
           "desc": "",
           "title_en": "Flipsnack grows product signups with conversion optimization"
-        },
-        {
-          "title": "Franklin Templeton用OpenAI支持投资研究",
-          "link": "https://openai.com/index/franklin-templeton",
-          "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "Franklin Templeton uses OpenAI to support investment research"
-        },
-        {
-          "title": "OpenAI将收购Pierre Computer Company",
-          "link": "https://openai.com/index/openai-to-acquire-pierre",
-          "date": "Wed, 04 Nov 2026 14:30:00 GMT",
-          "desc": "",
-          "title_en": "OpenAI to acquire Pierre Computer Company, Inc."
         }
       ],
       "error": null
