@@ -1,60 +1,87 @@
 {
-  "date": "2026-11-08",
-  "generated_at": "2026-11-08T04:30:59.465253+08:00",
+  "date": "2026-11-09",
+  "generated_at": "2026-11-09T04:30:49.841397+08:00",
   "hn": [
     {
-      "title": "Microsoft Research AI Frontiers团队终结",
-      "link": "https://hunch.net/?p=13764006",
-      "points": 183,
-      "comments": 96,
-      "date": "2026-11-07 18:02Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50406563",
-      "title_en": "The end of Microsoft Research's AI Frontiers group"
+      "title": "告别Claude迎来Pi",
+      "link": "https://caleb.software/posts/claude-to-pi.html",
+      "points": 620,
+      "comments": 401,
+      "date": "2026-11-08 03:11Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50410107",
+      "title_en": "Goodbye Claude, hello Pi"
     },
     {
-      "title": "Agent记忆的组成部分",
-      "link": "https://www.anthropic.com/research/components-of-agent-memory",
-      "points": 135,
-      "comments": 68,
-      "date": "2026-11-07 06:39Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50402212",
-      "title_en": "The Components of Agent Memory"
+      "title": "Claude Code不再询问致1122个GitHub公开文件泄露密码",
+      "link": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+      "points": 538,
+      "comments": 382,
+      "date": "2026-11-07 20:45Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50407882",
+      "title_en": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files"
     },
     {
-      "title": "ChatGPT在连接器间静默传数据，悬赏要身份证",
-      "link": "https://community.openai.com/t/security-follow-up-tool-call-silently-routed-to-a-different-connector/1413053",
-      "points": 92,
-      "comments": 38,
-      "date": "2026-11-06 22:50Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50399569",
-      "title_en": "ChatGPT silently passes data between connectors and the bounty wants an ID card"
+      "title": "高盛停止向银行家和交易员提供Claude Code",
+      "link": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
+      "points": 292,
+      "comments": 176,
+      "date": "2026-11-08 18:16Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50415628",
+      "title_en": "Goldman Sachs Is Pulling Claude Code from Its Bankers and Traders"
     },
     {
-      "title": "AI Frontiers终结",
-      "link": "https://hunch.net/?p=13764006",
-      "points": 81,
-      "comments": 2,
-      "date": "2026-11-07 18:04Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50406589",
-      "title_en": "The End of AI Frontiers"
+      "title": "Llama-modchip在64GB内存无GPU运行284B DeepSeek",
+      "link": "https://github.com/synchopate/llama-modchip",
+      "points": 292,
+      "comments": 104,
+      "date": "2026-11-08 10:22Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50411961",
+      "title_en": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU"
     },
     {
-      "title": "AI抛售堪比知名股灾",
-      "link": "https://www.kadoa.com/companies/insights/ai-selloff-perspective",
-      "points": 80,
-      "comments": 68,
-      "date": "2026-11-07 02:20Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50401029",
-      "title_en": "The AI sell-off compared to well-known stock market crashes"
+      "title": "OpenAI以1.25万亿美元估值融资110亿美元",
+      "link": "https://247wallst.com/investing/2026/11/07/openai-just-raised-11-billion-at-a-1-25-trillion-valuation-below-the-1-4-trillion-it-first-sought/",
+      "points": 171,
+      "comments": 192,
+      "date": "2026-11-08 14:49Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50413822",
+      "title_en": "OpenAI raises $11B at a $1.25T valuation"
     },
     {
-      "title": "所有组织可用SIP外呼",
-      "link": "https://developers.openai.com/api/docs/guides/voice-sip",
-      "points": 69,
-      "comments": 57,
-      "date": "2026-11-06 23:03Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50399695",
-      "title_en": "Outbound SIP calling is now available to all organizations"
+      "title": "Agent记忆需要自己的OpenTelemetry时刻",
+      "link": "https://www.lorekit.io/blog/open-agent-memory-format",
+      "points": 151,
+      "comments": 100,
+      "date": "2026-11-08 08:40Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50411467",
+      "title_en": "Agent memory needs its OpenTelemetry moment"
+    },
+    {
+      "title": "我为何不在编程中使用LLM",
+      "link": "https://www.polso.info/why-i-will-not-be-using-llms-coding",
+      "points": 96,
+      "comments": 209,
+      "date": "2026-11-08 12:14Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50412591",
+      "title_en": "Why I will not be using LLMs in my coding"
+    },
+    {
+      "title": "我不喜欢Deno的安全模型",
+      "link": "https://goldstein.lol/posts/deno-security/",
+      "points": 57,
+      "comments": 24,
+      "date": "2026-11-08 14:42Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50413769",
+      "title_en": "I'm not a fan of Deno's security model (2024)"
+    },
+    {
+      "title": "硅谷称AI将治愈疾病 药企CEO不买账",
+      "link": "https://www.wsj.com/tech/ai/silicon-valley-promises-ai-will-cure-disease-drugmaker-ceos-arent-buying-it-5218511c",
+      "points": 53,
+      "comments": 55,
+      "date": "2026-11-08 18:43Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50415817",
+      "title_en": "Silicon Valley Promises AI Will Cure Disease. Drugmaker CEOs Aren't Buying It"
     }
   ],
   "feeds": [
@@ -62,6 +89,30 @@
       "name": "量子位",
       "url": "https://www.qbitai.com/feed",
       "items": [
+        {
+          "title": "资本正在撤离“世界模型”",
+          "link": "https://www.qbitai.com/2026/11/508466.html",
+          "date": "Sun, 08 Nov 2026 04:09:55 +0000",
+          "desc": ""
+        },
+        {
+          "title": "GitHub不堪重负！OpenAI收购替代品，A社原地自研，马斯克也要搞",
+          "link": "https://www.qbitai.com/2026/11/508449.html",
+          "date": "Sat, 07 Nov 2026 09:38:56 +0000",
+          "desc": ""
+        },
+        {
+          "title": "OpenAI新融资到账110亿美元，不及原计划一半",
+          "link": "https://www.qbitai.com/2026/11/508344.html",
+          "date": "Sat, 07 Nov 2026 08:11:25 +0000",
+          "desc": ""
+        },
+        {
+          "title": "为了去AI味，人类开始主动写烂文章了……",
+          "link": "https://www.qbitai.com/2026/11/508330.html",
+          "date": "Sat, 07 Nov 2026 07:59:28 +0000",
+          "desc": ""
+        },
         {
           "title": "抢跑DeepSeek！硅谷华人把下一代Agent Harness造出来了！？",
           "link": "https://www.qbitai.com/2026/11/508264.html",
@@ -75,33 +126,15 @@
           "desc": ""
         },
         {
+          "title": "浙大00后博士生再交卷！把十几种物理要素装进一个世界模型｜华为昇腾原生",
+          "link": "https://www.qbitai.com/2026/11/508236.html",
+          "date": "Sat, 07 Nov 2026 03:31:44 +0000",
+          "desc": ""
+        },
+        {
           "title": "Jeff Dean李飞飞最新对谈：全是RSI非共识",
           "link": "https://www.qbitai.com/2026/11/508196.html",
           "date": "Sat, 07 Nov 2026 03:23:29 +0000",
-          "desc": ""
-        },
-        {
-          "title": "A\\三大内部模型曝光！领先Opus5.5三个月，RSI缩短80%实验时间",
-          "link": "https://www.qbitai.com/2026/11/508184.html",
-          "date": "Fri, 06 Nov 2026 15:21:56 +0000",
-          "desc": ""
-        },
-        {
-          "title": "为什么每个 Personal Agent 背后，都必须配备一台“云电脑”？",
-          "link": "https://www.qbitai.com/2026/11/508174.html",
-          "date": "Fri, 06 Nov 2026 09:25:59 +0000",
-          "desc": ""
-        },
-        {
-          "title": "阶跃终端 STEPX Neo 智能体手机亮相进博会高通展台，软硬模一体打造智能体新体验",
-          "link": "https://www.qbitai.com/2026/11/508170.html",
-          "date": "Fri, 06 Nov 2026 09:21:51 +0000",
-          "desc": ""
-        },
-        {
-          "title": "阿里巴巴发布《2026 AI向善行动报告》 AI数据中心可持续发展成年度亮点",
-          "link": "https://www.qbitai.com/2026/11/508165.html",
-          "date": "Fri, 06 Nov 2026 09:19:00 +0000",
           "desc": ""
         }
       ],
@@ -111,6 +144,18 @@
       "name": "爱范儿",
       "url": "https://www.ifanr.com/feed",
       "items": [
+        {
+          "title": "别再拿《影之刃零》对比《黑神话》了",
+          "link": "https://www.ifanr.com/1688282?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Sun, 08 Nov 2026 04:00:31 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "被年轻人遗忘的磁带，正在 AI 时代闷声发大财 原",
+          "link": "https://www.ifanr.com/1688364?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Sun, 08 Nov 2026 03:35:42 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
         {
           "title": "最贵比亚迪来了！仰望鼎曜亮相中东，「山河鼎韵」限量版定金 30 万元",
           "link": "https://www.ifanr.com/1688312?utm_source=rss&utm_medium=rss&utm_campaign=",
@@ -146,18 +191,6 @@
           "link": "https://www.ifanr.com/1688332?utm_source=rss&utm_medium=rss&utm_campaign=",
           "date": "Thu, 05 Nov 2026 15:50:25 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "MacBook Pro 能触屏了，但这只是它最小的升级｜附选购指南",
-          "link": "https://www.ifanr.com/1687989?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Thu, 05 Nov 2026 14:00:13 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "23.98 万元起！智己 LS8 NEO 正式上市，转向刹车全面线控",
-          "link": "https://www.ifanr.com/1688228?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Thu, 05 Nov 2026 12:44:28 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         }
       ],
       "error": null
@@ -166,6 +199,12 @@
       "name": "少数派",
       "url": "https://sspai.com/feed",
       "items": [
+        {
+          "title": "苹果产品那些不够颠覆，却值得被学习的细节",
+          "link": "https://sspai.com/post/118114",
+          "date": "Sun, 08 Nov 2026 11:18:54 +0800",
+          "desc": "Matrix首页推荐Matrix是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选Matrix最优质的文章，展示来自用户的最真实的体验和观点。文章代表作者个人观点 ...<a href=\"https://sspai.com/post/118114\" target=\"_blank\">查看全文</a>"
+        },
         {
           "title": "一个 05 后的个人数码编年史",
           "link": "https://sspai.com/post/116750",
@@ -207,12 +246,6 @@
           "link": "https://sspai.com/post/118541",
           "date": "Thu, 05 Nov 2026 17:11:28 +0800",
           "desc": "编注：很多读者都会好奇少数派的编辑们到底平时都「买了啥」。我们希望通过「编辑部的新玩意」介绍编辑部成员们最近在用的新奇产品，让他们自己来谈谈这些新玩意的使用体验究竟如何。内容声明：《新玩意》栏目如含有 ...<a href=\"https://sspai.com/post/118541\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "不用困在厨房也能做出好饭：三十道省事家常蒸菜",
-          "link": "https://sspai.com/prime/story/30-easy-steamed-dishes",
-          "date": "Thu, 05 Nov 2026 15:16:51 +0800",
-          "desc": "蒸锅真是懒人做饭好帮手。<a href=\"https://sspai.com/prime/story/30-easy-steamed-dishes\" target=\"_blank\">查看全文</a><p>本文为会员文章，出自<a href=\"https://sspai.com/prime/precog/single\" target=\"_blank\">《单篇文章》</a >，订阅后可阅读全文。</p >"
         }
       ],
       "error": null
@@ -222,9 +255,30 @@
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "items": [
         {
+          "title": "NVIDIA调查黄仁勋与中国间谍的关系",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy",
+          "date": "2026-11-08T15:27:28-05:00",
+          "desc": "",
+          "title_en": "Nvidia is investigating Jensen Huang’s relationship with a Chinese spy"
+        },
+        {
+          "title": "Apple竞相让Siri更具代理能力",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic",
+          "date": "2026-11-08T14:18:19-05:00",
+          "desc": "",
+          "title_en": "Apple is racing to make Siri more agentic"
+        },
+        {
+          "title": "Elvis与Eminem版权方起诉Suno",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit",
+          "date": "2026-11-08T12:23:19-05:00",
+          "desc": "",
+          "title_en": "Elvis and Eminem rights holders are suing Suno"
+        },
+        {
           "title": "NYT Cooking AI助手救晚餐鸡却差点毁蛋糕",
           "link": "https://www.theverge.com/tech/1029489/nyt-cooking-ai-assistant-review",
-          "date": "2026-11-07T10:47:15-05:00",
+          "date": "2026-11-08T14:41:47-05:00",
           "desc": "",
           "title_en": "NYT Cooking’s AI assistant saved my weeknight chicken, but almost ruined my cake"
         },
@@ -255,27 +309,6 @@
           "date": "2026-11-06T18:46:18-05:00",
           "desc": "",
           "title_en": "OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO"
-        },
-        {
-          "title": "中国据称招募AI高管监视黄仁勋",
-          "link": "https://www.theverge.com/tech/1029338/nvidia-ceo-jensen-huang-china-spy",
-          "date": "2026-11-06T18:00:44-05:00",
-          "desc": "",
-          "title_en": "China reportedly recruited AI exec to spy on Jensen Huang"
-        },
-        {
-          "title": "AI数据中心最新进展汇总",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy",
-          "date": "2026-11-06T15:03:32-05:00",
-          "desc": "",
-          "title_en": "All the latest updates on AI data centers"
-        },
-        {
-          "title": "Meta Muse AI可为当前所需应用版本创建自定义空间",
-          "link": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
-          "date": "2026-11-06T15:00:43-05:00",
-          "desc": "",
-          "title_en": "Meta’s Muse AI can create custom ‘spaces’ for the version of the app you need right now"
         }
       ],
       "error": null
@@ -348,6 +381,20 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "items": [
         {
+          "title": "中期选举后马斯克与数据中心前景堪忧",
+          "link": "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers/",
+          "date": "Sat, 07 Nov 2026 22:07:22 +0000",
+          "desc": "",
+          "title_en": "After the midterms, things are looking rocky for Elon Musk and data centers"
+        },
+        {
+          "title": "美情报备忘录称Megaspeed高管被招募监视NVIDIA CEO",
+          "link": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
+          "date": "Sat, 07 Nov 2026 21:17:08 +0000",
+          "desc": "",
+          "title_en": "Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo"
+        },
+        {
           "title": "Crusoe将问题怀俄明数据中心项目卖给Google",
           "link": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
           "date": "Sat, 07 Nov 2026 01:40:28 +0000",
@@ -388,20 +435,6 @@
           "date": "Fri, 06 Nov 2026 17:23:52 +0000",
           "desc": "",
           "title_en": "After the midterms, is the AI industry in for a rough two years?"
-        },
-        {
-          "title": "Ramp数据显示Anthropic临近IPO时AI支出停滞",
-          "link": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/",
-          "date": "Fri, 06 Nov 2026 15:54:47 +0000",
-          "desc": "",
-          "title_en": "Ramp data shows AI spending stalling just as Anthropic nears its IPO"
-        },
-        {
-          "title": "封禁Muse后Amazon允许短信Alexa助购物",
-          "link": "https://techcrunch.com/2026/11/06/after-blocking-muse-amazon-now-lets-users-text-alexa-to-help-them-shop/",
-          "date": "Fri, 06 Nov 2026 14:10:00 +0000",
-          "desc": "",
-          "title_en": "After blocking Muse, Amazon now lets users text Alexa to help them shop"
         }
       ],
       "error": null
@@ -410,6 +443,34 @@
       "name": "The Decoder",
       "url": "https://the-decoder.com/feed/",
       "items": [
+        {
+          "title": "Andrej Karpathy用Claude和20年Hacker News周末打造精选视频平台",
+          "link": "https://the-decoder.com/andrej-karpathy-built-a-curated-video-platform-in-a-weekend-using-claude-and-20-years-of-hacker-news/",
+          "date": "Sun, 08 Nov 2026 14:23:00 +0000",
+          "desc": "OpenAI co-founder Andrej Karpathy used Claude's Opus 5.5 to filter 43 million Hacker News comments into 6,454 curated videos. The result beats YouTube's own recommendations, he says.\nThe article Andrej Karpathy built a c",
+          "title_en": "Andrej Karpathy built a curated video platform in a weekend using Claude and 20 years of Hacker News"
+        },
+        {
+          "title": "大脑即计算机隐喻塑造现代AI或误导意识争论",
+          "link": "https://the-decoder.com/the-brain-as-computer-metaphor-shaped-modern-ai-but-may-be-misleading-the-consciousness-debate/",
+          "date": "Sun, 08 Nov 2026 13:49:21 +0000",
+          "desc": "Consciousness researchers Anil Seth, Ned Block, and Giulio Tononi argue in a Nature commentary that today's AI systems aren't conscious and won't become so on silicon hardware. They consider the assumption that conscious",
+          "title_en": "The brain-as-computer metaphor shaped modern AI but may be misleading the consciousness debate"
+        },
+        {
+          "title": "苦涩教训提出者给LLM扩展热衷者再上一课",
+          "link": "https://the-decoder.com/the-inventor-of-the-bitter-lesson-has-a-bitter-lesson-for-llm-scaling-enthusiasts/",
+          "date": "Sun, 08 Nov 2026 11:44:41 +0000",
+          "desc": "Turing Award winner Richard Sutton reaffirms that raw compute alone isn't enough for intelligence and that fundamentally new learning methods are needed. Ex-OpenAI researcher Tworek agrees, saying blind transformer scali",
+          "title_en": "The inventor of the bitter lesson has a bitter lesson for LLM scaling enthusiasts"
+        },
+        {
+          "title": "实测近四分之三任务中AI编程代理仍需人工清理",
+          "link": "https://the-decoder.com/ai-coding-agents-still-need-human-cleanup-on-nearly-three-out-of-four-tasks-in-a-real-world-test/",
+          "date": "Sun, 08 Nov 2026 09:50:59 +0000",
+          "desc": "Alibaba's new coding-agent benchmark, Co-Design Bench, tests AI agents on real user requests that already tripped them up in practice. Even GPT-6 Astra, the top performer, fully solves only 26.4 percent of tasks. On olde",
+          "title_en": "AI coding agents still need human cleanup on nearly three out of four tasks in a real-world test"
+        },
         {
           "title": "Anthropic推进感恩节前IPO接受更低估值",
           "link": "https://the-decoder.com/anthropic-pushes-ahead-with-pre-thanksgiving-ipo-despite-tech-selloff-accepts-lower-valuation/",
@@ -437,34 +498,6 @@
           "date": "Sat, 07 Nov 2026 15:35:50 +0000",
           "desc": "In the Vals AI benchmark, OpenAI's GPT-6 Sol Daybreak hits 80.8 percent of attack objectives in simulated corporate networks. Worse, the open-weight model DeepSeek V4.1 Flash reaches 72.8 percent at a tenth of the cost. ",
           "title_en": "The gap between open and closed AI models in cyber capabilities keeps shrinking"
-        },
-        {
-          "title": "中国AI模型官方宣传仅薄层微调可剥离",
-          "link": "https://the-decoder.com/state-propaganda-in-some-chinese-ai-models-is-only-a-thin-layer-that-fine-tuning-can-strip-away/",
-          "date": "Sat, 07 Nov 2026 12:32:45 +0000",
-          "desc": "Nous Research retrained Alibaba's Qwen3.8-27B to produce Arete-27B, largely stripping out its pro-Chinese bias. The propaganda rate dropped from 22 percent to less than one percent, while general capabilities remained in",
-          "title_en": "State propaganda in some Chinese AI models is only \"a thin layer\" that fine-tuning can strip away"
-        },
-        {
-          "title": "九个AI Agent研究美国实验室难题均未过专家关",
-          "link": "https://the-decoder.com/nine-ai-agents-tried-autonomous-research-on-open-questions-from-us-national-labs-and-none-passed-the-experts-bar/",
-          "date": "Sat, 07 Nov 2026 11:13:42 +0000",
-          "desc": "The \"Into the Unknown\" benchmark tasks nine AI agents with tackling open research questions from U.S. national laboratories. None of the 135 submissions meets all requirements. A total of 114 papers fail the integrity ch",
-          "title_en": "Nine AI agents tried autonomous research on open questions from US national labs and none passed the experts' bar"
-        },
-        {
-          "title": "Google AI用普通智能手表无袖带检测高血压",
-          "link": "https://the-decoder.com/googles-ai-detects-high-blood-pressure-from-a-regular-smartwatch-without-a-cuff/",
-          "date": "Sat, 07 Nov 2026 09:54:09 +0000",
-          "desc": "Google Research built an AI that spots signs of high blood pressure using only the pulse and motion sensors in a standard smartwatch, no cuff needed. In a 196-person study, its 65.8 percent detection rate beat the tradit",
-          "title_en": "Google's AI detects high blood pressure from a regular smartwatch without a cuff"
-        },
-        {
-          "title": "OpenAI获110亿美元融资却需向牙医募资",
-          "link": "https://the-decoder.com/openai-lands-an-11-billion-funding-round-but-has-to-court-dentists-for-more-capital/",
-          "date": "Sat, 07 Nov 2026 09:45:23 +0000",
-          "desc": "OpenAI has secured $11 billion in fresh capital, the first tranche of a round that values the company at $1.25 trillion. The full round could swell to $20 billion. That OpenAI is already turning to wealthy private invest",
-          "title_en": "OpenAI lands an $11 billion funding round, but has to court dentists for more capital"
         }
       ],
       "error": null
@@ -795,384 +828,6 @@
       "url": "https://export.arxiv.org/rss/cs.CL",
       "items": [],
       "error": "本期无条目"
-    },
-    {
-      "name": "Import AI",
-      "url": "https://importai.substack.com/feed",
-      "items": [
-        {
-          "title": "Import AI 479：Spacewar、低延迟任务对LLM、Genie 4",
-          "link": "https://importai.substack.com/p/import-ai-479-spacewar-low-latency",
-          "date": "Mon, 02 Nov 2026 14:30:54 GMT",
-          "desc": "",
-          "title_en": "Import AI 479: Spacewar; low-latency tasks versus LLMs; Genie 4"
-        },
-        {
-          "title": "Import AI 478：对齐数学、ProgramBench、Mirendil解释RSI",
-          "link": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
-          "date": "Mon, 26 Oct 2026 12:31:52 GMT",
-          "desc": "",
-          "title_en": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means"
-        },
-        {
-          "title": "Import AI 477：我告诉IMF奇点已开始",
-          "link": "https://importai.substack.com/p/import-ai-477-in-which-i-tell-the",
-          "date": "Mon, 19 Oct 2026 12:31:37 GMT",
-          "desc": "",
-          "title_en": "Import AI 477: In which I tell the IMF the Singularity has begun"
-        },
-        {
-          "title": "Import AI 476：创造力与RSI、不如中国的开放权重模型、AI上太空",
-          "link": "https://importai.substack.com/p/import-ai-476-creativity-and-rsi",
-          "date": "Mon, 12 Oct 2026 12:30:39 GMT",
-          "desc": "",
-          "title_en": "Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space"
-        },
-        {
-          "title": "Import AI 475：群体扩展、Google DeepMind为生物加水印、AI科学经济",
-          "link": "https://importai.substack.com/p/import-ai-475-swarm-scaling-google",
-          "date": "Mon, 05 Oct 2026 12:32:30 GMT",
-          "desc": "",
-          "title_en": "Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy"
-        },
-        {
-          "title": "Import AI 474：柏拉图心智空间、太空TPU、智谱启动外层RSI循环",
-          "link": "https://importai.substack.com/p/import-ai-474-platonic-mindspace",
-          "date": "Mon, 28 Sep 2026 12:32:03 GMT",
-          "desc": "",
-          "title_en": "Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop"
-        },
-        {
-          "title": "Import AI 473：美国超级智能战略、鼠颅人脑、机器解释学",
-          "link": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
-          "date": "Mon, 21 Sep 2026 12:31:04 GMT",
-          "desc": "",
-          "title_en": "Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics"
-        },
-        {
-          "title": "Import AI 472：DeepMind作弊数学Agent、民粹AI政策、Forethought设想守夜人",
-          "link": "https://importai.substack.com/p/import-ai-472-deepminds-cheating",
-          "date": "Mon, 07 Sep 2026 12:26:31 GMT",
-          "desc": "",
-          "title_en": "Import AI 472: DeepMind's cheating math agents; populist AI policies; and Forethought theorizes a nightwatchman"
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "Interconnects",
-      "url": "https://www.interconnects.ai/feed",
-      "items": [
-        {
-          "title": "开放模型经济如今有多大",
-          "link": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model",
-          "date": "Wed, 04 Nov 2026 16:35:44 GMT",
-          "desc": "",
-          "title_en": "How big is the open model economy today?"
-        },
-        {
-          "title": "我对开放模型与网络风险的判断错了吗",
-          "link": "https://www.interconnects.ai/p/was-i-wrong-about-open-models-and",
-          "date": "Fri, 30 Oct 2026 17:36:56 GMT",
-          "desc": "",
-          "title_en": "Was I wrong about open models & cyber risks?"
-        },
-        {
-          "title": "Artificial Analysis v5与基准测试者的困境",
-          "link": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
-          "date": "Wed, 28 Oct 2026 12:58:39 GMT",
-          "desc": "",
-          "title_en": "Artificial Analysis v5 and the benchmarker's dilemma"
-        },
-        {
-          "title": "播客：Kimi K3.1 Pro、新网络现实与Muse随想",
-          "link": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
-          "date": "Sun, 25 Oct 2026 11:49:00 GMT",
-          "desc": "",
-          "title_en": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings"
-        },
-        {
-          "title": "最新开放成果#25：DeepSeek V4.1 Flash 1017、美国造模型、美中新监管",
-          "link": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
-          "date": "Tue, 20 Oct 2026 17:04:21 GMT",
-          "desc": "",
-          "title_en": "Latest open artifacts (#25): DeepSeek V4.1 Flash 1017, American-made models, and new regulatory controls in the US & China"
-        },
-        {
-          "title": "Meta重组开放与闭源前沿",
-          "link": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open",
-          "date": "Sat, 17 Oct 2026 14:06:54 GMT",
-          "desc": "",
-          "title_en": "Meta shakes up the frontiers, open and closed"
-        },
-        {
-          "title": "我预期快速进展但非通向通用超级智能",
-          "link": "https://www.interconnects.ai/p/i-expect-rapid-progress-but-not-towards",
-          "date": "Fri, 09 Oct 2026 21:33:47 GMT",
-          "desc": "",
-          "title_en": "I expect rapid progress but not towards general superintelligence"
-        },
-        {
-          "title": "网络风险讨论已失序",
-          "link": "https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken",
-          "date": "Tue, 06 Oct 2026 14:22:41 GMT",
-          "desc": "",
-          "title_en": "The Cyber Risk Discourse is Broken"
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "Latent Space / AINews",
-      "url": "https://www.latent.space/feed",
-      "items": [
-        {
-          "title": "AINews Anthropic IPO何去何从",
-          "link": "https://latent.space/p/ainews-anthropic-ipo-whither-now/",
-          "date": "Sat, 07 Nov 2026 03:04:53 GMT",
-          "desc": "November 6, 2026 — ARC Prize tests Inkling 2 Small, and Thinking Machines explains how it caught early checkpoints bypassing guardrails.",
-          "title_en": "[AINews] Anthropic IPO: Whither Now?"
-        },
-        {
-          "title": "控制生物学——Fabian Theis，Helmholtz Munich",
-          "link": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/",
-          "date": "Fri, 06 Nov 2026 15:10:53 GMT",
-          "desc": "As systems biology efforts heat up to map biology at higher resolution, greater breadth and more modalities, Fabian Theis is pushing the frontier from mapping to predicting to controlling biology",
-          "title_en": "Controlling Biology - Fabian Theis, Helmholtz Munich"
-        },
-        {
-          "title": "AINews Inkling 2 Small：17A-594B用12T token训练68小时击败Muse Spark",
-          "link": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/",
-          "date": "Fri, 06 Nov 2026 10:35:21 GMT",
-          "desc": "November 5, 2026 — Inside Inkling 2 Small’s training run and METR’s study of AI research at Anthropic.",
-          "title_en": "[AINews] Inkling 2 Small: 17A-594B trained in 68 hours on 12T tokens, beating Muse Spark"
-        },
-        {
-          "title": "AINews：交换季",
-          "link": "https://latent.space/p/ainews-it-s-swapping-season/",
-          "date": "Thu, 05 Nov 2026 06:24:09 GMT",
-          "desc": "November 4, 2026 — OpenAI’s Linux kernel security work, Kimi K3.1 Pro’s open weights, and Ricursive’s Ripple-65B.",
-          "title_en": "[AINews] It's Swapping Season"
-        },
-        {
-          "title": "AINews：Latent Space幕后：Kill My SaaS、Jev与2026年AI，AIEi上海",
-          "link": "https://latent.space/p/ainews-behind-latent-space-kill-my-saas-jev-ai-in-2026-aiei-shanghai/",
-          "date": "Wed, 04 Nov 2026 19:17:30 GMT",
-          "desc": "November 3, 2026 — A quiet day lets us share some behind the senes.",
-          "title_en": "[AINews] Behind Latent Space: Kill My SaaS, Jev & AI in 2026 | AIEi Shanghai"
-        },
-        {
-          "title": "AINews：LLM可读写神经网络权重，Weight Space Programming将Autoresearch移出RSI循环",
-          "link": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/",
-          "date": "Tue, 03 Nov 2026 05:35:00 GMT",
-          "desc": "Editing Qwen’s weights to reduce reasoning loops, DeepSeek’s super-agent prototype, and the GDPx benchmark.",
-          "title_en": "[AINews] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop"
-        },
-        {
-          "title": "为律师构建AI——Legora CTO Jacob Lauritzen",
-          "link": "https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora/",
-          "date": "Mon, 02 Nov 2026 23:01:02 GMT",
-          "desc": "Evals without traces, million-cell tabular reviews, and cracks in the billable hour as a business model",
-          "title_en": "Building AI for Lawyers - Jacob Lauritzen, CTO of Legora"
-        },
-        {
-          "title": "看不见数据时构建法律Agent——Legora CTO Jacob Lauritzen",
-          "link": "https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/",
-          "date": "Mon, 02 Nov 2026 22:54:03 GMT",
-          "desc": "Legora can’t read a single trace of what its agent does for a lawyer. The data belongs to the law firm’s clients. How do you build and test an agent when you can’t see its work? Jacob Lauritzen is the CTO of Legora, one ",
-          "title_en": "Building Legal Agents When You Can't See the Data - Jacob Lauritzen, CTO of Legora"
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "One Useful Thing",
-      "url": "https://www.oneusefulthing.org/feed",
-      "items": [
-        {
-          "title": "指数增长30个月（图表）",
-          "link": "https://www.oneusefulthing.org/p/30-months-on-the-exponential-in-charts",
-          "date": "Tue, 20 Oct 2026 15:57:59 GMT",
-          "desc": "",
-          "title_en": "30 Months on the Exponential (in Charts)"
-        },
-        {
-          "title": "点与群体",
-          "link": "https://www.oneusefulthing.org/p/the-dot-and-the-swarm",
-          "date": "Thu, 01 Oct 2026 10:54:12 GMT",
-          "desc": "",
-          "title_en": "The Dot and the Swarm"
-        },
-        {
-          "title": "悬垂",
-          "link": "https://www.oneusefulthing.org/p/the-overhang",
-          "date": "Fri, 18 Sep 2026 17:54:32 GMT",
-          "desc": "",
-          "title_en": "The Overhang"
-        },
-        {
-          "title": "能动性与Agent",
-          "link": "https://www.oneusefulthing.org/p/agency-and-agents",
-          "date": "Mon, 31 Aug 2026 00:24:35 GMT",
-          "desc": "",
-          "title_en": "Agency and Agents"
-        },
-        {
-          "title": "有主见的AI使用指南",
-          "link": "https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22",
-          "date": "Thu, 23 Jul 2026 18:05:24 GMT",
-          "desc": "",
-          "title_en": "An opinionated guide to which AI to use to do stuff"
-        },
-        {
-          "title": "聊天机器人的黄昏",
-          "link": "https://www.oneusefulthing.org/p/the-twilight-of-the-chatbots",
-          "date": "Tue, 30 Jun 2026 22:18:12 GMT",
-          "desc": "",
-          "title_en": "The twilight of the chatbots"
-        },
-        {
-          "title": "与Mythos共事是什么感觉",
-          "link": "https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos",
-          "date": "Tue, 09 Jun 2026 17:11:22 GMT",
-          "desc": "",
-          "title_en": "What it feels like to work with Mythos"
-        },
-        {
-          "title": "共存与共智能终结",
-          "link": "https://www.oneusefulthing.org/p/co-existence-and-the-end-of-co-intelligence",
-          "date": "Thu, 04 Jun 2026 21:13:42 GMT",
-          "desc": "",
-          "title_en": "Co-Existence and the End of Co-Intelligence"
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "Simon Willison",
-      "url": "https://simonwillison.net/atom/everything/",
-      "items": [
-        {
-          "title": "引用Nilay Patel",
-          "link": "https://simonwillison.net/2026/Nov/6/nilay-patel/",
-          "date": "2026-11-06T17:13:12+00:00",
-          "desc": "<blockquote cite=\"https://www.youtube.com/watch?v=-U4thshDTL8&amp;t=422s\"><p>The products aren't good enough to sell people on the costs.</p>\n<p>You cannot tell people that you have to listen to the whine of a data cente",
-          "title_en": "Quoting Nilay Patel"
-        },
-        {
-          "title": "引用Paul Ford",
-          "link": "https://simonwillison.net/2026/Nov/5/paul-ford/",
-          "date": "2026-11-05T17:34:03+00:00",
-          "desc": "<blockquote cite=\"https://ftrain.com/aboard-the-web-is-more-than-enough\"><p>The web browser is very, very, very powerful software for applications, <em>and the cost of accessing that power is going down seemingly every d",
-          "title_en": "Quoting Paul Ford"
-        },
-        {
-          "title": "datasette-llm 0.1a10",
-          "link": "https://simonwillison.net/2026/Nov/4/datasette-llm/",
-          "date": "2026-11-04T15:26:02+00:00",
-          "desc": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-llm/releases/tag/0.1a10\">datasette-llm 0.1a10</a></p>\n        <p>Fixes a <a href=\"https://github.com/datasette/datasette-llm/pull/11\">bug</a> t",
-          "title_en": "datasette-llm 0.1a10"
-        },
-        {
-          "title": "datasette-apps 0.3a0",
-          "link": "https://simonwillison.net/2026/Nov/4/datasette-apps/",
-          "date": "2026-11-04T00:29:36+00:00",
-          "desc": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-apps/releases/tag/0.3a0\">datasette-apps 0.3a0</a></p>\n        <p>Datasette Apps adds support for hosting and editing custom HTML applications i",
-          "title_en": "datasette-apps 0.3a0"
-        },
-        {
-          "title": "datasette-agent 0.5a0",
-          "link": "https://simonwillison.net/2026/Nov/3/datasette-agent/",
-          "date": "2026-11-03T23:13:45+00:00",
-          "desc": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-agent/releases/tag/0.5a0\">datasette-agent 0.5a0</a></p>\n        <p>This is a significant release of <a href=\"https://agent.datasette.io/\">Datas",
-          "title_en": "datasette-agent 0.5a0"
-        },
-        {
-          "title": "llm 0.37.1",
-          "link": "https://simonwillison.net/2026/Nov/3/llm/",
-          "date": "2026-11-03T21:41:42+00:00",
-          "desc": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm/releases/tag/0.37.1\">llm 0.37.1</a></p>\n        <p>A bugfix release for <a href=\"https://llm.datasette.io/\">LLM</a>, with contributions from <a href=\"ht",
-          "title_en": "llm 0.37.1"
-        },
-        {
-          "title": "我笔记本上的Qwen 3.8 27B也能解读模型权重",
-          "link": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
-          "date": "2026-11-03T16:29:48+00:00",
-          "desc": "<p>Yesterday's hot paper was <a href=\"https://rikiyat.github.io/blog/weight-space-programming/\">Sparks of Weight-Space Programming: LLMs can natively read &amp; write neural network weights</a> by Rikiya Takehi, Jayden T",
-          "title_en": "Qwen 3.8 27B on my laptop can interpret model weights, too"
-        },
-        {
-          "title": "我发现泄露精确位置的声波且无处不在——YouTube",
-          "link": "https://simonwillison.net/2026/Nov/3/a-sound-that-leaks-your-exact-location/",
-          "date": "2026-11-03T05:32:25+00:00",
-          "desc": "<p><strong><a href=\"https://www.youtube.com/watch?v=UytYrhYLOKI\">I discovered a sound that leaks your exact location (and it&#x27;s everywhere) - YouTube</a></strong></p>\nGenius piece of OSINT by Colsto, who demonstrates",
-          "title_en": "I discovered a sound that leaks your exact location (and it's everywhere) - YouTube"
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "MIT Tech Review · AI",
-      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
-      "items": [
-        {
-          "title": "我看人形机器人打扫公寓像未来一瞥",
-          "link": "https://www.technologyreview.com/2026/11/06/1148090/i-watched-a-humanoid-robot-clean-my-apartment-it-felt-like-a-taste-of-the-future/",
-          "date": "Fri, 06 Nov 2026 10:00:00 +0000",
-          "desc": "",
-          "title_en": "I watched a humanoid robot clean my apartment. It felt like a taste of the future."
-        },
-        {
-          "title": "德州曾是AI数据中心建设新中心如今或已告终",
-          "link": "https://www.technologyreview.com/2026/11/04/1148043/texas-was-the-new-epicenter-of-the-ai-data-center-buildout-that-might-be-kaput/",
-          "date": "Wed, 04 Nov 2026 18:50:55 +0000",
-          "desc": "",
-          "title_en": "Texas was the new epicenter of the AI data center buildout. That might be kaput."
-        },
-        {
-          "title": "用数据血缘保障Agent企业",
-          "link": "https://www.technologyreview.com/2026/11/04/1147596/securing-the-agentic-enterprise-with-data-lineage/",
-          "date": "Wed, 04 Nov 2026 13:00:00 +0000",
-          "desc": "",
-          "title_en": "Securing the agentic enterprise with data lineage"
-        },
-        {
-          "title": "反向博弈论如何约束AI Agent",
-          "link": "https://www.technologyreview.com/2026/11/03/1147934/reverse-game-theory-mechanism-design-ai-alignment/",
-          "date": "Tue, 03 Nov 2026 10:43:41 +0000",
-          "desc": "",
-          "title_en": "How “reverse game theory” could keep AI agents in check"
-        },
-        {
-          "title": "谁在配合特朗普超级智能忠诚测试",
-          "link": "https://www.technologyreview.com/2026/11/02/1147932/heres-who-is-falling-in-line-for-trumps-super-intelligence-loyalty-test/",
-          "date": "Tue, 03 Nov 2026 04:18:47 +0000",
-          "desc": "",
-          "title_en": "Here’s who is falling in line for Trump’s “Super Intelligence” loyalty test"
-        },
-        {
-          "title": "提升Agent分析洞察质量",
-          "link": "https://www.technologyreview.com/2026/11/02/1147660/raising-the-quality-of-insights-in-agentic-analytics/",
-          "date": "Mon, 02 Nov 2026 17:00:00 +0000",
-          "desc": "",
-          "title_en": "Raising the quality of insights in agentic analytics"
-        },
-        {
-          "title": "别数token开始数交付",
-          "link": "https://www.technologyreview.com/2026/11/02/1147702/stop-counting-tokens-start-counting-what-ships/",
-          "date": "Mon, 02 Nov 2026 13:10:32 +0000",
-          "desc": "",
-          "title_en": "Stop counting tokens, start counting what ships"
-        },
-        {
-          "title": "Agent网络已至",
-          "link": "https://www.technologyreview.com/2026/11/02/1147846/the-agentic-web-is-here/",
-          "date": "Mon, 02 Nov 2026 09:35:19 +0000",
-          "desc": "",
-          "title_en": "The agentic web is here"
-        }
-      ],
-      "error": null
     }
   ]
 }
