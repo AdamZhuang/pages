@@ -1,87 +1,114 @@
 {
-  "date": "2026-11-09",
-  "generated_at": "2026-11-09T04:30:49.841397+08:00",
+  "date": "2026-11-10",
+  "generated_at": "2026-11-10T04:31:06.757988+08:00",
   "hn": [
     {
-      "title": "告别Claude迎来Pi",
-      "link": "https://caleb.software/posts/claude-to-pi.html",
-      "points": 620,
-      "comments": 401,
-      "date": "2026-11-08 03:11Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50410107",
-      "title_en": "Goodbye Claude, hello Pi"
+      "title": "Nvidia CEO黄仁勋就绯闻致员工信",
+      "link": "https://nvidianews.nvidia.com/news/a-message-to-our-company",
+      "points": 922,
+      "comments": 1184,
+      "date": "2026-11-08 22:20Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50418016",
+      "title_en": "Nvidia CEO Jensen Huang's letter to staff about affair"
     },
     {
-      "title": "Claude Code不再询问致1122个GitHub公开文件泄露密码",
-      "link": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
-      "points": 538,
-      "comments": 382,
-      "date": "2026-11-07 20:45Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50407882",
-      "title_en": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files"
+      "title": "我不认为AI泡沫存在",
+      "link": "https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html#im-not-convinced-the-ai-bubble-exists",
+      "points": 533,
+      "comments": 907,
+      "date": "2026-11-08 23:44Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50418975",
+      "title_en": "I'm not convinced the AI bubble exists"
     },
     {
-      "title": "高盛停止向银行家和交易员提供Claude Code",
-      "link": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
-      "points": 292,
-      "comments": 176,
-      "date": "2026-11-08 18:16Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50415628",
-      "title_en": "Goldman Sachs Is Pulling Claude Code from Its Bankers and Traders"
+      "title": "Claude Fable 5.2与Mythos 5.2",
+      "link": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "points": 533,
+      "comments": 250,
+      "date": "2026-11-09 18:56Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50429906",
+      "title_en": "Claude Fable 5.2 and Mythos 5.2"
     },
     {
-      "title": "Llama-modchip在64GB内存无GPU运行284B DeepSeek",
-      "link": "https://github.com/synchopate/llama-modchip",
-      "points": 292,
-      "comments": 104,
-      "date": "2026-11-08 10:22Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50411961",
-      "title_en": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU"
+      "title": "ChatGPT Desktop将SSH代理转发至远程机器",
+      "link": "https://news.ycombinator.com/item?id=50422628",
+      "points": 192,
+      "comments": 63,
+      "date": "2026-11-09 08:17Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50422628",
+      "title_en": "ChatGPT Desktop forwards your SSH agent to remote machines"
     },
     {
-      "title": "OpenAI以1.25万亿美元估值融资110亿美元",
-      "link": "https://247wallst.com/investing/2026/11/07/openai-just-raised-11-billion-at-a-1-25-trillion-valuation-below-the-1-4-trillion-it-first-sought/",
-      "points": 171,
-      "comments": 192,
-      "date": "2026-11-08 14:49Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50413822",
-      "title_en": "OpenAI raises $11B at a $1.25T valuation"
+      "title": "Next-Concept Modeling：快速并行由粗到细文本生成",
+      "link": "https://arxiv.org/abs/2610.14162",
+      "points": 173,
+      "comments": 39,
+      "date": "2026-11-09 07:20Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50422168",
+      "title_en": "Next-Concept Modeling: Fast, Parallel Coarse-to-Fine Text Generation"
     },
     {
-      "title": "Agent记忆需要自己的OpenTelemetry时刻",
-      "link": "https://www.lorekit.io/blog/open-agent-memory-format",
-      "points": 151,
-      "comments": 100,
-      "date": "2026-11-08 08:40Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50411467",
-      "title_en": "Agent memory needs its OpenTelemetry moment"
+      "title": "我们最小最高效的模型：Muse Ember",
+      "link": "https://research.meta.ai/blog/muse-ember",
+      "points": 139,
+      "comments": 60,
+      "date": "2026-11-09 17:58Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50429024",
+      "title_en": "Our Smallest, Most Efficient Model: Muse Ember"
     },
     {
-      "title": "我为何不在编程中使用LLM",
-      "link": "https://www.polso.info/why-i-will-not-be-using-llms-coding",
-      "points": 96,
-      "comments": 209,
-      "date": "2026-11-08 12:14Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50412591",
-      "title_en": "Why I will not be using LLMs in my coding"
+      "title": "Apple将工程师AI日预算限制为200美元",
+      "link": "https://www.stork.ai/newsletter/2026-11-08-apple-capped-engineers-at-a-200-daily-ai-budget",
+      "points": 109,
+      "comments": 117,
+      "date": "2026-11-09 05:30Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50421426",
+      "title_en": "Apple capped engineers at a $200 daily AI budget"
     },
     {
-      "title": "我不喜欢Deno的安全模型",
-      "link": "https://goldstein.lol/posts/deno-security/",
-      "points": 57,
-      "comments": 24,
-      "date": "2026-11-08 14:42Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50413769",
-      "title_en": "I'm not a fan of Deno's security model (2024)"
+      "title": "Show HN：Flide让类Jev决策模型快至9.5倍",
+      "link": "https://github.com/OmniJev/Flide",
+      "points": 109,
+      "comments": 27,
+      "date": "2026-11-09 04:43Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50421155",
+      "title_en": "Show HN: Flide: Make Jev-like decision models up to 9.5x faster"
     },
     {
-      "title": "硅谷称AI将治愈疾病 药企CEO不买账",
-      "link": "https://www.wsj.com/tech/ai/silicon-valley-promises-ai-will-cure-disease-drugmaker-ceos-arent-buying-it-5218511c",
-      "points": 53,
-      "comments": 55,
-      "date": "2026-11-08 18:43Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50415817",
-      "title_en": "Silicon Valley Promises AI Will Cure Disease. Drugmaker CEOs Aren't Buying It"
+      "title": "DeepX称低于5W可推理至100B参数",
+      "link": "https://www.eetimes.com/deepx-tapes-out-second-gen-chip-projects-6-7x-performance-gain-with-lpddr5x-pim/",
+      "points": 80,
+      "comments": 7,
+      "date": "2026-11-09 18:33Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50429545",
+      "title_en": "DeepX claims inference up to 100B parameters at less than 5 W"
+    },
+    {
+      "title": "6小时YouTube与85页手打LLM推理笔记：从这里开始",
+      "link": "https://github.com/samir-sarwar/samir-vllm",
+      "points": 70,
+      "comments": 12,
+      "date": "2026-11-09 11:36Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50424199",
+      "title_en": "6 Hours of YouTube and 85 handtyped pages of notes on LLM Inference – Start here"
+    },
+    {
+      "title": "Asahi Linux弃MIT转全GPL，因AI窃取未发布代码",
+      "link": "https://itsfoss.com/news/asahi-linux-drops-mit-for-gpl/",
+      "points": 64,
+      "comments": 30,
+      "date": "2026-11-09 03:06Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50420532",
+      "title_en": "Asahi Linux Drops MIT, Goes Full GPL After AI Used to Steal Unreleased Code"
+    },
+    {
+      "title": "给AI当肉身代理应成为解雇理由",
+      "link": "https://swiftrocks.com/being-a-meat-proxy-for-ai-should-be-grounds-for-getting-people-fired",
+      "points": 48,
+      "comments": 43,
+      "date": "2026-11-09 06:55Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50422001",
+      "title_en": "Being a meat proxy for AI should be grounds for getting people fired"
     }
   ],
   "feeds": [
@@ -90,51 +117,51 @@
       "url": "https://www.qbitai.com/feed",
       "items": [
         {
-          "title": "资本正在撤离“世界模型”",
-          "link": "https://www.qbitai.com/2026/11/508466.html",
-          "date": "Sun, 08 Nov 2026 04:09:55 +0000",
+          "title": "“AI毁了我的计算机学位”",
+          "link": "https://www.qbitai.com/2026/11/508706.html",
+          "date": "Mon, 09 Nov 2026 08:57:20 +0000",
           "desc": ""
         },
         {
-          "title": "GitHub不堪重负！OpenAI收购替代品，A社原地自研，马斯克也要搞",
-          "link": "https://www.qbitai.com/2026/11/508449.html",
-          "date": "Sat, 07 Nov 2026 09:38:56 +0000",
+          "title": "腾讯混元跻身最强开源模型！一手实测Hy4：搭配WorkBuddy，多模态Agent交付力拉满",
+          "link": "https://www.qbitai.com/2026/11/507843.html",
+          "date": "Mon, 09 Nov 2026 08:44:00 +0000",
           "desc": ""
         },
         {
-          "title": "OpenAI新融资到账110亿美元，不及原计划一半",
-          "link": "https://www.qbitai.com/2026/11/508344.html",
-          "date": "Sat, 07 Nov 2026 08:11:25 +0000",
+          "title": "千问办公2.0发布，首个支持多人与Agent协作的Team Agent来了",
+          "link": "https://www.qbitai.com/2026/11/508694.html",
+          "date": "Mon, 09 Nov 2026 08:34:03 +0000",
           "desc": ""
         },
         {
-          "title": "为了去AI味，人类开始主动写烂文章了……",
-          "link": "https://www.qbitai.com/2026/11/508330.html",
-          "date": "Sat, 07 Nov 2026 07:59:28 +0000",
+          "title": "叙事奔涌，何以为锚?丨第 20 届中国投资年会·有限合伙人峰会即将启幕",
+          "link": "https://www.qbitai.com/2026/11/508690.html",
+          "date": "Mon, 09 Nov 2026 08:26:45 +0000",
           "desc": ""
         },
         {
-          "title": "抢跑DeepSeek！硅谷华人把下一代Agent Harness造出来了！？",
-          "link": "https://www.qbitai.com/2026/11/508264.html",
-          "date": "Sat, 07 Nov 2026 05:01:17 +0000",
+          "title": "L3大撤退！奔驰宝马官宣不玩了：还没L2好用",
+          "link": "https://www.qbitai.com/2026/11/508629.html",
+          "date": "Mon, 09 Nov 2026 07:02:36 +0000",
           "desc": ""
         },
         {
-          "title": "AGENTS.MD，危险危险危险！！！",
-          "link": "https://www.qbitai.com/2026/11/508244.html",
-          "date": "Sat, 07 Nov 2026 03:43:55 +0000",
+          "title": "AI接管一家8万Star开源公司，写代码、派任务、查Bug全包了",
+          "link": "https://www.qbitai.com/2026/11/508607.html",
+          "date": "Mon, 09 Nov 2026 05:47:58 +0000",
           "desc": ""
         },
         {
-          "title": "浙大00后博士生再交卷！把十几种物理要素装进一个世界模型｜华为昇腾原生",
-          "link": "https://www.qbitai.com/2026/11/508236.html",
-          "date": "Sat, 07 Nov 2026 03:31:44 +0000",
+          "title": "基元律动发布NeoHorse-1.5-Flash Preview，Agent模型RSI进入第二轮迭代",
+          "link": "https://www.qbitai.com/2026/11/508603.html",
+          "date": "Mon, 09 Nov 2026 05:09:23 +0000",
           "desc": ""
         },
         {
-          "title": "Jeff Dean李飞飞最新对谈：全是RSI非共识",
-          "link": "https://www.qbitai.com/2026/11/508196.html",
-          "date": "Sat, 07 Nov 2026 03:23:29 +0000",
+          "title": "当AI在加速狂奔，什么反而应该“慢”下来？",
+          "link": "https://www.qbitai.com/2026/11/508586.html",
+          "date": "Mon, 09 Nov 2026 03:47:12 +0000",
           "desc": ""
         }
       ],
@@ -145,51 +172,51 @@
       "url": "https://www.ifanr.com/feed",
       "items": [
         {
+          "title": "玛莎拉蒂将与尊界联合造车，首发车型或为双门 GT，明年正式量产",
+          "link": "https://www.ifanr.com/1688586?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Mon, 09 Nov 2026 14:56:35 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "实测 Seedream5.5，豆包想把 AI 作图接进整条工作流",
+          "link": "https://www.ifanr.com/1688447?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Mon, 09 Nov 2026 12:01:18 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "谁家 AI 这么听劝？Seedream 5.5 爆改 iPhone Duo 界面，精准到像素级",
+          "link": "https://www.ifanr.com/1688514?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Mon, 09 Nov 2026 09:19:02 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "苹果罕见公布人形机器人进展，宇树 G1 背着一台跑千问的 Mac mini",
+          "link": "https://www.ifanr.com/1688485?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Mon, 09 Nov 2026 07:56:58 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "微信 AI 录音笔体验：手机都能装的办公神器，免费！",
+          "link": "https://www.ifanr.com/1688410?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Mon, 09 Nov 2026 04:00:04 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "M6 MacBook Pro 体验：38 块的灵魂，一万五的身体",
+          "link": "https://www.ifanr.com/1688127?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Mon, 09 Nov 2026 01:54:03 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "早报｜曝特努斯要求加快AI研发/Win 11优化8GB内存电脑流畅度/马斯克：SpaceX明年12月年化营收或超5000亿美元",
+          "link": "https://www.ifanr.com/1688379?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Mon, 09 Nov 2026 00:34:19 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
           "title": "别再拿《影之刃零》对比《黑神话》了",
           "link": "https://www.ifanr.com/1688282?utm_source=rss&utm_medium=rss&utm_campaign=",
           "date": "Sun, 08 Nov 2026 04:00:31 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "被年轻人遗忘的磁带，正在 AI 时代闷声发大财 原",
-          "link": "https://www.ifanr.com/1688364?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Sun, 08 Nov 2026 03:35:42 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "最贵比亚迪来了！仰望鼎曜亮相中东，「山河鼎韵」限量版定金 30 万元",
-          "link": "https://www.ifanr.com/1688312?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Sat, 07 Nov 2026 16:50:33 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "早报｜触屏MacBook Pro开卖即缺货/仰望U9 Xtreme突破503kph/博世吴永桥：汽车不该拿来订咖啡机票",
-          "link": "https://www.ifanr.com/1688251?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Sat, 07 Nov 2026 00:27:17 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "503.17km/h！比亚迪仰望 U9X 再次刷新全球最速，量产车首次突破 5 字头",
-          "link": "https://www.ifanr.com/1688195?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Fri, 06 Nov 2026 09:25:33 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "10 月最值得关注的 17 个产品｜明日产品 WATCHLIST",
-          "link": "https://www.ifanr.com/1688060?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Fri, 06 Nov 2026 05:26:24 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "早报｜首款触屏MacBook Pro开卖/2027年放假安排公布，调休减少/GPT-6 Cyber发布，复现1724项漏洞",
-          "link": "https://www.ifanr.com/1688032?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Fri, 06 Nov 2026 00:15:15 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "13 万买 5 米大轿车！比亚迪海豹 07 上市，首搭云辇-M 磁流变悬架",
-          "link": "https://www.ifanr.com/1688332?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Thu, 05 Nov 2026 15:50:25 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         }
       ],
@@ -199,6 +226,42 @@
       "name": "少数派",
       "url": "https://sspai.com/feed",
       "items": [
+        {
+          "title": "派评 | 近期值得关注的 App",
+          "link": "https://sspai.com/post/118833",
+          "date": "Mon, 09 Nov 2026 18:27:59 +0800",
+          "desc": ">下载少数派客户端、关注少数派公众号，解锁全新阅读体验📰>实用、好用的正版软件，少数派为你呈现🚀<a href=\"https://sspai.com/post/118833\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "双十一 | 少数派会员、正版软件、付费栏目限时优惠",
+          "link": "https://sspai.com/post/118799",
+          "date": "Mon, 09 Nov 2026 16:24:03 +0800",
+          "desc": "多款付费栏目和正版软件上新，以及口碑、质量都非常优秀的现有产品优惠活动，快来看看有没有你需要的吧。<a href=\"https://sspai.com/post/118799\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "一家人的客厅，和一个人的深夜 — Sonos Beam Ultra 与 Ace Ultra 体验",
+          "link": "https://sspai.com/post/118227",
+          "date": "Mon, 09 Nov 2026 15:40:22 +0800",
+          "desc": "本文是少数派联合Sonos发起的SonosPlay众测活动（第二期）「最佳体验官」奖项获奖文章，奖品为免费保留送测的SonosAceUltra。除本文外，本期获得优秀体验官的作者及文章是：mivans ...<a href=\"https://sspai.com/post/118227\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "天花板上的白色盒子，是怎样保护我们的安全的？",
+          "link": "https://sspai.com/post/118029",
+          "date": "Mon, 09 Nov 2026 15:02:44 +0800",
+          "desc": "2026 年 11 月 9 日是第 35 个全国消防日。我们来学点消防知识。<a href=\"https://sspai.com/post/118029\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "双十一好物精选：Sonos Play 85 折送充电套装，CD 机加赠透明面盖",
+          "link": "https://sspai.com/post/118612",
+          "date": "Mon, 09 Nov 2026 11:00:00 +0800",
+          "desc": "从墨水屏到手机壳，从磁吸信息屏到CD播放器，这些看似平常的数码产品，经过一些新的设计和尝试，也能带来不太一样的使用体验。今年双十一，各大平台的促销活动陆续开始，不过满减、凑单等规则可能还是有些繁琐。所 ...<a href=\"https://sspai.com/post/118612\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "派早报：特斯拉将停产 Cybertruck",
+          "link": "https://sspai.com/post/118805",
+          "date": "Mon, 09 Nov 2026 06:41:56 +0800",
+          "desc": "<p>特斯拉将停产 Cybertruck</p><p>深圳在 APEC 前夕整顿非法市场</p><p>美国数据中心股持续遭抛售，大量建设项目被取消</p><p>京津冀三地消协组织敦促航司、平台规范机票退改签</p><p>FBI 警告冰柜网络安全攻击风险</p><p>广电总局部署开展新一轮微短剧专项治理工作</p><p>看看就行的简讯</p><p>少数派的近期动态</p><p>你可能错过的好文章</p><a href=\"https://s"
+        },
         {
           "title": "苹果产品那些不够颠覆，却值得被学习的细节",
           "link": "https://sspai.com/post/118114",
@@ -210,42 +273,6 @@
           "link": "https://sspai.com/post/116750",
           "date": "Sat, 07 Nov 2026 17:05:06 +0800",
           "desc": "我只想回应自己的感受，自己的记忆，只是因为那时候我满腔少年心气，对一切都充满好奇，对未来充满憧憬。<a href=\"https://sspai.com/post/116750\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "本周看什么 | 最近值得一看的 9 部作品",
-          "link": "https://sspai.com/post/118623",
-          "date": "Fri, 06 Nov 2026 17:30:15 +0800",
-          "desc": "📅本周新预告《戴高乐之战》确认引进11月2日，电影《戴高乐之战》确认引进。该系列分为《戴高乐之战：淬炼时代》《戴高乐之战：我写下你的名字》上下两部曲。由法国百代公司出品，制作成本高达7520万欧元。作 ...<a href=\"https://sspai.com/post/118623\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "iPhone 变强了，但我没有",
-          "link": "https://sspai.com/post/118250",
-          "date": "Fri, 06 Nov 2026 14:56:41 +0800",
-          "desc": "我们把 iPhone 18 Pro Max 带到了深圳、香港和吉隆坡，带入了形形色色的街头。在这个过程里，我们记录了使用 iPhone 拍到的美好画面，也借此描绘了自己的心情变化和生活感悟。<a href=\"https://sspai.com/post/118250\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "更高能效比，带来新惊喜：M6 款 MacBook Pro 初探",
-          "link": "https://sspai.com/post/118570",
-          "date": "Fri, 06 Nov 2026 11:06:53 +0800",
-          "desc": "M6 芯片提供了足够的性能保障，无论修图、视频剪辑还是运行入门级的 AI 大模型，它都能应对。在此基础上，你原本可能需要加在 Pro 级 SoC 上的预算就能省下来，花给内存或者硬盘。<a href=\"https://sspai.com/post/118570\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "派早报：国务院办公厅发布 2027 年部分节假日放假安排等",
-          "link": "https://sspai.com/post/118587",
-          "date": "Fri, 06 Nov 2026 08:24:39 +0800",
-          "desc": "OpenAI 推出 Images 2.6 模型，Nothing CMF Speaker S/M 音箱国行上市等。<a href=\"https://sspai.com/post/118587\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "开启 Mac 的下一世代：MacBook Pro (PROLED XDR) 首发体验",
-          "link": "https://sspai.com/post/118546",
-          "date": "Thu, 05 Nov 2026 22:00:51 +0800",
-          "desc": "全新 MacBook Pro，开启 Mac 的下一个世代。<a href=\"https://sspai.com/post/118546\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "新玩意 255｜少数派的编辑们最近买了啥？",
-          "link": "https://sspai.com/post/118541",
-          "date": "Thu, 05 Nov 2026 17:11:28 +0800",
-          "desc": "编注：很多读者都会好奇少数派的编辑们到底平时都「买了啥」。我们希望通过「编辑部的新玩意」介绍编辑部成员们最近在用的新奇产品，让他们自己来谈谈这些新玩意的使用体验究竟如何。内容声明：《新玩意》栏目如含有 ...<a href=\"https://sspai.com/post/118541\" target=\"_blank\">查看全文</a>"
         }
       ],
       "error": null
@@ -255,60 +282,60 @@
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "items": [
         {
-          "title": "NVIDIA调查黄仁勋与中国间谍的关系",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy",
-          "date": "2026-11-08T15:27:28-05:00",
+          "title": "Apple 50美元智能使用包扩展部分AI功能",
+          "link": "https://www.theverge.com/tech/1030084/apple-intelligence-usage-packs-ai-features-creator-studio-logic-pro",
+          "date": "2026-11-09T14:09:58-05:00",
           "desc": "",
-          "title_en": "Nvidia is investigating Jensen Huang’s relationship with a Chinese spy"
+          "title_en": "Apple’s $50 Intelligence Usage Packs extend access to some AI features"
         },
         {
-          "title": "Apple竞相让Siri更具代理能力",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic",
-          "date": "2026-11-08T14:18:19-05:00",
+          "title": "Anthropic推出新Claude Fable与Mythos 5.2模型",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2",
+          "date": "2026-11-09T13:58:38-05:00",
           "desc": "",
-          "title_en": "Apple is racing to make Siri more agentic"
+          "title_en": "Anthropic launches new Claude Fable and Mythos 5.2 models"
         },
         {
-          "title": "Elvis与Eminem版权方起诉Suno",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit",
-          "date": "2026-11-08T12:23:19-05:00",
+          "title": "Instagram Effect Builder用AI提示生成新滤镜",
+          "link": "https://www.theverge.com/tech/1030061/instagram-ai-effect-builder-filters",
+          "date": "2026-11-09T13:07:23-05:00",
           "desc": "",
-          "title_en": "Elvis and Eminem rights holders are suing Suno"
+          "title_en": "Instagram’s Effect Builder makes new filters from AI prompts"
         },
         {
-          "title": "NYT Cooking AI助手救晚餐鸡却差点毁蛋糕",
-          "link": "https://www.theverge.com/tech/1029489/nyt-cooking-ai-assistant-review",
-          "date": "2026-11-08T14:41:47-05:00",
+          "title": "AI未来竟系于黄仁勋私生活？",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1029990/jensen-huang-the-spy-who-loved-me",
+          "date": "2026-11-09T12:36:26-05:00",
           "desc": "",
-          "title_en": "NYT Cooking’s AI assistant saved my weeknight chicken, but almost ruined my cake"
+          "title_en": "The future of AI hinges on… Jensen Huang’s sex life?"
         },
         {
-          "title": "美国允许NVIDIA向中国空办公室卖芯片",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government",
-          "date": "2026-11-07T10:43:45-05:00",
+          "title": "Trump 60 Minutes访谈谈及AI安全与逮捕AI高管威胁",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1029802/trump-60-minutes-ai",
+          "date": "2026-11-09T11:00:35-05:00",
           "desc": "",
-          "title_en": "The US let Nvidia sell chips to an empty office in China"
+          "title_en": "Trump’s 60 Minutes interview touched on AI safety, threat to arrest an AI exec"
         },
         {
-          "title": "AI击碎网络安全界下一步",
-          "link": "https://www.theverge.com/podcast/1029038/ai-cybersecurity-hackers-data-breach-dark-age-alex-stamos",
-          "date": "2026-11-07T00:43:11-05:00",
+          "title": "Disney与Adobe合作构建生成式AI工具",
+          "link": "https://www.theverge.com/tech/1029773/disney-adobe-generative-ai-partnership",
+          "date": "2026-11-09T10:54:52-05:00",
           "desc": "",
-          "title_en": "AI broke the cybersecurity world. What’s next?"
+          "title_en": "Disney and Adobe are building generative AI tools together"
         },
         {
-          "title": "Anthropic自动化AI开发新报告为何令研究者警觉",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development",
-          "date": "2026-11-06T16:48:06-05:00",
+          "title": "等等，我和RIAA的人聊得很开心",
+          "link": "https://www.theverge.com/podcast/1029684/riaa-mitch-glazier-napster-ai-labels-music",
+          "date": "2026-11-09T10:22:38-05:00",
           "desc": "",
-          "title_en": "Why a new report on Anthropic automating AI development is alarming researchers"
+          "title_en": "Hold up — I had a great time talking to the RIAA guy"
         },
         {
-          "title": "OpenAI估值1.25万亿美元，对手Anthropic临近IPO",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation",
-          "date": "2026-11-06T18:46:18-05:00",
+          "title": "Jonathan Kanter用AI挑战科技巨头",
+          "link": "https://www.theverge.com/policy/1029652/kanter-doj-biden-legal-tech",
+          "date": "2026-11-09T09:10:44-05:00",
           "desc": "",
-          "title_en": "OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO"
+          "title_en": "Jonathan Kanter is using AI to take on Big Tech"
         }
       ],
       "error": null
@@ -317,6 +344,20 @@
       "name": "Ars Technica · AI",
       "url": "https://arstechnica.com/ai/feed/",
       "items": [
+        {
+          "title": "Claude Code意外在GitHub泄露大量机密",
+          "link": "https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/",
+          "date": "Mon, 09 Nov 2026 17:24:26 +0000",
+          "desc": "",
+          "title_en": "Claude Code is accidentally exposing secrets all over GitHub"
+        },
+        {
+          "title": "Nvidia CEO绯闻成国家安全问题",
+          "link": "https://arstechnica.com/tech-policy/2026/11/ceo-jensen-huang-admits-affair-as-nvidia-probes-possible-chinese-espionage/",
+          "date": "Mon, 09 Nov 2026 15:23:20 +0000",
+          "desc": "",
+          "title_en": "Nvidia CEO's affair becomes a national security problem"
+        },
         {
           "title": "Meta放弃可疑商业条款更新 质疑我们看不懂吗",
           "link": "https://arstechnica.com/tech-policy/2026/11/does-meta-think-we-cant-read-meta-abandons-sketchy-commercial-terms-update/",
@@ -358,20 +399,6 @@
           "date": "Wed, 04 Nov 2026 20:55:50 +0000",
           "desc": "",
           "title_en": "Big Tech claims voters’ AI backlash is “anti-Trump” not “anti-tech”"
-        },
-        {
-          "title": "乌无人机袭击促俄仓促建地下数据中心",
-          "link": "https://arstechnica.com/ai/2026/11/russia-looks-to-hide-data-centers-underground-as-ukrainian-drones-strike-back/",
-          "date": "Tue, 03 Nov 2026 20:39:55 +0000",
-          "desc": "",
-          "title_en": "Ukraine’s drone strikes spur hasty Russian plans for underground data centers"
-        },
-        {
-          "title": "Google允许学校弃AI工具但须放弃搜索",
-          "link": "https://arstechnica.com/ai/2026/11/google-will-let-schools-skip-ai-tools-but-they-have-to-give-up-search-too/",
-          "date": "Tue, 03 Nov 2026 17:54:43 +0000",
-          "desc": "",
-          "title_en": "Google will let schools skip AI tools, but they have to give up search, too"
         }
       ],
       "error": null
@@ -381,60 +408,60 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "items": [
         {
-          "title": "中期选举后马斯克与数据中心前景堪忧",
-          "link": "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers/",
-          "date": "Sat, 07 Nov 2026 22:07:22 +0000",
+          "title": "黄仁勋因Nvidia争议退出ElevenLabs峰会",
+          "link": "https://techcrunch.com/2026/11/09/jensen-huang-pulls-out-of-elevenlabs-summit-amid-nvidia-controversy/",
+          "date": "Mon, 09 Nov 2026 20:09:06 +0000",
           "desc": "",
-          "title_en": "After the midterms, things are looking rocky for Elon Musk and data centers"
+          "title_en": "Jensen Huang pulls out of ElevenLabs Summit amid Nvidia controversy"
         },
         {
-          "title": "美情报备忘录称Megaspeed高管被招募监视NVIDIA CEO",
-          "link": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
-          "date": "Sat, 07 Nov 2026 21:17:08 +0000",
+          "title": "Anthropic在RSI担忧中发布新Mythos与Fable模型",
+          "link": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/",
+          "date": "Mon, 09 Nov 2026 19:24:51 +0000",
           "desc": "",
-          "title_en": "Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo"
+          "title_en": "Anthropic releases new Mythos and Fable models amid RSI concerns"
         },
         {
-          "title": "Crusoe将问题怀俄明数据中心项目卖给Google",
-          "link": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
-          "date": "Sat, 07 Nov 2026 01:40:28 +0000",
+          "title": "黄仁勋涉中国间谍绯闻令Nvidia中国雄心受审视",
+          "link": "https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny/",
+          "date": "Mon, 09 Nov 2026 18:09:52 +0000",
           "desc": "",
-          "title_en": "Crusoe sells troubled Wyoming data center project to Google"
+          "title_en": "Jensen Huang’s affair with alleged Chinese spy puts Nvidia’s China ambitions under scrutiny"
         },
         {
-          "title": "OpenAI据称再融110亿美元估值1.25万亿美元",
-          "link": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/",
-          "date": "Fri, 06 Nov 2026 22:53:46 +0000",
+          "title": "Meta发布轻量代理执行模型Muse Ember",
+          "link": "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/",
+          "date": "Mon, 09 Nov 2026 18:00:00 +0000",
           "desc": "",
-          "title_en": "OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation"
+          "title_en": "Meta releases Muse Ember, a new lightweight model for agent execution"
         },
         {
-          "title": "数百个Artex AI黑客工具公网暴露",
-          "link": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
-          "date": "Fri, 06 Nov 2026 18:44:38 +0000",
+          "title": "Anthropic加入AI天然气热潮，购34亿美元涡轮机",
+          "link": "https://techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines/",
+          "date": "Mon, 09 Nov 2026 16:56:54 +0000",
           "desc": "",
-          "title_en": "Hundreds of Artex AI hacking tools found publicly exposed to the web"
+          "title_en": "Anthropic joins AI’s natural gas frenzy, buys $3.4B worth of turbines"
         },
         {
-          "title": "Meta推出Spaces与Muse代理协作新方式",
-          "link": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
-          "date": "Fri, 06 Nov 2026 18:44:20 +0000",
+          "title": "Medium新TK应用将AI辅助直接融入写作",
+          "link": "https://techcrunch.com/2026/11/09/mediums-new-tk-app-brings-ai-assistance-directly-into-the-writing-process/",
+          "date": "Mon, 09 Nov 2026 16:12:28 +0000",
           "desc": "",
-          "title_en": "Meta introduces Spaces, a new way to collaborate with your Muse agent"
+          "title_en": "Medium’s new TK app brings AI assistance directly into the writing process"
         },
         {
-          "title": "蓝潮中期选举或重塑AI行业",
-          "link": "https://techcrunch.com/podcast/how-a-blue-wave-midterm-might-reshape-the-ai-industry/",
-          "date": "Fri, 06 Nov 2026 18:00:00 +0000",
+          "title": "Automattic推出部署氛围编程应用平台",
+          "link": "https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet/",
+          "date": "Mon, 09 Nov 2026 14:00:00 +0000",
           "desc": "",
-          "title_en": "How a Blue Wave midterm might reshape the AI industry"
+          "title_en": "Automattic debuts a platform to deploy vibe-coding apps amid a changing internet"
         },
         {
-          "title": "中期选举后AI行业将迎艰难两年吗",
-          "link": "https://techcrunch.com/video/after-the-midterms-is-the-ai-industry-in-for-a-rough-two-years/",
-          "date": "Fri, 06 Nov 2026 17:23:52 +0000",
+          "title": "黄仁勋职位难保？耶鲁Jeffrey Sonnenfeld估约五五开",
+          "link": "https://techcrunch.com/2026/11/08/is-jensen-huangs-job-on-the-line-yales-jeffrey-sonnenfeld-estimates-its-about-a-50-50/",
+          "date": "Mon, 09 Nov 2026 05:26:29 +0000",
           "desc": "",
-          "title_en": "After the midterms, is the AI industry in for a rough two years?"
+          "title_en": "Is Jensen Huang’s job on the line? Yale’s Jeffrey Sonnenfeld estimates it’s ‘about a 50-50’"
         }
       ],
       "error": null
@@ -443,6 +470,48 @@
       "name": "The Decoder",
       "url": "https://the-decoder.com/feed/",
       "items": [
+        {
+          "title": "Meta推出Muse Ember，专为代理重复工作打造的小型AI模型",
+          "link": "https://the-decoder.com/meta-launches-muse-ember-a-small-ai-model-built-for-the-repetitive-work-agents-actually-do/",
+          "date": "Mon, 09 Nov 2026 19:41:51 +0000",
+          "desc": "Meta is introducing Muse Ember, its smallest and most efficient AI model, optimized for repetitive agent tasks such as tool calls, routing, and data extraction. According to Meta, it delivers more intelligence per dollar",
+          "title_en": "Meta launches Muse Ember, a small AI model built for the repetitive work agents actually do"
+        },
+        {
+          "title": "Bytedance Seedream 5.5承诺百轮图像编辑像素稳定不偏色",
+          "link": "https://the-decoder.com/bytedances-seedream-5-5-promises-pixel-stable-image-editing-across-100-rounds-without-color-drift/",
+          "date": "Mon, 09 Nov 2026 18:50:01 +0000",
+          "desc": "Bytedance Seed has introduced Seedream 5.5, an image model built for professional production workflows. It supports stable multi-pass editing over up to 100 iterations, generates native RGBA images with transparent backg",
+          "title_en": "Bytedance's Seedream 5.5 promises pixel-stable image editing across 100 rounds without color drift"
+        },
+        {
+          "title": "Disney押注Adobe Firefly打造品牌安全AI模型",
+          "link": "https://the-decoder.com/disney-bets-on-adobes-firefly-to-create-brand-safe-ai-models-for-its-entertainment-empire/",
+          "date": "Mon, 09 Nov 2026 16:54:16 +0000",
+          "desc": "Disney and Adobe are building custom AI tools together for the entertainment giant's productions.\nThe article Disney bets on Adobe's Firefly to create brand-safe AI models for its entertainment empire appeared first on T",
+          "title_en": "Disney bets on Adobe's Firefly to create brand-safe AI models for its entertainment empire"
+        },
+        {
+          "title": "腾讯AI负责人称AI生物武器将至，但封闭模型非解",
+          "link": "https://the-decoder.com/tencents-ai-chief-says-ai-bioweapons-are-coming-but-closing-off-models-isnt-the-answer/",
+          "date": "Mon, 09 Nov 2026 15:44:53 +0000",
+          "desc": "Tencent chief AI scientist Vinces Yao Shunyu warns that AI will soon be able to develop bioweapons and argues for a middle ground between open and closed models. While safety filters on open-source systems can be easily ",
+          "title_en": "Tencent's AI chief says AI bioweapons are coming, but closing off models isn't the answer"
+        },
+        {
+          "title": "Google一年推出四款TPU，加剧与Nvidia竞争",
+          "link": "https://the-decoder.com/google-ships-four-tpu-variants-in-one-year-as-it-ramps-up-competition-with-nvidia/",
+          "date": "Mon, 09 Nov 2026 12:59:02 +0000",
+          "desc": "Google is expanding its TPU 8 family with two specialized variants: the TPU 8tx keeps sensitive data encrypted even during processing, while the TPU 8i Max doubles compute power and memory by placing two chips on a singl",
+          "title_en": "Google ships four TPU variants in one year as it ramps up competition with Nvidia"
+        },
+        {
+          "title": "Nvidia间谍丑闻削弱黄仁勋反AI芯片出口管制游说",
+          "link": "https://the-decoder.com/nvidia-espionage-scandal-weakens-huangs-lobby-against-tighter-ai-chip-export-controls/",
+          "date": "Mon, 09 Nov 2026 11:38:43 +0000",
+          "desc": "Nvidia CEO Jensen Huang has admitted to an extramarital affair with a woman US intelligence agencies classify as a suspected Chinese informant. The board has launched an independent investigation. The affair weakens Huan",
+          "title_en": "Nvidia espionage scandal weakens Huang's lobby against tighter AI chip export controls"
+        },
         {
           "title": "Andrej Karpathy用Claude和20年Hacker News周末打造精选视频平台",
           "link": "https://the-decoder.com/andrej-karpathy-built-a-curated-video-platform-in-a-weekend-using-claude-and-20-years-of-hacker-news/",
@@ -456,48 +525,6 @@
           "date": "Sun, 08 Nov 2026 13:49:21 +0000",
           "desc": "Consciousness researchers Anil Seth, Ned Block, and Giulio Tononi argue in a Nature commentary that today's AI systems aren't conscious and won't become so on silicon hardware. They consider the assumption that conscious",
           "title_en": "The brain-as-computer metaphor shaped modern AI but may be misleading the consciousness debate"
-        },
-        {
-          "title": "苦涩教训提出者给LLM扩展热衷者再上一课",
-          "link": "https://the-decoder.com/the-inventor-of-the-bitter-lesson-has-a-bitter-lesson-for-llm-scaling-enthusiasts/",
-          "date": "Sun, 08 Nov 2026 11:44:41 +0000",
-          "desc": "Turing Award winner Richard Sutton reaffirms that raw compute alone isn't enough for intelligence and that fundamentally new learning methods are needed. Ex-OpenAI researcher Tworek agrees, saying blind transformer scali",
-          "title_en": "The inventor of the bitter lesson has a bitter lesson for LLM scaling enthusiasts"
-        },
-        {
-          "title": "实测近四分之三任务中AI编程代理仍需人工清理",
-          "link": "https://the-decoder.com/ai-coding-agents-still-need-human-cleanup-on-nearly-three-out-of-four-tasks-in-a-real-world-test/",
-          "date": "Sun, 08 Nov 2026 09:50:59 +0000",
-          "desc": "Alibaba's new coding-agent benchmark, Co-Design Bench, tests AI agents on real user requests that already tripped them up in practice. Even GPT-6 Astra, the top performer, fully solves only 26.4 percent of tasks. On olde",
-          "title_en": "AI coding agents still need human cleanup on nearly three out of four tasks in a real-world test"
-        },
-        {
-          "title": "Anthropic推进感恩节前IPO接受更低估值",
-          "link": "https://the-decoder.com/anthropic-pushes-ahead-with-pre-thanksgiving-ipo-despite-tech-selloff-accepts-lower-valuation/",
-          "date": "Sat, 07 Nov 2026 17:37:25 +0000",
-          "desc": "Despite the tech selloff, Anthropic is pressing ahead with its IPO at a valuation of $1.25 to $1.75 trillion, well below the hoped-for $2 trillion. The Claude developer aims to raise $80 to $100 billion before Thanksgivi",
-          "title_en": "Anthropic pushes ahead with pre-Thanksgiving IPO despite tech selloff, accepts lower valuation"
-        },
-        {
-          "title": "AI审计员能抓多数Agent不当行为却误报泛滥",
-          "link": "https://the-decoder.com/ai-auditors-catch-most-agent-misbehavior-but-flood-reviewers-with-false-alarms-new-study-finds/",
-          "date": "Sat, 07 Nov 2026 16:56:38 +0000",
-          "desc": "AI models can often spot problematic behavior by other AI agents in logs, according to a study by Anthropic researcher Andy Hall. GPT-5 found about 98 percent of reward-hacking cases, but the more exhaustively the search",
-          "title_en": "AI auditors catch most agent misbehavior but flood reviewers with false alarms, new study finds"
-        },
-        {
-          "title": "Thinking Machines的Inkling 2 Small基准测试爆316次粗口",
-          "link": "https://the-decoder.com/thinking-machines-inkling-2-small-drops-316-f-bombs-across-benchmark-runs/",
-          "date": "Sat, 07 Nov 2026 16:31:00 +0000",
-          "desc": "Thinking Machines' AI model Inkling 2 Small swears during its internal reasoning, 316 times across 2,655 benchmark runs, according to an analysis by Vals AI. The profanity typically shows up late in long runs that fail a",
-          "title_en": "Thinking Machines' Inkling 2 Small drops 316 F-bombs across benchmark runs"
-        },
-        {
-          "title": "开放与闭源AI模型网络能力差距持续缩小",
-          "link": "https://the-decoder.com/the-gap-between-open-and-closed-ai-models-in-cyber-capabilities-keeps-shrinking/",
-          "date": "Sat, 07 Nov 2026 15:35:50 +0000",
-          "desc": "In the Vals AI benchmark, OpenAI's GPT-6 Sol Daybreak hits 80.8 percent of attack objectives in simulated corporate networks. Worse, the open-weight model DeepSeek V4.1 Flash reaches 72.8 percent at a tenth of the cost. ",
-          "title_en": "The gap between open and closed AI models in cyber capabilities keeps shrinking"
         }
       ],
       "error": null
@@ -506,6 +533,13 @@
       "name": "TLDR AI",
       "url": "https://tldr.tech/api/rss/ai",
       "items": [
+        {
+          "title": "AI研发加速，OpenAI达1.25万亿美元，GitHub多人工具",
+          "link": "https://tldr.tech/ai/2026-11-09",
+          "date": "Mon, 09 Nov 2026 00:00:00 GMT",
+          "desc": "",
+          "title_en": "AI R&D accelerates 📈, OpenAI at $1.25T 💰, GitHub’s multiplayer harness 🤖"
+        },
         {
           "title": "Anthropic研发加速 GPT-6 Cyber Inkling 2 Small",
           "link": "https://tldr.tech/ai/2026-11-06",
@@ -554,13 +588,6 @@
           "date": "Thu, 29 Oct 2026 00:00:00 GMT",
           "desc": "",
           "title_en": "Gemini 4 Carbon 🌱, Nemotron Transcribe 📝, benchmarker’s dilemma ❓"
-        },
-        {
-          "title": "Genie 4世界 Frontier Code 2 AI药物发现",
-          "link": "https://tldr.tech/ai/2026-10-28",
-          "date": "Wed, 28 Oct 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "Genie 4 worlds 🌍, Frontier Code 2 👨‍💻, AI drug discovery 🧬"
         }
       ],
       "error": null
@@ -569,6 +596,20 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "items": [
+        {
+          "title": "ChatGPT Enterprise现已登陆AWS Marketplace",
+          "link": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+          "date": "Mon, 09 Nov 2026 19:00:00 GMT",
+          "desc": "",
+          "title_en": "ChatGPT Enterprise now available in AWS Marketplace"
+        },
+        {
+          "title": "Kuken Industries数分钟检索70年图纸",
+          "link": "https://openai.com/index/kuken",
+          "date": "Mon, 09 Nov 2026 08:00:00 GMT",
+          "desc": "",
+          "title_en": "Kuken Industries searches 70 years of drawings in minutes"
+        },
         {
           "title": "与Hacktron合作发现OpenAI系统漏洞",
           "link": "https://openai.com/index/partnering-with-hacktron",
@@ -610,20 +651,6 @@
           "date": "Thu, 05 Nov 2026 08:00:00 GMT",
           "desc": "",
           "title_en": "Merge builds product and business tools with OpenAI technology"
-        },
-        {
-          "title": "为负责任AI基础设施树立新标准",
-          "link": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure",
-          "date": "Thu, 05 Nov 2026 02:00:00 GMT",
-          "desc": "",
-          "title_en": "Setting a new standard for responsible AI infrastructure"
-        },
-        {
-          "title": "Flipsnack用转化优化提升产品注册",
-          "link": "https://openai.com/ads/customers/flipsnack",
-          "date": "Thu, 05 Nov 2026 00:45:15 GMT",
-          "desc": "",
-          "title_en": "Flipsnack grows product signups with conversion optimization"
         }
       ],
       "error": null
@@ -759,6 +786,20 @@
       "url": "https://huggingface.co/blog/feed.xml",
       "items": [
         {
+          "title": "Nemotron-Personas-Finance-Japan：捕捉日本人口与金融语境的合成数据集",
+          "link": "https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan",
+          "date": "Mon, 09 Nov 2026 15:05:57 GMT",
+          "desc": "",
+          "title_en": "Nemotron-Personas-Finance-Japan: A Synthetic Dataset Capturing Japan's Demographics and Financial Context"
+        },
+        {
+          "title": "专家有伴侣，HOPE助其维系关系",
+          "link": "https://huggingface.co/blog/amazon/higher-order-pruning-experts",
+          "date": "Mon, 09 Nov 2026 12:34:29 GMT",
+          "desc": "",
+          "title_en": "Your Experts Have Partners. There's HOPE for Keeping Them Together"
+        },
+        {
           "title": "ToyBlocks受控机器人学习评估世界",
           "link": "https://huggingface.co/blog/allenai/toyblocks",
           "date": "Fri, 06 Nov 2026 14:00:48 GMT",
@@ -771,13 +812,6 @@
           "date": "Fri, 06 Nov 2026 00:00:00 GMT",
           "desc": "",
           "title_en": "Egyptian and Nigerian English join the Open ASR Leaderboard"
-        },
-        {
-          "title": "NVIDIA Cosmos 3开放模型用于交互世界仿真",
-          "link": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
-          "date": "Thu, 05 Nov 2026 19:35:16 GMT",
-          "desc": "",
-          "title_en": "New NVIDIA Cosmos 3 Open Models for Interactive World Simulation"
         },
         {
           "title": "Phonon TTS推出登顶基准的高质量端侧语音",
@@ -806,13 +840,6 @@
           "date": "Tue, 03 Nov 2026 00:00:00 GMT",
           "desc": "",
           "title_en": "CWE-bench v2: More coverage, quality, and transparency"
-        },
-        {
-          "title": "Transformers模型集成契约",
-          "link": "https://huggingface.co/blog/transformers-mic",
-          "date": "Tue, 03 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "Transformers Model Integration Contracts"
         }
       ],
       "error": null
@@ -820,14 +847,128 @@
     {
       "name": "arXiv cs.AI",
       "url": "https://export.arxiv.org/rss/cs.AI",
-      "items": [],
-      "error": "本期无条目"
+      "items": [
+        {
+          "title": "用案例推理增强学术指导",
+          "link": "https://arxiv.org/abs/2611.08572",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08572v1 Announce Type: new \nAbstract: This research involved the study of an application of Case-Based Reasoning (CBR) in the field of academic advising. Academic advisement has been recognised as an important",
+          "title_en": "Enhancing Academic Advisement with Case-Based Reasoning"
+        },
+        {
+          "title": "NormGym：通过社交互动评估规范能力",
+          "link": "https://arxiv.org/abs/2611.08613",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08613v1 Announce Type: new \nAbstract: Normative competence, the ability to infer socially enforced expectations from interaction and adjust behavior accordingly, is essential for agents operating in unfamiliar",
+          "title_en": "NormGym: Evaluating Normative Competence through Social Interaction"
+        },
+        {
+          "title": "基于LLM的多准则库存分类特征提取",
+          "link": "https://arxiv.org/abs/2611.08626",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08626v1 Announce Type: new \nAbstract: E-commerce supply chains generate large volumes of customer feedback and operational data that remain underutilized in inventory management. Traditional inventory classifi",
+          "title_en": "LLM-Based Feature Extraction for Multi-Criteria Inventory Classification"
+        },
+        {
+          "title": "面向测试时选择的分面成对锦标赛",
+          "link": "https://arxiv.org/abs/2611.08640",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08640v1 Announce Type: new \nAbstract: Scaling test-time compute has proven highly effective at improving LLM reasoning. A popular method is best-of-n sampling, where a model generates many candidate solutions ",
+          "title_en": "Aspect-wise Pairwise Tournaments for Test-Time Selection"
+        },
+        {
+          "title": "Decision Context：AI代理的持续行为学习",
+          "link": "https://arxiv.org/abs/2611.08644",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08644v1 Announce Type: new \nAbstract: LLM agents do not learn from corrections across sessions. A user fixes the same mistake at the start of every conversation. Existing agent memory systems primarily handle ",
+          "title_en": "Decision Context: Persistent Behavioral Learning for AI Agents"
+        },
+        {
+          "title": "IWIBench：评估无梯度模型驱动的权重内注入",
+          "link": "https://arxiv.org/abs/2611.08647",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08647v1 Announce Type: new \nAbstract: Intra-weight injection lets one model change another model's behaviour by editing its weights directly, without gradients. Such edits can range from altering lexical assoc",
+          "title_en": "IWIBench: Evaluating Gradient-Free Model Driven Intra-weight Injection"
+        },
+        {
+          "title": "Pdb or Not to Be：比较调试接口与PassX@k",
+          "link": "https://arxiv.org/abs/2611.08666",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08666v1 Announce Type: new \nAbstract: Interactive debuggers are indispensable to human software development, yet coding agents overwhelmingly rely on edit-execute-observe loops, using common bash tools, test s",
+          "title_en": "Pdb or Not to Be: Comparing Debugging Interfaces With Pass$_{X}$@$k$"
+        },
+        {
+          "title": "ChainFlow：用于推测解码的少步潜流匹配",
+          "link": "https://arxiv.org/abs/2611.08669",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08669v1 Announce Type: new \nAbstract: Speculative decoding has become a standard way to accelerate LLM inference: a lightweight drafter proposes tokens that the target verifies in one parallel pass. Existing d",
+          "title_en": "ChainFlow: Few-Step Latent Flow Matching for Speculative Decoding"
+        }
+      ],
+      "error": null
     },
     {
       "name": "arXiv cs.CL",
       "url": "https://export.arxiv.org/rss/cs.CL",
-      "items": [],
-      "error": "本期无条目"
+      "items": [
+        {
+          "title": "强制某字母抑制拒答：来自WMDP的机制证据",
+          "link": "https://arxiv.org/abs/2611.08639",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08639v1 Announce Type: new \nAbstract: Safety benchmarks for large language models (LLMs) commonly use multiple-choice question (MCQ) format. However, prior studies documented that MCQ format reduces refusal ra",
+          "title_en": "Forcing a Letter Suppresses Refusal: Mechanistic Evidence from WMDP"
+        },
+        {
+          "title": "FinEvolveKG：可控可归因的金融知识图谱提示演化",
+          "link": "https://arxiv.org/abs/2611.08643",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08643v1 Announce Type: new \nAbstract: Financial institutions construct knowledge graphs (KGs) from shared SEC 10-Ks to serve risk analysis, portfolio management, and investment research, whose analytical needs",
+          "title_en": "FinEvolveKG: Controlled and Attributable Prompt Evolution for Financial Knowledge Graph Construction"
+        },
+        {
+          "title": "语言模型表征中的情绪压缩",
+          "link": "https://arxiv.org/abs/2611.08683",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08683v1 Announce Type: new \nAbstract: Large language models (LLMs) have been evaluated on their ability to identify emotions expressed in text and produce fluent emotional language. However, output predictions",
+          "title_en": "Compression of Emotion in Language Model Representations"
+        },
+        {
+          "title": "语境性与矛盾：探索AI生成文本的现实识别",
+          "link": "https://arxiv.org/abs/2611.08704",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08704v1 Announce Type: new \nAbstract: As AI-generated content spreads into nearly every domain of human interaction, practices and discourses of AI detection, both formal and informal, have become an everyday ",
+          "title_en": "Contextuality and Contradictions: Exploring Real-World Identifications of AI-Generated Writing"
+        },
+        {
+          "title": "RL-ATTACK：基于强化学习的语言模型通用黑盒对抗攻击",
+          "link": "https://arxiv.org/abs/2611.08711",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08711v1 Announce Type: new \nAbstract: Large language models (LLMs) exhibit vulnerabilities to adversarial perturbations that can induce unintended responses. These vulnerabilities can be identified via intenti",
+          "title_en": "RL-ATTACK: A Generalized Black-Box Adversarial Attack on Language Models via Reinforcement Learning"
+        },
+        {
+          "title": "LLM数字孪生的问卷历史结构化：受控研究",
+          "link": "https://arxiv.org/abs/2611.08730",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08730v1 Announce Type: new \nAbstract: LLM-based digital twins aim to predict how individuals would respond in new settings from representations of their prior responses. Existing evidence that compression of s",
+          "title_en": "Structuring Survey Histories for LLM Digital Twins: A Controlled Study of Background, Decision Procedure, and Evaluation Profiles"
+        },
+        {
+          "title": "语义条件相似度SCS：形式化数学框架",
+          "link": "https://arxiv.org/abs/2611.08778",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08778v1 Announce Type: new \nAbstract: Semantic Textual Similarity (STS) operates on document pairs, returning a single scalar per comparison. In a multi-document setting where several sources may have contribu",
+          "title_en": "Semantic Conditional Similarity (SCS): A Formal Mathematical Framework"
+        },
+        {
+          "title": "领域微调LLM护栏侵蚀：生物医学弃答配对审计",
+          "link": "https://arxiv.org/abs/2611.08780",
+          "date": "Mon, 09 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.08780v1 Announce Type: new \nAbstract: The number of domain fine-tuned models, particularly in the biomedical domain, is rapidly expanding. Fine-tuning promises high-performing models at a fraction of the cost ",
+          "title_en": "Guardrail Erosion in Domain Fine-Tuned Large Language Models: A Paired Audit of Knowledge-Centric Abstention in Biomedical LLMs"
+        }
+      ],
+      "error": null
     }
   ]
 }
