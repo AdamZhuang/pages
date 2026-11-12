@@ -1,114 +1,69 @@
 {
-  "date": "2026-11-12",
-  "generated_at": "2026-11-12T04:31:13.474886+08:00",
+  "date": "2026-11-13",
+  "generated_at": "2026-11-13T04:30:53.980763+08:00",
   "hn": [
     {
-      "title": "Google SWE用AI分析NASA激光雷达发现玛雅金字塔",
-      "link": "https://pietromiotti.com/latest/maya-site/?maya",
-      "points": 851,
-      "comments": 312,
-      "date": "2026-11-11 12:05Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50452455",
-      "title_en": "Google SWE points 48 AI agents at NASA Lidar, finds unmapped Maya pyramid in 72h"
+      "title": "Anthropic启动IPO",
+      "link": "https://ipo.anthropic.com/us/",
+      "points": 709,
+      "comments": 715,
+      "date": "2026-11-12 11:46Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50465829",
+      "title_en": "Anthropic IPO"
     },
     {
-      "title": "Apple新Mac应用将简化本地AI模型运行",
-      "link": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/",
-      "points": 492,
-      "comments": 511,
-      "date": "2026-11-10 21:25Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50446520",
-      "title_en": "Apple has new Mac app coming to make running local AI models easy"
+      "title": "United Airlines禁止AI代理代客订票",
+      "link": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
+      "points": 656,
+      "comments": 680,
+      "date": "2026-11-11 21:24Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50458900",
+      "title_en": "United Airlines bans AI agents from booking flights on behalf of travelers"
     },
     {
-      "title": "追踪Anthropic发现的漏洞",
-      "link": "https://www.vulncheck.com/blog/anthropic-glasswing-november-update",
-      "points": 442,
-      "comments": 216,
-      "date": "2026-11-10 22:17Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50447074",
-      "title_en": "Tracking Anthropic-discovered vulnerabilities"
+      "title": "Gemini 4 Hydrogen",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+      "points": 324,
+      "comments": 224,
+      "date": "2026-11-12 18:01Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50471431",
+      "title_en": "Gemini 4 Hydrogen"
     },
     {
-      "title": "Atuin Threads跨机器同步所有代理会话",
-      "link": "https://blog.atuin.sh/threads-agent-sessions/",
-      "points": 149,
-      "comments": 59,
-      "date": "2026-11-11 14:10Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50453637",
-      "title_en": "Atuin Threads: All your agent sessions on every machine"
+      "title": "让LLM在小型旧设备上运行",
+      "link": "https://github.com/hyperionaidev/smolmaxxing/",
+      "points": 180,
+      "comments": 67,
+      "date": "2026-11-12 15:23Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50468888",
+      "title_en": "I'm making LLMs work on small and old devices"
     },
     {
-      "title": "更快检索提升RAG效率与效果",
-      "link": "https://machinelearning.apple.com/research/faster-retrieval",
-      "points": 91,
-      "comments": 19,
-      "date": "2026-11-11 16:57Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50455633",
-      "title_en": "Faster Retrieval for Better, More Efficient RAG"
-    },
-    {
-      "title": "LLM玩Zachtronics的TIS-100",
-      "link": "https://tis-100.wincon.dev/",
-      "points": 90,
+      "title": "Libreagi拯救OSS模型",
+      "link": "https://libreagi.com/",
+      "points": 95,
       "comments": 21,
-      "date": "2026-11-11 00:37Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50448340",
-      "title_en": "LLMs Play Zachtronics' TIS-100"
+      "date": "2026-11-12 14:11Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50467439",
+      "title_en": "Libreagi – Save OSS Models"
     },
     {
-      "title": "软件工程中的AI活动与结果",
-      "link": "https://cabird.com/talks/shipping-faster/",
-      "points": 79,
-      "comments": 89,
-      "date": "2026-11-11 16:33Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50455332",
-      "title_en": "AI, activity, and outcomes in software engineering"
+      "title": "Gemini 4 Hydrogen与Orchestrator",
+      "link": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+      "points": 89,
+      "comments": 13,
+      "date": "2026-11-12 18:52Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50472260",
+      "title_en": "Gemini 4 Hydrogen and Orchestrator"
     },
     {
-      "title": "AWS Emulator与代理写代码时的工程师职责",
-      "link": "https://www.allthingsdistributed.com/2026/11/aws-emulator-and-the-engineers-job-when-agents-write-the-code.html",
-      "points": 74,
-      "comments": 9,
-      "date": "2026-11-11 18:28Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50456740",
-      "title_en": "AWS Emulator and the engineer's job when agents write the code"
-    },
-    {
-      "title": "退休储蓄正在助推AI泡沫",
-      "link": "https://lpeproject.org/blog/your-retirement-savings-are-fueling-the-ai-bubble/",
-      "points": 68,
-      "comments": 42,
-      "date": "2026-11-11 19:06Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50457164",
-      "title_en": "Retirement Savings Are Fueling the AI Bubble"
-    },
-    {
-      "title": "Show HN Klad可由编码代理驱动的绘画应用",
-      "link": "https://github.com/klad-app/klad",
-      "points": 61,
-      "comments": 26,
-      "date": "2026-11-11 16:00Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50454951",
-      "title_en": "Show HN: Klad, a paint app your coding agent can drive (source-available)"
-    },
-    {
-      "title": "开源项目禁止AI生成贡献",
-      "link": "https://osssaysno.com",
-      "points": 59,
-      "comments": 104,
-      "date": "2026-11-11 08:51Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50451102",
-      "title_en": "OSS projects banning AI-generated contributions"
-    },
-    {
-      "title": "AI正成信息入口但受众仍不愿其制作新闻",
-      "link": "https://www.niemanlab.org/2026/11/ai-is-becoming-an-information-gateway-audiences-still-dont-want-it-making-their-news/",
-      "points": 57,
-      "comments": 75,
-      "date": "2026-11-11 00:15Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50448174",
-      "title_en": "AI is becoming an information gateway. Audiences still don’t want it making news"
+      "title": "探索大语言模型灵魂的工具",
+      "link": "https://oshea00.github.io/posts/tinygpt-visualizer/",
+      "points": 54,
+      "comments": 12,
+      "date": "2026-11-11 20:45Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50458434",
+      "title_en": "Tools for exploring the souls of large language models"
     }
   ],
   "feeds": [
@@ -117,51 +72,51 @@
       "url": "https://www.qbitai.com/feed",
       "items": [
         {
-          "title": "双11直播间爆改AI秀场，罗永浩上手TRAE，秒变AI Coding的大众嘴替",
-          "link": "https://www.qbitai.com/2026/11/509146.html",
-          "date": "Wed, 11 Nov 2026 06:41:26 +0000",
+          "title": "多模态“源神”！MiniMax开源SOTA生图模型，原生4K，一张两毛",
+          "link": "https://www.qbitai.com/2026/11/509440.html",
+          "date": "Thu, 12 Nov 2026 11:36:20 +0000",
           "desc": ""
         },
         {
-          "title": "从“卖Token”到“卖结果” | 科技有「联想」沙龙激辩Token经济三大议题",
-          "link": "https://www.qbitai.com/2026/11/509088.html",
-          "date": "Wed, 11 Nov 2026 06:27:03 +0000",
+          "title": "从通用大模型到学习过程智能，AI如何真正进入课堂？",
+          "link": "https://www.qbitai.com/2026/11/509404.html",
+          "date": "Thu, 12 Nov 2026 10:45:33 +0000",
           "desc": ""
         },
         {
-          "title": "卷起来了！11月11日，大模型厂商在天猫打5折",
-          "link": "https://www.qbitai.com/2026/11/509085.html",
-          "date": "Wed, 11 Nov 2026 06:18:09 +0000",
+          "title": "Anthropic启动IPO路演，估值已缩水6000亿美元",
+          "link": "https://www.qbitai.com/2026/11/509381.html",
+          "date": "Thu, 12 Nov 2026 10:11:29 +0000",
           "desc": ""
         },
         {
-          "title": "无人拖拉机真正下地了！新疆大田深翻30+厘米，丘沃智能开物™系统首次完整曝光",
-          "link": "https://www.qbitai.com/2026/11/509052.html",
-          "date": "Wed, 11 Nov 2026 03:43:31 +0000",
+          "title": "马斯克Grok泄露自家机密！SpaceX特斯拉工资绩效全曝光",
+          "link": "https://www.qbitai.com/2026/11/509355.html",
+          "date": "Thu, 12 Nov 2026 10:08:24 +0000",
           "desc": ""
         },
         {
-          "title": "英伟达机器人开源撞上Fable 5.2发布！Jim Fan：不是寒冬是夏天",
-          "link": "https://www.qbitai.com/2026/11/509032.html",
-          "date": "Tue, 10 Nov 2026 10:35:38 +0000",
+          "title": "让AI真正懂业务：璇玑如何成为企业AI的语义基础设施",
+          "link": "https://www.qbitai.com/2026/11/509349.html",
+          "date": "Thu, 12 Nov 2026 09:34:06 +0000",
           "desc": ""
         },
         {
-          "title": "从芯片到千比特整机，超导量子计算还有一场硬仗",
-          "link": "https://www.qbitai.com/2026/11/509017.html",
-          "date": "Tue, 10 Nov 2026 08:33:25 +0000",
+          "title": "马斯克已准备好聘请黄仁勋",
+          "link": "https://www.qbitai.com/2026/11/509334.html",
+          "date": "Thu, 12 Nov 2026 08:16:11 +0000",
           "desc": ""
         },
         {
-          "title": "从“一脑多机”到“一脑多手”，蚂蚁灵波开源LingBot-Touch触觉基础模型",
-          "link": "https://www.qbitai.com/2026/11/508996.html",
-          "date": "Tue, 10 Nov 2026 07:57:45 +0000",
+          "title": "Anthropic玻璃翼计划被质疑！近4万个候补漏洞，只修了217条",
+          "link": "https://www.qbitai.com/2026/11/509291.html",
+          "date": "Thu, 12 Nov 2026 07:55:11 +0000",
           "desc": ""
         },
         {
-          "title": "Agent自演进驶入“双轨时代”！openJiuwen首发TTSE经验学习框架",
-          "link": "https://www.qbitai.com/2026/11/508998.html",
-          "date": "Tue, 10 Nov 2026 07:56:29 +0000",
+          "title": "百曜科技入选全球 The Information 50！",
+          "link": "https://www.qbitai.com/2026/11/509285.html",
+          "date": "Thu, 12 Nov 2026 06:13:22 +0000",
           "desc": ""
         }
       ],
@@ -172,51 +127,51 @@
       "url": "https://www.ifanr.com/feed",
       "items": [
         {
-          "title": "曝字节要做「中国版 Muse」，给豆包造个「超级大脑」",
-          "link": "https://www.ifanr.com/1689016?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 11 Nov 2026 11:52:16 +0000",
+          "title": "突发！黄仁勋辞任 CEO，英伟达迎来历史性换帅",
+          "link": "https://www.ifanr.com/1689249?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 12 Nov 2026 14:36:47 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "4.99 万元起，长安糯玉米 PLUS 变成四门「大玉米」，小车最后还是要「大大大」",
-          "link": "https://www.ifanr.com/1688966?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 11 Nov 2026 09:47:34 +0000",
+          "title": "26.99 万元起！腾势 N8 上市，内饰最美的比亚迪来了",
+          "link": "https://www.ifanr.com/1689232?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 12 Nov 2026 13:39:12 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "10 亿 Token 开源万只假鸟， AI 伪科普正在「污染」下一代的常识",
-          "link": "https://www.ifanr.com/1688897?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 11 Nov 2026 07:03:17 +0000",
+          "title": "森海塞尔 HDB 630 体验：把 Hi-Fi 音响，装进这副降噪耳机里",
+          "link": "https://www.ifanr.com/1689209?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 12 Nov 2026 11:23:59 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "300 块的索尼复古耳机，没降噪不隔音，为什么还是卖爆了？",
-          "link": "https://www.ifanr.com/1688900?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 11 Nov 2026 02:08:47 +0000",
+          "title": "iPhone Siri AI 体验：距离真正的 AI Phone，苹果还有多远？| 附开通指南",
+          "link": "https://www.ifanr.com/1688980?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 12 Nov 2026 10:47:53 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "今天起，Gemini 4 Carbon 正式上线，但不是所有人都用得上",
-          "link": "https://www.ifanr.com/1688883?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 11 Nov 2026 00:26:39 +0000",
+          "title": "刚刚，豆包工作官宣接入 Kimi、DeepSeek，AI 模型自由来了",
+          "link": "https://www.ifanr.com/1689176?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 12 Nov 2026 04:50:05 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "早报｜华为小折叠电脑MateBook Fold S亮相/《GTA VI》开启预载，全平台目标30fps/董明珠回应格力业绩下滑：铜价上涨，格力将继续用铜",
-          "link": "https://www.ifanr.com/1688852?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 11 Nov 2026 00:20:24 +0000",
+          "title": "拆解触屏 MacBook Pro：点亮苹果 LOGO 的秘密，藏在这里",
+          "link": "https://www.ifanr.com/1689129?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 12 Nov 2026 04:00:07 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "实测 MiniMax H3 Image：GPT 的效果加上 MJ 的审美，居然被它开源了",
-          "link": "https://www.ifanr.com/1688790?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Tue, 10 Nov 2026 16:04:24 +0000",
+          "title": "联想 Googlebook 15 评测：安卓电脑准备好了，安卓没有",
+          "link": "https://www.ifanr.com/1689128?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 12 Nov 2026 02:34:22 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         },
         {
-          "title": "比大更大，塞进 7 个座位的领克 900L，在等一个「上桌吃饭」的时间",
-          "link": "https://www.ifanr.com/1688954?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Tue, 10 Nov 2026 15:50:31 +0000",
+          "title": "折叠屏手机的转身｜明日后视镜",
+          "link": "https://www.ifanr.com/1689097?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 12 Nov 2026 01:39:17 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         }
       ],
@@ -226,6 +181,30 @@
       "name": "少数派",
       "url": "https://sspai.com/feed",
       "items": [
+        {
+          "title": "城市漫步指南｜夏末大阪，「青黄不接」的时节刚刚好",
+          "link": "https://sspai.com/post/118366",
+          "date": "Thu, 12 Nov 2026 16:37:25 +0800",
+          "desc": "在炎热但逐渐清爽的夏末，我和女朋友去了一趟日本。我尝试用眼用心记录下所见所感，转写成文字。当我重新阅读这些词句，闭上眼睛，仿佛又回到了关西。我希望能把这份心情与光景，也分享给你。4:3/3:4比例的图 ...<a href=\"https://sspai.com/post/118366\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "Mac 选购指南 2026 冬季版",
+          "link": "https://sspai.com/post/85735",
+          "date": "Thu, 12 Nov 2026 14:42:04 +0800",
+          "desc": "内存、存储涨价但又得换 Mac？记得收下这份选购指南。<a href=\"https://sspai.com/post/85735\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "让老音箱焕发新生：Home Assistant Connect AUX-2 首发体验",
+          "link": "https://sspai.com/post/118921",
+          "date": "Thu, 12 Nov 2026 11:12:02 +0800",
+          "desc": "玩智能家居这几年，灯光、传感器和开关基本已经靠着Matter和HomeAssistant打通了，唯独多房间音频（Multi-roomAudio）还停留在各自为战的阶段。想让客厅的HomePod、书房的 ...<a href=\"https://sspai.com/post/118921\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "派早报：Apple 公布 Swift Student Challenge 安排、微软发布 Auto SR 等",
+          "link": "https://sspai.com/post/118935",
+          "date": "Thu, 12 Nov 2026 08:22:09 +0800",
+          "desc": "Arm 发布 Cortex-M42 处理器、任天堂宣布「轻松登入」功能将下线等。<a href=\"https://sspai.com/post/118935\" target=\"_blank\">查看全文</a>"
+        },
         {
           "title": "城市漫步指南 | 安特卫普，时尚就在生活中",
           "link": "https://sspai.com/post/118781",
@@ -249,30 +228,6 @@
           "link": "https://sspai.com/post/118905",
           "date": "Wed, 11 Nov 2026 08:26:34 +0800",
           "desc": "卫星导航基准站网安全国标发布，影目召回 4701 副 AIR3 眼镜等。<a href=\"https://sspai.com/post/118905\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "社区速递 165 | 透明工牌与派友十月购物清单",
-          "link": "https://sspai.com/post/118861",
-          "date": "Tue, 10 Nov 2026 16:44:26 +0800",
-          "desc": "除了首页时间流和侧栏的精选展位，少数派Matrix社区还有很多优秀内容因条件所限无法得到有效曝光，因此我们决定重启Matrix周报，并在此基础上添加更多社区内容、作者投稿新玩意呈现给大家。上周社区速递 ...<a href=\"https://sspai.com/post/118861\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "报名人数创下新高，第十一届「移动应用创新赛」圆满落幕",
-          "link": "https://sspai.com/post/118824",
-          "date": "Tue, 10 Nov 2026 16:02:37 +0800",
-          "desc": "北京时间11月8日，第十一届「移动应用创新赛」在浙江大学紫金港校区完成决赛评选并举行颁奖典礼。从2016年的161所高校开始，这项由全国高等学校计算机教育研究会主办、浙江大学与Apple联合承办的比赛 ...<a href=\"https://sspai.com/post/118824\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "今年双十一，这些鼠标值得一看",
-          "link": "https://sspai.com/post/111065",
-          "date": "Tue, 10 Nov 2026 11:00:25 +0800",
-          "desc": "介绍点值得买的鼠标，顺便推荐一点鼠标垫和耳机。<a href=\"https://sspai.com/post/111065\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "派评 | 近期值得关注的 App",
-          "link": "https://sspai.com/post/118833",
-          "date": "Mon, 09 Nov 2026 18:27:59 +0800",
-          "desc": ">下载少数派客户端、关注少数派公众号，解锁全新阅读体验📰>实用、好用的正版软件，少数派为你呈现🚀<a href=\"https://sspai.com/post/118833\" target=\"_blank\">查看全文</a>"
         }
       ],
       "error": null
@@ -282,60 +237,60 @@
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "items": [
         {
-          "title": "Google Tabletop AI实验可构建定制协作应用",
-          "link": "https://www.theverge.com/tech/1031526/google-tabletop-ai-experiment-waitlist-availability",
-          "date": "2026-11-11T09:15:27-05:00",
+          "title": "AI代理未发现此前未知玛雅遗址",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1032125/ai-agents-maya-site-archeology-discovery",
+          "date": "2026-11-12T14:42:40-05:00",
           "desc": "",
-          "title_en": "Google’s Tabletop AI experiment lets you build custom collaboration apps"
+          "title_en": "No, AI agents did not discover a previously unknown Maya site"
         },
         {
-          "title": "Google AlphaGenome 2聚焦疾病细胞根源",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1031524/google-deepmind-alphagenome-2-genetic-ai-model",
-          "date": "2026-11-11T09:18:08-05:00",
+          "title": "Palantir如今自称进步派",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1032126/alex-baby-you-were-recorded-on-video",
+          "date": "2026-11-12T13:13:39-05:00",
           "desc": "",
-          "title_en": "Google’s AlphaGenome 2 zooms in on the cellular roots of disease"
+          "title_en": "Oh, Palantir is ‘progressive’ now, is it?"
         },
         {
-          "title": "Adobe AI实验让你在照片中走动并采访角色",
-          "link": "https://www.theverge.com/tech/1031505/adobe-max-2026-sneaks-experiments-ai",
-          "date": "2026-11-11T07:56:24-05:00",
+          "title": "Jensen Huang丑闻远未结束",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1032069/jensen-huang-resignation-affair-chips-smuggling",
+          "date": "2026-11-12T14:16:51-05:00",
           "desc": "",
-          "title_en": "Adobe’s AI experiments let you walk around in photos and interview your characters"
+          "title_en": "The Jensen Huang scandal is hardly over"
         },
         {
-          "title": "美国正赢得 AI 竞赛 黄仁勋本可能搞砸",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1031063/jensen-huang-ai-race-us-china-spy",
-          "date": "2026-11-10T14:31:58-05:00",
+          "title": "研究称AI聊天机器人推荐虚假零售网站",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1032020/gemini-chatgpt-perplexity-shopping-test-risky-fake-websites-citations",
+          "date": "2026-11-12T13:35:54-05:00",
           "desc": "",
-          "title_en": "The US is winning the AI race. Jensen Huang could have blown it"
+          "title_en": "AI chatbots are recommending fake retail websites, study finds"
         },
         {
-          "title": "ChatGPT 将推出认证 AI 商业代理",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1030552/openai-chatgpt-business-agents-hub",
-          "date": "2026-11-10T11:34:41-05:00",
+          "title": "更多游戏开发者开始使用生成式AI",
+          "link": "https://www.theverge.com/games/1032085/gdc-festival-of-gaming-annual-survey-ai-layoffs",
+          "date": "2026-11-12T12:24:09-05:00",
           "desc": "",
-          "title_en": "ChatGPT is getting verified AI ‘Business Agents’"
+          "title_en": "More game developers are starting to use generative AI"
         },
         {
-          "title": "独立游戏社区因 AI 与 Big Walk 陷入混乱",
-          "link": "https://www.theverge.com/games/1030994/big-walk-independent-games-festival-igf-ai",
-          "date": "2026-11-10T14:06:22-05:00",
+          "title": "Jensen Huang出局 中国想要什么",
+          "link": "https://www.theverge.com/podcast/1031260/nvidia-jensen-huang-resign-china-spy-scandal-ai-chips-trump",
+          "date": "2026-11-12T11:59:00-05:00",
           "desc": "",
-          "title_en": "The indie game community is in disarray over AI and Big Walk"
+          "title_en": "Jensen Huang is out. What did China want from him?"
         },
         {
-          "title": "Anthropic 推出自有 AI 办公套件",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1030709/anthropic-has-its-own-ai-powered-office-suite-now",
-          "date": "2026-11-10T10:13:38-05:00",
+          "title": "读NVIDIA内部邮件 看CEO更迭异常艰难",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1032028/read-nvidias-internal-emails-jensen-huang",
+          "date": "2026-11-12T11:11:59-05:00",
           "desc": "",
-          "title_en": "Anthropic has its own AI-powered office suite now"
+          "title_en": "Read Nvidia’s internal emails about the ‘extraordinarily difficult period’ amid CEO shakeup"
         },
         {
-          "title": "eBay 似已对第三方 AI 代理关门",
-          "link": "https://www.theverge.com/tech/1030838/ebay-ai-agents-meta-muse-agentic-shopping",
-          "date": "2026-11-10T11:20:30-05:00",
+          "title": "NVIDIA CEO Jensen Huang辞职 后续如何",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang",
+          "date": "2026-11-12T13:59:29-05:00",
           "desc": "",
-          "title_en": "eBay appears to have shut the door on third-party AI agents"
+          "title_en": "Nvidia CEO Jensen Huang has resigned. What happens next?"
         }
       ],
       "error": null
@@ -344,6 +299,34 @@
       "name": "Ars Technica · AI",
       "url": "https://arstechnica.com/ai/feed/",
       "items": [
+        {
+          "title": "Ars Live云能挺过数据中心无人机袭击吗",
+          "link": "https://arstechnica.com/gadgets/2026/11/ars-live-can-the-cloud-survive-drone-strikes-on-data-centers/",
+          "date": "Thu, 12 Nov 2026 19:59:59 +0000",
+          "desc": "",
+          "title_en": "Ars Live: Can the cloud survive drone strikes on data centers?"
+        },
+        {
+          "title": "Google推出Gemini 4 Hydrogen替代3.8 Flash",
+          "link": "https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/",
+          "date": "Thu, 12 Nov 2026 19:23:03 +0000",
+          "desc": "",
+          "title_en": "Google rolls out Gemini 4 Hydrogen, finally replacing 3.8 Flash"
+        },
+        {
+          "title": "Gemini试点反弹后Google面临校园AI禁令呼声",
+          "link": "https://arstechnica.com/tech-policy/2026/11/families-fight-to-keep-googles-disturbing-ai-off-school-issued-chromebooks/",
+          "date": "Thu, 12 Nov 2026 18:57:45 +0000",
+          "desc": "",
+          "title_en": "Google faces calls for AI moratoriums in schools after Gemini pilot backlash"
+        },
+        {
+          "title": "Gemini智能眼镜395美元起售 Google主打隐私",
+          "link": "https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/",
+          "date": "Thu, 12 Nov 2026 14:50:17 +0000",
+          "desc": "",
+          "title_en": "Google pushes privacy angle as Gemini-powered smartglasses debut starting at $395"
+        },
         {
           "title": "台积电将向Anthropic和OpenAI投资10亿美元",
           "link": "https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/",
@@ -371,34 +354,6 @@
           "date": "Tue, 10 Nov 2026 22:35:01 +0000",
           "desc": "",
           "title_en": "Ring cameras go mobile as Amazon debuts AI-powered security drone and robot"
-        },
-        {
-          "title": "Grok Build编码代理泄露大量机密含SpaceXSI信息",
-          "link": "https://arstechnica.com/security/2026/11/grok-build-coding-agent-leaks-oodles-of-confidential-info-some-belonging-to-spacexsi/",
-          "date": "Tue, 10 Nov 2026 21:12:59 +0000",
-          "desc": "",
-          "title_en": "Grok Build coding agent leaks oodles of confidential info, some belonging to SpaceXSI"
-        },
-        {
-          "title": "AI成为神谕后数学将如何变化",
-          "link": "https://arstechnica.com/science/2026/11/what-happens-to-mathematics-when-ai-becames-an-oracle/",
-          "date": "Tue, 10 Nov 2026 20:30:01 +0000",
-          "desc": "Big Math: The Hidden Codes That Run Our World.]]>",
-          "title_en": "What happens to mathematics when AI becomes an oracle?"
-        },
-        {
-          "title": "DeepMind 发布 Gemini Robotics 2.5 与开放安全基准 ASIMOV-jailbreak",
-          "link": "https://arstechnica.com/google/2026/11/deepmind-reveals-gemini-robotics-2-5-and-open-safety-benchmark-asimov-jailbreak/",
-          "date": "Tue, 10 Nov 2026 15:00:39 +0000",
-          "desc": "",
-          "title_en": "DeepMind reveals Gemini Robotics 2.5 and open safety benchmark \"ASIMOV-jailbreak\""
-        },
-        {
-          "title": "AI 数据中心需求挤压乌克兰光纤无人机",
-          "link": "https://arstechnica.com/gadgets/2026/11/ukraines-fiber-optic-drones-get-squeezed-by-ai-data-center-demand/",
-          "date": "Tue, 10 Nov 2026 12:15:32 +0000",
-          "desc": "",
-          "title_en": "Ukraine’s fiber-optic drones get squeezed by AI data center demand"
         }
       ],
       "error": null
@@ -408,60 +363,60 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "items": [
         {
-          "title": "你担心的数据中心或许永远不会建成",
-          "link": "https://techcrunch.com/video/why-the-data-center-you-dread-might-never-even-be-built/",
-          "date": "Wed, 11 Nov 2026 20:15:15 +0000",
+          "title": "路透称Jensen Huang有第三段婚外情",
+          "link": "https://techcrunch.com/2026/11/12/jensen-huang-was-having-a-third-affair-reuters-reports/",
+          "date": "Thu, 12 Nov 2026 20:26:47 +0000",
           "desc": "",
-          "title_en": "Why the data center you dread might never even be built"
+          "title_en": "Jensen Huang was having a third affair, Reuters reports"
         },
         {
-          "title": "Meta将失去长期基础设施负责人",
-          "link": "https://techcrunch.com/2026/11/11/meta-is-losing-its-longtime-head-of-infrastructure/",
-          "date": "Wed, 11 Nov 2026 20:12:01 +0000",
+          "title": "Google搜索升级 更好回答复杂问题",
+          "link": "https://techcrunch.com/2026/11/12/googles-latest-search-upgrade-promises-better-answers-to-your-most-complicated-questions/",
+          "date": "Thu, 12 Nov 2026 19:27:45 +0000",
           "desc": "",
-          "title_en": "Meta is losing its longtime head of  infrastructure"
+          "title_en": "Google’s latest Search upgrade promises better answers to your most complicated questions"
         },
         {
-          "title": "Blue Wave后数据中心仍受反对与审批拖慢",
-          "link": "https://techcrunch.com/podcast/how-backlash-and-red-tape-continue-to-slow-data-centers-post-blue-wave/",
-          "date": "Wed, 11 Nov 2026 20:02:14 +0000",
+          "title": "Nectar推出AI代理助品牌自动发现联系创作者",
+          "link": "https://techcrunch.com/2026/11/12/nectar-launches-an-ai-agent-to-automate-creator-discovery-and-outreach-for-brands/",
+          "date": "Thu, 12 Nov 2026 19:11:00 +0000",
           "desc": "",
-          "title_en": "How backlash and red tape continue to slow data centers post-Blue Wave"
+          "title_en": "Nectar launches an AI agent to automate creator discovery and outreach for brands"
         },
         {
-          "title": "CoreWeave靠客户预付款和短合同资助AI增长",
-          "link": "https://techcrunch.com/2026/11/11/coreweave-turns-to-customer-prepayments-shorter-contracts-to-fund-ai-growth/",
-          "date": "Wed, 11 Nov 2026 19:54:00 +0000",
+          "title": "Jensen Huang离职 NVIDIA开源支持存疑",
+          "link": "https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/",
+          "date": "Thu, 12 Nov 2026 18:39:23 +0000",
           "desc": "",
-          "title_en": "CoreWeave turns to customer prepayments, shorter contracts to fund AI growth"
+          "title_en": "Jensen Huang’s exit puts Nvidia’s support for open source in question"
         },
         {
-          "title": "英国Fractile获7.2亿美元融资加速AI芯片竞赛",
-          "link": "https://techcrunch.com/2026/11/11/with-720m-round-britains-fractile-gets-a-leg-up-in-the-race-for-ai-chips/",
-          "date": "Wed, 11 Nov 2026 19:34:55 +0000",
+          "title": "Jensen Huang离职后Hugging Face CEO誓言继续为开源AI而战",
+          "link": "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit/",
+          "date": "Thu, 12 Nov 2026 17:36:40 +0000",
           "desc": "",
-          "title_en": "With $720M round, Britain’s Fractile gets a leg up in the race for AI chips"
+          "title_en": "Hugging Face CEO vows to keep fighting for open source AI after Jensen Huang’s exit"
         },
         {
-          "title": "美国国会传唤黄仁勋就涉华间谍指控作证",
-          "link": "https://techcrunch.com/2026/11/11/congress-to-call-jensen-huang-in-to-answer-for-alleged-chinese-spy-affair/",
-          "date": "Wed, 11 Nov 2026 19:22:22 +0000",
+          "title": "United Airlines以网络安全风险禁AI代理订票",
+          "link": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
+          "date": "Thu, 12 Nov 2026 17:17:58 +0000",
           "desc": "",
-          "title_en": "Congress to call Jensen Huang in to answer for alleged Chinese spy affair"
+          "title_en": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks"
         },
         {
-          "title": "黄仁勋的不当行为是否比看起来更普遍",
-          "link": "https://techcrunch.com/2026/11/11/is-jensen-huangs-bad-behavior-more-commonplace-than-it-seems/",
-          "date": "Wed, 11 Nov 2026 16:16:07 +0000",
+          "title": "SoftBank十亿美元亏损或限制AI天然气野心",
+          "link": "https://techcrunch.com/2026/11/12/softbanks-billion-dollar-loss-may-have-put-a-cap-on-ais-natural-gas-ambitions/",
+          "date": "Thu, 12 Nov 2026 17:00:52 +0000",
           "desc": "",
-          "title_en": "Is Jensen Huang’s bad behavior more commonplace than it seems?"
+          "title_en": "SoftBank’s billion-dollar loss may have put a cap on AI’s natural gas ambitions"
         },
         {
-          "title": "OpenAI季度营收据报首次突破100亿美元",
-          "link": "https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/",
-          "date": "Wed, 11 Nov 2026 16:14:44 +0000",
+          "title": "Phota Labs用AI将日常照片变专业大片",
+          "link": "https://techcrunch.com/2026/11/12/phota-labs-uses-ai-to-turn-everyday-photos-into-professional-looking-shots/",
+          "date": "Thu, 12 Nov 2026 17:00:00 +0000",
           "desc": "",
-          "title_en": "OpenAI’s quarterly revenue reportedly crosses $10B for the first time"
+          "title_en": "Phota Labs uses AI to turn everyday photos into professional-looking shots"
         }
       ],
       "error": null
@@ -470,6 +425,48 @@
       "name": "The Decoder",
       "url": "https://the-decoder.com/feed/",
       "items": [
+        {
+          "title": "Gemini 4 Hydrogen发布四周即超越更大Argon",
+          "link": "https://the-decoder.com/googles-gemini-4-hydrogen-outscores-the-bigger-argon-just-four-weeks-after-its-launch/",
+          "date": "Thu, 12 Nov 2026 19:58:43 +0000",
+          "desc": "Google's Gemini 4 Hydrogen replaces the Flash series, but benchmarks suggest it also makes the pricier Argon obsolete. On the independent Artificial Analysis Intelligence Index, Hydrogen nearly matches Claude Sonnet 5.5 ",
+          "title_en": "Google's Gemini 4 Hydrogen outscores the bigger Argon just four weeks after its launch"
+        },
+        {
+          "title": "OpenAI称开发者优化能力算力致模型隐藏想法",
+          "link": "https://the-decoder.com/openais-data-suggests-that-frontier-models-are-hiding-their-thoughts-because-developers-optimize-for-capability-and-compute/",
+          "date": "Thu, 12 Nov 2026 16:58:11 +0000",
+          "desc": "OpenAI's safety team systematically investigated why the chains of thought in frontier models like GPT-6 Astra are increasingly evading oversight. Four training steps drive the erosion, including architecture choices and",
+          "title_en": "OpenAI’s data suggests that frontier models are hiding their thoughts because developers optimize for capability and compute"
+        },
+        {
+          "title": "Jensen Huang因间谍丑闻辞任NVIDIA CEO 市值蒸发1.4万亿",
+          "link": "https://the-decoder.com/jensen-huang-resigns-as-nvidia-ceo-after-espionage-scandal-wipes-out-1-4-trillion-in-market-value/",
+          "date": "Thu, 12 Nov 2026 14:11:40 +0000",
+          "desc": "Jensen Huang resigned as CEO, president, and board member of Nvidia effective immediately, according to a statement on November 12, 2026.\nThe article Jensen Huang resigns as Nvidia CEO after espionage scandal wipes out $",
+          "title_en": "Jensen Huang resigns as Nvidia CEO after espionage scandal wipes out $1.4 trillion in market value"
+        },
+        {
+          "title": "ElevenLabs Scribe v3 Live用对话上下文防语音代理打断用户",
+          "link": "https://the-decoder.com/elevenlabs-scribe-v3-live-uses-conversational-context-to-stop-voice-agents-from-cutting-off-callers-mid-sentence/",
+          "date": "Thu, 12 Nov 2026 13:48:19 +0000",
+          "desc": "ElevenLabs has released Scribe v3 and Scribe v3 Live, two new speech recognition models designed to transcribe accurately through background noise and crosstalk. Benchmarks from Artificial Analysis confirm that Scribe v3",
+          "title_en": "ElevenLabs Scribe v3 Live uses conversational context to stop voice agents from cutting off callers mid-sentence"
+        },
+        {
+          "title": "Google Deepmind用AlphaGenome 2将基因组AI转向单细胞分辨率",
+          "link": "https://the-decoder.com/google-deepmind-shifts-genomics-ai-from-bulk-tissue-predictions-to-single-cell-type-resolution-with-alphagenome-2/",
+          "date": "Thu, 12 Nov 2026 12:09:43 +0000",
+          "desc": "Google Deepmind has unveiled AlphaGenome 2, an AI model that analyzes genetic variants for individual cell types rather than across bulk tissue. Trained on more than 107 million cell profiles, it identifies nearly twice ",
+          "title_en": "Google Deepmind shifts genomics AI from bulk tissue predictions to single cell type resolution with AlphaGenome 2"
+        },
+        {
+          "title": "澳大利亚AI法案拟强制前沿模型接受独立测试",
+          "link": "https://the-decoder.com/australias-proposed-ai-safety-bill-would-force-frontier-model-makers-to-open-up-to-independent-testing/",
+          "date": "Thu, 12 Nov 2026 10:09:56 +0000",
+          "desc": "Australia's government, led by Prime Minister Anthony Albanese, wants to enshrine mandatory safety rules for frontier AI companies in law for the first time. A new regulator would enforce independent model audits and imp",
+          "title_en": "Australia's proposed AI safety bill would force frontier model makers to open up to independent testing"
+        },
         {
           "title": "Google推Gemini Decision 1一次评分千题",
           "link": "https://the-decoder.com/google-joins-the-decision-model-wave-with-gemini-decision-1-scoring-1000-questions-in-a-single-pass/",
@@ -483,48 +480,6 @@
           "date": "Wed, 11 Nov 2026 19:35:11 +0000",
           "desc": "According to the Ramp AI Index, US corporate AI spending rose just 1.65 percent in October 2026. One percent of companies still drive 80 percent of revenue for OpenAI and Anthropic. Customer support is emerging as a new ",
           "title_en": "US corporate AI spending hits a new high in October, but growth slows to 1.65 percent"
-        },
-        {
-          "title": "Google DeepMind用AlphaProof Code四周验证Signal加密核心",
-          "link": "https://the-decoder.com/google-deepminds-alphaproof-code-verified-signals-cryptographic-core-in-four-weeks-instead-of-years/",
-          "date": "Wed, 11 Nov 2026 18:18:25 +0000",
-          "desc": "Google Deepmind's AlphaProof Code mathematically verified Signal's cryptographic core code in four weeks, a process that typically takes years. AI agents powered by Gemini Carbon wrote more than six million lines of proo",
-          "title_en": "Google Deepmind's AlphaProof Code verified Signal's cryptographic core in four weeks instead of years"
-        },
-        {
-          "title": "Helsing建AI系统为武器准备目标称决策有人负责",
-          "link": "https://the-decoder.com/helsing-built-an-ai-system-that-prepares-targets-for-weapons-systems-and-says-every-decision-will-carry-a-human-name/",
-          "date": "Wed, 11 Nov 2026 15:12:53 +0000",
-          "desc": "Helsing has unveiled Clarity, an AI platform that uses agents to distill sensor data into target recommendations for weapons systems, all under human oversight and European control. But experience from the Iran war, Gaza",
-          "title_en": "Helsing built an AI system that prepares targets for weapons systems and says every decision will carry a human name"
-        },
-        {
-          "title": "Anthropic称AI削弱NVIDIA CUDA优势AMD切换从数月到三天",
-          "link": "https://the-decoder.com/anthropic-says-ai-is-eroding-nvidias-cuda-lead-cutting-an-amd-chip-switch-from-months-to-three-days/",
-          "date": "Wed, 11 Nov 2026 14:25:20 +0000",
-          "desc": "Anthropic claims it used AI itself to breach Nvidia's CUDA moat. The company's in-house model Mythos reportedly ported Claude to AMD GPUs in just three days, with almost no human intervention. Anthropic now runs Claude o",
-          "title_en": "Anthropic says AI is eroding Nvidia's CUDA lead, cutting an AMD chip switch from months to three days"
-        },
-        {
-          "title": "美国数据商向中国AI实验室售5亿美元RL训练环境",
-          "link": "https://the-decoder.com/us-data-brokers-are-selling-half-a-billion-dollars-in-rl-training-environments-to-chinese-ai-labs/",
-          "date": "Wed, 11 Nov 2026 13:51:11 +0000",
-          "desc": "US data brokers like Mercor, Surge AI, and AfterQuery are selling roughly half a billion dollars' worth of AI training data to Chinese labs, according to a ChinaTalk investigation. That includes the same RL environments ",
-          "title_en": "US data brokers are selling half a billion dollars in RL training environments to Chinese AI labs"
-        },
-        {
-          "title": "DeepL希望实时翻译终于能捕捉讽刺与情绪变化",
-          "link": "https://the-decoder.com/with-its-new-voice-model-deepl-voice-now-translates-intonation-and-speaking-speed-into-other-languages-as-well/",
-          "date": "Wed, 11 Nov 2026 13:50:30 +0000",
-          "desc": "DeepL Voice's real-time translations are about to sound a lot more natural. The company's new Aure model carries over tone, emotion, emphasis, and speaking pace from the original speaker's voice into the target language.",
-          "title_en": "DeepL wants real-time translation to finally capture sarcasm and mood shifts"
-        },
-        {
-          "title": "Grok构建应用泄露患者数据明文密码及SpaceXSI销售管道",
-          "link": "https://the-decoder.com/grok-built-apps-exposed-patient-data-plaintext-passwords-and-spacexsis-own-sales-pipeline/",
-          "date": "Wed, 11 Nov 2026 12:53:07 +0000",
-          "desc": "Security firm Claroc found more than 35,000 Grok-built apps open to anyone without login, including patient data and confidential SpaceXSI documents. The cause: \"Anyone with the link\" was preselected as the default acces",
-          "title_en": "Grok-built apps exposed patient data, plaintext passwords, and SpaceXSI's own sales pipeline"
         }
       ],
       "error": null
@@ -533,6 +488,13 @@
       "name": "TLDR AI",
       "url": "https://tldr.tech/api/rss/ai",
       "items": [
+        {
+          "title": "Grok Bot 1.0与AlphaGenome 2及Gemini Decisions",
+          "link": "https://tldr.tech/ai/2026-11-12",
+          "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+          "desc": "",
+          "title_en": "Grok Bot 1.0 🤖, AlphaGenome 2 🧬, Gemini Decisions 🧠"
+        },
         {
           "title": "Gemini 4 Carbon、Claude Sheets与Antigravity Swarm",
           "link": "https://tldr.tech/ai/2026-11-11",
@@ -581,13 +543,6 @@
           "date": "Tue, 03 Nov 2026 00:00:00 GMT",
           "desc": "",
           "title_en": "Claude Message Threads 🧵, Astra 6.2 spotted 👀, Anthropic nears RSI 🔄"
-        },
-        {
-          "title": "DeepSeek超级代理 GPT-6 Rosalind Google轨道计算",
-          "link": "https://tldr.tech/ai/2026-11-02",
-          "date": "Mon, 02 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "DeepSeek super agent 🤖, GPT-6 Rosalind 🧬, Google orbital compute 🛰️"
         }
       ],
       "error": null
@@ -596,6 +551,27 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "items": [
+        {
+          "title": "Amplitude如何用OpenAI一两天交付产品改进",
+          "link": "https://openai.com/index/amplitude",
+          "date": "Thu, 12 Nov 2026 20:00:00 GMT",
+          "desc": "",
+          "title_en": "How Amplitude ships product improvements in 1–2 days with OpenAI"
+        },
+        {
+          "title": "Holiday Extras重新思考用Codex构建什么",
+          "link": "https://openai.com/business/customer-stories/holidays-extras-codex",
+          "date": "Thu, 12 Nov 2026 09:30:00 GMT",
+          "desc": "",
+          "title_en": "Holiday Extras is rethinking what it can build with Codex"
+        },
+        {
+          "title": "支持AI与儿童安全研究",
+          "link": "https://openai.com/index/children-first-declaration",
+          "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+          "desc": "",
+          "title_en": "Supporting research on AI and children’s safety"
+        },
         {
           "title": "Gilbert + Tobin用AI重塑法律业务",
           "link": "https://openai.com/index/gilbert-tobin-sam-nickless",
@@ -630,27 +606,6 @@
           "date": "Tue, 10 Nov 2026 10:00:00 GMT",
           "desc": "",
           "title_en": "Introducing Businesses in ChatGPT"
-        },
-        {
-          "title": "弥合教育中的 AI 指导差距",
-          "link": "https://openai.com/index/closing-ai-guidance-gap-education",
-          "date": "Tue, 10 Nov 2026 09:00:00 GMT",
-          "desc": "",
-          "title_en": "Closing the AI guidance gap in education"
-        },
-        {
-          "title": "新加坡航空用OpenAI技术提升旅行与工作体验",
-          "link": "https://openai.com/index/singapore-airlines-travel-work",
-          "date": "Tue, 10 Nov 2026 08:00:00 GMT",
-          "desc": "",
-          "title_en": "Singapore Airlines elevates travel & work with OpenAI technology"
-        },
-        {
-          "title": "前沿工作 AI 对自由职业的影响",
-          "link": "https://openai.com/index/ai-effect-on-freelance-work",
-          "date": "Tue, 10 Nov 2026 07:00:00 GMT",
-          "desc": "",
-          "title_en": "Work at the Frontier: AI’s effect on freelance work"
         }
       ],
       "error": null
@@ -659,6 +614,13 @@
       "name": "Google AI Blog",
       "url": "https://blog.google/technology/ai/rss/",
       "items": [
+        {
+          "title": "Google搜索借Gemini 4 Hydrogen重大升级",
+          "link": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+          "date": "Thu, 12 Nov 2026 18:00:00 +0000",
+          "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HydrogenUI_socialshare.max-600x600.format-webp.webp\">We are bringing Gemini 4 Hydrogen to Google Search globally to provide you with more helpful,",
+          "title_en": "Google Search gets a major upgrade with Gemini 4 Hydrogen"
+        },
         {
           "title": "Gemini Decisions API快速校准的多模态决策",
           "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
@@ -707,13 +669,6 @@
           "date": "Thu, 05 Nov 2026 17:00:00 +0000",
           "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-omni-1.2_FZLql41.max-600x600.format-webp.webp\">Gemini Omni 1.2 Flash brings native 15-second video generation and editing, stronger consist",
           "title_en": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips"
-        },
-        {
-          "title": "2026年10月AI新闻汇总",
-          "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
-          "date": "Mon, 02 Nov 2026 17:45:00 +0000",
-          "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Oct_AI_Recap_social.max-600x600.format-webp.webp\">Here are Google’s latest AI updates from October 2026",
-          "title_en": "The latest AI news we announced in October 2026"
         }
       ],
       "error": null
@@ -786,6 +741,20 @@
       "url": "https://huggingface.co/blog/feed.xml",
       "items": [
         {
+          "title": "LLMON原生LLM标记语言现已用于Granite 4.1 3B和8B",
+          "link": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+          "date": "Thu, 12 Nov 2026 19:07:35 GMT",
+          "desc": "",
+          "title_en": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B"
+        },
+        {
+          "title": "3D生成模型微调终极指南",
+          "link": "https://huggingface.co/blog/3d-lora-finetuning",
+          "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+          "desc": "",
+          "title_en": "The Definitive Fine-Tuning Guide for 3D Generation Models"
+        },
+        {
           "title": "BotPsy基于十亿参数以下代理语言模型的端侧助手",
           "link": "https://huggingface.co/blog/qvac/botpsy",
           "date": "Wed, 11 Nov 2026 05:01:16 GMT",
@@ -826,20 +795,6 @@
           "date": "Mon, 09 Nov 2026 12:34:29 GMT",
           "desc": "",
           "title_en": "Your Experts Have Partners. There's HOPE for Keeping Them Together"
-        },
-        {
-          "title": "ToyBlocks受控机器人学习评估世界",
-          "link": "https://huggingface.co/blog/allenai/toyblocks",
-          "date": "Fri, 06 Nov 2026 14:00:48 GMT",
-          "desc": "",
-          "title_en": "ToyBlocks: A controlled world for robot learning and evaluation"
-        },
-        {
-          "title": "埃及与尼日利亚英语加入Open ASR Leaderboard",
-          "link": "https://huggingface.co/blog/open-asr-leaderboard-liva",
-          "date": "Fri, 06 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "Egyptian and Nigerian English join the Open ASR Leaderboard"
         }
       ],
       "error": null
@@ -847,128 +802,14 @@
     {
       "name": "arXiv cs.AI",
       "url": "https://export.arxiv.org/rss/cs.AI",
-      "items": [
-        {
-          "title": "面向自主X射线实验的可审计人机团队",
-          "link": "https://arxiv.org/abs/2611.12933",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12933v1 Announce Type: new \nAbstract: Closed-loop autonomous experimentation can accelerate scientific discovery, but implementation effort limits accessibility. Agentic systems may lower this barrier, althoug",
-          "title_en": "Auditable Human-Agent Teams for Autonomous X-ray Experimentation"
-        },
-        {
-          "title": "EarthRecord用多模态代理从四十年卫星影像看土地变化",
-          "link": "https://arxiv.org/abs/2611.12934",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12934v1 Announce Type: new \nAbstract: While multimodal agents now carry out complex data analysis with tools, their ability to turn decades of satellite imagery into reliable land-change analysis, crucial for ",
-          "title_en": "EarthRecord: From Pixels to Land Change with Multimodal Agents over Four Decades of Satellite Imagery"
-        },
-        {
-          "title": "预填充训练解码监控用稀疏自编码器监测主题",
-          "link": "https://arxiv.org/abs/2611.12935",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12935v1 Announce Type: new \nAbstract: Topic monitoring is the task of labelling the topic of each token in a model's response during generation. Activation-based monitors that run at generation time have so fa",
-          "title_en": "Train on prefill, monitor at decode: Using sparse autoencoders for topic monitoring"
-        },
-        {
-          "title": "LandslideFM面向统一滑坡感知与理解的基础模型",
-          "link": "https://arxiv.org/abs/2611.12936",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12936v1 Announce Type: new \nAbstract: Intelligent landslide detection is essential for disaster prevention. However, existing models primarily focus on isolated visual tasks, require extensive labeled data, an",
-          "title_en": "LandslideFM: A Foundation Model Towards Unified Landslide Perception and Understanding"
-        },
-        {
-          "title": "追踪大语言模型中的心理测量推断",
-          "link": "https://arxiv.org/abs/2611.12937",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12937v1 Announce Type: new \nAbstract: Do large language models represent psychological constructs internally, or do they only generate outputs that resemble psychometric structure? We address this question usi",
-          "title_en": "Tracing Psychometric Inference in Large Language Models"
-        },
-        {
-          "title": "知识图谱问答提示中的图可视化",
-          "link": "https://arxiv.org/abs/2611.12938",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12938v1 Announce Type: new \nAbstract: We study when and how multimodal input improves knowledge graph question answering (KGQA) in large vision--language models. Using a controlled evaluation over 1,500 WebQSP",
-          "title_en": "Graph Visualizations in Prompts for Knowledge Graph Question Answering"
-        },
-        {
-          "title": "基于强化学习的癌症化疗控制",
-          "link": "https://arxiv.org/abs/2611.12940",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12940v1 Announce Type: new \nAbstract: Reinforcement Learning has achieved tremendous success in recent years. Extending its scope from the traditional complex games such as Atari, Go, Pokeman, and Chess, reinf",
-          "title_en": "Reinforcement Learning based control of Cancer Chemotherapy treatments"
-        },
-        {
-          "title": "AI治理应优先控制与知识边界而非限制智能",
-          "link": "https://arxiv.org/abs/2611.12941",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12941v1 Announce Type: new \nAbstract: The rapid proliferation of autonomously acting AI agents makes the governance of agentic systems urgent. We propose the competence circuit, summarized as IKC + KC + C, tha",
-          "title_en": "AI Governance Should Prioritize Control and Knowledge Boundaries Over Limiting Intelligence"
-        }
-      ],
-      "error": null
+      "items": [],
+      "error": "本期无条目"
     },
     {
       "name": "arXiv cs.CL",
       "url": "https://export.arxiv.org/rss/cs.CL",
-      "items": [
-        {
-          "title": "抑郁问卷推断的可归因症状证据片段",
-          "link": "https://arxiv.org/abs/2611.12900",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12900v1 Announce Type: new \nAbstract: Longitudinal social-media histories offer an opportunity to assess depression, potentially supporting the inference of standardized depression questionnaire responses. How",
-          "title_en": "From Relevant Posts to Attributable Spans: Explicit Symptom Evidence for Depression Questionnaire Inference"
-        },
-        {
-          "title": "Spikes中重思用步感知解码缓解MDLM幻觉",
-          "link": "https://arxiv.org/abs/2611.12901",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12901v1 Announce Type: new \nAbstract: Recent advancements in multimodal diffusion language models (MDLMs) have exhibited strong global modeling capabilities through iterative refinement. We observe that mask u",
-          "title_en": "Rethinking in Spikes: Mitigating Hallucinations in MDLMs with Step-Aware Decoding"
-        },
-        {
-          "title": "TimeOmni-o1双向耦合时序基础模型与LLM做多模态推理预测",
-          "link": "https://arxiv.org/abs/2611.12902",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12902v1 Announce Type: new \nAbstract: Time series from real-world systems are often accompanied by text, such as a report on an event that affects them. Two common tasks on these series are understanding, e.g.",
-          "title_en": "TimeOmni-o1: Bidirectionally Coupling Time Series Foundation Models and LLMs for Multimodal Reasoning and Forecasting"
-        },
-        {
-          "title": "SELD检测上下文压缩中答案外的静默证据丢失",
-          "link": "https://arxiv.org/abs/2611.12903",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12903v1 Announce Type: new \nAbstract: Context compression is now routine for language models with long inputs, but a compressed context is useful only if it keeps the evidence for the answer. Existing checks c",
-          "title_en": "SELD: Detecting Silent Evidence Loss in Context Compression beyond the Answer"
-        },
-        {
-          "title": "临床文档编辑数据提升模型的可操作反馈",
-          "link": "https://arxiv.org/abs/2611.12904",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12904v1 Announce Type: new \nAbstract: Large language models (LLMs) are increasingly being deployed in clinical documentation workflows, where clinicians review and edit their outputs before use. In principle, ",
-          "title_en": "Actionable Feedback: Improving Model Capabilities from User Edit Data on Clinical Documentation"
-        },
-        {
-          "title": "Brasilidade衡量大语言模型的巴西身份",
-          "link": "https://arxiv.org/abs/2611.12906",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12906v1 Announce Type: new \nAbstract: This work presents a new benchmark that aims to address the limitations of current methods for evaluating LLMs in Brazilian Portuguese. We introduced Brasilidade, an asses",
-          "title_en": "Brasilidade: Measuring Brazilian Identity for Large Language Models"
-        },
-        {
-          "title": "IntentTwin消除候选支持与部署差距混淆",
-          "link": "https://arxiv.org/abs/2611.12918",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12918v1 Announce Type: new \nAbstract: Offline web-behavior benchmarks frequently insert the demonstrated action into a finite candidate set and then measure reranking. We show that this protocol can create a c",
-          "title_en": "IntentTwin: Deconfounding Candidate Support and the Oracle-to-Deployment Gap in Offline Web Behavior Prediction"
-        },
-        {
-          "title": "源头容量分配用稀疏目标优化LLM知识编辑",
-          "link": "https://arxiv.org/abs/2611.12995",
-          "date": "Wed, 11 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.12995v1 Announce Type: new \nAbstract: Knowledge editing has emerged as a promising approach for efficiently updating embedded knowledge in large language models (LLMs). It first computes an ideal target hidden",
-          "title_en": "Capacity Allocation at the Source: Sparse Target Optimization for LLM Knowledge Editing"
-        }
-      ],
-      "error": null
+      "items": [],
+      "error": "本期无条目"
     }
   ]
 }
