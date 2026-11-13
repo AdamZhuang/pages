@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>avatar · 会话列表「正在工作」动效示意（issue #60）</title>
+<style>
+  /* 颜色取 apps/mobile/src/styles/tokens.css，与 App 内视觉同源。示例数据：全部虚构。 */
+  :root {
+    --bg: #f5f6f8;
+    --surface: #ffffff;
+    --border: #eaecf0;
+    --text: #1f2329;
+    --text-soft: #373c43;
+    --muted: #646a73;
+    --muted-2: #8f959e;
+    --accent: #3370ff;
+    --accent-strong: #245bdb;
+    --accent-soft: #eef3ff;
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 26px 20px 80px;
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+  }
+  .banner {
+    max-width: 940px; margin: 0 auto 22px; padding: 9px 14px;
+    border-radius: 10px; background: #fff6e5; color: #8a6100;
+    font-size: 12.5px; font-weight: 600;
+  }
+  h1 { max-width: 940px; margin: 0 auto 6px; font-size: 21px; letter-spacing: -.01em; }
+  .sub { max-width: 940px; margin: 0 auto 26px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+  .grid { max-width: 940px; margin: 0 auto; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
+  .card { background: var(--surface); border-radius: 16px; padding: 16px 0 6px; box-shadow: 0 2px 12px rgba(31,35,41,.06); }
+  .card > header { padding: 0 16px 12px; }
+  .card h2 { margin: 0 0 3px; font-size: 14.5px; letter-spacing: -.01em; }
+  .card h2 em { font-style: normal; color: var(--accent); }
+  .card p { margin: 0; color: var(--muted-2); font-size: 12px; line-height: 1.6; }
+
+  /* ── 会话行骨架（394 宽手机口径） ── */
+  .rows { padding: 0 0 6px; }
+  .row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12.5px 16px; position: relative;
+  }
+  .row + .row::before {
+    content: ""; position: absolute; left: 74px; right: 0; top: 0; height: 1px;
+    background: rgba(0,0,0,.06);
+  }
+  .av {
+    position: relative; flex: 0 0 auto;
+    width: 46px; height: 46px; border-radius: 16px;
+    display: grid; place-items: center;
+    font-size: 19px; font-weight: 650;
+    border: 1px solid rgba(0,0,0,.06);
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  }
+  .av img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
+  .main { flex: 1; min-width: 0; }
+  .top { display: flex; align-items: baseline; gap: 8px; }
+  .name { font-size: 16px; font-weight: 620; letter-spacing: -.01em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .time { margin-left: auto; flex: 0 0 auto; font-size: 12.5px; color: var(--muted-2); }
+  .preview { margin-top: 3px; font-size: 13.5px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .working-text {
+    display: inline-block; font-size: 13px; font-weight: 600;
+    background: linear-gradient(90deg,#6b7688 0%,#6b7688 25%,#2563eb 45%,#60a5fa 50%,#2563eb 55%,#6b7688 75%,#6b7688 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    animation: shimmer 2.6s infinite ease-in-out;
+  }
+  @keyframes shimmer { 0%{background-position:100% 0} 100%{background-position:0 0} }
+
+  /* ── A · 头像环形流动 ── */
+  .av--ring::before {
+    content: ""; position: absolute; inset: -3px; border-radius: 19px; z-index: 0;
+    background: conic-gradient(from 0deg, rgba(51,112,255,0) 0deg, rgba(51,112,255,.85) 90deg, rgba(96,165,250,.15) 200deg, rgba(51,112,255,0) 360deg);
+    animation: spin 2.4s linear infinite;
+  }
+  .av--ring::after {
+    content: ""; position: absolute; inset: -3px; border-radius: 19px; z-index: 1;
+    background: var(--surface);
+  }
+  .av--ring > * { position: relative; z-index: 2; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── B · 呼吸光晕 + 右上绿点 ── */
+  .av--halo { animation: halo 1.5s infinite ease-in-out; }
+  @keyframes halo {
+    0%,100% { box-shadow: 0 0 0 1.5px rgba(51,112,255,.30), 0 0 0 3px rgba(51,112,255,.14); }
+    50%     { box-shadow: 0 0 0 2.5px rgba(51,112,255,.55), 0 0 0 6px rgba(51,112,255,.22), 0 0 12px rgba(51,112,255,.20); }
+  }
+  .dot {
+    position: absolute; right: -2px; top: -2px; width: 11px; height: 11px; border-radius: 50%;
+    background: #22c55e; box-shadow: 0 0 0 2px var(--surface);
+    animation: pulse 1.6s infinite ease-in-out; z-index: 3;
+  }
+  @keyframes pulse { 0%,100%{transform:scale(.85);opacity:.85} 50%{transform:scale(1.12);opacity:1} }
+
+  /* ── C · 标题右侧三点跳动 ── */
+  .dots { display: inline-flex; align-items: center; gap: 3px; margin-left: 2px; }
+  .dots i {
+    width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
+    animation: bounce 1.4s infinite ease-in-out;
+  }
+  .dots i:nth-child(2) { animation-delay: .16s; }
+  .dots i:nth-child(3) { animation-delay: .32s; }
+  @keyframes bounce {
+    0%,60%,100% { transform: translateY(0); opacity: .38; }
+    30% { transform: translateY(-3px); opacity: 1; }
+  }
+
+  /* ── D · A + C 组合 ── */
+  .legend { padding: 2px 16px 14px; color: var(--muted-2); font-size: 11.5px; line-height: 1.65; }
+  .legend b { color: var(--text-soft); font-weight: 600; }
+  .pick { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: 10.5px; font-weight: 700; }
+
+  /* 详情页头部示意 */
+  .hdr { display: flex; align-items: center; gap: 10px; padding: 10px 16px 14px; border-top: 1px solid var(--border); }
+  .hdr .av { width: 42px; height: 42px; border-radius: 13px; }
+  .hdr .title { font-size: 17px; font-weight: 700; }
+  .hdr .state { margin-left: auto; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="banner">示例数据：人名、消息内容、时间全部虚构，仅展示动效形态。</div>
+<h1>会话列表「正在工作」动效 · 4 版示意（issue #60）</h1>
+<p class="sub">同一行正在跑的会话，用四种方式表达。判断标准：把手机放在桌上瞥一眼，能不能立刻看出「这行在干活」。</p>
+
+<div class="grid">
+
+  <!-- A -->
+  <section class="card">
+    <header>
+      <h2>A · 头像环形流动</h2>
+      <p>头像外圈一条 2px 弧线绕圈，2.4s 一圈。最克制，不占额外空间。</p>
+    </header>
+    <div class="rows">
+      <div class="row">
+        <span class="av av--ring" style="background:#e8f4ee;color:#1f8a3b"><span>苔</span></span>
+        <span class="main">
+          <span class="top"><span class="name">苔原</span><span class="time">19:26</span></span>
+          <span class="preview"><span class="working-text">正在响应…</span></span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="av" style="background:#eef3ff;color:#245bdb">星</span>
+        <span class="main">
+          <span class="top"><span class="name">星野</span><span class="time">17:04</span></span>
+          <span class="preview">复盘稿已交付，路径与要点都写在这里了。</span>
+        </span>
+      </div>
+    </div>
+    <div class="legend">静止截图里也看得到一段弧，只是不知道它在转。</div>
+  </section>
+
+  <!-- B -->
+  <section class="card">
+    <header>
+      <h2>B · 呼吸光晕 + 绿点</h2>
+      <p>修好现有 set 的两个 bug：光晕被 <code>!important</code> 盖掉、绿点 <code>display:none</code> 从未打开。</p>
+    </header>
+    <div class="rows">
+      <div class="row">
+        <span class="av av--halo" style="background:#e8f4ee;color:#1f8a3b"><span>苔</span><span class="dot"></span></span>
+        <span class="main">
+          <span class="top"><span class="name">苔原</span><span class="time">19:26</span></span>
+          <span class="preview"><span class="working-text">正在响应…</span></span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="av" style="background:#eef3ff;color:#245bdb">星</span>
+        <span class="main">
+          <span class="top"><span class="name">星野</span><span class="time">17:04</span></span>
+          <span class="preview">复盘稿已交付，路径与要点都写在这里了。</span>
+        </span>
+      </div>
+    </div>
+    <div class="legend">改动量最小，但<b>静止截图里只有那颗小绿点</b>，瞥一眼容易漏。</div>
+  </section>
+
+  <!-- C -->
+  <section class="card">
+    <header>
+      <h2>C · 标题右侧三点跳动</h2>
+      <p>会话名后三颗 5px 圆点依次跳动，1.4s 一轮。最像「正在打字」。</p>
+    </header>
+    <div class="rows">
+      <div class="row">
+        <span class="av" style="background:#e8f4ee;color:#1f8a3b">苔</span>
+        <span class="main">
+          <span class="top">
+            <span class="name">苔原<span class="dots"><i></i><i></i><i></i></span></span>
+            <span class="time">19:26</span>
+          </span>
+          <span class="preview"><span class="working-text">正在响应…</span></span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="av" style="background:#eef3ff;color:#245bdb">星</span>
+        <span class="main">
+          <span class="top"><span class="name">星野</span><span class="time">17:04</span></span>
+          <span class="preview">复盘稿已交付，路径与要点都写在这里了。</span>
+        </span>
+      </div>
+    </div>
+    <div class="legend">最容易被看见，但会挤占标题行；长名字要防换行。</div>
+  </section>
+
+  <!-- D -->
+  <section class="card">
+    <header>
+      <h2>D · A + C 组合 <span class="pick">产品倾向</span></h2>
+      <p>头像持续环流（长期状态）＋ 标题三点跳动（活跃动作），不同频率避免同步闪。</p>
+    </header>
+    <div class="rows">
+      <div class="row">
+        <span class="av av--ring" style="background:#e8f4ee;color:#1f8a3b"><span>苔</span></span>
+        <span class="main">
+          <span class="top">
+            <span class="name">苔原<span class="dots"><i></i><i></i><i></i></span></span>
+            <span class="time">19:26</span>
+          </span>
+          <span class="preview"><span class="working-text">正在响应…</span></span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="av" style="background:#eef3ff;color:#245bdb">星</span>
+        <span class="main">
+          <span class="top"><span class="name">星野</span><span class="time">17:04</span></span>
+          <span class="preview">复盘稿已交付，路径与要点都写在这里了。</span>
+        </span>
+      </div>
+    </div>
+    <div class="hdr">
+      <span class="av av--ring" style="background:#e8f4ee;color:#1f8a3b"><span>苔</span></span>
+      <span class="title">苔原</span>
+      <span class="state">正在工作</span>
+    </div>
+    <div class="legend">列表与详情页用同一套语言；<b>等用户交互</b>时环流停下、只留静态浅色环，避免「还在忙」的误读。</div>
+  </section>
+
+</div>
+</body>
+</html>
