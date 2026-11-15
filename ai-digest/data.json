@@ -1,87 +1,24 @@
 {
-  "date": "2026-11-15",
-  "generated_at": "2026-11-15T04:32:18.179926+08:00",
+  "date": "2026-11-16",
+  "generated_at": "2026-11-16T04:30:40.939852+08:00",
   "hn": [
     {
-      "title": "Nvidia被指资助AI初创买其GPU制造稀缺",
-      "link": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
-      "points": 995,
-      "comments": 600,
-      "date": "2026-11-14 02:52Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50493251",
-      "title_en": "Nvidia allegedly engineered scarcity by funding AI startups to buy its GPUs"
+      "title": "所有AI生成代码应开源",
+      "link": "https://jakub.jankiewicz.org/blog/ai-code-open-source/",
+      "points": 906,
+      "comments": 484,
+      "date": "2026-11-15 14:46Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50507303",
+      "title_en": "All AI-generated code should be Open Source"
     },
     {
-      "title": "Unsloth Qwen3.8-27B量化Dynamic v3.1更新",
-      "link": "https://unsloth.ai/docs/models/qwen3.8",
-      "points": 236,
-      "comments": 75,
-      "date": "2026-11-14 00:06Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50491980",
-      "title_en": "Unsloth Qwen3.8-27B Quantizations – Dynamic v3.1 Update"
-    },
-    {
-      "title": "Claude的错觉",
-      "link": "https://www.netmeister.org/blog/claude-delusion.html",
-      "points": 133,
-      "comments": 180,
-      "date": "2026-11-14 13:36Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50496921",
-      "title_en": "The Claude Delusion"
-    },
-    {
-      "title": "vLLM双Nvidia DGX服务GLM-5.3达607.8 tok/s",
-      "link": "https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/",
-      "points": 117,
-      "comments": 57,
-      "date": "2026-11-14 14:09Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50497155",
-      "title_en": "Serving GLM-5.3 at 607.8 tok/s across two Nvidia DGX stations with vLLM"
-    },
-    {
-      "title": "Claude会议",
-      "link": "https://claude.com/resources/articles/claude-meetings",
-      "points": 107,
-      "comments": 86,
-      "date": "2026-11-13 22:39Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50491097",
-      "title_en": "Claude Meetings"
-    },
-    {
-      "title": "Anthropic升级Claude Code Projects并行AI工作",
-      "link": "https://claude.com/resources/articles/projects-redesigned",
-      "points": 97,
-      "comments": 91,
-      "date": "2026-11-14 00:28Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50492141",
-      "title_en": "Anthropic upgrades Claude Code Projects to run parallel AI workers"
-    },
-    {
-      "title": "Show HN：200行纯Jax实现DeepSeek V3",
-      "link": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
-      "points": 88,
-      "comments": 4,
-      "date": "2026-11-14 15:04Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50497589",
-      "title_en": "Show HN: DeepSeek V3 in ~200 lines of pure Jax"
-    },
-    {
-      "title": "Ask HN：最实用具体的AI自学技能",
-      "link": "https://news.ycombinator.com/item?id=50494696",
-      "points": 72,
-      "comments": 48,
-      "date": "2026-11-14 06:56Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50494696",
-      "title_en": "Ask HN: What are the most useful, concrete AI skills to independently learn?"
-    },
-    {
-      "title": "Show HN：Agweb不碍事的代理浏览器",
-      "link": "https://github.com/paul-nameless/agweb",
-      "points": 67,
-      "comments": 20,
-      "date": "2026-11-14 14:08Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50497147",
-      "title_en": "Show HN: Agweb – a browser for agents that stays out of your way"
+      "title": "理解现代LLM中的位置嵌入",
+      "link": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+      "points": 159,
+      "comments": 10,
+      "date": "2026-11-15 12:14Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50506376",
+      "title_en": "Understanding Positional Embeddings in Modern LLMs"
     }
   ],
   "feeds": [
@@ -145,6 +82,18 @@
       "url": "https://www.ifanr.com/feed",
       "items": [
         {
+          "title": "六年磨一「球」，好听、好看、好贵｜HomePod mini 2 体验",
+          "link": "https://www.ifanr.com/1689473?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Sun, 15 Nov 2026 10:00:17 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "刚刚，马斯克再创历史，人类首次用「筷子」夹住星舰飞船",
+          "link": "https://www.ifanr.com/1689501?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Sun, 15 Nov 2026 02:47:36 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
           "title": "早报｜英伟达员工请愿黄仁勋回归/余承东重申华为与赛力斯分工/Microsoft 365故障延续至48小时",
           "link": "https://www.ifanr.com/1689450?utm_source=rss&utm_medium=rss&utm_campaign=",
           "date": "Sat, 14 Nov 2026 00:00:42 +0000",
@@ -179,18 +128,6 @@
           "link": "https://www.ifanr.com/1689182?utm_source=rss&utm_medium=rss&utm_campaign=",
           "date": "Fri, 13 Nov 2026 06:34:19 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "早报｜黄仁勋仍为英伟达最大个人股东/豆包工作接入多款第三方模型/微信「看一看」测试短剧入口",
-          "link": "https://www.ifanr.com/1689292?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Fri, 13 Nov 2026 00:00:46 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "刚刚，Gemini 4 新模型叒来了，终于人人可用",
-          "link": "https://www.ifanr.com/1689267?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Thu, 12 Nov 2026 23:11:11 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         }
       ],
       "error": null
@@ -199,6 +136,12 @@
       "name": "少数派",
       "url": "https://sspai.com/feed",
       "items": [
+        {
+          "title": "Aerial Switcher：给 Mac 的航拍壁纸排个时间表",
+          "link": "https://sspai.com/post/118392",
+          "date": "Sun, 15 Nov 2026 15:55:16 +0800",
+          "desc": "既然 Apple 已经把同一个地方的美景从早到晚拍了一遍并做成了壁纸，为什么不能让它们跟着时间自动切换？<a href=\"https://sspai.com/post/118392\" target=\"_blank\">查看全文</a>"
+        },
         {
           "title": "怀旧手记｜索尼 CLIE：千禧年的高端 Palm OS PDA",
           "link": "https://sspai.com/post/118276",
@@ -240,12 +183,6 @@
           "link": "https://sspai.com/post/85735",
           "date": "Thu, 12 Nov 2026 14:42:04 +0800",
           "desc": "内存、存储涨价但又得换 Mac？记得收下这份选购指南。<a href=\"https://sspai.com/post/85735\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "让老音箱焕发新生：Home Assistant Connect AUX-2 首发体验",
-          "link": "https://sspai.com/post/118921",
-          "date": "Thu, 12 Nov 2026 11:12:02 +0800",
-          "desc": "玩智能家居这几年，灯光、传感器和开关基本已经靠着Matter和HomeAssistant打通了，唯独多房间音频（Multi-roomAudio）还停留在各自为战的阶段。想让客厅的HomePod、书房的 ...<a href=\"https://sspai.com/post/118921\" target=\"_blank\">查看全文</a>"
         }
       ],
       "error": null
@@ -254,6 +191,20 @@
       "name": "The Verge · AI",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "items": [
+        {
+          "title": "Nvidia间谍丑闻后国会拟收紧AI芯片出口规则",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china",
+          "date": "2026-11-15T14:15:43-05:00",
+          "desc": "",
+          "title_en": "Congress wants to tighten export rules on AI chips after Nvidia spy scandal"
+        },
+        {
+          "title": "黄仁勋混乱时期概览",
+          "link": "https://www.theverge.com/column/1033943/jensen-huang-nvidia-china-spying-scandal-resignation",
+          "date": "2026-11-14T19:09:10-05:00",
+          "desc": "",
+          "title_en": "An overview of Jensen Huang’s messy days"
+        },
         {
           "title": "解雇Sam Altman的OpenAI董事称仍难信AI CEO",
           "link": "https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview",
@@ -295,20 +246,6 @@
           "date": "2026-11-12T19:23:32-05:00",
           "desc": "",
           "title_en": "Claude’s Duet agent is a little neurotic and surprisingly helpful"
-        },
-        {
-          "title": "谈谈黄仁勋的多段风流韵事",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1032339/lets-talk-about-the-nvidia-shitshow",
-          "date": "2026-11-13T14:07:12-05:00",
-          "desc": "",
-          "title_en": "Let’s talk about Jensen Huang’s many affairs!"
-        },
-        {
-          "title": "Google新Gemini模型更懂复杂问题",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1032505/google-search-ai-mode-gemini-4-hydrogen",
-          "date": "2026-11-12T16:55:32-05:00",
-          "desc": "",
-          "title_en": "Google’s new Gemini model is better at understanding complicated questions"
         }
       ],
       "error": null
@@ -381,6 +318,27 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "items": [
         {
+          "title": "SNL召集科技巨头学习约会与间谍技巧",
+          "link": "https://techcrunch.com/2026/11/15/snl-gathers-all-the-tech-tycoons-for-a-lesson-in-dating-and-spycraft/",
+          "date": "Sun, 15 Nov 2026 20:20:57 +0000",
+          "desc": "",
+          "title_en": "SNL gathers all the tech tycoons for a lesson in dating and spycraft"
+        },
+        {
+          "title": "Nvidia安全团队当时在哪",
+          "link": "https://techcrunch.com/2026/11/14/where-was-nvidias-security-team/",
+          "date": "Sun, 15 Nov 2026 00:08:07 +0000",
+          "desc": "",
+          "title_en": "Where was Nvidia’s security team?"
+        },
+        {
+          "title": "Elon Musk等科技高管联署请愿Nvidia恢复黄仁勋",
+          "link": "https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/",
+          "date": "Sat, 14 Nov 2026 21:41:22 +0000",
+          "desc": "",
+          "title_en": "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang"
+        },
+        {
           "title": "AI墓地：失败项目与初创清单",
           "link": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
           "date": "Sat, 14 Nov 2026 17:30:00 +0000",
@@ -414,27 +372,6 @@
           "date": "Fri, 13 Nov 2026 18:40:30 +0000",
           "desc": "",
           "title_en": "Export-banned Nvidia chips are behind China’s most powerful AI models — uh-oh, Jensen!"
-        },
-        {
-          "title": "ChatGPT新Wallet让AI代理代购结账",
-          "link": "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/",
-          "date": "Fri, 13 Nov 2026 16:00:12 +0000",
-          "desc": "",
-          "title_en": "ChatGPT’s new Wallet lets AI agents shop and check out for you"
-        },
-        {
-          "title": "黄仁勋丑闻发酵时间线",
-          "link": "https://techcrunch.com/2026/11/13/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
-          "date": "Fri, 13 Nov 2026 15:58:00 +0000",
-          "desc": "",
-          "title_en": "The unfolding Jensen Huang scandal: a timeline"
-        },
-        {
-          "title": "ElevenLabs新应用整合团队会议记录与听写",
-          "link": "https://techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams/",
-          "date": "Fri, 13 Nov 2026 14:44:48 +0000",
-          "desc": "",
-          "title_en": "ElevenLabs’ new app combines meeting note-taking and dictation for teams"
         }
       ],
       "error": null
@@ -443,6 +380,34 @@
       "name": "The Decoder",
       "url": "https://the-decoder.com/feed/",
       "items": [
+        {
+          "title": "Anthropic的Claude Fable 5.2不生成图像而是绘制",
+          "link": "https://the-decoder.com/anthropics-claude-fable-5-2-doesnt-generate-images-it-paints-them/",
+          "date": "Sun, 15 Nov 2026 15:42:03 +0000",
+          "desc": "Anthropic's Claude Fable 5.2 doesn't generate images the way other AI models do. Instead of computing pixels, the language model writes Python code that places hundreds of thousands of simulated brushstrokes on a virtual",
+          "title_en": "Anthropic's Claude Fable 5.2 doesn't generate images, it paints them"
+        },
+        {
+          "title": "黄仁勋前情人公司促成近120亿美元Nvidia对华芯片订单",
+          "link": "https://the-decoder.com/firm-linked-to-jensen-huangs-ex-lover-reportedly-brokered-nearly-12-billion-in-nvidia-chip-orders-for-china/",
+          "date": "Sun, 15 Nov 2026 14:45:12 +0000",
+          "desc": "Megaspeed, the firm owned by ousted Nvidia CEO Jensen Huang's former lover Alice Huang, arranged nearly $12 billion in Nvidia chip orders for Chinese companies between 2024 and 2025, according to the WSJ. Short seller Cu",
+          "title_en": "Firm linked to Jensen Huang's ex-lover reportedly brokered nearly $12 billion in Nvidia chip orders for China"
+        },
+        {
+          "title": "澳洲央行发现AI首先冲击年轻员工尤其软件客服",
+          "link": "https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service/",
+          "date": "Sun, 15 Nov 2026 10:45:58 +0000",
+          "desc": "Australia's central bank sees early signs that AI is hitting young entry-level workers in highly exposed jobs like software development and customer service. Since ChatGPT launched, job postings and employment among 15- ",
+          "title_en": "Australia's central bank finds AI hitting young workers first, especially in software and customer service"
+        },
+        {
+          "title": "美团发布1.6万亿参数从未使用Nvidia GPU的智能体模型",
+          "link": "https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/",
+          "date": "Sun, 15 Nov 2026 10:06:06 +0000",
+          "desc": "Meituan has released the weights for LongCat-2.5, a 1.6-trillion-parameter model built for AI agents and trained entirely on Chinese hardware. On Terminal Bench, it scores 88.4 points, landing just behind Claude Opus 5. ",
+          "title_en": "Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU"
+        },
         {
           "title": "Anthropic CEO Amodei在IPO前称明年不确定性巨大",
           "link": "https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/",
@@ -470,34 +435,6 @@
           "date": "Sat, 14 Nov 2026 11:40:51 +0000",
           "desc": "OpenAI is dissolving its standalone robotics team for the second time, but not because it lacks data. General-purpose models like GPT-6 Astra can apparently control robots directly, making a dedicated unit unnecessary. T",
           "title_en": "OpenAI reassigns robotics researchers to other teams as general-purpose models might make specialized robotics AI unnecessary"
-        },
-        {
-          "title": "前研究员称Anthropic可用少量算力重训Mythos",
-          "link": "https://the-decoder.com/anthropic-can-already-retrain-mythos-with-a-fraction-of-the-compute-originally-needed-says-former-researcher-coxon/",
-          "date": "Sat, 14 Nov 2026 11:21:41 +0000",
-          "desc": "Former OpenAI and Anthropic researcher Jacob Coxon points to a slide from Anthropic's IPO roadshow as a reason he left, saying it shows the company's algorithms are improving not just quickly but at an accelerating rate.",
-          "title_en": "Anthropic can already retrain Mythos with \"a fraction of the compute originally needed,\" says former researcher Coxon"
-        },
-        {
-          "title": "Runway开源Praxis-1将视频AI变为机器人控制器",
-          "link": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller/",
-          "date": "Sat, 14 Nov 2026 09:45:45 +0000",
-          "desc": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvid",
-          "title_en": "Runway's open-source Praxis-1 turns video AI into a robot controller"
-        },
-        {
-          "title": "黄仁勋下台或更多源于NVIDIA高风险经营",
-          "link": "https://the-decoder.com/jensen-huangs-ouster-likely-traces-back-to-nvidias-risky-business-practices-more-than-his-personal-life/",
-          "date": "Fri, 13 Nov 2026 20:07:34 +0000",
-          "desc": "Jensen Huang likely left Nvidia more because of risky business practices than anything else, a Wall Street Journal report suggests. At the very least, those practices made him enemies internally. The company offered clou",
-          "title_en": "Jensen Huang's ouster likely traces back to Nvidia's risky business practices more than his personal life"
-        },
-        {
-          "title": "OpenAI用ChatGPT Wallet重建AI购物",
-          "link": "https://the-decoder.com/openai-rebuilt-ai-shopping-from-scratch-with-chatgpt-wallet/",
-          "date": "Fri, 13 Nov 2026 18:55:21 +0000",
-          "desc": "OpenAI is taking a second shot at AI-powered shopping with ChatGPT Wallet after scrapping its first approach, Instant Checkout. Users register a card once and confirm each purchase through Face ID or a fingerprint, while",
-          "title_en": "OpenAI rebuilt AI shopping from scratch with ChatGPT Wallet"
         }
       ],
       "error": null
@@ -505,65 +442,8 @@
     {
       "name": "TLDR AI",
       "url": "https://tldr.tech/api/rss/ai",
-      "items": [
-        {
-          "title": "Gemini 4 Hydrogen、自托管Claude代理、Replit代理商务",
-          "link": "https://tldr.tech/ai/2026-11-13",
-          "date": "Fri, 13 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "Gemini 4 Hydrogen 🚀, self-hosted Claude agents 🔒, Replit agent commerce 🛒"
-        },
-        {
-          "title": "Grok Bot 1.0与AlphaGenome 2及Gemini Decisions",
-          "link": "https://tldr.tech/ai/2026-11-12",
-          "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "Grok Bot 1.0 🤖, AlphaGenome 2 🧬, Gemini Decisions 🧠"
-        },
-        {
-          "title": "Gemini 4 Carbon、Claude Sheets与Antigravity Swarm",
-          "link": "https://tldr.tech/ai/2026-11-11",
-          "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "Gemini 4 Carbon ⚡, Claude Sheets 📊, Antigravity Swarm 🤖"
-        },
-        {
-          "title": "Claude Fable 5.2、Meta Ember 与 Google 新 TPU",
-          "link": "https://tldr.tech/ai/2026-11-10",
-          "date": "Tue, 10 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "Claude Fable 5.2 ✨, Meta Ember 🤖, Google’s new TPUs ⚡"
-        },
-        {
-          "title": "AI研发加速，OpenAI达1.25万亿美元，GitHub多人工具",
-          "link": "https://tldr.tech/ai/2026-11-09",
-          "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "AI R&D accelerates 📈, OpenAI at $1.25T 💰, GitHub’s multiplayer harness 🤖"
-        },
-        {
-          "title": "Anthropic研发加速 GPT-6 Cyber Inkling 2 Small",
-          "link": "https://tldr.tech/ai/2026-11-06",
-          "date": "Fri, 06 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "Anthropic R&D accelerates 📈, GPT-6 Cyber 🔐, Inkling 2 Small 🧠"
-        },
-        {
-          "title": "GPT-Image-2.6发布 Meta收购Conductor Cognition SWE-2 Flash",
-          "link": "https://tldr.tech/ai/2026-11-05",
-          "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "GPT-Image-2.6 🖼️, Meta buys Conductor 💻, Cognition SWE-2 Flash ⚡"
-        },
-        {
-          "title": "Siri AI开发者 Gemini Notebook API 可证明推理",
-          "link": "https://tldr.tech/ai/2026-11-04",
-          "date": "Wed, 04 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "Siri AI developer 🍎, Gemini Notebook API 👨‍💻, provable inference ⚡"
-        }
-      ],
-      "error": null
+      "items": [],
+      "error": "抓取失败: HTTPError"
     },
     {
       "name": "OpenAI News",
@@ -820,449 +700,14 @@
     {
       "name": "arXiv cs.AI",
       "url": "https://export.arxiv.org/rss/cs.AI",
-      "items": [
-        {
-          "title": "Zugwise领域感知游戏重建数字化手写棋谱",
-          "link": "https://arxiv.org/abs/2611.14544",
-          "date": "Sat, 14 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.14544v1 Announce Type: new \nAbstract: Digitizing handwritten chess scoresheets has been studied as a handwriting-recognition problem: read the move in each box and check that it is legal. This framing misses t",
-          "title_en": "Zugwise: Domain-Aware Game Reconstruction for Digitizing Handwritten Chess Scoresheets"
-        },
-        {
-          "title": "清理代理历史有害当世界仍存错误",
-          "link": "https://arxiv.org/abs/2611.14654",
-          "date": "Sat, 14 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.14654v1 Announce Type: new \nAbstract: Tool-using language-model agents accumulate histories of their own mistakes, and a system that compacts, repairs or hands off such a history decides what it says about tho",
-          "title_en": "Cleaning an Agent's History Hurts When the World Still Holds the Error"
-        },
-        {
-          "title": "Together Compiler面向AI推理的持续编译",
-          "link": "https://arxiv.org/abs/2611.14681",
-          "date": "Sat, 14 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.14681v1 Announce Type: new \nAbstract: Today's AI workloads are rapidly changing: new models are released more often, model architectures are increasingly diverse, and traffic distributions change frequently. T",
-          "title_en": "Together Compiler: Continual Compilation for AI Inference"
-        },
-        {
-          "title": "语义先验何时进入部分识别因果发现",
-          "link": "https://arxiv.org/abs/2611.14736",
-          "date": "Sat, 14 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.14736v1 Announce Type: new \nAbstract: Observational causal discovery often leaves causal di- rections unresolved or unstable. Large language mod- els (LLMs) can provide semantic information to resolve these di",
-          "title_en": "When Should Semantic Priors Enter Partially-Identified Causal Discovery?"
-        },
-        {
-          "title": "SynthCorp创建数据代理基准的平台",
-          "link": "https://arxiv.org/abs/2611.14765",
-          "date": "Sat, 14 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.14765v1 Announce Type: new \nAbstract: Current benchmarks for LLM-driven data agents saturate quickly and cannot target specific capabilities. We present SynthCorp, a platform that creates customizable data est",
-          "title_en": "SynthCorp: A Platform for Creating Benchmarks for Data Agents"
-        },
-        {
-          "title": "人类与AI社会协调中的理性时间利用",
-          "link": "https://arxiv.org/abs/2611.14766",
-          "date": "Sat, 14 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.14766v1 Announce Type: new \nAbstract: All social interactions are situated in time. Previous studies have shown that humans are able to use implicit temporal cues, such as the duration of a pause, to infer oth",
-          "title_en": "Rational Use of Time for Social Coordination in Humans and AI"
-        },
-        {
-          "title": "排行榜攻击偏好模型评估易被操纵",
-          "link": "https://arxiv.org/abs/2611.14769",
-          "date": "Sat, 14 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.14769v1 Announce Type: new \nAbstract: Arena-style rankings of language models are a widely used evaluation framework in online leaderboards, research papers, and model evaluation in production. These rankings ",
-          "title_en": "Leaderboard Hacking: Preference-Based Model Evaluations are Vulnerable to Manipulation"
-        },
-        {
-          "title": "基于预训练感知的鲁棒任务感知状态估计",
-          "link": "https://arxiv.org/abs/2611.14781",
-          "date": "Sat, 14 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.14781v1 Announce Type: new \nAbstract: Agents that perform state estimation using pretrained perception models, e.g., Vision-Language Models (VLMs), face the fundamental challenge that predictions are uncertain",
-          "title_en": "Robust Task-Aware State Estimation from Pre-trained Perception"
-        }
-      ],
-      "error": null
+      "items": [],
+      "error": "本期无条目"
     },
     {
       "name": "arXiv cs.CL",
       "url": "https://export.arxiv.org/rss/cs.CL",
       "items": [],
       "error": "本期无条目"
-    },
-    {
-      "name": "Import AI",
-      "url": "https://importai.substack.com/feed",
-      "items": [
-        {
-          "title": "Import AI 480：太空自维持经济、AI科研与Meta完美手",
-          "link": "https://importai.substack.com/p/import-ai-480-self-sustaining-space",
-          "date": "Mon, 09 Nov 2026 13:31:34 GMT",
-          "desc": "",
-          "title_en": "Import AI 480: Self-sustaining space economies; AI for science progress, and Meta builds perfect hands for a superintelligence"
-        },
-        {
-          "title": "Import AI 479：Spacewar、低延迟任务对LLM、Genie 4",
-          "link": "https://importai.substack.com/p/import-ai-479-spacewar-low-latency",
-          "date": "Mon, 02 Nov 2026 14:30:54 GMT",
-          "desc": "",
-          "title_en": "Import AI 479: Spacewar; low-latency tasks versus LLMs; Genie 4"
-        },
-        {
-          "title": "Import AI 478：对齐数学、ProgramBench、Mirendil解释RSI",
-          "link": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
-          "date": "Mon, 26 Oct 2026 12:31:52 GMT",
-          "desc": "",
-          "title_en": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means"
-        },
-        {
-          "title": "Import AI 477：我告诉IMF奇点已开始",
-          "link": "https://importai.substack.com/p/import-ai-477-in-which-i-tell-the",
-          "date": "Mon, 19 Oct 2026 12:31:37 GMT",
-          "desc": "",
-          "title_en": "Import AI 477: In which I tell the IMF the Singularity has begun"
-        },
-        {
-          "title": "Import AI 476：创造力与RSI、不如中国的开放权重模型、AI上太空",
-          "link": "https://importai.substack.com/p/import-ai-476-creativity-and-rsi",
-          "date": "Mon, 12 Oct 2026 12:30:39 GMT",
-          "desc": "",
-          "title_en": "Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space"
-        },
-        {
-          "title": "Import AI 475：群体扩展、Google DeepMind为生物加水印、AI科学经济",
-          "link": "https://importai.substack.com/p/import-ai-475-swarm-scaling-google",
-          "date": "Mon, 05 Oct 2026 12:32:30 GMT",
-          "desc": "",
-          "title_en": "Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy"
-        },
-        {
-          "title": "Import AI 474：柏拉图心智空间、太空TPU、智谱启动外层RSI循环",
-          "link": "https://importai.substack.com/p/import-ai-474-platonic-mindspace",
-          "date": "Mon, 28 Sep 2026 12:32:03 GMT",
-          "desc": "",
-          "title_en": "Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop"
-        },
-        {
-          "title": "Import AI 473：美国超级智能战略、鼠颅人脑、机器解释学",
-          "link": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
-          "date": "Mon, 21 Sep 2026 12:31:04 GMT",
-          "desc": "",
-          "title_en": "Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics"
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "Interconnects",
-      "url": "https://www.interconnects.ai/feed",
-      "items": [
-        {
-          "title": "没有Jensen的开源AI",
-          "link": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
-          "date": "Sat, 14 Nov 2026 12:23:15 GMT",
-          "desc": "",
-          "title_en": "Open-source AI without Jensen"
-        },
-        {
-          "title": "开放模型经济如今有多大",
-          "link": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model",
-          "date": "Wed, 04 Nov 2026 16:35:44 GMT",
-          "desc": "",
-          "title_en": "How big is the open model economy today?"
-        },
-        {
-          "title": "我对开放模型与网络风险的判断错了吗",
-          "link": "https://www.interconnects.ai/p/was-i-wrong-about-open-models-and",
-          "date": "Fri, 30 Oct 2026 17:36:56 GMT",
-          "desc": "",
-          "title_en": "Was I wrong about open models & cyber risks?"
-        },
-        {
-          "title": "Artificial Analysis v5与基准测试者的困境",
-          "link": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
-          "date": "Wed, 28 Oct 2026 12:58:39 GMT",
-          "desc": "",
-          "title_en": "Artificial Analysis v5 and the benchmarker's dilemma"
-        },
-        {
-          "title": "播客：Kimi K3.1 Pro、新网络现实与Muse随想",
-          "link": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
-          "date": "Sun, 25 Oct 2026 11:49:00 GMT",
-          "desc": "",
-          "title_en": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings"
-        },
-        {
-          "title": "最新开放成果#25：DeepSeek V4.1 Flash 1017、美国造模型、美中新监管",
-          "link": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
-          "date": "Tue, 20 Oct 2026 17:04:21 GMT",
-          "desc": "",
-          "title_en": "Latest open artifacts (#25): DeepSeek V4.1 Flash 1017, American-made models, and new regulatory controls in the US & China"
-        },
-        {
-          "title": "Meta重组开放与闭源前沿",
-          "link": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open",
-          "date": "Sat, 17 Oct 2026 14:06:54 GMT",
-          "desc": "",
-          "title_en": "Meta shakes up the frontiers, open and closed"
-        },
-        {
-          "title": "我预期快速进展但非通向通用超级智能",
-          "link": "https://www.interconnects.ai/p/i-expect-rapid-progress-but-not-towards",
-          "date": "Fri, 09 Oct 2026 21:33:47 GMT",
-          "desc": "",
-          "title_en": "I expect rapid progress but not towards general superintelligence"
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "Latent Space / AINews",
-      "url": "https://www.latent.space/feed",
-      "items": [
-        {
-          "title": "[AINews]拒绝AI垃圾宣言",
-          "link": "https://latent.space/p/ainews-the-no-ai-slop-manifesto/",
-          "date": "Sat, 14 Nov 2026 08:31:02 GMT",
-          "desc": "November 13, 2026 — AIE speakers unite to lay out how to fight slop.",
-          "title_en": "[AINews] The No AI Slop Manifesto"
-        },
-        {
-          "title": "[AINews] Jensen Huang领导NVIDIA 33年后辞职",
-          "link": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/",
-          "date": "Fri, 13 Nov 2026 09:04:13 GMT",
-          "desc": "November 12, 2026 — Colette Kress takes over as interim CEO. What happens to open source/American AI leadership?",
-          "title_en": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA"
-        },
-        {
-          "title": "AI雄心：ArtCraft克隆Photoshop后欲重建一切",
-          "link": "https://latent.space/p/artcraft/",
-          "date": "Fri, 13 Nov 2026 04:17:25 GMT",
-          "desc": "ArtCraft used AI to rewrite Photoshop as open source software. For CEO Brandon Thomas, the vision is even bigger: to take back the internet!",
-          "title_en": "AI Ambition: ArtCraft Cloned Photoshop and Now Wants to \"Rebuild Everything\""
-        },
-        {
-          "title": "[AINews] D-Day决策模型日",
-          "link": "https://latent.space/p/ainews-d-day-decision-models-day/",
-          "date": "Thu, 12 Nov 2026 05:26:54 GMT",
-          "desc": "November 11, 2026 — Google enters the decision model market. At AI Engineer, Cloudflare showed which parts of a build failure a classifier could handle. TypeSafe AI showed off their production customers.",
-          "title_en": "[AINews] D-Day (Decision Models Day)"
-        },
-        {
-          "title": "Jev革命：工程师已用System One模型构建什么",
-          "link": "https://latent.space/p/jev-revolution/",
-          "date": "Thu, 12 Nov 2026 05:08:20 GMT",
-          "desc": "At AI Engineer Code Summit, lead Jev creator Diogo Almeida called on developers to automate everything. Also, Glean and others showed how they’re using Jev.",
-          "title_en": "The Jev Revolution: What Engineers Are Already Building with System One Models"
-        },
-        {
-          "title": "[AINews] Mercor获7.5亿美元D轮估值200亿",
-          "link": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/",
-          "date": "Wed, 11 Nov 2026 09:34:28 GMT",
-          "desc": "November 10, 2026 — Google GA's Gemini 4 Carbon.",
-          "title_en": "[AINews] Mercor $750m Series D at $20B valuation, $3B run rate"
-        },
-        {
-          "title": "AI Engineer Code Summit：OpenAI谈Codex新工作方式",
-          "link": "https://latent.space/p/codex-work/",
-          "date": "Wed, 11 Nov 2026 04:49:48 GMT",
-          "desc": "On the first day of AIE Code Summit, OpenAI showed how developers can steer Codex by voice, hand off work to the cloud, and make use of dots.",
-          "title_en": "AI Engineer Code Summit: OpenAI on New Ways of Working With Codex"
-        },
-        {
-          "title": "为代理设计——Zeno Rocha，Resend",
-          "link": "https://latent.space/p/resend/",
-          "date": "Tue, 10 Nov 2026 20:05:17 GMT",
-          "desc": "Where does answer engine optimization (AEO) end and agent experience begin? Inside Resend, from the docs that help Claude Code pick an email API to the tools it uses to send.",
-          "title_en": "Designing for Agents — Zeno Rocha, Resend"
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "One Useful Thing",
-      "url": "https://www.oneusefulthing.org/feed",
-      "items": [
-        {
-          "title": "Fable 5.2与参差AGI",
-          "link": "https://www.oneusefulthing.org/p/fable-52-and-jagged-agi",
-          "date": "Mon, 09 Nov 2026 19:04:26 GMT",
-          "desc": "",
-          "title_en": "Fable 5.2 and Jagged AGI"
-        },
-        {
-          "title": "指数增长30个月（图表）",
-          "link": "https://www.oneusefulthing.org/p/30-months-on-the-exponential-in-charts",
-          "date": "Tue, 20 Oct 2026 15:57:59 GMT",
-          "desc": "",
-          "title_en": "30 Months on the Exponential (in Charts)"
-        },
-        {
-          "title": "点与群体",
-          "link": "https://www.oneusefulthing.org/p/the-dot-and-the-swarm",
-          "date": "Thu, 01 Oct 2026 10:54:12 GMT",
-          "desc": "",
-          "title_en": "The Dot and the Swarm"
-        },
-        {
-          "title": "悬垂",
-          "link": "https://www.oneusefulthing.org/p/the-overhang",
-          "date": "Fri, 18 Sep 2026 17:54:32 GMT",
-          "desc": "",
-          "title_en": "The Overhang"
-        },
-        {
-          "title": "能动性与Agent",
-          "link": "https://www.oneusefulthing.org/p/agency-and-agents",
-          "date": "Mon, 31 Aug 2026 00:24:35 GMT",
-          "desc": "",
-          "title_en": "Agency and Agents"
-        },
-        {
-          "title": "有主见的AI使用指南",
-          "link": "https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22",
-          "date": "Thu, 23 Jul 2026 18:05:24 GMT",
-          "desc": "",
-          "title_en": "An opinionated guide to which AI to use to do stuff"
-        },
-        {
-          "title": "聊天机器人的黄昏",
-          "link": "https://www.oneusefulthing.org/p/the-twilight-of-the-chatbots",
-          "date": "Tue, 30 Jun 2026 22:18:12 GMT",
-          "desc": "",
-          "title_en": "The twilight of the chatbots"
-        },
-        {
-          "title": "与Mythos共事是什么感觉",
-          "link": "https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos",
-          "date": "Tue, 09 Jun 2026 17:11:22 GMT",
-          "desc": "",
-          "title_en": "What it feels like to work with Mythos"
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "Simon Willison",
-      "url": "https://simonwillison.net/atom/everything/",
-      "items": [
-        {
-          "title": "datasette-cluster-map 0.19",
-          "link": "https://simonwillison.net/2026/Nov/13/datasette-cluster-map/",
-          "date": "2026-11-13T23:02:45+00:00",
-          "desc": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette-cluster-map/releases/tag/0.19\">datasette-cluster-map 0.19</a></p>\n        <p>One of the oldest Datasette plugins, and still one of my favorites. I",
-          "title_en": "datasette-cluster-map 0.19"
-        },
-        {
-          "title": "datasette-leaflet 0.3",
-          "link": "https://simonwillison.net/2026/Nov/13/datasette-leaflet/",
-          "date": "2026-11-13T22:30:54+00:00",
-          "desc": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette-leaflet/releases/tag/0.3\">datasette-leaflet 0.3</a></p>\n        <p>OpenStreetMap have a very reasonable policy that hits to their hosted tile serv",
-          "title_en": "datasette-leaflet 0.3"
-        },
-        {
-          "title": "llm-gemini 0.37",
-          "link": "https://simonwillison.net/2026/Nov/12/llm-gemini/",
-          "date": "2026-11-12T22:55:19+00:00",
-          "desc": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-gemini/releases/tag/0.37\">llm-gemini 0.37</a></p>\n        <p>Google launched <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-m",
-          "title_en": "llm-gemini 0.37"
-        },
-        {
-          "title": "Gemini Decisions API",
-          "link": "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
-          "date": "2026-11-11T22:03:25+00:00",
-          "desc": "<p><strong><a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/\">Gemini Decisions API</a></strong></p>\nGoogle join <a href=\"https://simonwillison.net/2026/Sep/21/jev/\">Jev</a> ",
-          "title_en": "Gemini Decisions API"
-        },
-        {
-          "title": "aws-emulator",
-          "link": "https://simonwillison.net/2026/Nov/11/aws-emulator/",
-          "date": "2026-11-11T21:18:30+00:00",
-          "desc": "<p><strong><a href=\"https://github.com/aws/aws-emulator\">aws-emulator</a></strong></p>\nFinally, an official emulator from AWS to run tests against a local clone of their many different services without having to provisio",
-          "title_en": "aws-emulator"
-        },
-        {
-          "title": "按标签浏览tools.simonwillison.net",
-          "link": "https://simonwillison.net/2026/Nov/11/tools-tags/",
-          "date": "2026-11-11T18:42:50+00:00",
-          "desc": "<p><strong><a href=\"https://tools.simonwillison.net/#tags\">Browse tools.simonwillison.net by tag</a></strong></p>\nI've been wanting a better way to browse my <a href=\"\">collection of vibe-coded tools</a> (244 and countin",
-          "title_en": "Browse tools.simonwillison.net by tag"
-        },
-        {
-          "title": "llm 0.37.2",
-          "link": "https://simonwillison.net/2026/Nov/11/llm/",
-          "date": "2026-11-11T17:19:52+00:00",
-          "desc": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm/releases/tag/0.37.2\">llm 0.37.2</a></p>\n        <p>Fixes a security issue reported by <a href=\"https://github.com/BluePlexus\">Daniel de Araujo</a> in <a",
-          "title_en": "llm 0.37.2"
-        },
-        {
-          "title": "Anthropic IPO路演视频",
-          "link": "https://simonwillison.net/2026/Nov/11/anthropic-ipo-roadshow/",
-          "date": "2026-11-11T15:11:59+00:00",
-          "desc": "<p><strong><a href=\"https://ipo.anthropic.com/us/#roadshow-video\">Anthropic&#x27;s IPO roadshow video</a></strong></p>\nAnthropic kicked off their IPO roadshow yesterday, and their roadshow video has some previously unrel",
-          "title_en": "Anthropic's IPO roadshow video"
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "MIT Tech Review · AI",
-      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
-      "items": [
-        {
-          "title": "Nvidia私下确认可追踪芯片打击走私",
-          "link": "https://www.technologyreview.com/2026/11/12/1148483/nvidia-chip-tracking/",
-          "date": "Thu, 12 Nov 2026 20:16:24 +0000",
-          "desc": "",
-          "title_en": "Nvidia privately confirmed it could track chips to fight smuggling, even as industry publicly questioned feasibility"
-        },
-        {
-          "title": "数据中心争议或许只是电力问题",
-          "link": "https://www.technologyreview.com/2026/11/09/1148194/the-backlash-about-data-centers-might-really-just-be-about-electricity/",
-          "date": "Mon, 09 Nov 2026 19:35:33 +0000",
-          "desc": "",
-          "title_en": "The backlash about data centers might really just be about electricity"
-        },
-        {
-          "title": "Nancy Pelosi继任者准备监管AI",
-          "link": "https://www.technologyreview.com/2026/11/09/1148182/nancy-pelosis-replacement-is-ready-to-regulate-ai/",
-          "date": "Mon, 09 Nov 2026 17:05:43 +0000",
-          "desc": "",
-          "title_en": "Nancy Pelosi’s replacement is ready to regulate AI"
-        },
-        {
-          "title": "特种化工行业用AI创新",
-          "link": "https://www.technologyreview.com/2026/11/09/1147654/innovating-with-ai-in-the-special-chemicals-industry/",
-          "date": "Mon, 09 Nov 2026 13:00:00 +0000",
-          "desc": "",
-          "title_en": "Innovating with AI in the special chemicals industry"
-        },
-        {
-          "title": "我看人形机器人打扫公寓像未来一瞥",
-          "link": "https://www.technologyreview.com/2026/11/06/1148090/i-watched-a-humanoid-robot-clean-my-apartment-it-felt-like-a-taste-of-the-future/",
-          "date": "Fri, 06 Nov 2026 10:00:00 +0000",
-          "desc": "",
-          "title_en": "I watched a humanoid robot clean my apartment. It felt like a taste of the future."
-        },
-        {
-          "title": "德州曾是AI数据中心建设新中心如今或已告终",
-          "link": "https://www.technologyreview.com/2026/11/04/1148043/texas-was-the-new-epicenter-of-the-ai-data-center-buildout-that-might-be-kaput/",
-          "date": "Wed, 04 Nov 2026 18:50:55 +0000",
-          "desc": "",
-          "title_en": "Texas was the new epicenter of the AI data center buildout. That might be kaput."
-        },
-        {
-          "title": "用数据血缘保障Agent企业",
-          "link": "https://www.technologyreview.com/2026/11/04/1147596/securing-the-agentic-enterprise-with-data-lineage/",
-          "date": "Wed, 04 Nov 2026 13:00:00 +0000",
-          "desc": "",
-          "title_en": "Securing the agentic enterprise with data lineage"
-        },
-        {
-          "title": "反向博弈论如何约束AI Agent",
-          "link": "https://www.technologyreview.com/2026/11/03/1147934/reverse-game-theory-mechanism-design-ai-alignment/",
-          "date": "Tue, 03 Nov 2026 10:43:41 +0000",
-          "desc": "",
-          "title_en": "How “reverse game theory” could keep AI agents in check"
-        }
-      ],
-      "error": null
     }
   ]
 }
