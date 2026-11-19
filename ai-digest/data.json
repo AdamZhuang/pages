@@ -1,114 +1,114 @@
 {
-  "date": "2026-11-19",
-  "generated_at": "2026-11-19T04:33:50.903881+08:00",
+  "date": "2026-11-20",
+  "generated_at": "2026-11-20T04:33:49.754507+08:00",
   "hn": [
     {
-      "title": "AI is killing All About Berlin",
-      "link": "https://nicolasbouliane.com/blog/death-by-ai",
-      "points": 725,
-      "comments": 658,
-      "date": "2026-11-18 06:47Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50542705",
-      "title_en": "AI is killing All About Berlin"
+      "title": "Gemini 4 Neon",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "points": 993,
+      "comments": 751,
+      "date": "2026-11-18 21:34Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50552424",
+      "title_en": "Gemini 4 Neon"
     },
     {
-      "title": "Google's AI answers reducing search traffic by 40%",
-      "link": "https://revscope.co/blog/search-seo-geo-2026/",
-      "points": 674,
-      "comments": 524,
-      "date": "2026-11-18 00:17Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50540178",
-      "title_en": "Google's AI answers reducing search traffic by 40%"
+      "title": "Anthropic hits $2T in Nasdaq debut",
+      "link": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/",
+      "points": 529,
+      "comments": 831,
+      "date": "2026-11-19 17:02Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50562754",
+      "title_en": "Anthropic hits $2T in Nasdaq debut"
     },
     {
-      "title": "Seven new models at scalable price-performance",
-      "link": "https://microsoft.ai/news/microsoft-ignite-2026/",
-      "points": 311,
-      "comments": 200,
-      "date": "2026-11-18 16:08Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50548021",
-      "title_en": "Seven new models at scalable price-performance"
+      "title": "Anthropic prices initial public offering",
+      "link": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+      "points": 408,
+      "comments": 759,
+      "date": "2026-11-18 23:30Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50553843",
+      "title_en": "Anthropic prices initial public offering"
     },
     {
-      "title": "Harvard researchers find AI coding agents shifted the bottleneck to code review",
-      "link": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/",
-      "points": 309,
-      "comments": 416,
-      "date": "2026-11-17 21:16Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50538303",
-      "title_en": "Harvard researchers find AI coding agents shifted the bottleneck to code review"
+      "title": "LLM assisted reverse engineering",
+      "link": "https://www.slowchronicle.com/posts/llm-assisted-reverse-engineering",
+      "points": 293,
+      "comments": 74,
+      "date": "2026-11-18 22:29Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50553225",
+      "title_en": "LLM assisted reverse engineering"
     },
     {
-      "title": "Energy-Based Reasoners: 385x more efficient inference",
-      "link": "https://energy-based-reasoners.github.io/",
+      "title": "Fuck Your AI Safeguards",
+      "link": "https://ounapuu.ee/posts/2026/11/19/unsafeguards/",
       "points": 276,
-      "comments": 44,
-      "date": "2026-11-18 09:29Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50543989",
-      "title_en": "Energy-Based Reasoners: 385x more efficient inference"
+      "comments": 98,
+      "date": "2026-11-19 16:30Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50562262",
+      "title_en": "Fuck Your AI Safeguards"
     },
     {
-      "title": "Why is Gemini 4 Carbon taking so long?",
-      "link": "https://kernel.dev/blog/why-is-gemini-4-carbon-taking-so-long/",
-      "points": 258,
-      "comments": 134,
-      "date": "2026-11-18 04:14Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50541790",
-      "title_en": "Why is Gemini 4 Carbon taking so long?"
+      "title": "Gemini 4 Neon looks like an Opus 5.5 competitor",
+      "link": "https://micjm.com/blog/gemini-4-neon-looks-like-a-top-model/",
+      "points": 248,
+      "comments": 77,
+      "date": "2026-11-19 00:29Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50554374",
+      "title_en": "Gemini 4 Neon looks like an Opus 5.5 competitor"
     },
     {
-      "title": "AI agents ask better questions than KPMG accountants in audit trial",
-      "link": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
-      "points": 174,
-      "comments": 90,
-      "date": "2026-11-18 15:49Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50547777",
-      "title_en": "AI agents ask better questions than KPMG accountants in audit trial"
+      "title": "Claude solves two open problems in the physics of black holes",
+      "link": "https://www.anthropic.com/research/claude-black-hole-physics",
+      "points": 233,
+      "comments": 83,
+      "date": "2026-11-19 17:30Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50563148",
+      "title_en": "Claude solves two open problems in the physics of black holes"
     },
     {
-      "title": "Claude was trained on protein sequences at scale",
-      "link": "http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences/",
-      "points": 157,
-      "comments": 67,
-      "date": "2026-11-18 03:47Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50541619",
-      "title_en": "Claude was trained on protein sequences at scale"
+      "title": "Pete warden on local AI, open models, voice interfaces, the future of hardware",
+      "link": "https://thedataexchange.media/pete-warden-moonshine/",
+      "points": 168,
+      "comments": 155,
+      "date": "2026-11-19 15:38Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50561508",
+      "title_en": "Pete warden on local AI, open models, voice interfaces, the future of hardware"
     },
     {
-      "title": "\"Anthropic Is Not a Safe AI Company\" – Coalition Challenges Anthropic Safety",
-      "link": "https://www.businesswire.com/news/home/20261118974464/en/Anthropic-is-Not-a-Safe-AI-Company---Broad-Coalition-of-Scientists-Legal-Scholars-and-Tech-Leaders-Challenge-Anthropics-Safety-Branding-Ahead-of-IPO",
-      "points": 118,
-      "comments": 72,
-      "date": "2026-11-18 16:41Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50548485",
-      "title_en": "\"Anthropic Is Not a Safe AI Company\" – Coalition Challenges Anthropic Safety"
+      "title": "Black high school students sue after AI mistakes Doritos bag for gun",
+      "link": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/",
+      "points": 108,
+      "comments": 81,
+      "date": "2026-11-19 00:57Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50554641",
+      "title_en": "Black high school students sue after AI mistakes Doritos bag for gun"
     },
     {
-      "title": "Cerebras Disaggregated Inference",
-      "link": "https://www.cerebras.ai/blog/cerebras-launches-disaggregated-inference",
+      "title": "DeepMind Employees Are Unionising",
+      "link": "https://www.gdmunion.co.uk",
+      "points": 107,
+      "comments": 76,
+      "date": "2026-11-19 09:28Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50557885",
+      "title_en": "DeepMind Employees Are Unionising"
+    },
+    {
+      "title": "AI will not make you rich (2025)",
+      "link": "https://colossus.com/article/ai-will-not-make-you-rich/",
+      "points": 105,
+      "comments": 68,
+      "date": "2026-11-19 01:51Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50555093",
+      "title_en": "AI will not make you rich (2025)"
+    },
+    {
+      "title": "Two stealth models just appeared on the leaderboard, both ahead of Fable 5.2",
+      "link": "https://contralabs.com/frontierdesign",
       "points": 104,
-      "comments": 24,
-      "date": "2026-11-18 00:56Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50540472",
-      "title_en": "Cerebras Disaggregated Inference"
-    },
-    {
-      "title": "Genie 4 is now available",
-      "link": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
-      "points": 95,
-      "comments": 75,
-      "date": "2026-11-18 18:49Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50550415",
-      "title_en": "Genie 4 is now available"
-    },
-    {
-      "title": "Bank CEOs, NSA Tell Congress That AI-Driven Patches Are Behind Outages",
-      "link": "https://www.washingtonsun.com/technology/bank-ceos-nsa-tell-congress-ai-driven-patches-behind-outages",
-      "points": 95,
-      "comments": 49,
-      "date": "2026-11-18 01:45Z",
-      "hn_link": "https://news.ycombinator.com/item?id=50540836",
-      "title_en": "Bank CEOs, NSA Tell Congress That AI-Driven Patches Are Behind Outages"
+      "comments": 41,
+      "date": "2026-11-19 11:03Z",
+      "hn_link": "https://news.ycombinator.com/item?id=50558559",
+      "title_en": "Two stealth models just appeared on the leaderboard, both ahead of Fable 5.2"
     }
   ],
   "feeds": [
@@ -117,51 +117,51 @@
       "url": "https://www.qbitai.com/feed",
       "items": [
         {
-          "title": "Gemini新模型Neon箭在弦上，网友：遍历元素周期表？",
-          "link": "https://www.qbitai.com/2026/11/510922.html",
-          "date": "Wed, 18 Nov 2026 09:41:55 +0000",
+          "title": "影视飓风、Manus、影石、OPPO……极客公园创新大会 2027 嘉宾阵容更新！",
+          "link": "https://www.qbitai.com/2026/11/511258.html",
+          "date": "Thu, 19 Nov 2026 08:43:10 +0000",
           "desc": ""
         },
         {
-          "title": "GPT-6.2难产！OpenAI怕了",
-          "link": "https://www.qbitai.com/2026/11/510914.html",
-          "date": "Wed, 18 Nov 2026 07:53:29 +0000",
+          "title": "GTA6刷屏！零AI纯手搓的3A大作玩一个少一个了",
+          "link": "https://www.qbitai.com/2026/11/511180.html",
+          "date": "Thu, 19 Nov 2026 08:18:30 +0000",
           "desc": ""
         },
         {
-          "title": "全球首个医疗健康AI独立评测与分析平台InclusionMed正式上线",
-          "link": "https://www.qbitai.com/2026/11/510916.html",
-          "date": "Wed, 18 Nov 2026 07:24:50 +0000",
+          "title": "SenseNova U1 Pro获Design Arena双榜中国第一、全球第六",
+          "link": "https://www.qbitai.com/2026/11/511179.html",
+          "date": "Thu, 19 Nov 2026 08:10:19 +0000",
           "desc": ""
         },
         {
-          "title": "思维链一作Jason Wei离职！怎么去Meta待一年都跑路",
-          "link": "https://www.qbitai.com/2026/11/510811.html",
-          "date": "Wed, 18 Nov 2026 04:49:51 +0000",
+          "title": "好清晰！最新国产AI画的8K图，放这么大大大大也不糊！",
+          "link": "https://www.qbitai.com/2026/11/511092.html",
+          "date": "Thu, 19 Nov 2026 07:01:05 +0000",
           "desc": ""
         },
         {
-          "title": "英伟达AMD首次联手押注！Genesis完成A轮融资，估值超230亿",
-          "link": "https://www.qbitai.com/2026/11/510821.html",
-          "date": "Wed, 18 Nov 2026 04:28:57 +0000",
+          "title": "AI基建大潮方兴未艾，联想集团最佳财季诞生！",
+          "link": "https://www.qbitai.com/2026/11/511088.html",
+          "date": "Thu, 19 Nov 2026 04:51:31 +0000",
           "desc": ""
         },
         {
-          "title": "潜伏小红书48h：AI时代，顶尖技术人才都在聊什么？",
-          "link": "https://www.qbitai.com/2026/11/510737.html",
-          "date": "Wed, 18 Nov 2026 02:49:23 +0000",
+          "title": "安谋科技深度解析Arm Cortex-M42，发布“星辰100e”AIoT原型平台，助力打造AI性能更强的嵌入式设计",
+          "link": "https://www.qbitai.com/2026/11/511079.html",
+          "date": "Thu, 19 Nov 2026 04:02:39 +0000",
           "desc": ""
         },
         {
-          "title": "黄仁勋不再沉默：我愿重掌英伟达！董事会：不考虑",
-          "link": "https://www.qbitai.com/2026/11/510726.html",
-          "date": "Wed, 18 Nov 2026 01:03:42 +0000",
+          "title": "范式下场做基模了！国产算力全链路训练，双模型同步亮相",
+          "link": "https://www.qbitai.com/2026/11/511071.html",
+          "date": "Thu, 19 Nov 2026 03:01:45 +0000",
           "desc": ""
         },
         {
-          "title": "GPT-6.2 Astra和Sol王炸双发！3D又危了",
-          "link": "https://www.qbitai.com/2026/11/510707.html",
-          "date": "Wed, 18 Nov 2026 00:49:14 +0000",
+          "title": "初中毕业烘焙师，1 人搓出单集千万播放科幻剧，中国AI长片杀疯了！",
+          "link": "https://www.qbitai.com/2026/11/510947.html",
+          "date": "Thu, 19 Nov 2026 00:26:40 +0000",
           "desc": ""
         }
       ],
@@ -171,6 +171,42 @@
       "name": "爱范儿",
       "url": "https://www.ifanr.com/feed",
       "items": [
+        {
+          "title": "比亚迪发布折叠方向盘！首搭方程豹钛 9，27.99 万元起！",
+          "link": "https://www.ifanr.com/1690430?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 19 Nov 2026 15:01:13 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "刚刚，Anthropic 敲钟上市！史上最大IPO却让硅谷吵翻了",
+          "link": "https://www.ifanr.com/1690375?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 19 Nov 2026 14:58:57 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "今年是阔屏的元年，阔屏是手机的今后十年",
+          "link": "https://www.ifanr.com/1690322?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 19 Nov 2026 13:00:02 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "刚拒绝黄仁勋回归，英伟达官宣全员加薪，热门接班人曝光",
+          "link": "https://www.ifanr.com/1690288?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 19 Nov 2026 02:59:25 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "早报｜GTA6开售，评分破纪录/大疆多款相机涨价/豆包工作三个月日活破800万",
+          "link": "https://www.ifanr.com/1690255?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Thu, 19 Nov 2026 00:36:04 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
+        {
+          "title": "刚刚，Gemini 4 Neon 突袭发布，性价比一夜斩杀 Opus 5.5",
+          "link": "https://www.ifanr.com/1690235?utm_source=rss&utm_medium=rss&utm_campaign=",
+          "date": "Wed, 18 Nov 2026 23:56:47 +0000",
+          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
+        },
         {
           "title": "《GTA VI》首发体验：过去十年最好的游戏，也可能是未来十年最好的游戏",
           "link": "https://www.ifanr.com/1690188?utm_source=rss&utm_medium=rss&utm_campaign=",
@@ -182,42 +218,6 @@
           "link": "https://www.ifanr.com/1690168?utm_source=rss&utm_medium=rss&utm_campaign=",
           "date": "Wed, 18 Nov 2026 10:45:36 +0000",
           "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "深度实测 GPT-6.2：强是真强，难用也是真难用",
-          "link": "https://www.ifanr.com/1690130?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 18 Nov 2026 10:01:23 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "即梦 Seedance 2.5 大升级，AI 视频生成终于有了自己的 4K 生产线",
-          "link": "https://www.ifanr.com/1690033?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 18 Nov 2026 04:00:43 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "曾经的纯电超跑之王 Rimac Nevera 宣布停产，CEO 转头造出了 16 缸的布加迪新旗舰",
-          "link": "https://www.ifanr.com/1690064?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 18 Nov 2026 03:40:19 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "GPT-6.2 Astra 刚发布即遭大量差评，实测后我觉得它有点冤",
-          "link": "https://www.ifanr.com/1690103?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 18 Nov 2026 02:39:15 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "黄仁勋官宣愿意回归，英伟达董事会：不考虑！",
-          "link": "https://www.ifanr.com/1689994?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 18 Nov 2026 00:39:56 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
-        },
-        {
-          "title": "早报｜黄仁勋称愿重返英伟达/李飞飞加入AMD，向苏姿丰直接汇报/红果短剧治理肖像侵权",
-          "link": "https://www.ifanr.com/1689915?utm_source=rss&utm_medium=rss&utm_campaign=",
-          "date": "Wed, 18 Nov 2026 00:32:49 +0000",
-          "desc": "#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。]]>"
         }
       ],
       "error": null
@@ -226,6 +226,36 @@
       "name": "少数派",
       "url": "https://sspai.com/feed",
       "items": [
+        {
+          "title": "给 Apple 的 2026 年打分，请你一起参与",
+          "link": "https://sspai.com/post/119191",
+          "date": "Thu, 19 Nov 2026 18:25:05 +0800",
+          "desc": "2026年以来，Apple在硬件领域明显加快了产品线的拓展。定价亲民、采用A系列芯片的MacBookNeo让Mac触及更广泛的消费群体，也引发了对性能妥协与长期使用价值的讨论。M6芯片继续推进Appl ...<a href=\"https://sspai.com/post/119191\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "新玩意 256｜少数派的编辑们最近买了啥？",
+          "link": "https://sspai.com/post/119287",
+          "date": "Thu, 19 Nov 2026 17:16:00 +0800",
+          "desc": "编注：很多读者都会好奇少数派的编辑们到底平时都「买了啥」。我们希望通过「编辑部的新玩意」介绍编辑部成员们最近在用的新奇产品，让他们自己来谈谈这些新玩意的使用体验究竟如何。内容声明：《新玩意》栏目如含有 ...<a href=\"https://sspai.com/post/119287\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "有必要但欠平衡：浅评 macOS 27.3 新版权限控制机制",
+          "link": "https://sspai.com/prime/story/system-app-protection-override-macos-27-3",
+          "date": "Thu, 19 Nov 2026 15:34:11 +0800",
+          "desc": "<p>[......]</p><a href=\"https://sspai.com/prime/story/system-app-protection-override-macos-27-3\" target=\"_blank\">查看全文</a><p>本文为会员文章，出自<a href=\"https://sspai.com/prime/precog/single\" target=\"_blank\">《单篇文章》</a >，订阅后可阅读全文。<"
+        },
+        {
+          "title": "徒步旅行指南 | 玉龙虎跳峡与天堂雨崩",
+          "link": "https://sspai.com/post/119039",
+          "date": "Thu, 19 Nov 2026 10:58:08 +0800",
+          "desc": "Matrix首页推荐Matrix是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选Matrix最优质的文章，展示来自用户的最真实的体验和观点。文章代表作者个人观点 ...<a href=\"https://sspai.com/post/119039\" target=\"_blank\">查看全文</a>"
+        },
+        {
+          "title": "派早报：Apple 年度应用、TGA 2026 分别公布入围名单等",
+          "link": "https://sspai.com/post/119239",
+          "date": "Thu, 19 Nov 2026 08:29:30 +0800",
+          "desc": "AMD 更新虚幻引擎 FSR 插件、Google Wallet 登陆 iOS 等。<a href=\"https://sspai.com/post/119239\" target=\"_blank\">查看全文</a>"
+        },
         {
           "title": "10 月音乐精选：音乐丰收季，必听这 7 张新专辑",
           "link": "https://sspai.com/post/118985",
@@ -243,36 +273,6 @@
           "link": "https://sspai.com/post/119193",
           "date": "Wed, 18 Nov 2026 11:00:00 +0800",
           "desc": "从深圳一路开车到广东最南端的徐闻，再和车分别乘坐渡轮，穿过地理课本里的琼州海峡。终于抵达海南后，老板却告诉我们这趟旅程真正的目的地，竟然是……<a href=\"https://sspai.com/post/119193\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "兼顾随身阅读与自主开发的 4.7 英寸墨水屏设备：小纸 Pico 现货上架少数派",
-          "link": "https://sspai.com/post/118975",
-          "date": "Wed, 18 Nov 2026 10:30:00 +0800",
-          "desc": "想找一台可以随身带着读书的墨水屏设备，也想自己改改界面、不被系统「绑架」？近期思维重置团队上架的小纸 Pico 墨水屏开发板是一个值得留意的选择。<a href=\"https://sspai.com/post/118975\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "派早报：国区 App Store 将 AIGC 合规设为上架必填、OpenAI 发布 GPT-6.2 Astra 等",
-          "link": "https://sspai.com/post/119210",
-          "date": "Wed, 18 Nov 2026 08:46:03 +0800",
-          "desc": "iPhone Duo 测试 2D 人脸解锁功能，松下发布紧凑型电影摄影机 SHX1 等。<a href=\"https://sspai.com/post/119210\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "社区速递 166｜柯尼卡胶片机、iPhone Duo 体验与假期省钱实操大赏",
-          "link": "https://sspai.com/post/119184",
-          "date": "Tue, 17 Nov 2026 17:02:00 +0800",
-          "desc": "除了首页时间流和侧栏的精选展位，少数派Matrix社区还有很多优秀内容因条件所限无法得到有效曝光，因此我们决定重启Matrix周报，并在此基础上添加更多社区内容、作者投稿新玩意呈现给大家。上周社区速递 ...<a href=\"https://sspai.com/post/119184\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "TDS REVIEW｜Bose 有线消噪耳塞体验",
-          "link": "https://sspai.com/post/118976",
-          "date": "Tue, 17 Nov 2026 15:00:00 +0800",
-          "desc": "这篇文章是TDSStudio在少数派上的第35篇文章，依然是全平台首发。早先我们评价过绯乐的虹，当时在评论区曾经有一些读者好奇它和BoseQC20的区别。有线降噪入耳耳机，在TWS时代到来之前曾经是一 ...<a href=\"https://sspai.com/post/118976\" target=\"_blank\">查看全文</a>"
-        },
-        {
-          "title": "为了另一种可能性：在国内折腾 Linux 打游戏的二三事",
-          "link": "https://sspai.com/post/118442",
-          "date": "Tue, 17 Nov 2026 10:59:51 +0800",
-          "desc": "当外部的限制开始逐渐渗透、内化到每个人的内心，另一种真正的「可能性」在现今尤为珍贵。<a href=\"https://sspai.com/post/118442\" target=\"_blank\">查看全文</a>"
         }
       ],
       "error": null
@@ -282,60 +282,60 @@
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "items": [
         {
-          "title": "Trump’s latest land grab is an AI hub in the Philippines",
-          "link": "https://www.theverge.com/policy/1036749/trump-ai-chip-data-center-us-philippines-pax-silica",
-          "date": "2026-11-18T14:40:36-05:00",
+          "title": "Meta’s Muse Charm might cost $300",
+          "link": "https://www.theverge.com/tech/1038087/meta-muse-charm-ai-price",
+          "date": "2026-11-19T15:29:21-05:00",
           "desc": "",
-          "title_en": "Trump’s latest land grab is an AI hub in the Philippines"
+          "title_en": "Meta’s Muse Charm might cost $300"
         },
         {
-          "title": "What’s next for Nvidia? Whatever doesn’t rock the mind-bogglingly profitable boat",
-          "link": "https://www.theverge.com/tech/1035924/nvidia-visualized-revenue-profit-earnings-after-huang",
-          "date": "2026-11-18T14:29:43-05:00",
+          "title": "Google is putting AI chats right on the homepage",
+          "link": "https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats",
+          "date": "2026-11-19T15:14:34-05:00",
           "desc": "",
-          "title_en": "What’s next for Nvidia? Whatever doesn’t rock the mind-bogglingly profitable boat"
+          "title_en": "Google is putting AI chats right on the homepage"
         },
         {
-          "title": "Tech lawsuits defined 2026 — and lawmakers want more",
-          "link": "https://www.theverge.com/policy/1036935/congress-forced-arbitration-deepfakes-defiance-act",
-          "date": "2026-11-18T14:07:29-05:00",
+          "title": "Gemini on Mac can now use your computer",
+          "link": "https://www.theverge.com/tech/1037902/google-gemini-macos-ai-computer-use",
+          "date": "2026-11-19T14:07:41-05:00",
           "desc": "",
-          "title_en": "Tech lawsuits defined 2026 — and lawmakers want more"
+          "title_en": "Gemini on Mac can now use your computer"
         },
         {
-          "title": "What is Nvidia without AI’s sugar daddy in charge?",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1036776/nvidia-earnings-kress-jensen-huang-petition",
-          "date": "2026-11-18T13:34:15-05:00",
+          "title": "Anthropic starts trading on Wall Street",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1035384/anthropic-ipo-trading-nasdaq",
+          "date": "2026-11-19T12:01:00-05:00",
           "desc": "",
-          "title_en": "What is Nvidia without AI’s sugar daddy in charge?"
+          "title_en": "Anthropic starts trading on Wall Street"
         },
         {
-          "title": "Disney’s new Star Wars animatronics interact with guests using AI",
-          "link": "https://www.theverge.com/tech/1036729/disney-star-wars-anzellans-animatronic-amazon-aws-cloud-ai",
-          "date": "2026-11-18T12:53:48-05:00",
+          "title": "ChatGPT can transcribe as you speak now with Live Dictation",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1037634/openai-chatgpt-live-dictation",
+          "date": "2026-11-19T10:16:45-05:00",
           "desc": "",
-          "title_en": "Disney’s new Star Wars animatronics interact with guests using AI"
+          "title_en": "ChatGPT can transcribe as you speak now with Live Dictation"
         },
         {
-          "title": "Remember the frontier AI pause? Chip companies don’t either",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1036549/nvidia-amd-earnings-fall-2026-chips-pause-frontier-models",
-          "date": "2026-11-18T11:25:30-05:00",
+          "title": "With the biggest IPO of all time, Anthropic’s ‘good guy’ reputation is on the line",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1037459/anthropic-ipo-safe-ai-reputation-power-structure",
+          "date": "2026-11-19T14:10:57-05:00",
           "desc": "",
-          "title_en": "Remember the frontier AI pause? Chip companies don’t either"
+          "title_en": "With the biggest IPO of all time, Anthropic’s ‘good guy’ reputation is on the line"
         },
         {
-          "title": "Will Wright’s next game uses AI to map your memories",
-          "link": "https://www.theverge.com/games/1036140/will-wright-mymems-ai-game-interview",
-          "date": "2026-11-18T11:27:13-05:00",
+          "title": "I let Apple’s always-listening AI summarize my life for two weeks",
+          "link": "https://www.theverge.com/tech/1037100/apple-siri-recap-audio-intelligence-hands-on",
+          "date": "2026-11-18T17:31:27-05:00",
           "desc": "",
-          "title_en": "Will Wright’s next game uses AI to map your memories"
+          "title_en": "I let Apple’s always-listening AI summarize my life for two weeks"
         },
         {
-          "title": "Nvidia isn’t selling any more AI chips to China",
-          "link": "https://www.theverge.com/tech/1036445/nvidia-h200-ai-chips-china-stop-selling",
-          "date": "2026-11-18T09:28:38-05:00",
+          "title": "Canva adds an AI ‘off’ button",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1037126/canva-ai-features-off-button",
+          "date": "2026-11-19T08:08:05-05:00",
           "desc": "",
-          "title_en": "Nvidia isn’t selling any more AI chips to China"
+          "title_en": "Canva adds an AI ‘off’ button"
         }
       ],
       "error": null
@@ -344,6 +344,13 @@
       "name": "Ars Technica · AI",
       "url": "https://arstechnica.com/ai/feed/",
       "items": [
+        {
+          "title": "Traumatized teens sue school, cops after Doritos bag triggers AI gun alert",
+          "link": "https://arstechnica.com/tech-policy/2026/11/traumatized-teens-sue-school-cops-after-doritos-bag-triggers-ai-gun-alert/",
+          "date": "Thu, 19 Nov 2026 20:19:28 +0000",
+          "desc": "",
+          "title_en": "Traumatized teens sue school, cops after Doritos bag triggers AI gun alert"
+        },
         {
           "title": "Muse privacy invasions are freaking out Meta staffers, internal chats show",
           "link": "https://arstechnica.com/tech-policy/2026/11/muse-privacy-invasions-are-freaking-out-meta-staffers-internal-chats-show/",
@@ -392,13 +399,6 @@
           "date": "Tue, 17 Nov 2026 14:00:29 +0000",
           "desc": "",
           "title_en": "Grok Bot took unapproved actions, ignored orders to stop, and then denied it"
-        },
-        {
-          "title": "Robo-soldier startup backed by Eric Trump misses payroll, may collapse",
-          "link": "https://arstechnica.com/ai/2026/11/robo-soldier-startup-backed-by-eric-trump-misses-payroll-may-collapse/",
-          "date": "Mon, 16 Nov 2026 22:58:27 +0000",
-          "desc": "",
-          "title_en": "Robo-soldier startup backed by Eric Trump misses payroll, may collapse"
         }
       ],
       "error": null
@@ -408,60 +408,60 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "items": [
         {
-          "title": "Sam Altman says his life is so weird that he’s unphased by Andrew Garfield portraying him in upcoming movie",
-          "link": "https://techcrunch.com/2026/11/18/sam-altman-says-his-life-is-so-weird-that-hes-unphased-by-andrew-garfield-portraying-him-in-upcoming-movie/",
-          "date": "Wed, 18 Nov 2026 20:07:01 +0000",
+          "title": "The unfolding Jensen Huang scandal: a timeline",
+          "link": "https://techcrunch.com/2026/11/19/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+          "date": "Thu, 19 Nov 2026 20:18:49 +0000",
           "desc": "",
-          "title_en": "Sam Altman says his life is so weird that he’s unphased by Andrew Garfield portraying him in upcoming movie"
+          "title_en": "The unfolding Jensen Huang scandal: a timeline"
         },
         {
-          "title": "Snapchat now lets developers build AR Lenses with AI assistants like Claude Code and Cursor",
-          "link": "https://techcrunch.com/2026/11/18/snapchat-now-lets-developers-build-ar-lenses-with-ai-coding-assistants-like-claude-code-and-cursor/",
-          "date": "Wed, 18 Nov 2026 19:56:39 +0000",
+          "title": "Anthropic’s IPO could deliver $156 billion to charity",
+          "link": "https://techcrunch.com/2026/11/19/anthropics-ipo-could-deliver-156-billion-to-charity/",
+          "date": "Thu, 19 Nov 2026 19:10:45 +0000",
           "desc": "",
-          "title_en": "Snapchat now lets developers build AR Lenses with AI assistants like Claude Code and Cursor"
+          "title_en": "Anthropic’s IPO could deliver $156 billion to charity"
         },
         {
-          "title": "Google’s AI feature in Search gets its own incognito mode",
-          "link": "https://techcrunch.com/2026/11/18/googles-ai-feature-in-search-gets-its-own-incognito-mode/",
-          "date": "Wed, 18 Nov 2026 18:04:05 +0000",
+          "title": "Google gives Gemini the ability to use your Mac for you",
+          "link": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
+          "date": "Thu, 19 Nov 2026 18:09:11 +0000",
           "desc": "",
-          "title_en": "Google’s AI feature in Search gets its own incognito mode"
+          "title_en": "Google gives Gemini the ability to use your Mac for you"
         },
         {
-          "title": "More banks say customers using AI agents are on their own — even if they get hacked",
-          "link": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/",
-          "date": "Wed, 18 Nov 2026 17:32:10 +0000",
+          "title": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
+          "link": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+          "date": "Thu, 19 Nov 2026 17:38:40 +0000",
           "desc": "",
-          "title_en": "More banks say customers using AI agents are on their own — even if they get hacked"
+          "title_en": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says"
         },
         {
-          "title": "Sam Altman warns against a future where AI, not humans, calls the shots",
-          "link": "https://techcrunch.com/2026/11/18/sam-altman-warns-against-a-future-where-ai-not-humans-calls-the-shots/",
-          "date": "Wed, 18 Nov 2026 16:59:00 +0000",
+          "title": "Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories",
+          "link": "https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/",
+          "date": "Thu, 19 Nov 2026 17:00:00 +0000",
           "desc": "",
-          "title_en": "Sam Altman warns against a future where AI, not humans, calls the shots"
+          "title_en": "Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories"
         },
         {
-          "title": "OpenAI CEO Sam Altman says it’s ‘hard to imagine the AI industry without Jensen’",
-          "link": "https://techcrunch.com/2026/11/18/openai-ceo-sam-altman-says-its-hard-to-imagine-the-ai-industry-without-jensen/",
-          "date": "Wed, 18 Nov 2026 16:14:09 +0000",
+          "title": "Anthropic hits Nasdaq exchanges at $111, 33% above IPO price",
+          "link": "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
+          "date": "Thu, 19 Nov 2026 16:59:23 +0000",
           "desc": "",
-          "title_en": "OpenAI CEO Sam Altman says it’s ‘hard to imagine the AI industry without Jensen’"
+          "title_en": "Anthropic hits Nasdaq exchanges at $111, 33% above IPO price"
         },
         {
-          "title": "Nvidia clarifies when it will — and won’t — keep financing neoclouds",
-          "link": "https://techcrunch.com/2026/11/18/nvidia-clarifies-when-it-will-and-wont-keep-financing-neoclouds/",
-          "date": "Wed, 18 Nov 2026 13:00:00 +0000",
+          "title": "At Nasdaq opening bell, Anthropic CEO recommits to pacing AI development",
+          "link": "https://techcrunch.com/2026/11/19/at-nasdaq-opening-bell-anthropic-ceo-recommits-to-pacing-ai-development/",
+          "date": "Thu, 19 Nov 2026 16:19:41 +0000",
           "desc": "",
-          "title_en": "Nvidia clarifies when it will — and won’t — keep financing neoclouds"
+          "title_en": "At Nasdaq opening bell, Anthropic CEO recommits to pacing AI development"
         },
         {
-          "title": "Felicis leads $7.5M bet on Unsiloed AI to make enterprise documents usable by AI agents",
-          "link": "https://techcrunch.com/2026/11/18/felicis-leads-7-5m-bet-on-unsiloed-ai-to-make-enterprise-documents-usable-by-ai-agents/",
-          "date": "Wed, 18 Nov 2026 12:00:00 +0000",
+          "title": "Anthropic’s IPO puts AI’s circular financing boom to the test",
+          "link": "https://techcrunch.com/2026/11/19/anthropics-ipo-puts-ais-circular-financing-boom-to-the-test/",
+          "date": "Thu, 19 Nov 2026 14:54:39 +0000",
           "desc": "",
-          "title_en": "Felicis leads $7.5M bet on Unsiloed AI to make enterprise documents usable by AI agents"
+          "title_en": "Anthropic’s IPO puts AI’s circular financing boom to the test"
         }
       ],
       "error": null
@@ -471,60 +471,60 @@
       "url": "https://the-decoder.com/feed/",
       "items": [
         {
+          "title": "AI industry growth remains strong, but the pace is slowing",
+          "link": "https://the-decoder.com/ai-industry-growth-remains-strong-but-the-pace-is-slowing/",
+          "date": "Thu, 19 Nov 2026 19:28:19 +0000",
+          "desc": "Token prices for AI models fell 21 percent in six weeks while usage volume hit a record high, according to the Ramp AI Index. Anthropic dominates with nearly 59 percent of token spending. Data from Ramp, Stripe and OpenR",
+          "title_en": "AI industry growth remains strong, but the pace is slowing"
+        },
+        {
+          "title": "Chinese tech firms face a double hit as chip shipments stop and overseas cloud access disappears",
+          "link": "https://the-decoder.com/chinese-tech-firms-face-a-double-hit-as-chip-shipments-stop-and-overseas-cloud-access-disappears/",
+          "date": "Thu, 19 Nov 2026 17:02:41 +0000",
+          "desc": "Stricter US export controls on AI chips are hitting fast. China's Moonshot AI walked away from a $150 million deal in Indonesia, while TSMC and Samsung stopped shipping to Chinese customers. A New York Times investigatio",
+          "title_en": "Chinese tech firms face a double hit as chip shipments stop and overseas cloud access disappears"
+        },
+        {
+          "title": "Anthropic's $81.3 billion IPO shatters SpaceX's record as rising rates and political headwinds shake the sector",
+          "link": "https://the-decoder.com/anthropics-81-3-billion-ipo-shatters-spacexs-record-as-rising-rates-and-political-headwinds-shake-the-sector/",
+          "date": "Thu, 19 Nov 2026 14:02:22 +0000",
+          "desc": "Anthropic launches the largest IPO in history, dethroning SpaceX as the previous record holder. Early investor Dustin Moskovitz is publicly distancing himself, warning that his early funding may have been an act \"that en",
+          "title_en": "Anthropic's $81.3 billion IPO shatters SpaceX's record as rising rates and political headwinds shake the sector"
+        },
+        {
+          "title": "OpenAI's own researchers now say they value their AI tools more than nearly half their colleagues",
+          "link": "https://the-decoder.com/openais-own-researchers-now-say-they-value-their-ai-tools-more-than-nearly-half-their-colleagues/",
+          "date": "Thu, 19 Nov 2026 13:08:35 +0000",
+          "desc": "OpenAI's internal use of coding agents is growing fast, with theoretical token costs now exceeding researchers' base salaries. Even though teams are reluctant to work without these tools, the models still produce a lot o",
+          "title_en": "OpenAI's own researchers now say they value their AI tools more than nearly half their colleagues"
+        },
+        {
+          "title": "Google's latest AI model is faster, cheaper and smarter than its flagship predecessor from just weeks ago",
+          "link": "https://the-decoder.com/googles-latest-ai-model-is-faster-cheaper-and-smarter-than-its-flagship-predecessor-from-just-weeks-ago/",
+          "date": "Thu, 19 Nov 2026 11:18:18 +0000",
+          "desc": "Google DeepMind has released Gemini 4 Neon, its fourth model in seven weeks, which is nearly 2x faster than its sibling Carbon, outperforms it on most benchmarks and comes in at a significantly lower price.\nThe article G",
+          "title_en": "Google's latest AI model is faster, cheaper and smarter than its flagship predecessor from just weeks ago"
+        },
+        {
+          "title": "OCR models now digitize a million pages for under $130 as costs drop fivefold in 18 months",
+          "link": "https://the-decoder.com/ocr-models-now-digitize-a-million-pages-for-under-130-as-costs-drop-fivefold-in-18-months/",
+          "date": "Thu, 19 Nov 2026 09:28:01 +0000",
+          "desc": "Pulling text out of scanned books and records has gotten a lot cheaper with freely available AI models.\nThe article OCR models now digitize a million pages for under $130 as costs drop fivefold in 18 months appeared firs",
+          "title_en": "OCR models now digitize a million pages for under $130 as costs drop fivefold in 18 months"
+        },
+        {
+          "title": "Google ships Gemini 4 Neon, its fourth new Gemini model in a month",
+          "link": "https://the-decoder.com/google-ships-gemini-4-neon-its-fourth-new-gemini-model-in-a-month/",
+          "date": "Wed, 18 Nov 2026 21:03:23 +0000",
+          "desc": "Google released Gemini 4 Neon, a new frontier model built for software development, knowledge work, and science. It handles text, images, video, audio, and PDFs with a context window of one million tokens. At $3 per mill",
+          "title_en": "Google ships Gemini 4 Neon, its fourth new Gemini model in a month"
+        },
+        {
           "title": "Google Deepmind's Project Genie update brings Genie 4, chainable worlds, and a community gallery for remixing",
           "link": "https://the-decoder.com/google-deepminds-project-genie-update-brings-genie-4-chainable-worlds-and-a-community-gallery-for-remixing/",
           "date": "Wed, 18 Nov 2026 19:26:25 +0000",
           "desc": "With Genie 4, Google DeepMind is launching its most realistic world model to date for Google AI Ultra subscribers. It generates interactive 3D worlds that can be modified in real time via text input and, for the first ti",
           "title_en": "Google Deepmind's Project Genie update brings Genie 4, chainable worlds, and a community gallery for remixing"
-        },
-        {
-          "title": "Microsoft is replacing outside AI models in its own products with cheaper in-house alternatives",
-          "link": "https://the-decoder.com/microsoft-is-replacing-outside-ai-models-in-its-own-products-with-cheaper-in-house-alternatives/",
-          "date": "Wed, 18 Nov 2026 18:47:36 +0000",
-          "desc": "Microsoft's AI division MAI unveiled seven new models for code, security, images, language, and routing at Ignite. MAI Code 2 reaches 98 percent of GPT-6.1 Sol's performance at 40 percent of the cost, according to Micros",
-          "title_en": "Microsoft is replacing outside AI models in its own products with cheaper in-house alternatives"
-        },
-        {
-          "title": "OpenAI says its models delivered a year's worth of chip optimization on top of AMD's own engineering",
-          "link": "https://the-decoder.com/openai-says-its-models-delivered-a-years-worth-of-chip-optimization-on-top-of-amds-own-engineering/",
-          "date": "Wed, 18 Nov 2026 18:00:33 +0000",
-          "desc": "Working with AMD, OpenAI achieved up to 14 percent PPA improvement on AMD's flagship GPU IP in less than five months. According to OpenAI, that's roughly a year's worth of progress, and AMD has already folded the changes",
-          "title_en": "OpenAI says its models delivered a year's worth of chip optimization on top of AMD's own engineering"
-        },
-        {
-          "title": "Pangram flags 99 percent of an award-winning Peruvian novel as AI-generated, but the publisher stands by its author",
-          "link": "https://the-decoder.com/pangram-flags-99-percent-of-an-award-winning-peruvian-novel-as-ai-generated-but-the-publisher-stands-by-its-author/",
-          "date": "Wed, 18 Nov 2026 16:09:08 +0000",
-          "desc": "The AI detection tool Pangram flags 99 percent of a prize-winning Peruvian novel as AI-generated, but Mexican publisher Almadía is standing by the award after its own review. Pangram also classified over 80 percent of th",
-          "title_en": "Pangram flags 99 percent of an award-winning Peruvian novel as AI-generated, but the publisher stands by its author"
-        },
-        {
-          "title": "Anthropic, OpenAI, and Google models readily marked medics, journalists, and surrendering soldiers as kamikaze drone targets",
-          "link": "https://the-decoder.com/anthropic-openai-and-google-models-readily-marked-medics-journalists-and-surrendering-soldiers-as-kamikaze-drone-targets/",
-          "date": "Wed, 18 Nov 2026 15:47:49 +0000",
-          "desc": "A Vals AI investigation shows that leading AI models from Anthropic, OpenAI and Google have almost no safeguards against use in autonomous weapons systems. In tests, the models readily flagged civilians as military targe",
-          "title_en": "Anthropic, OpenAI, and Google models readily marked medics, journalists, and surrendering soldiers as kamikaze drone targets"
-        },
-        {
-          "title": "Mistral plays catch-up with Vibe Desktop as rivals already command full operating systems",
-          "link": "https://the-decoder.com/mistral-plays-catch-up-with-vibe-desktop-as-rivals-already-command-full-operating-systems/",
-          "date": "Wed, 18 Nov 2026 14:40:52 +0000",
-          "desc": "Mistral's AI agent Vibe now has its own desktop app.\nThe article Mistral plays catch-up with Vibe Desktop as rivals already command full operating systems appeared first on The Decoder.\n]]>",
-          "title_en": "Mistral plays catch-up with Vibe Desktop as rivals already command full operating systems"
-        },
-        {
-          "title": "OpenAI opens its AI systems to four independent on-site auditors for the first time",
-          "link": "https://the-decoder.com/openai-opens-its-ai-systems-to-four-independent-on-site-auditors-for-the-first-time/",
-          "date": "Wed, 18 Nov 2026 14:36:42 +0000",
-          "desc": "OpenAI is giving four independent audit organizations, including Apollo Research and METR, direct access to unreleased models, source code, and training data for the first time. The embedded reviews are designed to uncov",
-          "title_en": "OpenAI opens its AI systems to four independent on-site auditors for the first time"
-        },
-        {
-          "title": "Hugging Face now routes model requests through OpenRouter for the best price or speed",
-          "link": "https://the-decoder.com/hugging-face-now-routes-model-requests-through-openrouter-for-the-best-price-or-speed/",
-          "date": "Wed, 18 Nov 2026 14:33:44 +0000",
-          "desc": "Hugging Face now routes language model requests through OpenRouter, which automatically selects the cheapest or fastest provider. Bring-your-own API keys for language models are going away. According to OpenRouter, the n",
-          "title_en": "Hugging Face now routes model requests through OpenRouter for the best price or speed"
         }
       ],
       "error": null
@@ -539,6 +539,34 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "items": [
+        {
+          "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+          "link": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+          "date": "Thu, 19 Nov 2026 08:00:00 GMT",
+          "desc": "",
+          "title_en": "How OpenAI’s Performance Factory keeps ChatGPT fast"
+        },
+        {
+          "title": "The Silent Consensus",
+          "link": "https://openai.com/index/the-silent-consensus",
+          "date": "Wed, 18 Nov 2026 10:00:00 GMT",
+          "desc": "",
+          "title_en": "The Silent Consensus"
+        },
+        {
+          "title": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+          "link": "https://openai.com/business/customer-stories/sumitomo-life",
+          "date": "Wed, 18 Nov 2026 08:00:00 GMT",
+          "desc": "",
+          "title_en": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise"
+        },
+        {
+          "title": "Research acceleration: The jagged frontier",
+          "link": "https://openai.com/index/research-acceleration-jagged-frontier",
+          "date": "Wed, 18 Nov 2026 08:00:00 GMT",
+          "desc": "",
+          "title_en": "Research acceleration: The jagged frontier"
+        },
         {
           "title": "Inside the Codex sandbox",
           "link": "https://openai.com/index/inside-the-codex-sandbox",
@@ -566,34 +594,6 @@
           "date": "Wed, 18 Nov 2026 00:00:00 GMT",
           "desc": "",
           "title_en": "Advancing chip design with OpenAI models"
-        },
-        {
-          "title": "The Silent Consensus",
-          "link": "https://openai.com/index/the-silent-consensus",
-          "date": "Wed, 18 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "The Silent Consensus"
-        },
-        {
-          "title": "Introducing GPT-6.2 Astra and Sol",
-          "link": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
-          "date": "Tue, 17 Nov 2026 17:45:00 GMT",
-          "desc": "",
-          "title_en": "Introducing GPT-6.2 Astra and Sol"
-        },
-        {
-          "title": "Strengthening NATO and allied cyber defenses with AI",
-          "link": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
-          "date": "Tue, 17 Nov 2026 00:00:00 GMT",
-          "desc": "",
-          "title_en": "Strengthening NATO and allied cyber defenses with AI"
-        },
-        {
-          "title": "Introducing ChatGPT for Sales",
-          "link": "https://openai.com/index/introducing-chatgpt-for-sales",
-          "date": "Tue, 17 Nov 2026 08:00:00 GMT",
-          "desc": "",
-          "title_en": "Introducing ChatGPT for Sales"
         }
       ],
       "error": null
@@ -602,6 +602,20 @@
       "name": "Google AI Blog",
       "url": "https://blog.google/technology/ai/rss/",
       "items": [
+        {
+          "title": "Introducing Tool Retrieval in the Gemini API",
+          "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+          "date": "Thu, 19 Nov 2026 18:00:00 +0000",
+          "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Tool_retrieval_hero.max-600x600.format-webp.webp\">Give your agents access to hundreds of tools while using fewer tokens with Tool Retrieval, now i",
+          "title_en": "Introducing Tool Retrieval in the Gemini API"
+        },
+        {
+          "title": "Walter Isaacson on curiosity and creativity in the AI age.",
+          "link": "https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/",
+          "date": "Thu, 19 Nov 2026 17:00:00 +0000",
+          "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Dialogues.max-600x600.format-webp.webp\">Walter Isaacson joins Google to discuss how history’s greatest innovators inspire creativity and human jud",
+          "title_en": "Walter Isaacson on curiosity and creativity in the AI age."
+        },
         {
           "title": "The Gemini app is now available on lower-memory Android devices.",
           "link": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
@@ -643,20 +657,6 @@
           "date": "Wed, 11 Nov 2026 16:00:00 +0000",
           "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/labs_tabletop_blog_image_2784x1.max-600x600.format-webp.webp\">Tabletop is a new Google Labs experiment for group collaboration. Build interactive ",
           "title_en": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together."
-        },
-        {
-          "title": "Experience the art and legacy of Dr. Esther Mahlangu",
-          "link": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/",
-          "date": "Wed, 11 Nov 2026 09:00:00 +0000",
-          "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/esther_video_still.max-600x600.format-webp.webp\">A new online archive of Esther Mahlangu’s life and art is now on Google Arts & Culture.",
-          "title_en": "Experience the art and legacy of Dr. Esther Mahlangu"
-        },
-        {
-          "title": "Gemini Intelligence: New features, on more devices",
-          "link": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
-          "date": "Tue, 10 Nov 2026 19:00:00 +0000",
-          "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Intelligence_Signature27.max-600x600.format-webp.webp\">Gemini Intelligence is rolling out to more devices. See how expanded capabilities ac",
-          "title_en": "Gemini Intelligence: New features, on more devices"
         }
       ],
       "error": null
@@ -665,6 +665,13 @@
       "name": "DeepMind Blog",
       "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/rss/",
       "items": [
+        {
+          "title": "Genie 4 is now available on the Gemini API.",
+          "link": "https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/",
+          "date": "Thu, 19 Nov 2026 17:00:00 +0000",
+          "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Genie_4_Social_Share.max-600x600.format-webp.webp\">Build interactive 720p worlds with Genie 4 on the Google Gemini API. Generate coherent environm",
+          "title_en": "Genie 4 is now available on the Gemini API."
+        },
         {
           "title": "Genie 4 is now available",
           "link": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
@@ -713,13 +720,6 @@
           "date": "Wed, 14 Oct 2026 08:00:00 +0000",
           "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/ireland-innovation-companies-st.max-600x600.format-webp.webp\">Google DeepMind and Google Cloud are providing up to 200 top European scientific res",
           "title_en": "We’re powering European scientific discovery with advanced AI compute and frontier models."
-        },
-        {
-          "title": "Applying technology to understand and treat disease",
-          "link": "https://blog.google/innovation-and-ai/technology/health/ai-health-research/",
-          "date": "Mon, 12 Oct 2026 17:30:00 +0000",
-          "desc": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/ud-blog_Header.max-600x600.format-webp.webp\">In collaboration with scientists and research partners, Google is helping to make disease more detect",
-          "title_en": "Applying technology to understand and treat disease"
         }
       ],
       "error": null
@@ -792,60 +792,60 @@
       "url": "https://export.arxiv.org/rss/cs.AI",
       "items": [
         {
-          "title": "NEBench R1: a Reasoning Benchmark for Evaluating Nuclear Domain Competence in Large Language Models",
-          "link": "https://arxiv.org/abs/2611.21682",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21682v1 Announce Type: new \nAbstract: Large language models (LLMs) are increasingly being explored for knowledge-intensive and safety-critical applications in nuclear engineering. However, existing nuclear-dom",
-          "title_en": "NEBench R1: a Reasoning Benchmark for Evaluating Nuclear Domain Competence in Large Language Models"
+          "title": "Human-AI Mutualism Is Unstable under Capability Asymmetry",
+          "link": "https://arxiv.org/abs/2611.23322",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23322v1 Announce Type: new \nAbstract: One hope for a good human future alongside advanced AI rests on enduring mutualism: humans and AI will need each other, so the relationship will stay good for both. We arg",
+          "title_en": "Human-AI Mutualism Is Unstable under Capability Asymmetry"
         },
         {
-          "title": "Chain-of-Thought Controllability Can Reduce Chain-of-Thought Monitorability",
-          "link": "https://arxiv.org/abs/2611.21799",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21799v1 Announce Type: new \nAbstract: Chain-of-thought (CoT) monitoring is a promising tool for detecting hidden goals, off-task behavior, and other failures in AI agents. One risk is that models could deliber",
-          "title_en": "Chain-of-Thought Controllability Can Reduce Chain-of-Thought Monitorability"
+          "title": "Training Language Models for Introspective Oversight",
+          "link": "https://arxiv.org/abs/2611.23365",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23365v1 Announce Type: new \nAbstract: Language models increasingly exhibit behaviors that are difficult to detect in transcripts, such as reward hacking, deception, and sycophancy. Asking the assistant follow-",
+          "title_en": "Training Language Models for Introspective Oversight"
         },
         {
-          "title": "How Much of SAR Vehicle Recognition Is the Vehicle? Background Shortcuts, Angle Gaps and Partial Libraries on MSTAR and ATRNet-STAR",
-          "link": "https://arxiv.org/abs/2611.21827",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21827v1 Announce Type: new \nAbstract: Deep networks score near 99% on the MSTAR vehicle benchmark, and the newer ATRNet-STAR benchmark was built to be harder. We ask how much of these scores comes from the veh",
-          "title_en": "How Much of SAR Vehicle Recognition Is the Vehicle? Background Shortcuts, Angle Gaps and Partial Libraries on MSTAR and ATRNet-STAR"
+          "title": "Where the Tokens Go: Heat, Entropy and Error in Agentic Coding",
+          "link": "https://arxiv.org/abs/2611.23375",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23375v1 Announce Type: new \nAbstract: Coding agents are billed by the token, yet software engineering says nothing about what a token actually buys. Here we introduce a theory of software thermodynamics. The t",
+          "title_en": "Where the Tokens Go: Heat, Entropy and Error in Agentic Coding"
         },
         {
-          "title": "Auditors Struggle to Catch Sabotage In End-to-End Transcripts of AI Safety Research",
-          "link": "https://arxiv.org/abs/2611.21832",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21832v1 Announce Type: new \nAbstract: As AI systems are increasingly used to automate AI R&D, misaligned systems could sabotage research intended to improve model safety and alignment. To stress-test defenses ",
-          "title_en": "Auditors Struggle to Catch Sabotage In End-to-End Transcripts of AI Safety Research"
+          "title": "HardwareDx: A Foundational Graph Model System for Datacenter Machine Repairs",
+          "link": "https://arxiv.org/abs/2611.23398",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23398v1 Announce Type: new \nAbstract: The rapid scale-up of AI infrastructure has made datacenter reliability a cornerstone of the cloud business economy. Since hardware failures in hyper-scale AI clusters can",
+          "title_en": "HardwareDx: A Foundational Graph Model System for Datacenter Machine Repairs"
         },
         {
-          "title": "Language Models Can Rewrite Their Own Weights",
-          "link": "https://arxiv.org/abs/2611.21885",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21885v1 Announce Type: new \nAbstract: Language models are trained once, frozen and deployed: improving one again takes another training run, and a prompt, a scaffold or extra computation at inference is gone o",
-          "title_en": "Language Models Can Rewrite Their Own Weights"
+          "title": "RFBench: A Simulator-Grounded Multimodal Benchmark for Passive RF Layout Design and Understanding",
+          "link": "https://arxiv.org/abs/2611.23410",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23410v1 Announce Type: new \nAbstract: While multimodal language models can interpret diagrams and generate structured outputs, their capacity to connect passive radio-frequency (RF) design intent, layout geome",
+          "title_en": "RFBench: A Simulator-Grounded Multimodal Benchmark for Passive RF Layout Design and Understanding"
         },
         {
-          "title": "DNeo: Your Parallel Draft Model Needs Better Target Feature Encoding",
-          "link": "https://arxiv.org/abs/2611.21925",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21925v1 Announce Type: new \nAbstract: Speculative-diffusion decoding uses a small parallel drafter model to generate b draft tokens in one forward pass, which then undergo parallel verification via a larger ta",
-          "title_en": "DNeo: Your Parallel Draft Model Needs Better Target Feature Encoding"
+          "title": "Why Sub-4-Bit Vision CNNs Collapse and Where Mixed-Precision Recovery Stops",
+          "link": "https://arxiv.org/abs/2611.23445",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23445v1 Announce Type: new \nAbstract: Deep vision models operating in resource-constrained environments depend heavily on low-bit quantization, yet compressing weights below 4 bits frequently induces catastrop",
+          "title_en": "Why Sub-4-Bit Vision CNNs Collapse and Where Mixed-Precision Recovery Stops"
         },
         {
-          "title": "SLED: Sensor SLicing from Edge to Datacenter",
-          "link": "https://arxiv.org/abs/2611.21937",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21937v1 Announce Type: new \nAbstract: Modern sensing systems generate large volumes of heterogeneous data streams from multiple sensor modalities, increasing reliance on datacenters for computation, artificial",
-          "title_en": "SLED: Sensor SLicing from Edge to Datacenter"
+          "title": "LusoClin: A Synthetic Clinical Note Dataset for Medical Information Retrieval in European Portuguese",
+          "link": "https://arxiv.org/abs/2611.23454",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23454v1 Announce Type: new \nAbstract: Access to large-scale clinical text collections is crucial for advancing medical information retrieval research, including clinical note search, patient cohort identificat",
+          "title_en": "LusoClin: A Synthetic Clinical Note Dataset for Medical Information Retrieval in European Portuguese"
         },
         {
-          "title": "Conserved Verdicts, Drifting Commitments: Identifying Harmful Overthinking",
-          "link": "https://arxiv.org/abs/2611.21946",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21946v1 Announce Type: new \nAbstract: A reasoning model that has reached a correct answer can lose it by continuing to think. Deciding whether to stop means comparing two probabilities at the same point of a c",
-          "title_en": "Conserved Verdicts, Drifting Commitments: Identifying Harmful Overthinking"
+          "title": "VeriMath: Human-in-the-Loop Generation and Verification of Curriculum-Aligned Mathematics Assessment Items",
+          "link": "https://arxiv.org/abs/2611.23456",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23456v1 Announce Type: new \nAbstract: Automatic generation of mathematics assessment items is a growing area in educational artificial intelligence, yet classroom deployment remains challenging. Generated ques",
+          "title_en": "VeriMath: Human-in-the-Loop Generation and Verification of Curriculum-Aligned Mathematics Assessment Items"
         }
       ],
       "error": null
@@ -855,60 +855,60 @@
       "url": "https://export.arxiv.org/rss/cs.CL",
       "items": [
         {
-          "title": "CrisisBench: an evaluation suite for crisis counseling AI",
-          "link": "https://arxiv.org/abs/2611.21622",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21622v1 Announce Type: new \nAbstract: Background: Crisis helplines are essential to mental health systems but are often understaffed and underfunded. LLMs could support counselors, but existing benchmarks do n",
-          "title_en": "CrisisBench: an evaluation suite for crisis counseling AI"
+          "title": "Prioritize, Don't Decide: What We Learned Auditing a Deployed Human-in-the-Loop CV Sorter",
+          "link": "https://arxiv.org/abs/2611.23359",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23359v1 Announce Type: new \nAbstract: A single academic vacancy can draw hundreds of applications, and the first screening round consumes most of a committee's time. We describe a CV Priority Sorter deployed a",
+          "title_en": "Prioritize, Don't Decide: What We Learned Auditing a Deployed Human-in-the-Loop CV Sorter"
         },
         {
-          "title": "RAW: Refusal Aversion in the Wild, A Causal Measurement Method for Deployed LLMs",
-          "link": "https://arxiv.org/abs/2611.21641",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21641v1 Announce Type: new \nAbstract: Deployed LLMs field hundreds of millions of conversations a day and refuse a non-trivial fraction of user requests, yet the user-side cost of refusal, whether users diseng",
-          "title_en": "RAW: Refusal Aversion in the Wild, A Causal Measurement Method for Deployed LLMs"
+          "title": "Chorus: Shared N-gram Embeddings with Layer-wise Adaptation",
+          "link": "https://arxiv.org/abs/2611.23386",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23386v1 Announce Type: new \nAbstract: Language models can gain capacity at little computational cost from n-gram embedding tables: large tables of learned vectors for short sequences of consecutive tokens, whi",
+          "title_en": "Chorus: Shared N-gram Embeddings with Layer-wise Adaptation"
         },
         {
-          "title": "Sleep2Word: Peripheral-to-EEG Translation via Duration-Aware Wordization",
-          "link": "https://arxiv.org/abs/2611.21643",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21643v1 Announce Type: new \nAbstract: Estimating full-night electroencephalography (EEG) spectrograms from peripheral measurements could extend EEG-informed sleep analysis to recordings acquired without EEG. T",
-          "title_en": "Sleep2Word: Peripheral-to-EEG Translation via Duration-Aware Wordization"
+          "title": "Tracking Representations in LLM Reasoning Traces for Iterated Games",
+          "link": "https://arxiv.org/abs/2611.23403",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23403v1 Announce Type: new \nAbstract: Large language model (LLM) agents achieve state-of-the-art performance across domains through chain-of-thought (CoT) reasoning. Despite their ubiquitous use, little is und",
+          "title_en": "Tracking Representations in LLM Reasoning Traces for Iterated Games"
         },
         {
-          "title": "MInfoVisQA: A Multilingual Benchmark for Information-Rich Visual Question Answering",
-          "link": "https://arxiv.org/abs/2611.21644",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21644v1 Announce Type: new \nAbstract: Multimodal large language models (MLLMs) excel in vision-language tasks; yet, whether they maintain consistent understanding of information-rich visuals (InfoVis) when the",
-          "title_en": "MInfoVisQA: A Multilingual Benchmark for Information-Rich Visual Question Answering"
+          "title": "Formal Adequacy Index (based on Polish-language material)",
+          "link": "https://arxiv.org/abs/2611.23482",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23482v1 Announce Type: new \nAbstract: Linguistic formality is one of the dimensions of stylistic variation in speech; however, simply measuring its level does not allow us to determine whether the chosen mode ",
+          "title_en": "Formal Adequacy Index (based on Polish-language material)"
         },
         {
-          "title": "Limite 1B - Violetto: Technical Report",
-          "link": "https://arxiv.org/abs/2611.21646",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21646v1 Announce Type: new \nAbstract: We present Limite 1B - Violetto, a one-billion-parameter model designed for high-throughput mathematical reasoning. Limite is trained from scratch on 237 billion tokens fr",
-          "title_en": "Limite 1B - Violetto: Technical Report"
+          "title": "From Arraignment to Resolution: Transformer Models of Court Cases",
+          "link": "https://arxiv.org/abs/2611.23518",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23518v1 Announce Type: new \nAbstract: The criminal legal system is composed of many complex decision points, such as which charges are pursued, how bond is determined, plea deal negotiations, and sentencing. G",
+          "title_en": "From Arraignment to Resolution: Transformer Models of Court Cases"
         },
         {
-          "title": "FieldGuide: A Corpus Map for Token-Efficient Agentic Document Exploration",
-          "link": "https://arxiv.org/abs/2611.21647",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21647v1 Announce Type: new \nAbstract: Generative AI agents can help journalists explore large document collections. But exploratory workflows can require substantial token use and time, especially when the tas",
-          "title_en": "FieldGuide: A Corpus Map for Token-Efficient Agentic Document Exploration"
+          "title": "Dreaming Up Authors: Factual Prevalence and LLM Hallucinations in Academic Authorship Attribution",
+          "link": "https://arxiv.org/abs/2611.23530",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23530v1 Announce Type: new \nAbstract: Large Language Models (LLMs) are widely used for question answering but are prone to hallucinations, yet the underlying causes, particularly the role of factual prevalence",
+          "title_en": "Dreaming Up Authors: Factual Prevalence and LLM Hallucinations in Academic Authorship Attribution"
         },
         {
-          "title": "Can an LLM dream? Testing the overfitted brain hypothesis on an agent with text memory",
-          "link": "https://arxiv.org/abs/2611.21648",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21648v1 Announce Type: new \nAbstract: Hoel (2021) proposed that dreams distort replayed experience so that the brain does not overfit to recent events. We test this hypothesis on an LLM agent (Claude Opus 5.5)",
-          "title_en": "Can an LLM dream? Testing the overfitted brain hypothesis on an agent with text memory"
+          "title": "Can LLMs Understand What They Predict? Evaluating Latent Causal Structure Inference in Financial Markets",
+          "link": "https://arxiv.org/abs/2611.23533",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23533v1 Announce Type: new \nAbstract: Large language models (LLMs) are increasingly evaluated through their ability to predict future outcomes, implicitly assuming that predictive success reflects an understan",
+          "title_en": "Can LLMs Understand What They Predict? Evaluating Latent Causal Structure Inference in Financial Markets"
         },
         {
-          "title": "Literary Language Mashup: Curating Fictions with Large Language Models",
-          "link": "https://arxiv.org/abs/2611.21649",
-          "date": "Wed, 18 Nov 2026 00:00:00 -0500",
-          "desc": "arXiv:2611.21649v1 Announce Type: new \nAbstract: In this paper, we propose an alternative approach to human evaluation of literary fictions by employing LLMs themselves as evaluators within the GrAImes framework. We appl",
-          "title_en": "Literary Language Mashup: Curating Fictions with Large Language Models"
+          "title": "Language Models Make New Research Sound Old",
+          "link": "https://arxiv.org/abs/2611.23546",
+          "date": "Thu, 19 Nov 2026 00:00:00 -0500",
+          "desc": "arXiv:2611.23546v1 Announce Type: new \nAbstract: Researchers are increasingly using large language models (LLMs) to validate research questions. We find that LLMs make open research questions sound partly studied and ove",
+          "title_en": "Language Models Make New Research Sound Old"
         }
       ],
       "error": null
